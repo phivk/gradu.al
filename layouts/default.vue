@@ -25,7 +25,7 @@ html {
   margin: 0;
 }
 .bg-gradual {
-  background-image: url(/img/cool-background.svg);
+  background-image: url(~assets/cool-background.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
