@@ -21,9 +21,9 @@
       </section>
 
       <section class="mb5">
-        <img class="rotate-1 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="/img/gradual-session-1.jpg">
-        <img class="rotate-2 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="/img/gradual-session-2.jpg">
-        <img class="rotate-3 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="/img/gradual-session-3.jpg">
+        <img class="rotate-1 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="./img/gradual-session-1.jpg">
+        <img class="rotate-2 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="./img/gradual-session-2.jpg">
+        <img class="rotate-3 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="./img/gradual-session-3.jpg">
       </section>
 
 
