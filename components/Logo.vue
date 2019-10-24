@@ -1,5 +1,5 @@
 <template>
-  <img src="~/assets/gradual-logo-2.svg">
+  <img src="~/assets/logo-gradual-white.svg">
 </template>
 
 <style>

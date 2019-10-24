@@ -1,10 +1,8 @@
 <template>
   <div class="bg-gradual vh-100 white bg-gblue">
     <div class="tc pa4">
-      <logo class="w-50 mw5"/>
-      <h1 class="f1">
-        Gradual
-      </h1>
+      <logo class="w-50 mw5 mt3 mt4-ns mb4 mb5-ns"/>
+      <h1 class="f1 dn">Gradual</h1>
       <h2 class="subtitle measure center mb3">
         Imagine what your peers are good at... and then learning it, gradually. For free.
       </h2>
@@ -21,9 +19,9 @@
       </section>
 
       <section class="mb5">
-        <img class="rotate-1 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="~/assets/gradual-session-1.jpg">
-        <img class="rotate-2 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="~/assets/gradual-session-2.jpg">
-        <img class="rotate-3 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="~/assets/gradual-session-3.jpg">
+        <img class="rotate-1 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="~/assets/photo-gradual-session-1.jpg">
+        <img class="rotate-2 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="~/assets/photo-gradual-session-2.jpg">
+        <img class="rotate-3 w-100 w-25-ns mw6 bg-white pa2 ma1 ma2-ns mv2 photo-shadow" src="~/assets/photo-gradual-session-3.jpg">
       </section>
 
 
