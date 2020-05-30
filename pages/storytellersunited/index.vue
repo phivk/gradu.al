@@ -15,6 +15,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: "Storytellers United - Here to learn"
+    }
+  }
+};
+</script>
+
 <style>
 html {
   margin: 0;
