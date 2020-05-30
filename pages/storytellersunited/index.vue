@@ -15,23 +15,12 @@
   </div>
 </template>
 
-<script>
-import Logo from "~/components/Logo.vue";
-import MCSignupForm from "~/components/MCSignupForm.vue";
-
-export default {
-  components: {
-    Logo,
-    MCSignupForm,
-  },
-};
-</script>
-
 <style>
 html {
   margin: 0;
   height: 100%;
   overflow: hidden;
+  background-color: #fff;
 }
 iframe {
   position: absolute;
