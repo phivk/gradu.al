@@ -1,5 +1,5 @@
 <template>
-  <div class="vh-100 white bg-gradient">
+  <div class="minh-100vh white">
     <div class="tc pa4">
       <nuxt-link to="/">
         <logo class="w-50 mw4 mt3 mt4-ns mb4 mb5-ns" />
@@ -45,7 +45,11 @@ export default {
 </script>
 
 <style>
-.bg-gradient {
+html {
   background: linear-gradient(237.35deg, #ffc700 9.93%, #ca3d00 76.63%);
+}
+
+.minh-100vh {
+  min-height: 100vh;
 }
 </style>
