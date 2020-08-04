@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gblue">
+  <div>
     <nuxt />
   </div>
 </template>
@@ -15,7 +15,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: #0423D0;
 }
 
 *,
@@ -23,14 +22,5 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
-.bg-gradual {
-  background-image: url(~assets/bg-cool.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-}
-.bg-gblue {
-  background-color: #0423D0;
 }
 </style>

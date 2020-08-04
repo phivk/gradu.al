@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradual vh-100 white bg-gblue">
+  <div class="bg-gradual bg-gblue vh-100 white">
     <div class="tc pa4">
       <logo class="w-50 mw5 mt3 mt4-ns mb4 mb5-ns"/>
       <h1 class="f1 dn">Gradual</h1>
@@ -61,6 +61,15 @@ export default {
 </script>
 
 <style>
+.bg-gradual {
+  background-image: url(~assets/bg-cool.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.bg-gblue {
+  background-color: #0423D0;
+}
 
 .photo-shadow {
    -webkit-box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
