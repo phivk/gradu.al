@@ -6,7 +6,7 @@
       height="100%"
       frameborder="0"
       allow="camera; microphone; autoplay; encrypted-media;"
-      src="https://gunnardejong.typeform.com/to/nqEQHQ"
+      src="https://form.typeform.com/to/nqEQHQ"
     ></iframe>
     <script
       type="text/javascript"
