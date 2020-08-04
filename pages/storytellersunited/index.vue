@@ -5,23 +5,23 @@
         <logo class="w-50 mw4 mt3 mt4-ns mb4 mb5-ns" />
       </nuxt-link>
 
-      <h1 class="mb5">Welcome to Storytellers United!</h1>
-      <div class="mb4">
-        <h2 class="mb3">Ready to add your skills to the mix?</h2>
+      <h1 class="mb5 f3">👋 Welcome to Storytellers United!</h1>
+      <div class="mb5">
+        <h2 class="mb3 f2">Ready to add your skills to the mix?</h2>
         <nuxt-link
           to="/storytellersunited/join"
           class="f4 link grow br3 ph3 pv2 mb2 dib white bg-dark-green"
         >
-          Create your profile
+          Join this group
         </nuxt-link>
       </div>
-      <div class="mb4">
-        <h2 class="mb3">
-          Curious to see what others would like to learn and share?
-        </h2>
+      <div class="mb4 measure">
+        <h3 class="mb3">
+          Already joined & curious to see what others would like to learn and share?
+        </h3>
         <nuxt-link
           to="/storytellersunited/map"
-          class="f4 link grow br3 ph3 pv2 mb2 dib white bg-dark-green"
+          class="f5 link grow br3 ph3 pv2 mb2 dib white bg-dark-green"
         >
           See group skills
         </nuxt-link>
