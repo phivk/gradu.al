@@ -7,7 +7,7 @@
 
       <h1 class="mb5 f3">👋 Welcome to Storytellers United!</h1>
       <div class="mb5">
-        <h2 class="mb3 f2">Ready to add your skills to the mix?</h2>
+        <h2 class="mb3 f2">Ready to start learning together?</h2>
         <nuxt-link
           to="/storytellersunited/join"
           class="f4 link grow br3 ph3 pv2 mb2 dib white bg-dark-green"
