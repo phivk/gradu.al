@@ -15,7 +15,7 @@
           Join this group
         </nuxt-link>
       </div>
-      <div class="mb4 measure">
+      <div class="mb4 measure center">
         <h3 class="mb3">
           Already joined & curious to see what others would like to learn and share?
         </h3>
