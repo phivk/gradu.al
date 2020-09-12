@@ -4,7 +4,7 @@
       <logo class="w-50 mw5 mt3 mt4-ns mb4 mb5-ns"/>
       <h1 class="f1 dn">Gradual</h1>
       <h2 class="subtitle measure center mb3">
-        Imagine what your peers are good at... and then learning it, gradually. For free.
+        Imagine what your peers are good at... and then learning it, gradually. Together.
       </h2>
       <section class="measure-wide center mb5">
         <p class="f4 mb4">
