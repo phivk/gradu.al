@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gradual minh-100vh white">
     <div class="tc pa4">
-      <logo class="w-50 mw5 mt3 mt4-ns mb4 mb5-ns"/>
+      <logo withText class="w-50 mw5 mt3 mt4-ns mb4 mb5-ns"/>
       <h1 class="f1 dn">Gradual</h1>
       <h2 class="subtitle measure center mb3">
         Imagine what your peers are good at... and then learning it, gradually. Together.
@@ -60,10 +60,8 @@ export default {
 }
 </script>
 
-<style>
-html {
-  background-color: #0423D0;
-}
+<style scoped>
+
 .minh-100vh {
   min-height: 100vh;
 }
@@ -72,6 +70,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  background-color: #0423D0;
 }
 
 .photo-shadow {
