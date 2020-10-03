@@ -29,11 +29,9 @@
             <h3 class="f5 fw4 o-70">learned by</h3>
             <ul class="flex list pa0 ml2">
               <li v-for="learner in learners" class="ml-2">
-                <img
-                  class="br-100 w2 dib ba b--white bw2"
-                  :src="learner.profilePic"
-                  :alt="`profile picture of ${learner.userName}`"
-                  :title="learner.userName"
+                <ProfilePic
+                  :imageSrc="learner.profilePic"
+                  :userName="learner.userName"
                 />
               </li>
             </ul>
@@ -42,11 +40,9 @@
             <h3 class="f5 fw4 o-70">shared by</h3>
             <ul class="flex list pa0 ml2">
               <li v-for="sharer in sharers" class="ml-2">
-                <img
-                  class="br-100 w2 dib ba b--white bw2"
-                  :src="sharer.profilePic"
-                  :alt="`profile picture of ${sharer.userName}`"
-                  :title="sharer.userName"
+                <ProfilePic
+                  :imageSrc="sharer.profilePic"
+                  :userName="sharer.userName"
                 />
               </li>
             </ul>
@@ -68,6 +64,7 @@
   </article>
 </template>
 <script>
+import ProfilePic from "~/components/ProfilePic.vue";
 export default {
   props: {
     title: { type: String, default: "Title" },
@@ -79,5 +76,6 @@ export default {
     sharers: { type: Array, default: [] },
     resources: { type: Array, default: [] },
   },
+  components: { ProfilePic },
 };
 </script>
