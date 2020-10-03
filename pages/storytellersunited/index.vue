@@ -136,7 +136,7 @@
                       <a
                         class="dark-green f6"
                         href="https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#"
-                        >note document</a
+                        >session notes</a
                       >
                     </ul>
                   </div>
