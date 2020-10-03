@@ -43,18 +43,18 @@
       <section class="mv5">
         <h2>Things we've learned in previous sessions</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
-          <li class="center w-100 w-50-m mw8 pa3">
+          <li v-for="session in sessions" class="center w-100 w-50-m mw8 pa3">
             <article class="tl bg-white-80 br3 ba-hover-dark-blue">
               <div class="flex flex-column flex-row-l">
                 <div class="w-100 w-40-l">
                   <a
-                    href="https://www.youtube.com/watch?v=qI8W30t4bIM"
+                    :href="session.link"
                     target="_blank"
                     class="db no-underline black w-100 h-100"
                   >
                     <img
-                      src="~/assets/su-how_to_handle.jpg"
-                      alt="screenshot of a virtual lunch and learn session featuring a wheel of emotions"
+                      :src="session.imageSrc"
+                      :alt="session.title"
                       class="db w-100 h-100 br3  br--top-nl br--left-l objfit-cover"
                     />
                   </a>
@@ -63,81 +63,47 @@
                   <div class="flex items-center justify-between flex-wrap">
                     <span
                       class="f7 bg-light-green dark-green ph2 pv1 mv1 dib br-pill"
-                      >lunch & learn</span
+                      >{{ session.type }}</span
                     >
-                    <span class="o-70">30 Sept 2020</span>
+                    <span class="o-70">{{ session.date }}</span>
                   </div>
                   <h3 class="mt1 lh-title">
-                    How to handle conversations with xenophobes and racists?
+                    {{ session.title }}
                   </h3>
                   <div class="lh-copy measure mt2">
                     <h3 class="f5">learned by</h3>
-                    <ul class="flex list pa0">
-                      <li>
+                    <ul class="flex list pa0 ml2">
+                      <li v-for="learner in session.learners" class="ml-2">
                         <img
                           class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32"
-                          alt="profile picture of Gunnar de Jong"
-                        />
-                      </li>
-                      <li class="ml-2">
-                        <img
-                          class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32"
-                          alt="profile picture of Philo"
-                        />
-                      </li>
-                      <li class="ml-2">
-                        <img
-                          class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32"
-                          alt="profile picture of hay"
-                        />
-                      </li>
-                      <li class="ml-2">
-                        <img
-                          class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-UU4SUJ9U2-gf27c210f8aa-32"
-                          alt="profile picture of Kevin"
-                        />
-                      </li>
-                      <li class="ml-2">
-                        <img
-                          class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-U014ACSTHNJ-7b4a05e8e80b-32"
-                          alt="profile picture of 1coko"
+                          :src="learner.profilePic"
+                          :alt="`profile picture of ${learner.userName}`"
+                          :title="learner.userName"
                         />
                       </li>
                     </ul>
                     <h3 class="f5">shared by</h3>
-                    <ul class="flex list pa0">
-                      <li>
+                    <ul class="flex list pa0 ml2">
+                      <li v-for="sharer in session.sharers" class="ml-2">
                         <img
                           class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32"
-                          alt="profile picture of Anna Desponds"
-                        />
-                      </li>
-                      <li class="ml-2">
-                        <img
-                          class="br-100 w2 dib ba b--white bw2"
-                          src="https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32"
-                          alt="profile picture of Gosia"
+                          :src="sharer.profilePic"
+                          :alt="`profile picture of ${sharer.userName}`"
+                          :title="sharer.userName"
                         />
                       </li>
                     </ul>
                     <h3 class="f5">resources</h3>
                     <ul class="list pa0">
-                      <a
-                        class="dark-green f6"
-                        href="https://www.youtube.com/watch?v=qI8W30t4bIM"
-                        >session recording</a
-                      >,
-                      <a
-                        class="dark-green f6"
-                        href="https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#"
-                        >session notes</a
+                      <li
+                        class="di"
+                        v-for="(resource, index) in session.resources"
                       >
+                        <span v-if="index !== 0">, </span>
+                        <a class="dark-green f6" :href="resource.href">{{
+                          resource.text
+                        }}</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -160,6 +126,69 @@ export default {
   },
   components: {
     Logo,
+  },
+  data: function() {
+    return {
+      sessions: [
+        {
+          title: "How to handle conversations with xenophobes and racists?",
+          type: "lunch & learn",
+          date: "30 Sept 2020",
+          imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
+          link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
+          learners: [
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32",
+              userName: "Gunnar de Jong",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32",
+              userName: "Philo",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32",
+              userName: "hay",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UU4SUJ9U2-gf27c210f8aa-32",
+              userName: "Kevin",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U014ACSTHNJ-7b4a05e8e80b-32",
+              userName: "1coko",
+            },
+          ],
+          sharers: [
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32",
+              userName: "Anna Desponds",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32",
+              userName: "Gosia",
+            },
+          ],
+          resources: [
+            {
+              text: "session recording",
+              href: "https://www.youtube.com/watch?v=qI8W30t4bIM",
+            },
+            {
+              text: "session notes",
+              href:
+                "https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#",
+            },
+          ],
+        },
+      ],
+    };
   },
 };
 </script>
