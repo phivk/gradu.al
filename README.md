@@ -1,6 +1,6 @@
 # gradual-landing
 
-> Imagine what your peers are good at... and then learning it, gradually. For free.
+> Imagine what your peers are good at... and then learning it, gradually. Together.
 
 ## Build Setup
 

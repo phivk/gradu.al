@@ -1,7 +1,7 @@
 {
   "name": "gradual-landing",
   "version": "1.0.0",
-  "description": "Imagine what your peers are good at... and then learning it, gradually. For free.",
+  "description": "Imagine what your peers are good at... and then learning it, gradually. Together.",
   "author": "Philo van Kemenade",
   "private": true,
   "scripts": {
