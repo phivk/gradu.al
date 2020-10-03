@@ -36,7 +36,7 @@
         </div>
       </section>
       <section class="mv5">
-        <h2>Things we learned in previous sessions</h2>
+        <h2>Things we've learned in previous sessions</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li class="center w-100 w-50-m mw8 pa3">
               <article class="tl bg-white-80 br3 ba-hover-dark-blue">
