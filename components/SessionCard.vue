@@ -15,7 +15,7 @@
         </a>
       </div>
       <div class="relative flex flex-column w-100 w-60-l">
-        <div class="pa3 bg-white br3 br--top-right-l">
+        <div class="pa3 bg-white br3-l br--top-right-l">
           <div class="flex items-center justify-between flex-wrap flex-nowrap-l mb3-l">
             <h3 class="f4 f3-l lh-title mt2">
               {{ title }}
