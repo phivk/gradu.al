@@ -172,17 +172,4 @@ export default {
 html {
   background-color: var(--color-su-washed-orange);
 }
-
-@media (max-width: 60em) {
-  .br--top-nl {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}
-.objfit-cover {
-  object-fit: cover;
-}
-.ml-2 {
-  margin-left: -0.5rem;
-}
 </style>

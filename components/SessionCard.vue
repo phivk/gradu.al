@@ -1,5 +1,5 @@
 <template>
-  <article class="tl bg-white-80 br3 ba-hover-dark-blue">
+  <article class="tl bg-near-white br3 shadow-5">
     <div class="flex flex-column flex-row-l">
       <div class="w-100 w-40-l">
         <a
@@ -14,50 +14,57 @@
           />
         </a>
       </div>
-      <div class="w-100 w-60-l pa3">
-        <div class="flex items-center justify-between flex-wrap">
-          <span class="f7 bg-light-green dark-green ph2 pv1 mv1 dib br-pill">{{
+      <div class="relative flex flex-column w-100 w-60-l">
+        <div class="pa3 bg-white br3 br--top-right-l">
+          <div class="flex items-center justify-between flex-wrap flex-nowrap-l mb3-l">
+            <h3 class="f4 f3-l lh-title mt2">
+              {{ title }}
+            </h3>
+            <span class="f5 fw4 o-50 tr mt2">{{ date }}</span>
+          </div>
+          <span class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill">{{
             type
           }}</span>
-          <span class="f5 o-70">{{ date }}</span>
         </div>
-        <h3 class="f4 f3-l mt2 lh-title">
-          {{ title }}
-        </h3>
-        <div class="mt2 flex flex-wrap">
-          <div class="mr3">
-            <h3 class="f5 fw4 o-70">learned by</h3>
-            <ul class="flex list pa0 ml2">
-              <li v-for="learner in learners" class="ml-2">
-                <ProfilePic
-                  :imageSrc="learner.profilePic"
-                  :userName="learner.userName"
-                />
+        <div class="pa3">
+          <div class="mt3-l flex flex-wrap">
+            <div class="mr3">
+              <h3 class="f5 fw4 o-70">learned by</h3>
+              <ul class="flex list pa0 ml2">
+                <li v-for="learner in learners" class="ml-2">
+                  <ProfilePic
+                    :imageSrc="learner.profilePic"
+                    :userName="learner.userName"
+                    borderColorClass="b--near-white"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="f5 fw4 o-70">shared by</h3>
+              <ul class="flex list pa0 ml1">
+                <li v-for="sharer in sharers" class="ml-2">
+                  <ProfilePic
+                    :imageSrc="sharer.profilePic"
+                    :userName="sharer.userName"
+                    borderColorClass="b--near-white"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt2">
+            <h3 class="f5 fw4 o-70">resources</h3>
+            <ul class="list pa0">
+              <li class="di" v-for="(resource, index) in resources">
+                <span v-if="index !== 0">, </span>
+                <a class="dark-green" :href="resource.href">{{
+                  resource.text
+                }}</a>
               </li>
             </ul>
           </div>
-          <div>
-            <h3 class="f5 fw4 o-70">shared by</h3>
-            <ul class="flex list pa0 ml2">
-              <li v-for="sharer in sharers" class="ml-2">
-                <ProfilePic
-                  :imageSrc="sharer.profilePic"
-                  :userName="sharer.userName"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="mt2">
-          <h3 class="f5 fw4 o-70">resources</h3>
-          <ul class="list pa0">
-            <li class="di" v-for="(resource, index) in resources">
-              <span v-if="index !== 0">, </span>
-              <a class="dark-green" :href="resource.href">{{
-                resource.text
-              }}</a>
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
@@ -79,3 +86,30 @@ export default {
   components: { ProfilePic },
 };
 </script>
+<style scoped>
+@media (max-width: 60em) {
+  .br--top-nl {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+@media (min-width: 60em) {
+  .top-auto-l {
+    top: auto;
+  }
+  .br--top-right-l {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+.objfit-cover {
+  object-fit: cover;
+}
+.ml-1 {
+  margin-left: -0.25rem;
+}
+.ml-2 {
+  margin-left: -0.5rem;
+}
+</style>
