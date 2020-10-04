@@ -41,7 +41,7 @@
         </div>
       </section>
       <section class="mv5">
-        <h2>Things we've learned in previous sessions</h2>
+        <h2>Things we've learned so far</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li v-for="session in sessions" class="center w-100 w-50-m mw8 pa3">
             <SessionCard
