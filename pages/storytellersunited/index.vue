@@ -5,7 +5,7 @@
         <logo class="w3" />
       </nuxt-link>
     </nav>
-    <div class="tc pa4">
+    <div class="tc pa2 pa3-m pa4-l">
       <section>
         <div class="mv4">
           <a href="https://storytellers.link/" target="_blank">
