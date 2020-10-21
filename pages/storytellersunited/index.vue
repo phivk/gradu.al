@@ -95,6 +95,58 @@ export default {
     SessionCard,
   },
   data: function() {
+    let members = {
+      "Gunnar de Jong": {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32",
+        userName: "Gunnar de Jong",
+      },
+      Philo: {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32",
+        userName: "Philo",
+      },
+      hay: {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32",
+        userName: "hay",
+      },
+      Kevin: {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-UU4SUJ9U2-gf27c210f8aa-32",
+        userName: "Kevin",
+      },
+      "1coko": {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-U014ACSTHNJ-7b4a05e8e80b-32",
+        userName: "1coko",
+      },
+      "Anna Desponds": {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32",
+        userName: "Anna Desponds",
+      },
+      Gosia: {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32",
+        userName: "Gosia",
+      },
+      "Amanda Curtis": {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-U01649KLSEL-599d1dd22d32-32",
+        userName: "Amanda Curtis",
+      },
+      "Rasa Bocyte": {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-U0151MGCPJS-ccfd09390341-32",
+        userName: "Rasa Bocyte",
+      },
+      Alexa: {
+        profilePic:
+          "https://ca.slack-edge.com/T14SUV8BA-UD4FRNJ06-4d06a9fa5d68-32",
+        userName: "Alexa",
+      },
+    };
     return {
       sessions: [
         {
@@ -105,44 +157,13 @@ export default {
           link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
           cta: "Watch recording",
           learners: [
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32",
-              userName: "Gunnar de Jong",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32",
-              userName: "Philo",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32",
-              userName: "hay",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UU4SUJ9U2-gf27c210f8aa-32",
-              userName: "Kevin",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U014ACSTHNJ-7b4a05e8e80b-32",
-              userName: "1coko",
-            },
+            members["Gunnar de Jong"],
+            members["Philo"],
+            members["hay"],
+            members["Kevin"],
+            members["1coko"],
           ],
-          sharers: [
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32",
-              userName: "Anna Desponds",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32",
-              userName: "Gosia",
-            },
-          ],
+          sharers: [members["Anna Desponds"], members["Gosia"]],
           resources: [
             {
               text: "session recording",
@@ -161,57 +182,26 @@ export default {
           title: "Writing successful newsletters",
           type: "workshop",
           date: "TBC",
-          imageSrc: "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
-          link: "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
+          imageSrc:
+            "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
+          link:
+            "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
           cta: "Share your availability",
           learners: [
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32",
-              userName: "Gunnar de Jong",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32",
-              userName: "Philo",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32",
-              userName: "Anna Desponds",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32",
-              userName: "Gosia",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U01649KLSEL-599d1dd22d32-32",
-              userName: "Amanda Curtis",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-U0151MGCPJS-ccfd09390341-32",
-              userName: "Rasa Bocyte",
-            },
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UD4FRNJ06-4d06a9fa5d68-32",
-              userName: "Alexa",
-            },
+            members["Gunnar de Jong"],
+            members["Philo"],
+            members["Anna Desponds"],
+            members["Gosia"],
+            members["Amanda Curtis"],
+            members["Rasa Bocyte"],
+            members["Alexa"],
           ],
-          sharers: [
-            {
-              profilePic:
-                "https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32",
-              userName: "hay",
-            },
-          ],
+          sharers: [members["hay"]],
           resources: [
             {
               text: "availability poll",
-              href: "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
+              href:
+                "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
             },
           ],
         },
