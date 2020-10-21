@@ -50,6 +50,7 @@
               :date="session.date"
               :imageSrc="session.imageSrc"
               :link="session.link"
+              :cta="session.cta"
               :learners="session.learners"
               :sharers="session.sharers"
               :resources="session.resources"
@@ -68,6 +69,7 @@
               :date="session.date"
               :imageSrc="session.imageSrc"
               :link="session.link"
+              :cta="session.cta"
               :learners="session.learners"
               :sharers="session.sharers"
               :resources="session.resources"
@@ -101,6 +103,7 @@ export default {
           date: "30 Sept 2020",
           imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
           link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
+          cta: "Watch recording",
           learners: [
             {
               profilePic:
@@ -160,6 +163,7 @@ export default {
           date: "TBC",
           imageSrc: "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
           link: "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
+          cta: "Share your availability",
           learners: [
             {
               profilePic:

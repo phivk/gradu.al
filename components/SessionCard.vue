@@ -4,6 +4,7 @@
       <div class="w-100 w-40-l">
         <a
           :href="link"
+          :title="cta"
           target="_blank"
           class="db no-underline black w-100 h-100"
         >
@@ -55,7 +56,7 @@
               </ul>
             </div>
           </div>
-          <div class="mt2">
+          <div class="mv3">
             <h3 class="f5 fw4 o-70">resources</h3>
             <ul class="list pa0">
               <li class="di" v-for="(resource, index) in resources">
@@ -66,7 +67,7 @@
               </li>
             </ul>
           </div>
-          
+          <a :href="link" target="_blank" class="absolute-l bottom-0-l right-0-l mr3-l mb3-l f5 link br3 ph2 pv1 dib white bg-dark-green">{{cta}}</a>
         </div>
       </div>
     </div>
@@ -82,6 +83,7 @@ export default {
     date: { type: String, default: "date" },
     imageSrc: { type: String },
     link: { type: String },
+    cta: { type: String },
     learners: { type: Array, default: [] },
     sharers: { type: Array, default: [] },
     resources: { type: Array, default: [] },
