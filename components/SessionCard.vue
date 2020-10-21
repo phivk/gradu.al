@@ -20,7 +20,7 @@
             <h3 class="f4 f3-l lh-title mt2">
               {{ title }}
             </h3>
-            <span class="f5 fw4 o-50 tr mt2">{{ date }}</span>
+            <span class="f5 fw4 o-50 tr mt2 mw4">{{ date }}</span>
           </div>
           <span class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill">{{
             type
@@ -29,7 +29,8 @@
         <div class="pa3">
           <div class="mt3-l flex flex-wrap">
             <div class="mr3">
-              <h3 class="f5 fw4 o-70">learned by</h3>
+              <h3 v-if="hasHappened" class="f5 fw4 o-70">learned by</h3>
+              <h3 v-else class="f5 fw4 o-70">like to learn</h3>
               <ul class="flex list pa0 ml2">
                 <li v-for="learner in learners" class="ml-2">
                   <ProfilePic
@@ -41,7 +42,8 @@
               </ul>
             </div>
             <div>
-              <h3 class="f5 fw4 o-70">shared by</h3>
+              <h3 v-if="hasHappened" class="f5 fw4 o-70">shared by</h3>
+              <h3 v-else class="f5 fw4 o-70">like to share</h3>
               <ul class="flex list pa0 ml1">
                 <li v-for="sharer in sharers" class="ml-2">
                   <ProfilePic
@@ -74,6 +76,7 @@
 import ProfilePic from "~/components/ProfilePic.vue";
 export default {
   props: {
+    hasHappened: { type: Boolean, default: false },
     title: { type: String, default: "Title" },
     type: { type: String, default: "type" },
     date: { type: String, default: "date" },

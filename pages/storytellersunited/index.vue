@@ -41,10 +41,28 @@
         </div>
       </section>
       <section class="mv5">
+        <h2>Upcoming</h2>
+        <ul class="list pa0 ma0 flex flex-wrap">
+          <li v-for="session in upcoming" class="center w-100 w-50-m mw8 pa3">
+            <SessionCard
+              :title="session.title"
+              :type="session.type"
+              :date="session.date"
+              :imageSrc="session.imageSrc"
+              :link="session.link"
+              :learners="session.learners"
+              :sharers="session.sharers"
+              :resources="session.resources"
+            />
+          </li>
+        </ul>
+      </section>
+      <section class="mv5">
         <h2>Things we've learned so far</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li v-for="session in sessions" class="center w-100 w-50-m mw8 pa3">
             <SessionCard
+              :hasHappened="true"
               :title="session.title"
               :type="session.type"
               :date="session.date"
@@ -131,6 +149,65 @@ export default {
               text: "session notes",
               href:
                 "https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#",
+            },
+          ],
+        },
+      ],
+      upcoming: [
+        {
+          title: "Writing successful newsletters",
+          type: "workshop",
+          date: "TBC",
+          imageSrc: "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
+          link: "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
+          learners: [
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32",
+              userName: "Gunnar de Jong",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32",
+              userName: "Philo",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32",
+              userName: "Anna Desponds",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32",
+              userName: "Gosia",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U01649KLSEL-599d1dd22d32-32",
+              userName: "Amanda Curtis",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-U0151MGCPJS-ccfd09390341-32",
+              userName: "Rasa Bocyte",
+            },
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UD4FRNJ06-4d06a9fa5d68-32",
+              userName: "Alexa",
+            },
+          ],
+          sharers: [
+            {
+              profilePic:
+                "https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32",
+              userName: "hay",
+            },
+          ],
+          resources: [
+            {
+              text: "availability poll",
+              href: "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
             },
           ],
         },
