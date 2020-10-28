@@ -67,7 +67,10 @@
               </li>
             </ul>
           </div>
-          <a :href="link" target="_blank" class="absolute-l bottom-0-l right-0-l mr3-l mb3-l f5 link br3 ph2 pv1 dib white bg-dark-green">{{cta}}</a>
+          <div class="absolute-l bottom-0-l right-0-l mr3-l mb3-l">
+            <a v-if="icsFileSrc" :href="icsFileSrc" target="_blank" class="dark-green mr2">↓ .ics</a>
+            <a :href="link" target="_blank" class="f5 link br3 ph2 pv1 dib white bg-dark-green">{{cta}}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -87,6 +90,7 @@ export default {
     learners: { type: Array, default: [] },
     sharers: { type: Array, default: [] },
     resources: { type: Array, default: [] },
+    icsFileSrc: { type: String },
   },
   components: { ProfilePic },
 };

@@ -54,6 +54,7 @@
               :learners="session.learners"
               :sharers="session.sharers"
               :resources="session.resources"
+              :icsFileSrc="session.icsFileSrc"
             />
           </li>
         </ul>
@@ -186,7 +187,7 @@ export default {
             "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
           link:
             "https://calendar.google.com/calendar/u/0/r/eventedit/copy/XzhrcjQ4Y3BrNm9xazJiOW04a3IzZWI5azZncmthYjlvNzRwNGNiYTU2MHJqMGM5bThoMTM2aDlrODggMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw",
-          cta: "Add to Calendar",
+          cta: "Add to gCalendar",
           learners: [
             members["Gunnar de Jong"],
             members["Philo"],
@@ -197,6 +198,7 @@ export default {
             members["Alexa"],
           ],
           sharers: [members["hay"]],
+          icsFileSrc: "/storytellersunited/201110-newsletters.ics",
         },
       ],
     };
