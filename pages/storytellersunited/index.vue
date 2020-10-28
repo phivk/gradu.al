@@ -40,7 +40,7 @@
           </nuxt-link>
         </div>
       </section>
-      <section class="mv5">
+      <section v-if="upcoming.length" class="mv5">
         <h2>Upcoming</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li v-for="session in upcoming" class="center w-100 w-50-m mw8 pa3">
