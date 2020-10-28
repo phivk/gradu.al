@@ -179,14 +179,14 @@ export default {
       ],
       upcoming: [
         {
-          title: "Writing successful newsletters",
-          type: "workshop",
-          date: "TBC",
+          title: "Writing successful personal newsletters",
+          type: "talk",
+          date: "4 Nov 2020",
           imageSrc:
             "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
           link:
-            "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
-          cta: "Share your availability",
+            "https://calendar.google.com/calendar/u/0/r/eventedit/copy/XzhrcjQ4Y3BrNm9xazJiOW04a3IzZWI5azZncmthYjlvNzRwNGNiYTU2MHJqMGM5bThoMTM2aDlrODggMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw",
+          cta: "Add to Calendar",
           learners: [
             members["Gunnar de Jong"],
             members["Philo"],
@@ -197,13 +197,6 @@ export default {
             members["Alexa"],
           ],
           sharers: [members["hay"]],
-          resources: [
-            {
-              text: "availability poll",
-              href:
-                "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1603201484000100",
-            },
-          ],
         },
       ],
     };
