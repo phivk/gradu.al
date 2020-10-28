@@ -56,7 +56,7 @@
               </ul>
             </div>
           </div>
-          <div class="mv3">
+          <div v-if="resources.length" class="mv3">
             <h3 class="f5 fw4 o-70">resources</h3>
             <ul class="list pa0">
               <li class="di" v-for="(resource, index) in resources">
