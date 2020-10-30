@@ -61,7 +61,7 @@
             <ul class="list pa0">
               <li class="di" v-for="(resource, index) in resources">
                 <span v-if="index !== 0">, </span>
-                <a class="dark-green" :href="resource.href">{{
+                <a class="dark-green" :href="resource.href" target="_blank">{{
                   resource.text
                 }}</a>
               </li>
