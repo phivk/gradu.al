@@ -180,8 +180,8 @@ export default {
       ],
       upcoming: [
         {
-          title: "Writing successful personal newsletters",
-          type: "talk",
+          title: "Writing personal newsletters",
+          type: "Talk with Q&A",
           date: "4 Nov 2020",
           imageSrc:
             "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
