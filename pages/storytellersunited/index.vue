@@ -182,7 +182,8 @@ export default {
         {
           title: "Writing personal newsletters",
           type: "talk with Q&A",
-          date: "4 Nov 2020",
+          date: "10 Nov 2020",
+          description: "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
           imageSrc:
             "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
           link:
