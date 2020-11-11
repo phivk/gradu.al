@@ -64,7 +64,6 @@
         <ul class="list pa0 ma0 flex flex-wrap">
           <li v-for="session in sessionsPast" class="center w-100 w-50-m mw8 pa3">
             <SessionCard
-              :hasHappened="true"
               :title="session.title"
               :type="session.type"
               :date="session.date"

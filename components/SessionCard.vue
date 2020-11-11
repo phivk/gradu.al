@@ -17,15 +17,18 @@
       </div>
       <div class="relative flex flex-column w-100 w-60-l">
         <div class="pa3 bg-white br3-l br--top-right-l">
-          <div class="flex items-center justify-between flex-wrap flex-nowrap-l mb3-l">
+          <div
+            class="flex items-center justify-between flex-wrap flex-nowrap-l mb3-l"
+          >
             <h3 class="f4 f3-l lh-title mt2">
               {{ title }}
             </h3>
             <span class="f5 fw4 o-50 tr mt2 mw4">{{ date }}</span>
           </div>
-          <span class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill">{{
-            type
-          }}</span>
+          <span
+            class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill"
+            >{{ type }}</span
+          >
         </div>
         <div class="pa3">
           <div class="mt3-l flex flex-wrap">
@@ -68,8 +71,19 @@
             </ul>
           </div>
           <div class="absolute-l bottom-0-l right-0-l mr3-l mb3-l">
-            <a v-if="icsFileSrc" :href="icsFileSrc" target="_blank" class="dark-green mr2">↓ .ics</a>
-            <a :href="link" target="_blank" class="f5 link br3 ph2 pv1 dib white bg-dark-green">{{cta}}</a>
+            <a
+              v-if="icsFileSrc"
+              :href="icsFileSrc"
+              target="_blank"
+              class="dark-green mr2"
+              >↓ .ics</a
+            >
+            <a
+              :href="link"
+              target="_blank"
+              class="f5 link br3 ph2 pv1 dib white bg-dark-green"
+              >{{ cta }}</a
+            >
           </div>
         </div>
       </div>
@@ -80,7 +94,6 @@
 import ProfilePic from "~/components/ProfilePic.vue";
 export default {
   props: {
-    hasHappened: { type: Boolean, default: false },
     title: { type: String, default: "Title" },
     type: { type: String, default: "type" },
     date: { type: String, default: "date" },
@@ -93,6 +106,12 @@ export default {
     icsFileSrc: { type: String },
   },
   components: { ProfilePic },
+  computed: {
+    hasHappened() {
+      let now = new Date();
+      return new Date(this.date) < now;
+    },
+  },
 };
 </script>
 <style scoped>
