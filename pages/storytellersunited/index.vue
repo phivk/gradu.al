@@ -185,10 +185,9 @@ export default {
           description:
             "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
           imageSrc:
-            "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
-          link:
-            "https://calendar.google.com/calendar/u/0/r/eventedit/copy/XzhrcjQ4Y3BrNm9xazJiOW04a3IzZWI5azZncmthYjlvNzRwNGNiYTU2MHJqMGM5bThoMTM2aDlrODggMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw",
-          cta: "Add to gCalendar",
+            "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
+          link: "https://youtu.be/Q0pFsHaCpqs",
+          cta: "Watch recording",
           learners: [
             members["Anna Desponds"],
             members["Kevin"],
@@ -198,7 +197,17 @@ export default {
             members["Philo"],
           ],
           sharers: [members["hay"]],
-          icsFileSrc: "/storytellersunited/201110-newsletters.ics",
+          resources: [
+            {
+              text: "session recording",
+              href: "https://youtu.be/Q0pFsHaCpqs",
+            },
+            {
+              text: "session notes",
+              href:
+                "https://docs.google.com/document/d/1wXD9D_9ulGg0YoVGjvoxIjHIoA2ZP4jipH8iCOUpfPc/edit",
+            },
+          ],
         },
       ],
     };
