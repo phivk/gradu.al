@@ -40,10 +40,10 @@
           </nuxt-link>
         </div>
       </section>
-      <section v-if="upcoming.length" class="mv5">
+      <section v-if="sessionsUpcoming.length" class="mv5">
         <h2>Upcoming</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
-          <li v-for="session in upcoming" class="center w-100 w-50-m mw8 pa3">
+          <li v-for="session in sessionsUpcoming" class="center w-100 w-50-m mw8 pa3">
             <SessionCard
               :title="session.title"
               :type="session.type"
@@ -62,7 +62,7 @@
       <section class="mv5">
         <h2>Things we've learned so far</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
-          <li v-for="session in sessions" class="center w-100 w-50-m mw8 pa3">
+          <li v-for="session in sessionsPast" class="center w-100 w-50-m mw8 pa3">
             <SessionCard
               :hasHappened="true"
               :title="session.title"
@@ -83,6 +83,7 @@
 </template>
 
 <script>
+import _ from "lodash";
 import Logo from "~/components/Logo.vue";
 import SessionCard from "~/components/SessionCard.vue";
 export default {
@@ -158,11 +159,11 @@ export default {
           link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
           cta: "Watch recording",
           learners: [
-            members["Gunnar de Jong"],
-            members["Philo"],
             members["hay"],
             members["Kevin"],
             members["1coko"],
+            members["Gunnar de Jong"],
+            members["Philo"],
           ],
           sharers: [members["Anna Desponds"], members["Gosia"]],
           resources: [
@@ -177,32 +178,42 @@ export default {
             },
           ],
         },
-      ],
-      upcoming: [
         {
           title: "Writing personal newsletters",
           type: "talk with Q&A",
           date: "10 Nov 2020",
-          description: "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
+          description:
+            "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
           imageSrc:
             "https://images.unsplash.com/photo-1475770230762-6409e81d7589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=80",
           link:
             "https://calendar.google.com/calendar/u/0/r/eventedit/copy/XzhrcjQ4Y3BrNm9xazJiOW04a3IzZWI5azZncmthYjlvNzRwNGNiYTU2MHJqMGM5bThoMTM2aDlrODggMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw",
           cta: "Add to gCalendar",
           learners: [
-            members["Gunnar de Jong"],
-            members["Philo"],
             members["Anna Desponds"],
-            members["Gosia"],
-            members["Amanda Curtis"],
+            members["Kevin"],
             members["Rasa Bocyte"],
             members["Alexa"],
+            members["Gunnar de Jong"],
+            members["Philo"],
           ],
           sharers: [members["hay"]],
           icsFileSrc: "/storytellersunited/201110-newsletters.ics",
         },
       ],
     };
+  },
+  computed: {
+    sessionsUpcoming() {
+      let now = new Date();
+      let sessionsFiltered = this.sessions.filter((session) => new Date(session.date) > now );
+      return _.orderBy(sessionsFiltered, session => new Date(session.date), ['desc']);
+    },
+    sessionsPast() {
+      let now = new Date();
+      let sessionsFiltered = this.sessions.filter((session) => new Date(session.date) < now );
+      return _.orderBy(sessionsFiltered, session => new Date(session.date), ['desc']);
+    },
   },
 };
 </script>
