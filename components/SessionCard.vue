@@ -23,7 +23,7 @@
             <h3 class="f4 f3-l lh-title mt2">
               {{ title }}
             </h3>
-            <span class="f5 fw4 o-50 tr mt2 mw4">{{ date }}</span>
+            <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
           </div>
           <span
             class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill"
@@ -139,5 +139,8 @@ export default {
 }
 .ml-2 {
   margin-left: -0.5rem;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 </style>
