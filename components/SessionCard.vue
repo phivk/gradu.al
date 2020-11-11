@@ -25,16 +25,17 @@
             </h3>
             <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
           </div>
+          <p class="mb2 f5 o-80">{{description}}</p>
           <span
             class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill"
             >{{ type }}</span
           >
         </div>
-        <div class="pa3">
-          <div class="mt3-l flex flex-wrap">
+        <div class="pa3 pt4">
+          <div class="flex flex-wrap">
             <div class="mr3">
-              <h3 v-if="hasHappened" class="f5 fw4 o-70">learned by</h3>
-              <h3 v-else class="f5 fw4 o-70">like to learn</h3>
+              <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
+              <h3 v-else class="f5 fw4 o-60">like to learn</h3>
               <ul class="flex list pa0 ml2">
                 <li v-for="learner in learners" class="ml-2">
                   <ProfilePic
@@ -46,8 +47,8 @@
               </ul>
             </div>
             <div>
-              <h3 v-if="hasHappened" class="f5 fw4 o-70">shared by</h3>
-              <h3 v-else class="f5 fw4 o-70">like to share</h3>
+              <h3 v-if="hasHappened" class="f5 fw4 o-60">shared by</h3>
+              <h3 v-else class="f5 fw4 o-60">like to share</h3>
               <ul class="flex list pa0 ml1">
                 <li v-for="sharer in sharers" class="ml-2">
                   <ProfilePic
@@ -59,8 +60,8 @@
               </ul>
             </div>
           </div>
-          <div v-if="resources.length" class="mv3">
-            <h3 class="f5 fw4 o-70">resources</h3>
+          <div v-if="resources.length">
+            <h3 class="f5 fw4 o-60">resources</h3>
             <ul class="list pa0">
               <li class="di" v-for="(resource, index) in resources">
                 <span v-if="index !== 0">, </span>
@@ -97,6 +98,7 @@ export default {
     title: { type: String, default: "Title" },
     type: { type: String, default: "type" },
     date: { type: String, default: "date" },
+    description: { type: String },
     imageSrc: { type: String },
     link: { type: String },
     cta: { type: String },

@@ -48,6 +48,7 @@
               :title="session.title"
               :type="session.type"
               :date="session.date"
+              :description="session.description"
               :imageSrc="session.imageSrc"
               :link="session.link"
               :cta="session.cta"
@@ -67,6 +68,7 @@
               :title="session.title"
               :type="session.type"
               :date="session.date"
+              :description="session.description"
               :imageSrc="session.imageSrc"
               :link="session.link"
               :cta="session.cta"
@@ -154,6 +156,7 @@ export default {
           title: "How to handle conversations with xenophobes and racists?",
           type: "lunch & learn",
           date: "30 Sept 2020",
+          description: "During a this session we will share some tips and insights from our experience (and backed by research). 👉 What to do when you hear a racist comment? 👉🏽 Where do these come from? 👉🏿 How to engage? 👉 What works best in these conversations? 👉🏽 When talking about diversity, where are the limits of embracing other people's views? 👉🏿 How not to go insane when you discover the world is full of xenophobes and racists?",
           imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
           link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
           cta: "Watch recording",
