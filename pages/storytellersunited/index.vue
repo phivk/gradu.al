@@ -196,6 +196,7 @@ export default {
             members["Philo"],
           ],
           sharers: [members["hay"]],
+          icsFileSrc: "/storytellersunited/201110-newsletters.ics",
           resources: [
             {
               text: "session recording",
