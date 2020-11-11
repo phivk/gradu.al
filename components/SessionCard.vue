@@ -18,20 +18,20 @@
       <div class="relative flex flex-column w-100 w-60-l">
         <div class="pa3 bg-white br3-l br--top-right-l">
           <div
-            class="flex items-center justify-between flex-wrap flex-nowrap-l mb3-l"
+            class="flex items-center justify-between flex-wrap flex-nowrap-l mb2 mb3-l"
           >
             <h3 class="f4 f3-l lh-title mt2">
               {{ title }}
             </h3>
             <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
           </div>
-          <p class="mb2 f5 o-80">{{description}}</p>
+          <p class="mb2-l f5 o-80">{{description}}</p>
           <span
             class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill"
             >{{ type }}</span
           >
         </div>
-        <div class="pa3 pt4">
+        <div class="pa3 pt4-l">
           <div class="flex flex-wrap">
             <div class="mr3">
               <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
@@ -60,7 +60,7 @@
               </ul>
             </div>
           </div>
-          <div v-if="resources.length">
+          <div v-if="resources.length" class="mb3 mb0-l">
             <h3 class="f5 fw4 o-60">resources</h3>
             <ul class="list pa0">
               <li class="di" v-for="(resource, index) in resources">
