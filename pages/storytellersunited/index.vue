@@ -170,11 +170,11 @@ export default {
           sharers: [members["Anna Desponds"], members["Gosia"]],
           resources: [
             {
-              text: "session recording",
+              text: "recording",
               href: "https://www.youtube.com/watch?v=qI8W30t4bIM",
             },
             {
-              text: "session notes",
+              text: "notes",
               href:
                 "https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#",
             },
@@ -202,13 +202,18 @@ export default {
           icsFileSrc: "/storytellersunited/201110-newsletters.ics",
           resources: [
             {
-              text: "session recording",
+              text: "recording",
               href: "https://youtu.be/Q0pFsHaCpqs",
             },
             {
-              text: "session notes",
+              text: "notes",
               href:
                 "https://docs.google.com/document/d/1wXD9D_9ulGg0YoVGjvoxIjHIoA2ZP4jipH8iCOUpfPc/edit",
+            },
+            {
+              text: "slides",
+              href:
+                "https://drive.google.com/file/d/1ZQkypNMTClTv-OMa7L5sJcg4nxyiLSQV/view",
             },
           ],
         },
