@@ -43,7 +43,10 @@
       <section v-if="sessionsUpcoming.length" class="mv5">
         <h2>Upcoming</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
-          <li v-for="session in sessionsUpcoming" class="center w-100 w-50-m mw8 pa3">
+          <li
+            v-for="session in sessionsUpcoming"
+            class="center w-100 w-50-m mw8 pa3"
+          >
             <SessionCard
               :title="session.title"
               :type="session.type"
@@ -52,8 +55,8 @@
               :imageSrc="session.imageSrc"
               :link="session.link"
               :cta="session.cta"
-              :learners="session.learners"
-              :sharers="session.sharers"
+              :learners="hydrateMembers(session.learnerNames)"
+              :sharers="hydrateMembers(session.sharerNames)"
               :resources="session.resources"
               :icsFileSrc="session.icsFileSrc"
             />
@@ -63,7 +66,10 @@
       <section class="mv5">
         <h2>Things we've learned so far</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
-          <li v-for="session in sessionsPast" class="center w-100 w-50-m mw8 pa3">
+          <li
+            v-for="session in sessionsPast"
+            class="center w-100 w-50-m mw8 pa3"
+          >
             <SessionCard
               :title="session.title"
               :type="session.type"
@@ -72,8 +78,8 @@
               :imageSrc="session.imageSrc"
               :link="session.link"
               :cta="session.cta"
-              :learners="session.learners"
-              :sharers="session.sharers"
+              :learners="hydrateMembers(session.learnerNames)"
+              :sharers="hydrateMembers(session.sharerNames)"
               :resources="session.resources"
             />
           </li>
@@ -97,77 +103,21 @@ export default {
     Logo,
     SessionCard,
   },
-  data: function() {
-    let members = {
-      "Gunnar de Jong": {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-UD1UZ0J3H-573c02ead937-32",
-        userName: "Gunnar de Jong",
-      },
-      Philo: {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-U14SLMJ20-ab75d1919845-32",
-        userName: "Philo",
-      },
-      hay: {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-UQDCZCT7F-g26743a83b8d-32",
-        userName: "hay",
-      },
-      Kevin: {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-UU4SUJ9U2-gf27c210f8aa-32",
-        userName: "Kevin",
-      },
-      "1coko": {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-U014ACSTHNJ-7b4a05e8e80b-32",
-        userName: "1coko",
-      },
-      "Anna Desponds": {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-UAX2YQV2R-8ab84e1fbcff-32",
-        userName: "Anna Desponds",
-      },
-      Gosia: {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-U01BCG23VM3-bb24210db841-32",
-        userName: "Gosia",
-      },
-      "Amanda Curtis": {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-U01649KLSEL-599d1dd22d32-32",
-        userName: "Amanda Curtis",
-      },
-      "Rasa Bocyte": {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-U0151MGCPJS-ccfd09390341-32",
-        userName: "Rasa Bocyte",
-      },
-      Alexa: {
-        profilePic:
-          "https://ca.slack-edge.com/T14SUV8BA-UD4FRNJ06-4d06a9fa5d68-32",
-        userName: "Alexa",
-      },
-    };
+  data() {
     return {
+      members: [],
       sessions: [
         {
           title: "How to handle conversations with xenophobes and racists?",
           type: "lunch & learn",
           date: "30 Sept 2020",
-          description: "During a this session we will share some tips and insights from our experience (and backed by research). 👉 What to do when you hear a racist comment? 👉🏽 Where do these come from? 👉🏿 How to engage? 👉 What works best in these conversations? 👉🏽 When talking about diversity, where are the limits of embracing other people's views? 👉🏿 How not to go insane when you discover the world is full of xenophobes and racists?",
+          description:
+            "During a this session we will share some tips and insights from our experience (and backed by research). 👉 What to do when you hear a racist comment? 👉🏽 Where do these come from? 👉🏿 How to engage? 👉 What works best in these conversations? 👉🏽 When talking about diversity, where are the limits of embracing other people's views? 👉🏿 How not to go insane when you discover the world is full of xenophobes and racists?",
           imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
           link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
           cta: "Watch recording",
-          learners: [
-            members["hay"],
-            members["Kevin"],
-            members["1coko"],
-            members["Gunnar de Jong"],
-            members["Philo"],
-          ],
-          sharers: [members["Anna Desponds"], members["Gosia"]],
+          learnerNames: ["hay", "Kevin", "1coko", "Gunnar de Jong", "Philo"],
+          sharerNames: ["Anna Desponds", "Gosia"],
           resources: [
             {
               text: "recording",
@@ -186,19 +136,18 @@ export default {
           date: "10 Nov 2020",
           description:
             "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
-          imageSrc:
-            "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
+          imageSrc: "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
           link: "https://youtu.be/Q0pFsHaCpqs",
           cta: "Watch recording",
-          learners: [
-            members["Anna Desponds"],
-            members["Kevin"],
-            members["Rasa Bocyte"],
-            members["Alexa"],
-            members["Gunnar de Jong"],
-            members["Philo"],
+          learnerNames: [
+            "Anna Desponds",
+            "Kevin",
+            "Rasa Bocyte",
+            "Alexa",
+            "Gunnar de Jong",
+            "Philo",
           ],
-          sharers: [members["hay"]],
+          sharerNames: ["hay"],
           icsFileSrc: "/storytellersunited/201110-newsletters.ics",
           resources: [
             {
@@ -220,17 +169,36 @@ export default {
       ],
     };
   },
+  methods: {
+    hydrateMembers(memberNames) {
+      return memberNames.map((memberName) => this.members[memberName]);
+    },
+  },
   computed: {
     sessionsUpcoming() {
       let now = new Date();
-      let sessionsFiltered = this.sessions.filter((session) => new Date(session.date) > now );
-      return _.orderBy(sessionsFiltered, session => new Date(session.date), ['desc']);
+      let sessionsFiltered = this.sessions.filter(
+        (session) => new Date(session.date) > now
+      );
+      return _.orderBy(sessionsFiltered, (session) => new Date(session.date), [
+        "desc",
+      ]);
     },
     sessionsPast() {
       let now = new Date();
-      let sessionsFiltered = this.sessions.filter((session) => new Date(session.date) < now );
-      return _.orderBy(sessionsFiltered, session => new Date(session.date), ['desc']);
+      let sessionsFiltered = this.sessions.filter(
+        (session) => new Date(session.date) < now
+      );
+      return _.orderBy(sessionsFiltered, (session) => new Date(session.date), [
+        "desc",
+      ]);
     },
+  },
+  async asyncData() {
+    const members = await fetch(
+      "https://storytellers.link/members.json"
+    ).then((res) => res.json());
+    return { members };
   },
 };
 </script>
