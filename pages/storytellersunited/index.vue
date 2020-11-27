@@ -108,6 +108,25 @@ export default {
       members: [],
       sessions: [
         {
+          title: "How to practice curiosity",
+          description: "Pim will host a conversation inspired by his ongoing research as part of the Architecting Curiosity project.",
+          type: "conversation",
+          date: "TBC",
+          imageSrc: "https://images.unsplash.com/photo-1451470838681-d2856d3048a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=432&q=80",
+          link:
+            "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1606322000007800",
+          cta: "Share your availability",
+          learnerNames: [
+            "Amanda Curtis",
+            "Anna Desponds",
+            "Gosia",
+            "Gunnar de Jong",
+            "hay",
+            "Kevin",
+          ],
+          sharerNames: ["Pim"],
+        },
+        {
           title: "How to handle conversations with xenophobes and racists?",
           type: "lunch & learn",
           date: "30 Sept 2020",
