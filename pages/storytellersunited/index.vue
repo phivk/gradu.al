@@ -187,7 +187,7 @@ export default {
     sessionsUpcoming() {
       let now = new Date();
       let sessionsFiltered = this.sessions.filter(
-        (session) => new Date(session.date) > now
+        (session) => new Date(session.date) > now || session.date === "TBC"
       );
       return _.orderBy(sessionsFiltered, (session) => new Date(session.date), [
         "desc",
