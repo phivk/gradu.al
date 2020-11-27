@@ -41,7 +41,7 @@
         </div>
       </section>
       <section v-if="sessionsUpcoming.length" class="mv5">
-        <h2>Upcoming</h2>
+        <h2>Upcoming Sessions</h2>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li
             v-for="session in sessionsUpcoming"
