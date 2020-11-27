@@ -205,7 +205,7 @@ export default {
   },
   async asyncData() {
     const members = await fetch(
-      "https://storytellers.link/members.json"
+      "https://storytellers.link/api/members.json"
     ).then((res) => res.json());
     return { members };
   },
