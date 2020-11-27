@@ -171,7 +171,16 @@ export default {
   },
   methods: {
     hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => this.members[memberName]);
+      return memberNames.map((memberName) => {
+        if (this.members[memberName]) {
+          return this.members[memberName];
+        } else {
+          return {
+            profilePic: require("@/assets/profilePic-default-32.png"),
+            userName: memberName,
+          };
+        }
+      });
     },
   },
   computed: {
