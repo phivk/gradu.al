@@ -109,22 +109,28 @@ export default {
       sessions: [
         {
           title: "How to practice curiosity",
-          description: "Pim will host a conversation inspired by his ongoing research as part of the Architecting Curiosity project.",
+          description:
+            "Pim will host a conversation inspired by his ongoing research as part of the Architecting Curiosity project.",
           type: "conversation",
-          date: "TBC",
-          imageSrc: "https://images.unsplash.com/photo-1451470838681-d2856d3048a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=432&q=80",
+          date: "18 Dec 2020",
+          imageSrc:
+            "https://images.unsplash.com/photo-1451470838681-d2856d3048a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=432&q=80",
           link:
-            "https://storytellersunited.slack.com/archives/C016WE6ADA9/p1606322000007800",
-          cta: "Share your availability",
+            "https://calendar.google.com/calendar/u/0/r/eventedit/copy/Xzhrb2pnY3EyNmgyNDRiOXA4NTMzZ2I5azYxMWpjYjlvNmtwMzBiOXA2ZDMzNGQxbjYxMzQ4ZGhtNjQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw/cGhpbGxjaGlsbEBnbWFpbC5jb20?sf=true",
+          cta: "Add to Calendar",
           learnerNames: [
+            "Gunnar de Jong",
             "Amanda Curtis",
+            "Kevin",
             "Anna Desponds",
             "Gosia",
-            "Gunnar de Jong",
+            "Philo",
+            "magda bochenska",
             "hay",
-            "Kevin",
           ],
           sharerNames: ["Pim"],
+          icsFileSrc:
+            "/storytellersunited/201218-how-to-practice-curiosity.ics",
         },
         {
           title: "How to handle conversations with xenophobes and racists?",
