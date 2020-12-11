@@ -29,14 +29,7 @@
             to="/storytellersunited/join"
             class="mv4 f4 link grow br3 ph3 pv2 dib white bg-dark-green"
           >
-            Join the group
-          </nuxt-link>
-          <h2 class="mb3 f4 fw3">
-            Already joined & curious to see what others would like to learn and
-            share?
-          </h2>
-          <nuxt-link to="/storytellersunited/map" class="f4 dark-green">
-            See group skills
+            Add learning intentions
           </nuxt-link>
         </div>
       </section>
@@ -85,6 +78,27 @@
           </li>
         </ul>
       </section>
+      <section>
+        <h2 class="mb3">Community learning intentions</h2>
+        <p class="mb3 f4 fw3 measure center">
+          Here's an interactive map of skills that SU members would like to <span class="b orange">↗︎learn</span> or <span class="b purple">↗︎share</span>. Click any <span class="b dark-green">●skill</span> or <span class="b dark-blue">●member</span> to explore the connections!
+        </p>
+        <div class="graph-container" 
+            @click="graphClicked = true"
+            @mouseleave="graphClicked = false"
+          >
+            <iframe
+              :class="{clicked: graphClicked}"
+              class="br3"
+              src="https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false"
+              frameborder="0"
+              style="overflow:hidden;border:1px solid #DDDDDD;width:1px;min-width:100%;height:600px;min-height:600px;"
+              width="100%"
+              height="600"
+              allowfullscreen
+            ></iframe>
+          </div>
+      </section>
     </div>
   </div>
 </template>
@@ -105,6 +119,7 @@ export default {
   },
   data() {
     return {
+      graphClicked: false,
       members: [],
       sessions: [
         {
@@ -230,6 +245,15 @@ export default {
       ]);
     },
   },
+  watch: {
+    graphClicked(newValue) {
+      if (newValue) {
+        document.getElementsByTagName('html')[0].classList.add('overflow-y-hidden')
+      } else {
+        document.getElementsByTagName('html')[0].classList.remove('overflow-y-hidden')
+      }
+    }
+  },
   async asyncData() {
     const members = await fetch(
       "https://storytellers.link/api/members.json"
@@ -270,5 +294,15 @@ export default {
 }
 html {
   background-color: var(--color-su-washed-orange);
+}
+/*
+ * disable zooming on embedded iframe graph 
+ * inspired by https://codepen.io/status201/pen/wKowKz
+ */
+.graph-container iframe{
+  pointer-events: none;
+}
+.graph-container iframe.clicked{
+  pointer-events: auto;
 }
 </style>
