@@ -80,9 +80,13 @@
       </section>
       <section>
         <h2 class="mb3">Community learning intentions</h2>
-        <p class="mb3 f4 fw3 measure center">
-          Here's an interactive map of skills that SU members would like to <span class="b orange">↗︎learn</span> or <span class="b purple">↗︎share</span>. Click any <span class="b dark-green">●skill</span> or <span class="b dark-blue">●member</span> to explore the connections!
-        </p>
+        <div class="mb3 f4 fw3 center">
+          <p>
+            Here's an interactive map of skills that SU members would like to <span class="b orange">↗︎learn</span> or <span class="b purple">↗︎share</span>.
+          </p>
+          <p>Click any <span class="b dark-green">●skill</span> or <span class="b dark-blue">●member</span> to explore the connections!</p>
+          <p>Click <span class="b f3">⦷</span>pause to prevent overlapping texts.</p>
+        </div>
         <GraphEmbed/>
       </section>
     </div>
