@@ -14,6 +14,14 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { 
+        src: '//gc.zgo.at/count.js', 
+        'data-goatcounter': "https://gradual.goatcounter.com/count",
+        async: true, 
+        body: true, 
+      },
     ]
   },
   /*
