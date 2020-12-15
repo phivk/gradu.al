@@ -26,18 +26,21 @@ X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
 ORGANIZER;CN="Storytellers United":mailto:1nkslmh4uur4t51n3rildsd9s0@gro
  up.calendar.google.com
 UID:E183B4DB-9AF8-40C6-8520-93F2470FD661
-DTSTAMP:20201130T223456Z
-DESCRIPTION:Pim will host a conversation inspired by his ongoing researc
- h as part of the Architecting Curiosity project.\n\nmore details to foll
- ow...
+DTSTAMP:20201215T105310Z
+LOCATION:https://us02web.zoom.us/j/5991650108
+DESCRIPTION:https://us02web.zoom.us/j/5991650108\n\nHow might we explore
+  all the dimension curiosity has to offer?  How do we start practicing a
+ nd strengthen our own muscle of inquiry? Anthony & Pim will host a works
+ hop inspired by their ongoing research exploring curiosity. www.architec
+ tingcuriosity.com
 STATUS:CONFIRMED
 SEQUENCE:1
-SUMMARY:How to Practice Curiosity #skillsharing session by Pim
-LAST-MODIFIED:20201130T223456Z
+SUMMARY:Architecting Curiosity #skillsharing session by Pim & Anthony
+LAST-MODIFIED:20201215T105310Z
 DTSTART;TZID=Europe/Amsterdam:20201218T200000
 CREATED:20201130T223456Z
-ATTENDEE;CN="Pim Schachtschabel";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTION
- ;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:pim.schachtschabel@gmail.com
+ATTENDEE;CN="Pim Schachtschabel";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED;ROL
+ E=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:pim.schachtschabel@gmail.com
 ATTENDEE;CN="Storytellers United";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED;RO
  LE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:1nkslmh4uur4t51n3rildsd9s0@grou
  p.calendar.google.com
@@ -45,17 +48,20 @@ ATTENDEE;CN="amanda.curtis@me.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTI
  ON;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:amanda.curtis@me.com
 ATTENDEE;CN="anna.desponds@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-A
  CTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:anna.desponds@gmail.com
-ATTENDEE;CN="gunnardejong@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-AC
- TION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:gunnardejong@gmail.com
-ATTENDEE;CN="hay@bykr.org";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTION;ROLE=
- REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:hay@bykr.org
+ATTENDEE;CN="cyberspaceline@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-
+ ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:cyberspaceline@gmail.c
+ om
+ATTENDEE;CN="gunnardejong@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED
+ ;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:gunnardejong@gmail.com
+ATTENDEE;CN="hay@bykr.org";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED;ROLE=REQ-
+ PARTICIPANT;X-NUM-GUESTS=0:mailto:hay@bykr.org
 ATTENDEE;CN="kevin@kevincunningham.co.uk";CUTYPE=INDIVIDUAL;PARTSTAT=NEE
  DS-ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:kevin@kevincunningh
  am.co.uk
 ATTENDEE;CN="m.j.bochenska@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-A
  CTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:m.j.bochenska@gmail.com
-ATTENDEE;CN="malgorzata.wilhelm@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NE
- EDS-ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:malgorzata.wilhelm
- @gmail.com
+ATTENDEE;CN="malgorzata.wilhelm@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=AC
+ CEPTED;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:malgorzata.wilhelm@gma
+ il.com
 END:VEVENT
 END:VCALENDAR

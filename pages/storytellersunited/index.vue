@@ -110,9 +110,9 @@ export default {
       members: [],
       sessions: [
         {
-          title: "How to practice curiosity",
+          title: "Architecting Curiosity",
           description:
-            "Pim will host a conversation inspired by his ongoing research as part of the Architecting Curiosity project.",
+            "How might we explore all the dimension curiosity has to offer? How do we start practicing and strengthen our own muscle of inquiry? Anthony & Pim will host a workshop inspired by their ongoing research exploring curiosity.",
           type: "conversation",
           date: "18 Dec 2020",
           imageSrc:
@@ -132,9 +132,9 @@ export default {
             "magda bochenska",
             "Philo",
           ],
-          sharerNames: ["Pim"],
+          sharerNames: ["Pim", "Anthony"],
           icsFileSrc:
-            "/storytellersunited/201218-how-to-practice-curiosity.ics",
+            "/storytellersunited/201218-architecting-curiosity.ics",
         },
         {
           title: "How to handle conversations with xenophobes and racists?",
