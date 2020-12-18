@@ -16,26 +16,33 @@
             />
           </a>
         </div>
-        <div>
-          <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
-          <nuxt-link
-            to="/storytellersunited/join"
-            class="mb5 f3 f2-ns link grow br3 ph3 pv2 dib white bg-dark-green shadow-5"
-          >
-            Let us know!
-          </nuxt-link>
+      </section>
+      <section>
+        <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
+        <nuxt-link
+          to="/storytellersunited/join"
+          class="mb5 f3 f2-ns link grow br3 ph3 pv2 dib white bg-dark-green shadow-5"
+        >
+          Let us know!
+        </nuxt-link>
+        <div class="center">
+          
           <h2 class="measure center mv2">
             Hi 👋 <br />
             Welcome to Storytellers United on Gradual!
           </h2>
-          <p class="f4 fw3 measure center">
-            This is a space to express intentions for things you’d like to learn
-            and share with others in the community.
-          </p>
+          <div class="measure center">
+            <p class="mb3 f4 lh-copy">
+              This is a space to express things you’d like to learn and share with others in the community.
+            </p>
+          </div>
         </div>
       </section>
       <section v-if="sessionsUpcoming.length" class="mv5">
-        <h2>Upcoming Sessions</h2>
+        <h2 class="mb3">Upcoming Sessions</h2>
+        <p class="mb3 measure-wide center lh-copy">
+          If you'd like to stay up to date about upcoming sessions, you can <a href="https://storytellers.link/calendar/" class="su-dark-orange" target="_blank">subscribe to the SU community calendar</a>.
+        </p>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li
             v-for="session in sessionsUpcoming"
@@ -81,7 +88,7 @@
       </section>
       <section>
         <h2 class="mb3">Community learning intentions</h2>
-        <div class="mb3 f4 fw3 center">
+        <div class="mb3 f4 center lh-copy">
           <p>
             Here's an interactive map of skills that SU members would like to <span class="b orange">↗︎learn</span> or <span class="b purple">↗︎share</span>.
           </p>
