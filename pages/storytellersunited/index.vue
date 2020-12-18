@@ -220,6 +220,8 @@ export default {
   computed: {
     sessionsUpcoming() {
       let now = new Date();
+      now.setDate(now.getDate() - 1); // include today in upcoming
+
       let sessionsFiltered = this.sessions.filter(
         (session) => new Date(session.date) > now || session.date === "TBC"
       );
@@ -229,6 +231,8 @@ export default {
     },
     sessionsPast() {
       let now = new Date();
+      now.setDate(now.getDate() - 1); // include today in upcoming
+
       let sessionsFiltered = this.sessions.filter(
         (session) => new Date(session.date) < now
       );
