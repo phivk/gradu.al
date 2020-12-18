@@ -10,27 +10,28 @@
         <div class="mv4">
           <a href="https://storytellers.link/" target="_blank">
             <img
-              class="w4"
+              class="w3 w4-ns"
               src="https://storytellers.link/img/logo-storytellersunited-200px.png"
               alt="Storytellers United Logo"
             />
           </a>
         </div>
         <div>
-          <h1 class="measure center">
+          <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
+          <nuxt-link
+            to="/storytellersunited/join"
+            class="mb5 f3 f2-ns link grow br3 ph3 pv2 dib white bg-dark-green shadow-5"
+          >
+            Let us know!
+          </nuxt-link>
+          <h2 class="measure center mv2">
             Hi 👋 <br />
             Welcome to Storytellers United on Gradual!
-          </h1>
+          </h2>
           <p class="f4 fw3 measure center">
             This is a space to express intentions for things you’d like to learn
             and share with others in the community.
           </p>
-          <nuxt-link
-            to="/storytellersunited/join"
-            class="mv4 f4 link grow br3 ph3 pv2 dib white bg-dark-green"
-          >
-            Add learning intentions
-          </nuxt-link>
         </div>
       </section>
       <section v-if="sessionsUpcoming.length" class="mv5">
