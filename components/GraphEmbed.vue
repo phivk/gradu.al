@@ -23,6 +23,15 @@ export default {
       graphClicked: false,
     }
   },
+  watch: {
+    graphClicked(newValue) {
+      if (newValue) {
+        document.getElementsByTagName('html')[0].classList.add('overflow-y-hidden')
+      } else {
+        document.getElementsByTagName('html')[0].classList.remove('overflow-y-hidden')
+      }
+    }
+  },
 };
 </script>
 <style scoped>
