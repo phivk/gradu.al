@@ -6,7 +6,7 @@
       </nuxt-link>
     </nav>
     <div class="tc pa2 pa3-m pa4-l">
-      <section>
+      <section class="mb5">
         <div class="mv4">
           <a href="https://storytellers.link/" target="_blank">
             <img
@@ -16,17 +16,19 @@
             />
           </a>
         </div>
-      </section>
-      <section>
         <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
         <nuxt-link
           to="/storytellersunited/join"
-          class="mb5 f3 f2-ns link grow br3 ph3 pv2 dib white bg-dark-green shadow-5"
+          class="mb3 mb4-ns f3 f2-ns link grow br3 ph3 pv2 dib white bg-su-dark-orange shadow-5"
         >
           Let us know!
         </nuxt-link>
+        <div class="db">
+          <a href="https://storytellersunited.slack.com/" class="su-dark-orange fw3 hover-no-underline" target="_blank">join Storytellers United</a>
+        </div>
+      </section>
+      <section class="mb5">
         <div class="center">
-          
           <h2 class="measure center mv2">
             Hi 👋 <br />
             Welcome to Storytellers United on Gradual!
@@ -85,7 +87,7 @@
           </li>
         </ul>
       </section>
-      <section>
+      <section class="mb5">
         <h2 class="mb3">Community learning intentions</h2>
         <div class="mb3 f4 center lh-copy">
           <p>
@@ -289,5 +291,8 @@ export default {
 }
 html {
   background-color: var(--color-su-washed-orange);
+}
+.hover-no-underline:hover {
+  text-decoration: none;
 }
 </style>
