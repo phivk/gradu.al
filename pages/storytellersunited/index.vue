@@ -40,9 +40,7 @@
       </section>
       <section v-if="sessionsUpcoming.length" class="mv5">
         <h2 class="mb3">Upcoming Sessions</h2>
-        <p class="mb3 measure-wide center lh-copy">
-          If you'd like to stay up to date about upcoming sessions, you can subscribe to the <a href="https://storytellers.link/calendar/" class="su-dark-orange" target="_blank">SU community calendar</a>.
-        </p>
+        <CalendarReferral/>
         <ul class="list pa0 ma0 flex flex-wrap">
           <li
             v-for="session in sessionsUpcoming"
@@ -65,7 +63,8 @@
         </ul>
       </section>
       <section class="mv5">
-        <h2>Things we've learned so far</h2>
+        <h2 class="mb3">Things we've learned so far</h2>
+        <CalendarReferral v-if="!sessionsUpcoming.length" />
         <ul class="list pa0 ma0 flex flex-wrap">
           <li
             v-for="session in sessionsPast"
@@ -106,6 +105,7 @@ import _ from "lodash";
 import Logo from "~/components/Logo.vue";
 import SessionCard from "~/components/SessionCard.vue";
 import GraphEmbed from "~/components/GraphEmbed.vue";
+import CalendarReferral from "~/components/CalendarReferral.vue";
 export default {
   head() {
     return {
@@ -116,6 +116,7 @@ export default {
     Logo,
     SessionCard,
     GraphEmbed,
+    CalendarReferral,
   },
   data() {
     return {
