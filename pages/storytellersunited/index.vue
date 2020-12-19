@@ -24,7 +24,7 @@
           Let us know!
         </nuxt-link>
         <div class="db">
-          <a href="https://storytellersunited.slack.com/" class="su-dark-orange fw3 hover-no-underline" target="_blank">join Storytellers United</a>
+          <a href="https://storytellers.link/invite/" class="su-dark-orange fw3 hover-no-underline" target="_blank">join Storytellers United</a>
         </div>
       </section>
       <section class="mb5">
