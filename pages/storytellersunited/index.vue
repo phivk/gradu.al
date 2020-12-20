@@ -24,7 +24,12 @@
           Let us know!
         </nuxt-link>
         <div class="db">
-          <a href="https://storytellers.link/invite/" class="su-dark-orange hover-no-underline" target="_blank">join Storytellers United</a>
+          <a
+            href="https://storytellers.link/invite/"
+            class="su-dark-orange hover-no-underline"
+            target="_blank"
+            >join Storytellers United</a
+          >
         </div>
       </section>
       <section class="mb5">
@@ -35,14 +40,22 @@
           </h2>
           <div class="measure center">
             <p class="mb3 f4 lh-copy">
-              This is a space to express things you’d like to learn and share with others in the community. Keep an eye on the <a href="https://app.slack.com/client/T14SUV8BA/C016WE6ADA9" target="_blank" class="su-dark-orange hover-no-underline">#skillsharing channel</a> for updates.
+              This is a space to express things you’d like to learn and share
+              with others in the community. Keep an eye on the
+              <a
+                href="https://app.slack.com/client/T14SUV8BA/C016WE6ADA9"
+                target="_blank"
+                class="su-dark-orange hover-no-underline"
+                >#skillsharing channel</a
+              >
+              for updates.
             </p>
           </div>
         </div>
       </section>
       <section v-if="sessionsUpcoming.length" class="mv5">
         <h2 class="mb3">Upcoming Sessions</h2>
-        <CalendarReferral/>
+        <CalendarReferral />
         <ul class="list pa0 ma0 flex flex-wrap">
           <li
             v-for="session in sessionsUpcoming"
@@ -91,12 +104,19 @@
         <h2 class="mb3">Community learning intentions</h2>
         <div class="mb3 f4 center lh-copy">
           <p>
-            Here's an interactive map of skills that SU members would like to <span class="b orange">↗︎learn</span> or <span class="b purple">↗︎share</span>.
+            Here's an interactive map of skills that SU members would like to
+            <span class="b orange">↗︎learn</span> or
+            <span class="b purple">↗︎share</span>.
           </p>
-          <p>Click any <span class="b dark-green">●skill</span> or <span class="b dark-blue">●member</span> to explore the connections!</p>
-          <p>Click <span class="b f3">⦷</span>pause to prevent overlapping texts.</p>
+          <p>
+            Click any <span class="b dark-green">●skill</span> or
+            <span class="b dark-blue">●member</span> to explore the connections!
+          </p>
+          <p>
+            Click <span class="b f3">⦷</span>pause to prevent overlapping texts.
+          </p>
         </div>
-        <GraphEmbed/>
+        <GraphEmbed />
       </section>
     </div>
   </div>
@@ -148,8 +168,7 @@ export default {
             "Philo",
           ],
           sharerNames: ["Pim", "Anthony"],
-          icsFileSrc:
-            "/storytellersunited/201218-architecting-curiosity.ics",
+          icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
         },
         {
           title: "How to handle conversations with xenophobes and racists?",
