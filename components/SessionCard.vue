@@ -25,26 +25,15 @@
             </h3>
             <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
           </div>
-          <p class="mb2-l f5 o-80">{{description}}</p>
-          <span
-            class="absolute top--1 top-auto-l ml-1 ba b--white bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill"
-            >{{ type }}</span
-          >
+          <p class="mb2-l f5 o-80">{{ description }}</p>
+          <TagPill class="absolute top--1 top-auto-l ml-1">{{ type }}</TagPill>
         </div>
         <div class="pa3 pt4-l">
           <div class="flex flex-wrap">
             <div class="mr3">
               <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
               <h3 v-else class="f5 fw4 o-60">like to learn</h3>
-              <ul class="flex list pa0 ml2">
-                <li v-for="learner in learners" class="ml-2">
-                  <ProfilePic
-                    :imageSrc="learner.profilePic"
-                    :userName="learner.userName"
-                    borderColorClass="b--near-white"
-                  />
-                </li>
-              </ul>
+              <ProfilePicList :profilePics="learners"/>
             </div>
             <div>
               <h3 v-if="hasHappened" class="f5 fw4 o-60">shared by</h3>
@@ -93,6 +82,8 @@
 </template>
 <script>
 import ProfilePic from "~/components/ProfilePic.vue";
+import TagPill from "~/components/TagPill.vue";
+import ProfilePicList from "~/components/ProfilePicList.vue";
 export default {
   props: {
     title: { type: String, default: "Title" },
@@ -107,7 +98,7 @@ export default {
     resources: { type: Array, default: () => [] },
     icsFileSrc: { type: String },
   },
-  components: { ProfilePic },
+  components: { ProfilePic, TagPill, ProfilePicList },
   computed: {
     hasHappened() {
       let now = new Date();
@@ -138,9 +129,6 @@ export default {
 }
 .ml-1 {
   margin-left: -0.25rem;
-}
-.ml-2 {
-  margin-left: -0.5rem;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
