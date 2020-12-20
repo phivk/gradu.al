@@ -24,7 +24,7 @@
           Let us know!
         </nuxt-link>
         <div class="db">
-          <a href="https://storytellers.link/invite/" class="su-dark-orange fw3 hover-no-underline" target="_blank">join Storytellers United</a>
+          <a href="https://storytellers.link/invite/" class="su-dark-orange hover-no-underline" target="_blank">join Storytellers United</a>
         </div>
       </section>
       <section class="mb5">
@@ -35,7 +35,7 @@
           </h2>
           <div class="measure center">
             <p class="mb3 f4 lh-copy">
-              This is a space to express things you’d like to learn and share with others in the community.
+              This is a space to express things you’d like to learn and share with others in the community. Keep an eye on the <a href="https://app.slack.com/client/T14SUV8BA/C016WE6ADA9" target="_blank" class="su-dark-orange hover-no-underline">#skillsharing channel</a> for updates.
             </p>
           </div>
         </div>
