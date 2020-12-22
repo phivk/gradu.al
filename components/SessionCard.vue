@@ -32,7 +32,7 @@
           >
         </div>
         <div class="pa3 pt4-l">
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap mb2">
             <div class="mr3">
               <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
               <h3 v-else class="f5 fw4 o-60">like to learn</h3>
