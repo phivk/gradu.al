@@ -1,0 +1,65 @@
+<template>
+  <div>
+    <nav class="bg-su-light-orange pa3">
+      <nuxt-link to="/">
+        <logo class="w3" />
+      </nuxt-link>
+    </nav>
+    <nuxt />
+  </div>
+</template>
+
+<style>
+html {
+  font-family: 'Avenir', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+:root {
+  --color-su-washed-orange: #fdecce;
+  --color-su-light-orange: #f4a726;
+  --color-su-dark-orange: #ff5a17;
+  --color-su-light-blue: #c3ecf7;
+  --color-su-dark-blue: #02ace3;
+}
+.su-light-orange {
+  color: var(--color-su-light-orange);
+}
+.su-dark-orange {
+  color: var(--color-su-dark-orange);
+}
+.bg-su-light-orange {
+  background-color: var(--color-su-light-orange);
+}
+.bg-su-dark-orange {
+  background-color: var(--color-su-dark-orange);
+}
+.bg-su-washed-orange {
+  background-color: var(--color-su-washed-orange);
+}
+.bg-su-light-blue {
+  background-color: var(--color-su-light-blue);
+}
+.bg-su-dark-blue {
+  background-color: var(--color-su-dark-blue);
+}
+html {
+  background-color: var(--color-su-washed-orange);
+}
+.hover-no-underline:hover {
+  text-decoration: none;
+}
+</style>
