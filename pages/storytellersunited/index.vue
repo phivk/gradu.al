@@ -151,24 +151,28 @@ export default {
           type: "conversation",
           date: "18 Dec 2020",
           imageSrc:
-            "https://images.unsplash.com/photo-1451470838681-d2856d3048a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=432&q=80",
+            "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
           link:
-            "https://calendar.google.com/calendar/u/0/r/eventedit/copy/Xzhrb2pnY3EyNmgyNDRiOXA4NTMzZ2I5azYxMWpjYjlvNmtwMzBiOXA2ZDMzNGQxbjYxMzQ4ZGhtNjQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw/cGhpbGxjaGlsbEBnbWFpbC5jb20?sf=true",
-          cta: "Add to Calendar",
+            "https://youtu.be/vL097Tge1_A",
+          cta: "Watch recording",
           learnerNames: [
-            "Amanda Curtis",
             "Anna Desponds",
-            "Celine",
+            "Chris Martens",
             "Gosia",
             "Gunnar de Jong",
-            "hay",
-            "HazelXD",
             "Kevin",
             "magda bochenska",
             "Philo",
+            "Randi Cecchine",
           ],
           sharerNames: ["Pim", "Anthony"],
           icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
+          resources: [
+            {
+              text: "recording",
+              href: "https://youtu.be/vL097Tge1_A",
+            },
+          ],
         },
         {
           title: "How to handle conversations with xenophobes and racists?",
