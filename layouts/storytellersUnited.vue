@@ -8,11 +8,18 @@
     <nuxt />
   </div>
 </template>
-
+<script>
+import Logo from "~/components/Logo.vue";
+export default {
+  components: {
+    Logo,
+  },
+};
+</script>
 <style>
 html {
-  font-family: 'Avenir', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Avenir", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -34,6 +41,9 @@ html {
   --color-su-dark-orange: #ff5a17;
   --color-su-light-blue: #c3ecf7;
   --color-su-dark-blue: #02ace3;
+}
+.su-washed-orange {
+  color: var(--color-su-washed-orange);
 }
 .su-light-orange {
   color: var(--color-su-light-orange);
@@ -61,5 +71,11 @@ html {
 }
 .hover-no-underline:hover {
   text-decoration: none;
+}
+.ml-1 {
+  margin-left: -0.25rem;
+}
+.ml-2 {
+  margin-left: -0.5rem;
 }
 </style>

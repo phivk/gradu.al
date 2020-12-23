@@ -119,19 +119,17 @@
 
 <script>
 import _ from "lodash";
-import Logo from "~/components/Logo.vue";
 import SessionCard from "~/components/SessionCard.vue";
 import GraphEmbed from "~/components/GraphEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 export default {
-  layout: 'storytellersUnited',
+  layout: "storytellersUnited",
   head() {
     return {
       title: "Storytellers United - Here to learn",
     };
   },
   components: {
-    Logo,
     SessionCard,
     GraphEmbed,
     CalendarReferral,
@@ -146,10 +144,8 @@ export default {
             "How might we explore all the dimension curiosity has to offer? How do we start practicing and strengthen our own muscle of inquiry? Anthony & Pim will host a workshop inspired by their ongoing research exploring curiosity.",
           type: "conversation",
           date: "18 Dec 2020",
-          imageSrc:
-            "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
-          link:
-            "https://youtu.be/vL097Tge1_A",
+          imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
+          link: "https://youtu.be/vL097Tge1_A",
           cta: "Watch recording",
           learnerNames: [
             "Anna Desponds",

@@ -26,23 +26,29 @@
             <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
           </div>
           <p class="mb2-l f5 o-80">{{ description }}</p>
-          <TagPill class="absolute top--1 top-auto-l ml-1">{{ type }}</TagPill>
+          <TagPill
+            class="absolute top--1 top-auto-l ml-1"
+            borderColour="#fff"
+            >{{ type }}</TagPill
+          >
         </div>
         <div class="pa3 pt4-l">
           <div class="flex flex-wrap mb2">
             <div class="mr3">
               <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
               <h3 v-else class="f5 fw4 o-60">like to learn</h3>
-              <ProfilePicList :profilePics="learners"/>
+              <ProfilePicList
+                :profilePics="learners"
+                borderColorClass="b--near-white"
+              />
             </div>
             <div>
               <h3 v-if="hasHappened" class="f5 fw4 o-60">shared by</h3>
               <h3 v-else class="f5 fw4 o-60">like to share</h3>
               <ul class="flex list pa0 ml1">
                 <li v-for="sharer in sharers" class="ml-2">
-                  <ProfilePic
-                    :imageSrc="sharer.profilePic"
-                    :userName="sharer.userName"
+                  <ProfilePicList
+                    :profilePics="sharers"
                     borderColorClass="b--near-white"
                   />
                 </li>
@@ -126,9 +132,6 @@ export default {
 }
 .objfit-cover {
   object-fit: cover;
-}
-.ml-1 {
-  margin-left: -0.25rem;
 }
 .flex-shrink-0 {
   flex-shrink: 0;

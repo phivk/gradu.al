@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex list pa0 ml2 flex-wrap">
+  <ul class="flex list pa0 ml1 flex-wrap">
     <li v-for="profilePic in profilePics" class="ml-2">
       <ProfilePic
         :imageSrc="profilePic.profilePic"
@@ -19,8 +19,3 @@ export default {
   components: { ProfilePic },
 };
 </script>
-<style scoped>
-.ml-2 {
-  margin-left: -0.5rem;
-}
-</style>

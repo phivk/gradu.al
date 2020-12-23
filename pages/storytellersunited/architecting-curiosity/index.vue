@@ -1,50 +1,60 @@
 <template>
   <div class="bg-su-washed-orange">
-    <nav class="bg-su-light-orange pa3">
-      <nuxt-link to="/">
-        <logo class="w3" />
-      </nuxt-link>
-    </nav>
     <main class="cf pa3 pa4-m pa5-l mw9 center">
       <div class="fr w-100 w-80-l mt0 mb4 mb5-ns">
-        <h1 class="f2 f1-l lh-title mb2">
-          {{session.title}}
+        <TagPill class="ml-2" borderColour="#fdecce">{{
+          session.type
+        }}</TagPill>
+        <h1 class="f2 f1-l lh-title mt2 mb4">
+          {{ session.title }}
         </h1>
-        <TagPill>{{ session.type }}</TagPill>
+        <p class="measure f4">{{ session.description }}</p>
       </div>
       <div class="f5 fw4 lh-copy fl w-100 mb4">
-        <div class="fl-ns w-100 w-20-l pr3-m pr5-l mb3">
+        <div class="fl-ns w-100 w-20-l pr3-m pr5-l mb3 fw6">
           <p>
-            {{session.date}}
-          </p> 
+            {{ session.date }}
+          </p>
         </div>
         <div class="fl-ns w-50-m w-40-l pr3-m pr5-l">
           <p>
-            Learned by:<br>
-            <ProfilePicList 
+            Learned by
+            <ProfilePicList
               :profilePics="hydrateMembers(session.learnerNames)"
-              :borderColorClass="'white'"
+              borderColorClass="su-washed-orange"
             />
           </p>
         </div>
         <div class="fl-ns w-50-m w-40-l pr3-m pr5-l">
           <p>
-            Shared by:<br>
-            <ProfilePicList 
+            Shared by
+            <ProfilePicList
               :profilePics="hydrateMembers(session.sharerNames)"
-              :borderColorClass="'white'"
+              borderColorClass="su-washed-orange"
             />
-          </p> 
+          </p>
         </div>
       </div>
       <div class="fr w-100 w-80-l mt0 mb4 mb5-ns">
-        <p class="measure">{{session.description}}</p>
+        <div class="mw8">
+          <div class="video-wrapper" v-if="hasYoutubeRecording">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/vL097Tge1_A"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <img
+            v-else
+            class="db w-100"
+            :src="session.imageSrc"
+            :alt="session.title"
+          />
+        </div>
       </div>
-      <img 
-        class="db w-100" 
-        :src="session.imageSrc"
-        :alt="session.title"
-      />
     </main>
   </div>
 </template>
@@ -57,6 +67,7 @@ import TagPill from "~/components/TagPill.vue";
 import ProfilePicList from "~/components/ProfilePicList.vue";
 
 export default {
+  layout: "storytellersUnited",
   head() {
     return {
       title: "Storytellers United - Here to learn",
@@ -77,24 +88,27 @@ export default {
           "How might we explore all the dimension curiosity has to offer? How do we start practicing and strengthen our own muscle of inquiry? Anthony & Pim will host a workshop inspired by their ongoing research exploring curiosity.",
         type: "conversation",
         date: "18 Dec 2020",
-        imageSrc:
-          "https://images.unsplash.com/photo-1451470838681-d2856d3048a3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=432&q=80",
-        link:
-          "https://calendar.google.com/calendar/u/0/r/eventedit/copy/Xzhrb2pnY3EyNmgyNDRiOXA4NTMzZ2I5azYxMWpjYjlvNmtwMzBiOXA2ZDMzNGQxbjYxMzQ4ZGhtNjQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw/cGhpbGxjaGlsbEBnbWFpbC5jb20?sf=true",
-        cta: "Add to Calendar",
+        imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
+        link: "https://youtu.be/vL097Tge1_A",
+        cta: "Watch recording",
         learnerNames: [
-          "Amanda Curtis",
           "Anna Desponds",
-          "Celine",
+          "Chris Martens",
           "Gosia",
           "Gunnar de Jong",
-          "hay",
-          "HazelXD",
           "Kevin",
           "magda bochenska",
           "Philo",
+          "Randi Cecchine",
         ],
         sharerNames: ["Pim", "Anthony"],
+        icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
+        resources: [
+          {
+            text: "recording",
+            href: "https://youtu.be/vL097Tge1_A",
+          },
+        ],
       },
     };
   },
@@ -118,9 +132,25 @@ export default {
       });
     },
   },
+  computed: {
+    hasYoutubeRecording() {
+      return this.session.resources.some((r) => r.href.includes("youtu"));
+    },
+  },
 };
 </script>
 
 <style scoped>
-
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
