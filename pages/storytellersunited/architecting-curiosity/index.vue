@@ -40,7 +40,7 @@
           <div class="mb2 pr3">
             <p>
               Resources
-              <ul class="list pa0">
+              <ul class="list pa0 mt1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
                   <a class="dark-green" :href="resource.href" target="_blank">{{
