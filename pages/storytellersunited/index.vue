@@ -51,10 +51,10 @@
       <section v-if="sessionsUpcoming.length" class="mv5">
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
-        <ul class="list pa0 ma0 flex flex-wrap">
+        <ul class="list pa0 ma0 flex flex-wrap justify-center">
           <li
             v-for="session in sessionsUpcoming"
-            class="center w-100 w-50-m mw8 pa3"
+            class="w-100 w-50-m w-third-l mw6 pa3"
           >
             <SessionCardPreview
               :title="session.title"
@@ -71,10 +71,10 @@
       <section class="mv5">
         <h2 class="mb3">Things we've learned so far</h2>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
-        <ul class="list pa0 ma0 flex flex-wrap">
+        <ul class="list pa0 ma0 flex flex-wrap justify-center">
           <li
             v-for="session in sessionsPast"
-            class="center w-100 w-50-m mw8 pa3"
+            class="w-100 w-50-m w-third-l mw6 pa3"
           >
             <SessionCardPreview
               :title="session.title"

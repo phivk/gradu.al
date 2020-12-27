@@ -1,31 +1,31 @@
 <template>
   <article class="tl bg-near-white br3 hover-shadow-raise">
     <nuxt-link :to="slug" class="link">
-      <div class="flex flex-column flex-row-l">
-        <div class="w-100 w-40-l">
+      <div class="flex flex-column">
+        <div class="w-100">
           <img
             :src="imageSrc"
             :alt="title"
-            class="db w-100 h-100 br3  br--top-nl br--left-l objfit-cover"
+            class="db w-100 h-100 br3 br--top objfit-cover"
           />
         </div>
-        <div class="relative flex flex-column w-100 w-60-l">
-          <div class="pa3 bg-white br3-l br--top-right-l">
+        <div class="relative flex flex-column w-100">
+          <div class="pa3 bg-white">
             <div
-              class="flex items-center justify-between flex-wrap flex-nowrap-l mb2 mb3-l"
+              class="flex items-center justify-between flex-wrap mb2"
             >
-              <h3 class="f4 f3-l lh-title mt2">
+              <h3 class="f4 lh-title mt2">
                 {{ title }}
               </h3>
               <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
             </div>
             <TagPill
-              class="absolute top--1 top-auto-l ml-1"
+              class="absolute top--1 ml-1"
               borderColour="#fff"
               >{{ type }}</TagPill
             >
           </div>
-          <div class="pa3 pt4-l">
+          <div class="pa3">
             <div class="flex flex-wrap mb2">
               <div class="mr3">
                 <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
