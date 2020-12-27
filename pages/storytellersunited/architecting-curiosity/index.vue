@@ -55,11 +55,11 @@
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb4 mb5-ns">
           <div class="mw8">
-            <div class="video-wrapper" v-if="hasYoutubeRecording">
+            <div class="video-wrapper" v-if="youtubeRecordingResource">
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube-nocookie.com/embed/vL097Tge1_A"
+                :src="`https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -156,9 +156,18 @@ export default {
     },
   },
   computed: {
-    hasYoutubeRecording() {
-      return this.session.resources.some((r) => r.href.includes("youtu"));
+    youtubeRecordingResource() {
+      return this.session.resources.find((r) => r.href.includes("youtu"));
     },
+    youtubeRecordingID() {
+      if (this.youtubeRecordingResource) {
+        let parts = this.youtubeRecordingResource.href.split(/[/=]/)
+        return parts[parts.length - 1];
+      }
+      else {
+        return undefined;
+      }
+    }
   },
 };
 </script>
