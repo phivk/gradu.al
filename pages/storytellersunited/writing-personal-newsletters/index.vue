@@ -108,7 +108,7 @@ export default {
         description:
           "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
         imageSrc: "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
-        link: "https://youtu.be/Q0pFsHaCpqs",
+        slug: "architecting-curiosity",
         cta: "Watch recording",
         learnerNames: [
           "Alexa",

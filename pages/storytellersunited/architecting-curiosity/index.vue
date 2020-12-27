@@ -108,7 +108,7 @@ export default {
         type: "conversation",
         date: "18 Dec 2020",
         imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
-        link: "https://youtu.be/vL097Tge1_A",
+        slug: "architecting-curiosity",
         cta: "Watch recording",
         learnerNames: [
           "Anna Desponds",

@@ -56,18 +56,14 @@
             v-for="session in sessionsUpcoming"
             class="center w-100 w-50-m mw8 pa3"
           >
-            <SessionCard
+            <SessionCardPreview
               :title="session.title"
               :type="session.type"
               :date="session.date"
-              :description="session.description"
               :imageSrc="session.imageSrc"
-              :link="session.link"
-              :cta="session.cta"
+              :slug="session.slug"
               :learners="hydrateMembers(session.learnerNames)"
               :sharers="hydrateMembers(session.sharerNames)"
-              :resources="session.resources"
-              :icsFileSrc="session.icsFileSrc"
             />
           </li>
         </ul>
@@ -80,17 +76,14 @@
             v-for="session in sessionsPast"
             class="center w-100 w-50-m mw8 pa3"
           >
-            <SessionCard
+            <SessionCardPreview
               :title="session.title"
               :type="session.type"
               :date="session.date"
-              :description="session.description"
               :imageSrc="session.imageSrc"
-              :link="session.link"
-              :cta="session.cta"
+              :slug="session.slug"
               :learners="hydrateMembers(session.learnerNames)"
               :sharers="hydrateMembers(session.sharerNames)"
-              :resources="session.resources"
             />
           </li>
         </ul>
@@ -119,7 +112,7 @@
 
 <script>
 import _ from "lodash";
-import SessionCard from "~/components/SessionCard.vue";
+import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphEmbed from "~/components/GraphEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 export default {
@@ -130,7 +123,7 @@ export default {
     };
   },
   components: {
-    SessionCard,
+    SessionCardPreview,
     GraphEmbed,
     CalendarReferral,
   },
@@ -145,7 +138,7 @@ export default {
           type: "conversation",
           date: "18 Dec 2020",
           imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
-          link: "https://youtu.be/vL097Tge1_A",
+          slug: "architecting-curiosity",
           cta: "Watch recording",
           learnerNames: [
             "Anna Desponds",
@@ -173,7 +166,7 @@ export default {
           description:
             "During a this session we will share some tips and insights from our experience (and backed by research). 👉 What to do when you hear a racist comment? 👉🏽 Where do these come from? 👉🏿 How to engage? 👉 What works best in these conversations? 👉🏽 When talking about diversity, where are the limits of embracing other people's views? 👉🏿 How not to go insane when you discover the world is full of xenophobes and racists?",
           imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
-          link: "https://www.youtube.com/watch?v=qI8W30t4bIM",
+          slug: "conversations-with-xenophobes",
           cta: "Watch recording",
           learnerNames: ["1coko", "Gunnar de Jong", "hay", "Kevin", "Philo"],
           sharerNames: ["Anna Desponds", "Gosia"],
@@ -196,7 +189,7 @@ export default {
           description:
             "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
           imageSrc: "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
-          link: "https://youtu.be/Q0pFsHaCpqs",
+          slug: "writing-personal-newsletters",
           cta: "Watch recording",
           learnerNames: [
             "Alexa",
