@@ -1,9 +1,18 @@
 <template>
   <div>
-    <nav class="bg-su-light-orange pa3">
-      <nuxt-link to="/">
-        <logo class="w3" />
-      </nuxt-link>
+    <nav class="bg-su-light-orange">
+      <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
+        <nuxt-link to="/">
+          <logo class="w3" />
+        </nuxt-link>
+        <nuxt-link 
+          v-if="$route.path !== '/storytellersunited/'"
+          to="/storytellersunited/" 
+          class="link f3 fw5 white"
+        >
+          ← Storytellers United
+        </nuxt-link>
+      </div>
     </nav>
     <nuxt />
   </div>
