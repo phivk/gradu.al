@@ -1,58 +1,77 @@
 <template>
   <div class="bg-su-washed-orange">
-    <main class="cf pa3 pa4-m pa5-l mw9 center">
-      <div class="fr w-100 w-80-l mt0 mb4 mb5-ns">
-        <TagPill class="ml-2" borderColour="#fdecce">{{
-          session.type
-        }}</TagPill>
-        <h1 class="f2 f1-l lh-title mt2 mb4">
-          {{ session.title }}
-        </h1>
-        <p class="measure f4">{{ session.description }}</p>
+    <main class="pa3 pa4-m pa5-l mw9 center">
+      <div class="flex justify-end">
+        <div class="w-100 w-80-l mt0 mb4 mb5-ns">
+          <TagPill class="ml-2" borderColour="#fdecce">{{
+            session.type
+          }}</TagPill>
+          <h1 class="f2 f1-l lh-title mt2 mb4">
+            {{ session.title }}
+          </h1>
+          <p class="measure f4">{{ session.description }}</p>
+        </div>
       </div>
-      <div class="f5 fw4 lh-copy fl w-100 mb4">
-        <div class="fl-ns w-100 w-20-l pr3-m pr5-l mb3 fw6">
+      <div class="flex flex-wrap f5 fw4 mb4">
+        <div class="w-100 w-20-l pr3 pr4-m pr5-l mb3 fw6">
           <p>
             {{ session.date }}
           </p>
         </div>
-        <div class="fl-ns w-50-m w-40-l pr3-m pr5-l">
-          <p>
-            Learned by
-            <ProfilePicList
-              :profilePics="hydrateMembers(session.learnerNames)"
-              borderColorClass="su-washed-orange"
-            />
-          </p>
-        </div>
-        <div class="fl-ns w-50-m w-40-l pr3-m pr5-l">
-          <p>
-            Shared by
-            <ProfilePicList
-              :profilePics="hydrateMembers(session.sharerNames)"
-              borderColorClass="su-washed-orange"
-            />
-          </p>
+        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
+          <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
+            <p>
+              Learned by
+              <ProfilePicList
+                :profilePics="hydrateMembers(session.learnerNames)"
+                borderColorClass="su-washed-orange"
+              />
+            </p>
+          </div>
+          <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
+            <p>
+              Shared by
+              <ProfilePicList
+                :profilePics="hydrateMembers(session.sharerNames)"
+                borderColorClass="su-washed-orange"
+              />
+            </p>
+          </div>
+          <div class="mb2 pr3">
+            <p>
+              Resources
+              <ul class="list pa0">
+                <li class="di" v-for="(resource, index) in session.resources">
+                  <span v-if="index !== 0">, </span>
+                  <a class="dark-green" :href="resource.href" target="_blank">{{
+                    resource.text
+                  }}</a>
+                </li>
+              </ul>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="fr w-100 w-80-l mt0 mb4 mb5-ns">
-        <div class="mw8">
-          <div class="video-wrapper" v-if="hasYoutubeRecording">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube-nocookie.com/embed/vL097Tge1_A"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+      <div class="flex justify-end">
+        <div class="w-100 w-80-l mt0 mb4 mb5-ns">
+          <div class="mw8">
+            <div class="video-wrapper" v-if="hasYoutubeRecording">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/vL097Tge1_A"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <img
+              v-else
+              class="db w-100"
+              :src="session.imageSrc"
+              :alt="session.title"
+            />
           </div>
-          <img
-            v-else
-            class="db w-100"
-            :src="session.imageSrc"
-            :alt="session.title"
-          />
         </div>
       </div>
     </main>
@@ -105,8 +124,12 @@ export default {
         icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
         resources: [
           {
-            text: "recording",
+            text: "Recording",
             href: "https://youtu.be/vL097Tge1_A",
+          },
+          {
+            text: "Architecting Curiosity",
+            href: "https://www.architectingcuriosity.com/",
           },
         ],
       },
@@ -152,5 +175,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 </style>
