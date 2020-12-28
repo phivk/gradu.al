@@ -61,7 +61,7 @@
               :type="session.type"
               :date="session.date"
               :imageSrc="session.imageSrc"
-              :slug="$route.path + session.slug"
+              :slug="session.slug"
               :learners="hydrateMembers(session.learnerNames)"
               :sharers="hydrateMembers(session.sharerNames)"
             />
