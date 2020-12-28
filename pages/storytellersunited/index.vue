@@ -135,7 +135,7 @@ export default {
           title: "Architecting Curiosity",
           description:
             "How might we explore all the dimension curiosity has to offer? How do we start practicing and strengthen our own muscle of inquiry? Anthony & Pim will host a workshop inspired by their ongoing research exploring curiosity.",
-          type: "conversation",
+          type: "salon",
           date: "18 Dec 2020",
           imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
           slug: "architecting-curiosity",
