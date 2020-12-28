@@ -38,14 +38,10 @@
               <div>
                 <h3 v-if="hasHappened" class="f5 fw4 o-60">shared by</h3>
                 <h3 v-else class="f5 fw4 o-60">like to share</h3>
-                <ul class="flex list pa0 ml1">
-                  <li v-for="sharer in sharers" class="ml-2">
-                    <ProfilePicList
-                      :profilePics="sharers"
-                      borderColorClass="b--near-white"
-                    />
-                  </li>
-                </ul>
+                <ProfilePicList
+                  :profilePics="sharers"
+                  borderColorClass="b--near-white"
+                />
               </div>
             </div>
           </div>
