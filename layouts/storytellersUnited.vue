@@ -7,7 +7,7 @@
           <span class="ml2 white f3 fw6">gradual</span>
         </nuxt-link>
         <nuxt-link 
-          v-if="$route.path !== '/storytellersunited/'"
+          v-if="$route.path.replace(/\//g,'') !== 'storytellersunited'"
           to="/storytellersunited/" 
           class="no-underline f3 fw4 white br-pill ph3 pv2 bg-animate hover-bg-white-20"
         >
