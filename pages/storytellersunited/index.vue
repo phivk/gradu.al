@@ -70,7 +70,8 @@
       </section>
       <section class="mv5">
         <h2 class="mb3">Things we've learned so far</h2>
-        <CalendarReferral v-if="!sessionsUpcoming.length" />
+        <p class="f4 lh-copy">Select a session below for a recording and more details.</p>
+        <CalendarReferral v-if="!sessionsUpcoming.length"/>
         <ul class="list pa0 ma0 flex flex-wrap justify-center">
           <li
             v-for="session in sessionsPast"
