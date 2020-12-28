@@ -78,22 +78,6 @@ export default {
 };
 </script>
 <style scoped>
-@media (max-width: 60em) {
-  .br--top-nl {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}
-@media (min-width: 60em) {
-  .top-auto-l {
-    top: auto;
-  }
-  .br--top-right-l {
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-}
 .objfit-cover {
   object-fit: cover;
 }
