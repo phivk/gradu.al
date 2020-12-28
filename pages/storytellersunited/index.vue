@@ -236,6 +236,9 @@ export default {
       });
     },
   },
+  created () {
+    console.log("this.$route.path", this.$route.path);
+  },
   computed: {
     sessionsUpcoming() {
       let now = new Date();
