@@ -9,7 +9,7 @@
         <nuxt-link 
           v-if="$route.path !== '/storytellersunited/'"
           to="/storytellersunited/" 
-          class="link f3 fw5 white"
+          class="no-underline f3 fw4 white br-pill ph3 pv2 bg-animate hover-bg-white-20"
         >
           ← Storytellers United
         </nuxt-link>
