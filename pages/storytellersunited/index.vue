@@ -61,7 +61,7 @@
               :type="session.type"
               :date="session.date"
               :imageSrc="session.imageSrc"
-              :slug="session.slug"
+              :slug="$route.path + session.slug"
               :learners="hydrateMembers(session.learnerNames)"
               :sharers="hydrateMembers(session.sharerNames)"
             />
@@ -235,6 +235,9 @@ export default {
         }
       });
     },
+  },
+  created () {
+    console.log("this.$route.path", this.$route.path);
   },
   computed: {
     sessionsUpcoming() {
