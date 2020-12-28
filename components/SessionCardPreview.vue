@@ -2,28 +2,24 @@
   <article class="tl bg-near-white br3 hover-shadow-raise">
     <nuxt-link :to="slug" class="link black">
       <div class="flex flex-column">
-        <div class="w-100">
+        <div class="w-100 aspect-ratio aspect-ratio--16x9">
           <img
             :src="imageSrc"
             :alt="title"
-            class="db w-100 h-100 br3 br--top objfit-cover"
+            class="aspect-ratio--object objfit-cover br3 br--top z-0"
           />
         </div>
         <div class="relative flex flex-column w-100">
           <div class="pa3 bg-white">
-            <div
-              class="flex items-center justify-between flex-wrap mb2"
-            >
-              <h3 class="f4 lh-title mt2">
+            <div class="flex items-center justify-between flex-wrap mb2">
+              <h3 class="f4 lh-title mt2 mr2">
                 {{ title }}
               </h3>
               <span class="f5 fw4 o-50 tr mt2">{{ date }}</span>
             </div>
-            <TagPill
-              class="absolute top--1 ml-1"
-              borderColour="#fff"
-              >{{ type }}</TagPill
-            >
+            <TagPill class="absolute top--1 ml-1" borderColour="#fff">{{
+              type
+            }}</TagPill>
           </div>
           <div class="pa3">
             <div class="flex flex-wrap mb2">
