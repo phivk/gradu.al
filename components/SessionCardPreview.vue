@@ -1,6 +1,6 @@
 <template>
   <article class="tl bg-near-white br3 hover-shadow-raise">
-    <nuxt-link :to="slug" class="link">
+    <nuxt-link :to="slug" class="link black">
       <div class="flex flex-column">
         <div class="w-100">
           <img
