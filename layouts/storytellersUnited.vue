@@ -2,8 +2,9 @@
   <div>
     <nav class="bg-su-light-orange">
       <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
-        <nuxt-link to="/">
-          <logo class="w3" />
+        <nuxt-link to="/" class="flex items-center no-underline">
+          <logo class="w2-5" />
+          <span class="ml2 white f3 fw6">gradual</span>
         </nuxt-link>
         <nuxt-link 
           v-if="$route.path !== '/storytellersunited/'"
@@ -86,5 +87,8 @@ html {
 }
 .ml-2 {
   margin-left: -0.5rem;
+}
+.w2-5 {
+  width: 3rem;
 }
 </style>

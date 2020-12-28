@@ -1,8 +1,8 @@
 <template>
   <div class="bg-gradual minh-100vh white">
     <div class="tc pa4">
-      <logo withText class="w-50 mw5 mt3 mt4-ns mb4 mb5-ns"/>
-      <h1 class="f1 dn">Gradual</h1>
+      <logo class="mw4 mt3 mt4-ns"/>
+      <h1 class="mt0 f2">gradual</h1>
       <h2 class="subtitle measure center mb3">
         Imagine what your peers are good at... and then learning it, gradually. Together.
       </h2>
