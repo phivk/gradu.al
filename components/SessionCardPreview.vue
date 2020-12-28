@@ -17,7 +17,7 @@
               <h3 class="f4 lh-title mt2">
                 {{ title }}
               </h3>
-              <span class="f5 fw4 o-50 tr mt2 flex-shrink-0">{{ date }}</span>
+              <span class="f5 fw4 o-50 tr mt2">{{ date }}</span>
             </div>
             <TagPill
               class="absolute top--1 ml-1"
@@ -96,9 +96,6 @@ export default {
 }
 .objfit-cover {
   object-fit: cover;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
 }
 .hover-shadow-raise {
   transition: transform 200ms ease 0s, box-shadow 200ms ease 0s;
