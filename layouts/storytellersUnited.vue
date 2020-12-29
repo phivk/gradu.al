@@ -4,12 +4,12 @@
       <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
         <nuxt-link to="/" class="flex items-center no-underline">
           <logo class="w2-5" />
-          <span class="ml2 white f3 fw6">gradual</span>
+          <span class="ml2 white f3 fw6 dn di-ns">gradual</span>
         </nuxt-link>
         <nuxt-link 
           v-if="$route.path.replace(/\//g,'') !== 'storytellersunited'"
           to="/storytellersunited/" 
-          class="no-underline f3 fw4 white br-pill ph3 pv2 bg-animate hover-bg-white-20"
+          class="no-underline f4 fw4 white br-pill ph3 pv2 bg-animate hover-bg-white-20"
         >
           ← Storytellers United
         </nuxt-link>
