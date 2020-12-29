@@ -102,7 +102,7 @@ export default {
     return {
       members: [],
       session: {
-        title: "How to handle conversations with xenophobes and racists?",
+        title: "How to handle conversations with xenophobes and racists",
         type: "lunch & learn",
         date: "30 Sept 2020",
         description:
