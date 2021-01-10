@@ -83,7 +83,6 @@
   </article>
 </template>
 <script>
-import ProfilePic from "~/components/ProfilePic.vue";
 import TagPill from "~/components/TagPill.vue";
 import ProfilePicList from "~/components/ProfilePicList.vue";
 export default {
@@ -100,7 +99,7 @@ export default {
     resources: { type: Array, default: () => [] },
     icsFileSrc: { type: String },
   },
-  components: { ProfilePic, TagPill, ProfilePicList },
+  components: { TagPill, ProfilePicList },
   computed: {
     hasHappened() {
       let now = new Date();
