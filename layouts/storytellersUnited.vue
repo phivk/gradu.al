@@ -91,4 +91,7 @@ html {
 .w2-5 {
   width: 3rem;
 }
+.ws-pre-wrap {
+  white-space: pre-wrap;
+}
 </style>
