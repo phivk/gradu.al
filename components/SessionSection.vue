@@ -2,14 +2,31 @@
   <div class="bg-su-washed-orange">
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
-        <div class="w-100 w-80-l mt0 mb4 mb5-ns">
+        <div class="w-100 w-80-l mt0 mb2 mb3-ns">
           <TagPill class="ml-2" borderColour="#fdecce">{{
             type
           }}</TagPill>
           <h1 class="f2 f1-l lh-title mt2 mb4">
             {{ title }}
           </h1>
-          <p class="measure f4 ws-pre-wrap">{{ description }}</p>
+          <div class="w-100 w-80-l">
+            <div class="video-wrapper" v-if="youtubeRecordingResource">
+              <iframe
+                width="560"
+                height="315"
+                :src="`https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <img
+              v-else
+              class="db mb3 mb4-ns"
+              :src="imageSrc"
+              :alt="title"
+            />
+          </div>
         </div>
       </div>
       <div class="flex flex-wrap f5 fw4 mb4">
@@ -65,24 +82,7 @@
       </div>
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb4 mb5-ns">
-          <div class="mw8">
-            <div class="video-wrapper" v-if="youtubeRecordingResource">
-              <iframe
-                width="560"
-                height="315"
-                :src="`https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <img
-              v-else
-              class="db w-100"
-              :src="imageSrc"
-              :alt="title"
-            />
-          </div>
+          <p class="measure f4 ws-pre-wrap">{{ description }}</p>
         </div>
       </div>
     </main>
