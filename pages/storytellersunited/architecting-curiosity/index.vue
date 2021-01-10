@@ -19,7 +19,7 @@ export default {
   layout: "storytellersUnited",
   head() {
     return {
-      title: "Storytellers United - Here to learn",
+      title: this.session.title,
     };
   },
   components: {
