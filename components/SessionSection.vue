@@ -29,20 +29,33 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap f5 fw4 mb4">
-        <div class="w-100 w-20-l pr3 pr4-m pr5-l mb3 fw6">
+      <div class="flex flex-wrap f5 fw4 mb3">
+        <div class="w-100 w-20-l pr3 mb3 fw6">
           <div v-if="date==='TBC'">
             <a
-              :href="link"
+              :href="cta.href"
               target="_blank"
-              class="f4 link br3 ph2 pv1 dib white bg-dark-green"
-              >{{ cta }}</a
+              class="f4 link br3 pa2 tc dib white bg-dark-green"
+              >{{ cta.text }}</a
             >
           </div>
           <div v-else>
-            <p>
+            <p class="f4 mb3">
               {{ date }}
             </p>
+            <a
+              :href="cta.href"
+              target="_blank"
+              class="f4 link br3 pa2 tc dib white bg-dark-green"
+              >{{ cta.text }}</a
+            >
+            <a
+              v-if="icsFileSrc"
+              :href="icsFileSrc"
+              target="_blank"
+              class="db mt3 dark-green"
+              >↓ .ics</a
+            >
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
@@ -114,8 +127,11 @@ export default {
     learners: { type: Array, default: () => [] },
     sharers: { type: Array, default: () => [] },
     resources: { type: Array, default: () => [] },
-    cta: { type: String, default: "Share availability" },
-    link: { type: String, default: "https://app.slack.com/client/T14SUV8BA/C016WE6ADA9" },
+    cta: { type: Object, default: {
+      text: "Join the conversation",
+      href: "https://app.slack.com/client/T14SUV8BA/C016WE6ADA9",
+    }},
+    icsFileSrc: { type: String },
   },
   data() {
     return {

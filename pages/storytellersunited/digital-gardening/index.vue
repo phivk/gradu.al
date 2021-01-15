@@ -8,6 +8,8 @@
     :sharers="hydrateMembers(session.sharerNames)"
     :resources="session.resources"
     :imageSrc="session.imageSrc"
+    :cta="session.cta"
+    :icsFileSrc="session.icsFileSrc"
   />
 </template>
 
@@ -50,6 +52,11 @@ export default {
         ],
         sharerNames: ["Kevin"],
         resources: [],
+        cta: {
+          text: "Add to calendar",
+          href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com",
+        },
+        icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
       },
     };
   },

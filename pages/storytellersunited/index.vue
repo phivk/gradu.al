@@ -142,7 +142,6 @@ export default {
           date: "18 Dec 2020",
           imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
           slug: "architecting-curiosity",
-          cta: "Watch recording",
           learnerNames: [
             "Anna Desponds",
             "Chris Martens",
@@ -170,7 +169,6 @@ export default {
             "During this session we will share some tips and insights from our experience (and backed by research).\n\n👉 What to do when you hear a racist comment?\n👉🏽 Where do these come from?\n👉🏿 How to engage?\n👉 What works best in these conversations?\n👉🏽 When talking about diversity, where are the limits of embracing other people's views?\n👉🏿 How not to go insane when you discover the world is full of xenophobes and racists?",
           imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
           slug: "conversations-with-xenophobes",
-          cta: "Watch recording",
           learnerNames: ["1coko", "Gunnar de Jong", "hay", "Kevin", "Philo"],
           sharerNames: ["Anna Desponds", "Gosia"],
           resources: [
@@ -193,7 +191,6 @@ export default {
             "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
           imageSrc: "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
           slug: "writing-personal-newsletters",
-          cta: "Watch recording",
           learnerNames: [
             "Alexa",
             "Anna Desponds",
@@ -249,6 +246,11 @@ export default {
           ],
           sharerNames: ["Kevin"],
           resources: [],
+          cta: {
+            text: "Add to calendar",
+            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com",
+          },
+          icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
         },
       ],
     };
