@@ -61,19 +61,19 @@
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
           <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
             <p>
-              <span v-if="hasHappened">Learned by</span>
-              <span v-else >Like to learn</span>
+              Shared by
               <ProfilePicList
-                :profilePics="learners"
+                :profilePics="sharers"
                 borderColorClass="su-washed-orange"
               />
             </p>
           </div>
           <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
             <p>
-              Shared by
+              <span v-if="hasHappened">Learned by</span>
+              <span v-else >Like to learn</span>
               <ProfilePicList
-                :profilePics="sharers"
+                :profilePics="learners"
                 borderColorClass="su-washed-orange"
               />
             </p>
