@@ -46,15 +46,15 @@
             <a
               :href="cta.href"
               target="_blank"
-              class="f4 link br3 pa2 tc dib white bg-dark-green"
+              class="f4 link br3 pa2 tc dib mr3 white bg-dark-green"
               >{{ cta.text }}</a
             >
             <a
               v-if="icsFileSrc"
               :href="icsFileSrc"
               target="_blank"
-              class="db mt3 dark-green"
-              >↓ .ics</a
+              class="dib mt3 dark-green ws-pre-wrap"
+              >↓ .ics file</a
             >
           </div>
         </div>
