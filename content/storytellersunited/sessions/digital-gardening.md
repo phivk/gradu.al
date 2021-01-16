@@ -1,7 +1,7 @@
 ---
 title: "Digital Gardens: What are they and how can I start one?"
 type: salon
-date: 28 Jan 2021
+date: "2021-01-28"
 imageSrc: https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2100&q=80
 learnerNames:
   - 1coko

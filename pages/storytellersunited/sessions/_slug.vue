@@ -107,7 +107,7 @@ export default {
   components: { TagPill, ProfilePicList },
   async asyncData({ $content, params }) {
 
-    const session = await $content('sessions', params.slug).fetch()
+    const session = await $content('storytellersunited/sessions', params.slug).fetch()
 
     const members = await fetch(
       "https://storytellers.link/api/members.json"

@@ -1,7 +1,7 @@
 ---
 title: Architecting Curiosity,
 type: salon
-date: 18 Dec 2020
+date: "2020-12-18"
 imageSrc: https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg
 learnerNames:
   - Anna Desponds

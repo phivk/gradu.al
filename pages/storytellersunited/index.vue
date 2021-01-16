@@ -61,7 +61,7 @@
               :type="session.type"
               :date="session.date"
               :imageSrc="session.imageSrc"
-              :slug="session.slug"
+              :path="session.path"
               :learners="hydrateMembers(session.learnerNames)"
               :sharers="hydrateMembers(session.sharerNames)"
             />
@@ -84,7 +84,7 @@
               :type="session.type"
               :date="session.date"
               :imageSrc="session.imageSrc"
-              :slug="session.slug"
+              :path="session.path"
               :learners="hydrateMembers(session.learnerNames)"
               :sharers="hydrateMembers(session.sharerNames)"
             />
@@ -133,126 +133,6 @@ export default {
   data() {
     return {
       members: [],
-      sessions: [
-        {
-          title: "Architecting Curiosity",
-          description:
-            "How might we explore all the dimension curiosity has to offer? How do we start practicing and strengthen our own muscle of inquiry? Anthony & Pim will host a workshop inspired by their ongoing research exploring curiosity.",
-          type: "salon",
-          date: "18 Dec 2020",
-          imageSrc: "https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg",
-          slug: "architecting-curiosity",
-          learnerNames: [
-            "Anna Desponds",
-            "Chris Martens",
-            "Gosia",
-            "Gunnar de Jong",
-            "Kevin",
-            "magda bochenska",
-            "Philo",
-            "Randi Cecchine",
-          ],
-          sharerNames: ["Pim", "Anthony"],
-          icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
-          resources: [
-            {
-              text: "recording",
-              href: "https://youtu.be/vL097Tge1_A",
-            },
-          ],
-        },
-        {
-          title: "How to handle conversations with xenophobes and racists",
-          type: "lunch & learn",
-          date: "30 Sept 2020",
-          description:
-            "During this session we will share some tips and insights from our experience (and backed by research).\n\n👉 What to do when you hear a racist comment?\n👉🏽 Where do these come from?\n👉🏿 How to engage?\n👉 What works best in these conversations?\n👉🏽 When talking about diversity, where are the limits of embracing other people's views?\n👉🏿 How not to go insane when you discover the world is full of xenophobes and racists?",
-          imageSrc: "https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg",
-          slug: "conversations-with-xenophobes",
-          learnerNames: ["1coko", "Gunnar de Jong", "hay", "Kevin", "Philo"],
-          sharerNames: ["Anna Desponds", "Gosia"],
-          resources: [
-            {
-              text: "recording",
-              href: "https://www.youtube.com/watch?v=qI8W30t4bIM",
-            },
-            {
-              text: "notes",
-              href:
-                "https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#",
-            },
-          ],
-        },
-        {
-          title: "Writing personal newsletters",
-          type: "talk with Q&A",
-          date: "10 Nov 2020",
-          description:
-            "Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). In this session he’ll share what he has learned after writing almost 125 editions, and what keeps him motivated.",
-          imageSrc: "https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg",
-          slug: "writing-personal-newsletters",
-          learnerNames: [
-            "Alexa",
-            "Anna Desponds",
-            "Gunnar de Jong",
-            "Kevin",
-            "Philo",
-            "Rasa Bocyte",
-          ],
-          sharerNames: ["hay"],
-          icsFileSrc: "/storytellersunited/201110-newsletters.ics",
-          resources: [
-            {
-              text: "recording",
-              href: "https://youtu.be/Q0pFsHaCpqs",
-            },
-            {
-              text: "notes",
-              href:
-                "https://docs.google.com/document/d/1wXD9D_9ulGg0YoVGjvoxIjHIoA2ZP4jipH8iCOUpfPc/edit",
-            },
-            {
-              text: "slides",
-              href:
-                "https://drive.google.com/file/d/1ZQkypNMTClTv-OMa7L5sJcg4nxyiLSQV/view",
-            },
-          ],
-        },
-        {
-          title: "Digital Gardens: What are they and how can I start one?",
-          type: "salon",
-          date: "28 Jan 2021",
-          description:
-            "The term `digital garden` started to get used more widely in 2020. Maybe our inability to go outside and travel as much led us to think about our digital lives with a more horticultural lens?\n\nWhereas a blog tends to be organised strictly chronologically and older thoughts get displaced by new, a digital garden works to curate and build on your thinking. A post might be a new idea (seed), a growing idea (a sapling) or a fully developed thought (a tree). Some of these trees might be used as starting points for other  projects and some of the seed might cross-pollinate to make something new.\n\nIn this session, we'll look more at defining a digital garden, explore some examples with an eye on what value they are adding (to the world and the gardener) and look at some ways to get started.\n\nThis will be a mix of exposition, Internet trail, discussion and top tips.",
-          imageSrc:
-            "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2100&q=80",
-          slug: "digital-gardening",
-          learnerNames: [
-            "1coko",
-            "Alexa",
-            "Amanda Curtis",
-            "Anna Desponds",
-            "Erwin",
-            "Gunnar",
-            "hay",
-            "Julia Scott-Stevenson",
-            "marcusround",
-            "Marsha",
-            "Philo",
-            "Pim",
-            "Rasa Bocyte",
-            "Simon Maris",
-            "Vaibhav",
-          ],
-          sharerNames: ["Kevin"],
-          resources: [],
-          cta: {
-            text: "Add to calendar",
-            href: "https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com",
-          },
-          icsFileSrc: "/storytellersunited/201218-architecting-curiosity.ics",
-        },
-      ],
     };
   },
   methods: {
@@ -269,38 +149,28 @@ export default {
       });
     },
   },
-  created() {
-    console.log("this.$route.path", this.$route.path);
-  },
-  computed: {
-    sessionsUpcoming() {
-      let now = new Date();
-      now.setDate(now.getDate() - 1); // include today in upcoming
+  async asyncData({ $content }) {
+    let now = new Date();
+    now.setDate(now.getDate() - 1); // include today in upcoming
+    const sessionsUpcoming = await $content('storytellersunited/sessions')
+      .sortBy('date', 'asc')
+      .where({
+        date: { $gte: now }
+      })
+      .fetch()
 
-      let sessionsFiltered = this.sessions.filter(
-        (session) => new Date(session.date) > now || session.date === "TBC"
-      );
-      return _.orderBy(sessionsFiltered, (session) => new Date(session.date), [
-        "desc",
-      ]);
-    },
-    sessionsPast() {
-      let now = new Date();
-      now.setDate(now.getDate() - 1); // include today in upcoming
+    const sessionsPast = await $content('storytellersunited/sessions')
+      .sortBy('date', 'desc')
+      .where({
+        date: { $lte: now }
+      })
+      .fetch()
 
-      let sessionsFiltered = this.sessions.filter(
-        (session) => new Date(session.date) < now
-      );
-      return _.orderBy(sessionsFiltered, (session) => new Date(session.date), [
-        "desc",
-      ]);
-    },
-  },
-  async asyncData() {
     const members = await fetch(
       "https://storytellers.link/api/members.json"
     ).then((res) => res.json());
-    return { members };
+
+    return { sessionsUpcoming, sessionsPast, members };
   },
 };
 </script>

@@ -1,7 +1,7 @@
 ---
 title: How to handle conversations with xenophobes and racists
 type: lunch & learn
-date: 30 Sept 2020
+date: "2020-09-30"
 imageSrc: https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg
 learnerNames: 
   - 1coko 

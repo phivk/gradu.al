@@ -1,6 +1,6 @@
 <template>
   <article class="tl bg-near-white br3 hover-shadow-raise">
-    <nuxt-link :to="slug" append class="link black">
+    <nuxt-link :to="path" class="link black">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
           <img
@@ -56,7 +56,7 @@ export default {
     type: { type: String, default: "type" },
     date: { type: String, default: "date" },
     imageSrc: { type: String },
-    slug: { type: String },
+    path: { type: String },
     learners: { type: Array, default: () => [] },
     sharers: { type: Array, default: () => [] },
   },
