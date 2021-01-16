@@ -24,8 +24,7 @@
           <div class="pa3">
             <div class="flex flex-wrap mb2">
               <div class="mr3">
-                <h3 v-if="hasHappened" class="f5 fw4 o-60">shared by</h3>
-                <h3 v-else class="f5 fw4 o-60">like to share</h3>
+                <h3 class="f5 fw4 o-60">shared by</h3>
                 <ProfilePicList
                   :profilePics="sharers"
                   borderColorClass="b--near-white"
