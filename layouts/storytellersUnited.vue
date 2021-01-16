@@ -94,4 +94,7 @@ html {
 .ws-pre-wrap {
   white-space: pre-wrap;
 }
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
 </style>

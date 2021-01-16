@@ -12,6 +12,7 @@
     "deploy": "nuxt generate && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@nuxt/content": "^1.11.1",
     "lodash": "^4.17.20",
     "nuxt": "^2.14.7",
     "tachyons": "^4.12.0"
