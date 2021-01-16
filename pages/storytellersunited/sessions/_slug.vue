@@ -33,7 +33,7 @@
         <div class="w-100 w-20-l pr3 mb3 fw6">
           <div>
             <p v-if="session.date !== 'TBC'" class="f4 mb3">
-              {{ session.date }}
+              {{ dateFormatted }}
             </p>
             <a
               v-if="session.cta"
@@ -153,6 +153,10 @@ export default {
     },
     showICal() {
       return this.session.icsFileSrc && !this.hasHappened;
+    },
+    dateFormatted() {
+      let dt = new Date(this.session.date)
+      return dt.toLocaleDateString('en-GB',{ day:'numeric',month: 'short', year: 'numeric'})
     },
   },
 };

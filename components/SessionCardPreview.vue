@@ -15,7 +15,7 @@
               <h3 class="f4 lh-title mt2 mr2">
                 {{ title }}
               </h3>
-              <span class="f5 fw4 o-50 tr mt2">{{ date }}</span>
+              <span class="f5 fw4 o-50 tr mt2">{{ dateFormatted }}</span>
             </div>
             <TagPill class="absolute top--1 ml-1" borderColour="#fff">{{
               type
@@ -65,6 +65,10 @@ export default {
     hasHappened() {
       let now = new Date();
       return new Date(this.date) < now;
+    },
+    dateFormatted() {
+      let dt = new Date(this.date)
+      return dt.toLocaleDateString('en-GB',{ day:'numeric',month: 'short', year: 'numeric'})
     },
   },
 };
