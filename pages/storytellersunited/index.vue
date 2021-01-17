@@ -152,19 +152,22 @@ export default {
   async asyncData({ $content }) {
     let now = new Date();
     now.setDate(now.getDate() - 1); // include today in upcoming
-    const sessionsUpcoming = await $content('storytellersunited/sessions')
-      .sortBy('date', 'asc')
-      .where({
-        date: { $gte: now }
-      })
-      .fetch()
+    // NB this uses UTC time, causing inaccuracies for non UTC timezones
+    let nowString = now.toISOString().slice(0, 10);
 
-    const sessionsPast = await $content('storytellersunited/sessions')
-      .sortBy('date', 'desc')
+    const sessionsUpcoming = await $content("storytellersunited/sessions")
+      .sortBy("date", "asc")
       .where({
-        date: { $lte: now }
+        date: { $gte: nowString },
       })
-      .fetch()
+      .fetch();
+
+    const sessionsPast = await $content("storytellersunited/sessions")
+      .sortBy("date", "desc")
+      .where({
+        date: { $lt: nowString },
+      })
+      .fetch();
 
     const members = await fetch(
       "https://storytellers.link/api/members.json"
