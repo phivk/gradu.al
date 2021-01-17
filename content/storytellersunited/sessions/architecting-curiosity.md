@@ -1,5 +1,5 @@
 ---
-title: Architecting Curiosity,
+title: Architecting Curiosity
 type: salon
 date: "2020-12-18"
 imageSrc: https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg
