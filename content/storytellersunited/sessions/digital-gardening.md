@@ -1,8 +1,9 @@
 ---
-title: "Digital Gardens: What are they and how can I start one?"
+title: 'Digital Gardens: What are they and how can I start one?'
 type: salon
-date: "2021-01-28"
-imageSrc: https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2100&q=80
+date: '2021-01-28'
+imageSrc: >-
+  https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2100&q=80
 learnerNames:
   - Alexa
   - Amanda Curtis
@@ -17,8 +18,10 @@ sharerNames:
   - Kevin
 cta:
   text: Add to calendar
-  href: https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com
+  href: >-
+    https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com
 icsFileSrc: /storytellersunited/201218-architecting-curiosity.ics
+published: true
 ---
 
 The term "digital garden" started to get used more widely in 2020. Maybe our inability to go outside and travel as much led us to think about our digital lives with a more horticultural lens?
@@ -28,3 +31,7 @@ Whereas a blog tends to be organised strictly chronologically and older thoughts
 In this session, we'll look more at defining a digital garden, explore some examples with an eye on what value they are adding (to the world and the gardener) and look at some ways to get started.
 
 This will be a mix of exposition, Internet trail, discussion and top tips.
+
+## Resources
+
+- [Kevin's garden page for the workshop](https://garden.kevincunningham.co.uk/notes/19a2211f-c3d3-4566-bcc6-6bda4b182a0a.html)
