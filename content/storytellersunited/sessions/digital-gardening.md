@@ -4,21 +4,15 @@ type: salon
 date: "2021-01-28"
 imageSrc: https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2100&q=80
 learnerNames:
-  - 1coko
   - Alexa
   - Amanda Curtis
   - Anna Desponds
-  - Erwin
   - Gunnar de Jong
   - hay
-  - Julia Scott-Stevenson
   - marcusround
   - Marsha
   - Philo
-  - Pim
-  - Rasa Bocyte
   - Simon Maris
-  - Vaibhav
 sharerNames:
   - Kevin
 cta:
