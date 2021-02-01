@@ -20,16 +20,6 @@ cta:
   text: Add to calendar
   href: >-
     https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com
-resources:
-  - 
-    text: Recording
-    href: https://www.youtube.com/watch?v=JjTeZoAmejs
-  - 
-    text: Kevin's garden
-    href: https://garden.kevincunningham.co.uk/notes/19a2211f-c3d3-4566-bcc6-6bda4b182a0a.html
-  -
-    text: Notes
-    href: https://docs.google.com/document/d/1dqX7qOOlVOG5OWx7wxh4s2wfTmBdqLiwSonT5RidV1I/edit
 icsFileSrc: /storytellersunited/201218-architecting-curiosity.ics
 published: true
 ---
