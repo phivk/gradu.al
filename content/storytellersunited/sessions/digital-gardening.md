@@ -16,6 +16,16 @@ learnerNames:
   - Simon Maris
 sharerNames:
   - Kevin
+resources:
+  -
+    text: Recording
+    href: https://www.youtube.com/watch?v=JjTeZoAmejs
+  - 
+    text: Kevin's garden
+    href: https://garden.kevincunningham.co.uk/notes/19a2211f-c3d3-4566-bcc6-6bda4b182a0a.html
+  -
+    text: Notes
+    href: https://docs.google.com/document/d/1dqX7qOOlVOG5OWx7wxh4s2wfTmBdqLiwSonT5RidV1I/edit
 cta:
   text: Add to calendar
   href: >-
