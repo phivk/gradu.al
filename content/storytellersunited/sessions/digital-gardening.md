@@ -3,7 +3,7 @@ title: 'Digital Gardens: What are they and how can I start one?'
 type: salon
 date: '2021-01-28'
 imageSrc: >-
-  https://i.ytimg.com/vi_webp/JjTeZoAmejs/maxresdefault.webp
+  http://i3.ytimg.com/vi/JjTeZoAmejs/maxresdefault.jpg
 learnerNames:
   - Alexa
   - Amanda Curtis
