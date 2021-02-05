@@ -17,10 +17,6 @@
             </button>
           </div>
 
-          <!-- <input v-model:value="code" />
-          <button @click="getCode">Test code</button>
-          <pre>{{JSON.stringify(response)}}</pre> -->
-
   </div>
 </template>
 
@@ -43,9 +39,6 @@ export default Vue.extend({
         decodeURIComponent(this.$route.query.redirect)
       )
     },
-    isCallback() {
-      return Boolean(this.$route.query.code)
-    },
     errorMessage() {
       const { error } = this
       if (!error || typeof error === 'string') {
@@ -62,11 +55,6 @@ export default Vue.extend({
           .replace(/,/g, ' ')})`
       }
       return msg
-    }
-  },
-  methods: {
-    login() {
-      this.$auth.loginWith('slack', {params: {user_scope: "identity.basic"}})
     }
   }
 })
