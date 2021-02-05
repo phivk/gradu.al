@@ -53,9 +53,33 @@ export default {
   ],
   auth: {
     strategies: {
-      github: {
-        clientId: process.env.GITHUB_CLIENT_ID,
-        clientSecret: process.env.GITHUB_CLIENT_SECRET
+      slack: {
+        scheme: 'oauth2',
+        endpoints: {
+          authorization: 'https://slack.com/oauth/v2/authorize',
+          token: 'http://localhost:3001/api/slack-token',
+        },
+        token: {
+          property: 'authed_user.access_token',
+          type: 'Bearer',
+          maxAge: 1800
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
+        scope: [],
+        responseType: 'code',
+        grantType: 'authorization_code',
+        accessType: undefined,
+        redirectUri: process.env.SLACK_REDIRECT_URI,
+        logoutRedirectUri: undefined,
+        clientId: process.env.SLACK_CLIENT_ID,
+        user_scope: "identity.basic",
+        state: 'UNIQUE_AND_NON_GUESSABLE',
+        codeChallengeMethod: '',
+        responseMode: '',
+        acrValues: ''
       }
     }
   },

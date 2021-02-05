@@ -9,31 +9,23 @@
       You have to login before accessing to
       <strong>{{ $auth.$state.redirect }}</strong>
     </b-alert>
-    <b-row align-h="center" class="pt-4">
-
-
-      <b-col md="4" class="text-center">
-        <b-card title="Social Login" bg-variant="light">
-          <div v-for="s in strategies" :key="s.key" class="mb-2">
-            <b-btn
-              block
-              :style="{ background: s.color }"
-              class="login-button"
-              @click="$auth.loginWith(s.key)"
+          <div class="">
+            <button
+              @click="$auth.loginWith('slack', {params: {user_scope: 'identity.basic'}})"
             >
-              Login with {{ s.name }}
-            </b-btn>
+             <img src="@/assets/signinwithslack.png" />
+            </button>
           </div>
 
-        </b-card>
-      </b-col>
-    </b-row>
+          <!-- <input v-model:value="code" />
+          <button @click="getCode">Test code</button>
+          <pre>{{JSON.stringify(response)}}</pre> -->
+
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
   middleware: ['auth'],
   data() {
@@ -43,7 +35,7 @@ export default Vue.extend({
   },
   computed: {
     strategies: () => [
-      { key: 'github', name: 'GitHub', color: '#202326' }
+      {key:'slack', name: "Slack", color: '#ffffff'}
     ],
     redirect() {
       return (
@@ -52,7 +44,7 @@ export default Vue.extend({
       )
     },
     isCallback() {
-      return Boolean(this.$route.query.callback)
+      return Boolean(this.$route.query.code)
     },
     errorMessage() {
       const { error } = this
@@ -74,52 +66,8 @@ export default Vue.extend({
   },
   methods: {
     login() {
-      this.error = null
-
-      return this.$auth
-        .loginWith('local', {
-          data: {
-            username: this.username,
-            password: this.password
-          }
-        })
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.error(err)
-          // this.error = err.response?.data
-        })
-    },
-
-    localRefresh() {
-      this.error = null
-
-      return this.$auth
-        .loginWith('localRefresh', {
-          data: {
-            username: this.username,
-            password: this.password
-          }
-        })
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.error(err)
-        })
-    },
-
-    loginJWT() {
-      this.error = null
-
-      return this.$auth
-        .loginWith('laravelJWT', {
-          data: {
-            email: 'test@test.com',
-            password: '12345678'
-          }
-        })
-        .catch((e) => {
-          this.error = e.response ? e.response.data : e.toString()
-        })
-    },
+      this.$auth.loginWith('slack', {params: {user_scope: "identity.basic"}})
+    }
   }
 })
 </script>
