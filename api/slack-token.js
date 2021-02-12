@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
     form.append("code", req.body.code)
 
     const response = await fetch("https://slack.com/api/oauth.v2.access", { method: 'POST', body: form })
-    // .then((res) => res.json())
+      .then((res) => res.json())
 
     res.send(response)
   } catch (error) {
