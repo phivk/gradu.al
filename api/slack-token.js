@@ -21,7 +21,8 @@ const fetch = require("node-fetch")
 // // }
 
 module.exports = async (req, res) => {
-  res.send(req.body, process.env.SLACK_CLIENT_ID, process.env.SLACK_CLIENT_SECRET, process.env.SLACK_REDIRECT_URI)
+  const variables = process.env
+  res.send(req.body, variable)
   // await runMiddleware(req, res, cors)
   // try {
   //   const form = new FormData()
