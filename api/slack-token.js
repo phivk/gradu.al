@@ -1,24 +1,24 @@
 const FormData = require('form-data')
 const fetch = require("node-fetch")
-import Cors from 'cors'
+// import Cors from 'cors'
 
-const cors = Cors({
-  methods: ['GET', 'HEAD', 'POST'],
-})
+// const cors = Cors({
+//   methods: ['GET', 'HEAD', 'POST'],
+// })
 
-// Helper method to wait for a middleware to execute before continuing
-// And to throw an error when an error happens in a middleware
-function runMiddleware(req, res, fn) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result)
-      }
+// // Helper method to wait for a middleware to execute before continuing
+// // And to throw an error when an error happens in a middleware
+// function runMiddleware(req, res, fn) {
+//   return new Promise((resolve, reject) => {
+//     fn(req, res, (result) => {
+//       if (result instanceof Error) {
+//         return reject(result)
+//       }
 
-      return resolve(result)
-    })
-  })
-}
+//       return resolve(result)
+//     })
+//   })
+// }
 
 
 module.exports = async (req, res) => {
