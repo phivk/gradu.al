@@ -22,6 +22,7 @@ function runMiddleware(req, res, fn) {
 
 
 module.exports = async (req, res) => {
+  console.log(req.body, process.env.SLACK_CLIENT_ID, process.env.SLACK_CLIENT_SECRET, process.env.SLACK_REDIRECT_URI)
   await runMiddleware(req, res, cors)
   try {
     const form = new FormData()

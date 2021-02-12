@@ -57,7 +57,7 @@ export default {
         scheme: 'oauth2',
         endpoints: {
           authorization: 'https://slack.com/oauth/v2/authorize',
-          token: 'http://localhost:3001/api/slack-token',
+          token: '/api/slack-token',
         },
         token: {
           property: 'authed_user.access_token',
