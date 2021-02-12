@@ -22,7 +22,7 @@ const fetch = require("node-fetch")
 
 module.exports = async (req, res) => {
   const variables = process.env
-  res.send(req.body, variable)
+  res.send(req.body, JSON.stringify(variables))
   // await runMiddleware(req, res, cors)
   // try {
   //   const form = new FormData()
