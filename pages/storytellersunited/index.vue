@@ -175,6 +175,6 @@ export default {
 
     return { sessionsUpcoming, sessionsPast, members };
   },
-  middleware: 'auth'
+  // middleware: 'auth'
 };
 </script>
