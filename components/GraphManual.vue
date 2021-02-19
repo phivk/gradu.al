@@ -1,19 +1,28 @@
 <template lang="">
 <div>
-   <div class="title">
-    <!-- example control -->
+  <svg >
+  <defs>
+    <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth" >
+      <path d="M0,0 L0,6 L9,3 z"></path>
+    </marker>
+        <marker id="m-start" markerWidth="6" markerHeight="6" refX="-4" refY="3" orient="auto" markerUnits="strokeWidth" >
+      <rect width="3" height="6"></rect>
+    </marker>
+  </defs>
+</svg>
+  <div class="title">
     <ul class="menu">
       <li>
         <label> Node size  </label>
         <input type="range" min="1" max="100" v-model='nodeSize' /> {{ options.nodeSize }}
       </li>
     </ul>
-    </div>
-    <d3-network ref='net' :net-nodes="nodes" :net-links="links" :options="options" />
-    </div>
+  </div>
+  <d3-network ref='net' :net-nodes="nodes" :net-links="links" :options="options" :link-cb="lcb" />
+</div>
 </template>
 <script>
-import D3Network from 'vue-d3-network'
+import D3Network from 'vue-d3-network';
 export default({
   components: {
     D3Network
@@ -145,8 +154,8 @@ export default({
         "sid": "12",
         "tid": "18",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -154,8 +163,8 @@ export default({
         "sid": "2",
         "tid": "19",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -163,8 +172,8 @@ export default({
         "sid": "2",
         "tid": "20",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -172,8 +181,8 @@ export default({
         "sid": "2",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -181,8 +190,8 @@ export default({
         "sid": "2",
         "tid": "22",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -190,8 +199,8 @@ export default({
         "sid": "2",
         "tid": "97",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -199,8 +208,8 @@ export default({
         "sid": "2",
         "tid": "24",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -208,8 +217,8 @@ export default({
         "sid": "2",
         "tid": "25",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -217,8 +226,8 @@ export default({
         "sid": "4",
         "tid": "30",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -226,8 +235,8 @@ export default({
         "sid": "9",
         "tid": "34",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -235,8 +244,8 @@ export default({
         "sid": "9",
         "tid": "35",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -244,8 +253,8 @@ export default({
         "sid": "9",
         "tid": "36",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -253,8 +262,8 @@ export default({
         "sid": "9",
         "tid": "37",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -262,8 +271,8 @@ export default({
         "sid": "9",
         "tid": "38",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -271,8 +280,8 @@ export default({
         "sid": "9",
         "tid": "39",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -280,8 +289,8 @@ export default({
         "sid": "9",
         "tid": "40",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -289,8 +298,8 @@ export default({
         "sid": "9",
         "tid": "41",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -298,8 +307,8 @@ export default({
         "sid": "9",
         "tid": "42",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -307,8 +316,8 @@ export default({
         "sid": "9",
         "tid": "43",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5,
         }
       },
       {
@@ -316,8 +325,8 @@ export default({
         "sid": "9",
         "tid": "44",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -325,8 +334,8 @@ export default({
         "sid": "9",
         "tid": "45",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -334,8 +343,8 @@ export default({
         "sid": "9",
         "tid": "46",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -343,8 +352,8 @@ export default({
         "sid": "9",
         "tid": "105",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -352,8 +361,8 @@ export default({
         "sid": "13",
         "tid": "54",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -361,8 +370,8 @@ export default({
         "sid": "13",
         "tid": "55",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -370,8 +379,8 @@ export default({
         "sid": "13",
         "tid": "56",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -379,8 +388,8 @@ export default({
         "sid": "14",
         "tid": "57",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -388,8 +397,8 @@ export default({
         "sid": "14",
         "tid": "58",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -397,8 +406,8 @@ export default({
         "sid": "16",
         "tid": "60",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -406,8 +415,8 @@ export default({
         "sid": "16",
         "tid": "61",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -415,8 +424,8 @@ export default({
         "sid": "13",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -424,8 +433,8 @@ export default({
         "sid": "15",
         "tid": "68",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -433,8 +442,8 @@ export default({
         "sid": "8",
         "tid": "70",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -442,8 +451,8 @@ export default({
         "sid": "8",
         "tid": "71",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -451,8 +460,8 @@ export default({
         "sid": "10",
         "tid": "74",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -460,8 +469,8 @@ export default({
         "sid": "1",
         "tid": "78",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -469,8 +478,8 @@ export default({
         "sid": "1",
         "tid": "79",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -478,8 +487,8 @@ export default({
         "sid": "1",
         "tid": "80",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -487,8 +496,8 @@ export default({
         "sid": "1",
         "tid": "81",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -496,8 +505,8 @@ export default({
         "sid": "7",
         "tid": "86",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -505,8 +514,8 @@ export default({
         "sid": "7",
         "tid": "87",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -514,8 +523,8 @@ export default({
         "sid": "4",
         "tid": "90",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -523,8 +532,8 @@ export default({
         "sid": "5",
         "tid": "95",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -532,8 +541,8 @@ export default({
         "sid": "2",
         "tid": "96",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -541,8 +550,8 @@ export default({
         "sid": "11",
         "tid": "97",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -550,8 +559,8 @@ export default({
         "sid": "11",
         "tid": "98",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -559,8 +568,8 @@ export default({
         "sid": "11",
         "tid": "99",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -568,8 +577,8 @@ export default({
         "sid": "3",
         "tid": "105",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -577,8 +586,8 @@ export default({
         "sid": "3",
         "tid": "106",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -586,8 +595,8 @@ export default({
         "sid": "3",
         "tid": "107",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -595,8 +604,8 @@ export default({
         "sid": "3",
         "tid": "108",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -604,8 +613,8 @@ export default({
         "sid": "3",
         "tid": "109",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -613,8 +622,8 @@ export default({
         "sid": "3",
         "tid": "110",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -622,8 +631,8 @@ export default({
         "sid": "3",
         "tid": "111",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -631,8 +640,8 @@ export default({
         "sid": "3",
         "tid": "112",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -640,8 +649,8 @@ export default({
         "sid": "3",
         "tid": "113",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -649,8 +658,8 @@ export default({
         "sid": "2",
         "tid": "26",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -658,8 +667,8 @@ export default({
         "sid": "2",
         "tid": "27",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -667,8 +676,8 @@ export default({
         "sid": "2",
         "tid": "28",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -676,8 +685,8 @@ export default({
         "sid": "2",
         "tid": "29",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -685,8 +694,8 @@ export default({
         "sid": "6",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -694,8 +703,8 @@ export default({
         "sid": "6",
         "tid": "32",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -703,8 +712,8 @@ export default({
         "sid": "6",
         "tid": "33",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -712,8 +721,8 @@ export default({
         "sid": "9",
         "tid": "48",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -721,8 +730,8 @@ export default({
         "sid": "9",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -730,8 +739,8 @@ export default({
         "sid": "9",
         "tid": "50",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -739,8 +748,8 @@ export default({
         "sid": "9",
         "tid": "51",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -748,8 +757,8 @@ export default({
         "sid": "9",
         "tid": "52",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -757,8 +766,8 @@ export default({
         "sid": "9",
         "tid": "53",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -766,8 +775,8 @@ export default({
         "sid": "14",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -775,8 +784,8 @@ export default({
         "sid": "16",
         "tid": "62",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -784,8 +793,8 @@ export default({
         "sid": "16",
         "tid": "63",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -793,8 +802,8 @@ export default({
         "sid": "16",
         "tid": "64",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -802,8 +811,8 @@ export default({
         "sid": "16",
         "tid": "65",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -811,8 +820,8 @@ export default({
         "sid": "16",
         "tid": "66",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -820,8 +829,8 @@ export default({
         "sid": "15",
         "tid": "69",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -829,8 +838,8 @@ export default({
         "sid": "8",
         "tid": "72",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -838,8 +847,8 @@ export default({
         "sid": "8",
         "tid": "73",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -847,8 +856,8 @@ export default({
         "sid": "10",
         "tid": "75",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -856,8 +865,8 @@ export default({
         "sid": "10",
         "tid": "76",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -865,8 +874,8 @@ export default({
         "sid": "10",
         "tid": "77",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -874,8 +883,8 @@ export default({
         "sid": "1",
         "tid": "82",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -883,8 +892,8 @@ export default({
         "sid": "1",
         "tid": "83",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -892,8 +901,8 @@ export default({
         "sid": "1",
         "tid": "84",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -901,8 +910,8 @@ export default({
         "sid": "1",
         "tid": "85",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -910,8 +919,8 @@ export default({
         "sid": "7",
         "tid": "88",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -919,8 +928,8 @@ export default({
         "sid": "7",
         "tid": "89",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -928,8 +937,8 @@ export default({
         "sid": "4",
         "tid": "91",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -937,8 +946,8 @@ export default({
         "sid": "4",
         "tid": "92",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -946,8 +955,8 @@ export default({
         "sid": "4",
         "tid": "93",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -955,8 +964,8 @@ export default({
         "sid": "4",
         "tid": "94",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -964,8 +973,8 @@ export default({
         "sid": "11",
         "tid": "100",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -973,8 +982,8 @@ export default({
         "sid": "11",
         "tid": "101",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -982,8 +991,8 @@ export default({
         "sid": "11",
         "tid": "102",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -991,8 +1000,8 @@ export default({
         "sid": "11",
         "tid": "103",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1000,8 +1009,8 @@ export default({
         "sid": "11",
         "tid": "104",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1009,8 +1018,8 @@ export default({
         "sid": "3",
         "tid": "114",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1018,8 +1027,8 @@ export default({
         "sid": "3",
         "tid": "115",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1027,8 +1036,8 @@ export default({
         "sid": "3",
         "tid": "116",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1036,8 +1045,8 @@ export default({
         "sid": "3",
         "tid": "117",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1045,8 +1054,8 @@ export default({
         "sid": "4",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1054,8 +1063,8 @@ export default({
         "sid": "9",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1063,8 +1072,8 @@ export default({
         "sid": "15",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 16,
-          "opacity": 1
+          "stroke-width": 2,
+          "opacity": 0.5
         }
       },
       {
@@ -1072,8 +1081,8 @@ export default({
         "sid": "4",
         "tid": "20",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1081,8 +1090,8 @@ export default({
         "sid": "9",
         "tid": "20",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1090,8 +1099,8 @@ export default({
         "sid": "15",
         "tid": "20",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1099,8 +1108,8 @@ export default({
         "sid": "17",
         "tid": "56",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1108,8 +1117,8 @@ export default({
         "sid": "3",
         "tid": "56",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1117,8 +1126,8 @@ export default({
         "sid": "17",
         "tid": "45",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1126,8 +1135,8 @@ export default({
         "sid": "3",
         "tid": "45",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1135,8 +1144,8 @@ export default({
         "sid": "11",
         "tid": "45",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1144,8 +1153,8 @@ export default({
         "sid": "11",
         "tid": "24",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1153,8 +1162,8 @@ export default({
         "sid": "17",
         "tid": "41",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1162,8 +1171,8 @@ export default({
         "sid": "9",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1171,8 +1180,8 @@ export default({
         "sid": "4",
         "tid": "95",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1180,8 +1189,8 @@ export default({
         "sid": "13",
         "tid": "60",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1189,8 +1198,8 @@ export default({
         "sid": "11",
         "tid": "60",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1198,8 +1207,8 @@ export default({
         "sid": "9",
         "tid": "58",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1207,8 +1216,8 @@ export default({
         "sid": "16",
         "tid": "58",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1216,8 +1225,8 @@ export default({
         "sid": "15",
         "tid": "58",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1225,8 +1234,8 @@ export default({
         "sid": "7",
         "tid": "58",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1234,8 +1243,8 @@ export default({
         "sid": "9",
         "tid": "57",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1243,8 +1252,8 @@ export default({
         "sid": "16",
         "tid": "57",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1252,8 +1261,8 @@ export default({
         "sid": "15",
         "tid": "57",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1261,8 +1270,8 @@ export default({
         "sid": "8",
         "tid": "57",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1270,8 +1279,8 @@ export default({
         "sid": "1",
         "tid": "57",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1279,8 +1288,8 @@ export default({
         "sid": "4",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1288,8 +1297,8 @@ export default({
         "sid": "9",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1297,8 +1306,8 @@ export default({
         "sid": "15",
         "tid": "21",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1306,8 +1315,8 @@ export default({
         "sid": "16",
         "tid": "18",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1315,8 +1324,8 @@ export default({
         "sid": "10",
         "tid": "18",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1324,8 +1333,8 @@ export default({
         "sid": "1",
         "tid": "18",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1333,8 +1342,8 @@ export default({
         "sid": "16",
         "tid": "26",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1342,8 +1351,8 @@ export default({
         "sid": "15",
         "tid": "26",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1351,8 +1360,8 @@ export default({
         "sid": "8",
         "tid": "26",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1360,8 +1369,8 @@ export default({
         "sid": "17",
         "tid": "26",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1369,8 +1378,8 @@ export default({
         "sid": "11",
         "tid": "26",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1378,8 +1387,8 @@ export default({
         "sid": "17",
         "tid": "27",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1387,8 +1396,8 @@ export default({
         "sid": "9",
         "tid": "29",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1396,8 +1405,8 @@ export default({
         "sid": "13",
         "tid": "29",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1405,8 +1414,8 @@ export default({
         "sid": "15",
         "tid": "29",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1414,8 +1423,8 @@ export default({
         "sid": "17",
         "tid": "29",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1423,8 +1432,8 @@ export default({
         "sid": "11",
         "tid": "29",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1432,8 +1441,8 @@ export default({
         "sid": "9",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1441,8 +1450,8 @@ export default({
         "sid": "16",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1450,8 +1459,8 @@ export default({
         "sid": "13",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1459,8 +1468,8 @@ export default({
         "sid": "15",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1468,8 +1477,8 @@ export default({
         "sid": "8",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1477,8 +1486,8 @@ export default({
         "sid": "17",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1486,8 +1495,8 @@ export default({
         "sid": "10",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1495,8 +1504,8 @@ export default({
         "sid": "1",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1504,8 +1513,8 @@ export default({
         "sid": "7",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1513,8 +1522,8 @@ export default({
         "sid": "4",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1522,8 +1531,8 @@ export default({
         "sid": "11",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1531,8 +1540,8 @@ export default({
         "sid": "3",
         "tid": "31",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1540,8 +1549,8 @@ export default({
         "sid": "9",
         "tid": "32",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1549,8 +1558,8 @@ export default({
         "sid": "16",
         "tid": "32",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1558,8 +1567,8 @@ export default({
         "sid": "12",
         "tid": "32",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1567,8 +1576,8 @@ export default({
         "sid": "10",
         "tid": "32",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1576,8 +1585,8 @@ export default({
         "sid": "11",
         "tid": "32",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1585,8 +1594,8 @@ export default({
         "sid": "9",
         "tid": "33",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1594,8 +1603,8 @@ export default({
         "sid": "16",
         "tid": "33",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1603,8 +1612,8 @@ export default({
         "sid": "10",
         "tid": "33",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1612,8 +1621,8 @@ export default({
         "sid": "11",
         "tid": "33",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1621,8 +1630,8 @@ export default({
         "sid": "15",
         "tid": "48",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1630,8 +1639,8 @@ export default({
         "sid": "17",
         "tid": "48",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1639,8 +1648,8 @@ export default({
         "sid": "7",
         "tid": "48",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1648,8 +1657,8 @@ export default({
         "sid": "11",
         "tid": "48",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1657,8 +1666,8 @@ export default({
         "sid": "13",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1666,8 +1675,8 @@ export default({
         "sid": "8",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1675,8 +1684,8 @@ export default({
         "sid": "17",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1684,8 +1693,8 @@ export default({
         "sid": "1",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1693,8 +1702,8 @@ export default({
         "sid": "4",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1702,8 +1711,8 @@ export default({
         "sid": "11",
         "tid": "49",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1711,8 +1720,8 @@ export default({
         "sid": "4",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1720,8 +1729,8 @@ export default({
         "sid": "16",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1729,8 +1738,8 @@ export default({
         "sid": "13",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1738,8 +1747,8 @@ export default({
         "sid": "15",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1747,8 +1756,8 @@ export default({
         "sid": "8",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1756,8 +1765,8 @@ export default({
         "sid": "1",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1765,8 +1774,8 @@ export default({
         "sid": "7",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1774,8 +1783,8 @@ export default({
         "sid": "3",
         "tid": "59",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1783,8 +1792,8 @@ export default({
         "sid": "10",
         "tid": "60",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1792,8 +1801,8 @@ export default({
         "sid": "8",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1801,8 +1810,8 @@ export default({
         "sid": "17",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1810,8 +1819,8 @@ export default({
         "sid": "10",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1819,8 +1828,8 @@ export default({
         "sid": "1",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1828,8 +1837,8 @@ export default({
         "sid": "7",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1837,8 +1846,8 @@ export default({
         "sid": "3",
         "tid": "67",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1846,8 +1855,8 @@ export default({
         "sid": "17",
         "tid": "69",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1855,8 +1864,8 @@ export default({
         "sid": "10",
         "tid": "69",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       },
       {
@@ -1864,8 +1873,8 @@ export default({
         "sid": "11",
         "tid": "69",
         "_svgAttrs": {
-          "stroke-width": 8,
-          "opacity": 1
+          "stroke-width": 1,
+          "opacity": 0.5
         }
       }
     ],
@@ -1884,6 +1893,13 @@ export default({
         linkLabels:true,
         canvas: this.canvas
       }
+    }
+  },
+    methods:{
+    lcb (link) {
+      link._svgAttrs = { 'marker-end': 'url(#m-end)',
+                       'marker-start': 'url(#m-start)'}
+      return link
     }
   }
 })
@@ -1944,8 +1960,8 @@ circle.Member.node {
     stroke: alpha(yellow, 0.6);
   }
 
-  .link{
-    stroke: alpha(red, 0.3);
+  path.link{
+    stroke: black;
   }
 
   .node, .link {
@@ -1969,4 +1985,8 @@ circle.Member.node {
     transform: translate(0, -0.5em);
     text-anchor: middle;
   }
+
+  #m-end path, #m-start{
+  fill: rgba(18, 120, 98, 0.8);
+}
 </style>
