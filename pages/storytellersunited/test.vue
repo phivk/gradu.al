@@ -107,8 +107,8 @@
             Click <span class="b f3">⦷</span>pause to prevent overlapping texts.
           </p>
         </div>
-        <GraphManual />
       </section>
+        <GraphManual />
     </div>
   </div>
 </template>
