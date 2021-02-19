@@ -14,6 +14,7 @@
   <d3-network ref='net' :net-nodes="nodes" :net-links="links" :options="options" :link-cb="lcb" />
 </div>
 </template>
+<style src="vue-d3-network/dist/vue-d3-network.css"></style>
 <script>
 import D3Network from 'vue-d3-network';
 export default({
@@ -1882,11 +1883,11 @@ export default({
     options(){
       return{
         force: 1000,
-        size:{ w:1000, h:600},
         nodeSize: this.nodeSize,
         nodeLabels: true,
         linkLabels:true,
-        canvas: this.canvas
+        canvas: this.canvas,
+        resizeListener: true
       }
     }
   },
