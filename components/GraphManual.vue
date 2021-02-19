@@ -25,123 +25,123 @@ export default({
   data () {
     return {
       nodes: [
-        {_cssClass: "Member", name:"Amanda Curtis","id": "1"},
-        {_cssClass: "Member", name:"anna desponds","id": "2"},
-        {_cssClass: "Member", name:"Celine","id": "3"},
-        {_cssClass: "Member", name:"Erwin","id": "4"},
-        {_cssClass: "Member", name:"Gunnar de Jong","id": "5"},
-        {_cssClass: "Member", name:"hay","id": "6"},
-        {_cssClass: "Member", name:"HazelXD","id": "7"},
-        {_cssClass: "Member", name:"Julia Scott-Stevenson","id": "8"},
-        {_cssClass: "Member", name:"Kevin","id": "9"},
-        {_cssClass: "Member", name:"magda bochenska","id": "10"},
-        {_cssClass: "Member", name:"Marsha","id": "11"},
-        {_cssClass: "Member", name:"Philo","id": "12"},
-        {_cssClass: "Member", name:"Pim","id": "13"},
-        {_cssClass: "Member", name:"Serena M","id": "14"},
-        {_cssClass: "Member", name:"Sterre de Jong","id": "15"},
-        {_cssClass: "Member", name:"Ties","id": "16"},
-        {_cssClass: "Member", name:"1coko","id": "17"},
-        {_cssClass: "Skill",	name:"How to improve user engagement","id": "18"},
-        {_cssClass: "Skill",	name:"best practices in hybrid experience building","id": "19"},
-        {_cssClass: "Skill",	name:"better group work management","id": "20"},
-        {_cssClass: "Skill",	name:"daily hacks for smarter living","id": "21"},
-        {_cssClass: "Skill",	name:"electronics, bits and atoms","id": "22"},
-        {_cssClass: "Skill",	name:"German Language","id": "23"},
-        {_cssClass: "Skill",	name:"non-linear scriptwriting","id": "24"},
-        {_cssClass: "Skill",	name:"science communication","id": "25"},
-        {_cssClass: "Skill",	name:"Podcasting","id": "26"},
-        {_cssClass: "Skill",	name:"French","id": "27"},
-        {_cssClass: "Skill",	name:"Polish","id": "28"},
-        {_cssClass: "Skill",	name:"How to handle conversations with xenophobes and racists","id": "29"},
-        {_cssClass: "Skill",	name:"Python","id": "30"},
-        {_cssClass: "Skill",	name:"Creating interactive web experiences","id": "31"},
-        {_cssClass: "Skill",	name:"writing successful newsletters","id": "32"},
-        {_cssClass: "Skill",	name:"creating a MVP","id": "33"},
-        {_cssClass: "Skill",	name:"appreciate slower forms of art","id": "34"},
-        {_cssClass: "Skill",	name:"colour","id": "35"},
-        {_cssClass: "Skill",	name:"Compassionate UX","id": "36"},
-        {_cssClass: "Skill",	name:"creating shared narratives more effectively & spontaneously","id": "37"},
-        {_cssClass: "Skill",	name:"effective altruism","id": "38"},
-        {_cssClass: "Skill",	name:"Frameworks for effective design","id": "39"},
-        {_cssClass: "Skill",	name:"generous interfaces","id": "40"},
-        {_cssClass: "Skill",	name:"how our thinking shapes our worlds","id": "41"},
-        {_cssClass: "Skill",	name:"how we can work for equity and justice","id": "42"},
-        {_cssClass: "Skill",	name:"identifying birds from their song","id": "43"},
-        {_cssClass: "Skill",	name:"identifying food for foraging","id": "44"},
-        {_cssClass: "Skill",	name:"language of critique","id": "45"},
-        {_cssClass: "Skill",	name:"patterns/languages/mental models","id": "46"},
-        {_cssClass: "Skill",	name:"typography","id": "47"},
-        {_cssClass: "Skill",	name:"Creating effective screencasts","id": "48"},
-        {_cssClass: "Skill",	name:"Digital gardening","id": "49"},
-        {_cssClass: "Skill",	name:"Educational theory/pedagogy","id": "50"},
-        {_cssClass: "Skill",	name:"Coaching/Active listening","id": "51"},
-        {_cssClass: "Skill",	name:"Maths in the world","id": "52"},
-        {_cssClass: "Skill",	name:"Problem solving","id": "53"},
-        {_cssClass: "Skill",	name:"magic tricks","id": "54"},
-        {_cssClass: "Skill",	name:"setting up marketing campaign (practical on social or print?)","id": "55"},
-        {_cssClass: "Skill",	name:"story myths","id": "56"},
-        {_cssClass: "Skill",	name:"Tools and theory for creating stories on the web","id": "57"},
-        {_cssClass: "Skill",	name:"Ways to create stories that are inclusive, accessible and non-violent","id": "58"},
-        {_cssClass: "Skill",	name:"Frontend/Web development","id": "59"},
-        {_cssClass: "Skill",	name:"best practises of innovative storytelling","id": "60"},
-        {_cssClass: "Skill",	name:"distribution strategies for innovative storytelling approaches","id": "61"},
-        {_cssClass: "Skill",	name:"Investigative journalism","id": "62"},
-        {_cssClass: "Skill",	name:"Multimedia journalism","id": "63"},
-        {_cssClass: "Skill",	name:"Solutions journalism","id": "64"},
-        {_cssClass: "Skill",	name:"Engaged journalism","id": "65"},
-        {_cssClass: "Skill",	name:"Entrepreneurship","id": "66"},
-        {_cssClass: "Skill",	name:"How do we practice curiosity","id": "67"},
-        {_cssClass: "Skill",	name:"Indian cuisine","id": "68"},
-        {_cssClass: "Skill",	name:"Interview techniques","id": "69"},
-        {_cssClass: "Skill",	name:"Making non-traditional games","id": "70"},
-        {_cssClass: "Skill",	name:"creativity & machine learning","id": "71"},
-        {_cssClass: "Skill",	name:"long form writing","id": "72"},
-        {_cssClass: "Skill",	name:"story/idea development","id": "73"},
-        {_cssClass: "Skill",	name:"best practices for immersive storytelling online","id": "74"},
-        {_cssClass: "Skill",	name:"workshop design and tips","id": "75"},
-        {_cssClass: "Skill",	name:"ux design and research","id": "76"},
-        {_cssClass: "Skill",	name:"web project planning and roadmapping","id": "77"},
-        {_cssClass: "Skill",	name:"motion graphics","id": "78"},
-        {_cssClass: "Skill",	name:"procreate","id": "79"},
-        {_cssClass: "Skill",	name:"lock-picking","id": "80"},
-        {_cssClass: "Skill",	name:"japanese","id": "81"},
-        {_cssClass: "Skill",	name:"Making academic scholarship more interactive and engaging","id": "82"},
-        {_cssClass: "Skill",	name:"Matcha lattes (both hot and iced)","id": "83"},
-        {_cssClass: "Skill",	name:"Bullet journaling","id": "84"},
-        {_cssClass: "Skill",	name:"Meanings and symbolism in studio ghibli films","id": "85"},
-        {_cssClass: "Skill",	name:"video editing","id": "86"},
-        {_cssClass: "Skill",	name:"technical theatre", "id": "87"},
-        {_cssClass: "Skill",	name:"designing escape room games","id": "88"},
-        {_cssClass: "Skill",	name:"accessibility for visual impairment","id": "89"},
-        {_cssClass: "Skill",	name:"data modeling & software engineering","id": "90"},
-        {_cssClass: "Skill",	name:"books","id": "91"},
-        {_cssClass: "Skill",	name:"spanish","id": "92"},
-        {_cssClass: "Skill",	name:"digital tools","id": "93"},
-        {_cssClass: "Skill",	name:"art","id": "94"},
-        {_cssClass: "Skill",	name:"Open source philosophy and history","id": "95"},
-        {_cssClass: "Skill",	name:"visual facilitation techniques","id": "96"},
-        {_cssClass: "Skill",	name:"German Language","id": "97"},
-        {_cssClass: "Skill",	name:"programming","id": "98"},
-        {_cssClass: "Skill",	name:"crafts","id": "99"},
-        {_cssClass: "Skill",	name:"narrative design","id": "100"},
-        {_cssClass: "Skill",	name:"copyright law","id": "101"},
-        {_cssClass: "Skill",	name:"open licensing","id": "102"},
-        {_cssClass: "Skill",	name:"research techniques","id": "103"},
-        {_cssClass: "Skill",	name:"text editing","id": "104"},
-        {_cssClass: "Skill",	name:"typography","id": "105"},
-        {_cssClass: "Skill",	name:"DEI in design","id": "106"},
-        {_cssClass: "Skill",	name:"illustration and animation","id": "107"},
-        {_cssClass: "Skill",	name:"VR/AR","id": "108"},
-        {_cssClass: "Skill",	name:"Architecture","id": "109"},
-        {_cssClass: "Skill",	name:"creative writing","id": "110"},
-        {_cssClass: "Skill",	name:"writing poetry","id": "111"},
-        {_cssClass: "Skill",	name:"writing personal essay","id": "112"},
-        {_cssClass: "Skill",	name:"writing fiction","id": "113"},
-        {_cssClass: "Skill",	name:"Ceramics","id": "114"},
-        {_cssClass: "Skill",	name:"textiles","id": "115"},
-        {_cssClass: "Skill",	name:"woodworking","id": "116"},
-        {_cssClass: "Skill",	name:"cooking", "id":"117"}
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Amanda Curtis","id": "1"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"anna desponds","id": "2"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Celine","id": "3"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Erwin","id": "4"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Gunnar de Jong","id": "5"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"hay","id": "6"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"HazelXD","id": "7"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Julia Scott-Stevenson","id": "8"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Kevin","id": "9"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"magda bochenska","id": "10"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Marsha","id": "11"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Philo","id": "12"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Pim","id": "13"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Serena M","id": "14"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Sterre de Jong","id": "15"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"Ties","id": "16"},
+        {_cssClass: "Member", _labelClass: "memberLabel",name:"1coko","id": "17"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"How to improve user engagement","id": "18"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"best practices in hybrid experience building","id": "19"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"better group work management","id": "20"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"daily hacks for smarter living","id": "21"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"electronics, bits and atoms","id": "22"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"German Language","id": "23"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"non-linear scriptwriting","id": "24"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"science communication","id": "25"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Podcasting","id": "26"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"French","id": "27"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Polish","id": "28"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"How to handle conversations with xenophobes and racists","id": "29"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Python","id": "30"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Creating interactive web experiences","id": "31"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"writing successful newsletters","id": "32"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"creating a MVP","id": "33"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"appreciate slower forms of art","id": "34"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"colour","id": "35"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Compassionate UX","id": "36"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"creating shared narratives more effectively & spontaneously","id": "37"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"effective altruism","id": "38"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Frameworks for effective design","id": "39"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"generous interfaces","id": "40"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"how our thinking shapes our worlds","id": "41"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"how we can work for equity and justice","id": "42"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"identifying birds from their song","id": "43"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"identifying food for foraging","id": "44"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"language of critique","id": "45"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"patterns/languages/mental models","id": "46"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"typography","id": "47"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Creating effective screencasts","id": "48"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Digital gardening","id": "49"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Educational theory/pedagogy","id": "50"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Coaching/Active listening","id": "51"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Maths in the world","id": "52"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Problem solving","id": "53"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"magic tricks","id": "54"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"setting up marketing campaign (practical on social or print?)","id": "55"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"story myths","id": "56"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Tools and theory for creating stories on the web","id": "57"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Ways to create stories that are inclusive, accessible and non-violent","id": "58"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Frontend/Web development","id": "59"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"best practises of innovative storytelling","id": "60"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"distribution strategies for innovative storytelling approaches","id": "61"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Investigative journalism","id": "62"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Multimedia journalism","id": "63"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Solutions journalism","id": "64"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Engaged journalism","id": "65"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Entrepreneurship","id": "66"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"How do we practice curiosity","id": "67"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Indian cuisine","id": "68"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Interview techniques","id": "69"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Making non-traditional games","id": "70"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"creativity & machine learning","id": "71"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"long form writing","id": "72"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"story/idea development","id": "73"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"best practices for immersive storytelling online","id": "74"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"workshop design and tips","id": "75"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"ux design and research","id": "76"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"web project planning and roadmapping","id": "77"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"motion graphics","id": "78"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"procreate","id": "79"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"lock-picking","id": "80"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"japanese","id": "81"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Making academic scholarship more interactive and engaging","id": "82"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Matcha lattes (both hot and iced)","id": "83"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Bullet journaling","id": "84"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Meanings and symbolism in studio ghibli films","id": "85"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"video editing","id": "86"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"technical theatre", "id": "87"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"designing escape room games","id": "88"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"accessibility for visual impairment","id": "89"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"data modeling & software engineering","id": "90"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"books","id": "91"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"spanish","id": "92"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"digital tools","id": "93"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"art","id": "94"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Open source philosophy and history","id": "95"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"visual facilitation techniques","id": "96"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"German Language","id": "97"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"programming","id": "98"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"crafts","id": "99"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"narrative design","id": "100"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"copyright law","id": "101"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"open licensing","id": "102"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"research techniques","id": "103"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"text editing","id": "104"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"typography","id": "105"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"DEI in design","id": "106"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"illustration and animation","id": "107"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"VR/AR","id": "108"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Architecture","id": "109"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"creative writing","id": "110"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"writing poetry","id": "111"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"writing personal essay","id": "112"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"writing fiction","id": "113"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"Ceramics","id": "114"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"textiles","id": "115"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"woodworking","id": "116"},
+        {_cssClass: "Skill",  _labelClass: "skillLabel",name:"cooking", "id":"117"}
       ],
       links: [
       {
@@ -1881,8 +1881,8 @@ export default({
   computed:{
     options(){
       return{
-        force: 3000,
-        size:{ w:this.width, h:600},
+        force: 1000,
+        size:{ w:1000, h:600},
         nodeSize: this.nodeSize,
         nodeLabels: true,
         linkLabels:true,
@@ -1893,19 +1893,22 @@ export default({
   methods:{
     lcb (link) {
       link._svgAttrs = { 'marker-end': 'url(#m-end)',
-                       'marker-start': 'url(#m-start)'}
+                       }
       return link
     }
   },
   mounted() {
     window.addEventListener('resize', function () {
-      this.width = window.innerWidth;
+      this.width = window.width;
     });
   },
 })
 </script>
 <style >
-
+.net {
+  background-color: white;
+  border-radius: 8px
+}
 .title{
   position:absolute;
   text-align: center;
@@ -1947,13 +1950,6 @@ circle.Member.node {
     fill: white;
   }
 
-  .node.selected {
-    stroke: yellow;
-
-  }
-  .node.pinned {
-    stroke: alpha(yellow, 0.6);
-  }
 
   path.learner{
     stroke: black;
@@ -1967,24 +1963,23 @@ circle.Member.node {
     stroke-linecap: round;
   }
 
-  .link.selected{
-    stroke: alpha($color2, 0.6);
-  }
 
   .curve{
     fill: none;
   }
 
   .node-label{
-    fill: black;
+    /* fill: black; */
+    font-size: 1.1rem;
   }
 
-  .link-label{
-    fill: red;
-    transform: translate(0, -0.5em);
-    text-anchor: middle;
-  }
+.memberLabel {
+  fill: blue;
+}
 
+.skillLabel {
+  fill: green;
+}
   #m-end path, #m-start{
   fill: rgba(18, 120, 98, 0.8);
 }
