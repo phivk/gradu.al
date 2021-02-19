@@ -10,14 +10,7 @@
     </marker>
   </defs>
 </svg>
-  <div class="title">
-    <ul class="menu">
-      <li>
-        <label> Node size  </label>
-        <input type="range" min="1" max="100" v-model='nodeSize' /> {{ options.nodeSize }}
-      </li>
-    </ul>
-  </div>
+
   <d3-network ref='net' :net-nodes="nodes" :net-links="links" :options="options" :link-cb="lcb" />
 </div>
 </template>
@@ -27,6 +20,8 @@ export default({
   components: {
     D3Network
   },
+  // f1955b
+  // 9f78e4
   data () {
     return {
       nodes: [
@@ -150,7 +145,7 @@ export default({
       ],
       links: [
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "12",
         "tid": "18",
         "_svgAttrs": {
@@ -159,7 +154,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "19",
         "_svgAttrs": {
@@ -168,7 +163,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "20",
         "_svgAttrs": {
@@ -177,7 +172,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "21",
         "_svgAttrs": {
@@ -186,7 +181,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "22",
         "_svgAttrs": {
@@ -195,7 +190,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "97",
         "_svgAttrs": {
@@ -204,7 +199,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "24",
         "_svgAttrs": {
@@ -213,7 +208,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "25",
         "_svgAttrs": {
@@ -222,7 +217,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "4",
         "tid": "30",
         "_svgAttrs": {
@@ -231,7 +226,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "34",
         "_svgAttrs": {
@@ -240,7 +235,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "35",
         "_svgAttrs": {
@@ -249,7 +244,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "36",
         "_svgAttrs": {
@@ -258,7 +253,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "37",
         "_svgAttrs": {
@@ -267,7 +262,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "38",
         "_svgAttrs": {
@@ -276,7 +271,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "39",
         "_svgAttrs": {
@@ -285,7 +280,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "40",
         "_svgAttrs": {
@@ -294,7 +289,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "41",
         "_svgAttrs": {
@@ -303,7 +298,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "42",
         "_svgAttrs": {
@@ -312,7 +307,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "43",
         "_svgAttrs": {
@@ -321,7 +316,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "44",
         "_svgAttrs": {
@@ -330,7 +325,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "45",
         "_svgAttrs": {
@@ -339,7 +334,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "46",
         "_svgAttrs": {
@@ -348,7 +343,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "105",
         "_svgAttrs": {
@@ -357,7 +352,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "54",
         "_svgAttrs": {
@@ -366,7 +361,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "55",
         "_svgAttrs": {
@@ -375,7 +370,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "56",
         "_svgAttrs": {
@@ -384,7 +379,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "14",
         "tid": "57",
         "_svgAttrs": {
@@ -393,7 +388,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "14",
         "tid": "58",
         "_svgAttrs": {
@@ -402,7 +397,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "60",
         "_svgAttrs": {
@@ -411,7 +406,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "61",
         "_svgAttrs": {
@@ -420,7 +415,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "67",
         "_svgAttrs": {
@@ -429,7 +424,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "15",
         "tid": "68",
         "_svgAttrs": {
@@ -438,7 +433,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "70",
         "_svgAttrs": {
@@ -447,7 +442,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "71",
         "_svgAttrs": {
@@ -456,7 +451,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "74",
         "_svgAttrs": {
@@ -465,7 +460,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "78",
         "_svgAttrs": {
@@ -474,7 +469,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "79",
         "_svgAttrs": {
@@ -483,7 +478,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "80",
         "_svgAttrs": {
@@ -492,7 +487,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "81",
         "_svgAttrs": {
@@ -501,7 +496,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "7",
         "tid": "86",
         "_svgAttrs": {
@@ -510,7 +505,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "7",
         "tid": "87",
         "_svgAttrs": {
@@ -519,7 +514,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "4",
         "tid": "90",
         "_svgAttrs": {
@@ -528,7 +523,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "5",
         "tid": "95",
         "_svgAttrs": {
@@ -537,7 +532,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "2",
         "tid": "96",
         "_svgAttrs": {
@@ -546,7 +541,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "97",
         "_svgAttrs": {
@@ -555,7 +550,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "98",
         "_svgAttrs": {
@@ -564,7 +559,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "99",
         "_svgAttrs": {
@@ -573,7 +568,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "105",
         "_svgAttrs": {
@@ -582,7 +577,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "106",
         "_svgAttrs": {
@@ -591,7 +586,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "107",
         "_svgAttrs": {
@@ -600,7 +595,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "108",
         "_svgAttrs": {
@@ -609,7 +604,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "109",
         "_svgAttrs": {
@@ -618,7 +613,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "110",
         "_svgAttrs": {
@@ -627,7 +622,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "111",
         "_svgAttrs": {
@@ -636,7 +631,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "112",
         "_svgAttrs": {
@@ -645,7 +640,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "113",
         "_svgAttrs": {
@@ -654,7 +649,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "2",
         "tid": "26",
         "_svgAttrs": {
@@ -663,7 +658,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "2",
         "tid": "27",
         "_svgAttrs": {
@@ -672,7 +667,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "2",
         "tid": "28",
         "_svgAttrs": {
@@ -681,7 +676,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "2",
         "tid": "29",
         "_svgAttrs": {
@@ -690,7 +685,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "6",
         "tid": "31",
         "_svgAttrs": {
@@ -699,7 +694,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "6",
         "tid": "32",
         "_svgAttrs": {
@@ -708,7 +703,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "6",
         "tid": "33",
         "_svgAttrs": {
@@ -717,7 +712,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "48",
         "_svgAttrs": {
@@ -726,7 +721,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "49",
         "_svgAttrs": {
@@ -735,7 +730,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "50",
         "_svgAttrs": {
@@ -744,7 +739,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "51",
         "_svgAttrs": {
@@ -753,7 +748,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "52",
         "_svgAttrs": {
@@ -762,7 +757,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "53",
         "_svgAttrs": {
@@ -771,7 +766,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "14",
         "tid": "59",
         "_svgAttrs": {
@@ -780,7 +775,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "62",
         "_svgAttrs": {
@@ -789,7 +784,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "63",
         "_svgAttrs": {
@@ -798,7 +793,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "64",
         "_svgAttrs": {
@@ -807,7 +802,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "65",
         "_svgAttrs": {
@@ -816,7 +811,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "66",
         "_svgAttrs": {
@@ -825,7 +820,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "15",
         "tid": "69",
         "_svgAttrs": {
@@ -834,7 +829,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "8",
         "tid": "72",
         "_svgAttrs": {
@@ -843,7 +838,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "8",
         "tid": "73",
         "_svgAttrs": {
@@ -852,7 +847,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "10",
         "tid": "75",
         "_svgAttrs": {
@@ -861,7 +856,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "10",
         "tid": "76",
         "_svgAttrs": {
@@ -870,7 +865,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "10",
         "tid": "77",
         "_svgAttrs": {
@@ -879,7 +874,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "1",
         "tid": "82",
         "_svgAttrs": {
@@ -888,7 +883,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "1",
         "tid": "83",
         "_svgAttrs": {
@@ -897,7 +892,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "1",
         "tid": "84",
         "_svgAttrs": {
@@ -906,7 +901,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "1",
         "tid": "85",
         "_svgAttrs": {
@@ -915,7 +910,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "7",
         "tid": "88",
         "_svgAttrs": {
@@ -924,7 +919,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "7",
         "tid": "89",
         "_svgAttrs": {
@@ -933,7 +928,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "91",
         "_svgAttrs": {
@@ -942,7 +937,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "92",
         "_svgAttrs": {
@@ -951,7 +946,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "93",
         "_svgAttrs": {
@@ -960,7 +955,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "94",
         "_svgAttrs": {
@@ -969,7 +964,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "100",
         "_svgAttrs": {
@@ -978,7 +973,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "101",
         "_svgAttrs": {
@@ -987,7 +982,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "102",
         "_svgAttrs": {
@@ -996,7 +991,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "103",
         "_svgAttrs": {
@@ -1005,7 +1000,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "104",
         "_svgAttrs": {
@@ -1014,7 +1009,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "3",
         "tid": "114",
         "_svgAttrs": {
@@ -1023,7 +1018,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "3",
         "tid": "115",
         "_svgAttrs": {
@@ -1032,7 +1027,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "3",
         "tid": "116",
         "_svgAttrs": {
@@ -1041,7 +1036,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "3",
         "tid": "117",
         "_svgAttrs": {
@@ -1050,7 +1045,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "21",
         "_svgAttrs": {
@@ -1059,7 +1054,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "21",
         "_svgAttrs": {
@@ -1068,7 +1063,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "15",
         "tid": "21",
         "_svgAttrs": {
@@ -1077,7 +1072,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "20",
         "_svgAttrs": {
@@ -1086,7 +1081,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "20",
         "_svgAttrs": {
@@ -1095,7 +1090,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "15",
         "tid": "20",
         "_svgAttrs": {
@@ -1104,7 +1099,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "17",
         "tid": "56",
         "_svgAttrs": {
@@ -1113,7 +1108,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "3",
         "tid": "56",
         "_svgAttrs": {
@@ -1122,7 +1117,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "17",
         "tid": "45",
         "_svgAttrs": {
@@ -1131,7 +1126,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "3",
         "tid": "45",
         "_svgAttrs": {
@@ -1140,7 +1135,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "45",
         "_svgAttrs": {
@@ -1149,7 +1144,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "24",
         "_svgAttrs": {
@@ -1158,7 +1153,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "17",
         "tid": "41",
         "_svgAttrs": {
@@ -1167,7 +1162,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "59",
         "_svgAttrs": {
@@ -1176,7 +1171,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "95",
         "_svgAttrs": {
@@ -1185,7 +1180,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "13",
         "tid": "60",
         "_svgAttrs": {
@@ -1194,7 +1189,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "11",
         "tid": "60",
         "_svgAttrs": {
@@ -1203,7 +1198,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "58",
         "_svgAttrs": {
@@ -1212,7 +1207,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "58",
         "_svgAttrs": {
@@ -1221,7 +1216,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "15",
         "tid": "58",
         "_svgAttrs": {
@@ -1230,7 +1225,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "7",
         "tid": "58",
         "_svgAttrs": {
@@ -1239,7 +1234,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "57",
         "_svgAttrs": {
@@ -1248,7 +1243,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "57",
         "_svgAttrs": {
@@ -1257,7 +1252,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "15",
         "tid": "57",
         "_svgAttrs": {
@@ -1266,7 +1261,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "8",
         "tid": "57",
         "_svgAttrs": {
@@ -1275,7 +1270,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "1",
         "tid": "57",
         "_svgAttrs": {
@@ -1284,7 +1279,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "4",
         "tid": "21",
         "_svgAttrs": {
@@ -1293,7 +1288,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "9",
         "tid": "21",
         "_svgAttrs": {
@@ -1302,7 +1297,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "15",
         "tid": "21",
         "_svgAttrs": {
@@ -1311,7 +1306,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "16",
         "tid": "18",
         "_svgAttrs": {
@@ -1320,7 +1315,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "10",
         "tid": "18",
         "_svgAttrs": {
@@ -1329,7 +1324,7 @@ export default({
         }
       },
       {
-        "_cssClass": "sharer",
+        "_color": "#9f78e4",
         "sid": "1",
         "tid": "18",
         "_svgAttrs": {
@@ -1338,7 +1333,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "26",
         "_svgAttrs": {
@@ -1347,7 +1342,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "15",
         "tid": "26",
         "_svgAttrs": {
@@ -1356,7 +1351,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "26",
         "_svgAttrs": {
@@ -1365,7 +1360,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "26",
         "_svgAttrs": {
@@ -1374,7 +1369,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "26",
         "_svgAttrs": {
@@ -1383,7 +1378,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "27",
         "_svgAttrs": {
@@ -1392,7 +1387,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "29",
         "_svgAttrs": {
@@ -1401,7 +1396,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "29",
         "_svgAttrs": {
@@ -1410,7 +1405,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "15",
         "tid": "29",
         "_svgAttrs": {
@@ -1419,7 +1414,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "29",
         "_svgAttrs": {
@@ -1428,7 +1423,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "29",
         "_svgAttrs": {
@@ -1437,7 +1432,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "31",
         "_svgAttrs": {
@@ -1446,7 +1441,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "31",
         "_svgAttrs": {
@@ -1455,7 +1450,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "31",
         "_svgAttrs": {
@@ -1464,7 +1459,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "15",
         "tid": "31",
         "_svgAttrs": {
@@ -1473,7 +1468,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "31",
         "_svgAttrs": {
@@ -1482,7 +1477,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "31",
         "_svgAttrs": {
@@ -1491,7 +1486,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "31",
         "_svgAttrs": {
@@ -1500,7 +1495,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "31",
         "_svgAttrs": {
@@ -1509,7 +1504,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "7",
         "tid": "31",
         "_svgAttrs": {
@@ -1518,7 +1513,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "4",
         "tid": "31",
         "_svgAttrs": {
@@ -1527,7 +1522,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "31",
         "_svgAttrs": {
@@ -1536,7 +1531,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "31",
         "_svgAttrs": {
@@ -1545,7 +1540,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "32",
         "_svgAttrs": {
@@ -1554,7 +1549,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "32",
         "_svgAttrs": {
@@ -1563,7 +1558,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "12",
         "tid": "32",
         "_svgAttrs": {
@@ -1572,7 +1567,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "32",
         "_svgAttrs": {
@@ -1581,7 +1576,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "32",
         "_svgAttrs": {
@@ -1590,7 +1585,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "9",
         "tid": "33",
         "_svgAttrs": {
@@ -1599,7 +1594,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "33",
         "_svgAttrs": {
@@ -1608,7 +1603,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "33",
         "_svgAttrs": {
@@ -1617,7 +1612,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "33",
         "_svgAttrs": {
@@ -1626,7 +1621,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "15",
         "tid": "48",
         "_svgAttrs": {
@@ -1635,7 +1630,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "48",
         "_svgAttrs": {
@@ -1644,7 +1639,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "7",
         "tid": "48",
         "_svgAttrs": {
@@ -1653,7 +1648,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "48",
         "_svgAttrs": {
@@ -1662,7 +1657,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "49",
         "_svgAttrs": {
@@ -1671,7 +1666,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "49",
         "_svgAttrs": {
@@ -1680,7 +1675,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "49",
         "_svgAttrs": {
@@ -1689,7 +1684,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "49",
         "_svgAttrs": {
@@ -1698,7 +1693,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "4",
         "tid": "49",
         "_svgAttrs": {
@@ -1707,7 +1702,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "49",
         "_svgAttrs": {
@@ -1716,7 +1711,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "4",
         "tid": "59",
         "_svgAttrs": {
@@ -1725,7 +1720,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "16",
         "tid": "59",
         "_svgAttrs": {
@@ -1734,7 +1729,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "13",
         "tid": "59",
         "_svgAttrs": {
@@ -1743,7 +1738,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "15",
         "tid": "59",
         "_svgAttrs": {
@@ -1752,7 +1747,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "59",
         "_svgAttrs": {
@@ -1761,7 +1756,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "59",
         "_svgAttrs": {
@@ -1770,7 +1765,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "7",
         "tid": "59",
         "_svgAttrs": {
@@ -1779,7 +1774,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "59",
         "_svgAttrs": {
@@ -1788,7 +1783,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "60",
         "_svgAttrs": {
@@ -1797,7 +1792,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "8",
         "tid": "67",
         "_svgAttrs": {
@@ -1806,7 +1801,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "67",
         "_svgAttrs": {
@@ -1815,7 +1810,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "67",
         "_svgAttrs": {
@@ -1824,7 +1819,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "1",
         "tid": "67",
         "_svgAttrs": {
@@ -1833,7 +1828,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "7",
         "tid": "67",
         "_svgAttrs": {
@@ -1842,7 +1837,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "3",
         "tid": "67",
         "_svgAttrs": {
@@ -1851,7 +1846,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "17",
         "tid": "69",
         "_svgAttrs": {
@@ -1860,7 +1855,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "10",
         "tid": "69",
         "_svgAttrs": {
@@ -1869,7 +1864,7 @@ export default({
         }
       },
       {
-        "_cssClass": "learner",
+        "_color": "#f1955b",
         "sid": "11",
         "tid": "69",
         "_svgAttrs": {
@@ -1878,16 +1873,16 @@ export default({
         }
       }
     ],
-      nodeSize:20,
-      canvas:false
-
+      nodeSize:10,
+      canvas:false,
+      width: 1000
     }
   },
   computed:{
     options(){
       return{
         force: 3000,
-        size:{ w:1000, h:600},
+        size:{ w:this.width, h:600},
         nodeSize: this.nodeSize,
         nodeLabels: true,
         linkLabels:true,
@@ -1895,22 +1890,22 @@ export default({
       }
     }
   },
-    methods:{
+  methods:{
     lcb (link) {
       link._svgAttrs = { 'marker-end': 'url(#m-end)',
                        'marker-start': 'url(#m-start)'}
       return link
     }
-  }
+  },
+  mounted() {
+    window.addEventListener('resize', function () {
+      this.width = window.innerWidth;
+    });
+  },
 })
 </script>
 <style >
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-body{
-  font-family: 'PT Sans', sans-serif;
-  background-color: #eee;
-}
 .title{
   position:absolute;
   text-align: center;
@@ -1960,8 +1955,12 @@ circle.Member.node {
     stroke: alpha(yellow, 0.6);
   }
 
-  path.link{
+  path.learner{
     stroke: black;
+  }
+
+  path.sharer{
+    stroke: blue;
   }
 
   .node, .link {
