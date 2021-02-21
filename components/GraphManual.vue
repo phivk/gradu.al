@@ -13,7 +13,7 @@
 <div
     @mousedown="positionOnDown"
     @mouseup="changePositionOnUp"
-    @touchmove="testMove"
+    @touchmove="touchMove"
 >
 
   <d3-network
@@ -1920,7 +1920,7 @@ export default({
                        }
       return link
     },
-    testMove(e){
+    touchMove(e){
       if(!this.lastTouch) {
         this.lastTouch = e.targetTouches[0]
         return;
