@@ -1886,8 +1886,8 @@ export default({
         }
       }
     ],
-      nodeSize:10,
-      canvas:false,
+      nodeSize: 15,
+      canvas: false,
       offsetX: 0,
       offsetY: 0,
       startX: 0,
@@ -1916,8 +1916,7 @@ export default({
   },
   methods:{
     lcb (link) {
-      link._svgAttrs = { 'marker-end': 'url(#m-end)',
-                       }
+      link._svgAttrs = { 'marker-end': 'url(#m-end)' }
       return link
     },
     touchMove(e){
@@ -1925,8 +1924,8 @@ export default({
         this.lastTouch = e.targetTouches[0]
         return;
       }
-      this.offsetX = this.offsetX + e.targetTouches[0].clientX -this.lastTouch.clientX
-      this.offsetY = this.offsetY-this.lastTouch.clientY + e.targetTouches[0].clientY
+      this.offsetX = this.offsetX + e.targetTouches[0].clientX - this.lastTouch.clientX
+      this.offsetY = this.offsetY - this.lastTouch.clientY + e.targetTouches[0].clientY
       this.lastTouch = e.targetTouches[0]
     },
     positionOnDown(e){
