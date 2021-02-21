@@ -13,6 +13,7 @@
 <div
     @mousedown="positionOnDown"
     @mouseup="changePositionOnUp"
+    @touchmove="testMove"
 >
 
   <d3-network
@@ -21,7 +22,6 @@
     :net-links="links"
     :options="options"
     :link-cb="lcb"
-    v-on:node-click="pan"
   />
 </div>
 </div>
@@ -1891,7 +1891,8 @@ export default({
       offsetX: 0,
       offsetY: 0,
       startX: 0,
-      startY: 0
+      startY: 0,
+      lastTouch: null
     }
   },
   computed:{
@@ -1919,18 +1920,22 @@ export default({
                        }
       return link
     },
-    pan(e,o) {
-      console.log(o)
+    testMove(e){
+      if(!this.lastTouch) {
+        this.lastTouch = e.targetTouches[0]
+        return;
+      }
+      this.offsetX = this.offsetX + e.targetTouches[0].clientX -this.lastTouch.clientX
+      this.offsetY = this.offsetY-this.lastTouch.clientY + e.targetTouches[0].clientY
+      this.lastTouch = e.targetTouches[0]
     },
     positionOnDown(e){
       this.startX = e.clientX
       this.startY = e.clientY
     },
     changePositionOnUp(e){
-      this.offsetX = e.clientX - this.startX
-      this.offsetY =e.clientY - this.startY
-
-
+      this.offsetX = this.offsetX+e.clientX - this.startX
+      this.offsetY =this.offsetY+e.clientY - this.startY
     }
   },
   mounted() {
