@@ -10,8 +10,20 @@
     </marker>
   </defs>
 </svg>
+<div
+    @mousedown="positionOnDown"
+    @mouseup="changePositionOnUp"
+>
 
-  <d3-network ref='net' :net-nodes="nodes" :net-links="links" :options="options" :link-cb="lcb" />
+  <d3-network
+    ref='net'
+    :net-nodes="nodes"
+    :net-links="links"
+    :options="options"
+    :link-cb="lcb"
+    v-on:node-click="pan"
+  />
+</div>
 </div>
 </template>
 <style src="vue-d3-network/dist/vue-d3-network.css"></style>
@@ -1876,7 +1888,10 @@ export default({
     ],
       nodeSize:10,
       canvas:false,
-      width: 1000
+      offsetX: 0,
+      offsetY: 0,
+      startX: 0,
+      startY: 0
     }
   },
   computed:{
@@ -1887,7 +1902,14 @@ export default({
         nodeLabels: true,
         linkLabels:true,
         canvas: this.canvas,
-        resizeListener: true
+        resizeListener: true,
+        size: {
+          h: 1000
+        },
+        offset: {
+          x: this.offsetX,
+          y: this.offsetY
+        }
       }
     }
   },
@@ -1896,6 +1918,19 @@ export default({
       link._svgAttrs = { 'marker-end': 'url(#m-end)',
                        }
       return link
+    },
+    pan(e,o) {
+      console.log(o)
+    },
+    positionOnDown(e){
+      this.startX = e.clientX
+      this.startY = e.clientY
+    },
+    changePositionOnUp(e){
+      this.offsetX = e.clientX - this.startX
+      this.offsetY =e.clientY - this.startY
+
+
     }
   },
   mounted() {
