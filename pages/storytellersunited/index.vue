@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import _ from "lodash";
 import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
