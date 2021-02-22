@@ -49,43 +49,23 @@
         </div>
       </section>
       <SessionsSection
-        v-if="sessionsUpcoming.length" 
+        v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
         :members="members"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
-      <SessionsSection
-        :sessions="sessionsPast"
-        :members="members"
-      >
+      <SessionsSection :sessions="sessionsPast" :members="members">
         <h2 class="mb3">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
       </SessionsSection>
-      <section class="mb5">
-        <h2 class="mb3">Community learning intentions</h2>
-        <div class="mb3 f4 center lh-copy">
-          <p>
-            Here's an interactive map of skills that SU members would like to
-            <span class="b orange">↗︎learn</span> or
-            <span class="b purple">↗︎share</span>.
-          </p>
-          <p>
-            Click any <span class="b dark-green">●skill</span> or
-            <span class="b dark-blue">●member</span> to explore the connections!
-          </p>
-          <p>
-            Click <span class="b f3">⦷</span>pause to prevent overlapping texts.
-          </p>
-        </div>
-        <GraphCommonsEmbed
-          :graphCommonsSrc="graphCommonsSrc"
-        />
-      </section>
+      <GraphSection memberTitlePlural="SU members">
+        <GraphCommonsEmbed :graphCommonsSrc="graphCommonsSrc" />
+      </GraphSection>
     </div>
   </div>
 </template>
@@ -96,6 +76,7 @@ import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
+import GraphSection from "~/components/GraphSection.vue";
 export default {
   layout: "storytellersUnited",
   head() {
@@ -108,10 +89,12 @@ export default {
     GraphCommonsEmbed,
     CalendarReferral,
     SessionsSection,
+    GraphSection,
   },
   data() {
     return {
-      graphCommonsSrc: "https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false",
+      graphCommonsSrc:
+        "https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false",
     };
   },
   methods: {
