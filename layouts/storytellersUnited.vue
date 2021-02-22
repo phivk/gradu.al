@@ -27,24 +27,6 @@ export default {
 };
 </script>
 <style>
-html {
-  font-family: "Avenir", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
 :root {
   --color-su-washed-orange: #fdecce;
   --color-su-light-orange: #f4a726;
@@ -78,23 +60,5 @@ html {
 }
 html {
   background-color: var(--color-su-washed-orange);
-}
-.hover-no-underline:hover {
-  text-decoration: none;
-}
-.ml-1 {
-  margin-left: -0.25rem;
-}
-.ml-2 {
-  margin-left: -0.5rem;
-}
-.w2-5 {
-  width: 3rem;
-}
-.ws-pre-wrap {
-  white-space: pre-wrap;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
 }
 </style>
