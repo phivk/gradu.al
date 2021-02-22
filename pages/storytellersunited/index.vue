@@ -98,20 +98,6 @@ export default {
         "https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false",
     };
   },
-  methods: {
-    hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => {
-        if (this.members[memberName]) {
-          return this.members[memberName];
-        } else {
-          return {
-            profilePic: require("@/assets/profilePic-default-32.png"),
-            userName: memberName,
-          };
-        }
-      });
-    },
-  },
   async asyncData({ $content }) {
     let now = new Date();
     now.setDate(now.getDate() - 1); // include today in upcoming
