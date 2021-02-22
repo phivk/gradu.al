@@ -13,7 +13,8 @@
         </div>
         <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
         <nuxt-link
-          to="/storytellersunited/join"
+          append
+          to="join"
           class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
         >
           Let us know!
