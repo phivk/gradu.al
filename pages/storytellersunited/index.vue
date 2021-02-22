@@ -107,7 +107,9 @@
             Click <span class="b f3">⦷</span>pause to prevent overlapping texts.
           </p>
         </div>
-        <GraphEmbed />
+        <GraphCommonsEmbed
+          :graphCommonsSrc="graphCommonsSrc"
+        />
       </section>
     </div>
   </div>
@@ -116,7 +118,7 @@
 <script>
 import _ from "lodash";
 import SessionCardPreview from "~/components/SessionCardPreview.vue";
-import GraphEmbed from "~/components/GraphEmbed.vue";
+import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 export default {
   layout: "storytellersUnited",
@@ -127,12 +129,12 @@ export default {
   },
   components: {
     SessionCardPreview,
-    GraphEmbed,
+    GraphCommonsEmbed,
     CalendarReferral,
   },
   data() {
     return {
-      members: [],
+      graphCommonsSrc: "https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false",
     };
   },
   methods: {
