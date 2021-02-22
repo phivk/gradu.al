@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-su-washed-orange">
+  <div>
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <div class="mv4">
@@ -15,14 +15,14 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
+          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-moz-berry"
         >
           Let us know!
         </nuxt-link>
         <div class="db">
           <a
             href="https://www.mozillafestival.org/slack/"
-            class="su-dark-orange hover-no-underline"
+            class="moz-berry hover-no-underline"
             target="_blank"
             >join the MozFest Slack</a
           >
@@ -41,7 +41,7 @@
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01B1TB2CMC"
                 target="_blank"
-                class="su-dark-orange hover-no-underline"
+                class="moz-berry hover-no-underline"
                 >#creative-ai channel</a
               >
               for updates.
@@ -85,7 +85,7 @@ import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 export default {
-  layout: "storytellersUnited",
+  layout: "mozFest",
   head() {
     return {
       title: "MozFest - Here to learn",

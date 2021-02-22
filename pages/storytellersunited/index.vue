@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-su-washed-orange">
+  <div>
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <div class="mv4">

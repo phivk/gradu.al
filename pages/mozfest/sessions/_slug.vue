@@ -102,7 +102,7 @@ import TagPill from "~/components/TagPill.vue";
 import ProfilePicList from "~/components/ProfilePicList.vue";
 
 export default {
-  layout: "storytellersUnited",
+  layout: "mozFest",
   components: { TagPill, ProfilePicList },
   async asyncData({ $content, params }) {
 
