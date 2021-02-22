@@ -48,49 +48,24 @@
           </div>
         </div>
       </section>
-      <section v-if="sessionsUpcoming.length" class="mv5">
+      <SessionsSection
+        v-if="sessionsUpcoming.length" 
+        :sessions="sessionsUpcoming"
+        :members="members"
+      >
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
-        <ul class="list pa0 ma0 flex flex-wrap justify-center">
-          <li
-            v-for="session in sessionsUpcoming"
-            class="w-100 w-50-m w-third-l mw6 pa3"
-          >
-            <SessionCardPreview
-              :title="session.title"
-              :type="session.type"
-              :date="session.date"
-              :imageSrc="session.imageSrc"
-              :path="session.path"
-              :learners="hydrateMembers(session.learnerNames)"
-              :sharers="hydrateMembers(session.sharerNames)"
-            />
-          </li>
-        </ul>
-      </section>
-      <section class="mv5">
+      </SessionsSection>
+      <SessionsSection
+        :sessions="sessionsPast"
+        :members="members"
+      >
         <h2 class="mb3">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
-        <ul class="list pa0 ma0 flex flex-wrap justify-center">
-          <li
-            v-for="session in sessionsPast"
-            class="w-100 w-50-m w-third-l mw6 pa3"
-          >
-            <SessionCardPreview
-              :title="session.title"
-              :type="session.type"
-              :date="session.date"
-              :imageSrc="session.imageSrc"
-              :path="session.path"
-              :learners="hydrateMembers(session.learnerNames)"
-              :sharers="hydrateMembers(session.sharerNames)"
-            />
-          </li>
-        </ul>
-      </section>
+      </SessionsSection>
       <section class="mb5">
         <h2 class="mb3">Community learning intentions</h2>
         <div class="mb3 f4 center lh-copy">
@@ -120,6 +95,7 @@ import _ from "lodash";
 import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
+import SessionsSection from "~/components/SessionsSection.vue";
 export default {
   layout: "storytellersUnited",
   head() {
@@ -131,6 +107,7 @@ export default {
     SessionCardPreview,
     GraphCommonsEmbed,
     CalendarReferral,
+    SessionsSection,
   },
   data() {
     return {
