@@ -98,7 +98,6 @@
 </template>
 
 <script>
-import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
 import ProfilePicList from "~/components/ProfilePicList.vue";
 
