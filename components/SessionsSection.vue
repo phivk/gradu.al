@@ -27,7 +27,7 @@ export default {
   },
   props: {
     sessions: { type: Array, default: () => [] },
-    members: { type: Array, default: () => [] },
+    members: { type: Object, default: () => {} },
   },
   methods: {
     hydrateMembers(memberNames) {
