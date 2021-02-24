@@ -22,7 +22,6 @@ sharerNames:
   - Amanda
   - Marsha
 resources:
-  cta:
     text: Share your availability on Slack
     href: https://storytellersunited.slack.com/archives/C016WE6ADA9/p1614085402003400
 ---
