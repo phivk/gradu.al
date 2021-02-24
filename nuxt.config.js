@@ -15,11 +15,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { 
-        src: '//gc.zgo.at/count.js', 
+      {
+        src: '//gc.zgo.at/count.js',
         'data-goatcounter': "https://gradual.goatcounter.com/count",
-        async: true, 
-        body: true, 
+        async: true,
+        body: true,
       },
     ]
   },
@@ -47,9 +47,43 @@ export default {
   /*
   ** Nuxt.js modules
   */
-   modules: [
-    '@nuxt/content'
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
+  auth: {
+    strategies: {
+      slack: {
+        scheme: 'oauth2',
+        endpoints: {
+          authorization: 'https://slack.com/oauth/v2/authorize',
+          token: '/api/slack-token',
+        },
+        token: {
+          property: 'authed_user.access_token',
+          type: 'Bearer',
+          maxAge: 1800
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
+        scope: [],
+        responseType: 'code',
+        grantType: 'authorization_code',
+        accessType: undefined,
+        redirectUri: process.env.SLACK_REDIRECT_URI,
+        logoutRedirectUri: undefined,
+        clientId: process.env.SLACK_CLIENT_ID,
+        user_scope: "identity.basic",
+        state: 'UNIQUE_AND_NON_GUESSABLE',
+        codeChallengeMethod: '',
+        responseMode: '',
+        acrValues: ''
+      }
+    }
+  },
   /*
   ** https://content.nuxtjs.org/configuration
   */
@@ -63,7 +97,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

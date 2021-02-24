@@ -127,5 +127,9 @@ export default {
 
     return { sessionsUpcoming, sessionsPast, members };
   },
+  /* enables auth middleware (also see pages/login.vue and `auth` object in nuxt.config.js)
+     after successful login, the boolean flag `this.$auth.loggedIn` indicates that user is authenticated
+     for more info see https://auth.nuxtjs.org/api/auth/ */
+  // middleware: 'auth'
 };
 </script>
