@@ -15,11 +15,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { 
-        src: '//gc.zgo.at/count.js', 
+      {
+        src: '//gc.zgo.at/count.js',
         'data-goatcounter': "https://gradual.goatcounter.com/count",
-        async: true, 
-        body: true, 
+        async: true,
+        body: true,
       },
     ]
   },
@@ -46,7 +46,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
-   modules: [
+  modules: [
     '@nuxt/content'
   ],
   /*
@@ -62,7 +62,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

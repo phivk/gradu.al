@@ -108,7 +108,10 @@
           </p>
         </div>
       </section>
-        <GraphManual />
+        <GraphManual
+        :nodes="nodes"
+        :edges="edges"
+        />
     </div>
   </div>
 </template>
@@ -173,7 +176,11 @@ export default {
       "https://storytellers.link/api/members.json"
     ).then((res) => res.json());
 
-    return { sessionsUpcoming, sessionsPast, members };
+    const nodes = await $content('storytellersunited/data', 'nodes').fetch()
+
+    const edges = await $content('storytellersunited/data', 'edges').fetch()
+
+    return { sessionsUpcoming, sessionsPast, members, nodes: nodes.nodes, edges: edges.edges };
   },
 };
 </script>
