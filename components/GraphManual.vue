@@ -27,8 +27,8 @@ export default({
     D3Network,
   },
   props: {
-    nodes: Object,
-    edges: Object
+    nodes: Array,
+    edges: Array
   },
   data () {
     return {
