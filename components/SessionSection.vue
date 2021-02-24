@@ -31,7 +31,7 @@
       </div>
       <div class="flex flex-wrap f5 fw4 mb3">
         <div class="w-100 w-20-l pr3 mb3 fw6">
-          <div v-if="date==='TBC'">
+          <div v-if="dateFormatted==='TBC'">
             <a
               :href="cta.href"
               target="_blank"
@@ -41,7 +41,7 @@
           </div>
           <div v-else>
             <p class="f4 mb3">
-              {{ date }}
+              {{ dateFormatted }}
             </p>
             <a
               :href="cta.href"
@@ -139,6 +139,18 @@ export default {
     };
   },
   computed: {
+    dateFormatted() {
+      if (this.isValidDate(this.date)) {
+        let dt = new Date(this.date);
+        return dt.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+      } else {
+        return "TBC";
+      }
+    },
     hasHappened() {
       let now = new Date();
       return new Date(this.date) < now;
@@ -154,7 +166,24 @@ export default {
       else {
         return undefined;
       }
-    }
+    },
+  },
+  methods: {
+    isValidDate(d) {
+      if (Object.prototype.toString.call(d) === "[object Date]") {
+        // it is a date
+        if (isNaN(d.getTime())) {
+          // date is not valid
+          return false;
+        } else {
+          // date is valid
+          return true;
+        }
+      } else {
+        // not a date
+        return false;
+      }
+    },
   },
 };
 </script>
