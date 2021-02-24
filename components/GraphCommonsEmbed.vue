@@ -6,7 +6,7 @@
     <iframe
       :class="{clicked: graphClicked}"
       class="br3"
-      src="https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false"
+      :src="graphCommonsSrc"
       frameborder="0"
       style="overflow:hidden;border:1px solid #DDDDDD;width:1px;min-width:100%;height:600px;min-height:600px;"
       width="100%"
@@ -16,12 +16,14 @@
   </div>
 </template>
 <script>
-import ProfilePic from "~/components/ProfilePic.vue";
 export default {
   data() {
     return {
       graphClicked: false,
     }
+  },
+  props: {
+    graphCommonsSrc: { type: String, default: "" },
   },
   watch: {
     graphClicked(newValue) {

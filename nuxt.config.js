@@ -31,7 +31,8 @@ export default {
   ** Global CSS
   */
   css: [
-    'tachyons/css/tachyons.css'
+    'tachyons/css/tachyons.css',
+    '@/assets/css/main.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -47,8 +48,42 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
+  auth: {
+    strategies: {
+      slack: {
+        scheme: 'oauth2',
+        endpoints: {
+          authorization: 'https://slack.com/oauth/v2/authorize',
+          token: '/api/slack-token',
+        },
+        token: {
+          property: 'authed_user.access_token',
+          type: 'Bearer',
+          maxAge: 1800
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30
+        },
+        scope: [],
+        responseType: 'code',
+        grantType: 'authorization_code',
+        accessType: undefined,
+        redirectUri: process.env.SLACK_REDIRECT_URI,
+        logoutRedirectUri: undefined,
+        clientId: process.env.SLACK_CLIENT_ID,
+        user_scope: "identity.basic",
+        state: 'UNIQUE_AND_NON_GUESSABLE',
+        codeChallengeMethod: '',
+        responseMode: '',
+        acrValues: ''
+      }
+    }
+  },
   /*
   ** https://content.nuxtjs.org/configuration
   */

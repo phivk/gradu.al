@@ -102,17 +102,13 @@ import TagPill from "~/components/TagPill.vue";
 import ProfilePicList from "~/components/ProfilePicList.vue";
 
 export default {
-  layout: "storytellersUnited",
+  layout: "mozFest",
   components: { TagPill, ProfilePicList },
   async asyncData({ $content, params }) {
 
-    const session = await $content('storytellersunited/sessions', params.slug).fetch()
+    const session = await $content('mozfest/sessions', params.slug).fetch()
 
-    const members = await fetch(
-      "https://storytellers.link/api/members.json"
-    ).then((res) => res.json());
-
-    return { session, members }
+    return { session }
   },
   methods: {
     hydrateMembers(memberNames) {

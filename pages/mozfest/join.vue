@@ -1,7 +1,5 @@
 <template>
-  <TypeFormEmbed
-    :typeFormSrc="typeFormSrc"
-  />
+  <TypeFormEmbed :typeFormSrc="typeFormSrc" />
 </template>
 
 <script>
@@ -9,7 +7,7 @@ import TypeFormEmbed from "~/components/TypeFormEmbed.vue";
 export default {
   head() {
     return {
-      title: "Storytellers United - Here to learn",
+      title: "MozFest - Here to learn",
     };
   },
   components: {
@@ -17,9 +15,8 @@ export default {
   },
   data() {
     return {
-      typeFormSrc: "https://form.typeform.com/to/nqEQHQ",
+      typeFormSrc: "https://form.typeform.com/to/LOvcS47Y",
     };
   },
 };
 </script>
-
