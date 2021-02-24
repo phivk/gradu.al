@@ -3,11 +3,11 @@
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <div class="mv4">
-          <a href="https://storytellers.link/" target="_blank">
+          <a href="https://www.mozillafestival.org/" target="_blank">
             <img
-              class="w3 w4-ns"
-              src="https://storytellers.link/img/logo-storytellersunited-200px.png"
-              alt="Storytellers United Logo"
+              class="w4 w5-ns"
+              src="https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg"
+              alt="MozFest Logo"
             />
           </a>
         </div>
@@ -15,16 +15,16 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
+          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-moz-berry"
         >
           Let us know!
         </nuxt-link>
         <div class="db">
           <a
-            href="https://storytellers.link/invite/"
-            class="su-dark-orange hover-no-underline"
+            href="https://www.mozillafestival.org/slack/"
+            class="moz-berry hover-no-underline"
             target="_blank"
-            >join Storytellers United</a
+            >join the MozFest Slack</a
           >
         </div>
       </section>
@@ -32,17 +32,17 @@
         <div class="center">
           <h2 class="measure center mv2">
             Hi 👋 <br />
-            Welcome to Storytellers United on Gradual!
+            Welcome to MozFest on Gradual!
           </h2>
           <div class="measure center">
             <p class="mb3 f4 lh-copy">
               This is a space to express things you’d like to learn and share
               with others in the community. Keep an eye on the
               <a
-                href="https://app.slack.com/client/T14SUV8BA/C016WE6ADA9"
+                href="https://app.slack.com/client/T170JCUN6/C01B1TB2CMC"
                 target="_blank"
-                class="su-dark-orange hover-no-underline"
-                >#skillsharing channel</a
+                class="moz-berry hover-no-underline"
+                >#creative-ai channel</a
               >
               for updates.
             </p>
@@ -57,9 +57,9 @@
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
-      <SessionsSection 
+      <SessionsSection
         v-if="sessionsPast.length"
-        :sessions="sessionsPast" 
+        :sessions="sessionsPast"
         :members="members"
       >
         <h2 class="mb3">Things we've learned so far</h2>
@@ -68,7 +68,10 @@
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
       </SessionsSection>
-      <GraphSection memberTitlePlural="SU members">
+      <GraphSection
+        v-if="this.graphCommonsSrc"
+        memberTitlePlural="MozFest participants"
+      >
         <GraphCommonsEmbed :graphCommonsSrc="graphCommonsSrc" />
       </GraphSection>
     </div>
@@ -82,10 +85,10 @@ import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 export default {
-  layout: "storytellersUnited",
+  layout: "mozFest",
   head() {
     return {
-      title: "Storytellers United - Here to learn",
+      title: "MozFest - Here to learn",
     };
   },
   components: {
@@ -97,8 +100,7 @@ export default {
   },
   data() {
     return {
-      graphCommonsSrc:
-        "https://graphcommons.com/graphs/762414fc-f7f9-40aa-86b8-10f8686f10e0/embed?topbar=false",
+      graphCommonsSrc: undefined,
     };
   },
   async asyncData({ $content }) {
@@ -107,29 +109,21 @@ export default {
     // NB this uses UTC time, causing inaccuracies for non UTC timezones
     let nowString = now.toISOString().slice(0, 10);
 
-    const sessionsUpcoming = await $content("storytellersunited/sessions")
+    const sessionsUpcoming = await $content("mozfest/sessions")
       .sortBy("date", "asc")
       .where({
         date: { $gte: nowString },
       })
       .fetch();
 
-    const sessionsPast = await $content("storytellersunited/sessions")
+    const sessionsPast = await $content("mozfest/sessions")
       .sortBy("date", "desc")
       .where({
         date: { $lt: nowString },
       })
       .fetch();
 
-    const members = await fetch(
-      "https://storytellers.link/api/members.json"
-    ).then((res) => res.json());
-
-    return { sessionsUpcoming, sessionsPast, members };
+    return { sessionsUpcoming, sessionsPast };
   },
-  /* enables auth middleware (also see pages/login.vue and `auth` object in nuxt.config.js)
-     after successful login, the boolean flag `this.$auth.loggedIn` indicates that user is authenticated
-     for more info see https://auth.nuxtjs.org/api/auth/ */
-  // middleware: 'auth'
 };
 </script>
