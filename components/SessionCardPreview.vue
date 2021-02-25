@@ -66,8 +66,8 @@ export default {
       return new Date(this.date) < now;
     },
     dateFormatted() {
-      if (this.isValidDate(this.date)) {
-        let dt = new Date(this.date);
+      let dt = new Date(this.date);
+      if (this.isValidDate(dt)) {
         return dt.toLocaleDateString("en-GB", {
           day: "numeric",
           month: "short",
