@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-su-washed-orange min-vh-100">
     <nav class="bg-su-light-orange">
       <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
         <nuxt-link to="/" class="flex items-center no-underline">
@@ -42,7 +42,4 @@ export default {
 .bg-su-washed-orange { background-color: var(--color-su-washed-orange); }
 .bg-su-light-blue { background-color: var(--color-su-light-blue); }
 .bg-su-dark-blue { background-color: var(--color-su-dark-blue); }
-</style>
-<style scoped>
-html { background-color: var(--color-su-washed-orange); }
 </style>

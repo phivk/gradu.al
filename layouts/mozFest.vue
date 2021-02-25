@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-moz-light-gray min-vh-100">
     <nav class="bg-moz-purple">
       <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
         <nuxt-link to="/" class="flex items-center no-underline">
@@ -38,7 +38,4 @@ export default {
 .bg-moz-purple { background-color: var(--color-moz-purple); }
 .bg-moz-berry { background-color: var(--color-moz-berry); }
 .bg-moz-light-gray { background-color: var(--color-moz-light-gray); }
-</style>
-<style scoped>
-html { background-color: var(--color-moz-light-gray); }
 </style>
