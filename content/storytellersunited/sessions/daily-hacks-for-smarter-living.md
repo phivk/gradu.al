@@ -1,7 +1,7 @@
 ---
 title: Daily Hacks for Smarter Living
 type: peer sharing
-date: "TBC"
+date: "4 Mar 2021"
 imageSrc: https://images.unsplash.com/photo-1596920566403-2072ed25d7f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
 learnerNames:
   - Anna Desponds
@@ -21,9 +21,10 @@ sharerNames:
   - Philo
   - Amanda
   - Marsha
-cta:
-    text: Share your availability on Slack
-    href: https://storytellersunited.slack.com/archives/C016WE6ADA9/p1614085402003400
+ resources:
+  -
+    text: Notes
+    href: www.bit.ly/SUlifehacks
 ---
 How might we explore some useful hacks for smarter living together? 
 <!--more-->
