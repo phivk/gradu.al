@@ -113,7 +113,7 @@ export default {
   },
   props: {
     session: { type: Object, default: () => {} },
-    members: { type: Array, default: () => [] },
+    members: { type: Object, default: () => {} },
   },
   computed: {
     dateFormatted() {
