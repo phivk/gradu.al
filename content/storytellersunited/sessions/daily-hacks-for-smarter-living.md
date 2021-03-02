@@ -24,7 +24,7 @@ sharerNames:
 resources:
   -
     text: Notes
-    href: www.bit.ly/SUlifehacks
+    href: https://www.bit.ly/SUlifehacks
 ---
 How might we explore some useful hacks for smarter living together? 
 <!--more-->
