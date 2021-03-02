@@ -2,8 +2,7 @@
 title: 'Digital Gardens: What are they and how can I start one?'
 type: salon
 date: '2021-01-28'
-imageSrc: >-
-  http://i3.ytimg.com/vi/JjTeZoAmejs/maxresdefault.jpg
+imageSrc: http://i3.ytimg.com/vi/JjTeZoAmejs/maxresdefault.jpg
 learnerNames:
   - Alexa
   - Amanda Curtis
@@ -26,12 +25,7 @@ resources:
   -
     text: Notes
     href: https://docs.google.com/document/d/1dqX7qOOlVOG5OWx7wxh4s2wfTmBdqLiwSonT5RidV1I/edit
-cta:
-  text: Add to calendar
-  href: >-
-    https://calendar.google.com/event?action=TEMPLATE&tmeid=XzcxMjNlZ2hpNmgwazhiOWk4Z3IzMGI5azZsMzRhYjlwNmQxamViOW83MTFqOGdhNThrc2owZGEzNzQgMW5rc2xtaDR1dXI0dDUxbjNyaWxkc2Q5czBAZw&tmsrc=1nkslmh4uur4t51n3rildsd9s0%40group.calendar.google.com
 icsFileSrc: /storytellersunited/201218-architecting-curiosity.ics
-published: true
 ---
 
 The term "digital garden" started to get used more widely in 2020. Maybe our inability to go outside and travel as much led us to think about our digital lives with a more horticultural lens?
