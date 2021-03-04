@@ -22,7 +22,7 @@ sharerNames:
 resources:
   -
     text: Recording
-    href: https://www.youtube.com/watch?v=ULPcqI6cuik&feature=youtu.be
+    href: https://youtu.be/ULPcqI6cuik
   -
     text: Notes
     href: https://www.bit.ly/SUlifehacks
