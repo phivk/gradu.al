@@ -19,11 +19,10 @@ sharerNames:
   - magda bochenska
   - Philo
   - Amanda
-icsFileSrc: /storytellersunited/210304-daily-hacks-for-smarter-living.ics
 resources:
   -
     text: Recording
-    href: https://www.youtube.com/watch?v=ULPcqI6cuik&feature=youtu.be
+    href: https://youtu.be/ULPcqI6cuik
   -
     text: Notes
     href: https://www.bit.ly/SUlifehacks
