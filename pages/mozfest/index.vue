@@ -39,10 +39,10 @@
               This is a space to express things you’d like to learn and share
               with others in the community. Keep an eye on the
               <a
-                href="https://app.slack.com/client/T170JCUN6/C01B1TB2CMC"
+                href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
                 class="moz-berry hover-no-underline"
-                >#creative-ai channel</a
+                >#skillsharing channel</a
               >
               for updates.
             </p>
