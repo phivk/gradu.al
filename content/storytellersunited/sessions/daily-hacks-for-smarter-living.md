@@ -19,7 +19,6 @@ sharerNames:
   - magda bochenska
   - Philo
   - Amanda
-icsFileSrc: /storytellersunited/210304-daily-hacks-for-smarter-living.ics
 resources:
   -
     text: Recording
