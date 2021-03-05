@@ -66,8 +66,33 @@ export default {
       return new Date(this.date) < now;
     },
     dateFormatted() {
-      let dt = new Date(this.date)
-      return dt.toLocaleDateString('en-GB',{ day:'numeric',month: 'short', year: 'numeric'})
+      let dt = new Date(this.date);
+      if (this.isValidDate(dt)) {
+        return dt.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+      } else {
+        return "TBC";
+      }
+    },
+  },
+  methods: {
+    isValidDate(d) {
+      if (Object.prototype.toString.call(d) === "[object Date]") {
+        // it is a date
+        if (isNaN(d.getTime())) {
+          // date is not valid
+          return false;
+        } else {
+          // date is valid
+          return true;
+        }
+      } else {
+        // not a date
+        return false;
+      }
     },
   },
 };

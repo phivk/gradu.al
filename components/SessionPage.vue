@@ -4,10 +4,10 @@
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
           <TagPill class="ml-2" borderColour="#fdecce">{{
-            type
+            session.type
           }}</TagPill>
           <h1 class="f2 f1-l lh-title mt2 mb4">
-            {{ title }}
+            {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
             <div class="video-wrapper" v-if="youtubeRecordingResource">
@@ -23,35 +23,28 @@
             <img
               v-else
               class="db mb3 mb4-ns"
-              :src="imageSrc"
-              :alt="title"
+              :src="session.imageSrc"
+              :alt="session.title"
             />
           </div>
         </div>
       </div>
       <div class="flex flex-wrap f5 fw4 mb3">
         <div class="w-100 w-20-l pr3 mb3 fw6">
-          <div v-if="dateFormatted==='TBC'">
-            <a
-              :href="cta.href"
-              target="_blank"
-              class="f4 link br3 pa2 tc dib white bg-dark-green"
-              >{{ cta.text }}</a
-            >
-          </div>
-          <div v-else>
+          <div>
             <p class="f4 mb3">
               {{ dateFormatted }}
             </p>
             <a
-              :href="cta.href"
+              v-if="session.cta"
+              :href="session.cta.href"
               target="_blank"
               class="f4 link br3 pa2 tc dib mr3 white bg-dark-green"
-              >{{ cta.text }}</a
+              >{{ session.cta.text }}</a
             >
             <a
-              v-if="icsFileSrc"
-              :href="icsFileSrc"
+              v-if="session.icsFileSrc && !hasHappened"
+              :href="session.icsFileSrc"
               target="_blank"
               class="dib mt3 dark-green ws-pre-wrap"
               >↓ .ics file</a
@@ -63,7 +56,7 @@
             <p>
               Shared by
               <ProfilePicList
-                :profilePics="sharers"
+                :profilePics="hydrateMembers(session.sharerNames)"
                 borderColorClass="su-washed-orange"
               />
             </p>
@@ -73,16 +66,16 @@
               <span v-if="hasHappened">Learned by</span>
               <span v-else >Like to learn</span>
               <ProfilePicList
-                :profilePics="learners"
+                :profilePics="hydrateMembers(session.learnerNames)"
                 borderColorClass="su-washed-orange"
               />
             </p>
           </div>
-          <div v-if="resources.length" class="mb2 pr3">
+          <div v-if="session.resources.length" class="mb2 pr3">
             <p>
               Resources
               <ul class="list pa0 mt1">
-                <li class="di" v-for="(resource, index) in resources">
+                <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
                   <a class="dark-green" :href="resource.href" target="_blank">{{
                     resource.text
@@ -95,7 +88,7 @@
       </div>
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb4 mb5-ns">
-          <p class="measure f4 ws-pre-wrap">{{ description }}</p>
+          <nuxt-content class="measure f4" :document="session" />
         </div>
       </div>
     </main>
@@ -119,29 +112,13 @@ export default {
     ProfilePicList,
   },
   props: {
-    title: { type: String, default: "Title" },
-    type: { type: String, default: "type" },
-    date: { type: String, default: "date" },
-    description: { type: String },
-    imageSrc: { type: String },
-    learners: { type: Array, default: () => [] },
-    sharers: { type: Array, default: () => [] },
-    resources: { type: Array, default: () => [] },
-    cta: { type: Object, default: {
-      text: "Join the conversation",
-      href: "https://app.slack.com/client/T14SUV8BA/C016WE6ADA9",
-    }},
-    icsFileSrc: { type: String },
-  },
-  data() {
-    return {
-      members: [],
-    };
+    session: { type: Object, default: () => {} },
+    members: { type: Object, default: () => {} },
   },
   computed: {
     dateFormatted() {
-      if (this.isValidDate(this.date)) {
-        let dt = new Date(this.date);
+      let dt = new Date(this.session.date);
+      if (this.isValidDate(dt)) {
         return dt.toLocaleDateString("en-GB", {
           day: "numeric",
           month: "short",
@@ -153,10 +130,15 @@ export default {
     },
     hasHappened() {
       let now = new Date();
-      return new Date(this.date) < now;
+      return new Date(this.session.date) < now;
     },
     youtubeRecordingResource() {
-      return this.resources.find((r) => r.href.includes("youtu"));
+      if (this.session.resources) {
+        return this.session.resources.find((r) => r.href.includes("youtu"));
+      }
+      else {
+        return undefined
+      }
     },
     youtubeRecordingID() {
       if (this.youtubeRecordingResource) {
@@ -169,6 +151,18 @@ export default {
     },
   },
   methods: {
+    hydrateMembers(memberNames) {
+      return memberNames.map((memberName) => {
+        if (this.members[memberName]) {
+          return this.members[memberName];
+        } else {
+          return {
+            profilePic: require("@/assets/profilePic-default-32.png"),
+            userName: memberName,
+          };
+        }
+      });
+    },
     isValidDate(d) {
       if (Object.prototype.toString.call(d) === "[object Date]") {
         // it is a date
