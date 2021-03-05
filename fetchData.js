@@ -12,7 +12,13 @@ let NODES_PATH, EDGES_PATH, SPREADSHEET_ID;
 
 let nodes = []
 let edges = []
+
 let id = 1
+
+function getNewId() {
+  return id++
+}
+
 
 async function auth() {
   // Load the key
@@ -57,6 +63,7 @@ run()
  * @param {sheets} sheets
  */
 async function processSheet(sheets, NODES_PATH, EDGES_PATH) {
+
   return await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
     range: 'A1:ZZ',
@@ -75,21 +82,19 @@ async function processSheet(sheets, NODES_PATH, EDGES_PATH) {
     fs.writeFile(EDGES_PATH, '{ "edges": ' + JSON.stringify(edges) + "}", (err) => {
       if (err) return console.error(err);
     })
-    fs.writeFile(NODES_PATH, '{ "edges": ' + JSON.stringify(nodes) + "}", (err) => {
+    fs.writeFile(NODES_PATH, '{ "nodes": ' + JSON.stringify(nodes) + "}", (err) => {
       if (err) return console.error(err);
     })
   }
   );
 }
 
-function getNewId() {
-  return id++
-}
+
 
 function processRow({ headers, row }) {
   let member
   headers.forEach((label, idx) => {
-    if (label === "What's your @UserName on the MozFest Slack?") {
+    if (label.includes("@UserName")) {
       // create member node
       member = { "_cssClass": "Member", "_labelClass": "memberLabel", "name": row[idx], id: getNewId() }
       nodes.push(member)
