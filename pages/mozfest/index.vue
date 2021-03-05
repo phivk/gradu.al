@@ -68,12 +68,10 @@
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
       </SessionsSection>
-      <GraphSection
-        v-if="this.graphCommonsSrc"
-        memberTitlePlural="MozFest participants"
-      >
-        <GraphCommonsEmbed :graphCommonsSrc="graphCommonsSrc" />
-      </GraphSection>
+             <GraphManual
+        :nodes="nodes.nodes"
+        :edges="edges.edges"
+        />
     </div>
   </div>
 </template>
