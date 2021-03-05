@@ -74,7 +74,6 @@ async function processSheet(sheets, NODES_PATH, EDGES_PATH) {
 
     await rows.forEach(async (row, idx) => {
       if (idx === 0) return;
-      console.log(row)
       await processRow({ headers, row })
     })
 
