@@ -10,7 +10,9 @@ const communities = require("./communities")
 
 let NODES_PATH, EDGES_PATH, SPREADSHEET_ID;
 
-
+let nodes = []
+let edges = []
+let id = 1
 
 async function auth() {
   // Load the key
@@ -40,8 +42,7 @@ async function run() {
       }
       console.log(`Gathering data for ${community.name}.`)
 
-      // Fetch the data.
-      await getNodesAndEdges(sheets);
+      await processSheet(sheets, NODES_PATH, EDGES_PATH)
     })
     console.log("All done.")
   } catch (error) {
@@ -52,68 +53,117 @@ async function run() {
 run()
 
 /**
- * Gets and formats nodes.
+ * Get header row
+ * @param {sheets} sheets
  */
-function getNodesAndEdges(sheets) {
-  let result
-  sheets.spreadsheets.values.get({
+async function processSheet(sheets, NODES_PATH, EDGES_PATH) {
+  return await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
-    range: 'Nodes!A2:C',
-  }, (err, res) => {
+    range: 'A1:ZZ',
+  }, async (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
-    if (rows.length) {
-      result = rows.map((row) => {
-        return {
-          _cssClass: row[2],
-          _labelClass: `${row[2].toLowerCase()}Label`,
-          name: row[0],
-          id: row[1]
-        }
-      });
-      fs.writeFile(NODES_PATH, '{ "nodes": ' + JSON.stringify(result) + "}", (err) => {
-        if (err) return console.error(err);
-      });
-      getEdges(result, sheets)
-    } else {
-      console.log('No data found.');
-    }
-  });
+    const headers = rows[0];
+
+    await rows.forEach(async (row, idx) => {
+      if (idx === 0) return;
+      console.log(row)
+      await processRow({ headers, row })
+    })
+
+
+    fs.writeFile(EDGES_PATH, '{ "edges": ' + JSON.stringify(edges) + "}", (err) => {
+      if (err) return console.error(err);
+    })
+    fs.writeFile(NODES_PATH, '{ "edges": ' + JSON.stringify(nodes) + "}", (err) => {
+      if (err) return console.error(err);
+    })
+  }
+  );
 }
 
-/**
- * Gets and formats edges.
- */
-function getEdges(nodes, sheets) {
-  let result
-  sheets.spreadsheets.values.get({
-    spreadsheetId: SPREADSHEET_ID,
-    range: 'Edges!A2:D',
-  }, (err, res) => {
-    if (err) return console.log('The API returned an error: ' + err);
-    const rows = res.data.values;
-    if (rows.length) {
-      result = rows.map((row) => {
-        return {
-          _color: row[2] === "likes to learn" ? "#f1955b" : "#9f78e4",
-          sid: getNodeId(row[0], nodes),
-          tid: getNodeId(row[1], nodes),
-          _svgAttrs: {
-            "stroke-width": row[3],
-            opacity: 0.5
-          }
-
-        }
-      });
-      fs.writeFile(EDGES_PATH, '{ "edges": ' + JSON.stringify(result) + "}", (err) => {
-        if (err) return console.error(err);
-      });
-    } else {
-      console.log('No data found.');
-    }
-  });
+function getNewId() {
+  return id++
 }
 
+function processRow({ headers, row }) {
+  let member
+  headers.forEach((label, idx) => {
+    if (label === "What's your @UserName on the MozFest Slack?") {
+      // create member node
+      member = { "_cssClass": "Member", "_labelClass": "memberLabel", "name": row[idx], id: getNewId() }
+      nodes.push(member)
+      return
+    }
+
+    if (label.includes("*like to learn*")) {
+      // this is the multi-select question
+      row[idx].split(",").forEach(skill => {
+        const skillNode = getOrCreateSkill(skill.trim())
+        createLearningEdge(member, skillNode)
+      })
+    }
+
+    if (label.includes("*you could share*")) {
+      // this is the multi-select question
+      row[idx].split(",").forEach(skill => {
+        const skillNode = getOrCreateSkill(skill.trim())
+        createSharingEdge(member, skillNode)
+      })
+    }
+    if (label.includes("*learn*")) {
+      // this is the multi-select question
+      const skillNode = getOrCreateSkill(row[idx].trim())
+      createLearningEdge(member, skillNode)
+    }
+    if (label.includes("*share*")) {
+      // this is the multi-select question
+      const skillNode = getOrCreateSkill(row[idx].trim())
+      createSharingEdge(member, skillNode)
+    }
+
+
+  })
+  return
+}
+
+function getOrCreateSkill(skill) {
+  const filteredNodes = nodes.filter(node => node.name === skill)
+
+  if (filteredNodes.length === 1) {
+    return filteredNodes[0]
+  }
+
+  const skillNode = {
+    "_cssClass": "Skill",
+    "_labelClass": "skillLabel",
+    "name": skill,
+    "id": getNewId()
+  }
+
+  nodes.push(skillNode)
+  return skillNode
+}
+
+function createLearningEdge(member, skill) {
+  const newEdge = {
+    "_color": "#f1955b",
+    "sid": member.id,
+    "tid": skill.id,
+    "_svgAttrs": { "stroke-width": "2", "opacity": 0.5 }
+  }
+  edges.push(newEdge)
+}
+
+function createSharingEdge(member, skill) {
+  const newEdge = {
+    "_color": "#9f78e4",
+    "sid": member.id,
+    "tid": skill.id,
+    "_svgAttrs": { "stroke-width": "2", "opacity": 0.5 }
+  }
+  edges.push(newEdge)
+}
 
 function getNodeId(item, nodes) {
   return nodes.filter(node => node.name === item)[0].id
