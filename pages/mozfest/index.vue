@@ -84,6 +84,7 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
+import GraphManual from "~/components/GraphManual.vue"
 export default {
   layout: "mozFest",
   head() {
@@ -97,6 +98,7 @@ export default {
     CalendarReferral,
     SessionsSection,
     GraphSection,
+    GraphManual
   },
   data() {
     return {
@@ -123,7 +125,11 @@ export default {
       })
       .fetch();
 
-    return { sessionsUpcoming, sessionsPast };
+    const nodes = await $content('mozfest/data', 'nodes').fetch()
+
+    const edges = await $content('mozfest/data', 'edges').fetch()
+
+    return { sessionsUpcoming, sessionsPast, nodes, edges };
   },
 };
 </script>
