@@ -38,8 +38,8 @@ async function run() {
     const sheets = await auth();
     await communities.forEach(async (community) => {
       // Set up the variables
-      NODES_PATH = `./content/${community.name}/data/nodes.js`;
-      EDGES_PATH = `./content/${community.name}/data/edges.js`;
+      NODES_PATH = `./content/${community.name}/data/nodes.json`;
+      EDGES_PATH = `./content/${community.name}/data/edges.json`;
       SPREADSHEET_ID = community.spreadsheetId;
 
       // Ensure the target directory exists.
