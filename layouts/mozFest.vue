@@ -1,28 +1,18 @@
 <template>
-  <div>
-    <nav class="bg-moz-purple">
-      <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
-        <nuxt-link to="/" class="flex items-center no-underline">
-          <logo class="w2-5" />
-          <span class="ml2 white f3 fw6 dn di-ns">gradual</span>
-        </nuxt-link>
-        <nuxt-link 
-          v-if="$route.path.replace(/\//g,'') !== 'mozfest'"
-          to="/mozfest/" 
-          class="no-underline f4 fw4 white br-pill ph3 pv2 bg-animate hover-bg-white-20"
-        >
-          ← MozFest
-        </nuxt-link>
-      </div>
-    </nav>
+  <div class="bg-moz-light-gray min-vh-100">
+    <TheNavBar
+      class="bg-moz-purple"
+      backLinkText="MozFest"
+      backLinkSlug="mozfest"
+    />
     <nuxt />
   </div>
 </template>
 <script>
-import Logo from "~/components/Logo.vue";
+import TheNavBar from "~/components/TheNavBar.vue";
 export default {
   components: {
-    Logo,
+    TheNavBar,
   },
 };
 </script>
@@ -38,7 +28,4 @@ export default {
 .bg-moz-purple { background-color: var(--color-moz-purple); }
 .bg-moz-berry { background-color: var(--color-moz-berry); }
 .bg-moz-light-gray { background-color: var(--color-moz-light-gray); }
-</style>
-<style scoped>
-html { background-color: var(--color-moz-light-gray); }
 </style>
