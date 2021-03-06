@@ -1,5 +1,5 @@
 <template>
-  <article class="tl bg-near-white br3 hover-shadow-raise">
+  <article class="tl bg-light-gray br3 hover-shadow-raise">
     <nuxt-link :to="path" class="link black">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
