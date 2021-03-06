@@ -52,7 +52,6 @@
       <SessionsSection
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
-        :members="members"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
@@ -60,7 +59,6 @@
       <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
-        :members="members"
       >
         <h2 class="mb3">Things we've learned so far</h2>
         <p class="f4 lh-copy">

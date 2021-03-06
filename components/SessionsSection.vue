@@ -12,8 +12,8 @@
           :date="session.date"
           :imageSrc="session.imageSrc"
           :path="session.path"
-          :learners="hydrateMembers(session.learnerNames)"
-          :sharers="hydrateMembers(session.sharerNames)"
+          :learnerNames="session.learnerNames"
+          :sharerNames="session.sharerNames"
         />
       </li>
     </ul>
@@ -27,21 +27,6 @@ export default {
   },
   props: {
     sessions: { type: Array, default: () => [] },
-    members: { type: Object, default: () => {} },
-  },
-  methods: {
-    hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => {
-        if (this.members[memberName]) {
-          return this.members[memberName];
-        } else {
-          return {
-            profilePic: require("@/assets/profilePic-default-32.png"),
-            userName: memberName,
-          };
-        }
-      });
-    },
   },
 };
 </script>

@@ -55,9 +55,9 @@
           <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
             <p>
               Shared by
-              <ProfilePicList
-                :profilePics="hydrateMembers(session.sharerNames)"
-                borderColorClass="su-washed-orange"
+              <ProfileAvatarList
+                :profileNames="session.sharerNames"
+                borderColor="#fdecce"
               />
             </p>
           </div>
@@ -65,9 +65,9 @@
             <p>
               <span v-if="hasHappened">Learned by</span>
               <span v-else >Like to learn</span>
-              <ProfilePicList
-                :profilePics="hydrateMembers(session.learnerNames)"
-                borderColorClass="su-washed-orange"
+              <ProfileAvatarList
+                :profileNames="session.learnerNames"
+                borderColor="#fdecce"
               />
             </p>
           </div>
@@ -98,7 +98,7 @@
 <script>
 import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
-import ProfilePicList from "~/components/ProfilePicList.vue";
+import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 
 export default {
   layout: "storytellersUnited",
@@ -109,7 +109,7 @@ export default {
   },
   components: {
     TagPill,
-    ProfilePicList,
+    ProfileAvatarList,
   },
   props: {
     session: { type: Object, default: () => {} },
@@ -151,18 +151,6 @@ export default {
     },
   },
   methods: {
-    hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => {
-        if (this.members[memberName]) {
-          return this.members[memberName];
-        } else {
-          return {
-            profilePic: require("@/assets/profilePic-default-32.png"),
-            userName: memberName,
-          };
-        }
-      });
-    },
     isValidDate(d) {
       if (Object.prototype.toString.call(d) === "[object Date]") {
         // it is a date
