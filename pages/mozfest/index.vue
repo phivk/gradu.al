@@ -54,7 +54,6 @@
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
-        <CalendarReferral />
       </SessionsSection>
       <SessionsSection
         v-if="sessionsPast.length"
@@ -64,7 +63,6 @@
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
-        <CalendarReferral v-if="!sessionsUpcoming.length" />
       </SessionsSection>
       <GraphSection
         v-if="this.graphCommonsSrc"
@@ -79,7 +77,6 @@
 <script>
 import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
-import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 export default {
@@ -92,7 +89,6 @@ export default {
   components: {
     SessionCardPreview,
     GraphCommonsEmbed,
-    CalendarReferral,
     SessionsSection,
     GraphSection,
   },
