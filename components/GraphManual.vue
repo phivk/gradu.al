@@ -96,51 +96,39 @@ export default({
       this.offsetY = this.offsetY + e.clientY - this.startY
     }
   },
-  mounted() {
-    window.addEventListener('resize', function () {
-      this.width = window.width;
-    });
-  },
 })
 </script>
 <style >
-.net {
-  background-color: white;
-  border-radius: 8px
-}
-.title{
-  position:absolute;
-  text-align: center;
-  left: 2em;
-}
-h1,a{
-  color: #1aad8d;
-  text-decoration: none;
-}
+  .net {
+    background-color: white;
+    border-radius: 8px
+  }
 
-ul.menu {
-  list-style: none;
-  position: absolute;
-  z-index: 100;
-  min-width: 20em;
-  text-align: left;
-}
-ul.menu li{
-  margin-top: 1em;
-  position: relative;
-}
-circle.Skill.node {
-  fill:#4ba45b;
-}
+  ul.menu {
+    list-style: none;
+    position: absolute;
+    z-index: 100;
+    min-width: 20em;
+    text-align: left;
+  }
 
-circle.Member.node {
- fill: #184eb5;
-}
+  ul.menu li{
+    margin-top: 1em;
+    position: relative;
+  }
+
+  circle.Skill.node {
+    fill:#4ba45b;
+  }
+
+  circle.Member.node {
+    fill: #184eb5;
+  }
 
   .net {
     height: 100%;
     margin: 0;
-    }
+   }
 
   .node{
     stroke: alpha(red, 0.7);
@@ -148,7 +136,6 @@ circle.Member.node {
     transition: fill 0.5s ease;
     fill: white;
   }
-
 
   path.learner{
     stroke: black;
@@ -162,7 +149,6 @@ circle.Member.node {
     stroke-linecap: round;
   }
 
-
   .curve{
     fill: none;
   }
@@ -172,14 +158,15 @@ circle.Member.node {
     font-size: 1.1rem;
   }
 
-.memberLabel {
-  fill: blue;
-}
+  .memberLabel {
+    fill: blue;
+  }
 
-.skillLabel {
-  fill: green;
-}
-  #m-end path, #m-start{
-  fill: rgba(18, 120, 98, 0.8);
-}
+  .skillLabel {
+    fill: green;
+  }
+    #m-end path, #m-start{
+    fill: rgba(18, 120, 98, 0.8);
+  }
+
 </style>
