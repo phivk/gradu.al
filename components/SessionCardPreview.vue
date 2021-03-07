@@ -1,5 +1,5 @@
 <template>
-  <article class="tl bg-near-white br3 hover-shadow-raise">
+  <article class="tl bg-light-gray br3 hover-shadow-raise">
     <nuxt-link :to="path" class="link black">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
@@ -25,17 +25,17 @@
             <div class="flex flex-wrap mb2">
               <div class="mr3">
                 <h3 class="f5 fw4 o-60">shared by</h3>
-                <ProfilePicList
-                  :profilePics="sharers"
-                  borderColorClass="b--near-white"
+                <ProfileAvatarList
+                  :profileNames="sharerNames"
+                  borderColor="#EEEEEE"
                 />
               </div>
               <div>
                 <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
                 <h3 v-else class="f5 fw4 o-60">like to learn</h3>
-                <ProfilePicList
-                  :profilePics="learners"
-                  borderColorClass="b--near-white"
+                <ProfileAvatarList
+                  :profileNames="learnerNames"
+                  borderColor="#EEEEEE"
                 />
               </div>
             </div>
@@ -48,7 +48,7 @@
 <script>
 import ProfilePic from "~/components/ProfilePic.vue";
 import TagPill from "~/components/TagPill.vue";
-import ProfilePicList from "~/components/ProfilePicList.vue";
+import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 export default {
   props: {
     title: { type: String, default: "Title" },
@@ -56,10 +56,10 @@ export default {
     date: { type: String, default: "date" },
     imageSrc: { type: String },
     path: { type: String },
-    learners: { type: Array, default: () => [] },
-    sharers: { type: Array, default: () => [] },
+    learnerNames: { type: Array, default: () => [] },
+    sharerNames: { type: Array, default: () => [] },
   },
-  components: { ProfilePic, TagPill, ProfilePicList },
+  components: { ProfilePic, TagPill, ProfileAvatarList },
   computed: {
     hasHappened() {
       let now = new Date();

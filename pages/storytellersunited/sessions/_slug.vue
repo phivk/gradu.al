@@ -17,20 +17,6 @@ export default {
     ).then((res) => res.json());
     return { session, members }
   },
-  methods: {
-    hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => {
-        if (this.members[memberName]) {
-          return this.members[memberName];
-        } else {
-          return {
-            profilePic: require("@/assets/profilePic-default-32.png"),
-            userName: memberName,
-          };
-        }
-      });
-    },
-  },
   computed: {
     hasHappened() {
       let now = new Date();

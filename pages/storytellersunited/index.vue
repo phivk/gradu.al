@@ -52,15 +52,13 @@
       <SessionsSection
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
-        :members="members"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
       <SessionsSection 
         v-if="sessionsPast.length"
-        :sessions="sessionsPast" 
-        :members="members"
+        :sessions="sessionsPast"
       >
         <h2 class="mb3">Things we've learned so far</h2>
         <p class="f4 lh-copy">
@@ -121,11 +119,7 @@ export default {
       })
       .fetch();
 
-    const members = await fetch(
-      "https://storytellers.link/api/members.json"
-    ).then((res) => res.json());
-
-    return { sessionsUpcoming, sessionsPast, members };
+    return { sessionsUpcoming, sessionsPast };
   },
   /* enables auth middleware (also see pages/login.vue and `auth` object in nuxt.config.js)
      after successful login, the boolean flag `this.$auth.loggedIn` indicates that user is authenticated
