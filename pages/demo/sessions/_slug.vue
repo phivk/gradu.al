@@ -11,7 +11,7 @@ export default {
   layout: "mozFest",
   components: { TagPill, ProfilePicList, SessionPage },
   async asyncData({ $content, params }) {
-    const session = await $content('mozfest/sessions', params.slug).fetch()
+    const session = await $content('demo/sessions', params.slug).fetch()
     return { session }
   },
   computed: {
