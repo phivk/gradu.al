@@ -12,13 +12,14 @@ learnerNames:
   - '@sophie'
 sharerNames: 
   - '@oliviaBee'
+icsFileSrc: /storytellersunited/201218-architecting-curiosity.ics
+cta:
+  text: Share your availability
+  href: https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0
 resources:
   -
     text: The Super Mario Effect
     href: https://www.youtube.com/watch?v=9vJRopau0g0
-cta:
-  text: Share your availability
-  href: https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0
 ---
 The ability to learn is one of humanity’s greatest gifts.. And yet we are rarely taught how to learn. 
 <!--more-->
