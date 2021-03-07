@@ -1,5 +1,8 @@
 <template>
-  <SessionPage :session="session" />
+  <SessionPage 
+    :session="session" 
+    :bgColor="bgColor" 
+  />
 </template>
 
 <script>
@@ -10,23 +13,14 @@ import SessionPage from "~/components/SessionPage.vue";
 export default {
   layout: "mozFest",
   components: { TagPill, ProfilePicList, SessionPage },
+  data() {
+    return {
+      bgColor: '#f4f4f4',
+    }
+  },
   async asyncData({ $content, params }) {
     const session = await $content('mozfest/sessions', params.slug).fetch()
     return { session }
-  },
-  methods: {
-    hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => {
-        if (this.members[memberName]) {
-          return this.members[memberName];
-        } else {
-          return {
-            profilePic: require("@/assets/profilePic-default-32.png"),
-            userName: memberName,
-          };
-        }
-      });
-    },
   },
   computed: {
     hasHappened() {
