@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-su-washed-orange">
+  <div class="bg-color-bg">
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
@@ -39,14 +39,14 @@
               v-if="session.cta"
               :href="session.cta.href"
               target="_blank"
-              class="f4 link br3 pa2 tc dib mr3 white bg-dark-green"
+              class="f4 link br3 pa2 tc dib mr3 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
               v-if="session.icsFileSrc && !hasHappened"
               :href="session.icsFileSrc"
               target="_blank"
-              class="dib mt3 dark-green ws-pre-wrap"
+              class="dib mt3 color-accent ws-pre-wrap"
               >↓ .ics file</a
             >
           </div>
@@ -77,7 +77,7 @@
               <ul class="list pa0 mt1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="dark-green" :href="resource.href" target="_blank">{{
+                  <a class="color-accent" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>

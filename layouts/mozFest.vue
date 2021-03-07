@@ -1,11 +1,13 @@
 <template>
-  <div class="bg-moz-light-gray min-vh-100">
-    <TheNavBar
-      class="bg-moz-purple"
-      backLinkText="MozFest"
-      backLinkSlug="mozfest"
-    />
-    <nuxt />
+  <div class="theme-mozfest">
+    <div class="bg-color-bg min-vh-100">
+      <TheNavBar
+        class="bg-color-primary"
+        backLinkText="MozFest"
+        backLinkSlug="mozfest"
+      />
+      <nuxt />
+    </div>
   </div>
 </template>
 <script>
@@ -28,4 +30,11 @@ export default {
 .bg-moz-purple { background-color: var(--color-moz-purple); }
 .bg-moz-berry { background-color: var(--color-moz-berry); }
 .bg-moz-light-gray { background-color: var(--color-moz-light-gray); }
+
+.theme-mozfest .color-primary { color: var(--color-moz-purple); }
+.theme-mozfest .color-accent { color: var(--color-moz-berry); }
+.theme-mozfest .color-bg { color: var(--color-moz-light-gray); }
+.theme-mozfest .bg-color-primary { background-color: var(--color-moz-purple); }
+.theme-mozfest .bg-color-accent { background-color: var(--color-moz-berry); }
+.theme-mozfest .bg-color-bg { background-color: var(--color-moz-light-gray); }
 </style>
