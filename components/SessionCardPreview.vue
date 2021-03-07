@@ -23,16 +23,17 @@
           </div>
           <div class="pa3">
             <div class="flex flex-wrap mb2">
-              <div class="mr3">
-                <h3 class="f5 fw4 o-60">shared by</h3>
+              <div v-if="session.learnerNames" class="mr3">
+                <h3 class="f5 fw4 o-60">Shared by</h3>
                 <ProfileAvatarList
                   :profileNames="sharerNames"
                   borderColor="#EEEEEE"
                 />
               </div>
-              <div>
-                <h3 v-if="hasHappened" class="f5 fw4 o-60">learned by</h3>
-                <h3 v-else class="f5 fw4 o-60">like to learn</h3>
+              <div v-if="session.learnerNames">
+                <h3 class="f5 fw4 o-60">
+                  {{ hasHappened ? "Learned by" : "Like to learn" }}
+                </h3>
                 <ProfileAvatarList
                   :profileNames="learnerNames"
                   borderColor="#EEEEEE"
