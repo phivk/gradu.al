@@ -14,7 +14,9 @@ export default {
   },
   computed: {
     initial() {
-      return this.profileName[0].toUpperCase();
+      return this.profileName
+        .replace('@', '')[0]
+        .toUpperCase();
     },
     styleObject() {
       return {

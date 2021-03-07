@@ -2,7 +2,7 @@
 title: We're the team building Gradual, ask us anything!
 type: salon
 date: '2021-03-09'
-imageSrc: https://lh3.googleusercontent.com/pw/ACtC-3drDWogkxNoyn7n5WBSUYthqapC4WPVXJ3ykcBda4sbACUeHIFksh5BXftdG1iZtKp9IC2-3DFKlm5S45tJAH799LCxKEt-1V0bh7krKpuCJAICIAy224s2ph9_Xsuh6DdwUwk6A0AEJKphYR0fejBp=w2100-h1402-no?authuser=0
+imageSrc: https://lh3.googleusercontent.com/ngBc_S4czfRDaCA-dMl6BnExwDaAYVNohVDdb6dk8QxBZgZxWT7vJcbar4BgYedrmQ0fjkRn-NZxC-DejtrESJ7tKLKljp6j-06oDpDE_uczIgsslE0mxUkwImgk15iLoRRT_hpiKA=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/ngBc_S4czfRDaCA-dMl6BnExwDaAYVNohVDdb6dk8QxBZgZxWT7vJcbar4BgYedrmQ0fjkRn-NZxC-DejtrESJ7tKLKljp6j-06oDpDE_uczIgsslE0mxUkwImgk15iLoRRT_hpiKA=w600-h315-p-k
 learnerNames:
   - Anyone
   - Is
