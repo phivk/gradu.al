@@ -1,5 +1,8 @@
 <template>
-  <SessionPage :session="session" :members="members" />
+  <SessionPage 
+    :session="session" 
+    :bgColor="bgColor" 
+  />
 </template>
 
 <script>
@@ -10,6 +13,11 @@ import SessionPage from "~/components/SessionPage.vue";
 export default {
   layout: "storytellersUnited",
   components: { TagPill, ProfilePicList, SessionPage },
+  data() {
+    return {
+      bgColor: '#fdecce',
+    }
+  },
   async asyncData({ $content, params }) {
     const session = await $content('storytellersunited/sessions', params.slug).fetch()
     const members = await fetch(

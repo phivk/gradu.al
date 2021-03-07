@@ -3,7 +3,7 @@
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
-          <TagPill class="ml-2" borderColour="#fdecce">{{
+          <TagPill class="ml-2" :borderColour="bgColor">{{
             session.type
           }}</TagPill>
           <h1 class="f2 f1-l lh-title mt2 mb4">
@@ -57,7 +57,7 @@
               Shared by
               <ProfileAvatarList
                 :profileNames="session.sharerNames"
-                borderColor="#fdecce"
+                :borderColor="bgColor"
               />
             </p>
           </div>
@@ -67,7 +67,7 @@
               <span v-else >Like to learn</span>
               <ProfileAvatarList
                 :profileNames="session.learnerNames"
-                borderColor="#fdecce"
+                :borderColor="bgColor"
               />
             </p>
           </div>
@@ -114,6 +114,7 @@ export default {
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
+    bgColor: { type: String, default: "#FFF" },
   },
   computed: {
     dateFormatted() {
