@@ -64,11 +64,8 @@
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
-      <GraphSection
-        v-if="this.graphCommonsSrc"
-        memberTitlePlural="MozFest participants"
-      >
-        <GraphCommonsEmbed :graphCommonsSrc="graphCommonsSrc" />
+      <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
+        <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
       </GraphSection>
     </div>
   </div>
@@ -79,6 +76,7 @@ import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
+import GraphManual from "~/components/GraphManual.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -91,6 +89,7 @@ export default {
     GraphCommonsEmbed,
     SessionsSection,
     GraphSection,
+    GraphManual,
   },
   data() {
     return {
@@ -117,7 +116,17 @@ export default {
       })
       .fetch();
 
-    return { sessionsUpcoming, sessionsPast };
+    let nodes, edges
+
+    try {
+      nodes = await $content("mozfest/data", "nodes").fetch();
+      edges = await $content("mozfest/data", "edges").fetch();
+    } catch (error) {
+      console.log(error)
+      console.log("nodes and edges failed to load")
+    }
+
+    return { sessionsUpcoming, sessionsPast, nodes, edges };
   },
 };
 </script>

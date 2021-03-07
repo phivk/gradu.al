@@ -3,16 +3,14 @@
     <h2 class="mb3">Community learning intentions</h2>
     <div class="mb3 f4 center lh-copy">
       <p>
-        Here's an interactive map of skills that {{memberTitlePlural}} would like to
-        <span class="b orange">↗︎learn</span> or
+        Here's an interactive map of skills that {{ memberTitlePlural }} would
+        like to <span class="b orange">↗︎learn</span> or
         <span class="b purple">↗︎share</span>.
       </p>
       <p>
-        Click any <span class="b dark-green">●skill</span> or
-        <span class="b dark-blue">●member</span> to explore the connections!
-      </p>
-      <p>
-        Click <span class="b f3">⦷</span>pause to prevent overlapping texts.
+        Check out <span class="b dark-green">●skills</span> and
+        <span class="b dark-blue">●{{ memberTitlePlural }}</span> to discover
+        opportunities for exchange!
       </p>
     </div>
     <slot></slot>
