@@ -165,7 +165,8 @@ export default({
   .skillLabel {
     fill: green;
   }
-    #m-end path, #m-start{
+
+  #m-end path, #m-start{
     fill: rgba(18, 120, 98, 0.8);
   }
 

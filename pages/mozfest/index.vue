@@ -68,7 +68,7 @@
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
       </SessionsSection>
-      <GraphSection v-if="nodes && edges" memberTitlePlural="participants">
+      <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
         <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
       </GraphSection>
     </div>
