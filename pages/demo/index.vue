@@ -80,7 +80,7 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 export default {
-  layout: "mozFest",
+  layout: "demo",
   head() {
     return {
       title: "Demo - Here to learn",

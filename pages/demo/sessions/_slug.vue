@@ -8,7 +8,7 @@ import ProfilePicList from "~/components/ProfilePicList.vue";
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "mozFest",
+  layout: "demo",
   components: { TagPill, ProfilePicList, SessionPage },
   async asyncData({ $content, params }) {
     const session = await $content('demo/sessions', params.slug).fetch()
