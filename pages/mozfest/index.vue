@@ -68,21 +68,19 @@
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />
       </SessionsSection>
-             <GraphManual
-        :nodes="nodes.nodes"
-        :edges="edges.edges"
-        />
+      <GraphSection v-if="nodes && edges" memberTitlePlural="participants">
+        <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
+      </GraphSection>
     </div>
   </div>
 </template>
 
 <script>
 import SessionCardPreview from "~/components/SessionCardPreview.vue";
-import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
-import GraphManual from "~/components/GraphManual.vue"
+import GraphManual from "~/components/GraphManual.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -92,11 +90,10 @@ export default {
   },
   components: {
     SessionCardPreview,
-    GraphCommonsEmbed,
     CalendarReferral,
     SessionsSection,
     GraphSection,
-    GraphManual
+    GraphManual,
   },
   data() {
     return {
@@ -123,9 +120,9 @@ export default {
       })
       .fetch();
 
-    const nodes = await $content('mozfest/data', 'nodes').fetch()
+    const nodes = await $content("mozfest/data", "nodes").fetch();
 
-    const edges = await $content('mozfest/data', 'edges').fetch()
+    const edges = await $content("mozfest/data", "edges").fetch();
 
     return { sessionsUpcoming, sessionsPast, nodes, edges };
   },
