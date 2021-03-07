@@ -67,6 +67,7 @@
       <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
         <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
       </GraphSection>
+      <MostPopularSkills v-if="popular" :skills="popular.skills" class="db dn-ns" />
     </div>
   </div>
 </template>
@@ -77,6 +78,7 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
+import MostPopularSkills from "~/components/MostPopularSkills.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -90,6 +92,7 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
+    MostPopularSkills
   },
   data() {
     return {
@@ -116,17 +119,19 @@ export default {
       })
       .fetch();
 
-    let nodes, edges
+    let nodes, edges, popular
 
     try {
       nodes = await $content("mozfest/data", "nodes").fetch();
       edges = await $content("mozfest/data", "edges").fetch();
+      popular = await $content("mozfest/data", "popular").fetch();
+
     } catch (error) {
       console.log(error)
       console.log("nodes and edges failed to load")
     }
 
-    return { sessionsUpcoming, sessionsPast, nodes, edges };
+    return { sessionsUpcoming, sessionsPast, nodes, edges, popular };
   },
 };
 </script>
