@@ -22,7 +22,8 @@
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "nuxt": "^2.14.7",
-    "tachyons": "^4.12.0"
+    "tachyons": "^4.12.0",
+    "vue-d3-network": "^0.1.28"
   },
   "devDependencies": {
     "push-dir": "^0.4.1",

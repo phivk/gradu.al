@@ -15,16 +15,16 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-moz-berry"
+          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
         >
           Let us know!
         </nuxt-link>
         <div class="db">
           <a
             href="https://www.mozillafestival.org/slack/"
-            class="moz-berry hover-no-underline"
+            class="color-accent hover-no-underline"
             target="_blank"
-            >join the MozFest Slack</a
+            >join the Demo Slack</a
           >
         </div>
       </section>
@@ -32,7 +32,7 @@
         <div class="center">
           <h2 class="measure center mv2">
             Hi 👋 <br />
-            Welcome to MozFest on Gradual!
+            Welcome to Demo on Gradual!
           </h2>
           <div class="measure center">
             <p class="mb3 f4 lh-copy">
@@ -41,7 +41,7 @@
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
-                class="moz-berry hover-no-underline"
+                class="color-accent hover-no-underline"
                 >#skillsharing channel</a
               >
               for updates.
@@ -76,12 +76,12 @@ import SessionCardPreview from "~/components/SessionCardPreview.vue";
 import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
-import GraphManual from "~/components/GraphManual.vue";
+import GraphManual from "~/components/GraphManual.vue"
 export default {
-  layout: "mozFest",
+  layout: "demo",
   head() {
     return {
-      title: "MozFest - Here to learn",
+      title: "Demo - Here to learn",
     };
   },
   components: {
@@ -89,7 +89,7 @@ export default {
     GraphCommonsEmbed,
     SessionsSection,
     GraphSection,
-    GraphManual,
+    GraphManual
   },
   data() {
     return {
@@ -102,14 +102,14 @@ export default {
     // NB this uses UTC time, causing inaccuracies for non UTC timezones
     let nowString = now.toISOString().slice(0, 10);
 
-    const sessionsUpcoming = await $content("mozfest/sessions")
+    const sessionsUpcoming = await $content("demo/sessions")
       .sortBy("date", "asc")
       .where({
         date: { $gte: nowString },
       })
       .fetch();
 
-    const sessionsPast = await $content("mozfest/sessions")
+    const sessionsPast = await $content("demo/sessions")
       .sortBy("date", "desc")
       .where({
         date: { $lt: nowString },
@@ -119,8 +119,8 @@ export default {
     let nodes, edges
 
     try {
-      nodes = await $content("mozfest/data", "nodes").fetch();
-      edges = await $content("mozfest/data", "edges").fetch();
+      nodes = await $content("demo/data", "nodes").fetch();
+      edges = await $content("demo/data", "edges").fetch();
     } catch (error) {
       console.log(error)
       console.log("nodes and edges failed to load")

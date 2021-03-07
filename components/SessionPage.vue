@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-su-washed-orange">
+  <div class="bg-color-bg">
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
-          <TagPill class="ml-2" borderColour="#fdecce">{{
+          <TagPill class="ml-2" :borderColour="bgColor">{{
             session.type
           }}</TagPill>
           <h1 class="f2 f1-l lh-title mt2 mb4">
@@ -39,14 +39,14 @@
               v-if="session.cta"
               :href="session.cta.href"
               target="_blank"
-              class="f4 link br3 pa2 tc dib mr3 white bg-dark-green"
+              class="f4 link br3 pa2 tc dib mr3 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
               v-if="session.icsFileSrc && !hasHappened"
               :href="session.icsFileSrc"
               target="_blank"
-              class="dib mt3 dark-green ws-pre-wrap"
+              class="dib mt3 color-accent ws-pre-wrap"
               >↓ .ics file</a
             >
           </div>
@@ -55,9 +55,9 @@
           <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
             <p>
               Shared by
-              <ProfilePicList
-                :profilePics="hydrateMembers(session.sharerNames)"
-                borderColorClass="su-washed-orange"
+              <ProfileAvatarList
+                :profileNames="session.sharerNames"
+                :borderColor="bgColor"
               />
             </p>
           </div>
@@ -65,9 +65,9 @@
             <p>
               <span v-if="hasHappened">Learned by</span>
               <span v-else >Like to learn</span>
-              <ProfilePicList
-                :profilePics="hydrateMembers(session.learnerNames)"
-                borderColorClass="su-washed-orange"
+              <ProfileAvatarList
+                :profileNames="session.learnerNames"
+                :borderColor="bgColor"
               />
             </p>
           </div>
@@ -77,7 +77,7 @@
               <ul class="list pa0 mt1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="dark-green" :href="resource.href" target="_blank">{{
+                  <a class="color-accent" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>
@@ -98,7 +98,7 @@
 <script>
 import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
-import ProfilePicList from "~/components/ProfilePicList.vue";
+import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 
 export default {
   layout: "storytellersUnited",
@@ -109,11 +109,12 @@ export default {
   },
   components: {
     TagPill,
-    ProfilePicList,
+    ProfileAvatarList,
   },
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
+    bgColor: { type: String, default: "#FFF" },
   },
   computed: {
     dateFormatted() {
@@ -151,18 +152,6 @@ export default {
     },
   },
   methods: {
-    hydrateMembers(memberNames) {
-      return memberNames.map((memberName) => {
-        if (this.members[memberName]) {
-          return this.members[memberName];
-        } else {
-          return {
-            profilePic: require("@/assets/profilePic-default-32.png"),
-            userName: memberName,
-          };
-        }
-      });
-    },
     isValidDate(d) {
       if (Object.prototype.toString.call(d) === "[object Date]") {
         // it is a date
