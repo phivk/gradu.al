@@ -116,9 +116,15 @@ export default {
       })
       .fetch();
 
-    const nodes = await $content("mozfest/data", "nodes").fetch();
+    let nodes, edges
 
-    const edges = await $content("mozfest/data", "edges").fetch();
+    try {
+      nodes = await $content("mozfest/data", "nodes").fetch();
+      edges = await $content("mozfest/data", "edges").fetch();
+    } catch (error) {
+      console.log(error)
+      console.log("nodes and edges failed to load")
+    }
 
     return { sessionsUpcoming, sessionsPast, nodes, edges };
   },
