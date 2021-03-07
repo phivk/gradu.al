@@ -8,25 +8,28 @@ if (!process.env.GOOGLE_AUTH_JSON_OBJECT) {
 
 const communities = require("./communities")
 
-let NODES_PATH, EDGES_PATH, SPREADSHEET_ID;
+// let NODES_PATH, EDGES_PATH, SPREADSHEET_ID;
 
 let nodes = []
 let edges = []
 
-let id = 1
+let nodeId = 1
 
 function getNewId() {
-  return id++
+  return nodeId++
 }
 
 
-async function auth() {
+async function authAndGetSheets() {
   // Load the key
   const key = JSON.parse(process.env.GOOGLE_AUTH_JSON_OBJECT);
+
   // Auth using the key
   const auth = await google.auth.fromJSON(key);
+
   // Add read / write spreadsheets scope to our auth client
   auth.scopes = ["https://www.googleapis.com/auth/spreadsheets"];
+
   // Create an instance of sheets to a scoped variable
   const sheets = await google.sheets({ version: "v4", auth });
   console.log("Authed with google and instantiated google sheets");
@@ -35,12 +38,12 @@ async function auth() {
 
 async function run() {
   try {
-    const sheets = await auth();
+    const sheets = await authAndGetSheets();
     await communities.forEach(async (community) => {
       // Set up the variables
-      NODES_PATH = `./content/${community.name}/data/nodes.json`;
-      EDGES_PATH = `./content/${community.name}/data/edges.json`;
-      SPREADSHEET_ID = community.spreadsheetId;
+      const NODES_PATH = `./content/${community.name}/data/nodes.json`;
+      const EDGES_PATH = `./content/${community.name}/data/edges.json`;
+      const SPREADSHEET_ID = community.spreadsheetId;
 
       // Ensure the target directory exists.
       if (!fs.existsSync(`./content/${community.name}/data/`)) {
@@ -48,7 +51,7 @@ async function run() {
       }
       console.log(`Gathering data for ${community.name}.`)
 
-      await processSheet(sheets, NODES_PATH, EDGES_PATH)
+      await processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH)
     })
     console.log("All done.")
   } catch (error) {
@@ -62,7 +65,7 @@ run()
  * Get header row
  * @param {sheets} sheets
  */
-async function processSheet(sheets, NODES_PATH, EDGES_PATH) {
+async function processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH) {
 
   return await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
@@ -95,7 +98,13 @@ function processRow({ headers, row }) {
   headers.forEach((label, idx) => {
     if (label.includes("@UserName")) {
       // create member node
-      member = { "_cssClass": "Member", "_labelClass": "memberLabel", "name": row[idx], id: getNewId() }
+      member = {
+        "_cssClass": "Member",
+        "_labelClass": "memberLabel",
+        "name": row[idx],
+        id: getNewId()
+      }
+
       nodes.push(member)
       return
     }
@@ -116,12 +125,12 @@ function processRow({ headers, row }) {
       })
     }
     if (label.includes("*learn*")) {
-      // this is the multi-select question
+      // this is a string value - custom input (freeform)
       const skillNode = getOrCreateSkill(row[idx].trim())
       createLearningEdge(member, skillNode)
     }
     if (label.includes("*share*")) {
-      // this is the multi-select question
+      // this is a string value - custom input (freeform)
       const skillNode = getOrCreateSkill(row[idx].trim())
       createSharingEdge(member, skillNode)
     }
