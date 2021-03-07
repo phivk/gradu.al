@@ -4,11 +4,11 @@ type: session type
 date: '2021-03-04'
 imageSrc: https://images.unsplash.com/photo-1596920566403-2072ed25d7f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
 learnerNames:
-  - First Last
-  - JustAFirstName
+  - '@First Last'
+  - '@JustAFirstName'
 sharerNames: 
-  - One Sharer
-  - orMore
+  - '@One Sharer'
+  - '@orMore'
 resources:
   -
     text: Notes
