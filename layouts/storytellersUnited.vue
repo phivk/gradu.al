@@ -1,11 +1,13 @@
 <template>
-  <div class="bg-su-washed-orange min-vh-100">
-    <TheNavBar
-      class="bg-su-light-orange"
-      backLinkText="Storytellers United"
-      backLinkSlug="storytellersunited"
-    />
-    <nuxt />
+  <div class="theme-storytellerunited">  
+    <div class="bg-color-bg min-vh-100">
+      <TheNavBar
+        class="bg-color-primary"
+        backLinkText="Storytellers United"
+        backLinkSlug="storytellersunited"
+      />
+      <nuxt />
+    </div>
   </div>
 </template>
 <script>
@@ -30,6 +32,11 @@ export default {
 .bg-su-washed-orange { background-color: var(--color-su-washed-orange); }
 .bg-su-light-orange { background-color: var(--color-su-light-orange); }
 .bg-su-dark-orange { background-color: var(--color-su-dark-orange); }
-.bg-su-light-blue { background-color: var(--color-su-light-blue); }
-.bg-su-dark-blue { background-color: var(--color-su-dark-blue); }
+
+.theme-storytellerunited .color-bg { color: var(--color-su-washed-orange); }
+.theme-storytellerunited .color-primary { color: var(--color-su-light-orange); }
+.theme-storytellerunited .color-accent { color: var(--color-su-dark-orange); }
+.theme-storytellerunited .bg-color-bg { background-color: var(--color-su-washed-orange); }
+.theme-storytellerunited .bg-color-primary { background-color: var(--color-su-light-orange); }
+.theme-storytellerunited .bg-color-accent { background-color: var(--color-su-dark-orange); }
 </style>

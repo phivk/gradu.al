@@ -3,7 +3,7 @@
     To stay up to date about upcoming sessions, subscribe to the
     <a
       href="https://storytellers.link/calendar/"
-      class="hover-no-underline su-dark-orange"
+      class="hover-no-underline color-accent"
       target="_blank"
       >SU community calendar</a
     >.

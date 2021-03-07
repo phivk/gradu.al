@@ -11,19 +11,16 @@ import ProfilePicList from "~/components/ProfilePicList.vue";
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "storytellersUnited",
+  layout: "demo",
   components: { TagPill, ProfilePicList, SessionPage },
   data() {
     return {
-      bgColor: '#fdecce',
+      bgColor: '#f4f4f4',
     }
   },
   async asyncData({ $content, params }) {
-    const session = await $content('storytellersunited/sessions', params.slug).fetch()
-    const members = await fetch(
-      "https://storytellers.link/api/members.json"
-    ).then((res) => res.json());
-    return { session, members }
+    const session = await $content('demo/sessions', params.slug).fetch()
+    return { session }
   },
   computed: {
     hasHappened() {

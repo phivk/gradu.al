@@ -3,8 +3,8 @@
     <div class="bg-color-bg min-vh-100">
       <TheNavBar
         class="bg-color-primary"
-        backLinkText="MozFest"
-        backLinkSlug="mozfest"
+        backLinkText="Demo"
+        backLinkSlug="demo"
       />
       <nuxt />
     </div>
