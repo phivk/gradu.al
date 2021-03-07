@@ -1,5 +1,5 @@
 ---
-title: Session Title
+title: Session Title 2
 type: peer sharing
 date: '2021-03-05'
 imageSrc: https://images.unsplash.com/photo-1596920566403-2072ed25d7f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80

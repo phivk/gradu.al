@@ -52,7 +52,10 @@
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
-          <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
+          <div 
+            v-if="session.sharerNames"
+            class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
+          >
             <p>
               Shared by
               <ProfileAvatarList
@@ -61,17 +64,19 @@
               />
             </p>
           </div>
-          <div class="mb2 flex-shrink-0 pr3 pr4-m pr5-l">
+          <div 
+            v-if="session.learnerNames"
+            class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
+          >
             <p>
-              <span v-if="hasHappened">Learned by</span>
-              <span v-else >Like to learn</span>
+              <span>{{ hasHappened ? "Learned by" : "Like to learn"}}</span>
               <ProfileAvatarList
                 :profileNames="session.learnerNames"
                 :borderColor="bgColor"
               />
             </p>
           </div>
-          <div v-if="session.resources.length" class="mb2 pr3">
+          <div v-if="session.resources" class="mb2 pr3">
             <p>
               Resources
               <ul class="list pa0 mt1">
