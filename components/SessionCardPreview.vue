@@ -23,14 +23,14 @@
           </div>
           <div class="pa3">
             <div class="flex flex-wrap mb2">
-              <div v-if="session.learnerNames" class="mr3">
+              <div v-if="sharerNames" class="mr3">
                 <h3 class="f5 fw4 o-60">Shared by</h3>
                 <ProfileAvatarList
                   :profileNames="sharerNames"
                   borderColor="#EEEEEE"
                 />
               </div>
-              <div v-if="session.learnerNames">
+              <div v-if="learnerNames">
                 <h3 class="f5 fw4 o-60">
                   {{ hasHappened ? "Learned by" : "Like to learn" }}
                 </h3>
