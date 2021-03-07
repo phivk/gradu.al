@@ -15,9 +15,6 @@ resources:
   -
     text: Collective Board
     href: https://miro.com/app/board/o9J_lRWjRvU=/
-cta:
-  text: Live demo on another community
-  href: https://gradu.al/storytellersunited
 ---
 Curious to hear more about the Gradual skillsharing process or have ideas and/or feedback to share? Come join and let's connect! 
 <!--more-->
