@@ -112,6 +112,7 @@ function processRow({ headers, row }) {
     if (label.includes("*like to learn*")) {
       // this is the multi-select question
       row[idx].split(",").forEach(skill => {
+        if (skill.trim() === "") return
         const skillNode = getOrCreateSkill(skill.trim())
         createLearningEdge(member, skillNode)
       })
@@ -120,16 +121,19 @@ function processRow({ headers, row }) {
     if (label.includes("*you could share*")) {
       // this is the multi-select question
       row[idx].split(",").forEach(skill => {
+        if (skill.trim() === "") return
         const skillNode = getOrCreateSkill(skill.trim())
         createSharingEdge(member, skillNode)
       })
     }
     if (label.includes("*learn*")) {
+      if (row[idx].trim() === "") return
       // this is a string value - custom input (freeform)
       const skillNode = getOrCreateSkill(row[idx].trim())
       createLearningEdge(member, skillNode)
     }
     if (label.includes("*share*")) {
+      if (row[idx].trim() === "") return
       // this is a string value - custom input (freeform)
       const skillNode = getOrCreateSkill(row[idx].trim())
       createSharingEdge(member, skillNode)

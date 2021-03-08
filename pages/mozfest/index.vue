@@ -67,6 +67,18 @@
       <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
         <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
       </GraphSection>
+      <MostPopularSkillsSection v-if="popular" :skills="popular.skills" class="db dn-ns">
+        <h2 class="mb3">Popular skills from the community</h2>
+        <p class="f4 lh-copy">
+          Something here for you?
+          <nuxt-link
+          append to="join"
+          class="moz-berry hover-no-underline"
+          >
+            Let us know!
+          </nuxt-link>
+        </p>
+      </MostPopularSkillsSection>
     </div>
   </div>
 </template>
@@ -77,6 +89,7 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
+import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -90,6 +103,7 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
+    MostPopularSkillsSection
   },
   data() {
     return {
@@ -116,17 +130,19 @@ export default {
       })
       .fetch();
 
-    let nodes, edges
+    let nodes, edges, popular
 
     try {
       nodes = await $content("mozfest/data", "nodes").fetch();
       edges = await $content("mozfest/data", "edges").fetch();
+      popular = await $content("mozfest/data", "popular").fetch();
+
     } catch (error) {
       console.log(error)
       console.log("nodes and edges failed to load")
     }
 
-    return { sessionsUpcoming, sessionsPast, nodes, edges };
+    return { sessionsUpcoming, sessionsPast, nodes, edges, popular };
   },
 };
 </script>
