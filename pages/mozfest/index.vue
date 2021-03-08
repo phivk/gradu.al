@@ -15,14 +15,14 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-moz-berry"
+          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
         >
           Let us know!
         </nuxt-link>
         <div class="db">
           <a
             href="https://www.mozillafestival.org/slack/"
-            class="moz-berry hover-no-underline"
+            class="color-accent hover-no-underline"
             target="_blank"
             >join the MozFest Slack</a
           >
@@ -41,7 +41,7 @@
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
-                class="moz-berry hover-no-underline"
+                class="color-accent hover-no-underline"
                 >#skillsharing channel</a
               >
               for updates.
@@ -73,7 +73,7 @@
           Something here for you?
           <nuxt-link
           append to="join"
-          class="moz-berry hover-no-underline"
+          class="color-accent hover-no-underline"
           >
             Let us know!
           </nuxt-link>
