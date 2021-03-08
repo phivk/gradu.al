@@ -67,7 +67,18 @@
       <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
         <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
       </GraphSection>
-      <MostPopularSkills v-if="popular" :skills="popular.skills" class="db dn-ns" />
+      <MostPopularSkillsSection v-if="popular" :skills="popular.skills" class="db dn-ns">
+        <h2 class="mb3">Popular skills from the community</h2>
+        <p class="f4 lh-copy">
+          Something here for you?
+          <nuxt-link
+          append to="join"
+          class="moz-berry hover-no-underline"
+          >
+            Let us know!
+          </nuxt-link>
+        </p>
+      </MostPopularSkillsSection>
     </div>
   </div>
 </template>
@@ -78,7 +89,7 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
-import MostPopularSkills from "~/components/MostPopularSkills.vue";
+import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -92,7 +103,7 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
-    MostPopularSkills
+    MostPopularSkillsSection
   },
   data() {
     return {

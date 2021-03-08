@@ -1,0 +1,20 @@
+<template>
+<div>
+  <slot></slot>
+  <ul v-for="skill in skills" :key="skill" class="pa2 ma1 list lh-copy">
+    <li class="pa3 shadow-4 br3 bg-white">{{skill}}</li>
+  </ul>
+</div>
+</template>
+
+<script>
+export default {
+  props: {
+    skills:  { type: Array, default: () => [] }
+  }
+}
+</script>
+
+<style>
+
+</style>
