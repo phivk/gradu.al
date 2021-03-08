@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      typeFormSrc: "https://form.typeform.com/to/sHRDtB3u",
+      typeFormSrc: "https://form.typeform.com/to/WNeeJYiq",
     };
   },
 };
