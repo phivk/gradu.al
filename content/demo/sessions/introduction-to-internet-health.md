@@ -6,11 +6,11 @@ imageSrc: https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MXwx
 learnerNames:
   - '@Gunnar'
   - '@Kevin'
-  - '@JohanDielen'
-  - '@Brydon'
-  - '@oliviaBee'
-  - '@Lucy'
   - '@sophie'
+  - '@oliviaBee'
+  - '@JohanDielen'
+  - '@Lucy'
+  - '@Brydon'
 sharerNames: 
   - '@Philo'
 resources:
