@@ -1,9 +1,1 @@
-{
-  "skills": [
-    "Accessibility for visual impairment",
-    "Interview techniques",
-    "mastering markdown syntax in github",
-    "how to grow an online community",
-    "how to visualise data with d3.js"
-  ]
-}
+{ "skills": ["Accessibility for visual impairment","Interview techniques","mastering markdown syntax in github","how to grow an online community","how to visualise data with d3.js","Open source philosophy and history"]}
