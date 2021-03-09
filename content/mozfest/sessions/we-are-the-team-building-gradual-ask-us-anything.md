@@ -11,6 +11,7 @@ sharerNames:
   - '@Philo'
   - '@Kevin'
   - '@Gunnar'
+  - '@Thomas Steigenga'
 resources:
   -
     text: Collective Board
