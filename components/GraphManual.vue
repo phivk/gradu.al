@@ -1,6 +1,6 @@
 <template>
 <div>
-  <svg >
+  <svg>
   <defs>
     <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth" >
       <path d="M0,0 L0,6 L9,3 z"></path>
@@ -10,6 +10,7 @@
     </marker>
   </defs>
 </svg>
+<div class="relative">
   <d3-network
     ref='net'
     :net-nodes="nodes"
@@ -17,6 +18,17 @@
     :options="options"
     :link-cb="lcb"
   />
+  <div class="absolute bottom-0 left-0 mw6 ma3 net-menu br3">
+    <h2 class="pt3">Change the force between the nodes to explore more</h2>
+      <div class="measure center pa4">
+      <label>Force between nodes:</label>
+      <div>
+          <input type="range" min="1" max="5000" v-model:value="force" />
+      </div>
+      </div>
+    </ul>
+  </div>
+</div>
 </div>
 </template>
 <style src="vue-d3-network/dist/vue-d3-network.css"></style>
@@ -38,13 +50,15 @@ export default({
       offsetY: 0,
       startX: 0,
       startY: 0,
-      lastTouch: null
+      lastTouch: null,
+      force: 1000,
+      offsetY: 0
     }
   },
   computed:{
     options(){
       return{
-        force: 1000,
+        force: this.force,
         nodeSize: this.nodeSize,
         nodeLabels: true,
         linkLabels:true,
@@ -64,36 +78,6 @@ export default({
     lcb (link) {
       link._svgAttrs = { 'marker-end': 'url(#m-end)' }
       return link
-    },
-    touchMove(e){
-      if(!this.lastTouch) {
-        this.lastTouch = e.targetTouches[0]
-        return;
-      }
-      this.offsetX = this.offsetX + e.targetTouches[0].clientX - this.lastTouch.clientX
-      this.offsetY = this.offsetY - this.lastTouch.clientY + e.targetTouches[0].clientY
-      this.lastTouch = e.targetTouches[0]
-    },
-    touchStart(e) {
-      console.log(e,e.touches[0])
-      this.startX = e.touches[0] ? e.touches[0].clientX : 0
-      this.startY = e.touches[0] ? e.touches[0].clientY : 0
-
-    },
-    touchEnd(e) {
-      console.log(this.startX, this.startY )
-      const endX = e.touches[0] ? e.touches[0].clientX : 0;
-      const endY = e.touches[0] ? e.touches[0].clientY : 0;
-      this.offsetX = this.offsetX + endX - this.startX;
-      this.offsetY = this.offsetY + endY - this.startY;
-    },
-    positionOnDown(e){
-      this.startX = e.clientX
-      this.startY = e.clientY
-    },
-    changePositionOnUp(e){
-      this.offsetX = this.offsetX + e.clientX - this.startX
-      this.offsetY = this.offsetY + e.clientY - this.startY
     }
   },
 })
@@ -102,6 +86,11 @@ export default({
   .net {
     background-color: white;
     border-radius: 8px
+  }
+
+  .net-menu {
+    background: #96CCFF;
+    padding: 8px;
   }
 
   ul.menu {
