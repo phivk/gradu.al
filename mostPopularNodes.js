@@ -17,21 +17,20 @@ async function run(community) {
     }, {});
 
     let mostPopular = 0;
-    let skills = [];
+
+    const tidArray = [];
+
 
     for (const [skill, numbers] of Object.entries(tids)) {
-      const skillName = getSkillName(nodes, skill)
-
-      if (numbers > mostPopular) {
-        skills.push(skillName)
-        mostPopular = numbers
-      }
-
-      if (skills.length < 5 && !skills.includes(skillName)) {
-        skills.push(skillName)
-      }
-
+      tidArray.push({ skill, numbers })
     }
+
+    const skills = tidArray.sort((a, b) => {
+      const x = a.numbers;
+      const y = b.numbers;
+      return ((x < y) ? 1 : ((x > y) ? -1 : 0))
+    }
+    ).slice(0, 5).map(item => getSkillName(nodes, item.skill))
 
     await fs.writeFileSync(`./content/${community}/data/popular.json`, '{ "skills": ' + JSON.stringify(skills) + "}", (err) => {
       if (err) return console.error(err);
