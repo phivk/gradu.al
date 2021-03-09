@@ -15,7 +15,7 @@ export default {
   props: {
     profileNames: { type: Array, default: () => [] },
     borderColor: { type: String, default: "transparent" },
-    backgroundColor: { type: String, default: "#00449e" },
+    backgroundColor: { type: String, default: "#96CCFF" },
   },
   components: { ProfileAvatar },
 };

@@ -1,6 +1,6 @@
 <template>
   <span 
-    class="circle shadow-outline cursor-default f5 fw3 white"
+    class="circle shadow-outline cursor-default f5 fw3 dark-blue"
     :style="styleObject"
     :title="profileName"
   >{{initial}}</span>
@@ -10,7 +10,7 @@ export default {
   props: {
     profileName: { type: String, default: "User Name" },
     borderColor: { type: String, default: "transparent" },
-    backgroundColor: { type: String, default: "orange" },
+    backgroundColor: { type: String, default: "#96CCFF" },
   },
   computed: {
     initial() {
