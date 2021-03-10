@@ -34,28 +34,71 @@
             Hi 👋 <br />
             Welcome to MozFest on Gradual!
           </h2>
-          <div class="measure center">
-            <p class="mb3 f4 lh-copy">
+          <div class="center">
+            <p class="center measure mb3 f4 lh-copy">
               This is a space to express things you’d like to learn and share
-              with others in the community. Keep an eye on the
+              with others in the community. Join the conversation on the
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
                 class="color-accent hover-no-underline"
-                >#skillsharing channel</a
-              >
-              for updates.
+                >#skillsharing</a
+              > channel!
             </p>
+            <ol class="list tl pl0 mb3 flex flex-wrap justify-center">
+              <li class="pa3 w-100 w-third-ns mw5-5">
+                <div class="br3 bg-white pa3 h-100 shadow-4">
+                  <CircleCharacter 
+                    character="1"
+                    backgroundColor="#137752"
+                    textColor="#FFF"
+                    class="mb2 mr2 fw6"
+                  /><h3 class="dib fw6">Map</h3>
+                  <div class="mid-gray">
+                    Let us know what you'd like to learn or share. Anything is welcome!
+                  </div>
+                </div>
+              </li>
+              <li class="pa3 w-100 w-third-ns mw5-5">
+                <div class="br3 bg-white pa3 h-100 shadow-4">
+                  <CircleCharacter 
+                    character="2"
+                    backgroundColor="#137752"
+                    textColor="#FFF"
+                    class="mb2 mr2 fw6"
+                  /><h3 class="dib fw6">Match</h3>
+                  <div class="mid-gray">
+                    See how MozFest is connected by skills! We help you plan a session in the format you choose.
+                  </div>
+                </div>
+              </li>
+              <li class="pa3 w-100 w-third-ns mw5-5">
+                <div class="br3 bg-white pa3 h-100 shadow-4">
+                  <CircleCharacter 
+                    character="3"
+                    backgroundColor="#137752"
+                    textColor="#FFF"
+                    class="mb2 mr2 fw6"
+                  /><h3 class="dib fw6">Meet</h3>
+                  <div class="mid-gray">
+                    Host or join a session to learn with other MozFest participants based on your interests!
+                  </div>
+                </div>
+              </li>
+            </ol>
+            <p>Still confused? <a class="color-accent hover-no-underline" href="#">Watch us walk you through the way it works.</a></p>
           </div>
         </div>
       </section>
       <SessionsSection
+        id="section-upcoming"
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
       </SessionsSection>
       <SessionsSection
+        id="section-past"
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
@@ -64,21 +107,23 @@
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
-      <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
-        <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
-      </GraphSection>
-      <MostPopularSkillsSection v-if="popular" :skills="popular.skills" class="db dn-ns">
-        <h2 class="mb3">Popular skills from the community</h2>
-        <p class="f4 lh-copy">
-          Something here for you?
-          <nuxt-link
-          append to="join"
-          class="color-accent hover-no-underline"
-          >
-            Let us know!
-          </nuxt-link>
-        </p>
-      </MostPopularSkillsSection>
+      <div id="#section-graph">
+        <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
+          <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
+        </GraphSection>
+        <MostPopularSkillsSection v-if="popular" :skills="popular.skills" class="db dn-ns">
+          <h2 class="mb3">Popular skills from the community</h2>
+          <p class="f4 lh-copy">
+            Something here for you?
+            <nuxt-link
+            append to="join"
+            class="color-accent hover-no-underline"
+            >
+              Let us know!
+            </nuxt-link>
+          </p>
+        </MostPopularSkillsSection>
+      </div>
     </div>
   </div>
 </template>
@@ -88,6 +133,7 @@ import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
+import CircleCharacter from "~/components/CircleCharacter.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -99,7 +145,8 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
-    MostPopularSkillsSection
+    MostPopularSkillsSection,
+    CircleCharacter,
   },
   data() {
     return {
@@ -142,3 +189,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.mw5-5 {
+  max-width: 24rem;
+}
+  
+</style>
