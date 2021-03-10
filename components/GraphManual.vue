@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svg>
+    <svg class="h0">
       <defs>
         <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth" >
           <path d="M0,0 L0,6 L9,3 z"></path>
@@ -154,4 +154,7 @@ path.sharer{
   fill: rgba(18, 120, 98, 0.8);
 }
 
+.h0 {
+  height: 0;
+}
 </style>
