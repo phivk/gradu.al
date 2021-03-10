@@ -84,8 +84,6 @@
 </template>
 
 <script>
-import SessionCardPreview from "~/components/SessionCardPreview.vue";
-import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
@@ -98,8 +96,6 @@ export default {
     };
   },
   components: {
-    SessionCardPreview,
-    GraphCommonsEmbed,
     SessionsSection,
     GraphSection,
     GraphManual,
