@@ -78,80 +78,80 @@ export default({
 })
 </script>
 <style >
-  .net {
-    background-color: white;
-    border-radius: 8px
-  }
+.net {
+  background-color: white;
+  border-radius: 8px
+}
 
-  .net-menu {
-    background: #96CCFF;
-    padding: 8px;
-  }
+.net-menu {
+  background: #96CCFF;
+  padding: 8px;
+}
 
-  ul.menu {
-    list-style: none;
-    position: absolute;
-    z-index: 100;
-    min-width: 20em;
-    text-align: left;
-  }
+ul.menu {
+  list-style: none;
+  position: absolute;
+  z-index: 100;
+  min-width: 20em;
+  text-align: left;
+}
 
-  ul.menu li{
-    margin-top: 1em;
-    position: relative;
-  }
+ul.menu li{
+  margin-top: 1em;
+  position: relative;
+}
 
-  circle.Skill.node {
-    fill:#4ba45b;
-  }
+circle.Skill.node {
+  fill:#4ba45b;
+}
 
-  circle.Member.node {
-    fill: #184eb5;
-  }
+circle.Member.node {
+  fill: #184eb5;
+}
 
-  .net {
-    height: 100%;
-    margin: 0;
-   }
+.net {
+  height: 100%;
+  margin: 0;
+ }
 
-  .node{
-    stroke: alpha(red, 0.7);
-    stroke-width: 3px;
-    transition: fill 0.5s ease;
-    fill: white;
-  }
+.node{
+  stroke: alpha(red, 0.7);
+  stroke-width: 3px;
+  transition: fill 0.5s ease;
+  fill: white;
+}
 
-  path.learner{
-    stroke: black;
-  }
+path.learner{
+  stroke: black;
+}
 
-  path.sharer{
-    stroke: blue;
-  }
+path.sharer{
+  stroke: blue;
+}
 
-  .node, .link {
-    stroke-linecap: round;
-  }
+.node, .link {
+  stroke-linecap: round;
+}
 
-  .curve{
-    fill: none;
-  }
+.curve{
+  fill: none;
+}
 
-  .node-label{
-    /* fill: black; */
-    font-size: 1.1rem;
-  }
+.node-label{
+  /* fill: black; */
+  font-size: 1.1rem;
+}
 
-  .memberLabel {
-    fill: blue;
-  }
+.memberLabel {
+  fill: blue;
+}
 
-  .skillLabel {
-    fill: green;
-  }
+.skillLabel {
+  fill: green;
+}
 
-  #m-end path, #m-start{
-    fill: rgba(18, 120, 98, 0.8);
-  }
+#m-end path, #m-start{
+  fill: rgba(18, 120, 98, 0.8);
+}
 
 </style>
