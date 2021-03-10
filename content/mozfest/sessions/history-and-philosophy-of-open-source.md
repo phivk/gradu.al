@@ -13,7 +13,7 @@ sharerNames:
   - '@Omar Shehata'
 resources:
   -
-    text: Notes
+    text: Collective Miro Board
     href: https://miro.com/app/board/o9J_lRWjRvU=/
 cta:
   text: Collective Miro Board
