@@ -46,7 +46,7 @@ export default({
       startX: 0,
       startY: 0,
       lastTouch: null,
-      force: 1000,
+      force: 2500,
       offsetY: 0
     }
   },
