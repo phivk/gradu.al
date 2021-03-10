@@ -101,24 +101,13 @@ export default {
 .net {
   background-color: white;
   border-radius: 8px;
+  height: 100%;
+  margin: 0;
 }
 
 .net-menu {
   background: #96ccff;
   padding: 8px;
-}
-
-ul.menu {
-  list-style: none;
-  position: absolute;
-  z-index: 100;
-  min-width: 20em;
-  text-align: left;
-}
-
-ul.menu li {
-  margin-top: 1em;
-  position: relative;
 }
 
 circle.Skill.node {
@@ -127,11 +116,6 @@ circle.Skill.node {
 
 circle.Member.node {
   fill: #184eb5;
-}
-
-.net {
-  height: 100%;
-  margin: 0;
 }
 
 .node {
