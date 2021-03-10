@@ -44,7 +44,7 @@ export default({
   computed:{
     options(){
       return{
-        force: 1000,
+        force: 2500,
         nodeSize: this.nodeSize,
         nodeLabels: true,
         linkLabels:true,
