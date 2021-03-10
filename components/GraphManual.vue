@@ -34,7 +34,7 @@
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 mw6 ma3 br3 tl">
+      <div class="absolute bottom-0 left-0 mw6 ma3 br3 tl hover-opaque">
         <label class="db mb1">Spacing</label>
         <input class="db" type="range" min="2000" max="5000" v-model:value="force" />
       </div>
@@ -152,5 +152,13 @@ path.sharer {
 
 .h0 {
   height: 0;
+}
+
+.hover-opaque {
+  opacity: 50%;
+  transition: opacity 0.5s;
+}
+.hover-opaque:hover {
+  opacity: 100%;
 }
 </style>
