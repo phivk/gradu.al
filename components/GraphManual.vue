@@ -34,14 +34,9 @@
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 mw6 ma3 net-menu br3">
-        <h2 class="pt3">Change the force between the nodes to explore more</h2>
-        <div class="measure center pa4">
-          <label>Force between nodes:</label>
-          <div>
-            <input type="range" min="1" max="5000" v-model:value="force" />
-          </div>
-        </div>
+      <div class="absolute bottom-0 left-0 mw6 ma3 br3 tl">
+        <label class="db mb1">Spacing</label>
+        <input class="db" type="range" min="2000" max="5000" v-model:value="force" />
       </div>
     </div>
   </div>
@@ -103,11 +98,6 @@ export default {
   border-radius: 8px;
   height: 100%;
   margin: 0;
-}
-
-.net-menu {
-  background: #96ccff;
-  padding: 8px;
 }
 
 circle.Skill.node {
