@@ -19,8 +19,8 @@ cta:
   text: Collective Miro Board
   href: https://miro.com/app/board/o9J_lRWjRvU=/
 ---
-Whether your completely new to the world of Open Source or a weathered veteran - there's always something new to learn.
+Whether you're a weathered veteran or completely new to the world of Open Source - there's always something new to learn.
 <!--more-->
 Tom and Omar will share a quick historical overview, the foundations with the Open Source Initiative (OSI) and offer different perspectives. 
-Links will be made with the field of philosophy, critical theory / social justice ideas to get a broad view of how it relates to current open source ideas, for example into other fields such as education (OER, open access), open science, open development, open gov and open data.  
+Links will be made with the field of philosophy, critical theory / social justice ideas to get a broad view of how it relates to current open source ideas: into other fields such as education (OER, open access), open science, open development, open gov and open data.  
 Omar will also start a conversation around the burden of maintaining software, and how contributing code can actually (and often?) cause more trouble than it helps (especially for one-off contributions).
