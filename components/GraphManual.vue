@@ -1,35 +1,30 @@
 <template>
-<div>
-  <svg>
-  <defs>
-    <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth" >
-      <path d="M0,0 L0,6 L9,3 z"></path>
-    </marker>
+  <div>
+    <svg>
+      <defs>
+        <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth" >
+          <path d="M0,0 L0,6 L9,3 z"></path>
+        </marker>
         <marker id="m-start" markerWidth="6" markerHeight="6" refX="-4" refY="3" orient="auto" markerUnits="strokeWidth" >
-      <rect width="3" height="6"></rect>
-    </marker>
-  </defs>
-</svg>
-<div class="relative">
-  <d3-network
-    ref='net'
-    :net-nodes="nodes"
-    :net-links="edges"
-    :options="options"
-    :link-cb="lcb"
-  />
-  <div class="absolute bottom-0 left-0 mw6 ma3 net-menu br3">
-    <h2 class="pt3">Change the force between the nodes to explore more</h2>
-      <div class="measure center pa4">
-      <label>Force between nodes:</label>
-      <div>
-          <input type="range" min="1" max="5000" v-model:value="force" />
+          <rect width="3" height="6"></rect>
+        </marker>
+      </defs>
+    </svg>
+    <div class="relative">
+      <d3-network
+        ref='net' :net-nodes="nodes" :net-links="edges" :options="options" :link-cb="lcb"
+      />
+      <div class="absolute bottom-0 left-0 mw6 ma3 net-menu br3">
+        <h2 class="pt3">Change the force between the nodes to explore more</h2>
+        <div class="measure center pa4">
+          <label>Force between nodes:</label>
+          <div>
+            <input type="range" min="1" max="5000" v-model:value="force" />
+          </div>
+        </div>
       </div>
-      </div>
-    </ul>
+    </div>
   </div>
-</div>
-</div>
 </template>
 <style src="vue-d3-network/dist/vue-d3-network.css"></style>
 <script>
