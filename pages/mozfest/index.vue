@@ -46,56 +46,32 @@
               >
               channel!
             </p>
-            <ol class="list tl pl0 mb3 flex flex-wrap justify-center">
+            <ol class="list pl0 mb3 flex flex-wrap justify-center">
               <li class="pa3 w-100 w-third-ns mw5-5">
-                <div class="br3 bg-white pa3 h-100 shadow-4">
-                  <CircleCharacter
-                    character="1"
-                    backgroundColor="#137752"
-                    textColor="#FFF"
-                    class="mb2 mr2 fw6"
-                  />
-                  <h3 class="dib fw6">Map</h3>
-                  <div class="mid-gray">
-                    Let us know what you'd like to learn or share. Anything is
-                    welcome!
-                  </div>
-                </div>
+                <ProcessCard number="1" title="Map">
+                  Let us know what you'd like to learn or share. Anything is
+                  welcome!
+                </ProcessCard>
               </li>
               <li class="pa3 w-100 w-third-ns mw5-5">
-                <div class="br3 bg-white pa3 h-100 shadow-4">
-                  <CircleCharacter
-                    character="2"
-                    backgroundColor="#137752"
-                    textColor="#FFF"
-                    class="mb2 mr2 fw6"
-                  />
-                  <h3 class="dib fw6">Match</h3>
-                  <div class="mid-gray">
-                    See how MozFest is connected by skills! We help you plan a
-                    session in the format you choose.
-                  </div>
-                </div>
+                <ProcessCard number="2" title="Match">
+                  See how MozFest is connected by skills! We help you plan a
+                  session in the format you choose.
+                </ProcessCard>
               </li>
               <li class="pa3 w-100 w-third-ns mw5-5">
-                <div class="br3 bg-white pa3 h-100 shadow-4">
-                  <CircleCharacter
-                    character="3"
-                    backgroundColor="#137752"
-                    textColor="#FFF"
-                    class="mb2 mr2 fw6"
-                  />
-                  <h3 class="dib fw6">Meet</h3>
-                  <div class="mid-gray">
-                    Host or join a session to learn with other MozFest
-                    participants based on your interests!
-                  </div>
-                </div>
+                <ProcessCard number="3" title="Meet">
+                  Host or join a session to learn with other MozFest
+                  participants based on your interests!
+                </ProcessCard>
               </li>
             </ol>
             <p>
               Still confused?
-              <a class="color-accent hover-no-underline" href="#"
+              <a
+                class="color-accent hover-no-underline"
+                href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
+                target="_blank"
                 >Watch us walk you through the way it works.</a
               >
             </p>
@@ -151,6 +127,7 @@ import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 import CircleCharacter from "~/components/CircleCharacter.vue";
+import ProcessCard from "~/components/ProcessCard.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -164,6 +141,7 @@ export default {
     GraphManual,
     MostPopularSkillsSection,
     CircleCharacter,
+    ProcessCard,
   },
   data() {
     return {
