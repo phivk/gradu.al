@@ -34,28 +34,68 @@
             Hi 👋 <br />
             Welcome to MozFest on Gradual!
           </h2>
-          <div class="measure center">
-            <p class="mb3 f4 lh-copy">
+          <div class="center">
+            <p class="center measure mb3 f4 lh-copy">
               This is a space to express things you’d like to learn and share
-              with others in the community. Keep an eye on the
+              with others in the community. Join the conversation on the
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
                 class="color-accent hover-no-underline"
-                >#skillsharing channel</a
+                >#skillsharing</a
               >
-              for updates.
+              channel!
+            </p>
+            <ol class="list pl0 mb3 flex flex-wrap justify-center">
+              <li class="pa3 w-100 w-third-ns mw5-5">
+                <ProcessCard number="1" title="Map">
+                  Let us know what you'd like to learn or share. Anything is
+                  welcome!
+                </ProcessCard>
+              </li>
+              <li class="pa3 w-100 w-third-ns mw5-5">
+                <ProcessCard number="2" title="Match">
+                  See how MozFest is connected by skills! We help you plan a
+                  session in the format you choose.
+                </ProcessCard>
+              </li>
+              <li class="pa3 w-100 w-third-ns mw5-5">
+                <ProcessCard number="3" title="Meet">
+                  Host or join a session to learn with other MozFest
+                  participants based on your interests!
+                </ProcessCard>
+              </li>
+            </ol>
+            <p class="measure center mb4 lh-copy">
+              <strong>Sessions take any format</strong> that best fits the facilitator and the skill they are sharing, for example
+              <TagPill 
+                v-for="sessionType in sessionTypes" :key="sessionType"
+                class="ma1"
+              >
+                {{ sessionType }}
+              </TagPill>
+            </p>
+            <p>
+              Still confused?
+              <a
+                class="color-accent hover-no-underline"
+                href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
+                target="_blank"
+                >Watch us walk you through the way it works.</a
+              >
             </p>
           </div>
         </div>
       </section>
       <SessionsSection
+        id="section-upcoming"
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
       </SessionsSection>
       <SessionsSection
+        id="section-past"
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
@@ -64,32 +104,40 @@
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
-      <GraphSection v-if="nodes && edges" memberTitlePlural="participants" class="dn db-ns">
-        <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
-      </GraphSection>
-      <MostPopularSkillsSection v-if="popular" :skills="popular.skills" class="db dn-ns">
-        <h2 class="mb3">Popular skills from the community</h2>
-        <p class="f4 lh-copy">
-          Something here for you?
-          <nuxt-link
-          append to="join"
-          class="color-accent hover-no-underline"
-          >
-            Let us know!
-          </nuxt-link>
-        </p>
-      </MostPopularSkillsSection>
+      <div id="#section-graph">
+        <GraphSection
+          v-if="nodes && edges"
+          memberTitlePlural="participants"
+          class="dn db-ns"
+        >
+          <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
+        </GraphSection>
+        <MostPopularSkillsSection
+          v-if="popular"
+          :skills="popular.skills"
+          class="db dn-ns"
+        >
+          <h2 class="mb3">Popular skills from the community</h2>
+          <p class="f4 lh-copy">
+            Something here for you?
+            <nuxt-link append to="join" class="color-accent hover-no-underline">
+              Let us know!
+            </nuxt-link>
+          </p>
+        </MostPopularSkillsSection>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import SessionCardPreview from "~/components/SessionCardPreview.vue";
-import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
+import CircleCharacter from "~/components/CircleCharacter.vue";
+import ProcessCard from "~/components/ProcessCard.vue";
+import TagPill from "~/components/TagPill.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -98,16 +146,26 @@ export default {
     };
   },
   components: {
-    SessionCardPreview,
-    GraphCommonsEmbed,
     SessionsSection,
     GraphSection,
     GraphManual,
-    MostPopularSkillsSection
+    MostPopularSkillsSection,
+    CircleCharacter,
+    ProcessCard,
+    TagPill,
   },
   data() {
     return {
-      graphCommonsSrc: undefined,
+      sessionTypes: [
+        "peer sharing",
+        "salon",
+        "conversation",
+        "workshop",
+        "lunch & lunch",
+        "talk",
+        "presentation",
+        "AMA",
+      ],
     };
   },
   async asyncData({ $content }) {
@@ -130,19 +188,23 @@ export default {
       })
       .fetch();
 
-    let nodes, edges, popular
+    let nodes, edges, popular;
 
     try {
       nodes = await $content("mozfest/data", "nodes").fetch();
       edges = await $content("mozfest/data", "edges").fetch();
       popular = await $content("mozfest/data", "popular").fetch();
-
     } catch (error) {
-      console.log(error)
-      console.log("nodes and edges failed to load")
+      console.log(error);
+      console.log("nodes and edges failed to load");
     }
 
     return { sessionsUpcoming, sessionsPast, nodes, edges, popular };
   },
 };
 </script>
+<style scoped>
+.mw5-5 {
+  max-width: 24rem;
+}
+</style>

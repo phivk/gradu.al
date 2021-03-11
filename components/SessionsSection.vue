@@ -4,6 +4,7 @@
     <ul class="list pa0 ma0 flex flex-wrap justify-center">
       <li
         v-for="session in sessions"
+        :key="session.title"
         class="w-100 w-50-m w-third-l mw6 pa3"
       >
         <SessionCardPreview
