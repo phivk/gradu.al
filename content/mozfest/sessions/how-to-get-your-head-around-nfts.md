@@ -1,5 +1,5 @@
 ---
-title: how to get your head around NFTs
+title: How to get your head around NFTs
 type: peer sharing
 date: '2021-03-15'
 imageSrc: https://images.unsplash.com/photo-1526913299589-f35a3ddeb7ae?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1568&q=80
@@ -13,10 +13,10 @@ sharerNames:
   - '@Douglas Arellanes'
 resources:
   -
-    text: Miro Board
+    text: Collective Miro Board
     href: https://miro.com/app/board/o9J_lRWjRvU=/
 cta:
-  text: Collective Miro Board
+  text: Access the Miro Board
   href: https://miro.com/app/board/o9J_lRWjRvU=/
 ---
 A non-fungible token (NFT) is a special type of cryptographic token which represents something unique.
