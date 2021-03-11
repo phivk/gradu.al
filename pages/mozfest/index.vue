@@ -75,15 +75,19 @@
                 {{ sessionType }}
               </TagPill>
             </p>
-            <p>
-              Still confused?
-              <a
-                class="color-accent hover-no-underline"
-                href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
-                target="_blank"
-                >Watch us walk you through the way it works.</a
-              >
-            </p>
+            <InfoBar>
+              <template v-slot:icon>
+                😕
+              </template>
+              <template v-slot:text>
+                Still confused? <a
+                  class="color-accent hover-no-underline"
+                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
+                  target="_blank"
+                  >Watch a walk through video</a
+                >.
+              </template>
+            </InfoBar>
           </div>
         </div>
       </section>
@@ -147,6 +151,7 @@ import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue"
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
+import InfoBar from "~/components/InfoBar.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -162,6 +167,7 @@ export default {
     CircleCharacter,
     ProcessCard,
     TagPill,
+    InfoBar,
   },
   data() {
     return {
