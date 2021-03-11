@@ -1,6 +1,6 @@
 ---
 title: We're the team building Gradual, ask us anything!
-type: salon
+type: AMA
 date: '2021-03-09'
 imageSrc: https://lh3.googleusercontent.com/ngBc_S4czfRDaCA-dMl6BnExwDaAYVNohVDdb6dk8QxBZgZxWT7vJcbar4BgYedrmQ0fjkRn-NZxC-DejtrESJ7tKLKljp6j-06oDpDE_uczIgsslE0mxUkwImgk15iLoRRT_hpiKA=w2400
 learnerNames:
