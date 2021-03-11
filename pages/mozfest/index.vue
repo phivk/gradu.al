@@ -66,6 +66,15 @@
                 </ProcessCard>
               </li>
             </ol>
+            <p class="measure center mb4 lh-copy">
+              <strong>Sessions take any format</strong> that best fits the facilitator and the skill they are sharing, for example
+              <TagPill 
+                v-for="sessionType in sessionTypes" :key="sessionType"
+                class="ma1"
+              >
+                {{ sessionType }}
+              </TagPill>
+            </p>
             <p>
               Still confused?
               <a
@@ -128,6 +137,7 @@ import GraphManual from "~/components/GraphManual.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
+import TagPill from "~/components/TagPill.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -142,10 +152,20 @@ export default {
     MostPopularSkillsSection,
     CircleCharacter,
     ProcessCard,
+    TagPill,
   },
   data() {
     return {
-      graphCommonsSrc: undefined,
+      sessionTypes: [
+        "peer sharing",
+        "salon",
+        "conversation",
+        "workshop",
+        "lunch & lunch",
+        "talk",
+        "presentation",
+        "AMA",
+      ],
     };
   },
   async asyncData({ $content }) {
