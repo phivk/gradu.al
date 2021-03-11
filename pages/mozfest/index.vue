@@ -93,6 +93,15 @@
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
+        <p class="mb3 center lh-copy">
+          Subscribe to the
+          <a
+            href="https://bit.ly/MozFestSkillsharing"
+            class="hover-no-underline color-accent"
+            target="_blank"
+            >Gradual MozFest Skill Sharing calendar</a
+          > to stay posted.
+        </p>
       </SessionsSection>
       <SessionsSection
         id="section-past"
