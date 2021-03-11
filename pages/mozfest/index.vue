@@ -161,9 +161,11 @@ export default {
         "salon",
         "conversation",
         "workshop",
-        "lunch & lunch",
+        "lunch & learn",
         "talk",
+        "one-on-one",
         "presentation",
+        "brainstorm",
         "AMA",
       ],
     };
