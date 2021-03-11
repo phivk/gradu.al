@@ -1,36 +1,58 @@
 <template>
-<div>
-  <svg >
-  <defs>
-    <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth" >
-      <path d="M0,0 L0,6 L9,3 z"></path>
-    </marker>
-        <marker id="m-start" markerWidth="6" markerHeight="6" refX="-4" refY="3" orient="auto" markerUnits="strokeWidth" >
-      <rect width="3" height="6"></rect>
-    </marker>
-  </defs>
-</svg>
-  <d3-network
-    ref='net'
-    :net-nodes="nodes"
-    :net-links="edges"
-    :options="options"
-    :link-cb="lcb"
-  />
-</div>
+  <div>
+    <svg class="h0">
+      <defs>
+        <marker
+          id="m-end"
+          markerWidth="10"
+          markerHeight="10"
+          refX="9"
+          refY="3"
+          orient="auto"
+          markerUnits="strokeWidth"
+        >
+          <path d="M0,0 L0,6 L9,3 z"></path>
+        </marker>
+        <marker
+          id="m-start"
+          markerWidth="6"
+          markerHeight="6"
+          refX="-4"
+          refY="3"
+          orient="auto"
+          markerUnits="strokeWidth"
+        >
+          <rect width="3" height="6"></rect>
+        </marker>
+      </defs>
+    </svg>
+    <div class="relative">
+      <d3-network
+        ref="net"
+        :net-nodes="nodes"
+        :net-links="edges"
+        :options="options"
+        :link-cb="lcb"
+      />
+      <div class="absolute bottom-0 left-0 mw6 ma3 br3 tl hover-opaque">
+        <label class="db mb1">Spacing</label>
+        <input class="db" type="range" min="2000" max="5000" v-model:value="force" />
+      </div>
+    </div>
+  </div>
 </template>
 <style src="vue-d3-network/dist/vue-d3-network.css"></style>
 <script>
-import D3Network from 'vue-d3-network';
-export default({
+import D3Network from "vue-d3-network";
+export default {
   components: {
     D3Network,
   },
   props: {
     nodes: Array,
-    edges: Array
+    edges: Array,
   },
-  data () {
+  data() {
     return {
       nodeSize: 15,
       canvas: false,
@@ -38,136 +60,105 @@ export default({
       offsetY: 0,
       startX: 0,
       startY: 0,
-      lastTouch: null
-    }
+      lastTouch: null,
+      force: 2500,
+      offsetY: 0,
+    };
   },
-  computed:{
-    options(){
-      return{
-        force: 2500,
+  computed: {
+    options() {
+      return {
+        force: this.force,
         nodeSize: this.nodeSize,
         nodeLabels: true,
-        linkLabels:true,
+        linkLabels: true,
         canvas: this.canvas,
         resizeListener: true,
         size: {
-          h: 1000
+          h: 1000,
         },
         offset: {
           x: this.offsetX,
-          y: this.offsetY
-        }
-      }
-    }
+          y: this.offsetY,
+        },
+      };
+    },
   },
-  methods:{
-    lcb (link) {
-      link._svgAttrs = { 'marker-end': 'url(#m-end)' }
-      return link
+  methods: {
+    lcb(link) {
+      link._svgAttrs = { "marker-end": "url(#m-end)" };
+      return link;
     },
-    touchMove(e){
-      if(!this.lastTouch) {
-        this.lastTouch = e.targetTouches[0]
-        return;
-      }
-      this.offsetX = this.offsetX + e.targetTouches[0].clientX - this.lastTouch.clientX
-      this.offsetY = this.offsetY - this.lastTouch.clientY + e.targetTouches[0].clientY
-      this.lastTouch = e.targetTouches[0]
-    },
-    touchStart(e) {
-      console.log(e,e.touches[0])
-      this.startX = e.touches[0] ? e.touches[0].clientX : 0
-      this.startY = e.touches[0] ? e.touches[0].clientY : 0
-
-    },
-    touchEnd(e) {
-      console.log(this.startX, this.startY )
-      const endX = e.touches[0] ? e.touches[0].clientX : 0;
-      const endY = e.touches[0] ? e.touches[0].clientY : 0;
-      this.offsetX = this.offsetX + endX - this.startX;
-      this.offsetY = this.offsetY + endY - this.startY;
-    },
-    positionOnDown(e){
-      this.startX = e.clientX
-      this.startY = e.clientY
-    },
-    changePositionOnUp(e){
-      this.offsetX = this.offsetX + e.clientX - this.startX
-      this.offsetY = this.offsetY + e.clientY - this.startY
-    }
   },
-})
+};
 </script>
-<style >
-  .net {
-    background-color: white;
-    border-radius: 8px
-  }
+<style>
+.net {
+  background-color: white;
+  border-radius: 8px;
+  height: 100%;
+  margin: 0;
+}
 
-  ul.menu {
-    list-style: none;
-    position: absolute;
-    z-index: 100;
-    min-width: 20em;
-    text-align: left;
-  }
+circle.Skill.node {
+  fill: #4ba45b;
+}
 
-  ul.menu li{
-    margin-top: 1em;
-    position: relative;
-  }
+circle.Member.node {
+  fill: #184eb5;
+}
 
-  circle.Skill.node {
-    fill:#4ba45b;
-  }
+.node {
+  stroke: alpha(red, 0.7);
+  stroke-width: 3px;
+  transition: fill 0.5s ease;
+  fill: white;
+}
 
-  circle.Member.node {
-    fill: #184eb5;
-  }
+path.learner {
+  stroke: black;
+}
 
-  .net {
-    height: 100%;
-    margin: 0;
-   }
+path.sharer {
+  stroke: blue;
+}
 
-  .node{
-    stroke: alpha(red, 0.7);
-    stroke-width: 3px;
-    transition: fill 0.5s ease;
-    fill: white;
-  }
+.node,
+.link {
+  stroke-linecap: round;
+}
 
-  path.learner{
-    stroke: black;
-  }
+.curve {
+  fill: none;
+}
 
-  path.sharer{
-    stroke: blue;
-  }
+.node-label {
+  /* fill: black; */
+  font-size: 1.1rem;
+}
 
-  .node, .link {
-    stroke-linecap: round;
-  }
+.memberLabel {
+  fill: blue;
+}
 
-  .curve{
-    fill: none;
-  }
+.skillLabel {
+  fill: green;
+}
 
-  .node-label{
-    /* fill: black; */
-    font-size: 1.1rem;
-  }
+#m-end path,
+#m-start {
+  fill: rgba(18, 120, 98, 0.8);
+}
 
-  .memberLabel {
-    fill: blue;
-  }
+.h0 {
+  height: 0;
+}
 
-  .skillLabel {
-    fill: green;
-  }
-
-  #m-end path, #m-start{
-    fill: rgba(18, 120, 98, 0.8);
-  }
-
+.hover-opaque {
+  opacity: 50%;
+  transition: opacity 0.5s;
+}
+.hover-opaque:hover {
+  opacity: 100%;
+}
 </style>
