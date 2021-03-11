@@ -1,14 +1,19 @@
 <template>
-  <span 
-    class="circle shadow-outline cursor-default f5 fw3 dark-blue"
-    :style="styleObject"
+  <CircleCharacter 
+    :character="initial"
+    :borderColor="borderColor"
+    :backgroundColor="backgroundColor"
     :title="profileName"
-  >{{initial}}</span>
+  />
 </template>
 <script>
+import CircleCharacter from "~/components/CircleCharacter.vue";
 export default {
+  components: {
+    CircleCharacter,
+  },
   props: {
-    profileName: { type: String, default: "User Name" },
+    profileName: { type: String, default: "@User Name" },
     borderColor: { type: String, default: "transparent" },
     backgroundColor: { type: String, default: "#96CCFF" },
   },
@@ -18,30 +23,6 @@ export default {
         .replace('@', '')[0]
         .toUpperCase();
     },
-    styleObject() {
-      return {
-        'box-shadow': '0 0 0 0.3rem ' + this.borderColor,
-        'background-color': this.backgroundColor,
-      } 
-    },
   }
 };
 </script>
-<style scoped>
-.circle {
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  text-align: center;
-  border-radius: 50%;
-}
-.shadow-outline {
-  box-shadow: 0 0 0 0.5rem yellow;
-  background-color: 
-}
-.cursor-default {
-  cursor: default;
-}
-
-</style>
