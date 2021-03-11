@@ -84,7 +84,7 @@
                   class="color-accent hover-no-underline"
                   href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
                   target="_blank"
-                  >Watch a walk through video</a
+                  >Watch a walk-through video</a
                 >.
               </template>
             </InfoBar>
