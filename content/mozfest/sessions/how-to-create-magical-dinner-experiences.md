@@ -7,6 +7,8 @@ learnerNames:
   - '@Gunnar de Jong'
   - '@Phivk'
   - '@Omar Shehata'
+  - '@Douglas Arellanes'
+  - '@Kevin'
 sharerNames:
   - '@Thomas Steigenga'
 resources:
