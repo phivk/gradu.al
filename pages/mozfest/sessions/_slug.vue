@@ -1,7 +1,7 @@
 <template>
-  <SessionPage 
-    :session="session" 
-    :bgColor="bgColor" 
+  <SessionPage
+    :session="session"
+    :bgColor="bgColor"
   />
 </template>
 
@@ -12,6 +12,11 @@ import SessionPage from "~/components/SessionPage.vue";
 
 export default {
   layout: "mozFest",
+  head() {
+    return {
+      title: "MozFest - Here to learn",
+    };
+  },
   components: { TagPill, ProfilePicList, SessionPage },
   data() {
     return {

@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
-          <div 
+          <div
             v-if="session.sharerNames"
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
           >
@@ -64,7 +64,7 @@
               />
             </p>
           </div>
-          <div 
+          <div
             v-if="session.learnerNames"
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
           >
@@ -107,11 +107,6 @@ import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 
 export default {
   layout: "storytellersUnited",
-  head() {
-    return {
-      title: "Storytellers United - Here to learn",
-    };
-  },
   components: {
     TagPill,
     ProfileAvatarList,

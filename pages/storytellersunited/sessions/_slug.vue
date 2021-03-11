@@ -1,7 +1,7 @@
 <template>
-  <SessionPage 
-    :session="session" 
-    :bgColor="bgColor" 
+  <SessionPage
+    :session="session"
+    :bgColor="bgColor"
   />
 </template>
 
@@ -13,6 +13,11 @@ import SessionPage from "~/components/SessionPage.vue";
 export default {
   layout: "storytellersUnited",
   components: { TagPill, ProfilePicList, SessionPage },
+  head() {
+    return {
+      title: "Storytellers United - Here to learn",
+    };
+  },
   data() {
     return {
       bgColor: '#fdecce',
