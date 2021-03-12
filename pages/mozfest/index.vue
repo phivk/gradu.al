@@ -78,17 +78,25 @@
               </TagPill>
             </p>
             <InfoBar>
-              <template v-slot:icon>
-                😕
+              <template v-slot:left>
+                🤔
               </template>
-              <template v-slot:text>
-                Still confused?
+              <template v-slot:middle>
+                Need more help?
                 <a
-                  class="color-accent hover-no-underline"
+                  class="color-primary hover-no-underline"
                   href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
                   target="_blank"
                   >Watch a walk-through video</a
                 >.
+              </template>
+              <template v-slot:right>
+                <a
+                  class="color-primary no-underline"
+                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
+                  target="_blank"
+                  >↗︎</a
+                >
               </template>
             </InfoBar>
           </div>
@@ -101,18 +109,26 @@
       >
         <h2 class="mb3">Upcoming Sessions</h2>
         <InfoBar>
-          <template v-slot:icon>
+          <template v-slot:left>
             📅
           </template>
-          <template v-slot:text>
+          <template v-slot:middle>
             Subscribe to the
             <a
               href="https://bit.ly/MozFestSkillsharing"
-              class="hover-no-underline color-accent"
+              class="hover-no-underline color-primary"
               target="_blank"
               >Gradual MozFest Skill Sharing calendar</a
             >
             to stay posted.
+          </template>
+          <template v-slot:right>
+            <a
+              href="https://bit.ly/MozFestSkillsharing"
+              class="no-underline color-primary"
+              target="_blank"
+              >↗︎</a
+            >
           </template>
         </InfoBar>
       </SessionsSection>

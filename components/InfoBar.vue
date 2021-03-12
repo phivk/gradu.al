@@ -1,10 +1,18 @@
 <template>
-  <p class="center pa3 bg-color-accent-washed ba b--black-10 br2 flex items-center mw6 tl">
+  <p class="center pa3 bg-color-primary-washed ba b--black-10 br2 flex items-center mw6 tl">
     <span class="mr2 f3">
-      <slot name="icon"></slot>
+      <slot name="left"></slot>
     </span>
-    <span>
-      <slot name="text"></slot>
+    <span class="mr-auto">
+      <slot name="middle"></slot>
+    </span>
+    <span class="ml2 f3">
+      <slot name="right"></slot>
     </span>
   </p>
 </template>
+<style scoped>
+.mr-auto {
+  margin-right: auto;
+}
+</style>
