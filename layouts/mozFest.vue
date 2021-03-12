@@ -21,6 +21,7 @@ export default {
 <style>
 :root {
   --color-moz-purple: #6703bf;
+  --color-moz-purple-washed: #6703bf22;
   --color-moz-berry: #b7007e;
   --color-moz-berry-washed: #b7007e22;
   --color-moz-light-gray: #f4f4f4;
@@ -33,10 +34,12 @@ export default {
 .bg-moz-light-gray { background-color: var(--color-moz-light-gray); }
 
 .theme-mozfest .color-primary { color: var(--color-moz-purple); }
+.theme-mozfest .color-primary-washed { color: var(--color-moz-purple-washed); }
 .theme-mozfest .color-accent { color: var(--color-moz-berry); }
 .theme-mozfest .color-accent-washed { color: var(--color-moz-berry-washed); }
 .theme-mozfest .color-bg { color: var(--color-moz-light-gray); }
 .theme-mozfest .bg-color-primary { background-color: var(--color-moz-purple); }
+.theme-mozfest .bg-color-primary-washed { background-color: var(--color-moz-purple-washed); }
 .theme-mozfest .bg-color-accent { background-color: var(--color-moz-berry); }
 .theme-mozfest .bg-color-accent-washed { background-color: var(--color-moz-berry-washed); }
 .theme-mozfest .bg-color-bg { background-color: var(--color-moz-light-gray); }
