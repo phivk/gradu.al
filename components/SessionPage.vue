@@ -1,5 +1,10 @@
 <template>
   <div class="bg-color-bg">
+    <social-head
+      :title="session.title"
+      :description="session.description"
+      :image="session.imageSrc"
+    />
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
@@ -104,12 +109,13 @@
 import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
-
+import SocialHead from './SocialHead.vue';
 export default {
   layout: "storytellersUnited",
   components: {
     TagPill,
     ProfileAvatarList,
+    SocialHead
   },
   props: {
     session: { type: Object, default: () => {} },
