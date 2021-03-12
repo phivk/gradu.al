@@ -35,8 +35,12 @@ export default {
 
 .theme-storytellerunited .color-bg { color: var(--color-su-washed-orange); }
 .theme-storytellerunited .color-primary { color: var(--color-su-light-orange); }
+.theme-storytellerunited .color-primary-washed { color: var(--color-su-washed-orange); }
 .theme-storytellerunited .color-accent { color: var(--color-su-dark-orange); }
+.theme-storytellerunited .color-accent-washed { color: var(--color-su-washed-orange); }
 .theme-storytellerunited .bg-color-bg { background-color: var(--color-su-washed-orange); }
 .theme-storytellerunited .bg-color-primary { background-color: var(--color-su-light-orange); }
+.theme-storytellerunited .bg-color-primary-washed { background-color: var(--color-su-washed-orange); }
 .theme-storytellerunited .bg-color-accent { background-color: var(--color-su-dark-orange); }
+.theme-storytellerunited .bg-color-accent-washed { background-color: var(--color-su-washed-orange); }
 </style>

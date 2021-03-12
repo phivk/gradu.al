@@ -67,23 +67,38 @@
               </li>
             </ol>
             <p class="measure center mb4 lh-copy">
-              <strong>Sessions take any format</strong> that best fits the facilitator and the skill they are sharing, for example
-              <TagPill 
-                v-for="sessionType in sessionTypes" :key="sessionType"
+              <strong>Sessions take any format</strong> that best fits the
+              facilitator and the skill they are sharing, for example
+              <TagPill
+                v-for="sessionType in sessionTypes"
+                :key="sessionType"
                 class="ma1"
               >
                 {{ sessionType }}
               </TagPill>
             </p>
-            <p>
-              Still confused?
-              <a
-                class="color-accent hover-no-underline"
-                href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
-                target="_blank"
-                >Watch us walk you through the way it works.</a
-              >
-            </p>
+            <InfoBar>
+              <template v-slot:left>
+                🤔
+              </template>
+              <template v-slot:middle>
+                Need more help?
+                <a
+                  class="color-primary hover-no-underline"
+                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
+                  target="_blank"
+                  >Watch a walk-through video</a
+                >.
+              </template>
+              <template v-slot:right>
+                <a
+                  class="color-primary no-underline"
+                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
+                  target="_blank"
+                  >↗︎</a
+                >
+              </template>
+            </InfoBar>
           </div>
         </div>
       </section>
@@ -93,15 +108,29 @@
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
-        <p class="mb3 center lh-copy">
-          Subscribe to the
-          <a
-            href="https://bit.ly/MozFestSkillsharing"
-            class="hover-no-underline color-accent"
-            target="_blank"
-            >Gradual MozFest Skill Sharing calendar</a
-          > to stay posted.
-        </p>
+        <InfoBar>
+          <template v-slot:left>
+            📅
+          </template>
+          <template v-slot:middle>
+            Subscribe to the
+            <a
+              href="https://bit.ly/MozFestSkillsharing"
+              class="hover-no-underline color-primary"
+              target="_blank"
+              >Gradual MozFest Skill Sharing calendar</a
+            >
+            to stay posted.
+          </template>
+          <template v-slot:right>
+            <a
+              href="https://bit.ly/MozFestSkillsharing"
+              class="no-underline color-primary"
+              target="_blank"
+              >↗︎</a
+            >
+          </template>
+        </InfoBar>
       </SessionsSection>
       <SessionsSection
         id="section-past"
@@ -147,6 +176,7 @@ import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue"
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
+import InfoBar from "~/components/InfoBar.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -162,6 +192,7 @@ export default {
     CircleCharacter,
     ProcessCard,
     TagPill,
+    InfoBar,
   },
   data() {
     return {
