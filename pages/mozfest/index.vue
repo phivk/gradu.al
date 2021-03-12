@@ -1,5 +1,9 @@
 <template>
   <div>
+    <social-head
+     title="MozFest - Here to learn"
+     description=""
+    />
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <div class="mv4">
@@ -177,6 +181,7 @@ import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
+import SocialHead from "~/components/SocialHead.vue";
 export default {
   layout: "mozFest",
   head() {
@@ -193,6 +198,7 @@ export default {
     ProcessCard,
     TagPill,
     InfoBar,
+    SocialHead
   },
   data() {
     return {

@@ -1,5 +1,9 @@
 <template>
   <div>
+    <social-head
+      title="Storytellers United - Here to learn"
+      description=""
+    />
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <div class="mv4">
@@ -56,7 +60,7 @@
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
-      <SessionsSection 
+      <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
@@ -79,6 +83,7 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
+import SocialHead from "~/components/SocialHead.vue";
 export default {
   layout: "storytellersUnited",
   head() {
@@ -92,6 +97,7 @@ export default {
     CalendarReferral,
     SessionsSection,
     GraphSection,
+    SocialHead
   },
   data() {
     return {

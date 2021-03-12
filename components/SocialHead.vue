@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import Logo from "~/assets/logo-gradual-white-text.svg"
 export default {
   props: {
     title: {
@@ -15,10 +16,9 @@ export default {
     },
     image: {
       type: String,
-      default: '~/assets/logo-gradual-white-text.svg'
+      default: `https://gradu.al${Logo}`
     }
   },
-
   head() {
     return {
       meta: [
