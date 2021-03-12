@@ -1,5 +1,5 @@
 ---
-title:  Data Science Meets Law: Learning Responsible AI Together
+title: 'Data Science Meets Law: Learning Responsible AI Together'
 type: presentation + Q&A
 date: '2021-03-18'
 imageSrc: https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80
@@ -12,7 +12,7 @@ sharerNames:
 resources:
   -
     text: Presentation video
-    href:  https://schedule.mozillafestival.org/skill-share
+    href: https://schedule.mozillafestival.org/skill-share
 cta:
   text: learn.responsibly.ai
   href: http://learn.responsibly.ai/
