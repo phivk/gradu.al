@@ -12,7 +12,7 @@ sharerNames:
 resources:
   -
     text: Presentation video
-    href: https://schedule.mozillafestival.org/skill-share
+    href: https://vimeo.com/showcase/8165282/video/523160994
 cta:
   text: learn.responsibly.ai
   href: http://learn.responsibly.ai/
