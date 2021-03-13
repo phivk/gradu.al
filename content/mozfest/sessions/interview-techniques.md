@@ -7,11 +7,10 @@ learnerNames:
   - '@Gracielle'
   - '@Gunnar de Jong'
   - '@Tom Salmon'
-  - '@@phivk'
+  - '@phivk'
 sharerNames: 
   - '@Philip Kyler'
   - '@Asmaa Abumezied'
-
 ---
 A 30 minute conversation around how we can ask better questions. 
 <!--more-->
