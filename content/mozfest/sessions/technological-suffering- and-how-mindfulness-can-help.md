@@ -8,6 +8,9 @@ learnerNames:
   - '@Gracielle'
   - '@Grace Barkhuff'
   - '@Douglas Arellanes'
+  - '@João Sousa Andrade'
+  - '@Christine'
+  - '@Shlomi Hod'
 sharerNames: 
   - '@maria bridge'
 resources:
