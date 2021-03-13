@@ -21,8 +21,12 @@ export default {
   },
   head() {
     return {
-      description: this.description || null,
       meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description || "Imagine what your peers are good at... and then learning it, gradually. Together."
+        },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
