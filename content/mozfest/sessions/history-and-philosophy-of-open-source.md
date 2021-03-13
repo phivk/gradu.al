@@ -8,6 +8,9 @@ learnerNames:
   - '@Gunnar de Jong'
   - '@Gracielle'
   - '@phivk'
+  - '@Aditya Ramesh'
+  - '@João Sousa Andrade'
+  - '@Harrison Pim'
 sharerNames: 
   - '@Tom Salmon'
   - '@Omar Shehata'
