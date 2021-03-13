@@ -21,6 +21,7 @@ export default {
   },
   head() {
     return {
+      description: this.description || null,
       meta: [
         {
           hid: 'twitter:title',
