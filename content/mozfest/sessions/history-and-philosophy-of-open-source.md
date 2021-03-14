@@ -18,7 +18,7 @@ resources:
   -
     text: Collective Miro Board
     href: https://miro.com/app/board/o9J_lRWjRq0=/
-    
+  -  
     text: Slides
     href: https://docs.google.com/presentation/d/13IUmLdrIZJlsY94etNcbBnmaKCZISsNAAfGlW1NRiPI/edit#slide=id.gc636fb3705_0_8
 cta:
