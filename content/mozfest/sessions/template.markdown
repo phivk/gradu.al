@@ -1,24 +1,27 @@
 ---
 title: Session Title
 type: session type
-date: '2021-03-04'
+date: "2021-03-04"
 imageSrc: https://images.unsplash.com/photo-1596920566403-2072ed25d7f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
 learnerNames:
-  - '@First Last'
-  - '@JustAFirstName'
-sharerNames: 
-  - '@One Sharer'
-  - '@orMore'
+  - "@First Last"
+  - "@JustAFirstName"
+sharerNames:
+  - "@One Sharer"
+  - "@orMore"
 resources:
-  -
-    text: Notes
+  - text: Notes
     href: https://www.bit.ly/SUlifehacks
 cta:
   text: Check out the Notes
   href: https://www.bit.ly/SUlifehacks
+filename: template
 ---
+
 Everything above the 'more' statement on the next line can be easily split as a summary.
+
 <!--more-->
+
 You can use this template as follows:
 
 1. Duplicate this file under a new name with the `.md` extension
@@ -29,4 +32,3 @@ You can use this template as follows:
 6. 🥂
 
 You can format content using [Markdown](https://www.markdownguide.org/basic-syntax).
-

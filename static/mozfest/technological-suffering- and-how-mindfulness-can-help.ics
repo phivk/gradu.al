@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:448aa4d2-9911-4f4e-b2b4-ba4f9b26fbca
+SUMMARY:Technological Suffering & how Mindfulness can help
+DTSTAMP:20210313T184600Z
+DTSTART:20210201T000000Z
+DESCRIPTION:A presentation + conversation event.
+LOCATION:On Zoom - find link on the #skillsharing channel on Slack
+DURATION:PT1H
+END:VEVENT
+END:VCALENDAR
