@@ -108,7 +108,7 @@
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
-        <InfoBar>
+        <InfoBar class="mb3">
           <template v-slot:left>
             📅
           </template>
