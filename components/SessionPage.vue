@@ -99,11 +99,11 @@
     </main>
   </div>
 </template>
-
 <script>
 import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
+import { formatDate, isValidDate, hasHappened } from "~/util/date";
 
 export default {
   layout: "storytellersUnited",
@@ -117,54 +117,32 @@ export default {
     bgColor: { type: String, default: "#FFF" },
   },
   computed: {
+    sessionDate() {
+      return this.session.dateTime
+        ? new Date(this.session.dateTime)
+        : new Date(this.session.date);
+    },
     dateFormatted() {
-      let dt = new Date(this.session.date);
-      if (this.isValidDate(dt)) {
-        return dt.toLocaleDateString("en-GB", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        });
-      } else {
-        return "TBC";
-      }
+      return isValidDate(this.sessionDate)
+        ? formatDate(this.sessionDate)
+        : "TBC";
     },
     hasHappened() {
-      let now = new Date();
-      return new Date(this.session.date) < now;
+      return hasHappened(this.session.date);
     },
     youtubeRecordingResource() {
       if (this.session.resources) {
         return this.session.resources.find((r) => r.href.includes("youtu"));
-      }
-      else {
-        return undefined
+      } else {
+        return undefined;
       }
     },
     youtubeRecordingID() {
       if (this.youtubeRecordingResource) {
-        let parts = this.youtubeRecordingResource.href.split(/[/=]/)
+        let parts = this.youtubeRecordingResource.href.split(/[/=]/);
         return parts[parts.length - 1];
-      }
-      else {
-        return undefined;
-      }
-    },
-  },
-  methods: {
-    isValidDate(d) {
-      if (Object.prototype.toString.call(d) === "[object Date]") {
-        // it is a date
-        if (isNaN(d.getTime())) {
-          // date is not valid
-          return false;
-        } else {
-          // date is valid
-          return true;
-        }
       } else {
-        // not a date
-        return false;
+        return undefined;
       }
     },
   },

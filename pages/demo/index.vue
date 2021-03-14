@@ -77,6 +77,8 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue"
+import { hasHappened, hasNotHappened } from "~/util/date";
+
 export default {
   layout: "demo",
   head() {
@@ -97,27 +99,11 @@ export default {
     };
   },
   async asyncData({ $content }) {
-    let now = new Date();
-    now.setDate(now.getDate() - 1); // include today in upcoming
-    // NB this uses UTC time, causing inaccuracies for non UTC timezones
-    let nowString = now.toISOString().slice(0, 10);
-
-    const sessionsUpcoming = await $content("demo/sessions")
-      .sortBy("date", "asc")
-      .where({
-        date: { $gte: nowString },
-      })
-      .fetch();
-
-    const sessionsPast = await $content("demo/sessions")
-      .sortBy("date", "desc")
-      .where({
-        date: { $lt: nowString },
-      })
-      .fetch();
+    const sessions = await $content("demo/sessions")
+      .sortBy("dateTime", "asc")
+      .fetch()
 
     let nodes, edges
-
     try {
       nodes = await $content("demo/data", "nodes").fetch();
       edges = await $content("demo/data", "edges").fetch();
@@ -126,7 +112,21 @@ export default {
       console.log("nodes and edges failed to load")
     }
 
-    return { sessionsUpcoming, sessionsPast, nodes, edges };
+    return { sessions, nodes, edges };
+  },
+  computed: {
+    sessionsUpcoming() {
+      return this.sessions.filter(s => {
+        let sessionDate = new Date(s.dateTime);
+        return hasNotHappened(sessionDate);
+      });
+    },
+    sessionsPast() {
+      return this.sessions.filter(s => {
+        let sessionDate = new Date(s.dateTime);
+        return hasHappened(sessionDate);
+      });
+    },
   },
 };
 </script>

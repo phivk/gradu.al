@@ -1,7 +1,7 @@
 ---
 title: How to create magical dinner experiences
 type: salon
-date: '2021-03-12'
+dateTime: '2021-03-12T16:00+01:00'
 imageSrc: https://munchies-images.vice.com/wp_upload/Tafel-wilddineren.jpg?crop=1xw:0.8434256055363322xh;center,center&resize=1800:*
 learnerNames:
   - '@Gunnar de Jong'

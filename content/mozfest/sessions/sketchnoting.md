@@ -1,7 +1,7 @@
 ---
 title: Sketchnoting
 type: AMA
-date: '2021-03-16'
+dateTime: '2021-03-16T16:00+01:00'
 imageSrc: https://images.unsplash.com/photo-1557243962-0a093922933f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 learnerNames:
   - '@Tom Salmon'
