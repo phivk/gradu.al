@@ -106,7 +106,6 @@ import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 import { formatDate, isValidDate, hasHappened } from "~/util/date";
 
 export default {
-  layout: "storytellersUnited",
   components: {
     TagPill,
     ProfileAvatarList,
