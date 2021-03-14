@@ -100,7 +100,6 @@
   </div>
 </template>
 <script>
-import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 import { formatDate, isValidDate, hasHappened } from "~/util/date";
