@@ -19,6 +19,8 @@
     "dotenv": "^8.2.0",
     "form-data": "^3.0.0",
     "googleapis": "^67.1.0",
+    "gray-matter": "^4.0.2",
+    "ics": "^2.27.0",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
     "nuxt": "^2.14.7",
