@@ -5,9 +5,9 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:a04f521f-5f81-4c5d-81a5-94f8e8c19502
+UID:6c8c0ca0-e962-48e3-9559-d273a49d5e91
 SUMMARY:Data Science Meets Law: Learning Responsible AI Together
-DTSTAMP:20210313T190300Z
+DTSTAMP:20210314T125600Z
 DTSTART:20210318T000000Z
 DESCRIPTION:A presentation + Q&A event.
 LOCATION:On Zoom - find link on the #skillsharing channel on Slack

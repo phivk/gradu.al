@@ -5,9 +5,9 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:c9d10027-7f53-4517-9e4e-395a76b94a9e
+UID:7e52b3ed-cd59-4b1b-b4c9-2d10a889db90
 SUMMARY:Storytelling workshop around disability issues
-DTSTAMP:20210313T190300Z
+DTSTAMP:20210314T125600Z
 DTSTART:20210317T000000Z
 DESCRIPTION:A workshop event.
 LOCATION:On Zoom - find link on the #skillsharing channel on Slack

@@ -5,11 +5,11 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:4e38cff8-e74c-4fea-8d9d-8f86afd075bd
-SUMMARY:MozFest\, what have we learned so far?
+UID:c0363731-8036-4cd0-9dae-223130a7d641
+SUMMARY:Interview Techniques
 DTSTAMP:20210314T125600Z
-DTSTART:20210316T000000Z
-DESCRIPTION:A peer sharing event.
+DTSTART:20210315T000000Z
+DESCRIPTION:A conversation event.
 LOCATION:On Zoom - find link on the #skillsharing channel on Slack
 DURATION:PT1H
 END:VEVENT

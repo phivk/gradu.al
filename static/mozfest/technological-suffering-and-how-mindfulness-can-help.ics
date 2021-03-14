@@ -5,9 +5,9 @@ PRODID:adamgibbons/ics
 METHOD:PUBLISH
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:feb34dad-f3c2-4b4d-af98-68f505cf9c6e
+UID:f98da7e0-a550-4b3a-8cff-640940d05b7d
 SUMMARY:Technological Suffering & how Mindfulness can help
-DTSTAMP:20210313T190300Z
+DTSTAMP:20210314T125600Z
 DTSTART:20210315T000000Z
 DESCRIPTION:A presentation + conversation event.
 LOCATION:On Zoom - find link on the #skillsharing channel on Slack
