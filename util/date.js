@@ -3,6 +3,18 @@ export const formatDate = (date) => {
   return date.toLocaleDateString("en-GB", options);
 };
 
+export const formatTime = (date) => {
+  // return time local to browser's timezone
+  const locales = []; // [] to use browser's default locale for format
+  const options = { timeStyle: "short" };
+  return date.toLocaleTimeString(locales, options);
+};
+
+export const getTimezone = () => {
+  // return browser's timezone
+  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+};
+
 export const hasHappened = (date) => {
   let now = new Date();
   return date < now;
@@ -28,5 +40,3 @@ export const isValidDate = (date) => {
     return false;
   }
 };
-
-

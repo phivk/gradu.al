@@ -14,7 +14,9 @@
               <iframe
                 width="560"
                 height="315"
-                :src="`https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`"
+                :src="
+                  `https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`
+                "
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -29,11 +31,16 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap f5 fw4 mb3">
-        <div class="w-100 w-20-l pr3 mb3 fw6">
+      <div class="flex flex-wrap mb3">
+        <div class="w-100 w-20-l pr3 mb3 f4 fw6">
           <div>
-            <p class="f4 mb3">
+            <p class="mb3">
               {{ dateFormatted }}
+            </p>
+            <p class="fw3 mb3 lh-copy">
+              <span>{{ timeFormatted }}</span>
+              <span>({{ timezone }}), </span>
+              <span>{{ session.durationInMinutes }}&nbsp;min</span>
             </p>
             <a
               v-if="session.cta"
@@ -51,7 +58,7 @@
             >
           </div>
         </div>
-        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
+        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 fw3">
           <div
             v-if="session.sharerNames"
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
@@ -102,7 +109,13 @@
 <script>
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
-import { formatDate, isValidDate, hasHappened } from "~/util/date";
+import {
+  formatDate,
+  isValidDate,
+  hasHappened,
+  formatTime,
+  getTimezone,
+} from "~/util/date";
 
 export default {
   components: {
@@ -124,6 +137,14 @@ export default {
       return isValidDate(this.sessionDate)
         ? formatDate(this.sessionDate)
         : "TBC";
+    },
+    timeFormatted() {
+      return isValidDate(this.sessionDate)
+        ? formatTime(this.sessionDate)
+        : "TBC";
+    },
+    timezone() {
+      return getTimezone();
     },
     hasHappened() {
       return hasHappened(this.session.date);
