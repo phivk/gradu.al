@@ -14,12 +14,12 @@ sharerNames:
   - '@Thomas Steigenga'
 resources:
   -
-    text: Miro Board
-    href: https://miro.com/app/board/o9J_lRWjRvU=/
+    text: Slack Channel
+    href: https://mozfest.slack.com/archives/C01RWAX8P0Q
 cta:
-  text: Access the Miro Board
-  href: https://miro.com/app/board/o9J_lRWjRvU=/
+  text: Access the Slack Channel
+  href: https://mozfest.slack.com/archives/C01RWAX8P0Q
 ---
 Remember show & tell? This is an opportunity to come together and share your creative work and get new inspiration from others!
 <!--more-->
-Alecia and Christine will share some of their very creative work and have a conversation around how they've made it. Anyone is encouraged to join and share their recent artworks and crafts! Is painting mostly intuition- or crafts based? What would it be like to sit down and create some remote art together? Come find out!
+Alecia and Christine will share some of their very creative work and have a conversation around how they've made it. Anyone is encouraged to join and share their recent artworks and crafts! Is painting mostly intuition- or crafts based? What would it be like to sit down and create some remote art together? Come find out and share your own work asynchronously on the separate Slack Channel!

@@ -21,3 +21,5 @@ cta:
 Responsible AI challenges require a multidisciplinary approach, in which tech and law are natural partners.
 <!--more-->
 In this talk Shlomi Hod and Karni Chagal-Feferkorn will present their approach of facilitating the dialogue between Data Scientists and Lawyers, stemming from a course they taught in 2020. Their experience and insights from the course are relevant in the broader context of building a bridge between both professions, in a manner that could be implemented in other settings, such as in policy-making, civil society organizations and the tech industry.
+
+<div class="typeform-widget" data-url="https://form.typeform.com/to/sqIgEwxF?typeform-medium=embed-snippet" data-transparency="100" data-hide-headers="true" data-hide-footer="true" style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
