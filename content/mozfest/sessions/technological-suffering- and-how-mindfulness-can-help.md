@@ -2,6 +2,7 @@
 title: Technological Suffering & how Mindfulness can help
 type: presentation + conversation
 dateTime: '2021-03-15T17:00+01:00'
+durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1993&q=80
 learnerNames:
   - '@Gunnar de Jong'

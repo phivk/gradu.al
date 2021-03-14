@@ -2,6 +2,7 @@
 title: The history and philosophy of Open Source
 type: participatory workshop
 dateTime: '2021-03-14T20:00+01:00'
+durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 learnerNames:
   - '@maria bridge'

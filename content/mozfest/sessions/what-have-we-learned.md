@@ -2,6 +2,7 @@
 title: MozFest, what have we learned so far?
 type: peer sharing
 dateTime: '2021-03-16T20:00+01:00'
+durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1505147704403-c2caf85db293?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1648&q=80
 learnerNames:
   - Anyone

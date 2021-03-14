@@ -2,6 +2,7 @@
 title: Architecting Curiosity
 type: salon
 dateTime: '2020-12-18T16:00+01:00'
+durationInMinutes: 60
 imageSrc: https://i.ytimg.com/vi/vL097Tge1_A/maxresdefault.jpg
 learnerNames:
   - Anna Desponds

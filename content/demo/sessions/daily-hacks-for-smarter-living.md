@@ -2,6 +2,7 @@
 title: Daily Hacks for Smarter Living
 type: peer sharing
 dateTime: '2021-03-14T03:00+01:00'
+durationInMinutes: 60
 imageSrc: https://img.youtube.com/vi/ULPcqI6cuik/maxresdefault.jpg
 learnerNames:
   - '@Gunnar'

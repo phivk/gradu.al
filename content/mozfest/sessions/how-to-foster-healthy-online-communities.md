@@ -2,6 +2,7 @@
 title: How to foster healthy online communities
 type: brainstorm
 dateTime: '2021-03-13T20:00+01:00'
+durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1484712401471-05c7215830eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 learnerNames:
   - '@Harrison Pim'

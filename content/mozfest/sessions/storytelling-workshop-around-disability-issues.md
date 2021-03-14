@@ -2,6 +2,7 @@
 title: Storytelling workshop around disability issues
 type: workshop
 dateTime: '2021-03-17T16:00+01:00'
+durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1519791883288-dc8bd696e667?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 learnerNames:
   - '@Thomas Steigenga'

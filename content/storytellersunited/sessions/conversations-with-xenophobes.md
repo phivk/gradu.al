@@ -2,6 +2,7 @@
 title: How to handle conversations with xenophobes and racists
 type: lunch & learn
 dateTime: '2020-09-30T16:00+01:00'
+durationInMinutes: 60
 imageSrc: https://i1.ytimg.com/vi/qI8W30t4bIM/hqdefault.jpg
 learnerNames: 
   - 1coko 
