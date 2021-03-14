@@ -165,7 +165,6 @@ export default {
       }
     },
     calendarLocation() {
-      console.log(this.session)
       const community = this.session.path.split("/")[1]
       return `/${community}/${this.session.filename}.ics`
     },
