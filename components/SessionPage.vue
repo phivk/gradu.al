@@ -49,6 +49,19 @@
               class="dib mt3 color-accent ws-pre-wrap"
               >↓ .ics file</a
             >
+            <div v-if="!hasHappened">
+              <div>
+
+              <a :href="calendarLocation" target="_blank" class="ma4">
+                Download calendar event
+              </a>
+              </div>
+              <div>
+                <a :href="googleCalendarLink" target="_blank" class="">
+                  Add to Google Calendar
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
@@ -115,6 +128,7 @@ export default {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
     bgColor: { type: String, default: "#FFF" },
+    calendarEvent: {type: Boolean, default:true}
   },
   computed: {
     dateFormatted() {
@@ -149,6 +163,33 @@ export default {
       else {
         return undefined;
       }
+    },
+    calendarLocation() {
+      console.log(this.session)
+      const community = this.session.path.split("/")[1]
+      return `/${community}/${this.session.filename}.ics`
+    },
+    googleCalendarLink() {
+          const formatString = (string) => encodeURIComponent(string).replace(/%20/g, '+');
+      let url = "http://www.google.com/calendar/render?action=TEMPLATE&trp=false";
+      const start = new Date(this.session.date);
+      const end = new Date(this.session.date);
+      end.setHours( end.getHours() + 1 );
+      const parameters = {
+        text: formatString(this.session.title),
+        location: formatString("Zoom - check #skillsharing channel on Slack for details."),
+        details: formatString(this.session.description || ""),
+        dates: formatString(`${start}/${end}`)
+      };
+
+
+      for (const key in parameters) {
+        if (parameters.hasOwnProperty(key) && parameters[key]) {
+          url += `&${key}=${parameters[key]}`;
+        }
+      }
+
+      return url;
     },
   },
   methods: {
