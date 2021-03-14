@@ -9,6 +9,9 @@ learnerNames:
   - "@Omar Shehata"
   - "@Douglas Arellanes"
   - "@Kevin"
+  - "@Harrison Pim"
+  - "@Tom Salmon"
+  - "@Vladimir Kuparinen"
 sharerNames:
   - "@Thomas Steigenga"
 resources:

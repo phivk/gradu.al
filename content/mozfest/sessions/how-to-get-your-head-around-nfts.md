@@ -9,6 +9,8 @@ learnerNames:
   - "@Kevin"
   - "@phivk"
   - "@Gunnar de Jong"
+  - "@João Sousa Andrade"
+  - "@Christine"
 sharerNames:
   - "@Douglas Arellanes"
 resources:

@@ -9,6 +9,8 @@ learnerNames:
   - "@Douglas Arellanes"
   - "@Gunnar de Jong"
   - "@Omar Shehata"
+  - "@Philip Kyler"
+  - "@Asmaa Abumezied"
 sharerNames:
   - "@Gracielle"
   - "@Michelle / Tech For Social Activism Wrangler"
