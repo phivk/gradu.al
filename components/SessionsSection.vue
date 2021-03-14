@@ -7,15 +7,7 @@
         :key="session.title"
         class="w-100 w-50-m w-third-l mw6 pa3"
       >
-        <SessionCardPreview
-          :title="session.title"
-          :type="session.type"
-          :date="session.date"
-          :imageSrc="session.imageSrc"
-          :path="session.path"
-          :learnerNames="session.learnerNames"
-          :sharerNames="session.sharerNames"
-        />
+        <SessionCardPreview :session="session" />
       </li>
     </ul>
   </section>

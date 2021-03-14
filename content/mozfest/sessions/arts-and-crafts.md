@@ -1,7 +1,8 @@
 ---
 title: Arts & Crafts
 type: peer sharing
-date: '2021-03-14'
+dateTime: '2021-03-14T17:00+01:00'
+durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 learnerNames:
   - '@Alecia Caudill'

@@ -1,11 +1,11 @@
 <template>
   <article class="tl bg-light-gray br3 shadow-4 hover-shadow-raise">
-    <nuxt-link :to="path" class="link black">
+    <nuxt-link :to="session.path" class="link black">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
           <img
-            :src="imageSrc"
-            :alt="title"
+            :src="session.imageSrc"
+            :alt="session.title"
             class="aspect-ratio--object objfit-cover br3 br--top z-0"
           />
         </div>
@@ -13,29 +13,29 @@
           <div class="pa3 bg-white">
             <div class="flex items-center justify-between flex-wrap mb2">
               <h3 class="f4 lh-title mt2 mr2">
-                {{ title }}
+                {{ session.title }}
               </h3>
               <span class="f5 fw4 o-50 tr mt2">{{ dateFormatted }}</span>
             </div>
             <TagPill class="absolute top--1 ml-1" borderColour="#fff">{{
-              type
+              session.type
             }}</TagPill>
           </div>
           <div class="pa3">
             <div class="flex flex-wrap mb2">
-              <div v-if="sharerNames" class="mr3">
+              <div v-if="session.sharerNames" class="mr3">
                 <h3 class="f5 fw4 o-60">Shared by</h3>
                 <ProfileAvatarList
-                  :profileNames="sharerNames"
+                  :profileNames="session.sharerNames"
                   borderColor="#EEEEEE"
                 />
               </div>
-              <div v-if="learnerNames">
+              <div v-if="session.learnerNames">
                 <h3 class="f5 fw4 o-60">
                   {{ hasHappened ? "Learned by" : "Like to learn" }}
                 </h3>
                 <ProfileAvatarList
-                  :profileNames="learnerNames"
+                  :profileNames="session.learnerNames"
                   borderColor="#EEEEEE"
                 />
               </div>
@@ -50,33 +50,26 @@
 import ProfilePic from "~/components/ProfilePic.vue";
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
+import { formatDate, isValidDate, hasHappened } from "~/util/date";
+
 export default {
   props: {
-    title: { type: String, default: "Title" },
-    type: { type: String, default: "type" },
-    date: { type: String, default: "date" },
-    imageSrc: { type: String },
-    path: { type: String },
-    learnerNames: { type: Array, default: () => [] },
-    sharerNames: { type: Array, default: () => [] },
+    session: { type: Object, default: () => {} },
   },
   components: { ProfilePic, TagPill, ProfileAvatarList },
   computed: {
-    hasHappened() {
-      let now = new Date();
-      return new Date(this.date) < now;
+    sessionDate() {
+      return this.session.dateTime
+        ? new Date(this.session.dateTime)
+        : new Date(this.session.date);
     },
     dateFormatted() {
-      let dt = new Date(this.date);
-      if (this.isValidDate(dt)) {
-        return dt.toLocaleDateString("en-GB", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        });
-      } else {
-        return "TBC";
-      }
+      return isValidDate(this.sessionDate)
+        ? formatDate(this.sessionDate)
+        : "TBC";
+    },
+    hasHappened() {
+      return hasHappened(this.session.date);
     },
   },
   methods: {
