@@ -1,11 +1,18 @@
 <template>
-  <TypeFormEmbed
-    :typeFormSrc="typeFormSrc"
-  />
+  <div>
+    <social-head
+      title="Storytellers United - Here to learn"
+      description=""
+    />
+    <TypeFormEmbed
+      :typeFormSrc="typeFormSrc"
+    />
+  </div>
 </template>
 
 <script>
 import TypeFormEmbed from "~/components/TypeFormEmbed.vue";
+import SocialHead from "~/components/SocialHead.vue";
 export default {
   head() {
     return {
@@ -14,6 +21,7 @@ export default {
   },
   components: {
     TypeFormEmbed,
+    SocialHead
   },
   data() {
     return {
