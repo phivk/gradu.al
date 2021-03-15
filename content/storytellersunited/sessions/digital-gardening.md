@@ -1,7 +1,8 @@
 ---
 title: 'Digital Gardens: What are they and how can I start one?'
 type: salon
-date: '2021-01-28'
+dateTime: '2021-01-28T16:00+01:00'
+durationInMinutes: 60
 imageSrc: http://i3.ytimg.com/vi/JjTeZoAmejs/maxresdefault.jpg
 learnerNames:
   - Alexa

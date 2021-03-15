@@ -112,7 +112,7 @@
         :sessions="sessionsUpcoming"
       >
         <h2 class="mb3">Upcoming Sessions</h2>
-        <InfoBar>
+        <InfoBar class="mb3">
           <template v-slot:left>
             📅
           </template>
@@ -182,6 +182,8 @@ import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
+import { hasHappened, hasNotHappened } from "~/util/date";
+
 export default {
   layout: "mozFest",
   head() {
@@ -217,24 +219,9 @@ export default {
     };
   },
   async asyncData({ $content }) {
-    let now = new Date();
-    now.setDate(now.getDate() - 1); // include today in upcoming
-    // NB this uses UTC time, causing inaccuracies for non UTC timezones
-    let nowString = now.toISOString().slice(0, 10);
-
-    const sessionsUpcoming = await $content("mozfest/sessions")
-      .sortBy("date", "asc")
-      .where({
-        date: { $gte: nowString },
-      })
-      .fetch();
-
-    const sessionsPast = await $content("mozfest/sessions")
-      .sortBy("date", "desc")
-      .where({
-        date: { $lt: nowString },
-      })
-      .fetch();
+    const sessions = await $content("mozfest/sessions")
+      .sortBy("dateTime", "asc")
+      .fetch()
 
     let nodes, edges, popular;
 
@@ -247,7 +234,21 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessionsUpcoming, sessionsPast, nodes, edges, popular };
+    return { sessions, nodes, edges, popular };
+  },
+  computed: {
+    sessionsUpcoming() {
+      return this.sessions.filter(s => {
+        let sessionDate = new Date(s.dateTime);
+        return hasNotHappened(sessionDate);
+      });
+    },
+    sessionsPast() {
+      return this.sessions.filter(s => {
+        let sessionDate = new Date(s.dateTime);
+        return hasHappened(sessionDate);
+      });
+    },
   },
 };
 </script>
