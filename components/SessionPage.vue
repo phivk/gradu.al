@@ -169,7 +169,7 @@ export default {
       return `/${community}/${this.session.filename}.ics`
     },
     googleCalendarLink() {
-          const formatString = (string) => encodeURIComponent(string).replace(/%20/g, '+');
+      const formatString = (string) => encodeURIComponent(string).replace(/%20/g, '+');
       let url = "http://www.google.com/calendar/render?action=TEMPLATE&trp=false";
       const start = new Date(this.session.date);
       const end = new Date(this.session.date);
@@ -178,7 +178,7 @@ export default {
         text: formatString(this.session.title),
         location: formatString("Zoom - check #skillsharing channel on Slack for details."),
         details: formatString(this.session.description || ""),
-        dates: formatString(`${start}/${end}`)
+        dates: formatString(`${start.toISOString()}/${end.toISOString()}`)
       };
 
 
