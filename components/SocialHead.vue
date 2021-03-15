@@ -32,6 +32,7 @@ export default {
           name: 'twitter:title',
           content: this.title
         },
+        this.description &&
         {
           hid: 'twitter:description',
           name: 'twitter:description',
@@ -52,6 +53,7 @@ export default {
           property: 'og:title',
           content: this.title
         },
+        this.description &&
         {
           hid: 'og:description',
           property: 'og:description',
