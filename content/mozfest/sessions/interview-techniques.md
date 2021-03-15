@@ -12,6 +12,13 @@ learnerNames:
 sharerNames: 
   - '@Philip Kyler'
   - '@Asmaa Abumezied'
+resources:
+  -
+    text: Slides
+    href: https://docs.google.com/presentation/d/17gQcYoqUXweUppqPb6WHbKUJ5MYFaizAoH9URWa8abw/edit?usp=sharing
+cta:
+  text: Take a look at the slides
+  href: https://docs.google.com/presentation/d/17gQcYoqUXweUppqPb6WHbKUJ5MYFaizAoH9URWa8abw/edit?usp=sharing
 ---
 A 30 minute conversation around how we can ask better questions. 
 <!--more-->
