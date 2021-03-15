@@ -128,6 +128,7 @@
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 import SocialHead from './SocialHead.vue';
+import dayjs from "dayjs";
 import {
   formatDate,
   isValidDate,
@@ -192,15 +193,14 @@ export default {
     },
     googleCalendarLink() {
       const formatString = (string) => encodeURIComponent(string).replace(/%20/g, '+');
-      let url = "http://www.google.com/calendar/render?action=TEMPLATE&trp=false";
-      const start = new Date(this.session.date);
-      const end = new Date(this.session.date);
-      end.setHours( end.getHours() + 1 );
+      let url = "http://www.google.com/calendar/render?action=TEMPLATE";
+      const start = dayjs(this.session.dateTime).format("YYYYMMDDTHHmmssZ");
+      const end = dayjs(this.session.dateTime).add(this.session.durationInMinutes, 'minutes').format("YYYYMMDDTHHmmssZ");
       const parameters = {
         text: formatString(this.session.title),
         location: formatString("Zoom - check #skillsharing channel on Slack for details."),
         details: formatString(this.session.description || ""),
-        dates: formatString(`${start.toISOString()}/${end.toISOString()}`)
+        dates: formatString(`${start}/${end}`)
       };
 
 
