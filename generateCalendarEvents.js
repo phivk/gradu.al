@@ -20,14 +20,14 @@ communities.forEach(community => {
     files.forEach((file, index) => {
       const content = fs.readFileSync(`./content/${community.name}/sessions/${file}`)
       const frontMatter = matter(content).data
-      if (new Date(frontMatter.date) < new Date()) {
+      if (new Date(frontMatter.dateTime) < new Date()) {
         return console.log(`"${frontMatter.title}" has passed. Not creating a calendar event.`)
       }
 
-      if (!frontMatter.date) {
+      if (!frontMatter.dateTime) {
         return console.log("Not creating event for template.")
       }
-      const eventDate = new Date(frontMatter.date)
+      const eventDate = new Date(frontMatter.dateTime)
 
       const event = {
         start: [
@@ -37,7 +37,7 @@ communities.forEach(community => {
           eventDate.getHours(),
           eventDate.getMinutes()
         ],
-        duration: getDuration(frontMatter.duration),
+        duration: getDuration(frontMatter.durationInMinutes),
         title: frontMatter.title,
         description: `A ${frontMatter.type} event.`,
         location: "On Zoom - find link on the #skillsharing channel on Slack"
@@ -59,7 +59,7 @@ function getDuration(inputMinutes = null) {
   if (!inputMinutes) {
     return { hours: 1, minutes: 0 }
   }
-  const hours = Math.floor(minutes / 60)
+  const hours = Math.floor(inputMinutes / 60)
   const minutes = inputMinutes - hours * 60
   return { hours, minutes }
 }
