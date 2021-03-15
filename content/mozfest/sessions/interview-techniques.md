@@ -16,11 +16,11 @@ resources:
   -
     text: Slides
     href: https://docs.google.com/presentation/d/17gQcYoqUXweUppqPb6WHbKUJ5MYFaizAoH9URWa8abw/edit?usp=sharing
-    
-    text: Notes
+  -
+    text: Collaborative Notes
     href: https://docs.google.com/document/d/1VxqSSYfQtxqo9hKjziMUjqFtH1UzRyUEqnboaWoUHCo/edit
 cta:
-  text: Add to the communal notes
+  text: Add to the notes
   href: https://docs.google.com/document/d/1VxqSSYfQtxqo9hKjziMUjqFtH1UzRyUEqnboaWoUHCo/edit
 ---
 A 30 minute conversation around how we can ask better questions. 
