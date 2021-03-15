@@ -12,8 +12,8 @@ sharerNames:
   - '@Christine'
 resources:
   -
-    text: Miro Board
-    href: https://miro.com/app/board/o9J_lRWjRvU=/
+    text: Slides
+    href: https://docs.google.com/presentation/d/1uiWqJynHwEVSAGFsvmS4B2YCcT87QiCw0ST4GzN4iXE/edit?usp=sharing
 cta:
   text: Access the Miro Board
   href: https://miro.com/app/board/o9J_lRWjRvU=/
