@@ -16,11 +16,14 @@ sharerNames:
   - '@Douglas Arellanes'
 resources:
   -
-    text: Collective Miro Board
-    href: https://miro.com/app/board/o9J_lRWjRvU=/
+    text: Slides
+    href: https://docs.google.com/presentation/d/1kTUF0UYS7aEtJcY6sVAzp3aMwBZjtQirmR1c0tWfTcw/edit?usp=sharing
+    
+    text: notes
+    href: https://docs.google.com/document/d/1g914gruNUdqjl83LME4iP7QZuvA_YFDfFPfABe7IgNg/edit?usp=sharing
 cta:
-  text: Access the Miro Board
-  href: https://miro.com/app/board/o9J_lRWjRvU=/
+  text: Check the notes
+  href: https://docs.google.com/document/d/1g914gruNUdqjl83LME4iP7QZuvA_YFDfFPfABe7IgNg/edit?usp=sharing
 ---
 A non-fungible token (NFT) is a special type of cryptographic token which represents something unique.
 <!--more-->
