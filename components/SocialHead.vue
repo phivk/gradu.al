@@ -11,8 +11,7 @@ export default {
       required: true
     },
     description: {
-      type: String,
-      required: true
+      type: String
     },
     image: {
       type: String,
@@ -22,10 +21,11 @@ export default {
   head() {
     return {
       meta: [
+        this.description &&
         {
           hid: 'description',
           name: 'description',
-          content: this.description || "Imagine what your peers are good at... and then learning it, gradually. Together."
+          content: this.description
         },
         {
           hid: 'twitter:title',
