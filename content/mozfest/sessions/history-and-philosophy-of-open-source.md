@@ -18,10 +18,13 @@ sharerNames:
 resources:
   -
     text: Collective Miro Board
-    href: https://miro.com/app/board/o9J_lRWjRvU=/
+    href: https://miro.com/app/board/o9J_lRWjRq0=/
+  -  
+    text: Slides
+    href: https://docs.google.com/presentation/d/13IUmLdrIZJlsY94etNcbBnmaKCZISsNAAfGlW1NRiPI/edit#slide=id.gc636fb3705_0_8
 cta:
   text: Collective Miro Board
-  href: https://miro.com/app/board/o9J_lRWjRvU=/
+  href: https://miro.com/app/board/o9J_lRWjRq0=/
 ---
 Whether you're a weathered veteran or completely new to the world of Open Source - there's always something new to learn.
 <!--more-->

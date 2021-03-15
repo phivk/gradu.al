@@ -19,8 +19,8 @@ resources:
     text: Slides
     href: https://docs.google.com/presentation/d/1dUh3gxZd0IZNNVmpbN5SqKXoVM4ZfKegnK0TpdG7o3Q/edit#slide=id.gc247f6a193_1_0
 cta:
-  text: Register on Slack!
-  href: https://mozfest.slack.com/archives/C01PXSJ9AH0
+  text: Take a look at the Slides
+  href: https://docs.google.com/presentation/d/1dUh3gxZd0IZNNVmpbN5SqKXoVM4ZfKegnK0TpdG7o3Q/edit#slide=id.gc247f6a193_1_0
 ---
 There are some aspects of our digital world, our relationships with devices, and how we relate to one another digitally that are contributing to individual and societal suffering.
 <!--more-->
