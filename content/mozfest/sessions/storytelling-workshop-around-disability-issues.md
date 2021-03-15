@@ -14,7 +14,7 @@ resources:
   -
     text: Slides
     href: https://docs.google.com/presentation/d/1uiWqJynHwEVSAGFsvmS4B2YCcT87QiCw0ST4GzN4iXE/edit?usp=sharing
-  
+  -
     text: Slides 2
     href: https://docs.google.com/presentation/d/1YDF3KfiKxqN0kD5rCHJBsQLiDKdd9-pC_eMZjzD7OlE/edit#slide=id.gc6f59039d_0_29
 cta:
