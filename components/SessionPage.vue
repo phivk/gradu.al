@@ -1,5 +1,10 @@
 <template>
   <div class="bg-color-bg">
+    <social-head
+      :title="session.title"
+      :description="session.description"
+      :image="session.imageSrc"
+    />
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
@@ -14,7 +19,9 @@
               <iframe
                 width="560"
                 height="315"
-                :src="`https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`"
+                :src="
+                  `https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`
+                "
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -29,11 +36,16 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap f5 fw4 mb3">
-        <div class="w-100 w-20-l pr3 mb3 fw6">
+      <div class="flex flex-wrap mb3">
+        <div class="w-100 w-20-l pr3 mb3 f4 fw6">
           <div>
-            <p class="f4 mb3">
+            <p class="mb3">
               {{ dateFormatted }}
+            </p>
+            <p class="fw3 mb3 lh-copy">
+              <span>{{ timeFormatted }}</span>
+              <span>({{ timezone }}), </span>
+              <span>{{ session.durationInMinutes }}&nbsp;min</span>
             </p>
             <a
               v-if="session.cta"
@@ -64,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns">
+        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 fw3">
           <div
             v-if="session.sharerNames"
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
@@ -112,17 +124,23 @@
     </main>
   </div>
 </template>
-
 <script>
-import _ from "lodash";
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
+import SocialHead from './SocialHead.vue';
+import {
+  formatDate,
+  isValidDate,
+  hasHappened,
+  formatTime,
+  getTimezone,
+} from "~/util/date";
 
 export default {
-  layout: "storytellersUnited",
   components: {
     TagPill,
     ProfileAvatarList,
+    SocialHead
   },
   props: {
     session: { type: Object, default: () => {} },
@@ -131,33 +149,37 @@ export default {
     calendarEvent: {type: Boolean, default:true}
   },
   computed: {
+    sessionDate() {
+      return this.session.dateTime
+        ? new Date(this.session.dateTime)
+        : new Date(this.session.date);
+    },
     dateFormatted() {
-      let dt = new Date(this.session.date);
-      if (this.isValidDate(dt)) {
-        return dt.toLocaleDateString("en-GB", {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        });
-      } else {
-        return "TBC";
-      }
+      return isValidDate(this.sessionDate)
+        ? formatDate(this.sessionDate)
+        : "TBC";
+    },
+    timeFormatted() {
+      return isValidDate(this.sessionDate)
+        ? formatTime(this.sessionDate)
+        : "TBC";
+    },
+    timezone() {
+      return getTimezone();
     },
     hasHappened() {
-      let now = new Date();
-      return new Date(this.session.date) < now;
+      return hasHappened(this.session.date);
     },
     youtubeRecordingResource() {
       if (this.session.resources) {
         return this.session.resources.find((r) => r.href.includes("youtu"));
-      }
-      else {
-        return undefined
+      } else {
+        return undefined;
       }
     },
     youtubeRecordingID() {
       if (this.youtubeRecordingResource) {
-        let parts = this.youtubeRecordingResource.href.split(/[/=]/)
+        let parts = this.youtubeRecordingResource.href.split(/[/=]/);
         return parts[parts.length - 1];
       }
       else {
@@ -203,8 +225,7 @@ export default {
           return true;
         }
       } else {
-        // not a date
-        return false;
+        return undefined;
       }
     },
   },

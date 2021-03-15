@@ -1,5 +1,9 @@
 <template>
   <div>
+    <social-head
+      title="Storytellers United - Here to learn"
+      description=""
+    />
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <div class="mv4">
@@ -56,7 +60,7 @@
         <h2 class="mb3">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
-      <SessionsSection 
+      <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
@@ -79,6 +83,9 @@ import GraphCommonsEmbed from "~/components/GraphCommonsEmbed.vue";
 import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
+import SocialHead from "~/components/SocialHead.vue";
+import { hasHappened, hasNotHappened } from "~/util/date";
+
 export default {
   layout: "storytellersUnited",
   head() {
@@ -92,6 +99,7 @@ export default {
     CalendarReferral,
     SessionsSection,
     GraphSection,
+    SocialHead
   },
   data() {
     return {
@@ -100,26 +108,25 @@ export default {
     };
   },
   async asyncData({ $content }) {
-    let now = new Date();
-    now.setDate(now.getDate() - 1); // include today in upcoming
-    // NB this uses UTC time, causing inaccuracies for non UTC timezones
-    let nowString = now.toISOString().slice(0, 10);
+    const sessions = await $content("storytellersunited/sessions")
+      .sortBy("dateTime", "asc")
+      .fetch()
 
-    const sessionsUpcoming = await $content("storytellersunited/sessions")
-      .sortBy("date", "asc")
-      .where({
-        date: { $gte: nowString },
-      })
-      .fetch();
-
-    const sessionsPast = await $content("storytellersunited/sessions")
-      .sortBy("date", "desc")
-      .where({
-        date: { $lt: nowString },
-      })
-      .fetch();
-
-    return { sessionsUpcoming, sessionsPast };
+    return { sessions };
+  },
+  computed: {
+    sessionsUpcoming() {
+      return this.sessions.filter(s => {
+        let sessionDate = new Date(s.dateTime);
+        return hasNotHappened(sessionDate);
+      });
+    },
+    sessionsPast() {
+      return this.sessions.filter(s => {
+        let sessionDate = new Date(s.dateTime);
+        return hasHappened(sessionDate);
+      });
+    },
   },
   /* enables auth middleware (also see pages/login.vue and `auth` object in nuxt.config.js)
      after successful login, the boolean flag `this.$auth.loggedIn` indicates that user is authenticated

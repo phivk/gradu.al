@@ -1,7 +1,8 @@
 ---
 title: Writing personal newsletters
 type: talk with Q&A
-date: "2020-11-10"
+dateTime: '2020-11-10T16:00+01:00'
+durationInMinutes: 60
 imageSrc: https://i.ytimg.com/vi/Q0pFsHaCpqs/maxresdefault.jpg
 learnerNames:
   - Alexa
