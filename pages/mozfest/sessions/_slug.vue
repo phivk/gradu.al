@@ -2,6 +2,7 @@
   <SessionPage
     :session="session"
     :bgColor="bgColor"
+    :calendarEvent="true"
   />
 </template>
 

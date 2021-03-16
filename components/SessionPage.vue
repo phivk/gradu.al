@@ -61,19 +61,25 @@
               class="dib mt3 color-accent ws-pre-wrap"
               >↓ .ics file</a
             >
-            <div v-if="!hasHappened">
-              <div>
 
-              <a :href="calendarLocation" target="_blank" class="ma4">
-                Download calendar event
+              <a
+              v-if="!hasHappened && calendarEvent"
+              :href="calendarLocation"
+              target="_blank"
+              class="dib mt3 color-accent">
+                ↓ .ics file
               </a>
-              </div>
-              <div>
-                <a :href="googleCalendarLink" target="_blank" class="">
+
+                <a
+                 v-if="!hasHappened && calendarEvent"
+                :href="googleCalendarLink"
+                target="_blank"
+                class="dib mt3 color-accent"
+                >
                   Add to Google Calendar
                 </a>
-              </div>
-            </div>
+
+
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 fw3">
@@ -147,7 +153,7 @@ export default {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
     bgColor: { type: String, default: "#FFF" },
-    calendarEvent: {type: Boolean, default:true}
+    calendarEvent: {type: Boolean, default: false}
   },
   computed: {
     sessionDate() {
