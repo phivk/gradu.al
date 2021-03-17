@@ -6,7 +6,7 @@ export const formatDate = (date) => {
 export const formatTime = (date) => {
   // return time local to browser's timezone
   const locales = []; // [] to use browser's default locale for format
-  const options = { timeStyle: "short" };
+  const options = { hour: '2-digit', minute: '2-digit' };
   return date.toLocaleTimeString(locales, options);
 };
 
