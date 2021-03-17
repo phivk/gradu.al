@@ -22,4 +22,4 @@ cta:
 ---
 That's it! The end of MozFest 2021...
 <!--more-->
-...but perhaps only the beginning for the #skillsharing community? In two weeks time, we've hosted a variety of emergent skill sharing session together based around our shared learning intentions and generous offers. To celebrate what we've learned and accomplished together we invite everyone into the spatial chat for a wrap-up party where we can all share stories and look at the future together! Exact times to be announced. 
+...but perhaps only the beginning for the #skillsharing community? Over the last two weeks, we've hosted a variety of emergent skill sharing session together based around our shared learning intentions and generous offers. To celebrate what we've learned and accomplished together we invite everyone into the spatial chat for a wrap-up party where we can all share stories and look at the future together! Exact times to be announced. 
