@@ -45,6 +45,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/tailwindcss',
   ],
   /*
   ** Nuxt.js modules
@@ -85,6 +86,9 @@ export default {
         acrValues: ''
       }
     }
+  },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.scss',
   },
   /*
   ** https://content.nuxtjs.org/configuration
