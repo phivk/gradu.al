@@ -4,9 +4,9 @@
       :character="number"
       backgroundColor="#137752"
       textColor="#FFF"
-      class="mb2 mr2 fw6"
+      class="mb2 mr2 font-bold text-lg"
     />
-    <h3 class="dib fw6">{{ title }}</h3>
+    <h3 class="dib font-bold text-lg">{{ title }}</h3>
     <div class="mid-gray">
       <slot></slot>
     </div>

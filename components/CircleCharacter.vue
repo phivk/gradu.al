@@ -1,6 +1,6 @@
 <template>
   <span 
-    class="circle shadow-outline cursor-default f5 fw3"
+    class="circle shadow-outline cursor-default f5"
     :style="styleObject"
   >{{initial}}</span>
 </template>

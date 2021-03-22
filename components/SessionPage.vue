@@ -11,7 +11,7 @@
           <TagPill class="ml-2" :borderColour="bgColor">{{
             session.type
           }}</TagPill>
-          <h1 class="f2 f1-l lh-title mt2 mb4">
+          <h1 class="text-4xl md:text-5xl font-bold lh-title mt2 mb4">
             {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
@@ -37,12 +37,12 @@
         </div>
       </div>
       <div class="flex flex-wrap mb3">
-        <div class="w-100 w-20-l pr3 mb3 f4 fw6">
+        <div class="w-100 w-20-l pr3 mb3 f4">
           <div>
-            <p class="mb3">
+            <p class="font-bold mb3">
               {{ dateFormatted }}
             </p>
-            <p class="fw3 mb3 lh-copy">
+            <p class=" mb3 lh-copy">
               <span class="mr1">{{ timeFormatted }}</span>
               <span
                 class="mr1"
@@ -55,7 +55,7 @@
               v-if="session.cta"
               :href="session.cta.href"
               target="_blank"
-              class="f4 link br3 pa2 tc dib mr3 white bg-color-accent"
+              class="font-bold f4 link br3 pa2 tc dib mr3 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
@@ -67,7 +67,7 @@
             >
           </div>
         </div>
-        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 fw3">
+        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
           <div
             v-if="session.sharerNames"
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
@@ -98,7 +98,7 @@
               <ul class="list pa0 mt1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="color-accent" :href="resource.href" target="_blank">{{
+                  <a class="underline hover:no-underline color-accent" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>
