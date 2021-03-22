@@ -93,7 +93,6 @@ export default {
   },
 };
 </script>
-    SocialHead
 
 <style scoped>
 .minh-100vh {
