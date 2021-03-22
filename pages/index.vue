@@ -1,9 +1,6 @@
 <template>
   <div class="bg-gradual minh-100vh white">
-    <social-head
-      title="Gradual - Here to learn"
-      description=""
-    />
+    <social-head title="Gradual - Here to learn" description="" />
     <div class="tc pa4">
       <logo class="mw4 mt3 mt4-ns" />
       <h1 class="mt0 f2">gradual</h1>
@@ -86,13 +83,13 @@
 <script>
 import Logo from "~/components/Logo.vue";
 import MCSignupForm from "~/components/MCSignupForm.vue";
-import SocialHead from '../components/SocialHead.vue';
+import SocialHead from "~/components/SocialHead.vue";
 
 export default {
   components: {
     Logo,
     MCSignupForm,
-    SocialHead
+    SocialHead,
   },
 };
 </script>

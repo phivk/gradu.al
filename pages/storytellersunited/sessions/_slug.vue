@@ -1,8 +1,5 @@
 <template>
-  <SessionPage
-    :session="session"
-    :bgColor="bgColor"
-  />
+  <SessionPage :session="session" :bgColor="bgColor" />
 </template>
 
 <script>
@@ -20,15 +17,18 @@ export default {
   },
   data() {
     return {
-      bgColor: '#fdecce',
-    }
+      bgColor: "#fdecce",
+    };
   },
   async asyncData({ $content, params }) {
-    const session = await $content('storytellersunited/sessions', params.slug).fetch()
+    const session = await $content(
+      "storytellersunited/sessions",
+      params.slug
+    ).fetch();
     const members = await fetch(
       "https://storytellers.link/api/members.json"
     ).then((res) => res.json());
-    return { session, members }
+    return { session, members };
   },
   computed: {
     hasHappened() {
@@ -38,17 +38,15 @@ export default {
     youtubeRecordingResource() {
       if (this.session.resources) {
         return this.session.resources.find((r) => r.href.includes("youtu"));
-      }
-      else {
-        return undefined
+      } else {
+        return undefined;
       }
     },
     youtubeRecordingID() {
       if (this.youtubeRecordingResource) {
-        let parts = this.youtubeRecordingResource.href.split(/[/=]/)
+        let parts = this.youtubeRecordingResource.href.split(/[/=]/);
         return parts[parts.length - 1];
-      }
-      else {
+      } else {
         return undefined;
       }
     },
@@ -56,8 +54,12 @@ export default {
       return this.session.icsFileSrc && !this.hasHappened;
     },
     dateFormatted() {
-      let dt = new Date(this.session.date)
-      return dt.toLocaleDateString('en-GB',{ day:'numeric',month: 'short', year: 'numeric'})
+      let dt = new Date(this.session.date);
+      return dt.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
     },
   },
 };
