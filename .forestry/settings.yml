@@ -9,7 +9,7 @@ sections:
   label: MozFest Sessions
   create: documents
   match: "*.md"
-  exclude: "*README*, *TEMPLATE*, *template*"
+  exclude: README.md
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
