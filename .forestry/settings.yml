@@ -5,6 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: content/storytellersunited/sessions
+  label: SU Sessions
+  create: documents
+  match: "*.md"
+  exclude: README.md
+- type: directory
   path: content/mozfest/sessions
   label: MozFest Sessions
   create: documents
