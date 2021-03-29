@@ -1,7 +1,7 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
@@ -16,7 +16,7 @@ sections:
   create: documents
   match: "*.md"
   exclude: README.md
-upload_dir: uploads
+upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
