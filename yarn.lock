@@ -3325,6 +3325,11 @@ cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+cruip-js-toolkit@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/cruip-js-toolkit/-/cruip-js-toolkit-1.0.3.tgz#083113b2aa5e32690f8eb258c7518d2da717a115"
+  integrity sha512-mzY9OeXpfE/U/uNAAayWtgr6qMAutwuRbmkU08Kj0ZOimBXxnRP6JWZMTgbNtDHIHy/u/Lh2lHX0ZW0U0ENqNw==
+
 crypto-browserify@^3.11.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/crypto-browserify/-/crypto-browserify-3.12.0.tgz#396cf9f3137f03e4b8e532c58f698254e00f80ec"
@@ -8969,6 +8974,11 @@ std-env@^2.2.1, std-env@^2.3.0:
   dependencies:
     ci-info "^3.0.0"
 
+sticky-js@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/sticky-js/-/sticky-js-1.3.0.tgz#9289bb3cad017378f2e816d6c6d7cb2121928cb2"
+  integrity sha512-X5zWjFrw7c2xE4tUtSeK7I+1o252JOyZOlzxsu1Q9qZ6hlk2NCd9Sr/AFxf8hfGkLnE1Pak+iLaDyd883LFRgw==
+
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"
@@ -9825,6 +9835,11 @@ vue-d3-network@^0.1.28:
   integrity sha512-36Id0gT/fMEK0i+rV7ikAbqXdB0wDHK9cBOlXDjLK2FYBB8yAExN82dYsmTF4GPiGx59hsQV/MvgWmercRjDww==
   dependencies:
     d3-force "^1.0.6"
+
+vue-fragment@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/vue-fragment/-/vue-fragment-1.5.2.tgz#310017170c564c4aad95da14c185c92c6784fd3c"
+  integrity sha512-KEW0gkeNOLJjtXN4jqJhTazez5jtrwimHkE5Few/VxblH4F9EcvJiEsahrV5kg5uKd5U8du4ORKS6QjGE0piYA==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

@@ -8,7 +8,7 @@
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
-          <TagPill class="ml-2" :borderColour="bgColor">{{
+          <TagPill class="-ml-2" :borderColour="bgColor">{{
             session.type
           }}</TagPill>
           <h1 class="text-4xl md:text-5xl font-bold lh-title mt2 mb4">

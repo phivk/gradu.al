@@ -17,7 +17,7 @@
               </h3>
               <span class="f5 fw4 o-50 tr mt2">{{ dateFormatted }}</span>
             </div>
-            <TagPill class="absolute top--1 ml-1" borderColour="#fff">{{
+            <TagPill class="absolute top--1 -ml-1" borderColour="#fff">{{
               session.type
             }}</TagPill>
           </div>

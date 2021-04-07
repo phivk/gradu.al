@@ -33,7 +33,7 @@ export default {
   ** Global CSS
   */
   css: [
-    'tachyons/css/tachyons.css',
+    // 'tachyons/css/tachyons.css',
     '@/assets/css/main.scss',
   ],
   /*
