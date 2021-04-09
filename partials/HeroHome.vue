@@ -26,20 +26,21 @@
         <!-- Section header -->
         <div class="text-center pb-12 md:pb-16">
           <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
-            Map. <br>
-            Match. <br>
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
-              Meet.
+              You learn
+            </span> more<br>
+            when <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+              you share
             </span>
           </h1>
           <div class="max-w-3xl mx-auto">
-            <p class="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Imagine what your peers are good at... and then learning it, gradually. Together.</p>
+            <p class="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">You're struggling to keep your skills up to date in a world in flux. We’re here to help you integrate fun, actionable learning opportunities. For you, and your team.</p>
             <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
               <div>
-                <a class="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Get early access</a>
+                <router-link to="/get-demo" class="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0">Get a Demo Today</router-link>
               </div>
               <div>
-                <a class="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">Learn more</a>
+                <router-link to="/mozfest" class="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" >See it in Action</router-link>
               </div>
             </div>
           </div>
