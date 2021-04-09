@@ -89,6 +89,9 @@ export default {
   },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.scss',
+    tailwindcss: {
+      jit: true
+    }
   },
   /*
   ** https://content.nuxtjs.org/configuration
