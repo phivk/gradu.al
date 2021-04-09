@@ -1,11 +1,17 @@
 <template>
-  <img v-if="withText" src="~/assets/logo-gradual-white-text.svg">
-  <img v-else src="~/assets/logo-gradual-white.svg">
+  <img :src="srcPath">
 </template>
 <script>
 export default {
   props: {
-    withText: {type: Boolean, default: false}
+    isBlack: {type: Boolean, default: false}
+  },
+  computed: {
+    srcPath() {
+      return this.isBlack 
+        ? require("~/assets/logo-gradual-black.png")
+        : require("~/assets/logo-gradual-white.png")
+    },
   }
 }
 </script>
