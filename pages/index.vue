@@ -26,8 +26,6 @@
 <script>
 import AOS from 'aos'
 import Sticky from 'sticky-js'
-// import { focusHandling } from 'cruip-js-toolkit'
-
 import Header from './../partials/Header.vue'
 import HeroHome from './../partials/HeroHome.vue'
 import FeaturesHome from './../partials/FeaturesHome.vue'
@@ -37,9 +35,7 @@ import News from './../partials/News.vue'
 import Cta from './../partials/Cta.vue'
 import Footer from './../partials/Footer.vue'
 
-
 export default {
-  name: 'Home',
   components: {
     Header,
     HeroHome,
@@ -59,13 +55,11 @@ export default {
     })
     // eslint-disable-next-line no-unused-vars
     const sticky = new Sticky('[data-sticky]');    
-    // focusHandling()
     // Route change
     if (this.$router) {
       this.$watch('$route', () => {
         // eslint-disable-next-line no-unused-vars
         const sticky = new Sticky('[data-sticky]'); 
-        // focusHandling('outline')
       });
     }    
   }
