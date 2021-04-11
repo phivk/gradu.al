@@ -10,13 +10,13 @@
 
             <!-- CTA content -->
             <div class="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left">
-              <h3 class="h3 text-white mb-2">Ready to get started?</h3>
-              <p class="text-white text-lg opacity-75">We have a generous free tier available to get you started right away.</p>
+              <h3 class="h3 text-white mb-2">Curious to see what you could learn?</h3>
+              <p class="text-white text-lg opacity-75">We'd love to walk you through the process based on your requirements.</p>
             </div>
 
             <!-- CTA button -->
             <div>
-              <a class="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white" href="#0">Get started for free</a>
+              <router-link to="/get-demo" class="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white">Get a personalised demo</router-link>
             </div>
 
           </div>

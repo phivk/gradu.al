@@ -9,10 +9,9 @@
 
       <!-- Page sections -->
       <HeroHome />
-      <FeaturesHome />
-      <FeaturesBlocks />
-      <FeaturesWorld />
-      <News />
+      <FeaturesProcess />
+      <UseCases />
+      <TestimonialsCarousel />
       <Cta />
 
     </main>
@@ -28,10 +27,10 @@ import AOS from 'aos'
 import Sticky from 'sticky-js'
 import Header from './../partials/Header.vue'
 import HeroHome from './../partials/HeroHome.vue'
-import FeaturesHome from './../partials/FeaturesHome.vue'
+import FeaturesProcess from './../partials/FeaturesProcess.vue'
+import TestimonialsCarousel from './../partials/TestimonialsCarousel.vue'
 import FeaturesBlocks from './../partials/FeaturesBlocks.vue'
-import FeaturesWorld from './../partials/FeaturesWorld.vue'
-import News from './../partials/News.vue'
+import UseCases from './../partials/UseCases.vue'
 import Cta from './../partials/Cta.vue'
 import Footer from './../partials/Footer.vue'
 
@@ -39,10 +38,10 @@ export default {
   components: {
     Header,
     HeroHome,
-    FeaturesHome,
+    FeaturesProcess,
+    TestimonialsCarousel,
     FeaturesBlocks,
-    FeaturesWorld,
-    News,
+    UseCases,
     Cta,
     Footer,
   },
