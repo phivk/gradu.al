@@ -6,7 +6,7 @@
         <!-- Section header -->
         <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
           <h2 class="h2">Trusted by innovators</h2>
-          <p class="text-xl text-gray-600">We're actively actively piloting our process with organisations, companies and communities worldwide.</p>
+          <p class="text-xl text-gray-600">We're actively piloting our process with organisations, companies and communities worldwide.</p>
         </div>
 
         <!-- Articles list -->
