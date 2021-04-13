@@ -7,7 +7,8 @@
         <div class="flex-shrink-0 mr-4">
           <!-- Logo -->
           <router-link to="/" class="block" aria-label="Gradual">
-            <logo class="w-12" is-black/>
+            <logo class="w-12 inline-block mr-2" is-black/>
+            <span class="text-2xl font-bold">gradual</span>
           </router-link>
         </div>
 
