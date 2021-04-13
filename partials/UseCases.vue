@@ -17,7 +17,7 @@
               <header>
                 <router-link :to="usecase.path" class="block mb-6">
                   <figure class="relative h-0 pb-1/2 overflow-hidden translate-z-0 rounded">
-                    <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="usecase.imgSrc" width="352" height="198" :alt="usecase.title" />
+                    <img class="absolute inset-0 w-full h-full object-contain transform hover:-translate-y-1 transition duration-700 ease-out" :src="usecase.imgSrc" width="352" height="198" :alt="usecase.title" />
                   </figure>
                 </router-link>
                 <h3 class="text-xl font-bold leading-snug tracking-tight">
@@ -47,7 +47,7 @@ export default {
         },
         {
           path: '/storytellersunited',
-          imgSrc: 'https://storytellers.link/img/og-image-storytellersunited.png',
+          imgSrc: 'https://storytellers.link/img/logo-storytellersunited-200px.png',
           title: 'Continuous Community Learning with Storytellers United',
         },
       ]
