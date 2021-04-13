@@ -17,7 +17,7 @@
         <!-- Items -->
         <div class="relative max-w-sm mx-auto grid gap-6 md:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
 
-          <div class="absolute top-1/2 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-300 hidden md:block" aria-hidden="true"></div>
+          <div class="absolute top-1/2 w-full h-1 bg-blue-500 hidden md:block" aria-hidden="true"></div>
 
           <div v-for="(step, index) in steps" class="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
             <div class="flex justify-center items-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold mb-3">{{index + 1}}</div>
