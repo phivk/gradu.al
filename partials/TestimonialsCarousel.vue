@@ -72,7 +72,6 @@ export default {
       autorotateTiming: 7000,
       items: [
         {
-          // img: 'testimonial-01.jpg',
           imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01QW3CAGGZ-d7fab570a409-512',
           quote:
             '“ I enjoyed being put in contact with someone I didn’t know within the community as getting meaningful connections in virtual settings is hard. It happened to be that our skills and interests were very complimentary and that was incredibly valuable to me, even if it wouldn’t have led to us hosting a session together. “',
@@ -82,7 +81,6 @@ export default {
           link: 'https://omarshehata.me/'
         },
         {
-          // img: 'testimonial-02.jpg',
           imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01P03UKEMV-e1acfddef565-512',
           quote:
             '“ Using Gradual was a delight! I got quick feedback on a workshop in a setting that was low risk, but high value. After our session, I put work I had prepared into an article which has ended up being really personally useful for me. “',
@@ -101,7 +99,6 @@ export default {
           link: 'https://www.architectingcuriosity.com'
         },
         {
-          // img: 'testimonial-03.jpg',
           imgSrc: 'https://pbs.twimg.com/profile_images/2062740783/Snapshot_20110909_5_400x400.JPG',
           quote:
             "“ Gradual's participatory ethos really opened the door for us as a group to think differently about learning skills in a more community orientated and expansive way. The personal connections that are formed in the process are incredibly important motivators, they galvanize people's intrinsic curiosity and slowly build that sense of shared achievement that is really wonderful. “",
