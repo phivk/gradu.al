@@ -20,7 +20,7 @@
             <li v-for="link in links">
               <router-link :to="link.path" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">{{link.text}}</router-link>
             </li>
-            <Dropdown v-if="dropdownLinks.length" title="Use Cases">
+            <Dropdown v-if="dropdownLinks.length" :title="dropdownTitle">
               <li v-for="ddLink in dropdownLinks">
                 <router-link :to="ddLink.path" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">{{ddLink.text}}</router-link>
               </li>
@@ -77,7 +77,7 @@
                   <router-link :to="link.path" class="flex text-gray-600 hover:text-gray-900 py-2">{{link.text}}</router-link>
                 </li>          
                 <li v-if="dropdownLinks.length" class="py-2 my-2 border-t border-b border-gray-200">
-                  <span class="flex text-gray-600 hover:text-gray-900 py-2">Use Cases</span>
+                  <span class="flex text-gray-600 hover:text-gray-900 py-2">{{dropdownTitle}}</span>
                   <ul class="pl-4">
                     <li v-for="ddLink in dropdownLinks">
                       <router-link :to="ddLink.path" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">{{ddLink.text}}</router-link>
@@ -122,6 +122,13 @@ export default {
       top: true,
       links: [
         {
+          path: '/contact',
+          text: 'Contact',
+        },
+      ],
+      dropdownTitle: 'Use Cases',
+      dropdownLinks: [
+        {
           path: '/mozfest',
           text: 'MozFest',
         },
@@ -129,8 +136,6 @@ export default {
           path: '/storytellersunited',
           text: 'Storytellers United',
         },
-      ],
-      dropdownLinks: [
       ]
     }
   },
