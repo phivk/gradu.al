@@ -41,17 +41,17 @@ export default {
         {
           title: 'Map',
           text:
-            "Let us know what you'd like to learn or share. Anything is welcome!",
+            "Activate your collective knowledge by charting the supply and demand of your team’s interests. Unleash your curiosity and grow together.",
         },
         {
           title: 'Match',
           text:
-            'See how you and your peers are connected by skills. We help you plan a session in the format you choose.',
+            'See how your peers and skills are connected to surface the most relevant topics. We help you plan an exchange in the format you choose.',
         },
         {
           title: 'Meet',
           text:
-            "Host or join a session to learn with other team members based on your interests.",
+            "Host or join a facilitated session or an informal get-together to learn with other team members based on your needs and desires.",
         }
       ]
     }
