@@ -5,8 +5,10 @@
 
         <!-- Section header -->
         <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-          <h2 class="h2 mb-4" data-aos="zoom-y-out">We've received some great feedback</h2>
-          <p class="text-xl text-gray-600">From people exchanging knowledge and skills all over the world.</p>
+          <h2 class="h2 mb-4" data-aos="zoom-y-out">  
+            Here’s what people say about us
+          </h2>
+          <p class="text-xl text-gray-600">We’re working with communities exchanging knowledge and skills all over the world.</p>
         </div>
 
         <!-- Carousel area -->
