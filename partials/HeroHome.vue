@@ -30,7 +30,7 @@
             when you <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">share</span>
           </h1>
           <div class="max-w-3xl mx-auto">
-            <p class="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">You would like to keep your skills up to date in a rapidly changing world. We’re here to help you integrate fun, actionable learning opportunities. For you, and your team.</p>
+            <p class="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">We’re here to help you integrate fun, actionable learning opportunities. For you, and your team.</p>
             <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
               <div>
                 <router-link to="/get-demo" class="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0">Get a Demo Today</router-link>
