@@ -42,7 +42,7 @@ export default {
       usecases: [
         {
           path: '/mozfest',
-          imgSrc: 'https://assets.mofoprod.net/network/images/mozilla-festival-.2e16d0ba.fill-760x760-c100.format-jpeg.jpg',
+          imgSrc: 'https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg',
           title: 'Emergent Skill Sharing at MozFest 2021',
         },
         {
