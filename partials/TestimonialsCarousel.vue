@@ -15,7 +15,7 @@
         <div class="max-w-3xl mx-auto">
 
           <!-- Carousel -->
-          <div class="relative mt-20 h-96" data-aos="zoom-y-out">
+          <div class="relative mt-20 min-h-96" data-aos="zoom-y-out">
 
             <!-- Testimonials -->
             <transition-group tag="div" class="relative flex items-start border-2 border-gray-200 rounded bg-white" enter-active-class="transition ease-in-out duration-700 transform order-first" enter-class="opacity-0 -translate-y-8" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in-out duration-300 transform absolute" leave-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-8">

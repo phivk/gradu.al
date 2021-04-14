@@ -101,6 +101,9 @@ module.exports = {
         '10': '2.5rem',
         '48': '12rem',
       },
+      minHeight: {
+       '96': '24rem',
+      },
       opacity: {
         '90': '0.9',
       },
