@@ -15,11 +15,6 @@
             />
           </a>
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold mb3">Keep in touch!</h2>
-        <div class="mw8 center">
-          <iframe class="br3" id="typeform-full" width="100%" height="500px" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;" src="https://form.typeform.com/to/ylCq3p8E?typeform-medium=embed-snippet"></iframe>
-          <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
-        </div>
         <h1 class="text-4xl md:text-5xl font-bold">What would you like to learn or share?</h1>
         <nuxt-link
           append
