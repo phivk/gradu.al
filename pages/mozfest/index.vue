@@ -9,24 +9,24 @@
         <div class="mv4">
           <a href="https://www.mozillafestival.org/" target="_blank">
             <img
-              class="w4 w5-ns"
+              class="dib w4 w5-ns"
               src="https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg"
               alt="MozFest Logo"
             />
           </a>
         </div>
-        <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">What would you like to learn or share?</h1>
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
+          class="dib mb4 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
         >
           Let us know!
         </nuxt-link>
         <div class="db">
           <a
             href="https://www.mozillafestival.org/slack/"
-            class="color-accent hover-no-underline"
+            class="color-accent underline hover:no-underline"
             target="_blank"
             >join the MozFest Slack</a
           >
@@ -34,7 +34,7 @@
       </section>
       <section class="mb5">
         <div class="center">
-          <h2 class="measure center mv2">
+          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
             Hi 👋 <br />
             Welcome to MozFest on Gradual!
           </h2>
@@ -45,7 +45,7 @@
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
-                class="color-accent hover-no-underline"
+                class="color-accent underline hover:no-underline"
                 >#skillsharing</a
               >
               channel!
@@ -88,7 +88,7 @@
               <template v-slot:middle>
                 Need more help?
                 <a
-                  class="color-primary hover-no-underline"
+                  class="color-primary underline hover:no-underline"
                   href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
                   target="_blank"
                   >Watch a walk-through video</a
@@ -111,7 +111,7 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="mb3">Upcoming Sessions</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb3">Upcoming Sessions</h2>
         <InfoBar class="mb3">
           <template v-slot:left>
             📅
@@ -120,7 +120,7 @@
             Subscribe to the
             <a
               href="https://bit.ly/MozFestSkillsharing"
-              class="hover-no-underline color-primary"
+              class="underline hover:no-underline color-primary"
               target="_blank"
               >Gradual MozFest Skill Sharing calendar</a
             >
@@ -141,7 +141,7 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="mb3">Things we've learned so far</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb3">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
@@ -159,10 +159,10 @@
           :skills="popular.skills"
           class="db dn-ns"
         >
-          <h2 class="mb3">Popular skills from the community</h2>
+          <h2 class="text-2xl md:text-3xl font-bold mb3">Popular skills from the community</h2>
           <p class="f4 lh-copy">
             Something here for you?
-            <nuxt-link append to="join" class="color-accent hover-no-underline">
+            <nuxt-link append to="join" class="color-accent underline hover:no-underline">
               Let us know!
             </nuxt-link>
           </p>

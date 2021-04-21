@@ -1,6 +1,6 @@
 <template>
   <ul class="flex list pa0 ml1 flex-wrap">
-    <li v-for="profilePic in profilePics" class="ml-2">
+    <li v-for="profilePic in profilePics" class="-ml-2">
       <ProfilePic
         :imageSrc="profilePic.profilePic"
         :userName="profilePic.userName"

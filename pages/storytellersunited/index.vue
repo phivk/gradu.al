@@ -9,24 +9,24 @@
         <div class="mv4">
           <a href="https://storytellers.link/" target="_blank">
             <img
-              class="w3 w4-ns"
+              class="dib w3 w4-ns"
               src="https://storytellers.link/img/logo-storytellersunited-200px.png"
               alt="Storytellers United Logo"
             />
           </a>
         </div>
-        <h1 class="f2 f1-ns">What would you like to learn or share?</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">What would you like to learn or share?</h1>
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
+          class="dib mb4 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
         >
           Let us know!
         </nuxt-link>
         <div class="db">
           <a
             href="https://storytellers.link/invite/"
-            class="su-dark-orange hover-no-underline"
+            class="su-dark-orange underline hover:no-underline"
             target="_blank"
             >join Storytellers United</a
           >
@@ -34,7 +34,7 @@
       </section>
       <section class="mb5">
         <div class="center">
-          <h2 class="measure center mv2">
+          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
             Hi 👋 <br />
             Welcome to Storytellers United on Gradual!
           </h2>
@@ -45,7 +45,7 @@
               <a
                 href="https://app.slack.com/client/T14SUV8BA/C016WE6ADA9"
                 target="_blank"
-                class="su-dark-orange hover-no-underline"
+                class="su-dark-orange underline hover:no-underline"
                 >#skillsharing channel</a
               >
               for updates.
@@ -57,14 +57,14 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="mb3">Upcoming Sessions</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb3">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
       <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="mb3">Things we've learned so far</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb3">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>

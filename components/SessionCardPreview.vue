@@ -12,12 +12,12 @@
         <div class="relative flex flex-column w-100">
           <div class="pa3 bg-white">
             <div class="flex items-center justify-between flex-wrap mb2">
-              <h3 class="f4 lh-title mt2 mr2">
+              <h3 class="font-bold f4 lh-title mt2 mr2">
                 {{ session.title }}
               </h3>
               <span class="f5 fw4 o-50 tr mt2">{{ dateFormatted }}</span>
             </div>
-            <TagPill class="absolute top--1 ml-1" borderColour="#fff">{{
+            <TagPill class="absolute top--1 -ml-1" borderColour="#fff">{{
               session.type
             }}</TagPill>
           </div>

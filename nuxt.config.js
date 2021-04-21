@@ -33,7 +33,7 @@ export default {
   ** Global CSS
   */
   css: [
-    'tachyons/css/tachyons.css',
+    // 'tachyons/css/tachyons.css',
     '@/assets/css/main.scss',
   ],
   /*
@@ -45,6 +45,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/tailwindcss',
   ],
   /*
   ** Nuxt.js modules
@@ -84,6 +85,12 @@ export default {
         responseMode: '',
         acrValues: ''
       }
+    }
+  },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.scss',
+    tailwindcss: {
+      jit: true
     }
   },
   /*

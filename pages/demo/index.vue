@@ -22,7 +22,7 @@
         <div class="db">
           <a
             href="https://www.mozillafestival.org/slack/"
-            class="color-accent hover-no-underline"
+            class="color-accent underline hover:no-underline"
             target="_blank"
             >join the Demo Slack</a
           >
@@ -41,7 +41,7 @@
               <a
                 href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
                 target="_blank"
-                class="color-accent hover-no-underline"
+                class="color-accent underline hover:no-underline"
                 >#skillsharing channel</a
               >
               for updates.
