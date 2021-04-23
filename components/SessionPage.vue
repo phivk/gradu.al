@@ -55,7 +55,7 @@
               v-if="session.cta"
               :href="session.cta.href"
               target="_blank"
-              class="font-bold f4 link br3 pa2 tc dib mr3 white bg-color-accent"
+              class="font-bold f4 link br3 pa2 text-center dib mr3 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
