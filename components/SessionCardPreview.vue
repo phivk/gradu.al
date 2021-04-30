@@ -11,8 +11,8 @@
         </div>
         <div class="relative flex flex-column w-100">
           <div class="p-4 bg-white">
-            <div class="flex items-center justify-between flex-wrap mb2">
-              <h3 class="font-bold f4 lh-title mt2 mr2">
+            <div class="flex items-center justify-between flex-wrap mb-2">
+              <h3 class="font-bold f4 lh-title mt2 mr-2">
                 {{ session.title }}
               </h3>
               <span class="f5 fw4 o-50 tr mt2">{{ dateFormatted }}</span>
@@ -22,8 +22,8 @@
             }}</TagPill>
           </div>
           <div class="p-4">
-            <div class="flex flex-wrap mb2">
-              <div v-if="session.sharerNames" class="mr3">
+            <div class="flex flex-wrap mb-2">
+              <div v-if="session.sharerNames" class="mr-4">
                 <h3 class="f5 fw4 o-60">Shared by</h3>
                 <ProfileAvatarList
                   :profileNames="session.sharerNames"

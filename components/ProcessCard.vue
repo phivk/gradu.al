@@ -4,7 +4,7 @@
       :character="number"
       backgroundColor="#137752"
       textColor="#FFF"
-      class="mb2 mr2 font-bold text-lg"
+      class="mb-2 mr-2 font-bold text-lg"
     />
     <h3 class="dib font-bold text-lg">{{ title }}</h3>
     <div class="mid-gray">

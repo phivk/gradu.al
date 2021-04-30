@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-center">
-      <section class="mb5">
+      <section class="mb-16">
         <div class="mv4">
           <a href="https://www.mozillafestival.org/" target="_blank">
             <img
@@ -15,7 +15,7 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb3 mb4-ns f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
+          class="dib mb-4 sm:mb-8 f3 f2-ns br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
         >
           Let us know!
         </nuxt-link>
@@ -28,14 +28,14 @@
           >
         </div>
       </section>
-      <section class="mb5">
+      <section class="mb-16">
         <div class="center">
           <h2 class="measure center mv2">
             Hi 👋 <br />
             Welcome to Demo on Gradual!
           </h2>
           <div class="measure center">
-            <p class="mb3 f4 lh-copy">
+            <p class="mb-4 f4 lh-copy">
               This is a space to express things you’d like to learn and share
               with others in the community. Keep an eye on the
               <a
@@ -53,13 +53,13 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="mb3">Upcoming Sessions</h2>
+        <h2 class="mb-4">Upcoming Sessions</h2>
       </SessionsSection>
       <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="mb3">Things we've learned so far</h2>
+        <h2 class="mb-4">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>

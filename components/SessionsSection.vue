@@ -1,7 +1,7 @@
 <template>
   <section class="mv5">
     <slot></slot>
-    <ul class="list p-0 ma0 flex flex-wrap justify-center">
+    <ul class="list p-0 m-0 flex flex-wrap justify-center">
       <li
         v-for="session in sessions"
         :key="session.title"

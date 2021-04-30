@@ -1,5 +1,5 @@
 <template>
-  <div class="graph-container mb4" 
+  <div class="graph-container mb-8" 
     @click="graphClicked = true"
     @mouseleave="graphClicked = false"
   >

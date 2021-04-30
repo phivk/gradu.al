@@ -5,7 +5,7 @@
      description=""
     />
     <div class="text-center">
-      <section class="mb5">
+      <section class="mb-16">
         <div class="mv4">
           <a href="https://www.mozillafestival.org/" target="_blank">
             <img
@@ -19,7 +19,7 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb4 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
+          class="dib mb-8 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
         >
           Let us know!
         </nuxt-link>
@@ -32,14 +32,14 @@
           >
         </div>
       </section>
-      <section class="mb5">
+      <section class="mb-16">
         <div class="center">
           <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
             Hi 👋 <br />
             Welcome to MozFest on Gradual!
           </h2>
           <div class="center">
-            <p class="center measure mb3 f4 lh-copy">
+            <p class="center measure mb-4 f4 lh-copy">
               This is a space to express things you’d like to learn and share
               with others in the community. Join the conversation on the
               <a
@@ -50,7 +50,7 @@
               >
               channel!
             </p>
-            <ol class="list p-0 mb3 flex flex-wrap justify-center">
+            <ol class="list p-0 mb-4 flex flex-wrap justify-center">
               <li class="p-4 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
                   Let us know what you'd like to learn or share. Anything is
@@ -70,13 +70,13 @@
                 </ProcessCard>
               </li>
             </ol>
-            <p class="measure center mb4 lh-copy">
+            <p class="measure center mb-8 lh-copy">
               <strong>Sessions take any format</strong> that best fits the
               facilitator and the skill they are sharing, for example
               <TagPill
                 v-for="sessionType in sessionTypes"
                 :key="sessionType"
-                class="ma1"
+                class="m-1"
               >
                 {{ sessionType }}
               </TagPill>
@@ -111,8 +111,8 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">Upcoming Sessions</h2>
-        <InfoBar class="mb3">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
+        <InfoBar class="mb-4">
           <template v-slot:left>
             📅
           </template>
@@ -141,7 +141,7 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">Things we've learned so far</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
@@ -159,7 +159,7 @@
           :skills="popular.skills"
           class="db dn-ns"
         >
-          <h2 class="text-2xl md:text-3xl font-bold mb3">Popular skills from the community</h2>
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Popular skills from the community</h2>
           <p class="f4 lh-copy">
             Something here for you?
             <nuxt-link append to="join" class="color-accent underline hover:no-underline">
