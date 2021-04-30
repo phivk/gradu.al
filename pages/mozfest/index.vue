@@ -50,7 +50,7 @@
               >
               channel!
             </p>
-            <ol class="list pl0 mb3 flex flex-wrap justify-center">
+            <ol class="list p-0 mb3 flex flex-wrap justify-center">
               <li class="p-4 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
                   Let us know what you'd like to learn or share. Anything is
