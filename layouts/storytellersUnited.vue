@@ -1,12 +1,14 @@
 <template>
-  <div class="theme-storytellerunited">  
+  <div class="theme-storytellerunited">
     <div class="bg-color-bg min-vh-100">
       <TheNavBar
         class="bg-color-primary"
         backLinkText="Storytellers United"
         backLinkSlug="storytellersunited"
       />
-      <nuxt />
+      <div class="p-2 sm:p-4 lg:p-8">
+        <nuxt />
+      </div>
     </div>
   </div>
 </template>

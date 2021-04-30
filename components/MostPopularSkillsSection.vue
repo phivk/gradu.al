@@ -1,8 +1,8 @@
 <template>
 <div>
   <slot></slot>
-  <ul v-for="skill in skills" :key="skill" class="pa2 ma1 list lh-copy">
-    <li class="pa3 shadow-4 br3 bg-white fw5 tl">{{skill}}</li>
+  <ul v-for="skill in skills" :key="skill" class="p-2 ma1 list lh-copy">
+    <li class="p-4 shadow-4 br3 bg-white fw5 tl">{{skill}}</li>
   </ul>
 </div>
 </template>

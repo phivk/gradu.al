@@ -10,7 +10,7 @@
           />
         </div>
         <div class="relative flex flex-column w-100">
-          <div class="pa3 bg-white">
+          <div class="p-4 bg-white">
             <div class="flex items-center justify-between flex-wrap mb2">
               <h3 class="font-bold f4 lh-title mt2 mr2">
                 {{ session.title }}
@@ -21,7 +21,7 @@
               session.type
             }}</TagPill>
           </div>
-          <div class="pa3">
+          <div class="p-4">
             <div class="flex flex-wrap mb2">
               <div v-if="session.sharerNames" class="mr3">
                 <h3 class="f5 fw4 o-60">Shared by</h3>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center pa2 pa3-m pa4-l">
+    <div class="text-center">
       <section class="mb5">
         <div class="mv4">
           <a href="https://www.mozillafestival.org/" target="_blank">

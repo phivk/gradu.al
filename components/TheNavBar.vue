@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="pa3 ph4-m ph5-l mw9 center flex items-center justify-between">
+    <div class="p-4 ph4-m ph5-l mw9 center flex items-center justify-between">
       <nuxt-link to="/" class="flex items-center no-underline">
         <logo class="w2-5" />
         <span class="ml2 white f3 font-bold dn di-ns">gradual</span>

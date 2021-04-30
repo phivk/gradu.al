@@ -4,7 +4,7 @@
      title="MozFest - Here to learn"
      description=""
     />
-    <div class="text-center pa2 pa3-m pa4-l">
+    <div class="text-center">
       <section class="mb5">
         <div class="mv4">
           <a href="https://www.mozillafestival.org/" target="_blank">
@@ -51,19 +51,19 @@
               channel!
             </p>
             <ol class="list pl0 mb3 flex flex-wrap justify-center">
-              <li class="pa3 w-100 w-third-ns mw5-5">
+              <li class="p-4 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
                   Let us know what you'd like to learn or share. Anything is
                   welcome!
                 </ProcessCard>
               </li>
-              <li class="pa3 w-100 w-third-ns mw5-5">
+              <li class="p-4 w-100 w-third-ns mw5-5">
                 <ProcessCard number="2" title="Match">
                   See how MozFest is connected by skills! We help you plan a
                   session in the format you choose.
                 </ProcessCard>
               </li>
-              <li class="pa3 w-100 w-third-ns mw5-5">
+              <li class="p-4 w-100 w-third-ns mw5-5">
                 <ProcessCard number="3" title="Meet">
                   Host or join a session to learn with other MozFest
                   participants based on your interests!

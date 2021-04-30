@@ -4,7 +4,7 @@
       title="Storytellers United - Here to learn"
       description=""
     />
-    <div class="text-center pa2 pa3-m pa4-l">
+    <div class="text-center">
       <section class="mb5">
         <div class="mv4">
           <a href="https://storytellers.link/" target="_blank">
