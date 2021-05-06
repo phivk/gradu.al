@@ -4,6 +4,7 @@
     :borderColor="borderColor"
     :backgroundColor="backgroundColor"
     :title="profileName"
+    class="font-light"
   />
 </template>
 <script>

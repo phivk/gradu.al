@@ -1,9 +1,6 @@
 <template>
   <div>
-    <social-head
-     title="MozFest - Here to learn"
-     description=""
-    />
+    <social-head title="MozFest - Here to learn" description="" />
     <TypeFormEmbed :typeFormSrc="typeFormSrc" />
   </div>
 </template>
@@ -19,7 +16,7 @@ export default {
   },
   components: {
     TypeFormEmbed,
-    SocialHead
+    SocialHead,
   },
   data() {
     return {

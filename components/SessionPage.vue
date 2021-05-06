@@ -8,10 +8,10 @@
     <main class="pa3 pa4-m pa5-l mw9 center">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt0 mb2 mb3-ns">
-          <TagPill class="ml-2" :borderColour="bgColor">{{
+          <TagPill class="-ml-2" :borderColour="bgColor">{{
             session.type
           }}</TagPill>
-          <h1 class="f2 f1-l lh-title mt2 mb4">
+          <h1 class="text-4xl md:text-5xl font-bold lh-title mt2 mb4">
             {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
@@ -37,21 +37,25 @@
         </div>
       </div>
       <div class="flex flex-wrap mb3">
-        <div class="w-100 w-20-l pr3 mb3 f4 fw6">
+        <div class="w-100 w-20-l pr3 mb3 f4">
           <div>
-            <p class="mb3">
+            <p class="font-bold mb3">
               {{ dateFormatted }}
             </p>
-            <p class="fw3 mb3 lh-copy">
-              <span>{{ timeFormatted }}</span>
-              <span>({{ timezone }}), </span>
+            <p class=" mb3 lh-copy">
+              <span class="mr1">{{ timeFormatted }}</span>
+              <span
+                class="mr1"
+                v-tooltip="{ content: timezone, trigger: 'hover click focus' }"
+                >🌐</span
+              >
               <span>{{ session.durationInMinutes }}&nbsp;min</span>
             </p>
             <a
               v-if="session.cta"
               :href="session.cta.href"
               target="_blank"
-              class="f4 link br3 pa2 tc dib mr3 white bg-color-accent"
+              class="font-bold f4 link br3 pa2 tc dib mr3 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
@@ -82,7 +86,7 @@
 
           </div>
         </div>
-        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 fw3">
+        <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
           <div
             v-if="session.sharerNames"
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
@@ -100,7 +104,7 @@
             class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
           >
             <p>
-              <span>{{ hasHappened ? "Learned by" : "Like to learn"}}</span>
+              <span>{{ hasHappened ? "Learned by" : "Like to learn" }}</span>
               <ProfileAvatarList
                 :profileNames="session.learnerNames"
                 :borderColor="bgColor"
@@ -113,7 +117,7 @@
               <ul class="list pa0 mt1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="color-accent" :href="resource.href" target="_blank">{{
+                  <a class="underline hover:no-underline color-accent" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>
@@ -133,7 +137,7 @@
 <script>
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
-import SocialHead from './SocialHead.vue';
+import SocialHead from "./SocialHead.vue";
 import dayjs from "dayjs";
 import {
   formatDate,
@@ -142,18 +146,21 @@ import {
   formatTime,
   getTimezone,
 } from "~/util/date";
+import Vue from "vue";
+import VTooltip from "v-tooltip";
+Vue.use(VTooltip);
 
 export default {
   components: {
     TagPill,
     ProfileAvatarList,
-    SocialHead
+    SocialHead,
   },
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
     bgColor: { type: String, default: "#FFF" },
-    calendarEvent: {type: Boolean, default: false}
+    calendarEvent: { type: Boolean, default: false },
   },
   computed: {
     sessionDate() {
@@ -188,27 +195,30 @@ export default {
       if (this.youtubeRecordingResource) {
         let parts = this.youtubeRecordingResource.href.split(/[/=]/);
         return parts[parts.length - 1];
-      }
-      else {
+      } else {
         return undefined;
       }
     },
     calendarLocation() {
-      const community = this.session.path.split("/")[1]
-      return `/${community}/${this.session.filename}.ics`
+      const community = this.session.path.split("/")[1];
+      return `/${community}/${this.session.filename}.ics`;
     },
     googleCalendarLink() {
-      const formatString = (string) => encodeURIComponent(string).replace(/%20/g, '+');
+      const formatString = (string) =>
+        encodeURIComponent(string).replace(/%20/g, "+");
       let url = "http://www.google.com/calendar/render?action=TEMPLATE";
       const start = dayjs(this.session.dateTime).format("YYYYMMDDTHHmmssZ");
-      const end = dayjs(this.session.dateTime).add(this.session.durationInMinutes, 'minutes').format("YYYYMMDDTHHmmssZ");
+      const end = dayjs(this.session.dateTime)
+        .add(this.session.durationInMinutes, "minutes")
+        .format("YYYYMMDDTHHmmssZ");
       const parameters = {
         text: formatString(this.session.title),
-        location: formatString("Zoom - check #skillsharing channel on Slack for details."),
+        location: formatString(
+          "Zoom - check #skillsharing channel on Slack for details."
+        ),
         details: formatString(this.session.description || ""),
-        dates: formatString(`${start}/${end}`)
+        dates: formatString(`${start}/${end}`),
       };
-
 
       for (const key in parameters) {
         if (parameters.hasOwnProperty(key) && parameters[key]) {
@@ -253,5 +263,105 @@ export default {
 }
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+</style>
+
+<style lang="scss">
+/* 
+  v-tooltip styling 
+  https://github.com/Akryum/v-tooltip#style-examples
+*/
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+
+  .tooltip-inner {
+    background: black;
+    color: white;
+    border-radius: 16px;
+    padding: 5px 10px 4px;
+  }
+
+  .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: black;
+    z-index: 1;
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 5px;
+
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 5px 0;
+      border-left-color: transparent !important;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[aria-hidden="true"] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+
+  &[aria-hidden="false"] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.15s;
+  }
 }
 </style>
