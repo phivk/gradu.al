@@ -229,22 +229,6 @@ export default {
       return url;
     },
   },
-  methods: {
-    isValidDate(d) {
-      if (Object.prototype.toString.call(d) === "[object Date]") {
-        // it is a date
-        if (isNaN(d.getTime())) {
-          // date is not valid
-          return false;
-        } else {
-          // date is valid
-          return true;
-        }
-      } else {
-        return undefined;
-      }
-    },
-  },
 };
 </script>
 
