@@ -5,9 +5,13 @@ fields:
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: text
   name: type
   label: type
+  config:
+    required: true
 - type: datetime
   name: dateTime
   label: dateTime
@@ -17,6 +21,9 @@ fields:
 - type: textarea
   name: imageSrc
   label: imageSrc
+  config:
+    wysiwyg: false
+    required: true
 - type: list
   name: learnerNames
   label: learnerNames
