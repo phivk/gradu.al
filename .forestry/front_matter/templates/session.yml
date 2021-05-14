@@ -18,12 +18,11 @@ fields:
 - type: number
   name: durationInMinutes
   label: durationInMinutes
-- type: textarea
-  name: imageSrc
-  label: imageSrc
+- name: imagesrc
+  type: text
   config:
-    wysiwyg: false
     required: true
+  label: imageSrc
 - type: list
   name: learnerNames
   label: learnerNames
