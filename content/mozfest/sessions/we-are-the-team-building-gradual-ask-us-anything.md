@@ -18,4 +18,8 @@ resources:
   href: https://miro.com/app/board/o9J_lRWjRvU=/
 
 ---
-Curious to hear more about the Gradual skill sharing process or have ideas and/or feedback to share? Come join and let's connect! <!--more--> We've been prototyping this skill sharing process since 2018 and are incredibly excited to now learn from and with other MozFest participants. In this session we can answer your questions and walk you through how (and why) this started and where we hope to take it from here :)
+Curious to hear more about the Gradual skill sharing process or have ideas and/or feedback to share? Come join and let's connect! 
+
+<!--more--> 
+
+We've been prototyping this skill sharing process since 2018 and are incredibly excited to now learn from and with other MozFest participants. In this session we can answer your questions and walk you through how (and why) this started and where we hope to take it from here :)
