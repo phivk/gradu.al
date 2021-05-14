@@ -13,5 +13,6 @@ resources: []
 cta:
   text: ''
   href: ''
+imageSrc: https://images.unsplash.com/photo-1615270346493-ea8cf96843ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1832&q=80
 
 ---
