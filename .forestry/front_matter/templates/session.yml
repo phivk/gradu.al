@@ -18,7 +18,7 @@ fields:
 - type: number
   name: durationInMinutes
   label: durationInMinutes
-- name: imagesrc
+- name: imageSrc
   type: text
   config:
     required: true
