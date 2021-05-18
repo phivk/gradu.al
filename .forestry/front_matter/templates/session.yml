@@ -1,0 +1,53 @@
+---
+label: Session
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+- type: text
+  name: type
+  label: type
+  config:
+    required: true
+- type: datetime
+  name: dateTime
+  label: dateTime
+- type: number
+  name: durationInMinutes
+  label: durationInMinutes
+- name: imageSrc
+  type: text
+  config:
+    required: true
+  label: imageSrc
+- type: list
+  name: learnerNames
+  label: learnerNames
+- type: list
+  name: sharerNames
+  label: sharerNames
+- type: field_group_list
+  name: resources
+  label: resources
+  fields:
+  - type: text
+    name: text
+    label: text
+  - type: text
+    name: href
+    label: href
+- type: field_group
+  name: cta
+  label: cta
+  fields:
+  - type: text
+    name: text
+    label: text
+  - type: text
+    name: href
+    label: href
+pages:
+- content/mozfest/sessions/test-session.md
