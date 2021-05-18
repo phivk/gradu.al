@@ -43,7 +43,10 @@ communities.forEach(community => {
         duration: getDuration(frontMatter.durationInMinutes),
         title: frontMatter.title,
         description: `A ${frontMatter.type} event.`,
-        location: frontMatter.location || community.defaultLocation
+        location:
+          frontMatter.location ||
+          community.defaultLocation ||
+          "Find location details on the community skill sharing channel."
       };
 
       ics.createEvent(event, (error, value) => {
