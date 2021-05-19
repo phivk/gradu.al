@@ -35,7 +35,7 @@
     "@nuxtjs/tailwindcss": "^4.0.3",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.10",
     "push-dir": "^0.4.1",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
