@@ -81,7 +81,7 @@
                 {{ sessionType }}
               </TagPill>
             </p>
-            <InfoBar>
+            <!-- <InfoBar>
               <template v-slot:left>
                 🤔
               </template>
@@ -102,7 +102,7 @@
                   >↗︎</a
                 >
               </template>
-            </InfoBar>
+            </InfoBar> -->
           </div>
         </div>
       </section>
