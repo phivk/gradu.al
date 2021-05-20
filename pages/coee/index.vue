@@ -1,7 +1,7 @@
 <template>
   <div>
     <social-head
-     title="MozFest - Here to learn"
+     title="CoEE - Here to learn"
      description=""
     />
     <div class="tc pa2 pa3-m pa4-l">
@@ -10,8 +10,8 @@
           <a href="https://www.mozillafestival.org/" target="_blank">
             <img
               class="dib w4 w5-ns"
-              src="https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg"
-              alt="MozFest Logo"
+              src="https://secureservercdn.net/160.153.138.163/8j9.80a.myftpupload.com/wp-content/uploads/2020/02/SVG_coee-white-owl-1.svg"
+              alt="CoEE Logo"
             />
           </a>
         </div>
@@ -25,10 +25,10 @@
         </nuxt-link>
         <div class="db">
           <a
-            href="https://www.mozillafestival.org/slack/"
+            href="https://www.facebook.com/extraordinarycollege/"
             class="color-accent underline hover:no-underline"
             target="_blank"
-            >join the MozFest Slack</a
+            >join the CoEE FB group</a
           >
         </div>
       </section>
@@ -36,19 +36,19 @@
         <div class="center">
           <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
             Hi 👋 <br />
-            Welcome to MozFest on Gradual!
+            Welcome to the College of Extraordinary Experiences on Gradual!
           </h2>
           <div class="center">
             <p class="center measure mb3 f4 lh-copy">
               This is a space to express things you’d like to learn and share
-              with others in the community. Join the conversation on the
+              with others in the community.
               <a
-                href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
+                href="https://www.facebook.com/extraordinarycollege/"
                 target="_blank"
                 class="color-accent underline hover:no-underline"
-                >#skillsharing</a
+                >Join the conversation</a
               >
-              channel!
+              on FB!
             </p>
             <ol class="list pl0 mb3 flex flex-wrap justify-center">
               <li class="pa3 w-100 w-third-ns mw5-5">
@@ -59,13 +59,13 @@
               </li>
               <li class="pa3 w-100 w-third-ns mw5-5">
                 <ProcessCard number="2" title="Match">
-                  See how MozFest is connected by skills! We help you plan a
+                  See how the College is connected by skills! We help you plan a
                   session in the format you choose.
                 </ProcessCard>
               </li>
               <li class="pa3 w-100 w-third-ns mw5-5">
                 <ProcessCard number="3" title="Meet">
-                  Host or join a session to learn with other MozFest
+                  Host or join a session to learn with other CoEE
                   participants based on your interests!
                 </ProcessCard>
               </li>
@@ -119,16 +119,16 @@
           <template v-slot:middle>
             Subscribe to the
             <a
-              href="https://bit.ly/MozFestSkillsharing"
+              href="https://bit.ly/CoEESkillsharing"
               class="underline hover:no-underline color-primary"
               target="_blank"
-              >Gradual MozFest Skill Sharing calendar</a
+              >Gradual CoEE Skill Sharing calendar</a
             >
             to stay posted.
           </template>
           <template v-slot:right>
             <a
-              href="https://bit.ly/MozFestSkillsharing"
+              href="https://bit.ly/CoEESkillsharing"
               class="no-underline color-primary"
               target="_blank"
               >↗︎</a
@@ -185,10 +185,10 @@ import SocialHead from "~/components/SocialHead.vue";
 import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
-  layout: "mozFest",
+  layout: "coee",
   head() {
     return {
-      title: "MozFest - Here to learn",
+      title: "CoEE - Here to learn",
     };
   },
   components: {
@@ -219,16 +219,16 @@ export default {
     };
   },
   async asyncData({ $content }) {
-    const sessions = await $content("mozfest/sessions")
+    const sessions = await $content("coee/sessions")
       .sortBy("dateTime", "asc")
       .fetch()
 
     let nodes, edges, popular;
 
     try {
-      nodes = await $content("mozfest/data", "nodes").fetch();
-      edges = await $content("mozfest/data", "edges").fetch();
-      popular = await $content("mozfest/data", "popular").fetch();
+      nodes = await $content("coee/data", "nodes").fetch();
+      edges = await $content("coee/data", "edges").fetch();
+      popular = await $content("coee/data", "popular").fetch();
     } catch (error) {
       console.log(error);
       console.log("nodes and edges failed to load");
