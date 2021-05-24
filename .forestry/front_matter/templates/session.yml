@@ -7,11 +7,26 @@ fields:
   label: title
   config:
     required: true
-- type: text
-  name: type
-  label: type
+- name: type
+  type: select
+  default: []
   config:
-    required: true
+    required: false
+    options:
+    - peer share
+    - workshop
+    - lunch & learn
+    - talk
+    - one-on-one
+    - brainstorm
+    - AMA
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: type
+  description: the format of the session
 - type: datetime
   name: dateTime
   label: dateTime
