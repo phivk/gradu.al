@@ -49,5 +49,3 @@ fields:
   - type: text
     name: href
     label: href
-pages:
-- content/mozfest/sessions/test-session.md
