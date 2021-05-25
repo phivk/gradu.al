@@ -8,19 +8,21 @@ learnerNames:
   - Anyone
   - Is
   - Welcome!
-sharerNames: 
-  - '@Philo'
-  - '@Kevin'
-  - '@Gunnar'
+sharerNames:
+  - "@Philo"
+  - "@Kevin"
+  - "@Gunnar"
 resources:
-  -
-    text: Collective Board
+  - text: Collective Board
     href: https://miro.com/app/board/o9J_lRWjRvU=/
 cta:
   text: Use the collective board
   href: https://miro.com/app/board/o9J_lRWjRvU=/
+filename: what-have-we-learned
 ---
+
 We're now in week 2 of MozFest. What are some things that have inspired you?
+
 <!--more-->
 Whether it's your first MozFest or your 5th, there's always something unexpected lurking around the corner. This is an opportunity for participants to come together and have an informal sharing of insights, tips, lessons, funny stories and things you'd still like to learn! 
 

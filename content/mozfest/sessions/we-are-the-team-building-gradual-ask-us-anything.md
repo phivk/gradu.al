@@ -16,7 +16,6 @@ sharerNames:
 resources:
 - text: Collective Board
   href: https://miro.com/app/board/o9J_lRWjRvU=/
-
 ---
 Curious to hear more about the Gradual skill sharing process or have ideas and/or feedback to share? Come join and let's connect! 
 

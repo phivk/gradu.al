@@ -65,6 +65,25 @@
               class="dib mt3 color-accent ws-pre-wrap"
               >↓ .ics file</a
             >
+
+              <a
+              v-if="!hasHappened && calendarEvent"
+              :href="calendarLocation"
+              target="_blank"
+              class="dib mt3 color-accent">
+                ↓ .ics file
+              </a>
+
+                <a
+                 v-if="!hasHappened && calendarEvent"
+                :href="googleCalendarLink"
+                target="_blank"
+                class="dib mt3 color-accent"
+                >
+                  Add to Google Calendar
+                </a>
+
+
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
@@ -119,6 +138,7 @@
 import TagPill from "~/components/TagPill.vue";
 import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 import SocialHead from "./SocialHead.vue";
+import dayjs from "dayjs";
 import {
   formatDate,
   isValidDate,
@@ -140,6 +160,7 @@ export default {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
     bgColor: { type: String, default: "#FFF" },
+    calendarEvent: { type: Boolean, default: false },
   },
   computed: {
     sessionDate() {
@@ -177,6 +198,35 @@ export default {
       } else {
         return undefined;
       }
+    },
+    calendarLocation() {
+      const community = this.session.path.split("/")[1];
+      return `/${community}/${this.session.filename}.ics`;
+    },
+    googleCalendarLink() {
+      const formatString = (string) =>
+        encodeURIComponent(string).replace(/%20/g, "+");
+      let url = "http://www.google.com/calendar/render?action=TEMPLATE";
+      const start = dayjs(this.session.dateTime).format("YYYYMMDDTHHmmssZ");
+      const end = dayjs(this.session.dateTime)
+        .add(this.session.durationInMinutes, "minutes")
+        .format("YYYYMMDDTHHmmssZ");
+      const parameters = {
+        text: formatString(this.session.title),
+        location: formatString(
+          "Zoom - check #skillsharing channel on Slack for details."
+        ),
+        details: formatString(this.session.description || ""),
+        dates: formatString(`${start}/${end}`),
+      };
+
+      for (const key in parameters) {
+        if (parameters.hasOwnProperty(key) && parameters[key]) {
+          url += `&${key}=${parameters[key]}`;
+        }
+      }
+
+      return url;
     },
   },
 };

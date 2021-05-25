@@ -1,5 +1,5 @@
 <template>
-  <SessionPage :session="session" :bgColor="bgColor" />
+  <SessionPage :session="session" :bgColor="bgColor" :calendarEvent="true" />
 </template>
 
 <script>
