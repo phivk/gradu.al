@@ -1,22 +1,27 @@
 <template>
   <div :style="{ width: width, height: height }">
-    <nav class="flex flex-row">
+    <nav class="flex flex-row mb-2">
       <button
-        class="text-gray-600 p-4 block hover:text-green-500 focus:outline-none border-green-500"
+        class="text-gray-500 px-6 py-4 block hover:text-green-500 focus:outline-none border-green-500"
         :class="{ tabActive: tabIndex == index }"
         v-for="(name, index) in names"
         @click="tabIndex = index"
       >
+        <font-awesome-icon 
+          v-if="icons" 
+          :icon="icons[index]" 
+          class="mr-2"
+        />
         {{ name }}
       </button>
     </nav>
-    <div class="p-4">
+    <div>
       <div
         v-for="(name, index) in names"
-        :key="`tab${index}`"
+        :key="`tab-${index}`"
         v-if="tabIndex == index"
       >
-        <slot :name="`tab${index}`" />
+        <slot :name="`tab-${index}`" />
       </div>
     </div>
   </div>
@@ -37,6 +42,11 @@ export default {
       type: Array,
       required: true,
     },
+    icons: {
+      // array of font awesome icon names
+      type: Array,
+      required: false,
+    },
   },
   data() {
     return {
@@ -48,6 +58,6 @@ export default {
 
 <style scoped>
 .tabActive {
-  @apply text-green-500 border-b-2 font-medium border-green-500;
+  @apply text-green-500 border-t-4 font-medium border-green-500;
 }
 </style>
