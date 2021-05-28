@@ -35,11 +35,13 @@ export default {
   css: [
     // 'tachyons/css/tachyons.css',
     '@/assets/css/main.scss',
+    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/fontawesome.js',
   ],
   /*
   ** Nuxt.js dev-modules

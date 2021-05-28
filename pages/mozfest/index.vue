@@ -146,27 +146,35 @@
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
-      <div id="#section-graph">
-        <GraphSection
-          v-if="nodes && edges"
-          memberTitlePlural="participants"
-          class="dn db-ns"
+      <div
+        id="#section-intentions"
+        v-if="nodes && edges && popular"
+      >
+        <h2 class="text-3xl md:text-4xl font-bold mb3">Community learning intentions</h2>
+        <p class="f4 lh-copy mb-8">
+          Something here for you?
+          <nuxt-link append to="join" class="color-accent underline hover:no-underline">
+            Let us know!
+          </nuxt-link>
+        </p>
+        <NavigationTabs 
+          :names="['Graph', 'List']"
+          :icons="['project-diagram', 'list']"
         >
-          <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
-        </GraphSection>
-        <MostPopularSkillsSection
-          v-if="popular"
-          :skills="popular.skills"
-          class="db dn-ns"
-        >
-          <h2 class="text-2xl md:text-3xl font-bold mb3">Popular skills from the community</h2>
-          <p class="f4 lh-copy">
-            Something here for you?
-            <nuxt-link append to="join" class="color-accent underline hover:no-underline">
-              Let us know!
-            </nuxt-link>
-          </p>
-        </MostPopularSkillsSection>
+          <template v-slot:tab-0>
+            <GraphManualKey class="text-left" />
+            <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
+          </template>
+          <template v-slot:tab-1>
+            <MostPopularSkillsSection
+              v-if="popular"
+              :skills="popular.skills"
+              class="text-left"
+            >
+              <p class="mb-4">Top skills of the moment</p>
+            </MostPopularSkillsSection>
+          </template>
+        </NavigationTabs>
       </div>
     </div>
   </div>
@@ -176,12 +184,14 @@
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
+import GraphManualKey from "~/components/GraphManualKey.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
+import NavigationTabs from "~/components/NavigationTabs.vue";
 import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
@@ -195,12 +205,14 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
+    GraphManualKey,
     MostPopularSkillsSection,
     CircleCharacter,
     ProcessCard,
     TagPill,
     InfoBar,
-    SocialHead
+    SocialHead,
+    NavigationTabs,
   },
   data() {
     return {
