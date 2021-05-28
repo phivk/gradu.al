@@ -162,13 +162,17 @@
           :icons="['project-diagram', 'list']"
         >
           <template v-slot:tab-0>
+            <GraphManualKey class="text-left" />
             <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
           </template>
           <template v-slot:tab-1>
             <MostPopularSkillsSection
               v-if="popular"
               :skills="popular.skills"
-            />
+              class="text-left"
+            >
+              <span>Top skills of the moment</span>
+            </MostPopularSkillsSection>
           </template>
         </NavigationTabs>
       </div>
@@ -180,6 +184,7 @@
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
+import GraphManualKey from "~/components/GraphManualKey.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
@@ -200,6 +205,7 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
+    GraphManualKey,
     MostPopularSkillsSection,
     CircleCharacter,
     ProcessCard,
