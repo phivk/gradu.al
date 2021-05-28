@@ -171,7 +171,7 @@
               :skills="popular.skills"
               class="text-left"
             >
-              <span>Top skills of the moment</span>
+              <p class="mb-4">Top skills of the moment</p>
             </MostPopularSkillsSection>
           </template>
         </NavigationTabs>
