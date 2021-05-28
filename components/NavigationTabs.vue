@@ -3,9 +3,9 @@
     <nav class="flex flex-row">
       <button
         class="text-gray-600 p-4 block hover:text-green-500 focus:outline-none border-green-500"
-        v-bind:class="{ tabActive: tabIndex == `${index}` }"
+        v-bind:class="{ tabActive: tabIndex == index }"
         v-for="(name, index) in names"
-        @click="tabIndex = `${index}`"
+        @click="tabIndex = index"
       >
         {{ name }}
       </button>
@@ -14,7 +14,7 @@
       <div
         v-for="(name, index) in names"
         :key="`tab${index}`"
-        v-if="tabIndex == `${index}`"
+        v-if="tabIndex == index"
       >
         <slot :name="`tab${index}`"></slot>
       </div>
