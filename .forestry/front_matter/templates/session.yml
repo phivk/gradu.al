@@ -20,6 +20,7 @@ fields:
     - one-on-one
     - brainstorm
     - AMA
+    - salon
     source:
       type: simple
       section: 
