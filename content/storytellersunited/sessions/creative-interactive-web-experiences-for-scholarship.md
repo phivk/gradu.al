@@ -22,5 +22,5 @@ cta:
 
 ---
 What does the future of research and scholarship look like, and how can interactive media play a role? In this session, we'll have a conversation discussing the role creative interactive web experiences can (and already do) have on scholarship. From interactive visualizations as an output, to creative ways of exploring research data, there are a variety of ways interactivity can transform scholarship. We'll discuss topics such as the current trends, the future of this space, challenges, and cool examples.
-
+<!--more-->
 Come prepared with some thoughts, possible discussion points, interesting examples, and/or an interest in exploring this space!
