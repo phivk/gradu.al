@@ -4,8 +4,15 @@ title: Creative interactive web experiences for scholarship
 dateTime: 2021-06-18T13:00:00+02:00
 durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1955&q=80
-learnerNames: []
-sharerNames: []
+learnerNames:
+- "@Fresco"
+- "@hay"
+- "@Philo"
+- "@Gunnar de Jong"
+- "@Anna Desponds"
+- "@magda bochenska"
+sharerNames:
+- "@Amanda"
 resources: []
 cta:
   text: ''
