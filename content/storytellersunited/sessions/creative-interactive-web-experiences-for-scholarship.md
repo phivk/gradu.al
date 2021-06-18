@@ -1,9 +1,9 @@
 ---
 type: peer share
 title: Creative interactive web experiences for scholarship
-dateTime: 2021-06-18T13:00:00+02:00
+dateTime: 2021-06-18T13:00:00.000+02:00
 durationInMinutes: 60
-imageSrc: https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1955&q=80
+imageSrc: https://img.youtube.com/vi/Ac6s1d7LxQ4/0.jpg
 learnerNames:
 - "@Fresco"
 - "@hay"
@@ -14,6 +14,8 @@ learnerNames:
 sharerNames:
 - "@Amanda"
 resources:
+- text: Recording
+  href: https://www.youtube.com/watch?v=Ac6s1d7LxQ4
 - text: Collaborative Notes
   href: https://docs.google.com/document/d/1tMMxAlxf2z5c6Ju78rUp2FUeSNRH16aB1eTLkei49fQ/edit
 cta:
