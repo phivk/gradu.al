@@ -8,7 +8,7 @@
       <section class="mb5">
        <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
         <div class="mv4">
-          <a href="https://www.mozillafestival.org/" target="_blank">
+          <a href="https://extraordinary.college/" target="_blank">
             <img
               class="dib w4 w5-ns"
               src="https://secureservercdn.net/160.153.138.163/8j9.80a.myftpupload.com/wp-content/uploads/2020/02/SVG_coee-white-owl-1.svg"
