@@ -26,7 +26,7 @@
         </nuxt-link>
         <div class="db">
           <a
-            href="https://www.facebook.com/extraordinarycollege/"
+            href="https://www.facebook.com/groups/223720981529219"
             class="color-accent underline hover:no-underline"
             target="_blank"
             >join the CoEE FB group</a
@@ -44,7 +44,7 @@
               This is a space to express things you’d like to learn and share
               with others in the community.
               <a
-                href="https://www.facebook.com/extraordinarycollege/"
+                href="https://www.facebook.com/groups/223720981529219"
                 target="_blank"
                 class="color-accent underline hover:no-underline"
                 >Join the conversation</a
