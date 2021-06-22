@@ -15,6 +15,13 @@
 <script>
 import TheNavBar from "~/components/TheNavBar.vue";
 export default {
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/tachyons.min.css' }
+      ]
+    }
+  },
   components: {
     TheNavBar,
   },

@@ -2,7 +2,7 @@
   <div class="bg-color-bg">
     <social-head
       :title="session.title"
-      :description="session.description"
+      :description="description"
       :image="session.imageSrc"
     />
     <main class=" mw9 center">
@@ -142,6 +142,11 @@ export default {
     bgColor: { type: String, default: "#FFF" },
   },
   computed: {
+    description() {
+      return this.session.description
+        ? this.session.description
+        : this.session.title
+    },
     sessionDate() {
       return this.session.dateTime
         ? new Date(this.session.dateTime)

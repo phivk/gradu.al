@@ -1,0 +1,69 @@
+---
+label: Session
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+- name: type
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - peer share
+    - workshop
+    - lunch & learn
+    - talk
+    - one-on-one
+    - brainstorm
+    - AMA
+    - salon
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: type
+  description: the format of the session
+- type: datetime
+  name: dateTime
+  label: dateTime
+- type: number
+  name: durationInMinutes
+  label: durationInMinutes
+- name: imageSrc
+  type: text
+  config:
+    required: true
+  label: imageSrc
+- type: list
+  name: learnerNames
+  label: learnerNames
+- type: list
+  name: sharerNames
+  label: sharerNames
+- type: field_group_list
+  name: resources
+  label: resources
+  fields:
+  - type: text
+    name: text
+    label: text
+  - type: text
+    name: href
+    label: href
+- type: field_group
+  name: cta
+  label: cta
+  fields:
+  - type: text
+    name: text
+    label: text
+  - type: text
+    name: href
+    label: href
+pages:
+- content/storytellersunited/sessions/creative-interactive-web-experiences-for-scholarship.md

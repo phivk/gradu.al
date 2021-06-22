@@ -1,5 +1,5 @@
 <template>
-  <p class="center p-4 bg-color-primary-washed ba b--black-10 br2 flex items-center mw7 tl">
+  <p class="center p-4 bg-color-accent-washed ba b--black-10 br2 flex items-center mw7 tl">
     <span class="mr-2 f3">
       <slot name="left"></slot>
     </span>
