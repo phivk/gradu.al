@@ -5,13 +5,13 @@
       :description="description"
       :image="session.imageSrc"
     />
-    <main class="pa3 pa4-m pa5-l mw9 center">
+    <main class=" mw9 center">
       <div class="flex justify-end">
-        <div class="w-100 w-80-l mt0 mb2 mb3-ns">
+        <div class="w-100 w-80-l mt-0 mb-2 sm:mb-4">
           <TagPill class="-ml-2" :borderColour="bgColor">{{
             session.type
           }}</TagPill>
-          <h1 class="text-4xl md:text-5xl font-bold lh-title mt2 mb4">
+          <h1 class="text-4xl md:text-5xl font-bold lh-title mt-2 mb-8">
             {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
@@ -29,23 +29,23 @@
             </div>
             <img
               v-else
-              class="db mb3 mb4-ns"
+              class="db mb-4 sm:mb-8"
               :src="session.imageSrc"
               :alt="session.title"
             />
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap mb3">
-        <div class="w-100 w-20-l pr3 mb3 f4">
+      <div class="flex flex-wrap mb-4">
+        <div class="w-100 w-20-l pr-4 mb-4 f4">
           <div>
-            <p class="font-bold mb3">
+            <p class="font-bold mb-4">
               {{ dateFormatted }}
             </p>
-            <p class=" mb3 lh-copy">
-              <span class="mr1">{{ timeFormatted }}</span>
+            <p class=" mb-4 lh-copy">
+              <span class="mr-1">{{ timeFormatted }}</span>
               <span
-                class="mr1"
+                class="mr-1"
                 v-tooltip="{ content: timezone, trigger: 'hover click focus' }"
                 >🌐</span
               >
@@ -55,14 +55,14 @@
               v-if="session.cta"
               :href="session.cta.href"
               target="_blank"
-              class="font-bold f4 link br3 pa2 tc dib mr3 white bg-color-accent"
+              class="font-bold f4 link br3 p-2 text-center dib mr-4 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
               v-if="session.icsFileSrc && !hasHappened"
               :href="session.icsFileSrc"
               target="_blank"
-              class="dib mt3 color-accent ws-pre-wrap"
+              class="dib mt-4 color-accent ws-pre-wrap"
               >↓ .ics file</a
             >
           </div>
@@ -70,7 +70,7 @@
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
           <div
             v-if="session.sharerNames"
-            class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
+            class="mb-2 flex-shrink-0 pr-4 sm:pr-8 lg:pr-16"
           >
             <p>
               Shared by
@@ -82,7 +82,7 @@
           </div>
           <div
             v-if="session.learnerNames"
-            class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
+            class="mb-2 flex-shrink-0 pr-4 sm:pr-8 lg:pr-16"
           >
             <p>
               <span>{{ hasHappened ? "Learned by" : "Like to learn" }}</span>
@@ -92,10 +92,10 @@
               />
             </p>
           </div>
-          <div v-if="session.resources" class="mb2 pr3">
+          <div v-if="session.resources" class="mb-2 pr-4">
             <p>
               Resources
-              <ul class="list pa0 mt1">
+              <ul class="list p-0 mt-1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
                   <a class="underline hover:no-underline color-accent" :href="resource.href" target="_blank">{{
@@ -108,7 +108,7 @@
         </div>
       </div>
       <div class="flex justify-end">
-        <div class="w-100 w-80-l mt0 mb4 mb5-ns">
+        <div class="w-100 w-80-l mt-0 mb-8 lg:mb-16">
           <nuxt-content class="measure f4" :document="session" />
         </div>
       </div>

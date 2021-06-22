@@ -34,8 +34,8 @@
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 mw6 ma3 br3 tl hover-opaque">
-        <label class="db mb1">Spacing</label>
+      <div class="absolute bottom-0 left-0 mw6 m-4 br3 tl hover-opaque">
+        <label class="db mb-1">Spacing</label>
         <input class="db" type="range" min="2000" max="5000" v-model:value="force" />
       </div>
     </div>

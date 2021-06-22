@@ -4,8 +4,8 @@
       title="Storytellers United - Here to learn"
       description=""
     />
-    <div class="tc pa2 pa3-m pa4-l">
-      <section class="mb5">
+    <div class="text-center">
+      <section class="mb-16">
         <div class="mv4">
           <a href="https://storytellers.link/" target="_blank">
             <img
@@ -19,7 +19,7 @@
         <nuxt-link
           append
           to="join"
-          class="dib mb4 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
+          class="dib mb-8 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-su-dark-orange"
         >
           Let us know!
         </nuxt-link>
@@ -32,14 +32,14 @@
           >
         </div>
       </section>
-      <section class="mb5">
+      <section class="mb-16">
         <div class="center">
           <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
             Hi 👋 <br />
             Welcome to Storytellers United on Gradual!
           </h2>
           <div class="measure center">
-            <p class="mb3 f4 lh-copy">
+            <p class="mb-4 f4 lh-copy">
               This is a space to express things you’d like to learn and share
               with others in the community. Keep an eye on the
               <a
@@ -57,14 +57,14 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">Upcoming Sessions</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
       <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">Things we've learned so far</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Things we've learned so far</h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>

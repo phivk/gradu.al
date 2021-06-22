@@ -6,7 +6,9 @@
         backLinkText="Demo"
         backLinkSlug="demo"
       />
-      <nuxt />
+      <div class="p-2 sm:p-4 lg:p-8">
+        <nuxt />
+      </div>
     </div>
   </div>
 </template>
