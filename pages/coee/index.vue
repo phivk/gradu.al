@@ -6,6 +6,7 @@
     />
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
+       <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
         <div class="mv4">
           <a href="https://www.mozillafestival.org/" target="_blank">
             <img
@@ -15,7 +16,7 @@
             />
           </a>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold">What would you like to learn or share?</h1>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">What would you like to learn or share?</h2>
         <nuxt-link
           append
           to="join"
