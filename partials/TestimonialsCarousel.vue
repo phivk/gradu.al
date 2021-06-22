@@ -92,7 +92,7 @@ export default {
           link: 'https://mariabridge.medium.com/'
         },   
         {
-          imgSrc: 'https://media-exp1.licdn.com/dms/image/C5603AQEYMkCJmUi-og/profile-displayphoto-shrink_400_400/0/1582063798281?e=1623888000&v=beta&t=oBbmCYNDe5Bs9yiV4HNiKqQ8aGbs7-f9I061VTEOjkE',
+          imgSrc: 'https://pbs.twimg.com/profile_images/1376345918601977861/Z0hen1QF_400x400.jpg',
           quote:
             "“ It was mind blowing to learn how much knowledge our community had internally. Gradual made these skills visible and easier to share. “",
           name: 'Pim Schachtschabel',
