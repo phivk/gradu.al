@@ -1,12 +1,9 @@
 <template>
   <div>
-    <social-head
-     title="CoEE - Here to learn"
-     description=""
-    />
+    <social-head title="CoEE - Here to learn" description="" />
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
-       <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
         <div class="mv4">
           <a href="https://extraordinary.college/" target="_blank">
             <img
@@ -16,11 +13,25 @@
             />
           </a>
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-3">What would you like to learn or share?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">
+          What would you like to learn or share?
+        </h2>
         <nuxt-link
           append
           to="join"
-          class="dib mb4 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
+          class="
+            dib
+            mb4
+            text-3xl
+            br3
+            ph3
+            pv2
+            no-underline
+            grow
+            shadow-hover
+            white
+            bg-color-accent
+          "
         >
           Let us know!
         </nuxt-link>
@@ -66,8 +77,8 @@
               </li>
               <li class="pa3 w-100 w-third-ns mw5-5">
                 <ProcessCard number="3" title="Meet">
-                  Host or join a session to learn with other CoEE
-                  participants based on your interests!
+                  Host or join a session to learn with other CoEE participants
+                  based on your interests!
                 </ProcessCard>
               </li>
             </ol>
@@ -114,9 +125,7 @@
       >
         <h2 class="text-2xl md:text-3xl font-bold mb3">Upcoming Sessions</h2>
         <InfoBar class="mb3">
-          <template v-slot:left>
-            📅
-          </template>
+          <template v-slot:left> 📅 </template>
           <template v-slot:middle>
             Subscribe to the
             <a
@@ -142,7 +151,9 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">Things we've learned so far</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb3">
+          Things we've learned so far
+        </h2>
         <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
@@ -160,10 +171,16 @@
           :skills="popular.skills"
           class="db dn-ns"
         >
-          <h2 class="text-2xl md:text-3xl font-bold mb3">Popular skills from the community</h2>
+          <h2 class="text-2xl md:text-3xl font-bold mb3">
+            Popular skills from the community
+          </h2>
           <p class="f4 lh-copy">
             Something here for you?
-            <nuxt-link append to="join" class="color-accent underline hover:no-underline">
+            <nuxt-link
+              append
+              to="join"
+              class="color-accent underline hover:no-underline"
+            >
               Let us know!
             </nuxt-link>
           </p>
@@ -187,6 +204,7 @@ import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
   layout: "coee",
+  middleware: ["password-protect"],
   head() {
     return {
       title: "CoEE - Here to learn",
@@ -201,7 +219,7 @@ export default {
     ProcessCard,
     TagPill,
     InfoBar,
-    SocialHead
+    SocialHead,
   },
   data() {
     return {
@@ -240,13 +258,13 @@ export default {
   // },
   computed: {
     sessionsUpcoming() {
-      return this.sessions.filter(s => {
+      return this.sessions.filter((s) => {
         let sessionDate = new Date(s.dateTime);
         return hasNotHappened(sessionDate);
       });
     },
     sessionsPast() {
-      return this.sessions.filter(s => {
+      return this.sessions.filter((s) => {
         let sessionDate = new Date(s.dateTime);
         return hasHappened(sessionDate);
       });
