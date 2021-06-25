@@ -184,7 +184,7 @@
             <MostPopularSkillsSection
               v-if="popular"
               :skills="popular.skills"
-              class="text-left"
+              class="text-left text-black"
             >
               <p class="mb-4">Top skills of the moment</p>
             </MostPopularSkillsSection>
@@ -205,6 +205,7 @@ import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
+import NavigationTabs from "~/components/NavigationTabs.vue";
 import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
@@ -224,6 +225,7 @@ export default {
     TagPill,
     InfoBar,
     SocialHead,
+    NavigationTabs,
   },
   data() {
     return {
@@ -240,9 +242,6 @@ export default {
         "AMA",
       ],
       sessions: [],
-      nodes: [],
-      edges: [],
-      popular: [],
     };
   },
   async asyncData({ $content }) {
