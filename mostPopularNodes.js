@@ -58,4 +58,4 @@ function getSkillName(nodes, skill) {
   return skillNode[0].name;
 }
 
-run("coee");
+module.exports = { run };

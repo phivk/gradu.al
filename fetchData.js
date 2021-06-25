@@ -35,37 +35,35 @@ async function authAndGetSheets() {
   return sheets;
 }
 
-async function run() {
+async function run({ community }) {
   try {
     const sheets = await authAndGetSheets();
-    await communities.forEach(async community => {
-      // Set up the variables
-      const NODES_PATH = `./content/${community.name}/data/nodes.json`;
-      const EDGES_PATH = `./content/${community.name}/data/edges.json`;
-      const SPREADSHEET_ID = community.spreadsheetId;
+    // Set up the variables
+    const NODES_PATH = `./content/${community.name}/data/nodes.json`;
+    const EDGES_PATH = `./content/${community.name}/data/edges.json`;
+    const SPREADSHEET_ID = community.spreadsheetId;
 
-      // Ensure the target directory exists.
-      if (!fs.existsSync(`./content/${community.name}/data/`)) {
-        fs.mkdirSync(`./content/${community.name}/data/`);
-      }
-      console.log(`Gathering data for ${community.name}.`);
+    // Ensure the target directory exists.
+    if (!fs.existsSync(`./content/${community.name}/data/`)) {
+      fs.mkdirSync(`./content/${community.name}/data/`);
+    }
+    console.log(`Gathering data for ${community.name}.`);
 
-      await processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH);
-    });
+    await processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH);
     console.log("All done.");
   } catch (error) {
     console.log(error);
   }
 }
 
-run();
+// run();
 
 /**
  * Get header row
  * @param {sheets} sheets
  */
 async function processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH) {
-  return await sheets.spreadsheets.values.get(
+  await sheets.spreadsheets.values.get(
     {
       spreadsheetId: SPREADSHEET_ID,
       range: "A1:ZZ"
@@ -80,14 +78,14 @@ async function processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH) {
         await processRow({ headers, row });
       });
 
-      fs.writeFile(
+      await fs.writeFile(
         EDGES_PATH,
         '{ "edges": ' + JSON.stringify(edges) + "}",
         err => {
           if (err) return console.error(err);
         }
       );
-      fs.writeFile(
+      await fs.writeFile(
         NODES_PATH,
         '{ "nodes": ' + JSON.stringify(nodes) + "}",
         err => {
@@ -96,6 +94,7 @@ async function processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH) {
       );
     }
   );
+  return;
 }
 
 function processRow({ headers, row }) {
@@ -144,7 +143,7 @@ function processRow({ headers, row }) {
       createSharingEdge(member, skillNode);
     }
   });
-  return;
+  return nodes;
 }
 
 function getOrCreateSkill(skill) {
@@ -188,3 +187,5 @@ function createSharingEdge(member, skill) {
 function getNodeId(item, nodes) {
   return nodes.filter(node => node.name === item)[0].id;
 }
+
+module.exports = { run };
