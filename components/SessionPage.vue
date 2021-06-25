@@ -52,7 +52,7 @@
               <span>{{ session.durationInMinutes }}&nbsp;min</span>
             </p>
             <a
-              v-if="session.cta"
+              v-if="session.cta && session.cta.text !==''"
               :href="session.cta.href"
               target="_blank"
               class="font-bold f4 link br3 p-2 text-center dib mr-4 white bg-color-accent"
