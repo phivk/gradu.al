@@ -15,6 +15,11 @@
         mx-auto
       "
     >
+      <div className="bg-gray-800">
+        <h2 class="font-bold text-xl">
+          This page is password protected. Please enter the community password.
+        </h2>
+      </div>
       <div v-if="isAuthorised">
         <h1>Looks like you're already logged in</h1>
 
