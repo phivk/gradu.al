@@ -221,24 +221,24 @@ export default {
       sessions: [],
     };
   },
-  // async asyncData({ $content }) {
-  //   const sessions = await $content("coee/sessions")
-  //     .sortBy("dateTime", "asc")
-  //     .fetch()
+  async asyncData({ $content }) {
+    const sessions = await $content("coee/sessions")
+      .sortBy("dateTime", "asc")
+      .fetch()
 
-  //   let nodes, edges, popular;
+    let nodes, edges, popular;
 
-  //   try {
-  //     nodes = await $content("coee/data", "nodes").fetch();
-  //     edges = await $content("coee/data", "edges").fetch();
-  //     popular = await $content("coee/data", "popular").fetch();
-  //   } catch (error) {
-  //     console.log(error);
-  //     console.log("nodes and edges failed to load");
-  //   }
+    try {
+      nodes = await $content("coee/data", "nodes").fetch();
+      edges = await $content("coee/data", "edges").fetch();
+      popular = await $content("coee/data", "popular").fetch();
+    } catch (error) {
+      console.log(error);
+      console.log("nodes and edges failed to load");
+    }
 
-  //   return { sessions, nodes, edges, popular };
-  // },
+    return { sessions, nodes, edges, popular };
+  },
   computed: {
     sessionsUpcoming() {
       return this.sessions.filter(s => {

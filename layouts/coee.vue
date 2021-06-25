@@ -6,7 +6,9 @@
         backLinkText="CoEE"
         backLinkSlug="coee"
       />
-      <nuxt />
+      <div class="p-2 sm:p-4 lg:p-8">
+        <nuxt />
+      </div>
     </div>
   </div>
 </template>
@@ -28,14 +30,14 @@ export default {
 <style>
 :root {
   --color-coee-red: #CC0914;
-  --color-coee-red-washed: #CC091466;
+  --color-coee-red-washed: #CC091455;
   --color-coee-green: #137752;
-  --color-coee-green-washed: #13775266;
+  --color-coee-green-washed: #13775255;
   --color-coee-black: #000;
   --color-coee-white: #fff;
 }
 
-.theme-coee .color-primary { color: var(--color-coee-black); }
+.theme-coee .color-primary { color: var(--color-coee-red); }
 .theme-coee .color-primary-washed { color: var(--color-coee-red-washed); }
 .theme-coee .color-accent { color: var(--color-coee-red); }
 .theme-coee .color-accent-washed { color: var(--color-coee-red-washed); }
