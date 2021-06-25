@@ -1,10 +1,9 @@
 const communities = require("./communities");
-const { run: fetchData } = require("./fetchData");
-const { run: mostPopular } = require("./mostPopularNodes");
+const { DataFetching } = require("./fetchData");
 
 {
   communities.map(async community => {
-    await fetchData({ community });
-    await setTimeout(() => mostPopular(community.name), 2000);
+    const communityDataFetching = new DataFetching({ community });
+    await communityDataFetching.run();
   });
 }
