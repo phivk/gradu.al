@@ -76,7 +76,7 @@
                 leading-tight
                 focus:outline-none
                 focus:bg-white
-                focus:border-purple-500
+                focus:border-green-500
                 mb-4
               "
             />
