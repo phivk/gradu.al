@@ -200,6 +200,7 @@
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
+import GraphManualKey from "~/components/GraphManualKey.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
@@ -211,6 +212,7 @@ import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
   layout: "coee",
+  middleware: ["password-protect"],
   head() {
     return {
       title: "CoEE - Here to learn",
@@ -220,6 +222,7 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
+    GraphManualKey,
     MostPopularSkillsSection,
     CircleCharacter,
     ProcessCard,
