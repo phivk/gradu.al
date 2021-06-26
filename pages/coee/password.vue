@@ -1,34 +1,63 @@
 <template>
-  <div class="w-full h-screen bg-black">
+  <div class="w-full h-screen bg-black p-8">
     <div
       class="
         bg-white
-        shadow-md
         rounded-lg
-        px-8
-        pt-6
-        pb-8
-        mb-4
+        p-8
         flex
         justify-center
-        w-1/2
+        flex-wrap
+        sm:flex-nowrap
+        w-full
+        md:w-4/6
+        lg:w-3/6
+        max-w-2xl
         mx-auto
+        relative
+        top-1/2
+        transform -translate-y-1/2
       "
     >
-      <div className="bg-gray-800">
+      <div v-if="isAuthorised" class="mb-4 sm:mb-0 sm:pr-4 w-full">
         <h2 class="font-bold text-xl">
-          This page is password protected. Please enter the community password.
+          Looks like you're already logged in.
         </h2>
       </div>
-      <div v-if="isAuthorised">
-        <h1>Looks like you're already logged in</h1>
-
-        <p>Either logout or go to the password protected area</p>
-
-        <p @click="removeAuthorisation()" class="cursor-pointer">Log out</p>
-        <a class="button--pink" href="/">Go to password protected area</a>
+      <div v-else class="mb-4 sm:mb-0 sm:pr-4 w-full">
+        <h2 class="font-bold text-xl">
+          Knock knock. <br />
+          Please enter the community password.
+        </h2>
       </div>
-      <div v-else>
+      <div
+        class="w-full flex items-center sm:flex-col sm:items-start"
+        v-if="isAuthorised"
+      >
+        <a
+          href="."
+          class="
+            bg-black
+            focus:outline-none
+            text-white
+            font-bold
+            py-2
+            px-4
+            rounded
+            cursor-pointer
+            mr-4
+            sm:mb-4
+          "
+        >
+          To protected area
+        </a>
+        <a
+          class="underline hover:no-underline cursor-pointer sm:block"
+          @click="removeAuthorisation()"
+          >Log out</a
+        >
+      </div>
+      <div class="w-full" v-else>
         <div class="section">
           <form :action="redirectPath" method="GET">
             <input
@@ -48,20 +77,18 @@
                 focus:outline-none
                 focus:bg-white
                 focus:border-purple-500
+                mb-4
               "
             />
             <button
               class="
-                shadow
                 bg-black
-                focus:shadow-outline
                 focus:outline-none
                 text-white
                 font-bold
                 py-2
                 px-4
                 rounded
-                mt-4
               "
               type="submit"
             >
@@ -76,7 +103,7 @@
 
 <script>
 export default {
-  data: function () {
+  data: function() {
     return {
       methodLoginValue: "",
       isAuthorised: false,
@@ -98,11 +125,9 @@ export default {
       this.$router.push(this.redirectPath);
     },
     removeAuthorisation() {
-      console.log("removing auth");
       this.$passwordProtect.removeAuthorisation();
       this.isAuthorised = false;
     },
   },
 };
 </script>
-
