@@ -17,7 +17,7 @@ export default {
   components: { TagPill, ProfilePicList, SessionPage },
   data() {
     return {
-      bgColor: "#f4f4f4",
+      bgColor: "#000",
     };
   },
   async asyncData({ $content, params }) {

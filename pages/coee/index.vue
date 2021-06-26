@@ -4,6 +4,7 @@
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb5">
         <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
+        <h2 class="text-xl md:text-2xl">June 28th - September 28th</h2>
         <div class="mv4">
           <a href="https://extraordinary.college/" target="_blank">
             <img
@@ -158,33 +159,38 @@
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
-      <div id="#section-graph">
-        <GraphSection
-          v-if="nodes && edges"
-          memberTitlePlural="participants"
-          class="dn db-ns"
+      <div id="#section-intentions" v-if="nodes && edges && popular">
+        <h2 class="text-3xl md:text-4xl font-bold mb3">
+          Community learning intentions
+        </h2>
+        <p class="f4 lh-copy mb-8">
+          Something here for you?
+          <nuxt-link
+            append
+            to="join"
+            class="color-accent underline hover:no-underline"
+          >
+            Let us know!
+          </nuxt-link>
+        </p>
+        <NavigationTabs
+          :names="['Graph', 'List']"
+          :icons="['project-diagram', 'list']"
         >
-          <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
-        </GraphSection>
-        <MostPopularSkillsSection
-          v-if="popular"
-          :skills="popular.skills"
-          class="db dn-ns"
-        >
-          <h2 class="text-2xl md:text-3xl font-bold mb3">
-            Popular skills from the community
-          </h2>
-          <p class="f4 lh-copy">
-            Something here for you?
-            <nuxt-link
-              append
-              to="join"
-              class="color-accent underline hover:no-underline"
+          <template v-slot:tab-0>
+            <GraphManualKey class="text-left" />
+            <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
+          </template>
+          <template v-slot:tab-1>
+            <MostPopularSkillsSection
+              v-if="popular"
+              :skills="popular.skills"
+              class="text-left text-black"
             >
-              Let us know!
-            </nuxt-link>
-          </p>
-        </MostPopularSkillsSection>
+              <p class="mb-4">Top skills of the moment</p>
+            </MostPopularSkillsSection>
+          </template>
+        </NavigationTabs>
       </div>
     </div>
   </div>
@@ -194,12 +200,14 @@
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import GraphManual from "~/components/GraphManual.vue";
+import GraphManualKey from "~/components/GraphManualKey.vue";
 import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
 import CircleCharacter from "~/components/CircleCharacter.vue";
 import ProcessCard from "~/components/ProcessCard.vue";
 import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
+import NavigationTabs from "~/components/NavigationTabs.vue";
 import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
@@ -214,12 +222,14 @@ export default {
     SessionsSection,
     GraphSection,
     GraphManual,
+    GraphManualKey,
     MostPopularSkillsSection,
     CircleCharacter,
     ProcessCard,
     TagPill,
     InfoBar,
     SocialHead,
+    NavigationTabs,
   },
   data() {
     return {
@@ -238,24 +248,24 @@ export default {
       sessions: [],
     };
   },
-  // async asyncData({ $content }) {
-  //   const sessions = await $content("coee/sessions")
-  //     .sortBy("dateTime", "asc")
-  //     .fetch()
+  async asyncData({ $content }) {
+    const sessions = await $content("coee/sessions")
+      .sortBy("dateTime", "asc")
+      .fetch();
 
-  //   let nodes, edges, popular;
+    let nodes, edges, popular;
 
-  //   try {
-  //     nodes = await $content("coee/data", "nodes").fetch();
-  //     edges = await $content("coee/data", "edges").fetch();
-  //     popular = await $content("coee/data", "popular").fetch();
-  //   } catch (error) {
-  //     console.log(error);
-  //     console.log("nodes and edges failed to load");
-  //   }
+    try {
+      nodes = await $content("coee/data", "nodes").fetch();
+      edges = await $content("coee/data", "edges").fetch();
+      popular = await $content("coee/data", "popular").fetch();
+    } catch (error) {
+      console.log(error);
+      console.log("nodes and edges failed to load");
+    }
 
-  //   return { sessions, nodes, edges, popular };
-  // },
+    return { sessions, nodes, edges, popular };
+  },
   computed: {
     sessionsUpcoming() {
       return this.sessions.filter((s) => {
