@@ -2,7 +2,7 @@
   <div>
     <social-head title="CoEE - Here to learn" description="" />
     <div class="tc pa2 pa3-m pa4-l">
-      <section class="mb5">
+      <section class="mb-8">
         <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
         <h2 class="text-xl md:text-2xl">June 29 - September 22</h2>
         <div class="my-4">
@@ -45,14 +45,14 @@
           >
         </div>
       </section>
-      <section class="mb5">
+      <section class="mb-8">
         <div class="center">
-          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
+          <h2 class="text-2xl md:text-3xl font-bold measure center my-4">
             Hi 👋 <br />
             Welcome to the College of Extraordinary Experiences on Gradual!
           </h2>
           <div class="center">
-            <p class="center measure mb3 f4 lh-copy">
+            <p class="center measure mb-4 text-lg lh-copy">
               This is a space to express things you’d like to learn and share
               with others in the community.
               <a
@@ -63,7 +63,7 @@
               >
               on FB!
             </p>
-            <ol class="list pl0 mb3 flex flex-wrap justify-center">
+            <ol class="list pl0 mb-4 flex flex-wrap justify-center">
               <li class="pa3 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
                   Let us know what you'd like to learn or share. Anything is
@@ -130,10 +130,10 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">
           Things we've learned so far
         </h2>
-        <p class="f4 lh-copy">
+        <p class="text-lg lh-copy">
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
@@ -142,7 +142,7 @@
       <section id="ambassadors" class="mb-8"> 
         <!-- Section header -->
         <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-          <h2 class="h2 mb-8">Here are this season's ambassadors!</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Here are this season's ambassadors!</h2>
           <p class="text-lg">
             For questions, reach out to Andrada, Kristin, Carina on <a class="underline hover:no-underline" href="https://www.facebook.com/groups/223720981529219">Facebook</a> or  Gunnar at <a class="underline hover:no-underline" href="mailto:gunnar@gradu.al">gunnar@gradu.al</a>.
           </p>
@@ -159,10 +159,10 @@
         </div>
       </section>
       <div id="#section-intentions" v-if="nodes && edges && popular">
-        <h2 class="text-3xl md:text-4xl font-bold mb3">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
           Community learning intentions
         </h2>
-        <p class="f4 lh-copy mb-8">
+        <p class="text-lg lh-copy mb-8">
           Something here for you?
           <nuxt-link
             append
