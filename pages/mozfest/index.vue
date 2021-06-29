@@ -6,7 +6,7 @@
     />
     <div class="text-center">
       <section class="mb-16">
-        <div class="mv4">
+        <div class="my-4">
           <a href="https://www.mozillafestival.org/" target="_blank">
             <img
               class="dib w4 w5-ns"
@@ -33,13 +33,13 @@
         </div>
       </section>
       <section class="mb-16">
-        <div class="center">
-          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
+        <div class="mx-auto">
+          <h3 class="h3 mx-auto mb-4">
             Hi 👋 <br />
             Welcome to MozFest on Gradual!
-          </h2>
-          <div class="center">
-            <p class="center measure mb-4 f4 lh-copy">
+          </h3>
+          <div class="mx-auto">
+            <p class="center measure mb-4 text-lg">
               This is a space to express things you’d like to learn and share
               with others in the community. Join the conversation on the
               <a
@@ -70,7 +70,7 @@
                 </ProcessCard>
               </li>
             </ol>
-            <p class="measure center mb-8 lh-copy">
+            <p class="measure mx-auto mb-8">
               <strong>Sessions take any format</strong> that best fits the
               facilitator and the skill they are sharing, for example
               <TagPill
@@ -111,7 +111,7 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
+        <h2 class="h2 mb-4">Upcoming Sessions</h2>
         <InfoBar class="mb-4">
           <template v-slot:left>
             📅
@@ -141,8 +141,8 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Things we've learned so far</h2>
-        <p class="f4 lh-copy">
+        <h2 class="h2 mb-4">Things we've learned so far</h2>
+        <p class="text-lg">
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
@@ -150,8 +150,8 @@
         id="#section-intentions"
         v-if="nodes && edges && popular"
       >
-        <h2 class="text-3xl md:text-4xl font-bold mb3">Community learning intentions</h2>
-        <p class="f4 lh-copy mb-8">
+        <h2 class="h2 mb-4">Community learning intentions</h2>
+        <p class="text-lg mb-8">
           Something here for you?
           <nuxt-link append to="join" class="color-accent underline hover:no-underline">
             Let us know!
