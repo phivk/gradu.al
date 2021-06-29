@@ -4,7 +4,7 @@
     <div class="tc pa2 pa3-m pa4-l">
       <section class="mb-16">
         <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
-        <h2 class="text-xl md:text-2xl">June 27 - September 22</h2>
+        <h2 class="text-xl md:text-2xl">June 29 - September 22</h2>
         <div class="my-4">
           <a href="https://extraordinary.college/" target="_blank">
             <img
