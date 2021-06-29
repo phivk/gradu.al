@@ -94,28 +94,6 @@
                 {{ sessionType }}
               </TagPill>
             </p>
-            <!-- <InfoBar>
-              <template v-slot:left>
-                🤔
-              </template>
-              <template v-slot:middle>
-                Need more help?
-                <a
-                  class="color-accent underline hover:no-underline"
-                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
-                  target="_blank"
-                  >Watch a walk-through video</a
-                >.
-              </template>
-              <template v-slot:right>
-                <a
-                  class="color-accent no-underline"
-                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
-                  target="_blank"
-                  >↗︎</a
-                >
-              </template>
-            </InfoBar> -->
           </div>
         </div>
       </section>
@@ -159,6 +137,33 @@
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
+
+      <!-- ambassador section -->
+      <section id="ambassadors" class="mb-8"> 
+        <!-- Section header -->
+        <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+          <h2 class="h2 mb-8">Here are this season's ambassadors!</h2>
+          <p class="text-lg">
+            For questions, reach out to Andrada, Kristin, Carina on <a class="underline hover:no-underline" href="https://www.facebook.com/groups/223720981529219">Facebook</a> or  Gunnar at <a class="underline hover:no-underline" href="mailto:gunnar@gradu.al">gunnar@gradu.al</a>.
+          </p>
+        </div>
+
+        <div class="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8">
+          <div v-for="ambassador in ambassadors" class="sm:w-1/2 md:w-1/3 py-6 sm:py-8 sm:px-3">
+            <div class="flex flex-col items-center">
+              <img class="shadow rounded-full w-36 h-36 object-cover border-none mb-4" :src="ambassador.profilePic" alt="Team member 01" />
+              <h4 class="text-xl font-bold mb-1">{{ambassador.name}}</h4>
+              <!-- <div class="text-green-600 font-medium mb-2">{{ambassador.title}}</div> -->
+              <p class="text-gray-400 text-center mb-3">
+                {{ambassador.bio}}
+              </p>
+              <div class="text-sm text-gray-600 font-medium">
+                <a class="text-gray-900 hover:underline" href="#0">Twitter</a> · <a class="text-gray-900 hover:underline" href="#0">GitHub</a> · <a class="text-gray-900 hover:underline" href="#0">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div id="#section-intentions" v-if="nodes && edges && popular">
         <h2 class="text-3xl md:text-4xl font-bold mb3">
           Community learning intentions
@@ -246,11 +251,16 @@ export default {
         "AMA",
       ],
       sessions: [],
+      ambassadors: [],
     };
   },
   async asyncData({ $content }) {
     const sessions = await $content("coee/sessions")
       .sortBy("dateTime", "asc")
+      .fetch();
+
+    const ambassadors = await $content("coee/ambassadors")
+      .sortBy("sortOrder", "asc")
       .fetch();
 
     let nodes, edges, popular;
@@ -264,7 +274,7 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, nodes, edges, popular };
+    return { sessions, ambassadors, nodes, edges, popular };
   },
   computed: {
     sessionsUpcoming() {
