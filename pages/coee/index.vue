@@ -103,7 +103,7 @@
         :sessions="sessionsUpcoming"
       >
         <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
-        <InfoBar class="mb-4">
+        <!-- <InfoBar class="mb-4">
           <template v-slot:left> 📅 </template>
           <template v-slot:middle>
             Subscribe to the
@@ -123,7 +123,7 @@
               >↗︎</a
             >
           </template>
-        </InfoBar>
+        </InfoBar> -->
       </SessionsSection>
       <SessionsSection
         id="section-past"
@@ -274,7 +274,7 @@ export default {
     sessionsUpcoming() {
       return this.sessions.filter((s) => {
         let sessionDate = new Date(s.dateTime);
-        return hasNotHappened(sessionDate);
+        return hasNotHappened(sessionDate) | s.dateTime == "TBC";
       });
     },
     sessionsPast() {
