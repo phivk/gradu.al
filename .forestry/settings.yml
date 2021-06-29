@@ -9,7 +9,7 @@ sections:
   label: CoEE Ambassadors
   create: documents
   match: "*.md"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 - type: directory
   path: content/coee/sessions
   label: CoEE Sessions
