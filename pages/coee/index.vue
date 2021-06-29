@@ -150,17 +150,11 @@
 
         <div class="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8">
           <div v-for="ambassador in ambassadors" class="sm:w-1/2 md:w-1/3 py-6 sm:py-8 sm:px-3">
-            <div class="flex flex-col items-center">
-              <img class="shadow rounded-full w-36 h-36 object-cover border-none mb-4" :src="ambassador.profilePic" alt="Team member 01" />
-              <h4 class="text-xl font-bold mb-1">{{ambassador.name}}</h4>
-              <!-- <div class="text-green-600 font-medium mb-2">{{ambassador.title}}</div> -->
-              <p class="text-gray-400 text-center mb-3">
-                {{ambassador.bio}}
-              </p>
-              <div class="text-sm text-gray-600 font-medium">
-                <a class="text-gray-900 hover:underline" href="#0">Twitter</a> · <a class="text-gray-900 hover:underline" href="#0">GitHub</a> · <a class="text-gray-900 hover:underline" href="#0">LinkedIn</a>
-              </div>
-            </div>
+            <ProfileBio
+              :profilePic="ambassador.profilePic"
+              :name="ambassador.name"
+              :bio="ambassador.bio"
+            />
           </div>
         </div>
       </section>
@@ -213,6 +207,7 @@ import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
 import NavigationTabs from "~/components/NavigationTabs.vue";
+import ProfileBio from "~/components/ProfileBio.vue";
 import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
@@ -235,6 +230,7 @@ export default {
     InfoBar,
     SocialHead,
     NavigationTabs,
+    ProfileBio,
   },
   data() {
     return {
