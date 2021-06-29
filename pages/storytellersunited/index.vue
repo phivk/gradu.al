@@ -6,7 +6,7 @@
     />
     <div class="text-center">
       <section class="mb-16">
-        <div class="mv4">
+        <div class="my-4">
           <a href="https://storytellers.link/" target="_blank">
             <img
               class="dib w3 w4-ns"
@@ -33,13 +33,13 @@
         </div>
       </section>
       <section class="mb-16">
-        <div class="center">
-          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
+        <div class="mx-auto">
+          <h3 class="h3 mx-auto mb-4">
             Hi 👋 <br />
             Welcome to Storytellers United on Gradual!
-          </h2>
-          <div class="measure center">
-            <p class="mb-4 f4 lh-copy">
+          </h3>
+          <div class="measure mx-auto">
+            <p class="mb-4 text-lg">
               This is a space to express things you’d like to learn and share
               with others in the community. Keep an eye on the
               <a
@@ -57,15 +57,15 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
+        <h2 class="h2 mb-4">Upcoming Sessions</h2>
         <CalendarReferral />
       </SessionsSection>
       <SessionsSection
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Things we've learned so far</h2>
-        <p class="f4 lh-copy">
+        <h2 class="h2 mb-4">Things we've learned so far</h2>
+        <p class="text-lg">
           Select a session below for a recording and more details.
         </p>
         <CalendarReferral v-if="!sessionsUpcoming.length" />

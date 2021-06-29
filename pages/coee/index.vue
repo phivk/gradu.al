@@ -2,10 +2,10 @@
   <div>
     <social-head title="CoEE - Here to learn" description="" />
     <div class="tc pa2 pa3-m pa4-l">
-      <section class="mb5">
+      <section class="mb-16">
         <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
         <h2 class="text-xl md:text-2xl">June 27 - September 22</h2>
-        <div class="mv4">
+        <div class="my-4">
           <a href="https://extraordinary.college/" target="_blank">
             <img
               class="dib w4 w5-ns"
@@ -14,7 +14,7 @@
             />
           </a>
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-3">
+        <h2 class="h2 mb-8">
           What would you like to learn or share?
         </h2>
         <nuxt-link
@@ -45,14 +45,14 @@
           >
         </div>
       </section>
-      <section class="mb5">
-        <div class="center">
-          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
+      <section class="mb-16">
+        <div class="mx-auto">
+          <h3 class="h3 mx-auto mb-4">
             Hi 👋 <br />
             Welcome to the College of Extraordinary Experiences on Gradual!
-          </h2>
-          <div class="center">
-            <p class="center measure mb3 f4 lh-copy">
+          </h3>
+          <div class="mx-auto">
+            <p class="center measure mb-4 text-lg">
               This is a space to express things you’d like to learn and share
               with others in the community.
               <a
@@ -63,7 +63,7 @@
               >
               on FB!
             </p>
-            <ol class="list pl0 mb3 flex flex-wrap justify-center">
+            <ol class="list pl0 mb-4 flex flex-wrap justify-center">
               <li class="pa3 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
                   Let us know what you'd like to learn or share. Anything is
@@ -83,7 +83,7 @@
                 </ProcessCard>
               </li>
             </ol>
-            <p class="measure center mb4 lh-copy">
+            <p class="measure mx-auto text-lg">
               <strong>Sessions take any format</strong> that best fits the
               facilitator and the skill they are sharing, for example
               <TagPill
@@ -94,28 +94,6 @@
                 {{ sessionType }}
               </TagPill>
             </p>
-            <!-- <InfoBar>
-              <template v-slot:left>
-                🤔
-              </template>
-              <template v-slot:middle>
-                Need more help?
-                <a
-                  class="color-accent underline hover:no-underline"
-                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
-                  target="_blank"
-                  >Watch a walk-through video</a
-                >.
-              </template>
-              <template v-slot:right>
-                <a
-                  class="color-accent no-underline"
-                  href="https://www.loom.com/share/406bfe57b075452a8efadbff954191ad"
-                  target="_blank"
-                  >↗︎</a
-                >
-              </template>
-            </InfoBar> -->
           </div>
         </div>
       </section>
@@ -124,8 +102,8 @@
         v-if="sessionsUpcoming.length"
         :sessions="sessionsUpcoming"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">Upcoming Sessions</h2>
-        <InfoBar class="mb3">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
+        <InfoBar class="mb-4">
           <template v-slot:left> 📅 </template>
           <template v-slot:middle>
             Subscribe to the
@@ -152,18 +130,37 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="text-2xl md:text-3xl font-bold mb3">
-          Things we've learned so far
-        </h2>
-        <p class="f4 lh-copy">
+        <h2 class="h2 mb-4">Things we've learned so far</h2>
+        <p class="text-lg">
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
-      <div id="#section-intentions" v-if="nodes && edges && popular">
-        <h2 class="text-3xl md:text-4xl font-bold mb3">
+
+      <!-- ambassador section -->
+      <section id="section-ambassadors" class="mb-8"> 
+        <!-- Section header -->
+        <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+          <h2 class="h2 mb-4">Here are this season's ambassadors!</h2>
+          <p class="text-lg">
+            For questions, reach out to Andrada, Kristin, Carina on <a class="underline hover:no-underline" href="https://www.facebook.com/groups/223720981529219">Facebook</a> or  Gunnar at <a class="underline hover:no-underline" href="mailto:gunnar@gradu.al">gunnar@gradu.al</a>.
+          </p>
+        </div>
+
+        <div class="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8">
+          <div v-for="ambassador in ambassadors" class="sm:w-1/2 md:w-1/3 py-6 sm:py-8 sm:px-3">
+            <ProfileBio
+              :profilePic="ambassador.profilePic"
+              :name="ambassador.name"
+              :bio="ambassador.bio"
+            />
+          </div>
+        </div>
+      </section>
+      <div id="section-intentions" v-if="nodes && edges && popular">
+        <h2 class="h2 mb-4">
           Community learning intentions
         </h2>
-        <p class="f4 lh-copy mb-8">
+        <p class="text-lg mb-8">
           Something here for you?
           <nuxt-link
             append
@@ -208,6 +205,7 @@ import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
 import NavigationTabs from "~/components/NavigationTabs.vue";
+import ProfileBio from "~/components/ProfileBio.vue";
 import { hasHappened, hasNotHappened } from "~/util/date";
 
 export default {
@@ -230,6 +228,7 @@ export default {
     InfoBar,
     SocialHead,
     NavigationTabs,
+    ProfileBio,
   },
   data() {
     return {
@@ -246,11 +245,16 @@ export default {
         "AMA",
       ],
       sessions: [],
+      ambassadors: [],
     };
   },
   async asyncData({ $content }) {
     const sessions = await $content("coee/sessions")
       .sortBy("dateTime", "asc")
+      .fetch();
+
+    const ambassadors = await $content("coee/ambassadors")
+      .sortBy("sortOrder", "asc")
       .fetch();
 
     let nodes, edges, popular;
@@ -264,7 +268,7 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, nodes, edges, popular };
+    return { sessions, ambassadors, nodes, edges, popular };
   },
   computed: {
     sessionsUpcoming() {
