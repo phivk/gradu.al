@@ -2,7 +2,7 @@
   <div>
     <social-head title="CoEE - Here to learn" description="" />
     <div class="tc pa2 pa3-m pa4-l">
-      <section class="mb-16">
+      <section class="mb5">
         <h1 class="text-4xl md:text-5xl font-bold">Summer of Skill Sharing</h1>
         <h2 class="text-xl md:text-2xl">June 29 - September 22</h2>
         <div class="my-4">
@@ -14,7 +14,7 @@
             />
           </a>
         </div>
-        <h2 class="h2 mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">
           What would you like to learn or share?
         </h2>
         <nuxt-link
@@ -45,14 +45,14 @@
           >
         </div>
       </section>
-      <section class="mb-16">
-        <div class="mx-auto">
-          <h3 class="h3 mx-auto mb-4">
+      <section class="mb5">
+        <div class="center">
+          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
             Hi 👋 <br />
             Welcome to the College of Extraordinary Experiences on Gradual!
-          </h3>
-          <div class="mx-auto">
-            <p class="center measure mb-4 text-lg">
+          </h2>
+          <div class="center">
+            <p class="center measure mb3 f4 lh-copy">
               This is a space to express things you’d like to learn and share
               with others in the community.
               <a
@@ -63,7 +63,7 @@
               >
               on FB!
             </p>
-            <ol class="list pl0 mb-4 flex flex-wrap justify-center">
+            <ol class="list pl0 mb3 flex flex-wrap justify-center">
               <li class="pa3 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
                   Let us know what you'd like to learn or share. Anything is
@@ -83,7 +83,7 @@
                 </ProcessCard>
               </li>
             </ol>
-            <p class="measure mx-auto text-lg">
+            <p class="measure center mb4 lh-copy">
               <strong>Sessions take any format</strong> that best fits the
               facilitator and the skill they are sharing, for example
               <TagPill
@@ -130,17 +130,19 @@
         v-if="sessionsPast.length"
         :sessions="sessionsPast"
       >
-        <h2 class="h2 mb-4">Things we've learned so far</h2>
-        <p class="text-lg">
+        <h2 class="text-2xl md:text-3xl font-bold mb3">
+          Things we've learned so far
+        </h2>
+        <p class="f4 lh-copy">
           Select a session below for a recording and more details.
         </p>
       </SessionsSection>
 
       <!-- ambassador section -->
-      <section id="section-ambassadors" class="mb-8"> 
+      <section id="ambassadors" class="mb-8"> 
         <!-- Section header -->
         <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-          <h2 class="h2 mb-4">Here are this season's ambassadors!</h2>
+          <h2 class="h2 mb-8">Here are this season's ambassadors!</h2>
           <p class="text-lg">
             For questions, reach out to Andrada, Kristin, Carina on <a class="underline hover:no-underline" href="https://www.facebook.com/groups/223720981529219">Facebook</a> or  Gunnar at <a class="underline hover:no-underline" href="mailto:gunnar@gradu.al">gunnar@gradu.al</a>.
           </p>
@@ -156,11 +158,11 @@
           </div>
         </div>
       </section>
-      <div id="section-intentions" v-if="nodes && edges && popular">
-        <h2 class="h2 mb-4">
+      <div id="#section-intentions" v-if="nodes && edges && popular">
+        <h2 class="text-3xl md:text-4xl font-bold mb3">
           Community learning intentions
         </h2>
-        <p class="text-lg mb-8">
+        <p class="f4 lh-copy mb-8">
           Something here for you?
           <nuxt-link
             append
