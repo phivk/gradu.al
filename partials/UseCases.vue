@@ -20,7 +20,7 @@
                     <img class="absolute inset-0 w-full h-full object-contain transform hover:-translate-y-1 transition duration-700 ease-out" :src="usecase.imgSrc" width="352" height="198" :alt="usecase.title" />
                   </figure>
                 </router-link>
-                <h3 class="text-xl font-bold leading-snug tracking-tight">
+                <h3 class="text-xl font-bold leading-snug tracking-tight text-center">
                   <router-link :to="usecase.path" class="hover:underline">{{usecase.title}}</router-link>
                 </h3>
               </header>
@@ -49,6 +49,11 @@ export default {
           path: '/storytellersunited',
           imgSrc: 'https://storytellers.link/img/logo-storytellersunited-200px.png',
           title: 'Continuous Community Learning with Storytellers United',
+        },
+        {
+          path: '/coee',
+          imgSrc: 'https://media-exp1.licdn.com/dms/image/C4E0BAQHUxWUxJiRPYg/company-logo_200_200/0/1519872873008?e=2159024400&v=beta&t=fpBAuWTBOyqGrzZzczLfKSsT8TF7gKus7jj5X7zXiIE',
+          title: 'Unlocking potential with the College of Extraordinary Experiences',
         },
       ]
     }
