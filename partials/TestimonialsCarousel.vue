@@ -83,6 +83,14 @@ export default {
           link: 'https://omarshehata.me/'
         },
         {
+          imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01B0S0F40G-61ca5cf21cde-512',
+          quote:
+            "“ Coming across Gradual was instrumental for my personal development. It directly influenced our communal engagement and I loved how open, inquisitive and assertive we all became because of it. Facilitating a session with someone I didn’t know before made me feel truly connected. I never felt like I could ask 'stupid questions'… we were all there to learn together. “",
+          name: 'Michelle Ferrell',
+          role: 'Activism & Tech Community Wrangler',
+          team: 'Mozilla Festival',
+        },
+        {
           imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01P03UKEMV-e1acfddef565-512',
           quote:
             '“ Using Gradual was a delight! I got quick feedback on a workshop in a setting that was low risk, but high value. After our session, I put work I had prepared into an article which has ended up being really personally useful for me. “',
