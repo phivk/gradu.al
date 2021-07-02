@@ -84,7 +84,7 @@ import CalendarReferral from "~/components/CalendarReferral.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import GraphSection from "~/components/GraphSection.vue";
 import SocialHead from "~/components/SocialHead.vue";
-import { filterSessionsUpcoming, filterSessionsPast } from "~/util/session";
+import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
   layout: "storytellersUnited",
@@ -116,10 +116,10 @@ export default {
   },
   computed: {
     sessionsUpcoming() {
-      return filterSessionsUpcoming(this.sessions);
+      return getSessionsUpcoming(this.sessions);
     },
     sessionsPast() {
-      return filterSessionsPast(this.sessions);
+      return getSessionsPast(this.sessions);
     },
   },
   /* enables auth middleware (also see pages/login.vue and `auth` object in nuxt.config.js)

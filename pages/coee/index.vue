@@ -208,7 +208,7 @@ import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
 import NavigationTabs from "~/components/NavigationTabs.vue";
 import ProfileBio from "~/components/ProfileBio.vue";
-import { filterSessionsUpcoming, filterSessionsPast } from "~/util/session";
+import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
   layout: "coee",
@@ -274,10 +274,10 @@ export default {
   },
   computed: {
     sessionsUpcoming() {
-      return filterSessionsUpcoming(this.sessions);
+      return getSessionsUpcoming(this.sessions);
     },
     sessionsPast() {
-      return filterSessionsPast(this.sessions);
+      return getSessionsPast(this.sessions);
     },
   },
 };

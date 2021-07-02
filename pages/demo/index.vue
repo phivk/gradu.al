@@ -140,7 +140,7 @@ import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
 import NavigationTabs from "~/components/NavigationTabs.vue";
-import { filterSessionsUpcoming, filterSessionsPast } from "~/util/session";
+import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
   layout: "demo",
@@ -197,10 +197,10 @@ export default {
   },
   computed: {
     sessionsUpcoming() {
-      return filterSessionsUpcoming(this.sessions);
+      return getSessionsUpcoming(this.sessions);
     },
     sessionsPast() {
-      return filterSessionsPast(this.sessions);
+      return getSessionsPast(this.sessions);
     },
   },
 };
