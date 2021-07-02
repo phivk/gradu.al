@@ -192,7 +192,7 @@ import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
 import NavigationTabs from "~/components/NavigationTabs.vue";
-import { hasHappened, hasNotHappened } from "~/util/date";
+import { filterSessionsUpcoming, filterSessionsPast } from "~/util/session";
 
 export default {
   layout: "mozFest",
@@ -250,16 +250,10 @@ export default {
   },
   computed: {
     sessionsUpcoming() {
-      return this.sessions.filter(s => {
-        let sessionDate = new Date(s.dateTime);
-        return hasNotHappened(sessionDate);
-      });
+      return filterSessionsUpcoming(this.sessions);
     },
     sessionsPast() {
-      return this.sessions.filter(s => {
-        let sessionDate = new Date(s.dateTime);
-        return hasHappened(sessionDate);
-      });
+      return filterSessionsPast(this.sessions);
     },
   },
 };

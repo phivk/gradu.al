@@ -15,14 +15,10 @@ export const getTimezone = () => {
   return Intl.DateTimeFormat().resolvedOptions().timeZone;
 };
 
+/* expects valid date object */
 export const hasHappened = (date) => {
   let now = new Date();
   return date < now;
-};
-
-export const hasNotHappened = (date) => {
-  let now = new Date();
-  return date > now;
 };
 
 export const isValidDate = (date) => {
@@ -39,4 +35,10 @@ export const isValidDate = (date) => {
     // not a date
     return false;
   }
+};
+
+export const isValidDateString = (dateString) => {
+  return dateString == null 
+    ? false
+    : isValidDate(new Date(dateString))
 };

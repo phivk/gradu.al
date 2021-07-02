@@ -1,7 +1,7 @@
 ---
 type: brainstorm
 title: Life as a Learning Arena
-dateTime: 2021-07-22T19:00:00+02:00
+dateTime:
 durationInMinutes: 45
 imageSrc: https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80
 learnerNames:
