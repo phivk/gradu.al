@@ -16,5 +16,5 @@ export const getSessionsPast = (sessions) => {
     return isValidDateString(s.dateTime)
       ? hasHappened(new Date(s.dateTime))
       : false
-  }.reverse());
+  }).reverse();
 };
