@@ -34,7 +34,7 @@
                   <blockquote class="text-xl font-medium mb-4">{{item.quote}}</blockquote>
                   <cite class="block font-bold text-lg not-italic mb-1">{{item.name}}</cite>
                   <div class="text-gray-600">
-                    <span>{{item.role}}</span> <a class="text-blue-600 hover:underline" :href="item.link">{{item.team}}</a>
+                    <span>{{item.role}}</span> <span class="text-blue-600">{{item.team}}</span>
                   </div>
                 </div>
               </template>
@@ -80,7 +80,6 @@ export default {
           name: 'Omar Shehata',
           role: 'Graphics Engineer',
           team: 'Philadelphia, PA',
-          link: 'https://omarshehata.me/'
         },
         {
           imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01B0S0F40G-61ca5cf21cde-512',
@@ -97,7 +96,6 @@ export default {
           name: 'Maria Bridge',
           role: 'Stanford MBA',
           team: 'Non-profit COO',
-          link: 'https://mariabridge.medium.com/'
         },   
         {
           imgSrc: 'https://pbs.twimg.com/profile_images/1376345918601977861/Z0hen1QF_400x400.jpg',
@@ -106,7 +104,6 @@ export default {
           name: 'Pim Schachtschabel',
           role: 'Human Experience Architect',
           team: 'Architecting Curiosity',
-          link: 'https://www.architectingcuriosity.com'
         },
         {
           imgSrc: 'https://pbs.twimg.com/profile_images/2062740783/Snapshot_20110909_5_400x400.JPG',
@@ -115,7 +112,6 @@ export default {
           name: 'Tom Salmon',
           role: 'Phd researcher in education',
           team: 'Cape Peninsula University of Technology',
-          link: 'https://www.linkedin.com/in/tomsalmon12345/'
         }
       ]
     }
