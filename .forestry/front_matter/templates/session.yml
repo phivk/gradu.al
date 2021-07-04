@@ -65,6 +65,3 @@ fields:
   - type: text
     name: href
     label: href
-pages:
-- content/coee/sessions/life-as-a-learning-arena.md
-- content/storytellersunited/sessions/creative-interactive-web-experiences-for-scholarship.md
