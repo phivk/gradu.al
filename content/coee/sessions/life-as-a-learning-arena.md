@@ -17,6 +17,4 @@ cta:
   href: https://docs.google.com/document/d/1xkMhc2jVhUGl6r6U_M8HjvvLQOHo7VQ7Nw-BsHHLSEU/edit#
 
 ---
-Carina and Gunnar are currently in talks to host a session together where we explore different ways to look at the world and learn from it together. Keep an eye on this page for updates or feel free to add your own ideas to the Google Doc.  
-  
-The date for this session is still TBC, it might change from the currently scheduled date.
+Carina and Gunnar are currently in talks to host a session together where we explore different ways to look at the world and learn from it together. Keep an eye on this page for updates or feel free to add your own ideas to the Google Doc.
