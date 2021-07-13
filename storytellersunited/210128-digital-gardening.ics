@@ -1,0 +1,90 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.15.7//EN
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Amsterdam
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+DTSTART:19810329T020000
+TZNAME:CEST
+TZOFFSETTO:+0200
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+DTSTART:19961027T030000
+TZNAME:CET
+TZOFFSETTO:+0100
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/Amsterdam:20210128T140000
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+ORGANIZER;CN="Storytellers United":mailto:1nkslmh4uur4t51n3rildsd9s0@gro
+ up.calendar.google.com
+UID:8D7B24AD-2D60-45FE-93C7-88C4AEE905C9
+DTSTAMP:20210115T164238Z
+DESCRIPTION:The term `digital garden` started to get used more widely in
+  2020. Maybe our inability to go outside and travel as much led us to th
+ ink about our digital lives with a more horticultural lens?\n\nWhereas a
+  blog tends to be organised strictly chronologically and older thoughts 
+ get displaced by new\, a digital garden works to curate and build on you
+ r thinking. A post might be a new idea (seed)\, a growing idea (a saplin
+ g) or a fully developed thought (a tree). Some of these trees might be u
+ sed as starting points for other  projects and some of the seed might cr
+ oss-pollinate to make something new.\n\nIn this session\, we'll look mor
+ e at defining a digital garden\, explore some examples with an eye on wh
+ at value they are adding (to the world and the gardener) and look at som
+ e ways to get started.\n\nThis will be a mix of exposition\, Internet tr
+ ail\, discussion and top tips.
+STATUS:CONFIRMED
+SEQUENCE:1
+SUMMARY:SU Skillsharing: Digital Gardens: What are they and how can I st
+ art one?  by @Kevin
+LAST-MODIFIED:20210115T164238Z
+DTSTART;TZID=Europe/Amsterdam:20210128T130000
+CREATED:20210115T161031Z
+ATTENDEE;CN="Storytellers United";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED;RO
+ LE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:1nkslmh4uur4t51n3rildsd9s0@grou
+ p.calendar.google.com
+ATTENDEE;CN="alexasteinbrueck@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEED
+ S-ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:alexasteinbrueck@gma
+ il.com
+ATTENDEE;CN="amanda.curtis@me.com";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED;R
+ OLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:amanda.curtis@me.com
+ATTENDEE;CN="anna.desponds@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-A
+ CTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:anna.desponds@gmail.com
+ATTENDEE;CN="erwin.verbruggen@gmx.net";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-
+ ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:erwin.verbruggen@gmx.n
+ et
+ATTENDEE;CN="gunnardejong@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEPTED
+ ;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:gunnardejong@gmail.com
+ATTENDEE;CN="hay@bykr.org";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTION;ROLE=
+ REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:hay@bykr.org
+ATTENDEE;CN="j.sherwood.gonzalez@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=N
+ EEDS-ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:j.sherwood.gonzal
+ ez@gmail.com
+ATTENDEE;CN="julia.scottstevenson@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=
+ NEEDS-ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:julia.scottsteve
+ nson@gmail.com
+ATTENDEE;CN="kevin@kevincunningham.co.uk";CUTYPE=INDIVIDUAL;PARTSTAT=NEE
+ DS-ACTION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:kevin@kevincunningh
+ am.co.uk
+ATTENDEE;CN="marcusround@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACT
+ ION;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:marcusround@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;X-
+ NUM-GUESTS=0:mailto:rbocyte@beeldengeluid.nl
+ATTENDEE;CN="Pim Schachtschabel";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTION
+ ;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:pim.schachtschabel@gmail.com
+ATTENDEE;CN="marsha.courneya@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=ACCEP
+ TED;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:marsha.courneya@gmail.com
+ATTENDEE;CN="simon@simonmaris.com";CUTYPE=INDIVIDUAL;PARTSTAT=NEEDS-ACTI
+ ON;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:simon@simonmaris.com
+ATTENDEE;CN="vaibhav.achantani@gmail.com";CUTYPE=INDIVIDUAL;PARTSTAT=ACC
+ EPTED;ROLE=REQ-PARTICIPANT;X-NUM-GUESTS=0:mailto:vaibhav.achantani@gmail
+ .com
+END:VEVENT
+END:VCALENDAR

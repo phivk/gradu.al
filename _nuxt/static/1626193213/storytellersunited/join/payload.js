@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/storytellersunited/join", {data:[{}],fetch:{},mutations:void 0});
