@@ -1,6 +1,6 @@
 ---
-type: ''
-title: '"Selfie" Free-form larp'
+type: game
+title: '"Selfie" | Free-form larp to design intimate experiences'
 dateTime: 2021-08-05T19:00:00+02:00
 durationInMinutes: 90
 imageSrc: https://da.depositphotos.com/80421608/stock-photo-funny-cats-self-picture.html
@@ -11,7 +11,9 @@ learnerNames:
 - Corina Ghiatau
 sharerNames:
 - Carina Enggård
-resources: []
+resources:
+- text: Collaborative Notes
+  href: https://docs.google.com/document/d/1x_OYcEuEKb3uyQ0lrTjdl6ygOzx6owTIKDSTE60zdjQ/edit?usp=sharing
 cta:
   text: ''
   href: ''
