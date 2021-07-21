@@ -3,7 +3,7 @@ type: game
 title: '"Selfie" | Free-form larp to design intimate experiences'
 dateTime: 2021-08-05T19:00:00+02:00
 durationInMinutes: 90
-imageSrc: https://da.depositphotos.com/80421608/stock-photo-funny-cats-self-picture.html
+imageSrc: https://st2.depositphotos.com/5482604/8042/i/950/depositphotos_80421608-stock-photo-funny-cats-self-picture.jpg
 learnerNames:
 - Gunnar de Jong
 - Peppermint Patty
