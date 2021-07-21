@@ -18,3 +18,4 @@ cta:
   href: https://docs.google.com/document/d/1TsiMm1AsfslLYEjFWOPppImNUG9kZCuvzfXMwEPWUXo/edit#
 
 ---
+Getting attention from your minimal viable audience. Capturing their interest. Making what you do desirable to them and getting them to action their intentions.
