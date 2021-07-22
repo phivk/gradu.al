@@ -9,7 +9,7 @@ fields:
     required: true
 - name: type
   type: select
-  default: []
+  default: ''
   config:
     required: false
     options:
@@ -21,6 +21,8 @@ fields:
     - brainstorm
     - AMA
     - salon
+    - game
+    - other
     source:
       type: simple
       section: 
@@ -66,5 +68,6 @@ fields:
     name: href
     label: href
 pages:
+- content/coee/sessions/accelerate-your-purpose-build-your-core-business-with-the-accelerant-curve.md
 - content/coee/sessions/life-as-a-learning-arena.md
-- content/storytellersunited/sessions/creative-interactive-web-experiences-for-scholarship.md
+- content/coee/sessions/selfie-free-form-larp.md
