@@ -1,7 +1,7 @@
 ---
 type: peer share
 title: Accelerate your purpose & build your core business with the Accelerant Curve
-dateTime: 2021-08-23T04:00:00+02:00
+dateTime: 2021-08-23T16:00:00+02:00
 durationInMinutes: 60
 imageSrc: https://edco.global/wp-content/uploads/2018/05/3-1.jpg
 learnerNames:
