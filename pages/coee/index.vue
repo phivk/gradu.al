@@ -246,8 +246,6 @@ export default {
         "brainstorm",
         "AMA",
       ],
-      sessions: [],
-      ambassadors: [],
     };
   },
   async asyncData({ $content }) {
