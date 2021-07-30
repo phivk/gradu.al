@@ -212,7 +212,7 @@ import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
   layout: "coee",
-  middleware: ["password-protect"],
+  // middleware: ["password-protect"],
   head() {
     return {
       title: "CoEE - Here to learn",
