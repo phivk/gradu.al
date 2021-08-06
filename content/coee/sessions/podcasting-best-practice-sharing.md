@@ -3,7 +3,7 @@ title: 'Podcasting: Best Practice Sharing'
 type: peer share
 dateTime: 2021-09-08T17:00:00+02:00
 durationInMinutes: 60
-imageSrc: https://unsplash.com/photos/3JZFQcOe78w
+imageSrc: https://images.unsplash.com/photo-1615458317303-4bb49df432cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80
 learnerNames:
 - Rob Tesh
 - Kristin Malek
