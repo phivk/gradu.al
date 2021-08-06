@@ -76,7 +76,7 @@ import SocialHead from "~/components/SocialHead.vue";
 import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
-  layout: "mozFest",
+  layout: "mozFestWranglers",
   head() {
     return {
       title: "MozFest - Here to learn",
