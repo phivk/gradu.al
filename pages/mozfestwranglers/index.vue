@@ -98,6 +98,7 @@ export default {
         "talk",
         "one-on-one",
         "brainstorm",
+        "activity",
         "AMA",
       ],
     };
