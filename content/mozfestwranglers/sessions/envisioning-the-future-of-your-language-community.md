@@ -3,7 +3,7 @@ title: 'Envisioning the future of your language community: how can small languag
 type: peer share
 dateTime: '2021-08-03T15:00+02:00'
 durationInMinutes: 60
-imageSrc: /uploads/Dagbanli-Wikimedia-Group-1.jpeg
+imageSrc: /uploads/mozfestwranglers/Dagbanli-Wikimedia-Group-1.jpeg
 learnerNames:
 sharerNames: 
   - 'Sadik'
