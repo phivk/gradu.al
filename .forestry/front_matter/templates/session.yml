@@ -22,6 +22,7 @@ fields:
     - AMA
     - salon
     - game
+    - activity
     - other
     source:
       type: simple
