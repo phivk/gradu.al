@@ -5,28 +5,8 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: content/coee/ambassadors
-  label: CoEE Ambassadors
-  create: documents
-  match: "*.md"
-  new_doc_ext: md
-- type: directory
-  path: content/coee/sessions
-  label: CoEE Sessions
-  create: documents
-  match: "*.md"
-  new_doc_ext: md
-  templates:
-  - session
-- type: directory
   path: content/mozfest/sessions
   label: MozFest Sessions
-  create: documents
-  match: "*.md"
-  exclude: README.md
-- type: directory
-  path: content/storytellersunited/sessions
-  label: SU Sessions
   create: documents
   match: "*.md"
   exclude: README.md

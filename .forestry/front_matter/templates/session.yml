@@ -67,9 +67,3 @@ fields:
   - type: text
     name: href
     label: href
-pages:
-- content/coee/sessions/accelerate-your-purpose-build-your-core-business-with-the-accelerant-curve.md
-- content/coee/sessions/life-as-a-learning-arena.md
-- content/coee/sessions/podcasting-best-practice-sharing.md
-- content/coee/sessions/selfie-free-form-larp.md
-- content/storytellersunited/sessions/creative-interactive-web-experiences-for-scholarship.md
