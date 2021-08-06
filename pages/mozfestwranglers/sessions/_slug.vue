@@ -8,7 +8,7 @@ import ProfilePicList from "~/components/ProfilePicList.vue";
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "mozFest",
+  layout: "mozFestWranglers",
   head() {
     return {
       title: "MozFest - Here to learn",
