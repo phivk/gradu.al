@@ -42,6 +42,7 @@ fields:
   config:
     required: true
   label: imageSrc
+  description: A valid link to an image source (incl 'https://')
 - type: list
   name: learnerNames
   label: learnerNames
