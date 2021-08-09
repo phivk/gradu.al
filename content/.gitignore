@@ -1,0 +1,6 @@
+# ignore everything
+*
+
+# except this file and the coee dir
+!.gitignore
+!coee/
