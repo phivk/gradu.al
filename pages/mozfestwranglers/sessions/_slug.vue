@@ -9,6 +9,7 @@ import SessionPage from "~/components/SessionPage.vue";
 
 export default {
   layout: "mozFestWranglers",
+  middleware: ["password-protect"],
   head() {
     return {
       title: "MozFest - Here to learn",

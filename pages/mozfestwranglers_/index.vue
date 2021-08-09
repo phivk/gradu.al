@@ -77,7 +77,7 @@ import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
   layout: "mozFestWranglers",
-  middleware: ["password-protect"],
+  // middleware: ["password-protect"],
   head() {
     return {
       title: "MozFest - Here to learn",
