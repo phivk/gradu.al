@@ -1,17 +1,15 @@
 ---
-title: Designing & staging experiences to change behaviour
+title: Designing & staging experiences to change behaviour - Part 1
 type: workshop
-dateTime: 2021-08-12T15:00:00+02:00
+dateTime: 2021-08-10T16:00:00+02:00
 durationInMinutes: 60
 imageSrc: https://lh3.googleusercontent.com/pw/AM-JKLW7AWpTzPfglA9I_WnhDbDXLWE5cQ4sfbZE5nFRBZgBZcTLGe7DTis41QzEod076AvFIaIYfCMKPQMbRJnD7WcVpf2uOG6W46dOJbcdnOci2bt-WL5vURb9VY00oW7X36gD0QX2K9vmRy49PZbuj_OHtQ=s1494-no?authuser=0
 learnerNames:
+- Magda Jagielska
+- Gunnar de Jong
 - Anthony Vade
 - Peppermint Patty
 - Corina Ghiatau
-- Gunnar de Jong
-- Magda Jagielska
-- Carina Enggård
-- Pim Schachtschabel
 - Ruud Janssen
 sharerNames:
 - Rob Tesh
