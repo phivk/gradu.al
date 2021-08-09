@@ -18,8 +18,8 @@ sections:
   new_doc_ext: md
   templates:
   - session
-upload_dir: static/uploads
-public_path: "/uploads"
+upload_dir: static/uploads/coee
+public_path: "/uploads/coee"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
