@@ -50,7 +50,7 @@ export default {
           title: 'Continuous Community Learning with Storytellers United',
         },
         {
-          path: '/coee',
+          path: '',
           imgSrc: 'https://media-exp1.licdn.com/dms/image/C4E0BAQHUxWUxJiRPYg/company-logo_200_200/0/1519872873008?e=2159024400&v=beta&t=fpBAuWTBOyqGrzZzczLfKSsT8TF7gKus7jj5X7zXiIE',
           title: 'Unlocking potential with the College of Extraordinary Experiences',
         },
