@@ -76,16 +76,10 @@ fields:
   description: The ID of a YouTube video to embed (<em>11 characters, e.g. JjTeZoAmejs,
     </em><a href="https://gist.github.com/jakebellacera/d81bbf12b99448188f183141e6696817"
     title="" target="_blank"><em>more help here</em></a>)
-  config:
-    min: 11
-    max: 11
 - type: text
   name: panoptoRecordingID
   label: Panopto Recording ID
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
-  config:
-    min: 36
-    max: 36
 pages:
 - content/coee/sessions/accelerate-your-purpose-build-your-core-business-with-the-accelerant-curve.md
 - content/coee/sessions/designing-staging-experiences-to-change-behaviour-part-2.md
