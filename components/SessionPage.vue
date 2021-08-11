@@ -15,12 +15,12 @@
             {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
-            <div class="video-wrapper" v-if="session.youTubeEmbed">
+            <div class="video-wrapper" v-if="session.youtubeRecordingID">
               <iframe
                 width="560"
                 height="315"
                 :src="
-                  `https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`
+                  `https://www.youtube-nocookie.com/embed/${session.youtubeRecordingID}`
                 "
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -170,10 +170,6 @@ export default {
     },
     hasHappened() {
       return hasHappened(this.session.date);
-    },
-    youtubeRecordingID() {
-      let parts = this.session.youTubeEmbed.split(/[/=]/);
-      return parts[parts.length - 1];
     },
   },
 };
