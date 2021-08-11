@@ -70,6 +70,12 @@ fields:
   - type: text
     name: href
     label: href
+- type: text
+  name: youtubeRecordingID
+  label: YouTube Recording ID
+- type: text
+  name: panoptoRecordingID
+  label: Panopto Recording ID
 pages:
 - content/coee/sessions/accelerate-your-purpose-build-your-core-business-with-the-accelerant-curve.md
 - content/coee/sessions/designing-staging-experiences-to-change-behaviour-part-2.md
