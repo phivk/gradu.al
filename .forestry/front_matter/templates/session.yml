@@ -9,7 +9,7 @@ fields:
     required: true
 - name: type
   type: select
-  default: []
+  default: ''
   config:
     required: false
     options:
@@ -21,6 +21,8 @@ fields:
     - brainstorm
     - AMA
     - salon
+    - game
+    - other
     source:
       type: simple
       section: 
@@ -39,6 +41,9 @@ fields:
   config:
     required: true
   label: imageSrc
+  description: A valid URL of a web image (incl 'https://') <br>OR URL of an uploaded
+    image, copied via the <a href="https://app.forestry.io/sites/0apkf4exn2idng/#/media/"
+    title="" target="_blank">Media Manager</a>
 - type: list
   name: learnerNames
   label: learnerNames

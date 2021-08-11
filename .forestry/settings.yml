@@ -9,9 +9,11 @@ sections:
   label: SU Sessions
   create: documents
   match: "*.md"
-  exclude: README.md
-upload_dir: static/uploads
-public_path: "/uploads"
+  new_doc_ext: md
+  templates:
+  - session
+upload_dir: static/uploads/storytellersunited
+public_path: "/uploads/storytellersunited"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"

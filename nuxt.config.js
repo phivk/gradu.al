@@ -118,7 +118,7 @@ export default {
   },
   passwordProtect: {
     enabled: true,
-    formPath: "/coee/password",
+    formPath: "/password",
     password: process.env.COEE_PASSWORD,
     tokenSeed: 101010,
     queryString: "_pw",

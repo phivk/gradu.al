@@ -140,6 +140,10 @@ export default {
           path: '/coee',
           text: 'College of Extraordinary Experiences',
         },
+        {
+          path: '/mozfestwranglers',
+          text: 'MozFest Wranglers',
+        },
       ]
     }
   },

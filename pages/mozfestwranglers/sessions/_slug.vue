@@ -8,21 +8,21 @@ import ProfilePicList from "~/components/ProfilePicList.vue";
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "coee",
+  layout: "mozFestWranglers",
   middleware: ["password-protect"],
   head() {
     return {
-      title: "CoEE - Here to learn",
+      title: "MozFest - Here to learn",
     };
   },
   components: { TagPill, ProfilePicList, SessionPage },
   data() {
     return {
-      bgColor: "#000",
+      bgColor: "#f4f4f4",
     };
   },
   async asyncData({ $content, params }) {
-    const session = await $content("coee/sessions", params.slug).fetch();
+    const session = await $content("mozfestwranglers/sessions", params.slug).fetch();
     return { session };
   },
   computed: {
