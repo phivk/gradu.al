@@ -20,7 +20,7 @@ resources:
   -
     text: Notes
     href: https://docs.google.com/document/d/1faJe-eDTFZZEC1PATqmoecQw_Qx60XkolRrQsMH7TZc/edit#
-youTubeEmbed: https://www.youtube.com/watch?v=qI8W30t4bIM
+youtubeRecordingID: qI8W30t4bIM
 ---
 
 During this session we will share some tips and insights from our experience (and backed by research).

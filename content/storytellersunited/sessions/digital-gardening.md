@@ -26,7 +26,7 @@ resources:
   -
     text: Notes
     href: https://docs.google.com/document/d/1dqX7qOOlVOG5OWx7wxh4s2wfTmBdqLiwSonT5RidV1I/edit
-youTubeEmbed: https://www.youtube.com/watch?v=JjTeZoAmejs
+youtubeRecordingID: JjTeZoAmejs
 icsFileSrc: /storytellersunited/201218-architecting-curiosity.ics
 ---
 
