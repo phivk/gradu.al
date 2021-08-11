@@ -136,14 +136,6 @@ export default {
           path: '/storytellersunited',
           text: 'Storytellers United',
         },
-        {
-          path: '/coee',
-          text: 'College of Extraordinary Experiences',
-        },
-        {
-          path: '/mozfestwranglers',
-          text: 'MozFest Wranglers',
-        },
       ]
     }
   },
