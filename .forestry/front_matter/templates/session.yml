@@ -77,8 +77,8 @@ fields:
     </em><a href="https://gist.github.com/jakebellacera/d81bbf12b99448188f183141e6696817"
     title="" target="_blank"><em>more help here</em></a>)
   config:
-    min: 11
-    max: 11
+    min: 
+    max: 
 - type: text
   name: panoptoRecordingID
   label: Panopto Recording ID
