@@ -22,6 +22,7 @@ fields:
     - AMA
     - salon
     - game
+    - activity
     - other
     source:
       type: simple
@@ -71,9 +72,5 @@ fields:
     name: href
     label: href
 pages:
-- content/coee/sessions/accelerate-your-purpose-build-your-core-business-with-the-accelerant-curve.md
-- content/coee/sessions/designing-staging-experiences-to-change-behaviour-part-2.md
-- content/coee/sessions/designing-staging-experiences-to-change-behaviour.md
-- content/coee/sessions/life-as-a-learning-arena.md
-- content/coee/sessions/podcasting-best-practice-sharing.md
-- content/coee/sessions/selfie-free-form-larp.md
+- content/mozfestwranglers/sessions/embroidery-activity-with-sofia-and-beth.md
+- content/mozfestwranglers/sessions/envisioning-the-future-of-your-language-community.md
