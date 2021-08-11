@@ -24,6 +24,7 @@ resources:
   -
     text: Slides
     href: https://drive.google.com/file/d/1ZQkypNMTClTv-OMa7L5sJcg4nxyiLSQV/view
+youTubeEmbed: https://youtu.be/Q0pFsHaCpqs
 ---
 
 Hay has been writing “De Circulaire”, his biweekly newsletter, for more than five years. It’s a combination of interesting links, personal stories, and three well-chosen gifs of animals (predominantly cats). 

@@ -27,6 +27,7 @@ resources:
   -
     text: Notes
     href: https://www.bit.ly/SUlifehacks
+youTubeEmbed: https://youtu.be/ULPcqI6cuik
 ---
 How might we explore some useful hacks for smarter living together? 
 <!--more-->

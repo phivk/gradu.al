@@ -18,7 +18,7 @@ resources:
 cta:
   text: Google Doc
   href: https://docs.google.com/document/d/1xkMhc2jVhUGl6r6U_M8HjvvLQOHo7VQ7Nw-BsHHLSEU/edit#
-
+youTubeEmbed: https://youtu.be/FIiNs2aNhX8
 ---
 Carina and Gunnar are hosting a session together where we explore how we can learn from life in general. What works for us individually and collectively? How can we use this to design our own 'learning arena' for the College and beyond?
 

@@ -15,7 +15,7 @@
             {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
-            <div class="video-wrapper" v-if="youtubeRecordingResource">
+            <div class="video-wrapper" v-if="session.youTubeEmbed">
               <iframe
                 width="560"
                 height="315"
@@ -168,20 +168,9 @@ export default {
     hasHappened() {
       return hasHappened(this.session.date);
     },
-    youtubeRecordingResource() {
-      if (this.session.resources) {
-        return this.session.resources.find((r) => r.href.includes("youtu"));
-      } else {
-        return undefined;
-      }
-    },
     youtubeRecordingID() {
-      if (this.youtubeRecordingResource) {
-        let parts = this.youtubeRecordingResource.href.split(/[/=]/);
-        return parts[parts.length - 1];
-      } else {
-        return undefined;
-      }
+      let parts = this.session.youTubeEmbed.split(/[/=]/);
+      return parts[parts.length - 1];
     },
   },
 };
