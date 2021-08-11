@@ -15,17 +15,20 @@
             {{ session.title }}
           </h1>
           <div class="w-100 w-80-l">
-            <div class="video-wrapper" v-if="session.youTubeEmbed">
+            <div class="video-wrapper" v-if="session.youtubeRecordingID">
               <iframe
                 width="560"
                 height="315"
                 :src="
-                  `https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`
+                  `https://www.youtube-nocookie.com/embed/${session.youtubeRecordingID}`
                 "
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
+            </div>
+            <div class="video-wrapper" v-else-if="session.panoptoRecordingID">
+              <iframe :src="`https://mozilla.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=${session.panoptoRecordingID}&autoplay=false&offerviewer=false&showtitle=true&showbrand=false&captions=true&interactivity=none`" height="1080" width="1920" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
             </div>
             <img
               v-else
@@ -167,10 +170,6 @@ export default {
     },
     hasHappened() {
       return hasHappened(this.session.date);
-    },
-    youtubeRecordingID() {
-      let parts = this.session.youTubeEmbed.split(/[/=]/);
-      return parts[parts.length - 1];
     },
   },
 };
