@@ -24,6 +24,7 @@ resources:
   -
     text: Architecting Curiosity
     href: https://www.architectingcuriosity.com/
+youTubeEmbed: https://youtu.be/vL097Tge1_A
 ---
 
 How might we explore all the dimensions curiosity has to offer? 
