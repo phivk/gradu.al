@@ -29,6 +29,7 @@ resources:
 cta:
   text: Check out the Notes
   href: https://docs.google.com/document/d/149C_VtY14ymMJt0ECcZK0kPOufV3YHcAqd5pse-UoFk/edit#
+panoptoRecordingID: cf06d309-c347-485c-8089-ad270121c73c
 ---
 How might we explore some useful hacks for smarter living together?
 <!--more-->

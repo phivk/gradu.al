@@ -25,6 +25,7 @@ resources:
 cta:
   text: Collective Miro Board
   href: https://miro.com/app/board/o9J_lRWjRq0=/
+panoptoRecordingID: b0d41af7-f08a-4705-a3c8-ad27011a27df
 ---
 Whether you're a weathered veteran or completely new to the world of Open Source - there's always something new to learn.
 <!--more-->
