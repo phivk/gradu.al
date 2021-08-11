@@ -19,7 +19,7 @@ resources:
 cta:
   text: Go to Zoom
   href: https://us02web.zoom.us/j/83893324523
-youTubeEmbed: https://youtu.be/T0RxZRONEbA
+youtubeRecordingID: T0RxZRONEbA
 ---
 Bring a story of an experience that was designed (not exclusively by you) to change your behaviour, and did so successfully. How & why did it work?
 
