@@ -36,7 +36,6 @@
 
 <script>
 export default {
-  name: 'News',
   data: function () {
     return {
       usecases: [
