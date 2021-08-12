@@ -1,8 +1,9 @@
 ---
-title: 'Peer Share: '
-type: ''
+title: Mental Health, Trauma, and Global Grassroots Communities / Playing Dungeons
+  & Dragons Online
+type: peer share
 dateTime: 2021-08-09T12:00:00Z
-durationInMinutes: 
+durationInMinutes: 60
 imageSrc: "/uploads/mozfestwranglers/christine-eriol.jpg"
 learnerNames: []
 sharerNames:
