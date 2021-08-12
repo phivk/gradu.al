@@ -9,7 +9,9 @@ learnerNames: []
 sharerNames:
 - Eriol
 - Christine
-resources: []
+resources:
+- text: Notes from this Session
+  href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit#
 cta:
   text: ''
   href: ''
