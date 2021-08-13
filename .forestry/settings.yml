@@ -5,7 +5,7 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: content/mozfestwranglers/sessions
+  path: content/sessions
   label: Mozfest Wranglers Sessions
   create: documents
   match: "*.md"
