@@ -1,6 +1,5 @@
 <template>
   <article class="tl bg-light-gray br3 shadow-4 hover-shadow-raise">
-    <nuxt-link :to="session.path" class="link black">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
           <img
@@ -43,7 +42,6 @@
           </div>
         </div>
       </div>
-    </nuxt-link>
   </article>
 </template>
 <script>
