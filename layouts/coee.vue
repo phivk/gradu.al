@@ -1,11 +1,7 @@
 <template>
   <div class="theme-coee text-white">
     <div class="bg-color-bg min-vh-100">
-      <TheNavBar
-        class="bg-color-primary"
-        backLinkText="CoEE"
-        backLinkSlug="coee"
-      />
+      <TheNavBar class="bg-color-primary" backLinkText="CoEE" />
       <div class="p-2 sm:p-4 lg:p-8">
         <nuxt />
       </div>
@@ -15,12 +11,10 @@
 <script>
 import TheNavBar from "~/components/TheNavBar.vue";
 export default {
-  head () {
+  head() {
     return {
-      link: [
-        { rel: 'stylesheet', href: '/css/tachyons.min.css' }
-      ]
-    }
+      link: [{ rel: "stylesheet", href: "/css/tachyons.min.css" }],
+    };
   },
   components: {
     TheNavBar,

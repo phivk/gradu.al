@@ -22,7 +22,7 @@ export default {
     };
   },
   async asyncData({ $content, params }) {
-    const session = await $content("coee/sessions", params.slug).fetch();
+    const session = await $content("sessions", params.slug).fetch();
     return { session };
   },
   computed: {
