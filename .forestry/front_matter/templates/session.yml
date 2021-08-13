@@ -81,7 +81,3 @@ fields:
   name: panoptoRecordingID
   label: Panopto Recording ID
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
-pages:
-- content/mozfestwranglers/sessions/embroidery-activity-with-sofia-and-beth.md
-- content/mozfestwranglers/sessions/envisioning-the-future-of-your-language-community.md
-- content/mozfestwranglers/sessions/peer-share.md
