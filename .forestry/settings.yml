@@ -5,10 +5,12 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: content/mozfest/sessions
+  path: content/sessions
   label: MozFest Sessions
   create: documents
   match: "*.md"
+  templates:
+  - session
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
