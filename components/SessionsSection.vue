@@ -7,7 +7,9 @@
         :key="session.title"
         class="w-100 w-50-m w-third-l mw6 p-4"
       >
-        <SessionCardPreview :session="session" />
+        <nuxt-link :to="session.path" class="link">
+          <SessionCardPreview :session="session" />
+        </nuxt-link>
       </li>
     </ul>
   </section>

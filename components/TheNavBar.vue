@@ -3,12 +3,12 @@
     <div class="p-4 ph4-m ph5-l mw9 center flex items-center justify-between">
       <nuxt-link to="/" class="flex items-center no-underline">
         <logo class="w2-5" />
-        <span class="ml-2 white f3 font-bold dn di-ns">gradual</span>
+        <span class="ml-2 text-white f3 font-bold dn di-ns">gradual</span>
       </nuxt-link>
       <nuxt-link 
         v-if="showBackLink"
-        :to="backLinkPath" 
-        class="no-underline f4 fw4 white br-pill ph3 pv2 bg-animate hover-bg-white-20"
+        to="/" 
+        class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
       >
         ← {{backLinkText}}
       </nuxt-link>
@@ -22,15 +22,11 @@ export default {
     Logo
   },
   props: {
-    backLinkText: {type: String, default: ""},
-    backLinkSlug: {type: String, default: ""},
+    backLinkText: {type: String, default: "back"},
   },
   computed: {
-    backLinkPath() {
-      return `/${this.backLinkSlug}/`
-    },
     showBackLink() {
-      return this.$route.path.replace(/\//g,'') !== this.backLinkSlug
+      return this.$route.path !== '/'
     },
   },
 }
