@@ -16,7 +16,7 @@
 
             <!-- CTA button -->
             <div>
-              <router-link to="/get-demo" class="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white">Get a personalised demo</router-link>
+              <AppLink to="/get-demo" class="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white">Get a personalised demo</AppLink>
             </div>
 
           </div>

@@ -36,11 +36,11 @@
             <!-- 1st article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/news-01.jpg')" width="352" height="198" alt="News 01" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -52,7 +52,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight">
-                  <router-link to="/blog-post" class="hover:underline">“How HubSpot saved 25% on developing costs by switching to Simple.”</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">“How HubSpot saved 25% on developing costs by switching to Simple.”</AppLink>
                 </h3>
               </header>
               <footer class="text-sm flex items-center mt-4">
@@ -72,11 +72,11 @@
             <!-- 2nd article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 translate-z-0 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/news-02.jpg')" width="352" height="198" alt="News 02" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -88,7 +88,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight">
-                  <router-link to="/blog-post" class="hover:underline">“How Facebook brought 13% cost savings to their bottom line with Simple’s products.”</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">“How Facebook brought 13% cost savings to their bottom line with Simple’s products.”</AppLink>
                 </h3>
               </header>
               <footer class="text-sm flex items-center mt-4">
@@ -108,11 +108,11 @@
             <!-- 3rd article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 translate-z-0 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/news-03.jpg')" width="352" height="198" alt="News 03" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -124,7 +124,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight">
-                  <router-link to="/blog-post" class="hover:underline">“How Tinder grew 115% and saved 120 Hours each week by outsourcing to Simple.”</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">“How Tinder grew 115% and saved 120 Hours each week by outsourcing to Simple.”</AppLink>
                 </h3>
               </header>
               <footer class="text-sm flex items-center mt-4">
