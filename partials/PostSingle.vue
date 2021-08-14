@@ -154,12 +154,12 @@
                       Interested in more tips like this? Check out <a class="text-gray-900 underline" href="#0">Introducing the Testing Field Guide</a>.
                     </div>
                     <div class="mt-6">
-                      <router-link to="/blog" class="inline-flex items-center text-base text-blue-600 font-medium hover:underline">
+                      <AppLink to="/blog" class="inline-flex items-center text-base text-blue-600 font-medium hover:underline">
                         <svg class="w-3 h-3 fill-current text-blue-400 flex-shrink-0 mr-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                           <path d="M.293 5.282L5 .5l1.414 1.436-3 3.048H12v2.032H3.414l3 3.048L5 11.5.293 6.718a1.027 1.027 0 010-1.436z" />
                         </svg>
                         <span>Back to the blog</span>
-                      </router-link>
+                      </AppLink>
                     </div>
                   </div>
                 </div>

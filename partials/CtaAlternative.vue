@@ -15,7 +15,7 @@
 
             <!-- CTA button -->
             <div>
-              <router-link to="/signup" class="btn text-white bg-blue-600 hover:bg-blue-700">Join us today</router-link>
+              <AppLink to="/signup" class="btn text-white bg-blue-600 hover:bg-blue-700">Join us today</AppLink>
             </div>
 
           </div>
