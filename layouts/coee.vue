@@ -1,7 +1,7 @@
 <template>
   <div class="theme-coee text-white">
     <div class="bg-color-bg min-vh-100">
-      <TheNavBar class="bg-color-primary" backLinkText="CoEE" />
+      <TheNavBar class="bg-color-primary" backLinkTarget="https://coee.gradu.al" backLinkText="CoEE" />
       <div class="p-2 sm:p-4 lg:p-8">
         <nuxt />
       </div>
