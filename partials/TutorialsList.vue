@@ -38,11 +38,11 @@
             <!-- 1st article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-01.jpg')" width="352" height="198" alt="News 01" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -57,7 +57,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Making component design decisions in React</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Making component design decisions in React</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -82,11 +82,11 @@
             <!-- 2nd article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-02.jpg')" width="352" height="198" alt="News 02" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -95,7 +95,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">How to use structured content for page building</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">How to use structured content for page building</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -116,11 +116,11 @@
             <!-- 3rd article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-03.jpg')" width="352" height="198" alt="News 03" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -135,7 +135,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Deploy on Netlify, Heroku or your favorite platform</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Deploy on Netlify, Heroku or your favorite platform</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -156,11 +156,11 @@
             <!-- 4th article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-04.jpg')" width="352" height="198" alt="News 04" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -169,7 +169,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Create a custom type "Page" with Simple</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Create a custom type "Page" with Simple</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -190,11 +190,11 @@
             <!-- 5th article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-05.jpg')" width="352" height="198" alt="News 05" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -203,7 +203,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Getting started with content modelling</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Getting started with content modelling</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -224,11 +224,11 @@
             <!-- 6th article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-06.jpg')" width="352" height="198" alt="News 06" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -243,7 +243,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">How to add custom icons to your Simple project</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">How to add custom icons to your Simple project</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -268,11 +268,11 @@
             <!-- 7th article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-07.jpg')" width="352" height="198" alt="News 07" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -281,7 +281,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Deploying a Vue.js web application with Simple</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Deploying a Vue.js web application with Simple</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -302,11 +302,11 @@
             <!-- 8th article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-08.jpg')" width="352" height="198" alt="News 08" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -321,7 +321,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Live preview changes to React websites with Simple</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Live preview changes to React websites with Simple</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -342,11 +342,11 @@
             <!-- 9th article -->
             <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
               <header>
-                <router-link to="/blog-post" class="block mb-6">
+                <AppLink to="/blog-post" class="block mb-6">
                   <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
                     <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" :src="require('@/images/tutorial-09.jpg')" width="352" height="198" alt="News 09" />
                   </figure>
-                </router-link>
+                </AppLink>
                 <div class="mb-3">
                   <ul class="flex flex-wrap text-xs font-medium -m-1">
                     <li class="m-1">
@@ -361,7 +361,7 @@
                   </ul>
                 </div>
                 <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                  <router-link to="/blog-post" class="hover:underline">Create a custom app and deploy It with Simple</router-link>
+                  <AppLink to="/blog-post" class="hover:underline">Create a custom app and deploy It with Simple</AppLink>
                 </h3>
               </header>
               <p class="text-gray-600 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>

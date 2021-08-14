@@ -20,7 +20,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">Create and Deploy a blog with Simple</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">Create and Deploy a blog with Simple</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -42,12 +42,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 2nd article -->
@@ -55,7 +55,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">Getting started with Next.js</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">Getting started with Next.js</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -77,12 +77,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 3rd article -->
@@ -90,7 +90,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">How to identify high-intent leads</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">How to identify high-intent leads</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -112,12 +112,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 4th article -->
@@ -125,7 +125,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">Why we think Simple is good for developers</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">Why we think Simple is good for developers</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -147,12 +147,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 5th article -->
@@ -160,7 +160,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">Getting started with Vue.js and Stripe</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">Getting started with Vue.js and Stripe</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -182,12 +182,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 6th article -->
@@ -195,7 +195,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">How to work with friendly APIs</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">How to work with friendly APIs</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -217,12 +217,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 7th article -->
@@ -230,7 +230,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">Introducing the Testing Field Guide</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">Introducing the Testing Field Guide</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -252,12 +252,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
             <!-- 8th article -->
@@ -265,7 +265,7 @@
               <div>
                 <header>
                   <h2 class="h4 mb-2">
-                    <router-link to="/blog-post" class="hover:underline">Community Digest: Summer Edition</router-link>
+                    <AppLink to="/blog-post" class="hover:underline">Community Digest: Summer Edition</AppLink>
                   </h2>
                 </header>
                 <div class="text-lg text-gray-600 mb-4">
@@ -287,12 +287,12 @@
                   </div>
                 </footer>
               </div>
-              <router-link to="/blog-post" class="block flex-shrink-0 ml-6">
+              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
                 <span class="sr-only">Read more</span>
                 <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
                 </svg>
-              </router-link>
+              </AppLink>
             </article>
 
           </div>
@@ -310,9 +310,9 @@
                   </svg>
                   <article>
                     <h3 class="font-medium mb-1">
-                      <router-link to="/blog-post" class="hover:underline">
+                      <AppLink to="/blog-post" class="hover:underline">
                         Create and Deploy a blog with Simple
-                      </router-link>
+                      </AppLink>
                     </h3>
                     <div class="text-sm text-gray-800">
                       <span class="text-gray-600">By </span>
@@ -326,9 +326,9 @@
                   </svg>
                   <article>
                     <h3 class="font-medium mb-1">
-                      <router-link to="/blog-post" class="hover:underline">
+                      <AppLink to="/blog-post" class="hover:underline">
                         Why we think Simple is good for developers
-                      </router-link>
+                      </AppLink>
                     </h3>
                     <div class="text-sm text-gray-800">
                       <span class="text-gray-600">By </span>
@@ -342,9 +342,9 @@
                   </svg>
                   <article>
                     <h3 class="font-medium mb-1">
-                      <router-link to="/blog-post" class="hover:underline">
+                      <AppLink to="/blog-post" class="hover:underline">
                         Getting started with Vue.js and Stripe
-                      </router-link>
+                      </AppLink>
                     </h3>
                     <div class="text-sm text-gray-800">
                       <span class="text-gray-600">By </span>
@@ -358,9 +358,9 @@
                   </svg>
                   <article>
                     <h3 class="font-medium mb-1">
-                      <router-link to="/blog-post" class="hover:underline">
+                      <AppLink to="/blog-post" class="hover:underline">
                         Making New projects with React & Simple
-                      </router-link>
+                      </AppLink>
                     </h3>
                     <div class="text-sm text-gray-800">
                       <span class="text-gray-600">By </span>
@@ -374,9 +374,9 @@
                   </svg>
                   <article>
                     <h3 class="font-medium mb-1">
-                      <router-link to="/blog-post" class="hover:underline">
+                      <AppLink to="/blog-post" class="hover:underline">
                         How to add custom icons to your Simple project
-                      </router-link>
+                      </AppLink>
                     </h3>
                     <div class="text-sm text-gray-800">
                       <span class="text-gray-600">By </span>
