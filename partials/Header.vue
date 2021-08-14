@@ -6,10 +6,10 @@
         <!-- Site branding -->
         <div class="flex-shrink-0 mr-4">
           <!-- Logo -->
-          <router-link to="/" class="block" aria-label="Gradual">
+          <AppLink to="/" class="block" aria-label="Gradual">
             <logo class="w-12 inline-block mr-2" is-black/>
             <span class="text-2xl font-bold">gradual</span>
-          </router-link>
+          </AppLink>
         </div>
 
         <!-- Desktop navigation -->
@@ -18,11 +18,11 @@
           <!-- Desktop menu links -->
           <ul class="flex flex-grow justify-end flex-wrap items-center">
             <li v-for="link in links">
-              <router-link :to="link.path" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">{{link.text}}</router-link>
+              <AppLink :to="link.path" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">{{link.text}}</AppLink>
             </li>
             <Dropdown v-if="dropdownLinks.length" :title="dropdownTitle">
               <li v-for="ddLink in dropdownLinks">
-                <router-link :to="ddLink.path" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">{{ddLink.text}}</router-link>
+                <AppLink :to="ddLink.path" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">{{ddLink.text}}</AppLink>
               </li>
             </Dropdown>
           </ul>
@@ -30,15 +30,15 @@
           <!-- Desktop sign in links -->
           <ul class="flex flex-grow justify-end flex-wrap items-center">
             <!-- <li>
-              <router-link to="/signin" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</router-link>
+              <AppLink to="/signin" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</AppLink>
             </li> -->
             <li>
-              <router-link to="/get-demo" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+              <AppLink to="/get-demo" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
                 <span>Get a Demo</span>
                 <svg class="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill-rule="nonzero" />
                 </svg>
-              </router-link>
+              </AppLink>
             </li>
           </ul>
 
@@ -74,26 +74,26 @@
             >
               <ul class="px-5 py-2">
                 <li v-for="link in links">
-                  <router-link :to="link.path" class="flex text-gray-600 hover:text-gray-900 py-2">{{link.text}}</router-link>
+                  <AppLink :to="link.path" class="flex text-gray-600 hover:text-gray-900 py-2">{{link.text}}</AppLink>
                 </li>          
                 <li v-if="dropdownLinks.length" class="py-2 my-2 border-t border-b border-gray-200">
                   <span class="flex text-gray-600 hover:text-gray-900 py-2">{{dropdownTitle}}</span>
                   <ul class="pl-4">
                     <li v-for="ddLink in dropdownLinks">
-                      <router-link :to="ddLink.path" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">{{ddLink.text}}</router-link>
+                      <AppLink :to="ddLink.path" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">{{ddLink.text}}</AppLink>
                     </li>
                   </ul>
                 </li>
                 <!-- <li>
-                  <router-link to="/signin" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center">Sign in</router-link>
+                  <AppLink to="/signin" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center">Sign in</AppLink>
                 </li> -->
                 <li>
-                  <router-link to="/get-demo" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
+                  <AppLink to="/get-demo" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
                     <span>Get a Demo</span>
                     <svg class="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fill-rule="nonzero" />
                     </svg>                
-                  </router-link>
+                  </AppLink>
                 </li>
               </ul>
             </nav>
@@ -114,7 +114,7 @@ export default {
   name: 'Header',
   components: {
     Dropdown, 
-    Logo, 
+    Logo,
   },
   data: function () {
     return {
@@ -129,11 +129,11 @@ export default {
       dropdownTitle: 'Use Cases',
       dropdownLinks: [
         {
-          path: '/mozfest',
+          path: 'https://mozfest.gradu.al',
           text: 'MozFest',
         },
         {
-          path: '/storytellersunited',
+          path: 'https://storytellersunited.gradu.al',
           text: 'Storytellers United',
         },
       ]
