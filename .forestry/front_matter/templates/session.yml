@@ -82,4 +82,5 @@ fields:
   label: Panopto Recording ID
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
 pages:
+- content/sessions/the-digital-id-critical-web-literacy.app
 - content/sessions/wranglers-2022-kickoff-call.app
