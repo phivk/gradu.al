@@ -11,7 +11,7 @@ fields:
   type: select
   default: ''
   config:
-    required: false
+    required: true
     options:
     - peer share
     - workshop
