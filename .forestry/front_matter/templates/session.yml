@@ -81,9 +81,4 @@ fields:
   label: Panopto Recording ID
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
 pages:
-- content/coee/sessions/accelerate-your-purpose-build-your-core-business-with-the-accelerant-curve.md
-- content/coee/sessions/designing-staging-experiences-to-change-behaviour-part-2.md
-- content/coee/sessions/designing-staging-experiences-to-change-behaviour.md
-- content/coee/sessions/life-as-a-learning-arena.md
-- content/coee/sessions/podcasting-best-practice-sharing.md
-- content/coee/sessions/selfie-free-form-larp.md
+- content/mozfestwranglers/sessions/test.md
