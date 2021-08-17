@@ -9,7 +9,7 @@ sections:
   label: Mozfest Wranglers Sessions
   create: documents
   match: "*.md"
-  new_doc_ext: ".md"
+  new_doc_ext: md
   templates:
   - session
 upload_dir: static/uploads/mozfestwranglers
