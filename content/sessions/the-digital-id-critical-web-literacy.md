@@ -3,7 +3,7 @@ title: 'The Digital ID / Critical Web Literacy '
 type: peer share
 dateTime: 2021-08-18T15:00:00Z
 durationInMinutes: 60
-imageSrc: "/uploads/mozfestwranglers/feedback-2044700_1920.jpg"
+imageSrc: "/uploads/mozfestwranglers/digitalid.png"
 learnerNames: []
 sharerNames:
 - Sarah M
