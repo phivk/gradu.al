@@ -1,7 +1,7 @@
 ---
 title: 'The Digital ID / Critical Web Literacy '
 type: peer share
-dateTime: 2021-08-18T16:00:00.000+00:00
+dateTime: 2021-08-18T15:00:00Z
 durationInMinutes: 60
 imageSrc: "/uploads/mozfestwranglers/feedback-2044700_1920.jpg"
 learnerNames: []
