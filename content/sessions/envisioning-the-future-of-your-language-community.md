@@ -18,7 +18,7 @@ resources:
 cta:
   text: Check out the notes
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit
-panoptoRecordingID: c3b616c0-663a-4341-8a66-ad82012ae4a3
+panoptoRecordingID: 6965926a-6edc-49dd-9f53-ad82012ae43a
 
 ---
 In this peer share and group discussion, Sadik describes how he and his community created a wikipedia for Dagbani, a language spoken in Ghana, Benin, and Burkina Faso. Check the notes document for resources!
