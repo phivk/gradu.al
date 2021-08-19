@@ -7,6 +7,8 @@ imageSrc: "/uploads/mozfestwranglers/candle-keep.jpeg"
 learnerNames: []
 sharerNames: []
 resources:
+- text: CandleKeep Mysteries
+  href: https://www.dndbeyond.com/sources/cm
 - text: Link to site for character creation (level 3)
   href: https://www.dndbeyond.com/characters/builder#/
 cta:
