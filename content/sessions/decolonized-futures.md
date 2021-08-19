@@ -13,8 +13,8 @@ resources:
 - text: 'Peer Share Notes '
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit#
 cta:
-  text: ''
-  href: ''
+  text: RSVP for this session!
+  href: " https://mozilla.zoom.us/meeting/register/tJYqdu-qpzovHdSyyWwF10oe1NHvzIuym3Jx"
 youtubeRecordingID: ''
 panoptoRecordingID: ''
 
