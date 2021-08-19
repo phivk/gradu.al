@@ -3,7 +3,7 @@ title: Embroidery Activity with Sofía and Beth
 type: activity
 dateTime: 2021-08-19T15:00:00.000+00:00
 durationInMinutes: 60
-imageSrc: https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Kazakh_rug_chain_stitch_embroidery.jpg/1080px-Kazakh_rug_chain_stitch_embroidery.jpg
+imageSrc: "/uploads/mozfestwranglers/jessica_marquez_sashiko_mending_2918-0.webp"
 learnerNames: []
 sharerNames:
 - Beth
