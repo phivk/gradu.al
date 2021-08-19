@@ -9,7 +9,7 @@ learnerNames: []
 sharerNames:
 - Sadik
 resources:
-- text: Notes
+- text: Peer Share Notes
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit
 - text: Link to the wiki
   href: https://dag.wikipedia.org/wiki/Sol%C9%94%C9%A3u
