@@ -10,7 +10,7 @@ sharerNames:
 - Eriol
 - Christine
 resources:
-- text: Notes from this Session
+- text: Peer Share Notes
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit#
 cta:
   text: ''
