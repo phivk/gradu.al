@@ -12,8 +12,8 @@ sharerNames:
 resources:
 - text: Peer Share Notes
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit
-- text: ''
-  href: ''
+- text: Eeava's Slides about Mozilla Insights
+  href: https://docs.google.com/presentation/d/1anTVHf74guEINVAauRmWRPCBFWAbh8IQn0rdvMNWcBM/edit?usp=sharing
 cta:
   text: ''
   href: ''
