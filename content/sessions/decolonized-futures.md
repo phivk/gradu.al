@@ -10,6 +10,8 @@ sharerNames:
 - Gibran
 - Temi
 resources:
+- text: Temi's Slides
+  href: https://docs.google.com/presentation/d/1l5wyVwYzvXlPqZPFkizRrdbhmWxazkHd8TnLk0O2pKk/edit#slide=id.p
 - text: 'Peer Share Notes '
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit#
 cta:
