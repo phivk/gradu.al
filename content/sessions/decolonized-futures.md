@@ -13,7 +13,7 @@ resources:
 - text: 'Peer Share Notes '
   href: https://docs.google.com/document/d/1hmHIx4G3gHDeZgxx-rW3WGeP7LTEsETkv1Pyj9EZaXM/edit#
 cta:
-  text: RSVP for this session!
+  text: Ping Gibran or Temi on Slack to discuss further!
   href: " https://mozilla.zoom.us/meeting/register/tJYqdu-qpzovHdSyyWwF10oe1NHvzIuym3Jx"
 youtubeRecordingID: ''
 panoptoRecordingID: 46c345cd-6e2d-4d58-9115-ad8d00fc4a79
