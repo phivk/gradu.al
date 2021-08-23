@@ -15,7 +15,7 @@ resources:
 cta:
   text: RSVP for this session!
   href: " https://mozilla.zoom.us/meeting/register/tJYqdu-qpzovHdSyyWwF10oe1NHvzIuym3Jx"
-youtubeRecordingID: 46c345cd-6e2d-4d58-9115-ad8d00fc4a79
-panoptoRecordingID: ''
+youtubeRecordingID: ''
+panoptoRecordingID: 46c345cd-6e2d-4d58-9115-ad8d00fc4a79
 
 ---
