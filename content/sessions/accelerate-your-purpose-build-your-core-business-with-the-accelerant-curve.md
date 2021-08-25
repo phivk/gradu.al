@@ -1,10 +1,13 @@
 ---
 type: peer share
 title: Accelerate your purpose & build your core business with the Accelerant Curve
-dateTime: 2021-08-23T16:00:00+02:00
+dateTime: 2021-08-23T16:00:00.000+02:00
 durationInMinutes: 60
 imageSrc: https://edco.global/wp-content/uploads/2018/05/3-1.jpg
 learnerNames:
+- Maja Wieczorkowska
+- Rob Tesh
+- Phillip Jacobius
 - Andrada Rus
 - Carina Enggård
 - Corina Ghiatau
@@ -16,6 +19,7 @@ resources: []
 cta:
   text: Collaborative Notes
   href: https://docs.google.com/document/d/1TsiMm1AsfslLYEjFWOPppImNUG9kZCuvzfXMwEPWUXo/edit#
+youtubeRecordingID: _cpIwCOhhWo
 
 ---
 Getting attention from your minimal viable audience. Capturing their interest. Making what you do desirable to them and getting them to action their intentions.
