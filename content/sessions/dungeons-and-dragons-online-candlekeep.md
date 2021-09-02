@@ -13,8 +13,8 @@ resources:
 - text: Link to site for character creation (level 3)
   href: https://www.dndbeyond.com/characters/builder#/
 cta:
-  text: RSVP for this activity!
-  href: " https://mozilla.zoom.us/meeting/register/tJYucO6rrz4oH9B9EttWwKuu7Fq1_vqnJayA"
+  text: Want to join a future session? Ping Eriol on Slack
+  href: ''
 youtubeRecordingID: ''
 panoptoRecordingID: ''
 
