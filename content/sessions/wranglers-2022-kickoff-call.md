@@ -8,7 +8,9 @@ learnerNames: []
 sharerNames:
 - Zannah
 - Sarah
-resources: []
+resources:
+- text: Kickoff Call Notes
+  href: https://docs.google.com/document/d/1AAy3xz0rbcWfguuhc-W36al5EvZDwTsRkFmRig5FtM4/edit
 cta:
   text: ''
   href: ''
