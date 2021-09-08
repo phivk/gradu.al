@@ -2,7 +2,7 @@
 title: 2022 Onboarding Day 2
 type: workshop
 dateTime: 2021-09-08T14:00:00Z
-durationInMinutes: 
+durationInMinutes: 120
 imageSrc: "/uploads/mozfestwranglers/screen-shot-2021-09-08-at-6-50-03-pm.png"
 learnerNames:
 - Everyone
