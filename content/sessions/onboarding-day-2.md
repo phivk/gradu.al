@@ -4,8 +4,10 @@ type: workshop
 dateTime: 2021-09-08T14:00:00Z
 durationInMinutes: 
 imageSrc: "/uploads/mozfestwranglers/screen-shot-2021-09-08-at-6-50-03-pm.png"
-learnerNames: []
-sharerNames: []
+learnerNames:
+- Everyone
+sharerNames:
+- Everyone
 resources:
 - text: Notes document
   href: https://docs.google.com/document/d/1VEkgPuZDNLZ7JyD6QkQwEqP07KvaMAai1fk8rcOUvW4/edit#
