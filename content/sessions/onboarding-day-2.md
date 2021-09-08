@@ -1,5 +1,5 @@
 ---
-title: Onboarding Day 2
+title: 2022 Onboarding Day 2
 type: workshop
 dateTime: 2021-09-08T14:00:00Z
 durationInMinutes: 
