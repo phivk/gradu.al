@@ -3,7 +3,7 @@ title: 2022 Onboarding Day 3
 type: workshop
 dateTime: 2021-09-09T15:00:00Z
 durationInMinutes: 40
-imageSrc: 9da5cac2-449e-4f16-b8dd-ad9e010c45b2
+imageSrc: "/uploads/mozfestwranglers/screen-shot-2021-09-09-at-5-43-09-pm.png"
 learnerNames: []
 sharerNames: []
 resources:
