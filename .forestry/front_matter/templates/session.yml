@@ -85,6 +85,7 @@ fields:
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
 pages:
 - content/sessions/2022-onboarding-day-1.md
+- content/sessions/2022-onboarding-day-4.md
 - content/sessions/discussion-mozilla-trustworthy-ai-internet-health-data-futures-mozfest-you.md
 - content/sessions/dungeons-and-dragons-online-candlekeep.md
 - content/sessions/mozilla-insights-the-internet-health-report-and-other-cool-research-we-re-working-on-women-in-tech-collectives.md
