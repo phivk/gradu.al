@@ -9,8 +9,8 @@ sharerNames: []
 resources:
 - text: Notes document
   href: https://docs.google.com/document/d/1yxyrsZlH-iClsi1dBai1bBUVb0iH4fzyIWxIotDMc58/edit#
-- text: ''
-  href: ''
+- text: Roles Document Template
+  href: https://docs.google.com/spreadsheets/d/1O4V28nl5v4yaU8RYT_1Ioqs0xwRoIJ0bM1eyPp7v50I/edit#gid=0
 cta:
   text: ''
   href: ''
