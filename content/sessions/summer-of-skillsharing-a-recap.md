@@ -3,7 +3,7 @@ title: Summer of Skillsharing - a recap
 type: peer share
 dateTime: 2021-09-22T00:00:00+02:00
 durationInMinutes: 
-imageSrc: https://scontent-ams4-1.xx.fbcdn.net/v/t1.15752-9/242453333_280699010324977_5311318621881453112_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=kCC6VEDBCuoAX8PKQZr&_nc_ht=scontent-ams4-1.xx&oh=413f23a97d28282d0f55ab34a5ee02c9&oe=6172426B
+imageSrc: https://media.istockphoto.com/photos/words-from-wooden-blocks-with-letters-picture-id1208414655?k=20&m=1208414655&s=612x612&w=0&h=lldu7lUnkG1mjT1ViXvQ8k5ktkudP4r6on4BEl7TAjM=
 learnerNames: []
 sharerNames: []
 resources: []
