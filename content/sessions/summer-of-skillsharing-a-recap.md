@@ -14,3 +14,4 @@ youtubeRecordingID: PHDTQjUBRfg
 panoptoRecordingID: ''
 
 ---
+A summary of everything we've learned and shared over the Summer of 2021 with other members of the CoEE community. Take a look at a short recap on the video above or get involved next season for new findings!
