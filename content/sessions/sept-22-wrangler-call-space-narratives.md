@@ -15,6 +15,6 @@ cta:
   text: ''
   href: ''
 youtubeRecordingID: ''
-panoptoRecordingID: ''
+panoptoRecordingID: a46a6f2b-7e88-40a8-8a14-adab00fdf5ea
 
 ---
