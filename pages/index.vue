@@ -6,50 +6,37 @@
     />
     <div class="text-center">
       <section class="mb-16">
-        <div class="mv4">
-          <a href="https://www.mozillafestival.org/" target="_blank">
-            <img
-              class="dib w4 w5-ns"
-              src="https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg"
-              alt="MozFest Logo"
-            />
-          </a>
+        <div class="my-6">
+          <img
+            class="dib w4 w5-ns"
+            :src="indexPage.logoSrc"
+            :alt="`${indexPage.communityName} Logo`"
+          />
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold">What would you like to learn or share?</h1>
+        <h1 class="text-4xl md:text-5xl mb-6">{{indexPage.ctaHeading}}</h1>
         <nuxt-link
           append
           to="join"
           class="dib mb-8 text-3xl br3 ph3 pv2 no-underline grow shadow-hover white bg-color-accent"
         >
-          Let us know!
+          {{indexPage.ctaButtonText}}
         </nuxt-link>
         <div class="db">
           <a
-            href="https://www.mozillafestival.org/slack/"
+            :href="indexPage.subLink.href"
             class="color-accent underline hover:no-underline"
             target="_blank"
-            >join the MozFest Slack</a
+            >{{indexPage.subLink.text}}</a
           >
         </div>
       </section>
       <section class="mb-16">
         <div class="center">
-          <h2 class="text-2xl md:text-3xl font-bold measure center mv2">
-            Hi 👋 <br />
-            Welcome to MozFest on Gradual!
-          </h2>
+          <nuxt-content 
+            :document="indexPage" 
+            class="max-w-2xl mx-auto text-lg"
+          />
           <div class="center">
-            <p class="center measure mb-4 f4 lh-copy">
-              This is a space to express things you’d like to learn and share
-              with others in the community. Join the conversation on the
-              <a
-                href="https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0"
-                target="_blank"
-                class="color-accent underline hover:no-underline"
-                >#skillsharing</a
-              >
-              channel!
-            </p>
             <ol class="list p-0 mb-4 flex flex-wrap justify-center">
               <li class="p-4 w-100 w-third-ns mw5-5">
                 <ProcessCard number="1" title="Map">
@@ -235,6 +222,9 @@ export default {
       .sortBy("dateTime", "asc")
       .fetch()
 
+    const indexPage = await $content('index')
+      .fetch()
+
     let nodes, edges, popular;
 
     try {
@@ -246,7 +236,7 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, nodes, edges, popular };
+    return { sessions, indexPage, nodes, edges, popular };
   },
   computed: {
     sessionsUpcoming() {
