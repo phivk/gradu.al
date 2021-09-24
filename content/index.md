@@ -6,6 +6,25 @@ ctaButtonText: Let us know!
 subLink:
   text: join the MozFest Slack
   href: https://www.mozillafestival.org/slack/
+sessionTypes:
+  - peer sharing
+  - salon
+  - conversation
+  - workshop
+  - lunch & learn
+  - talk
+  - one-on-one
+  - presentation
+  - brainstorm
+  - AMA
+infoBars:
+  - 
+    icon: 🤔
+    text: Need more help?
+    link:
+      text: Watch a walk-through video
+      href: https://www.loom.com/share/406bfe57b075452a8efadbff954191ad
+calendarLink: https://bit.ly/MozFestSkillsharing
 ---
 
 ## Hi 👋 <br /> Welcome to MozFest on Gradual!

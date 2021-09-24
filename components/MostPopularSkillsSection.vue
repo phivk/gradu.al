@@ -2,7 +2,7 @@
 <div>
   <slot></slot>
   <ul class="list lh-copy">
-    <li v-for="skill in skills" :key="skill" class="my-2 p-2 br3 bg-white fw5 tl">
+    <li v-for="skill in skills" :key="skill" class="my-2 p-2 rounded bg-white font-medium tl">
       {{skill}}
     </li>
   </ul>
