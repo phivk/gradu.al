@@ -37,7 +37,7 @@
         />
         <process-card-list/>
         <session-format-list :sessionTypes="indexPage.sessionTypes"/>
-        <info-bar v-for="infoBar in indexPage.infoBars" :infoBarObject="infoBar"/>
+        <info-bar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar"/>
       </section>
       <SessionsSection
         id="section-upcoming"
