@@ -1,6 +1,6 @@
 <template>
   <div class="bg-color-bg">
-    <social-head
+    <SocialHead
       :title="session.title"
       :description="description"
       :image="session.imageSrc"
@@ -112,7 +112,7 @@
       </div>
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt-0 mb-8 lg:mb-16">
-          <nuxt-content class="measure text-lg" :document="session" />
+          <NuxtContent class="measure text-lg" :document="session" />
         </div>
       </div>
     </main>

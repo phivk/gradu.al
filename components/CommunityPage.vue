@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <social-head :title="`${indexPage.communityName} - Here to learn`" />
+    <SocialHead :title="`${indexPage.communityName} - Here to learn`" />
     <CTASection
       :logoSrc="indexPage.logoSrc"
       :communityName="indexPage.communityName"

@@ -8,13 +8,13 @@
       />
     </div>
     <h1 class="text-4xl md:text-5xl mb-6">{{ctaHeading}}</h1>
-    <nuxt-link
+    <NuxtLink
       append
       to="join"
       class="inline-block mb-8 text-3xl rounded px-4 py-2 no-underline grow shadow-hover white bg-color-accent"
     >
       {{ctaButtonText}}
-    </nuxt-link>
+    </NuxtLink>
     <div class="block">
       <a
         :href="subLink.href"

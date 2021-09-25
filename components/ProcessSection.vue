@@ -1,12 +1,12 @@
 <template>
   <section class="mb-16 mx-auto">
-    <nuxt-content 
+    <NuxtContent 
       :document="indexPage" 
       class="max-w-2xl mx-auto text-lg"
     />
-    <process-card-list/>
-    <session-format-list :sessionTypes="indexPage.sessionTypes"/>
-    <info-bar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar"/>
+    <ProcessCardList/>
+    <SessionFormatList :sessionTypes="indexPage.sessionTypes"/>
+    <InfoBar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar"/>
   </section>
 </template>
 <script>

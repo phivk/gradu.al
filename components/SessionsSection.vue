@@ -2,7 +2,7 @@
   <section v-if="sessions.length">
     <div v-if="sessionsUpcoming.length" class="my-8">
       <h2 class="text-2xl md:text-3xl mb-4">Upcoming Sessions</h2>
-      <info-bar v-if="calendarLink" :infoBarObject="{
+      <InfoBar v-if="calendarLink" :infoBarObject="{
         'icon': '📅',
         'link': {
           'text': 'Subscribe to the Skill Sharing calendar to stay posted',
