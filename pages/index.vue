@@ -40,53 +40,22 @@
         <info-bar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar"/>
       </section>
       <SessionsSection :sessions="sessions" :calendarLink="indexPage.calendarLink"/>
-      <div
-        id="#section-intentions"
-        v-if="nodes && edges && popular"
-      >
-        <h2 class="text-3xl md:text-4xl font-bold mb3">Community learning intentions</h2>
-        <p class="text-lg lh-copy mb-8">
-          Something here for you?
-          <nuxt-link append to="join" class="color-accent underline hover:no-underline">
-            Let us know!
-          </nuxt-link>
-        </p>
-        <NavigationTabs 
-          :names="['Graph', 'List']"
-          :icons="['project-diagram', 'list']"
-        >
-          <template v-slot:tab-0>
-            <GraphManualKey class="text-left" />
-            <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
-          </template>
-          <template v-slot:tab-1>
-            <MostPopularSkillsSection
-              v-if="popular"
-              :skills="popular.skills"
-              class="text-left"
-            >
-              <p class="mb-4">Top skills of the moment</p>
-            </MostPopularSkillsSection>
-          </template>
-        </NavigationTabs>
-      </div>
+      <IntentionSection
+        :nodes="nodes" 
+        :edges="edges" 
+        :popular="popular"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import SessionsSection from "~/components/SessionsSection.vue";
-import GraphSection from "~/components/GraphSection.vue";
-import GraphManual from "~/components/GraphManual.vue";
-import GraphManualKey from "~/components/GraphManualKey.vue";
-import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
-import CircleCharacter from "~/components/CircleCharacter.vue";
+import IntentionSection from "~/components/IntentionSection.vue";
 import ProcessCardList from "~/components/ProcessCardList.vue";
 import SessionFormatList from "~/components/SessionFormatList.vue";
-import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
-import NavigationTabs from "~/components/NavigationTabs.vue";
 
 export default {
   layout: "mozFest",
@@ -97,17 +66,11 @@ export default {
   },
   components: {
     SessionsSection,
-    GraphSection,
-    GraphManual,
-    GraphManualKey,
-    MostPopularSkillsSection,
-    CircleCharacter,
+    IntentionSection,
     ProcessCardList,
     SessionFormatList,
-    TagPill,
     InfoBar,
     SocialHead,
-    NavigationTabs,
   },
   async asyncData({ $content }) {
     const sessions = await $content("sessions")
