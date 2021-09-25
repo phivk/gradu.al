@@ -1,28 +1,15 @@
 <template>
-  <div class="text-center">
-    <social-head title="MozFest - Here to learn" />
-    <CTASection
-      :logoSrc="indexPage.logoSrc"
-      :communityName="indexPage.communityName"
-      :ctaHeading="indexPage.ctaHeading"
-      :ctaButtonText="indexPage.ctaButtonText"
-      :subLink="indexPage.subLink"
-    />
-    <ProcessSection :indexPage="indexPage" />
-    <SessionsSection
-      :sessions="sessions"
-      :calendarLink="indexPage.calendarLink"
-    />
-    <IntentionSection :nodes="nodes" :edges="edges" :popular="popular" />
-  </div>
+  <CommunityPage
+    :indexPage="indexPage"
+    :sessions="sessions"
+    :nodes="nodes"
+    :edges="edges"
+    :popular="popular"
+  />
 </template>
 
 <script>
-import SocialHead from "~/components/SocialHead.vue";
-import CTASection from "~/components/CTASection.vue";
-import ProcessSection from "~/components/ProcessSection.vue";
-import SessionsSection from "~/components/SessionsSection.vue";
-import IntentionSection from "~/components/IntentionSection.vue";
+import CommunityPage from "~/components/CommunityPage.vue";
 
 export default {
   layout: "mozFest",
@@ -32,11 +19,7 @@ export default {
     };
   },
   components: {
-    SocialHead,
-    CTASection,
-    ProcessSection,
-    SessionsSection,
-    IntentionSection,
+    CommunityPage,
   },
   async asyncData({ $content }) {
     const sessions = await $content("sessions")
