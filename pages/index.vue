@@ -39,30 +39,7 @@
         <session-format-list :sessionTypes="indexPage.sessionTypes"/>
         <info-bar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar"/>
       </section>
-      <SessionsSection
-        id="section-upcoming"
-        v-if="sessionsUpcoming.length"
-        :sessions="sessionsUpcoming"
-      >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Upcoming Sessions</h2>
-        <info-bar v-if="indexPage.calendarLink" :infoBarObject="{
-          'icon': '📅',
-          'link': {
-            'text': 'Subscribe to the Skill Sharing calendar to stay posted',
-            'href': indexPage.calendarLink
-          }
-        }"/>
-      </SessionsSection>
-      <SessionsSection
-        id="section-past"
-        v-if="sessionsPast.length"
-        :sessions="sessionsPast"
-      >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Things we've learned so far</h2>
-        <p class="text-lg lh-copy">
-          Select a session below for a recording and more details.
-        </p>
-      </SessionsSection>
+      <SessionsSection :sessions="sessions" :calendarLink="indexPage.calendarLink"/>
       <div
         id="#section-intentions"
         v-if="nodes && edges && popular"
@@ -110,7 +87,6 @@ import TagPill from "~/components/TagPill.vue";
 import InfoBar from "~/components/InfoBar.vue";
 import SocialHead from "~/components/SocialHead.vue";
 import NavigationTabs from "~/components/NavigationTabs.vue";
-import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
   layout: "mozFest",
@@ -153,14 +129,6 @@ export default {
     }
 
     return { sessions, indexPage, nodes, edges, popular };
-  },
-  computed: {
-    sessionsUpcoming() {
-      return getSessionsUpcoming(this.sessions);
-    },
-    sessionsPast() {
-      return getSessionsPast(this.sessions);
-    },
   },
 };
 </script>
