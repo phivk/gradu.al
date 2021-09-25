@@ -31,7 +31,6 @@
   </div>
 </template>
 <script>
-import InfoBar from "~/components/InfoBar.vue";
 export default {
   props: {
     infoBarObject: { type: Object, default: () => undefined },

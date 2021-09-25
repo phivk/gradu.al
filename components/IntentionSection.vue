@@ -36,9 +36,9 @@ import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue"
 import NavigationTabs from "~/components/NavigationTabs.vue";
 export default {
   props: {
-    nodes: { type: Array, default: () => [] },
-    edges: { type: Array, default: () => [] },
-    popular: { type: Array, default: () => [] },
+    nodes: { type: Object, default: () => {} },
+    edges: { type: Object, default: () => {} },
+    popular: { type: Object, default: () => {} },
   },
   components: {
     GraphManual,

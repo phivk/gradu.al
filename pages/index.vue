@@ -1,61 +1,28 @@
 <template>
-  <div>
-    <social-head
-     title="MozFest - Here to learn"
-     description=""
+  <div class="text-center">
+    <social-head title="MozFest - Here to learn" />
+    <CTASection
+      :logoSrc="indexPage.logoSrc"
+      :communityName="indexPage.communityName"
+      :ctaHeading="indexPage.ctaHeading"
+      :ctaButtonText="indexPage.ctaButtonText"
+      :subLink="indexPage.subLink"
     />
-    <div class="text-center">
-      <section class="mb-16">
-        <div class="my-6">
-          <img
-            class="dib w4 w5-ns"
-            :src="indexPage.logoSrc"
-            :alt="`${indexPage.communityName} Logo`"
-          />
-        </div>
-        <h1 class="text-4xl md:text-5xl mb-6">{{indexPage.ctaHeading}}</h1>
-        <nuxt-link
-          append
-          to="join"
-          class="inline-block mb-8 text-3xl rounded px-4 py-2 no-underline grow shadow-hover white bg-color-accent"
-        >
-          {{indexPage.ctaButtonText}}
-        </nuxt-link>
-        <div class="block">
-          <a
-            :href="indexPage.subLink.href"
-            class="color-accent underline hover:no-underline"
-            target="_blank"
-            >{{indexPage.subLink.text}}</a
-          >
-        </div>
-      </section>
-      <section class="mb-16 mx-auto">
-        <nuxt-content 
-          :document="indexPage" 
-          class="max-w-2xl mx-auto text-lg"
-        />
-        <process-card-list/>
-        <session-format-list :sessionTypes="indexPage.sessionTypes"/>
-        <info-bar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar"/>
-      </section>
-      <SessionsSection :sessions="sessions" :calendarLink="indexPage.calendarLink"/>
-      <IntentionSection
-        :nodes="nodes" 
-        :edges="edges" 
-        :popular="popular"
-      />
-    </div>
+    <ProcessSection :indexPage="indexPage" />
+    <SessionsSection
+      :sessions="sessions"
+      :calendarLink="indexPage.calendarLink"
+    />
+    <IntentionSection :nodes="nodes" :edges="edges" :popular="popular" />
   </div>
 </template>
 
 <script>
+import SocialHead from "~/components/SocialHead.vue";
+import CTASection from "~/components/CTASection.vue";
+import ProcessSection from "~/components/ProcessSection.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
 import IntentionSection from "~/components/IntentionSection.vue";
-import ProcessCardList from "~/components/ProcessCardList.vue";
-import SessionFormatList from "~/components/SessionFormatList.vue";
-import InfoBar from "~/components/InfoBar.vue";
-import SocialHead from "~/components/SocialHead.vue";
 
 export default {
   layout: "mozFest",
@@ -65,20 +32,18 @@ export default {
     };
   },
   components: {
+    SocialHead,
+    CTASection,
+    ProcessSection,
     SessionsSection,
     IntentionSection,
-    ProcessCardList,
-    SessionFormatList,
-    InfoBar,
-    SocialHead,
   },
   async asyncData({ $content }) {
     const sessions = await $content("sessions")
       .sortBy("dateTime", "asc")
-      .fetch()
+      .fetch();
 
-    const indexPage = await $content('index')
-      .fetch()
+    const indexPage = await $content("index").fetch();
 
     let nodes, edges, popular;
 
