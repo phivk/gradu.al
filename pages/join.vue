@@ -1,6 +1,6 @@
 <template>
   <div>
-    <social-head title="CoEE - Here to learn" description="" />
+    <SocialHead title="MozFest - Here to learn" description="" />
     <TypeFormEmbed :typeFormSrc="typeFormSrc" />
   </div>
 </template>

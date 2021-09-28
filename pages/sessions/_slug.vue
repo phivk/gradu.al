@@ -59,22 +59,3 @@ export default {
   },
 };
 </script>
-<style>
-.nuxt-content p {
-  margin-bottom: 1rem;
-}
-</style>
-<style scoped>
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-</style>

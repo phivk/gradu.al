@@ -1,6 +1,6 @@
 <template>
   <span
-    class="ba bw2 f5 bg-light-green dark-green ph2 pv1 dib br-pill"
+    class="border-4 f5 bg-light-green dark-green px-2 py-1 inline-block rounded-full"
     :class="borderColourClass"
     :style="styleObject"
   >
