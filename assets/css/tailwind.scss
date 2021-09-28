@@ -13,16 +13,52 @@
 
 // Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive
 @responsive {
-    .rtl {
-        direction: rtl;
-    }
+  .rtl {
+    direction: rtl;
+  }
 }
 
 // See Alpine.js: https://github.com/alpinejs/alpine#x-cloak
 [x-cloak] {
-    display: none;
+  display: none;
 }
 
 // AOS styles
 $aos-distance: 10px;
 @import 'node_modules/aos/src/sass/aos.scss';
+
+@layer base {
+  h1 {
+    @apply text-5xl leading-tight;
+    font-weight: bold;
+  }
+  h2 {
+    @apply text-4xl leading-tight;
+    font-weight: bold;
+  }
+  h3 {
+    @apply text-3xl leading-tight;
+    font-weight: bold;
+  }
+  h4 {
+    @apply text-2xl leading-tight;
+    font-weight: bold;
+  }
+  h5 {
+    @apply text-xl leading-tight;
+    font-weight: bold;
+  }
+  h6 {
+    @apply text-lg leading-tight;
+    font-weight: bold;
+  }
+  .nuxt-content {
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    a {
+      @apply underline hover:no-underline
+    }
+  }
+}

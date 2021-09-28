@@ -24,8 +24,3 @@ export default {
   },
 };
 </script>
-<style>
-.nuxt-content p {
-  margin-bottom: 1rem;
-}
-</style>

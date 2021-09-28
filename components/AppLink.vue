@@ -2,9 +2,9 @@
   <a v-if="isExternalLink" v-bind="$attrs" :href="to" target="_blank">
     <slot />
   </a>
-  <nuxt-link v-else v-bind="$attrs" :to="to">
+  <NuxtLink v-else v-bind="$attrs" :to="to">
     <slot />
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script>
