@@ -1,5 +1,5 @@
 ---
-title: Sept 29 Weekly Wrangler Call (Narratives/Teams & Roles)
+title: Sept 29 Wrangler Call (Narratives/Teams & Roles)
 type: workshop
 dateTime: 2021-09-29T14:00:00Z
 durationInMinutes: 
