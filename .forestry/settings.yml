@@ -4,10 +4,6 @@ auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
 sections:
-- type: document
-  path: content/index.md
-  label: Community Home Page
-  match: "**/*"
 - type: directory
   path: content/ambassadors
   label: CoEE Ambassadors
@@ -22,6 +18,9 @@ sections:
   new_doc_ext: md
   templates:
   - session
+- type: document
+  path: content/index.md
+  label: Community Home Page
 upload_dir: static/uploads/coee
 public_path: "/uploads/coee"
 front_matter_path: ''
