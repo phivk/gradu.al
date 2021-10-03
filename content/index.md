@@ -3,6 +3,9 @@ communityName: CoEE
 pageHeading: Summer of Skill Sharing
 pageSubHeading: June 29 - September 22
 logoSrc: https://secureservercdn.net/160.153.138.163/8j9.80a.myftpupload.com/wp-content/uploads/2020/02/SVG_coee-white-owl-1.svg
+ctaHeading: What would you like to learn or share?
+ctaButtonText: Let us know!
+typeformSrc: https://form.typeform.com/to/fFQLUWym
 subLink:
   text: join the CoEE FB group
   href: https://www.facebook.com/groups/223720981529219
