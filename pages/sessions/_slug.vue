@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import TagPill from "~/components/TagPill.vue";
-import ProfilePicList from "~/components/ProfilePicList.vue";
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
@@ -15,7 +13,7 @@ export default {
       title: "CoEE - Here to learn",
     };
   },
-  components: { TagPill, ProfilePicList, SessionPage },
+  components: { SessionPage },
   data() {
     return {
       bgColor: "#000",
