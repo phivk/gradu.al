@@ -2,6 +2,7 @@
   <CommunityPage
     :indexPage="indexPage"
     :sessions="sessions"
+    :ambassadors="ambassadors"
     :nodes="nodes"
     :edges="edges"
     :popular="popular"
@@ -19,7 +20,17 @@ export default {
   async asyncData({ $content }) {
     const sessions = await $content("sessions")
       .sortBy("dateTime", "asc")
-      .fetch();
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const ambassadors = await $content("ambassadors")
+      .sortBy("dateTime", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
 
     const indexPage = await $content("index").fetch();
 
@@ -34,7 +45,7 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, indexPage, nodes, edges, popular };
+    return { sessions, ambassadors, indexPage, nodes, edges, popular };
   },
 };
 </script>
