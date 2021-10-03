@@ -1,9 +1,12 @@
 ---
 communityName: MozFest
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
+ctaHeading: What would you like to learn or share?
+ctaButtonText: Let us know!
 subLink:
   text: join the MozFest Slack
   href: https://www.mozillafestival.org/slack/
+typeformSrc: https://form.typeform.com/to/WNeeJYiq
 sessionTypes:
   - peer sharing
   - salon
