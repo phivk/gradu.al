@@ -4,6 +4,7 @@ logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.sv
 subLink:
   text: join the Demo Slack
   href: https://www.mozillafestival.org/slack/
+typeformSrc: https://form.typeform.com/to/WNeeJYiq
 sessionTypes:
   - peer sharing
   - salon
