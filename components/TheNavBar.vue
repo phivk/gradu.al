@@ -1,28 +1,29 @@
 <template>
   <nav>
-    <div class="p-4 ph4-m ph5-l mw9 center flex items-center justify-between">
-      <nuxt-link to="/" class="flex items-center no-underline">
+    <div class="p-4 ph4-m ph5-l mw9 mx-auto flex items-center justify-between">
+      <NuxtLink to="/" class="flex items-center no-underline">
         <logo class="w2-5" />
         <span class="ml-2 text-white f3 font-bold dn di-ns">gradual</span>
-      </nuxt-link>
-      <nuxt-link 
-        v-if="showBackLink"
-        to="/" 
-        class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
-      >
-        ← {{backLinkText}}
-      </nuxt-link>
+      </NuxtLink>
+      <div v-if="showBackLink">
+        <AppLink :to="backLinkTarget" class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer">
+          ← {{backLinkText}}
+        </AppLink>
+      </div>
     </div>
   </nav>
 </template>
 <script>
 import Logo from "~/components/Logo.vue";
+import AppLink from "~/components/AppLink.vue";
 export default {
   components: {
-    Logo
+    Logo,
+    AppLink,
   },
   props: {
     backLinkText: {type: String, default: "back"},
+    backLinkTarget: {type: String, default: "/"},
   },
   computed: {
     showBackLink() {

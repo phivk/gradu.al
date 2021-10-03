@@ -1,20 +1,21 @@
 <template>
-  <article class="tl bg-light-gray br3 shadow-4 hover-shadow-raise">
+  <article class="tl bg-light-gray rounded shadow-4 hover-shadow-raise">
+    <NuxtLink :to="session.path" class="link">    
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
           <img
             :src="session.imageSrc"
             :alt="session.title"
-            class="aspect-ratio--object objfit-cover br3 br--top z-0"
+            class="aspect-ratio--object objfit-cover rounded br--top z-0"
           />
         </div>
-        <div class="relative flex flex-column w-100">
+        <div class="relative flex flex-column w-100 text-black">
           <div class="p-4 bg-white">
             <div class="flex items-center justify-between flex-wrap mb-2">
-              <h3 class="font-bold f4 lh-title mt2 mr-2">
+              <h3 class="font-bold text-xl lh-title mt-2 mr-2">
                 {{ session.title }}
               </h3>
-              <span class="f5 fw4 o-50 tr mt2">{{ dateFormatted }}</span>
+              <span class="text-base font-normal opacity-50 tr mt-2">{{ dateFormatted }}</span>
             </div>
             <TagPill class="absolute top--1 -ml-1" borderColour="#fff">{{
               session.type
@@ -23,14 +24,14 @@
           <div class="p-4">
             <div class="flex flex-wrap mb-2">
               <div v-if="session.sharerNames" class="mr-4">
-                <h3 class="f5 fw4 o-60">Shared by</h3>
+                <h3 class="text-base font-normal opacity-60">Shared by</h3>
                 <ProfileAvatarList
                   :profileNames="session.sharerNames"
                   borderColor="#EEEEEE"
                 />
               </div>
               <div v-if="session.learnerNames">
-                <h3 class="f5 fw4 o-60">
+                <h3 class="text-base font-normal opacity-60">
                   {{ hasHappened ? "Learned by" : "Like to learn" }}
                 </h3>
                 <ProfileAvatarList
@@ -42,6 +43,7 @@
           </div>
         </div>
       </div>
+    </NuxtLink>
   </article>
 </template>
 <script>

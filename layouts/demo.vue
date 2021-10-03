@@ -1,11 +1,7 @@
 <template>
   <div class="theme-mozfest">
     <div class="bg-color-bg min-vh-100">
-      <TheNavBar
-        class="bg-color-primary"
-        backLinkText="Demo"
-        backLinkSlug="demo"
-      />
+      <TheNavBar class="bg-color-primary" backLinkTarget="/" backLinkText="Demo" />
       <div class="p-2 sm:p-4 lg:p-8">
         <nuxt />
       </div>

@@ -8,11 +8,6 @@ import SessionPage from "~/components/SessionPage.vue";
 export default {
   layout: "mozFestWranglers",
   middleware: ["password-protect"],
-  head() {
-    return {
-      title: "MozFest Wranglers - Here to learn",
-    };
-  },
   components: { SessionPage },
   data() {
     return {
@@ -25,8 +20,3 @@ export default {
   },
 };
 </script>
-<style>
-.nuxt-content p {
-  margin-bottom: 1rem;
-}
-</style>
