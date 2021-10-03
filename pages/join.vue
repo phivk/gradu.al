@@ -1,22 +1,21 @@
 <template>
   <div>
-    <SocialHead title="MozFest - Here to learn" description="" />
-    <TypeFormEmbed :typeFormSrc="typeFormSrc" />
+    <SocialHead :title="`${indexPage.communityName} - Here to learn`" description="" />
+    <TypeformEmbed :typeformSrc="indexPage.typeformSrc" />
   </div>
 </template>
 
 <script>
-import TypeFormEmbed from "~/components/TypeFormEmbed.vue";
+import TypeformEmbed from "~/components/TypeformEmbed.vue";
 import SocialHead from "~/components/SocialHead";
 export default {
   components: {
-    TypeFormEmbed,
+    TypeformEmbed,
     SocialHead,
   },
-  data() {
-    return {
-      typeFormSrc: "",
-    };
+  async asyncData({ $content }) {
+    const indexPage = await $content("index").fetch();
+    return { indexPage };
   },
 };
 </script>

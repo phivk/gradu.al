@@ -29,8 +29,8 @@ export default {
   props: {
     logoSrc: { type: String, default: "" },
     communityName: { type: String, default: "" },
-    ctaHeading: { type: String, default: "What would you like to learn or share?" },
-    ctaButtonText: { type: String, default: "Let us know!" },
+    ctaHeading: { type: String, default: "" },
+    ctaButtonText: { type: String, default: "" },
     subLink: { type: Object, default: () => {} },
   },
 };

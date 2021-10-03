@@ -21,6 +21,7 @@ export default {
   },
   head() {
     return {
+      title: this.title,
       meta: [
         this.description &&
         {
