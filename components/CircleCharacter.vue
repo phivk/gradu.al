@@ -1,6 +1,6 @@
 <template>
   <span 
-    class="circle shadow-outline cursor-default f5"
+    class="circle cursor-default"
     :style="styleObject"
   >{{initial}}</span>
 </template>
@@ -36,12 +36,7 @@ export default {
   text-align: center;
   border-radius: 50%;
 }
-.shadow-outline {
-  box-shadow: 0 0 0 0.5rem yellow;
-  background-color: 
-}
 .cursor-default {
   cursor: default;
 }
-
 </style>

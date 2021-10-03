@@ -1,11 +1,11 @@
 <template>
   <div class="bg-color-bg">
-    <social-head
+    <SocialHead
       :title="session.title"
       :description="description"
       :image="session.imageSrc"
     />
-    <main class=" mw9 center">
+    <main class=" mw9 mx-auto">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt-0 mb-2 sm:mb-4">
           <TagPill class="-ml-2" :borderColour="bgColor">{{
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="flex flex-wrap mb-4">
-        <div class="w-100 w-20-l pr-4 mb-4 f4">
+        <div class="w-100 w-20-l pr-4 mb-4 text-lg">
           <div>
             <p class="font-bold mb-4">
               {{ dateFormatted }}
@@ -58,7 +58,7 @@
               v-if="session.cta && session.cta.text !==''"
               :href="session.cta.href"
               target="_blank"
-              class="font-bold f4 link br3 p-2 text-center dib mr-4 white bg-color-accent"
+              class="font-bold text-lg link rounded p-2 text-center dib mr-4 white bg-color-accent"
               >{{ session.cta.text }}</a
             >
             <a
@@ -112,7 +112,7 @@
       </div>
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt-0 mb-8 lg:mb-16">
-          <nuxt-content class="measure f4" :document="session" />
+          <NuxtContent class="measure text-lg" :document="session" />
         </div>
       </div>
     </main>

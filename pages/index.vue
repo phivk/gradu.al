@@ -1,66 +1,40 @@
 <template>
-  <div class="flex flex-col min-h-screen overflow-hidden">
-
-    <!-- Site header -->
-    <Header />
-
-    <!-- Page content -->
-    <main class="flex-grow">
-
-      <!-- Page sections -->
-      <HeroHome />
-      <FeaturesProcess />
-      <UseCases />
-      <TestimonialsCarousel />
-      <Cta />
-
-    </main>
-
-    <!-- Site footer -->
-    <Footer />
-
-  </div>
+  <CommunityPage
+    :indexPage="indexPage"
+    :sessions="sessions"
+    :nodes="nodes"
+    :edges="edges"
+    :popular="popular"
+  />
 </template>
 
 <script>
-import AOS from 'aos'
-import Sticky from 'sticky-js'
-import Header from './../partials/Header.vue'
-import HeroHome from './../partials/HeroHome.vue'
-import FeaturesProcess from './../partials/FeaturesProcess.vue'
-import TestimonialsCarousel from './../partials/TestimonialsCarousel.vue'
-import FeaturesBlocks from './../partials/FeaturesBlocks.vue'
-import UseCases from './../partials/UseCases.vue'
-import Cta from './../partials/Cta.vue'
-import Footer from './../partials/Footer.vue'
+import CommunityPage from "~/components/CommunityPage.vue";
 
 export default {
+  layout: "demo",
   components: {
-    Header,
-    HeroHome,
-    FeaturesProcess,
-    TestimonialsCarousel,
-    FeaturesBlocks,
-    UseCases,
-    Cta,
-    Footer,
+    CommunityPage,
   },
-  mounted() {
-    AOS.init({
-      once: true,
-      disable: 'phone',
-      duration: 700,
-      easing: 'ease-out-cubic',
-    })
-    // eslint-disable-next-line no-unused-vars
-    const sticky = new Sticky('[data-sticky]');    
-    // Route change
-    if (this.$router) {
-      this.$watch('$route', () => {
-        // eslint-disable-next-line no-unused-vars
-        const sticky = new Sticky('[data-sticky]'); 
-      });
-    }    
-  }
-}
+  async asyncData({ $content }) {
+    const sessions = await $content("sessions")
+      .sortBy("dateTime", "asc")
+      .fetch();
+
+    const indexPage = await $content("index").fetch();
+
+    let nodes, edges, popular;
+
+    try {
+      nodes = await $content("data", "nodes").fetch();
+      edges = await $content("data", "edges").fetch();
+      popular = await $content("data", "popular").fetch();
+    } catch (error) {
+      console.log(error);
+      console.log("nodes and edges failed to load");
+    }
+
+    return { sessions, indexPage, nodes, edges, popular };
+  },
+};
 </script>

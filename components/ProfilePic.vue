@@ -1,6 +1,6 @@
 <template>
   <img
-    class="br-100 w2 dib ba bw2"
+    class="br-100 w2 dib border bw2"
     :class="borderColorClass"
     :src="imageSrc"
     :alt="`profile picture of ${userName}`"
