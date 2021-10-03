@@ -6,12 +6,7 @@
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "mozFest",
-  head() {
-    return {
-      title: "MozFest - Here to learn",
-    };
-  },
+  layout: "demo",
   components: { SessionPage },
   data() {
     return {

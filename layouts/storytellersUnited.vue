@@ -1,7 +1,7 @@
 <template>
   <div class="theme-storytellerunited">
     <div class="bg-color-bg min-vh-100">
-      <TheNavBar class="bg-color-primary" backLinkText="Storytellers United" />
+      <TheNavBar class="bg-color-primary" backLinkTarget="https://storytellerunited.gradu.al" backLinkText="Storytellers United" />
       <div class="p-2 sm:p-4 lg:p-8">
         <nuxt />
       </div>

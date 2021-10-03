@@ -11,7 +11,7 @@
       }"/>
       <SessionCardList :sessions="sessionsUpcoming"/>
     </div>
-    <div v-if="sessionsUpcoming.length" class="my-8">
+    <div v-if="sessionsPast.length" class="my-8">
       <h2 class="text-2xl md:text-3xl mb-4">Things we've learned so far</h2>
       <p class="text-lg">
         Select a session below for a recording and more details.

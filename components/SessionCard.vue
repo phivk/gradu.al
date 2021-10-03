@@ -9,7 +9,7 @@
             class="aspect-ratio--object objfit-cover rounded br--top z-0"
           />
         </div>
-        <div class="relative flex flex-column w-100">
+        <div class="relative flex flex-column w-100 text-black">
           <div class="p-4 bg-white">
             <div class="flex items-center justify-between flex-wrap mb-2">
               <h3 class="font-bold text-xl lh-title mt-2 mr-2">

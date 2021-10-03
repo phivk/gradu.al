@@ -12,12 +12,7 @@
 import CommunityPage from "~/components/CommunityPage.vue";
 
 export default {
-  layout: "mozFest",
-  head() {
-    return {
-      title: "MozFest - Here to learn",
-    };
-  },
+  layout: "demo",
   components: {
     CommunityPage,
   },
