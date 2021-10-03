@@ -2,7 +2,7 @@
 title: 'Envisioning the future of your language community: how can small language
   Wikipedias move forward?'
 type: peer share
-dateTime: 2021-08-03T15:00+02:00
+dateTime: 2021-08-03T13:00:00Z
 durationInMinutes: 60
 imageSrc: "/uploads/mozfestwranglers/Dagbanli-Wikimedia-Group-1.jpeg"
 learnerNames: []
