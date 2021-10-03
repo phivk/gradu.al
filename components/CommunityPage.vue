@@ -19,6 +19,7 @@
       :sessions="sessions"
       :calendarLink="indexPage.calendarLink"
     />
+    <AmbassadorsSection v-if="ambassadors.length" :ambassadors="ambassadors" />
     <IntentionSection :nodes="nodes" :edges="edges" :popular="popular" />
   </div>
 </template>
@@ -27,6 +28,7 @@ import SocialHead from "~/components/SocialHead.vue";
 import CTASection from "~/components/CTASection.vue";
 import ProcessSection from "~/components/ProcessSection.vue";
 import SessionsSection from "~/components/SessionsSection.vue";
+import AmbassadorsSection from "~/components/AmbassadorsSection.vue";
 import IntentionSection from "~/components/IntentionSection.vue";
 
 export default {
@@ -35,11 +37,13 @@ export default {
     CTASection,
     ProcessSection,
     SessionsSection,
+    AmbassadorsSection,
     IntentionSection,
   },
   props: {
     indexPage: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },
+    ambassadors: { type: Array, default: () => [] },
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
     popular: { type: Object, default: () => {} },
