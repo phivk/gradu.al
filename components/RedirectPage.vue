@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  layout: "mozFest",
+  layout: "labsng",
   props: {
     newURL: {
       type: String,
