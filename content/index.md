@@ -4,7 +4,7 @@ logoSrc: https://hackathon.sng.sk/img/mentors/lab_sng.jpg
 ctaHeading: What would you like to learn or share?
 ctaButtonText: Let us know!
 subLink:
-  text: join the conversation on Slack
+  text: Join the conversation on Slack
   href: https://labsng.slack.com/
 typeformSrc: https://form.typeform.com/to/vMb8kMum
 sessionTypes:
