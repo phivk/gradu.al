@@ -7,8 +7,8 @@ if (!process.env.GOOGLE_AUTH_JSON_OBJECT) {
 
 class DataFetching {
   constructor({ community }) {
-    this.NODES_PATH = `./content/${community.name}/data/nodes.json`;
-    this.EDGES_PATH = `./content/${community.name}/data/edges.json`;
+    this.NODES_PATH = `./content/data/nodes.json`;
+    this.EDGES_PATH = `./content/data/edges.json`;
     this.SPREADSHEET_ID = community.spreadsheetId;
     this.community = community;
     this.nodes = [];
@@ -39,8 +39,8 @@ class DataFetching {
   async run() {
     try {
       this.sheets = await this.authAndGetSheets();
-      if (!fs.existsSync(`./content/${this.community.name}/data/`)) {
-        fs.mkdirSync(`./content/${this.community.name}/data/`);
+      if (!fs.existsSync(`./content/data/`)) {
+        fs.mkdirSync(`./content/data/`);
       }
       console.log(`Gathering data for ${this.community.name}.`);
       await this.processSheet();
@@ -92,7 +92,7 @@ class DataFetching {
     let member;
 
     headers.forEach((label, idx) => {
-      if (label.includes("@UserName") || label === "What's your full name?") {
+      if (label.includes("@UserName") || label.includes("your name") || label === "What's your full name?") {
         // create member node
         member = {
           _cssClass: "Member",
@@ -202,7 +202,7 @@ class DataFetching {
         .map(item => this.getSkillName(item.skill));
 
       await fs.writeFileSync(
-        `./content/${this.community.name}/data/popular.json`,
+        `./content/data/popular.json`,
         '{ "skills": ' + JSON.stringify(skills) + "}",
         err => {
           if (err) return console.error(err);
