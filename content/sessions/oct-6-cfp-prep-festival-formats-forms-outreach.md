@@ -1,5 +1,5 @@
 ---
-title: 'Oct 6: CFP prep, festival formats & forms, outreach'
+title: Oct 6 Wrangler Call (CFP prep, festival formats/forms, outreach)
 type: workshop
 dateTime: 2021-10-06T14:00:00Z
 durationInMinutes: 60
