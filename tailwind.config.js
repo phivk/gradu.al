@@ -1,3 +1,5 @@
+const themeConfig = require('./theme.config.js')
+
 module.exports = {
   purge: {
     enabled: false,
@@ -12,6 +14,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: themeConfig.colors.primary,
+        secondary: themeConfig.colors.secondary,
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',

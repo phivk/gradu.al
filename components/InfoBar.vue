@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto p-4 bg-color-accent-washed border border-black border-opacity-10 rounded max-w-2xl w-full flex items-center mb-4">
+  <div class="mx-auto p-4 bg-secondary-100 border border-black border-opacity-10 rounded max-w-2xl w-full flex items-center mb-4">
     <span class="mr-3 text-2xl">
       <span v-if="infoBarObject">
         {{infoBarObject.icon || 'ℹ️'}}
@@ -11,7 +11,7 @@
         {{infoBarObject.text}}
         <a 
           v-if="infoBarObject.link"
-          class="color-accent underline hover:no-underline"
+          class= "text-secondary underline hover:no-underline"
           :href="infoBarObject.link.href"
           target="_blank"
         >{{infoBarObject.link.text}}</a>
@@ -21,7 +21,7 @@
     <span class="ml-3 text-2xl">
       <span v-if="infoBarObject">
         <a
-          class="color-accent no-underline"
+          class= "text-secondary no-underline"
           :href="infoBarObject.link.href"
           target="_blank"
         >↗︎</a>

@@ -1,9 +1,32 @@
 <template>
-  <div class="font-inter antialiased bg-white text-gray-900 tracking-tight">
-    <nuxt />
+  <div class="bg-gray-100 min-vh-100">
+    <TheNavBar class="bg-primary" backLinkTarget="/" :backLinkText="communityName" />
+    <div class="p-2 sm:p-4 lg:p-8">
+      <nuxt />
+    </div>
   </div>
 </template>
-
+<script>
+import themeConfig from "~/theme.config.js";
+import TheNavBar from "~/components/TheNavBar.vue";
+export default {
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: '/css/tachyons.min.css' }
+      ]
+    }
+  },
+  components: {
+    TheNavBar,
+  },
+  data: () => {
+    return {
+      communityName: themeConfig.communityName
+    }
+  }
+};
+</script>
 <style>
 html {
   font-family: "Avenir", "Source Sans Pro", -apple-system, BlinkMacSystemFont,

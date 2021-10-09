@@ -13,7 +13,6 @@
 import CommunityPage from "~/components/CommunityPage.vue";
 
 export default {
-  layout: "demo",
   components: {
     CommunityPage,
   },

@@ -6,7 +6,6 @@
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "demo",
   components: { SessionPage },
   data() {
     return {
