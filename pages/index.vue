@@ -13,7 +13,6 @@
 import CommunityPage from "~/components/CommunityPage.vue";
 
 export default {
-  layout: "labsng",
   components: {
     CommunityPage,
   },

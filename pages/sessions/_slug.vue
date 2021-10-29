@@ -6,7 +6,6 @@
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "labsng",
   components: { SessionPage },
   data() {
     return {
