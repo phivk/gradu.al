@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div>
     <SocialHead
       :title="session.title"
       :description="description"
