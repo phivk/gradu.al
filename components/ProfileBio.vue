@@ -3,7 +3,7 @@
     <img class="shadow rounded-full w-36 h-36 object-cover border-none mb-4" :src="profilePic" alt="Team member 01" />
     <h4 class="text-xl font-bold mb-1">{{name}}</h4>
     <!-- <div class="text-green-600 font-medium mb-2">{{title}}</div> -->
-    <p class="text-gray-400 text-center mb-3">
+    <p class="text-text text-opacity-60 text-center mb-3">
       {{bio}}
     </p>
   </div>

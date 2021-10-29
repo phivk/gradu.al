@@ -13,13 +13,7 @@
 import CommunityPage from "~/components/CommunityPage.vue";
 
 export default {
-  layout: "coee",
   middleware: ["password-protect"],
-  head() {
-    return {
-      title: "CoEE - Here to learn",
-    };
-  },
   components: {
     CommunityPage,
   },

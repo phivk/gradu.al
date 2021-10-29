@@ -6,13 +6,7 @@
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "coee",
   middleware: ["password-protect"],
-  head() {
-    return {
-      title: "CoEE - Here to learn",
-    };
-  },
   components: { SessionPage },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-color-bg">
+  <div>
     <SocialHead
       :title="session.title"
       :description="description"
@@ -58,14 +58,14 @@
               v-if="session.cta && session.cta.text !==''"
               :href="session.cta.href"
               target="_blank"
-              class="font-bold text-lg link rounded p-2 text-center dib mr-4 white bg-color-accent"
+              class="font-bold text-lg link rounded p-2 text-center dib mr-4 white bg-secondary"
               >{{ session.cta.text }}</a
             >
             <a
               v-if="session.icsFileSrc && !hasHappened"
               :href="session.icsFileSrc"
               target="_blank"
-              class="dib mt-4 color-accent ws-pre-wrap"
+              class="dib mt-4 text-secondary ws-pre-wrap"
               >↓ .ics file</a
             >
           </div>
@@ -101,7 +101,7 @@
               <ul class="list p-0 mt-1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="underline hover:no-underline color-accent" :href="resource.href" target="_blank">{{
+                  <a class="underline hover:no-underline text-secondary" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>
