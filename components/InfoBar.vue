@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto p-4 bg-secondary-washed border border-black border-opacity-10 rounded max-w-2xl w-full flex items-center mb-4">
+  <div class="mx-auto p-4 bg-secondary-washed border border-secondary border-opacity-30 rounded max-w-2xl w-full flex items-center mb-4">
     <span class="mr-3 text-2xl">
       <span v-if="infoBarObject">
         {{infoBarObject.icon || 'ℹ️'}}
