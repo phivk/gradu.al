@@ -1,5 +1,5 @@
 ---
-title: Oct 27 Wrangler Call
+title: Oct 27 Wrangler Call (Outreach Approaches & Ideas)
 type: workshop
 dateTime: 2021-10-27T14:00:00Z
 durationInMinutes: 60
