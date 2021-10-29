@@ -1,5 +1,5 @@
 ---
-title: Oct 13 Wrangler Call (Outreach)
+title: Oct 13 Wrangler Call (Outreach, PreTalx 101)
 type: workshop
 dateTime: 2021-10-13T14:00:00Z
 durationInMinutes: 60
