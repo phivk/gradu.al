@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 min-vh-100">
+  <div class="bg-background text-text min-vh-100">
     <TheNavBar class="bg-primary" backLinkTarget="/" :backLinkText="communityName" />
     <div class="p-2 sm:p-4 lg:p-8">
       <nuxt />
