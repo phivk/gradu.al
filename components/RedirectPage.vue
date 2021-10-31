@@ -33,7 +33,6 @@
 
 <script>
 export default {
-  layout: "mozFest",
   props: {
     newURL: {
       type: String,
