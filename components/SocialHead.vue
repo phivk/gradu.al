@@ -11,7 +11,8 @@ export default {
       required: true
     },
     description: {
-      type: String
+      type: String,
+      default: '',
     },
     image: {
       type: String,
@@ -20,6 +21,7 @@ export default {
   },
   head() {
     return {
+      title: this.title,
       meta: [
         this.description &&
         {

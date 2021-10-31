@@ -3,37 +3,18 @@
 </template>
 
 <script>
-import TagPill from "~/components/TagPill.vue";
-import ProfilePicList from "~/components/ProfilePicList.vue";
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  layout: "storytellersUnited",
-  components: { TagPill, ProfilePicList, SessionPage },
-  head() {
-    return {
-      title: "Storytellers United - Here to learn",
-    };
-  },
+  components: { SessionPage },
   data() {
     return {
-      bgColor: "#fdecce",
+      bgColor: "#f4f4f4",
     };
   },
   async asyncData({ $content, params }) {
-    const session = await $content(
-      "sessions",
-      params.slug
-    ).fetch();
-    const members = await fetch(
-      "https://storytellers.link/api/members.json"
-    ).then((res) => res.json());
-    return { session, members };
+    const session = await $content("sessions", params.slug).fetch();
+    return { session };
   },
 };
 </script>
-<style>
-.nuxt-content p {
-  margin-bottom: 1rem;
-}
-</style>
