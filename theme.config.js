@@ -1,6 +1,7 @@
 module.exports = {
   // communityName used in /layouts/default.vue
   communityName: "CoEE",
+  passwordProtect: true,
   // colors used in /tailwind.config.js
   colors: {
     primary: {
