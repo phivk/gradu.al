@@ -10,6 +10,7 @@
 import themeConfig from "~/theme.config.js";
 import TheNavBar from "~/components/TheNavBar.vue";
 export default {
+  middleware: themeConfig.passwordProtect ? ["password-protect"] : [],
   head () {
     return {
       link: [

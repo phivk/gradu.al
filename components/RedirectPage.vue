@@ -33,7 +33,6 @@
 
 <script>
 export default {
-  layout: "labsng",
   props: {
     newURL: {
       type: String,

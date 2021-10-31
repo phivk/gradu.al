@@ -3,6 +3,7 @@
     <div
       class="
         bg-white
+        text-black
         rounded-lg
         p-8
         flex
@@ -103,6 +104,7 @@
 
 <script>
 export default {
+  layout: "fullscreen",
   data: function() {
     return {
       methodLoginValue: "",
