@@ -6,7 +6,6 @@
 import SessionPage from "~/components/SessionPage.vue";
 
 export default {
-  middleware: ["password-protect"],
   components: { SessionPage },
   data() {
     return {
