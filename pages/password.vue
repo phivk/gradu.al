@@ -3,6 +3,7 @@
     <div
       class="
         bg-white
+        text-black
         rounded-lg
         p-8
         flex
