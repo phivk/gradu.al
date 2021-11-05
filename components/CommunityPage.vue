@@ -19,7 +19,7 @@
       :sessions="sessions"
       :calendarLink="indexPage.calendarLink"
     />
-    <AmbassadorsSection v-if="ambassadors.length" :ambassadors="ambassadors" />
+    <AmbassadorsSection v-if="ambassadors.length" :ambassadors="ambassadors" :ambassadorsIndex="ambassadorsIndex" />
     <IntentionSection :nodes="nodes" :edges="edges" :popular="popular" />
   </div>
 </template>
@@ -44,6 +44,7 @@ export default {
     indexPage: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },
     ambassadors: { type: Array, default: () => [] },
+    ambassadorsIndex: { type: Object, default: () => {} },
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
     popular: { type: Object, default: () => {} },
