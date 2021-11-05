@@ -5,6 +5,15 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
+  path: content/ambassadors
+  label: Ambassadors
+  create: documents
+  match: "*.md"
+  exclude: index.md
+  new_doc_ext: md
+  templates:
+  - ambassador
+- type: directory
   path: content/sessions
   label: Sessions
   create: documents
