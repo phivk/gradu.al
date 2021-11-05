@@ -7,12 +7,6 @@ fields:
   label: Name
   config:
     required: true
-- type: file
-  name: profilePic
-  label: Profile Picture
-  description: Doesn't need to be square, but can't be larger than 2MB
-  config:
-    maxSize: 2
 - type: textarea
   name: bio
   label: Bio Text
@@ -30,3 +24,9 @@ fields:
   default: 1
   description: A number to specify the relative ordering used to display ambassadors
     on the community page
+- name: profilePic
+  type: text
+  config:
+    required: false
+  label: Profile Picture
+  description: a valid public URL (incl "https://")
