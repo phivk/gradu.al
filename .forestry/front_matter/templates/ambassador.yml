@@ -4,7 +4,7 @@ hide_body: true
 fields:
 - type: text
   name: name
-  label: Ambassador Name
+  label: Name
   config:
     required: true
 - type: file
@@ -19,7 +19,7 @@ fields:
   description: A short text about the ambassador
   config:
     wysiwyg: false
-    required: true
+    required: false
 - type: number
   name: sortOrder
   label: Sort Order
