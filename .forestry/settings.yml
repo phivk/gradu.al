@@ -8,14 +8,6 @@ sections:
   path: content/index.md
   label: Home Page
 - type: directory
-  path: content/ambassadors
-  label: CoEE Ambassadors
-  create: documents
-  match: "*.md"
-  new_doc_ext: md
-  templates:
-  - ambassador
-- type: directory
   path: content/sessions
   label: CoEE Sessions
   create: documents
@@ -23,6 +15,14 @@ sections:
   new_doc_ext: md
   templates:
   - session
+- type: directory
+  path: content/ambassadors
+  label: CoEE Ambassadors
+  create: documents
+  match: "*.md"
+  new_doc_ext: md
+  templates:
+  - ambassador
 upload_dir: static/uploads/coee
 public_path: "/uploads/coee"
 front_matter_path: ''
