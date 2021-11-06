@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/index.md
   label: Home Page
-  match: "**/*"
 - type: document
   path: content/ambassadors/index.md
   label: Ambassadors Section Heading
