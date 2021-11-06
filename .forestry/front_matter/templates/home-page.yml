@@ -52,3 +52,5 @@ fields:
     - type: text
       name: href
       label: href
+pages:
+- content/index.md
