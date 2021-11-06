@@ -39,3 +39,5 @@ fields:
 - type: text
   name: calendarLink
   label: calendarLink
+pages:
+- content/index.md

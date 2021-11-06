@@ -10,19 +10,19 @@ subLink:
   text: join the CoEE FB group
   href: https://www.facebook.com/groups/223720981529219
 sessionTypes:
-  - peer sharing
-  - salon
-  - conversation
-  - workshop
-  - lunch & learn
-  - talk
-  - one-on-one
-  - presentation
-  - brainstorm
-  - AMA
+- peer sharing
+- salon
+- conversation
+- workshop
+- lunch & learn
+- talk
+- one-on-one
+- presentation
+- brainstorm
+- AMA
 calendarLink: https://bit.ly/MozFestSkillsharing
----
 
+---
 ## Hi 👋 <br /> Welcome to the College of Extraordinary Experiences on Gradual!
 
-This is a space to express things you’d like to learn and share with others in the community. [Join the conversation on FB](https://www.facebook.com/groups/223720981529219)! 
+This is a space to express things you’d like to learn and share with others in the community. [Join the conversation on FB](https://www.facebook.com/groups/223720981529219)!
