@@ -5,6 +5,7 @@ fields:
 - type: text
   name: communityName
   label: communityName
+  hidden: true
 - type: file
   name: logoSrc
   label: logoSrc
@@ -27,6 +28,7 @@ fields:
 - type: text
   name: typeformSrc
   label: typeformSrc
+  hidden: true
 - type: list
   name: sessionTypes
   label: sessionTypes
