@@ -22,7 +22,7 @@ sections:
   - session
 - type: document
   path: content/index.md
-  label: Community Home Page
+  label: Home Page
 upload_dir: static/uploads/coee
 public_path: "/uploads/coee"
 front_matter_path: ''
