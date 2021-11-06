@@ -9,7 +9,7 @@ sections:
   label: Home Page
 - type: document
   path: content/ambassadors/index.md
-  label: Ambassadors Section Heading
+  label: Ambassadors Heading
 - type: directory
   path: content/ambassadors
   label: Ambassadors
