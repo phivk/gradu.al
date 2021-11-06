@@ -1,0 +1,41 @@
+---
+label: Home Page
+hide_body: false
+fields:
+- type: text
+  name: communityName
+  label: communityName
+- type: text
+  name: pageHeading
+  label: pageHeading
+- type: text
+  name: pageSubHeading
+  label: pageSubHeading
+- type: file
+  name: logoSrc
+  label: logoSrc
+- type: text
+  name: ctaHeading
+  label: ctaHeading
+- type: text
+  name: ctaButtonText
+  label: ctaButtonText
+- type: text
+  name: typeformSrc
+  label: typeformSrc
+- type: field_group
+  name: subLink
+  label: subLink
+  fields:
+  - type: text
+    name: text
+    label: text
+  - type: text
+    name: href
+    label: href
+- type: list
+  name: sessionTypes
+  label: sessionTypes
+- type: text
+  name: calendarLink
+  label: calendarLink
