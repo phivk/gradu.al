@@ -6,9 +6,6 @@
         <span class="ml-2 text-white f3 font-bold dn di-ns">gradual</span>
       </NuxtLink>
       <div class="flex items-center justify-end">
-        <AppLink to="/admin" class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer">
-          CMS
-        </AppLink>
         <AppLink v-if="howtoLink" :to="howtoLink" class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer">
           how to
         </AppLink>
