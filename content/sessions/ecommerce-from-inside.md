@@ -20,3 +20,4 @@ youtubeRecordingID: ''
 panoptoRecordingID: ''
 
 ---
+See what happen with your order after you hit "purchase"...
