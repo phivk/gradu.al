@@ -3,7 +3,7 @@ title: Ecommerce from inside
 type: talk
 dateTime: 2021-11-25T09:00:00+01:00
 durationInMinutes: 45
-imageSrc: https://unsplash.com/photos/eveI7MOcSmw
+imageSrc: "/uploads/myriam-jessier-evei7mocsmw-unsplash.jpeg"
 learnerNames:
 - dáša
 - michal
