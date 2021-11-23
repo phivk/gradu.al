@@ -8,7 +8,11 @@ learnerNames: []
 sharerNames:
 - Zannah
 - Marc
-resources: []
+resources:
+- text: Curation Tip Sheet
+  href: https://docs.google.com/document/d/1oIGjyL3kc5mYDNMVJWVe2vAode4gAV3DvxNMsQ_P-wA/edit
+- text: Help Session Notes
+  href: https://docs.google.com/document/d/1oPm2T2qJOIuVIiqfc1dZyy7XUXOdquoCzU0HyDEQZVk/edit
 cta:
   text: ''
   href: ''
