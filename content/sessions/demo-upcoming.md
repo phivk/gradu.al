@@ -7,8 +7,7 @@ imageSrc: https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixid=MXwx
 learnerNames:
   - '@Thomas Steigenga'
   - '@Philo van Kemenade'
-sharerNames: 
-  - '@Gunnar de Jong'
+sharerNames: []
 resources:
   -
     text: Slack Channel
