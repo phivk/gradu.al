@@ -8,6 +8,7 @@ learnerNames:
   - '@Thomas Steigenga'
   - '@Philo van Kemenade'
 sharerNames: []
+youtubeRecordingID: Z7wi8jd7aC4
 resources:
   -
     text: Slack Channel
