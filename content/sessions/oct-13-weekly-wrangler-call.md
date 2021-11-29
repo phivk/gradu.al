@@ -1,7 +1,7 @@
 ---
 title: Oct 13 Wrangler Call (Outreach, PreTalx 101)
 type: workshop
-dateTime: 2021-10-13T14:00:00Z
+dateTime: 2021-10-13T14:00:00.000+00:00
 durationInMinutes: 60
 imageSrc: "/uploads/mozfestwranglers/screen-shot-2021-10-28-at-11-38-58-pm.png"
 learnerNames: []
@@ -13,6 +13,6 @@ cta:
   text: ''
   href: ''
 youtubeRecordingID: ''
-panoptoRecordingID: d000f79b-3f35-4611-9d0f-adc000fd0cdaEve
+panoptoRecordingID: d000f79b-3f35-4611-9d0f-adc000fd0cda
 
 ---
