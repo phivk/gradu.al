@@ -1,5 +1,6 @@
 ---
-title: Dec 1 Weekly Call (Space Shares, Sending Acceptances, Session Excellence Calls)
+title: Dec 1 Wrangler Call (Space Shares, Sending Acceptances, Session Excellence
+  Calls)
 type: workshop
 dateTime: 2021-12-01T15:00:00Z
 durationInMinutes: 60
