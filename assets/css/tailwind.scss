@@ -29,27 +29,27 @@ $aos-distance: 10px;
 
 @layer base {
   h1 {
-    @apply text-5xl leading-tight;
+    @apply mt-8 leading-tight text-4xl md:text-5xl;
     font-weight: bold;
   }
   h2 {
-    @apply text-4xl leading-tight;
+    @apply mt-8 leading-tight text-3xl md:text-4xl;
     font-weight: bold;
   }
   h3 {
-    @apply text-3xl leading-tight;
+    @apply mt-8 leading-tight text-2xl md:text-3xl;
     font-weight: bold;
   }
   h4 {
-    @apply text-2xl leading-tight;
+    @apply mt-8 leading-tight text-xl md:text-2xl;
     font-weight: bold;
   }
   h5 {
-    @apply text-xl leading-tight;
+    @apply mt-8 leading-tight text-lg md:text-xl;
     font-weight: bold;
   }
   h6 {
-    @apply text-lg leading-tight;
+    @apply mt-8 leading-tight text-base md:text-lg;
     font-weight: bold;
   }
   .nuxt-content {
@@ -59,6 +59,9 @@ $aos-distance: 10px;
     }
     a {
       @apply underline hover:no-underline
+    }
+    img {
+      margin: auto;
     }
   }
 }
