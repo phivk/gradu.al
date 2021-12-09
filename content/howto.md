@@ -6,15 +6,15 @@ title: How to Gradual
 
 Welcome to the <content-text :text='communityName'></content-text> Gradual instance!
 
-Head to the [home page](/) to see what you can learn and share. Or read on for instructions on how to add new sessions using the CMS.
+Read on for **ambassador instructions** on how to add new sessions using the CMS. Or head for the [home page](/) to see what you can learn and share.
 
 ## Sign in to the CMS
 
-Every instance has one or more ambassadors with access to the Content Management System (CMS). As an ambassador, you should have received an email invitation to set up your account.
+Every instance has one or more _ambassadors_ with access to the **Content Management System (CMS)**. As an ambassador, you should have received an email invitation to set up your account.
 
-You can reach the CMS via:
-
-<content-link :text='adminURL' :href='adminURL'></content-link> 
+<p class="my-8">
+  <info-bar :info-bar-object='{"icon":"📝","text":"You can reach the CMS via:","link":{"text":adminURL.replace("https://", ""),"href":adminURL}}'></info-bar>
+</p>
 
 ![Logging in to the CMS](https://www.gradu.al/img/gradual-cms-login.png "Log in to the CMS")
 
@@ -28,9 +28,9 @@ Click a session or hit the **'Create new'** button to edit a session's <span sty
 
 ![Editing content in the CMS](https://www.gradu.al/img/gradual-cms-edit.png "Edit your session in the CMS")
 
-Information about your content is called <span style="color: #00ae86;">**Front Matter**</span> in Forestry. Each type of content can have different information attached. The CMS makes it easy to fill in the bits you need. You can read more about Front Matter [here](https://forestry.io/docs/editing/front-matter/).
+Information about your content is called <span style="color: #00ae86;">**Front Matter**</span> in Forestry. Each type of content can have different information attached. The CMS makes it easy to fill in the bits you need. You can [read more about Front Matter here](https://forestry.io/docs/editing/front-matter/).
 
-Your content's body text is written in <span style="color: #00ae86;">**Markdown**</span>. The CMS offers a helpful editor to style your text the way you like. You can read more about editing Markdown content in the Forestry CMS [here](https://forestry.io/docs/editing/front-matter/).
+Your content's body text is written in <span style="color: #00ae86;">**Markdown**</span>. The CMS offers a helpful editor to style your text the way you like. You can [read more about editing Markdown content in the Forestry CMS here](https://forestry.io/docs/editing/front-matter/).
 
 ## Previewing and publishing
 
@@ -48,5 +48,4 @@ This will open a preview of the Gradual site in a new window (wait for it to bui
 
 - Have a new skill you'd like to learn or share? [Add it to the list](/join)!
 
-- Any questions? We love receiving [email](mailto:philo@gradu.al)!
-
+- Any questions? Send us an [email](mailto:philo@gradu.al)!
