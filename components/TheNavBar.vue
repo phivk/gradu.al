@@ -5,6 +5,13 @@
         <logo class="w2-5" />
         <span class="ml-2 text-white f3 font-bold dn di-ns">gradual</span>
       </NuxtLink>
+      <AppLink
+        v-if="showHowtoLink"
+        to="/howto"
+        class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
+      >
+        how to
+      </AppLink>
       <div v-if="showBackLink">
         <AppLink
           :to="backLinkTarget"
@@ -31,6 +38,9 @@ export default {
   computed: {
     showBackLink() {
       return this.$route.path !== "/";
+    },
+    showHowtoLink() {
+      return this.$route.path !== "/howto";
     },
   },
 };

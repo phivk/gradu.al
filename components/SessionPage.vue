@@ -72,7 +72,7 @@
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
           <div
-            v-if="session.sharerNames"
+            v-if="session.sharerNames.length"
             class="mb-2 flex-shrink-0 pr-4 sm:pr-8 lg:pr-16"
           >
             <p>
@@ -84,7 +84,7 @@
             </p>
           </div>
           <div
-            v-if="session.learnerNames"
+            v-if="session.learnerNames.length"
             class="mb-2 flex-shrink-0 pr-4 sm:pr-8 lg:pr-16"
           >
             <p>
@@ -95,7 +95,7 @@
               />
             </p>
           </div>
-          <div v-if="session.resources" class="mb-2 pr-4">
+          <div v-if="session.resources.length" class="mb-2 pr-4">
             <p>
               Resources
               <ul class="list p-0 mt-1">
