@@ -2,7 +2,7 @@
 module.exports = {
   // communityName used in /layouts/default.vue
   communityName: "lab.SNG",
-  howtoLink: "https://docs.google.com/document/u/1/d/e/2PACX-1vTsSYxk5IGaIL6bqIH2AIKTahujYH8uTLMrnqYzwYewyrLYtIMs9-OryxI4cKoQXjhOujLZFpdnUJhI/pub",
+  howtoLink: "/howto",
   // colors used in /tailwind.config.js
   colors: {
     primary: {
