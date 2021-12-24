@@ -6,12 +6,19 @@
         <span class="ml-2 text-white f3 font-bold dn di-ns">gradual</span>
       </NuxtLink>
       <div class="flex items-center justify-end">
-        <AppLink v-if="showHowtoLink" :to="howtoLink" class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer">
+        <AppLink
+          v-if="showHowtoLink"
+          to="/howto"
+          class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
+        >
           how to
         </AppLink>
         <div v-if="showBackLink">
-          <AppLink :to="backLinkTarget" class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer">
-            ← {{backLinkText}}
+          <AppLink
+            :to="backLinkTarget"
+            class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
+          >
+            ← {{ backLinkText }}
           </AppLink>
         </div>
       </div>
@@ -19,7 +26,6 @@
   </nav>
 </template>
 <script>
-import themeConfig from "~/theme.config.js";
 import Logo from "~/components/Logo.vue";
 import AppLink from "~/components/AppLink.vue";
 export default {
@@ -28,21 +34,16 @@ export default {
     AppLink,
   },
   props: {
-    backLinkText: {type: String, default: "back"},
-    backLinkTarget: {type: String, default: "/"},
-  },
-  data: () => {
-    return {
-      howtoLink: themeConfig.howtoLink
-    }
+    backLinkText: { type: String, default: "back" },
+    backLinkTarget: { type: String, default: "/" },
   },
   computed: {
     showBackLink() {
-      return this.$route.path !== '/'
+      return this.$route.path !== "/";
     },
     showHowtoLink() {
-      return this.howtoLink && this.$route.path !== '/howto'
+      return this.$route.path !== "/howto";
     },
   },
-}
+};
 </script>
