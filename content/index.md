@@ -1,6 +1,7 @@
 ---
 communityName: Storytellers United
 logoSrc: https://storytellers.link/img/logo-storytellersunited-200px.png
+adminURL: https://storytellersunited.gradu.al/admin
 ctaHeading: What would you like to learn or share?
 ctaButtonText: Let us know!
 subLink:
