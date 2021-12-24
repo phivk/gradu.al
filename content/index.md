@@ -1,6 +1,6 @@
 ---
 communityName: MozFest Wranglers
-adminURL: https://demo.gradu.al/admin
+adminURL: https://mozfestwranglers.gradu.al/admin
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
 sessionTypes:
   - peer sharing
