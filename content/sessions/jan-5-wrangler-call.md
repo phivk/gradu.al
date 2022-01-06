@@ -1,5 +1,6 @@
 ---
-title: Jan 5 Wrangler Call
+title: Jan 5 Wrangler Call (post-break regroup, session excellence calls, scheduling
+  demo)
 type: workshop
 dateTime: 2022-01-05T15:00:00Z
 durationInMinutes: 60
