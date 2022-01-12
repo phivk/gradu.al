@@ -1,5 +1,5 @@
 ---
-title: Jan 12 Weekly Call (Scheduling, "Special Case Sessions". Social Platforms Overview
+title: Jan 12 Weekly Call (Scheduling, "Special Case Sessions". Social Platforms Overview)
 type: workshop
 dateTime: 2022-01-12T15:00:00Z
 durationInMinutes: 60
