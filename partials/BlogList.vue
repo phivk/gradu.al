@@ -4,10 +4,10 @@
       <div class="pt-32 pb-12 md:pt-40 md:pb-20">
         <!-- Page header -->
         <div class="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-          <h1 class="h1 mb-4">Type the way you talk</h1>
+          <h1 class="h1 mb-4">Tending our garden … gradually</h1>
           <p class="text-xl text-gray-600">
-            Stay up to date on the latest from Simple and best news from the Dev
-            world.
+            Stay up to date on the latest from Gradual and occasional thoughts
+            from the team.
           </p>
         </div>
 
@@ -15,461 +15,7 @@
         <div class="md:flex md:justify-between">
           <!-- Articles container -->
           <div class="md:flex-grow -mt-4">
-            <!-- 1st article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >Create and Deploy a blog with Simple</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-04.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 04"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Micheal Osman</a
-                      >
-                      <span class="text-gray-600"> · July 20, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 2nd article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >Getting started with Next.js</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-01.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 01"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Lisa Allison</a
-                      >
-                      <span class="text-gray-600"> · July 19, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 3rd article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >How to identify high-intent leads</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-02.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 02"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Knut Mayer</a
-                      >
-                      <span class="text-gray-600"> · July 19, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 4th article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >Why we think Simple is good for developers</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-04.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 04"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Micheal Osman</a
-                      >
-                      <span class="text-gray-600"> · July 17, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 5th article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >Getting started with Vue.js and Stripe</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-03.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 03"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Justin Park</a
-                      >
-                      <span class="text-gray-600"> · July 16, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 6th article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >How to work with friendly APIs</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-01.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 01"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Lisa Allison</a
-                      >
-                      <span class="text-gray-600"> · July 12, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 7th article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >Introducing the Testing Field Guide</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-06.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 06"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Cory McCall</a
-                      >
-                      <span class="text-gray-600"> · July 10, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
-
-            <!-- 8th article -->
-            <article class="flex items-center py-4 border-b border-gray-200">
-              <div>
-                <header>
-                  <h2 class="h4 mb-2">
-                    <AppLink to="/blog-post" class="hover:underline"
-                      >Community Digest: Summer Edition</AppLink
-                    >
-                  </h2>
-                </header>
-                <div class="text-lg text-gray-600 mb-4">
-                  In this post, you will learn how to deploy a blog using Simple
-                  custom asset source plugin that uses the webcam to insert a
-                  photo in the image field.
-                </div>
-                <footer class="text-sm">
-                  <div class="flex items-center">
-                    <div class="flex flex-shrink-0 mr-3">
-                      <a class="relative" href="#0">
-                        <span class="absolute inset-0 -m-px" aria-hidden="true"
-                          ><span
-                            class="absolute inset-0 -m-px bg-white rounded-full"
-                          ></span
-                        ></span>
-                        <img
-                          class="relative rounded-full"
-                          :src="require('@/images/news-author-01.jpg')"
-                          width="32"
-                          height="32"
-                          alt="Author 01"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <span class="text-gray-600">By </span>
-                      <a class="font-medium hover:underline" href="#0"
-                        >Lisa Allison</a
-                      >
-                      <span class="text-gray-600"> · July 10, 2020</span>
-                    </div>
-                  </div>
-                </footer>
-              </div>
-              <AppLink to="/blog-post" class="block flex-shrink-0 ml-6">
-                <span class="sr-only">Read more</span>
-                <svg
-                  class="w-4 h-4 fill-current text-blue-600"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"
-                  />
-                </svg>
-              </AppLink>
-            </article>
+            <BlogItem v-for="blog in blogs" :key="blog.title" :blog="blog" />
           </div>
 
           <!-- Sidebar -->
@@ -477,7 +23,7 @@
             class="relative mt-12 md:mt-0 md:w-64 md:ml-12 lg:ml-20 md:flex-shrink-0"
           >
             <!-- Popular posts -->
-            <div class="mb-8">
+            <!-- <div class="mb-8">
               <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">
                 Popular on Simple
               </h4>
@@ -603,10 +149,10 @@
                   </article>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
             <!-- Topics -->
-            <div>
+            <!-- <div>
               <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">
                 Topics
               </h4>
@@ -672,7 +218,7 @@
                   </div>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </aside>
         </div>
       </div>
@@ -681,7 +227,14 @@
 </template>
 
 <script>
+import BlogItem from "~/partials/BlogItem.vue";
 export default {
   name: "BlogList",
+  props: {
+    blogs: { type: Array, required: true, default: () => [] },
+  },
+  components: {
+    BlogItem,
+  },
 };
 </script>

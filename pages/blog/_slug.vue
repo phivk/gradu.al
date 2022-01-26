@@ -6,7 +6,7 @@
     <!-- Page content -->
     <main class="flex-grow">
       <!-- Page sections -->
-      <BlogList :blogs="blogs" />
+      <BlogSingle :blog="blog" />
     </main>
 
     <!-- Site footer -->
@@ -16,19 +16,19 @@
 
 <script>
 import Header from "~/partials/Header.vue";
-import BlogList from "~/partials/BlogList.vue";
+import BlogSingle from "~/partials/BlogSingle.vue";
 import Footer from "~/partials/Footer.vue";
 
 export default {
-  name: "Blog",
+  name: "BlogPost",
   components: {
     Header,
-    BlogList,
+    BlogSingle,
     Footer,
   },
-  async asyncData({ $content }) {
-    const blogs = await $content("blog").fetch();
-    return { blogs };
+  async asyncData({ $content, params }) {
+    const blog = await $content("blog", params.slug).fetch();
+    return { blog };
   },
 };
 </script>
