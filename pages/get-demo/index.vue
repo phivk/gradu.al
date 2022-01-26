@@ -1,9 +1,9 @@
 <template>
-  <TypeFormEmbed :typeFormSrc="typeFormSrc" />
+  <TypeformEmbed :typeFormSrc="typeFormSrc" />
 </template>
 
 <script>
-import TypeFormEmbed from "~/components/TypeFormEmbed.vue";
+import TypeformEmbed from "~/components/TypeformEmbed.vue";
 export default {
   head() {
     return {
@@ -11,7 +11,7 @@ export default {
     };
   },
   components: {
-    TypeFormEmbed,
+    TypeformEmbed,
   },
   data() {
     return {
