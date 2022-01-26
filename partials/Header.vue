@@ -175,6 +175,10 @@ export default {
           path: "/contact",
           text: "Contact",
         },
+        {
+          path: "/blog",
+          text: "Blog",
+        },
       ],
       dropdownTitle: "Use Cases",
       dropdownLinks: [
