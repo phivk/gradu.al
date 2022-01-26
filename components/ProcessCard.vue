@@ -1,5 +1,5 @@
 <template>
-  <article class="tl br3 bg-white p-4 h-100 shadow-4">
+  <article class="tl rounded bg-white p-4 h-100 shadow-4">
     <CircleCharacter
       :character="number"
       backgroundColor="#137752"

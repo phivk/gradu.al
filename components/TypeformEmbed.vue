@@ -6,7 +6,7 @@
       height="100%"
       frameborder="0"
       allow="camera; microphone; autoplay; encrypted-media;"
-      :src="typeFormSrc"
+      :src="typeformSrc"
     ></iframe>
     <script
       type="text/javascript"
@@ -17,7 +17,7 @@
 <script>
 export default {
   props: {
-    typeFormSrc: { type: String, default: "" },
+    typeformSrc: { type: String, default: "" },
   },
 };
 </script>
