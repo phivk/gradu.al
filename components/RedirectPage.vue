@@ -25,7 +25,7 @@
       <div class="w-full">
         <a 
           :href="newURL"
-          class="color-accent underline hover:no-underline" 
+          class= "text-secondary underline hover:no-underline" 
         >{{newURL}}</a>
       </div>
     </div>
@@ -33,7 +33,6 @@
 
 <script>
 export default {
-  layout: "mozFest",
   props: {
     newURL: {
       type: String,

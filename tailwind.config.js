@@ -1,3 +1,6 @@
+const themeConfig = require('./theme.config.js')
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: {
     enabled: false,
@@ -9,9 +12,14 @@ module.exports = {
       './nuxt.config.{js,ts}',
     ],
   },
+  important: '#__nuxt',
   theme: {
     extend: {
       colors: {
+        primary: themeConfig.colors.primary ? themeConfig.colors.primary : colors.blue[600],
+        secondary: themeConfig.colors.secondary ? themeConfig.colors.secondary : colors.teal[600],
+        background: themeConfig.colors.background ? themeConfig.colors.background : colors.warmGray[100],
+        text: themeConfig.colors.text ? themeConfig.colors.text : colors.warmGray[900],
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',

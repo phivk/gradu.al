@@ -51,6 +51,10 @@ export default {
    */
   plugins: ["~/plugins/fontawesome.js", "~/plugins/global.js"],
   /*
+   * https://nuxtjs.org/docs/configuration-glossary/configuration-components
+   */
+  components: true,
+  /*
    ** Nuxt.js dev-modules
    */
   buildModules: ["@nuxtjs/tailwindcss"],
