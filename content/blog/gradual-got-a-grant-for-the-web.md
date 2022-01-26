@@ -4,6 +4,8 @@ author: Gunnar de Jong
 description: The Interledger Foundation’s Grant for the Web program has announced 27 recipients from their most recent call for proposals - and we’re proud to announce that we’re amongst the successful grantees!
 ---
 
+![Grant for the Web banner](/uploads/gftw-blog-post-header.png)
+
 The Interledger Foundation’s Grant for the Web program has announced 27 recipients from their most recent call for proposals - and we’re proud to announce that we’re amongst the successful grantees!
 
 All of the chosen projects share a vision for practical activity to catalyze innovative business models for the web that expand financial inclusion.
