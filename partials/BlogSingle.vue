@@ -69,7 +69,7 @@
                 <!-- Article meta -->
                 <div class="flex items-center mb-6">
                   <div class="flex flex-shrink-0 mr-3">
-                    <a class="relative" href="#0">
+                    <div class="relative">
                       <span class="absolute inset-0 -m-px" aria-hidden="true"
                         ><span
                           class="absolute inset-0 -m-px bg-white rounded-full"
@@ -82,11 +82,11 @@
                         height="32"
                         :alt="`profile pic ${blog.author}`"
                       />
-                    </a>
+                    </div>
                   </div>
                   <div>
                     <span class="text-gray-600">By </span>
-                    <span class="font-medium hover:underline">
+                    <span class="font-medium">
                       {{ blog.author }}
                     </span>
                     <span class="text-gray-600"> · {{ dateFormatted }} </span>
