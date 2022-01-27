@@ -1,5 +1,5 @@
 <template>
-  <TypeformEmbed :typeFormSrc="typeFormSrc" />
+  <TypeformEmbed :typeformSrc="typeformSrc" />
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      typeFormSrc: "https://form.typeform.com/to/ylCq3p8E",
+      typeformSrc: "https://form.typeform.com/to/ylCq3p8E",
     };
   },
 };
