@@ -2,9 +2,8 @@
 title: Gradual got a Grant (for the web)
 author: Gunnar de Jong
 description: The Interledger Foundation’s Grant for the Web program has announced 27 recipients from their most recent call for proposals - and we’re proud to announce that we’re amongst the successful grantees!
+imageSrc: /uploads/gftw-blog-post-header.png
 ---
-
-![Grant for the Web banner](/uploads/gftw-blog-post-header.png)
 
 The Interledger Foundation’s Grant for the Web program has announced 27 recipients from their most recent call for proposals - and we’re proud to announce that we’re amongst the successful grantees!
 

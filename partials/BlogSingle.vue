@@ -1,5 +1,10 @@
 <template>
   <section>
+    <SocialHead
+      :title="blog.title"
+      :description="blog.description"
+      :image="blog.imageSrc"
+    />
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="pt-32 pb-12 md:pt-40 md:pb-20">
         <div class="max-w-3xl mx-auto lg:max-w-none">
@@ -91,6 +96,11 @@
 
                 <!-- Article body -->
                 <div class="text-lg text-gray-600">
+                  <img
+                    v-if="blog.imageSrc"
+                    :src="blog.imageSrc"
+                    :alt="blog.title"
+                  />
                   <NuxtContent class="" :document="blog" />
 
                   <div>
