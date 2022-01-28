@@ -1,5 +1,5 @@
 ---
-title: Jan 19 Weekly Wrangler Call (Scheduling Workflow, Wrangler Blogs, Web Monetization,
+title: Jan 19 Wrangler Call (Scheduling Workflow, Wrangler Blogs, Web Monetization,
   Amsterdam Update)
 type: workshop
 dateTime: 2022-01-19T15:00:00Z
