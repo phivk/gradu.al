@@ -126,6 +126,15 @@ export default {
       items: [
         {
           imgSrc:
+            "https://assets.mofoprod.net/network-pulse/images/user-avatars/2021-09-16_130914.2225970000.jpg",
+          quote:
+            "“ One of the unexpected joys of using Gradual as a communal video repository is seeing our collection grow over time! It's amazing to have everything we've learned together - all our resources and experiences and insights - all in one place. And they're accessible to new community members, too. Gradual integrated quite well with other systems we had in place, so it's been easy to use. “",
+          name: "Zannah Marsh",
+          role: "Program Manager, Federated Design",
+          team: "MozFest Team at Mozilla",
+        },
+        {
+          imgSrc:
             "https://ca.slack-edge.com/T170JCUN6-U01QW3CAGGZ-d7fab570a409-512",
           quote:
             "“ I enjoyed being put in contact with someone I didn’t know within the community as getting meaningful connections in virtual settings is hard. It happened to be that our skills and interests were very complimentary and that was incredibly valuable to me, even if it wouldn’t have led to us hosting a session together. “",
