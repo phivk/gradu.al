@@ -42,8 +42,8 @@
                         toc3: link.depth === 3,
                       }"
                     >
-                      <NuxtLink
-                        :to="`#${link.id}`"
+                      <a
+                        :href="`#${link.id}`"
                         class="flex items-center hover:underline"
                       >
                         <svg
@@ -58,7 +58,7 @@
                         <span>
                           {{ link.text }}
                         </span>
-                      </NuxtLink>
+                      </a>
                     </li>
                   </ul>
                 </div>
