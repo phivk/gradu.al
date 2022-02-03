@@ -161,7 +161,8 @@ export default {
           team: "Architecting Curiosity",
         },
         {
-          imgSrc: "/uploads/profile-tom-salmon.jpg",
+          imgSrc:
+            "https://i1.rgstatic.net/ii/profile.image/281325018861568-1444084519088_Q512/Thomas-Salmon-3.jpg",
           quote:
             "“ Gradual's participatory ethos really opened the door for us as a group to think differently about learning skills in a more community orientated and expansive way. The personal connections that are formed in the process are incredibly important motivators, they galvanize people's intrinsic curiosity and slowly build that sense of shared achievement that is really wonderful. “",
           name: "Tom Salmon",
