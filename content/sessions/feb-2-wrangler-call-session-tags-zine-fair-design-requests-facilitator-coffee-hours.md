@@ -1,6 +1,6 @@
 ---
-title: 'Feb 2 Wrangler Call (Session Tags, Zine Fair, Design Requests, Facilitator
-  Coffee Hours) '
+title: Feb 2 Wrangler Call (Session Tags, Zine Fair, Design Requests, Space Coffee
+  Chats)
 type: workshop
 dateTime: 2022-02-02T15:00:00Z
 durationInMinutes: 60
