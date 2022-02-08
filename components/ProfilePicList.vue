@@ -4,18 +4,14 @@
       <ProfilePic
         :imageSrc="profilePic.profilePic"
         :userName="profilePic.userName"
-        :borderColorClass="borderColorClass"
       />
     </li>
   </ul>
 </template>
 <script>
-import ProfilePic from "~/components/ProfilePic.vue";
 export default {
   props: {
     profilePics: { type: Array, default: () => [] },
-    borderColorClass: { type: String, default: "b--white" },
   },
-  components: { ProfilePic },
 };
 </script>
