@@ -1,5 +1,5 @@
 <template>
-  <article class="tl bg-light-gray rounded shadow-4 hover-shadow-raise">
+  <article class="tl bg-gray-200 rounded shadow-4 hover-shadow-raise">
     <NuxtLink :to="session.path" class="link">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
@@ -20,13 +20,13 @@
               <h3 class="font-bold text-xl lh-title mt-2 mr-2">
                 {{ session.title }}
               </h3>
-              <span class="text-base font-normal opacity-50 tr mt-2">{{
-                dateFormatted
-              }}</span>
+              <span class="text-base font-normal opacity-50 tr mt-2">
+                {{ dateFormatted }}
+              </span>
             </div>
-            <TagPill class="absolute top--1 -ml-1" borderColour="#fff">{{
-              session.type
-            }}</TagPill>
+            <TagPill class="absolute top--1 -ml-1 ring-4 ring-white">
+              {{ session.type }}
+            </TagPill>
           </div>
           <div class="p-4">
             <div class="flex flex-wrap mb-2">
@@ -34,7 +34,7 @@
                 <h3 class="text-base font-normal opacity-60">Shared by</h3>
                 <ProfileAvatarList
                   :profileNames="session.sharerNames"
-                  borderColor="#EEEEEE"
+                  :itemClasses="['ring-4', 'ring-gray-200']"
                 />
               </div>
               <div v-if="session.learnerNames.length">
@@ -43,7 +43,7 @@
                 </h3>
                 <ProfileAvatarList
                   :profileNames="session.learnerNames"
-                  borderColor="#EEEEEE"
+                  :itemClasses="['ring-4', 'ring-gray-200']"
                 />
               </div>
             </div>
