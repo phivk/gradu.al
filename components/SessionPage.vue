@@ -8,9 +8,9 @@
     <main class=" mw9 mx-auto">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt-0 mb-2 sm:mb-4">
-          <TagPill class="-ml-2" :borderColour="bgColor">{{
-            session.type
-          }}</TagPill>
+          <TagPill>
+            {{session.type}}
+          </TagPill>
           <h1 class="text-4xl md:text-5xl font-bold lh-title mt-2 mb-8">
             {{ session.title }}
           </h1>
@@ -58,7 +58,7 @@
               v-if="session.cta && session.cta.text !==''"
               :href="session.cta.href"
               target="_blank"
-              class="font-bold text-lg link rounded p-2 text-center dib mr-4 white bg-secondary"
+              class="font-bold text-lg link rounded p-2 text-center dib mr-4 text-on-primary bg-secondary"
               >{{ session.cta.text }}</a
             >
             <a
@@ -79,7 +79,7 @@
               Shared by
               <ProfileAvatarList
                 :profileNames="session.sharerNames"
-                :borderColor="bgColor"
+                :itemClasses="['ring-4', 'ring-background']"
               />
             </p>
           </div>
@@ -91,7 +91,7 @@
               <span>{{ hasHappened ? "Learned by" : "Like to learn" }}</span>
               <ProfileAvatarList
                 :profileNames="session.learnerNames"
-                :borderColor="bgColor"
+                :itemClasses="['ring-4', 'ring-background']"
               />
             </p>
           </div>
@@ -101,7 +101,7 @@
               <ul class="list p-0 mt-1">
                 <li class="di" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="underline hover:no-underline text-secondary" :href="resource.href" target="_blank">{{
+                  <a class="underline hover:no-underline text-text" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>
