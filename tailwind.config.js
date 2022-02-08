@@ -20,6 +20,7 @@ module.exports = {
         secondary: themeConfig.colors.secondary ? themeConfig.colors.secondary : colors.teal[600],
         background: themeConfig.colors.background ? themeConfig.colors.background : colors.warmGray[100],
         text: themeConfig.colors.text ? themeConfig.colors.text : colors.warmGray[900],
+        textOnPrimary: themeConfig.colors.textOnPrimary ? themeConfig.colors.textOnPrimary : colors.white,
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',
