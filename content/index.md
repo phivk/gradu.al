@@ -1,12 +1,12 @@
 ---
-communityName: Demo
-adminURL: https://demo.gradu.al/admin
-logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
+communityName: Grant for the Web
+adminURL: https://gftw.gradu.al/admin
+logoSrc: https://www.gradu.al/uploads/gftw-circular.png
 ctaHeading: What would you like to learn or share?
-ctaButtonText: Let us know!
+ctaButtonText: Take part!
 subLink:
-  text: join the Demo Slack
-  href: https://www.mozillafestival.org/slack/
+  text: join the community space
+  href: https://community.webmonetization.org/
 typeformSrc: https://form.typeform.com/to/WNeeJYiq
 sessionTypes:
   - peer sharing
@@ -19,17 +19,9 @@ sessionTypes:
   - presentation
   - brainstorm
   - AMA
-infoBars:
-  - 
-    icon: 🤔
-    text: Need more help?
-    link:
-      text: Watch a walk-through video
-      href: https://www.loom.com/share/406bfe57b075452a8efadbff954191ad
-calendarLink: https://bit.ly/MozFestSkillsharing
 ---
 
-## Hi 👋 <br /> Welcome to Demo on Gradual!
+## 👋 Welcome the Grant for the Web Skill Sharing Hub!
 
 This is a space to express things you’d like to learn and share with others in the community. Join the conversation on the
-[#skillsharing](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel!
+[community](https://community.webmonetization.org/) forum!
