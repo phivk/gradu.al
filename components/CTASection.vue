@@ -10,14 +10,14 @@
       v-if="ctaButtonText"
       append
       to="join"
-      class="inline-block mb-8 text-3xl rounded px-4 py-2 no-underline grow shadow-hover white bg-secondary"
+      class="inline-block mb-8 text-3xl rounded px-4 py-2 no-underline grow shadow-hover text-on-primary bg-secondary"
     >
       {{ ctaButtonText }}
     </NuxtLink>
     <div v-if="subLink" class="block">
       <a
         :href="subLink.href"
-        class= "text-secondary underline hover:no-underline"
+        class= "text-text underline hover:no-underline"
         target="_blank"
         >{{ subLink.text }}</a
       >
