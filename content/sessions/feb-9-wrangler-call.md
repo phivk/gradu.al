@@ -1,5 +1,6 @@
 ---
-title: Feb 9 Wrangler Call
+title: Feb 9 Wrangler Call (Opening Circle Video, Community Spotlight in MozFest Studio,
+  Loop Content, Facilitator All Hands Meeting, February/March Planning)
 type: workshop
 dateTime: 2022-02-09T15:00:00Z
 durationInMinutes: 60
