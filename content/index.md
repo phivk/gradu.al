@@ -7,7 +7,7 @@ ctaButtonText: Take part!
 subLink:
   text: join the community space
   href: https://community.webmonetization.org/
-typeformSrc: https://form.typeform.com/to/WNeeJYiq
+typeformSrc: https://form.typeform.com/to/YBWucTJ6
 sessionTypes:
   - peer sharing
   - salon
