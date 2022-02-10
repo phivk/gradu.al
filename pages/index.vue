@@ -2,6 +2,7 @@
   <CommunityPage
     :indexPage="indexPage"
     :sessions="sessions"
+    :ambassadorsIndex="ambassadorsIndex"
     :ambassadors="ambassadors"
     :nodes="nodes"
     :edges="edges"
@@ -25,8 +26,14 @@ export default {
         console.log(error);
       });
 
+    const ambassadorsIndex = await $content("ambassadors/index")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
     const ambassadors = await $content("ambassadors")
-      .sortBy("dateTime", "asc")
+      .where({ slug: { $ne: "index" } })
+      .sortBy("sortOrder", "asc")
       .fetch()
       .catch((error) => {
         console.log(error);
@@ -45,7 +52,7 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, ambassadors, indexPage, nodes, edges, popular };
+    return { sessions, ambassadors, ambassadorsIndex, indexPage, nodes, edges, popular };
   },
 };
 </script>
