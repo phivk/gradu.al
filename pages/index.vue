@@ -32,7 +32,7 @@ export default {
       });
     const ambassadors = await $content("ambassadors")
       .where({ slug: { $ne: "index" } })
-      .sortBy("dateTime", "asc")
+      .sortBy("sortOrder", "asc")
       .fetch()
       .catch((error) => {
         console.log(error);
