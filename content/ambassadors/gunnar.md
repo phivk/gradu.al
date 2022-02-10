@@ -1,5 +1,5 @@
 ---
-sortOrder: 1
+sortOrder: 3
 name: Gunnar de Jong
 profilePic: "/uploads/gunnar_deyoung-5968c_preview.jpg"
 bio: |-
