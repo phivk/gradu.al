@@ -31,4 +31,5 @@ fields:
   description: A number to specify the relative ordering used to display ambassadors
     on the community page
 pages:
+- content/ambassadors/gunnar.md
 - content/ambassadors/philo.md
