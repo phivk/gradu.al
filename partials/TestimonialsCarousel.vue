@@ -28,7 +28,7 @@
               leave-class="opacity-100 translate-y-0"
               leave-to-class="opacity-0 translate-y-8"
             >
-              <template v-for="(item, index) in items">
+              <template v-for="(testimonial, index) in testimonials">
                 <div
                   :key="index"
                   v-show="active === index"
@@ -49,19 +49,21 @@
                     </svg>
                     <img
                       class="relative rounded-full w-24 h-24 object-cover"
-                      :src="item.imgSrc"
-                      :alt="item.name"
+                      :src="testimonial.imgSrc"
+                      :alt="testimonial.name"
                     />
                   </div>
-                  <blockquote class="text-xl font-medium mb-4">
-                    {{ item.quote }}
+                  <blockquote
+                    class="text-xl font-medium mb-4 insert-quotationmarks"
+                  >
+                    {{ testimonial.quote }}
                   </blockquote>
-                  <cite class="block font-bold text-lg not-italic mb-1">{{
-                    item.name
-                  }}</cite>
+                  <cite class="block font-bold text-lg not-italic mb-1">
+                    {{ testimonial.name }}
+                  </cite>
                   <div class="text-gray-600">
-                    <span>{{ item.role }}</span>
-                    <span class="text-blue-600">{{ item.team }}</span>
+                    <span>{{ testimonial.role }}</span>
+                    <span class="text-blue-600">{{ testimonial.team }}</span>
                   </div>
                 </div>
               </template>
@@ -72,7 +74,7 @@
               <button
                 class="w-16 h-16 p-1 flex items-center justify-center bg-white rounded-full border border-gray-200 shadow-md hover:shadow-lg transform -translate-x-2 md:-translate-x-1/2"
                 @click="
-                  active = active === 0 ? items.length - 1 : active - 1;
+                  active = active === 0 ? testimonials.length - 1 : active - 1;
                   stopAutorotate();
                 "
               >
@@ -90,7 +92,7 @@
               <button
                 class="w-16 h-16 p-1 flex items-center justify-center bg-white rounded-full border border-gray-200 shadow-md hover:shadow-lg transform translate-x-2 md:translate-x-1/2"
                 @click="
-                  active = active === items.length - 1 ? 0 : active + 1;
+                  active = active === testimonials.length - 1 ? 0 : active + 1;
                   stopAutorotate();
                 "
               >
@@ -115,63 +117,15 @@
 
 <script>
 export default {
-  name: "TestimonialsCarousel",
-  data: function() {
+  data: function () {
     return {
       active: 0,
       autorotate: true,
       autorotateTiming: 7000,
-      items: [
-        {
-          imgSrc: "/uploads/profile-zannah-marsh.jpg",
-          quote:
-            "“ One of the unexpected joys of using Gradual as a communal video repository is seeing our collection grow over time! It's amazing to have everything we've learned together - all our resources and experiences and insights - all in one place. And they're accessible to new community members, too. Gradual integrated quite well with other systems we had in place, so it's been easy to use. “",
-          name: "Zannah Marsh",
-          role: "Program Manager, Federated Design",
-          team: "MozFest Team at Mozilla",
-        },
-        {
-          imgSrc: "/uploads/profile-omar-shehata.jpg",
-          quote:
-            "“ I enjoyed being put in contact with someone I didn’t know within the community as getting meaningful connections in virtual settings is hard. It happened to be that our skills and interests were very complimentary and that was incredibly valuable to me, even if it wouldn’t have led to us hosting a session together. “",
-          name: "Omar Shehata",
-          role: "Graphics Engineer",
-          team: "Philadelphia, PA",
-        },
-        {
-          imgSrc: "/uploads/profile-michelle-ferrell.jpg",
-          quote:
-            "“ Coming across Gradual was instrumental for my personal development. It directly influenced our communal engagement and I loved how open, inquisitive and assertive we all became because of it. Facilitating a session with someone I didn’t know before made me feel truly connected. I never felt like I could ask 'stupid questions'… we were all there to learn together. “",
-          name: "Michelle Ferrell",
-          role: "Activism & Tech Community Wrangler",
-          team: "Mozilla Festival",
-        },
-        {
-          imgSrc: "/uploads/profile-maria-bridge.png",
-          quote:
-            "“ Using Gradual was a delight! I got quick feedback on a workshop in a setting that was low risk, but high value. After our session, I put work I had prepared into an article which has ended up being really personally useful for me. “",
-          name: "Maria Bridge",
-          role: "Stanford MBA",
-          team: "Non-profit COO",
-        },
-        {
-          imgSrc: "/uploads/profile-pim-schachtschabel.jpg",
-          quote:
-            "“ It was mind blowing to learn how much knowledge our community had internally. Gradual made these skills visible and easier to share. “",
-          name: "Pim Schachtschabel",
-          role: "Human Experience Architect",
-          team: "Architecting Curiosity",
-        },
-        {
-          imgSrc: "/uploads/profile-thomas-salmon.jpg",
-          quote:
-            "“ Gradual's participatory ethos really opened the door for us as a group to think differently about learning skills in a more community orientated and expansive way. The personal connections that are formed in the process are incredibly important motivators, they galvanize people's intrinsic curiosity and slowly build that sense of shared achievement that is really wonderful. “",
-          name: "Tom Salmon",
-          role: "Phd researcher in education",
-          team: "Cape Peninsula University of Technology",
-        },
-      ],
     };
+  },
+  props: {
+    testimonials: { type: Array, default: () => [] },
   },
   methods: {
     stopAutorotate() {
@@ -182,7 +136,7 @@ export default {
     if (this.autorotate) {
       this.autorotateInterval = setInterval(() => {
         this.active =
-          this.active + 1 === this.items.length ? 0 : this.active + 1;
+          this.active + 1 === this.testimonials.length ? 0 : this.active + 1;
       }, this.autorotateTiming);
     }
   },
@@ -191,3 +145,11 @@ export default {
   },
 };
 </script>
+<style>
+.insert-quotationmarks:before {
+  content: "“ ";
+}
+.insert-quotationmarks:after {
+  content: " “";
+}
+</style>

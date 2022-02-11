@@ -9,7 +9,7 @@
       <HeroHome />
       <FeaturesProcess />
       <UseCases />
-      <TestimonialsCarousel />
+      <TestimonialsCarousel :testimonials="testimonials" />
       <Cta />
     </main>
 
@@ -57,6 +57,16 @@ export default {
         const sticky = new Sticky("[data-sticky]");
       });
     }
+  },
+  async asyncData({ $content }) {
+    const testimonials = await $content("testimonials")
+      .where({ slug: { $ne: "index" } })
+      .sortBy("sortOrder", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+    return { testimonials };
   },
 };
 </script>
