@@ -1,4 +1,36 @@
 ---
 label: Testimonial
 hide_body: true
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: true
+  label: Name
+- name: role
+  type: text
+  config:
+    required: false
+  label: Role
+- name: team
+  type: text
+  config:
+    required: false
+  label: Team
+- name: quote
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Quote
+  description: Keep it short and snappy ;)
+- name: imgSrc
+  type: file
+  config:
+    maxSize: 2
+  label: imgSrc
+  description: Profile picture, doesn't need to be square, should be smaller than
+    2MB
