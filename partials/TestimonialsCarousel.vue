@@ -48,10 +48,8 @@
                       />
                     </svg>
                     <img
-                      class="relative rounded-full"
+                      class="relative rounded-full w-24 h-24 object-cover"
                       :src="item.imgSrc"
-                      width="96"
-                      height="96"
                       :alt="item.name"
                     />
                   </div>
@@ -125,8 +123,7 @@ export default {
       autorotateTiming: 7000,
       items: [
         {
-          imgSrc:
-            "https://assets.mofoprod.net/network-pulse/images/user-avatars/2021-09-16_130914.2225970000.jpg",
+          imgSrc: "/uploads/profile-zannah-marsh.jpg",
           quote:
             "“ One of the unexpected joys of using Gradual as a communal video repository is seeing our collection grow over time! It's amazing to have everything we've learned together - all our resources and experiences and insights - all in one place. And they're accessible to new community members, too. Gradual integrated quite well with other systems we had in place, so it's been easy to use. “",
           name: "Zannah Marsh",
@@ -134,8 +131,7 @@ export default {
           team: "MozFest Team at Mozilla",
         },
         {
-          imgSrc:
-            "https://ca.slack-edge.com/T170JCUN6-U01QW3CAGGZ-d7fab570a409-512",
+          imgSrc: "/uploads/profile-omar-shehata.jpg",
           quote:
             "“ I enjoyed being put in contact with someone I didn’t know within the community as getting meaningful connections in virtual settings is hard. It happened to be that our skills and interests were very complimentary and that was incredibly valuable to me, even if it wouldn’t have led to us hosting a session together. “",
           name: "Omar Shehata",
@@ -143,8 +139,7 @@ export default {
           team: "Philadelphia, PA",
         },
         {
-          imgSrc:
-            "https://ca.slack-edge.com/T170JCUN6-U01B0S0F40G-61ca5cf21cde-512",
+          imgSrc: "/uploads/profile-michelle-ferrell.jpg",
           quote:
             "“ Coming across Gradual was instrumental for my personal development. It directly influenced our communal engagement and I loved how open, inquisitive and assertive we all became because of it. Facilitating a session with someone I didn’t know before made me feel truly connected. I never felt like I could ask 'stupid questions'… we were all there to learn together. “",
           name: "Michelle Ferrell",
@@ -152,8 +147,7 @@ export default {
           team: "Mozilla Festival",
         },
         {
-          imgSrc:
-            "https://ca.slack-edge.com/T170JCUN6-U01P03UKEMV-e1acfddef565-512",
+          imgSrc: "/uploads/profile-maria-bridge.png",
           quote:
             "“ Using Gradual was a delight! I got quick feedback on a workshop in a setting that was low risk, but high value. After our session, I put work I had prepared into an article which has ended up being really personally useful for me. “",
           name: "Maria Bridge",
@@ -161,8 +155,7 @@ export default {
           team: "Non-profit COO",
         },
         {
-          imgSrc:
-            "https://pbs.twimg.com/profile_images/1376345918601977861/Z0hen1QF_400x400.jpg",
+          imgSrc: "/uploads/profile-pim-schachtschabel.jpg",
           quote:
             "“ It was mind blowing to learn how much knowledge our community had internally. Gradual made these skills visible and easier to share. “",
           name: "Pim Schachtschabel",
@@ -170,8 +163,7 @@ export default {
           team: "Architecting Curiosity",
         },
         {
-          imgSrc:
-            "https://i1.rgstatic.net/ii/profile.image/281325018861568-1444084519088_Q512/Thomas-Salmon-3.jpg",
+          imgSrc: "/uploads/profile-thomas-salmon.jpg",
           quote:
             "“ Gradual's participatory ethos really opened the door for us as a group to think differently about learning skills in a more community orientated and expansive way. The personal connections that are formed in the process are incredibly important motivators, they galvanize people's intrinsic curiosity and slowly build that sense of shared achievement that is really wonderful. “",
           name: "Tom Salmon",
