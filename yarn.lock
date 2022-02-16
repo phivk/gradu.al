@@ -6398,7 +6398,6 @@ __metadata:
     nuxt: ^2.15.8
     nuxt-password-protect: ^1.3.1
     postcss: ^8.4.6
-    push-dir: ^0.4.1
     sass: ^1.49.7
     sass-loader: ^10.2.1
     sticky-js: ^1.3.0
@@ -11067,17 +11066,6 @@ __metadata:
   bin:
     purgecss: bin/purgecss.js
   checksum: 508613f904b130401f2a403d3383533f703c6bcd56e1254c1e8f57818a5337db3a667f66f48355f86271b20dd576691357752f460eb2edd94c095e4178391c5f
-  languageName: node
-  linkType: hard
-
-"push-dir@npm:^0.4.1":
-  version: 0.4.1
-  resolution: "push-dir@npm:0.4.1"
-  dependencies:
-    minimist: ^1.2.0
-  bin:
-    push-dir: bin/push-dir.js
-  checksum: b35b2f5c883903510297f2ce28f172f0c5206adea79506ec4dbbe5b4b055c3c0c0c98761201d79ad3b4791eaa03b69602b3e4cc9656e98e5af47de1f612c4f17
   languageName: node
   linkType: hard
 
