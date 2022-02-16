@@ -92,7 +92,7 @@ class DataFetching {
     let member;
 
     headers.forEach((label, idx) => {
-      if (label.includes("@UserName") || label.includes("your name") || label === "What's your full name?") {
+      if (label.includes("user name") || label.includes("@UserName") || label.includes("your name") || label === "What's your full name?") {
         // create member node
         member = {
           _cssClass: "Member",
