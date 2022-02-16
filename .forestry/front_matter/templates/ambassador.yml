@@ -1,0 +1,35 @@
+---
+label: Ambassador
+hide_body: true
+fields:
+- type: text
+  name: name
+  label: Ambassador Name
+  config:
+    required: true
+- type: file
+  name: profilePic
+  label: Profile Picture
+  description: Doesn't need to be square, but can't be larger than 2MB
+  config:
+    maxSize: 2
+- type: textarea
+  name: bio
+  label: Bio Text
+  description: A short text about the ambassador
+  config:
+    wysiwyg: false
+    required: true
+- type: number
+  name: sortOrder
+  label: Sort Order
+  config:
+    step: 1
+    max: 10
+    min: 1
+  default: 1
+  description: A number to specify the relative ordering used to display ambassadors
+    on the community page
+pages:
+- content/ambassadors/gunnar.md
+- content/ambassadors/philo.md
