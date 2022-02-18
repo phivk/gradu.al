@@ -20,16 +20,16 @@
       :sessions="sessions"
       :calendarLink="indexPage.calendarLink"
     />
-    <AmbassadorsSection
-      v-if="ambassadors.length"
-      :ambassadors="ambassadors"
-      :ambassadorsIndex="ambassadorsIndex"
-    />
     <IntentionSection
       v-if="nodes && edges && popular"
       :nodes="nodes"
       :edges="edges"
       :popular="popular"
+    />
+    <AmbassadorsSection
+      v-if="ambassadors.length"
+      :ambassadors="ambassadors"
+      :ambassadorsIndex="ambassadorsIndex"
     />
   </div>
 </template>
