@@ -1,22 +1,25 @@
 <template>
-  <section v-if="sessions.length">
+  <section>
     <div v-if="sessionsUpcoming.length" class="my-8">
       <h2 class="text-2xl md:text-3xl mb-4">Upcoming Sessions</h2>
-      <InfoBar v-if="calendarLink" :infoBarObject="{
-        'icon': '📅',
-        'link': {
-          'text': 'Subscribe to the Skill Sharing calendar to stay posted',
-          'href': calendarLink
-        }
-      }"/>
-      <SessionCardList :sessions="sessionsUpcoming"/>
+      <InfoBar
+        v-if="calendarLink"
+        :infoBarObject="{
+          icon: '📅',
+          link: {
+            text: 'Subscribe to the Skill Sharing calendar to stay posted',
+            href: calendarLink,
+          },
+        }"
+      />
+      <SessionCardList :sessions="sessionsUpcoming" />
     </div>
     <div v-if="sessionsPast.length" class="my-8">
       <h2 class="text-2xl md:text-3xl mb-4">Things we've learned so far</h2>
       <p class="text-lg">
         Select a session below for a recording and more details.
       </p>
-      <SessionCardList :sessions="sessionsPast"/>
+      <SessionCardList :sessions="sessionsPast" />
     </div>
   </section>
 </template>
@@ -32,7 +35,7 @@ export default {
   },
   props: {
     sessions: { type: Array, default: () => [] },
-    calendarLink: { type: String, default: () => '' },
+    calendarLink: { type: String, default: () => "" },
   },
   computed: {
     sessionsUpcoming() {
