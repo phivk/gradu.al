@@ -8,12 +8,9 @@
   </p>
 </template>
 <script>
-import TagPill from "~/components/TagPill.vue";
-
 export default {
   props: {
     sessionTypes: { type: Array, default: () => [] },
   },
-  components: { TagPill },
 };
 </script>

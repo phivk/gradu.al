@@ -10,8 +10,6 @@
   </ul>
 </template>
 <script>
-import SessionCard from "~/components/SessionCard.vue";
-
 export default {
   data() {
     return {
@@ -22,7 +20,6 @@ export default {
     sessions: { type: Array, default: () => [] },
     compact: { type: Boolean, default: false },
   },
-  components: { SessionCard },
   computed: {
     sessionsFeaturedFirst() {
       return this.sessions.sort((a, b) => {

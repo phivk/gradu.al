@@ -34,21 +34,11 @@
   </section>
 </template>
 <script>
-import GraphManual from "~/components/GraphManual.vue";
-import GraphManualKey from "~/components/GraphManualKey.vue";
-import MostPopularSkillsSection from "~/components/MostPopularSkillsSection.vue";
-import NavigationTabs from "~/components/NavigationTabs.vue";
 export default {
   props: {
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
     popular: { type: Object, default: () => {} },
-  },
-  components: {
-    GraphManual,
-    GraphManualKey,
-    MostPopularSkillsSection,
-    NavigationTabs,
   },
 };
 </script>

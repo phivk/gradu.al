@@ -13,13 +13,10 @@
   </article>
 </template>
 <script>
-import CircleCharacter from "~/components/CircleCharacter.vue";
-
 export default {
   props: {
     number: { type: String, default: "1" },
     title: { type: String, default: "Title" },
   },
-  components: { CircleCharacter },
 };
 </script>

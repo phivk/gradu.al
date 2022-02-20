@@ -1,6 +1,11 @@
 <template>
   <div class="bg-background text-text min-vh-100">
-    <TheNavBar class="bg-primary" backLinkTarget="/" :backLinkText="communityName" :logoIsBlack="logoIsBlack" />
+    <TheNavBar
+      class="bg-primary"
+      backLinkTarget="/"
+      :backLinkText="communityName"
+      :logoIsBlack="logoIsBlack"
+    />
     <div class="p-2 sm:p-4 lg:p-8">
       <nuxt />
     </div>
@@ -8,25 +13,19 @@
 </template>
 <script>
 import themeConfig from "~/theme.config.js";
-import TheNavBar from "~/components/TheNavBar.vue";
 export default {
   middleware: themeConfig.passwordProtect ? ["password-protect"] : [],
-  head () {
+  head() {
     return {
-      link: [
-        { rel: 'stylesheet', href: '/css/tachyons.min.css' }
-      ]
-    }
-  },
-  components: {
-    TheNavBar,
+      link: [{ rel: "stylesheet", href: "/css/tachyons.min.css" }],
+    };
   },
   data: () => {
     return {
       communityName: themeConfig.communityName,
       logoIsBlack: themeConfig.logoIsBlack,
-    }
-  }
+    };
+  },
 };
 </script>
 <style>

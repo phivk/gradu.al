@@ -40,21 +40,7 @@
   </div>
 </template>
 <script>
-import SocialHead from "~/components/SocialHead.vue";
-import CTASection from "~/components/CTASection.vue";
-import ProcessSection from "~/components/ProcessSection.vue";
-import SessionsSection from "~/components/SessionsSection.vue";
-import AmbassadorsSection from "~/components/AmbassadorsSection.vue";
-import IntentionSection from "~/components/IntentionSection.vue";
 export default {
-  components: {
-    SocialHead,
-    CTASection,
-    ProcessSection,
-    SessionsSection,
-    AmbassadorsSection,
-    IntentionSection,
-  },
   props: {
     indexPage: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },

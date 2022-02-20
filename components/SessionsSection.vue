@@ -30,15 +30,9 @@
   </section>
 </template>
 <script>
-import SessionCardList from "~/components/SessionCardList.vue";
-import InfoBar from "~/components/InfoBar.vue";
 import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
-  components: {
-    SessionCardList,
-    InfoBar,
-  },
   props: {
     index: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },

@@ -10,14 +10,8 @@
     :popular="popular"
   />
 </template>
-
 <script>
-import CommunityPage from "~/components/CommunityPage.vue";
-
 export default {
-  components: {
-    CommunityPage,
-  },
   async asyncData({ $content }) {
     const sessions = await $content("sessions", { deep: true })
       .where({ slug: { $ne: "index" } })

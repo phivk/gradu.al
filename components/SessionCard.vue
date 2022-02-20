@@ -60,16 +60,12 @@
   </article>
 </template>
 <script>
-import ProfilePic from "~/components/ProfilePic.vue";
-import TagPill from "~/components/TagPill.vue";
-import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
 import { formatDate, isValidDate, hasHappened } from "~/util/date";
 
 export default {
   props: {
     session: { type: Object, default: () => {} },
   },
-  components: { ProfilePic, TagPill, ProfileAvatarList },
   computed: {
     sessionDate() {
       return this.session.dateTime

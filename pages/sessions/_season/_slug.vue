@@ -3,10 +3,7 @@
 </template>
 
 <script>
-import SessionPage from "~/components/SessionPage.vue";
-
 export default {
-  components: { SessionPage },
   data() {
     return {
       bgColor: "#f4f4f4",

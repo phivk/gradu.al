@@ -124,9 +124,6 @@
   </div>
 </template>
 <script>
-import TagPill from "~/components/TagPill.vue";
-import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
-import SocialHead from "./SocialHead.vue";
 import {
   formatDate,
   isValidDate,
@@ -139,11 +136,6 @@ import VTooltip from "v-tooltip";
 Vue.use(VTooltip);
 
 export default {
-  components: {
-    TagPill,
-    ProfileAvatarList,
-    SocialHead,
-  },
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
