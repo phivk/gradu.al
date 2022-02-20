@@ -2,6 +2,7 @@
   <CommunityPage
     :indexPage="indexPage"
     :sessions="sessions"
+    :sessionsIndexes="sessionsIndexes"
     :ambassadorsIndex="ambassadorsIndex"
     :ambassadors="ambassadors"
     :nodes="nodes"
@@ -18,8 +19,15 @@ export default {
     CommunityPage,
   },
   async asyncData({ $content }) {
-    const sessions = await $content("sessions")
+    const sessions = await $content("sessions", { deep: true })
+      .where({ slug: { $ne: "index" } })
       .sortBy("dateTime", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+    const sessionsIndexes = await $content("sessions", { deep: true })
+      .where({ slug: { $eq: "index" } })
       .fetch()
       .catch((error) => {
         console.log(error);
@@ -51,7 +59,16 @@ export default {
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, ambassadors, ambassadorsIndex, indexPage, nodes, edges, popular };
+    return {
+      sessions,
+      sessionsIndexes,
+      ambassadors,
+      ambassadorsIndex,
+      indexPage,
+      nodes,
+      edges,
+      popular,
+    };
   },
 };
 </script>

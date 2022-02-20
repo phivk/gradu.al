@@ -79,7 +79,10 @@ export default {
       return hasHappened(this.session.date);
     },
     hasRecording() {
-      return this.session.youtubeRecordingID || this.session.panoptoRecordingID;
+      return (
+        (this.session.youtubeRecordingID || this.session.panoptoRecordingID) !==
+        undefined
+      );
     },
   },
 };
