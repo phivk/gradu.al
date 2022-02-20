@@ -51,6 +51,7 @@
                   <ProfileAvatarList
                     :profileNames="session.sharerNames"
                     :itemClasses="['ring-4', 'ring-gray-200']"
+                    :maxDisplayLength="4"
                     class="text-xs sm:text-sm lg:text-base"
                   />
                 </div>
@@ -63,6 +64,7 @@
                   <ProfileAvatarList
                     :profileNames="session.learnerNames"
                     :itemClasses="['ring-4', 'ring-gray-200']"
+                    :maxDisplayLength="4"
                     class="text-xs sm:text-sm lg:text-base"
                   />
                 </div>
