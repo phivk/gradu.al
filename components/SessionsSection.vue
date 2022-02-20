@@ -20,9 +20,9 @@
         <AppLink
           v-if="compact"
           :to="index.dir"
-          class="underline hover:no-underline"
+          class="underline hover:no-underline flex-shrink-0"
         >
-          Show all ({{ sessions.length }})
+          Show all <span class="hidden sm:inline">({{ sessions.length }})</span>
         </AppLink>
       </div>
       <SessionCardList :sessions="sessionsPast" :compact="compact" />

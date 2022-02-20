@@ -1,9 +1,9 @@
 <template>
-  <ul class="flex flex-wrap justify-start">
+  <ul class="flex flex-wrap justify-start -mx-2">
     <li
       v-for="session in sessionsCompacted"
       :key="session.title"
-      class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 max-w-lg p-4"
+      class="w-1/2 sm:w-1/3 md:w-1/4 max-w-lg p-2"
     >
       <SessionCard :session="session" />
     </li>
