@@ -3,11 +3,13 @@
     <NuxtLink :to="session.path" class="link">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
-          <font-awesome-icon
-            v-if="hasRecording"
-            class="absolute right-0 m-4 text-white z-10 filter drop-shadow-lg"
-            :icon="['fas', 'video']"
-          />
+          <client-only>
+            <font-awesome-icon
+              v-if="hasRecording"
+              class="absolute right-0 m-4 text-white z-10 filter drop-shadow-lg"
+              :icon="['fas', 'video']"
+            />
+          </client-only>
           <img
             :src="session.imageSrc"
             :alt="session.title"
@@ -30,22 +32,24 @@
           </div>
           <div class="p-4">
             <div class="flex flex-wrap mb-2">
-              <div v-if="session.sharerNames.length" class="mr-4">
-                <h3 class="text-base font-normal opacity-60">Shared by</h3>
-                <ProfileAvatarList
-                  :profileNames="session.sharerNames"
-                  :itemClasses="['ring-4', 'ring-gray-200']"
-                />
-              </div>
-              <div v-if="session.learnerNames.length">
-                <h3 class="text-base font-normal opacity-60">
-                  {{ hasHappened ? "Learned by" : "Like to learn" }}
-                </h3>
-                <ProfileAvatarList
-                  :profileNames="session.learnerNames"
-                  :itemClasses="['ring-4', 'ring-gray-200']"
-                />
-              </div>
+              <client-only>
+                <div v-if="session.sharerNames.length" class="mr-4">
+                  <h3 class="text-base font-normal opacity-60">Shared by</h3>
+                  <ProfileAvatarList
+                    :profileNames="session.sharerNames"
+                    :itemClasses="['ring-4', 'ring-gray-200']"
+                  />
+                </div>
+                <div v-if="session.learnerNames.length">
+                  <h3 class="text-base font-normal opacity-60">
+                    {{ hasHappened ? "Learned by" : "Like to learn" }}
+                  </h3>
+                  <ProfileAvatarList
+                    :profileNames="session.learnerNames"
+                    :itemClasses="['ring-4', 'ring-gray-200']"
+                  />
+                </div>
+              </client-only>
             </div>
           </div>
         </div>
