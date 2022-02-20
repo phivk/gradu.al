@@ -3,6 +3,7 @@
     <NuxtLink :to="session.path" class="link">
       <div class="flex flex-column">
         <div class="w-100 aspect-ratio aspect-ratio--16x9">
+          <!-- client-only to fix Mismatching childNodes vs. VNodes error  -->
           <client-only>
             <font-awesome-icon
               v-if="hasRecording"
@@ -32,6 +33,7 @@
           </div>
           <div class="p-4">
             <div class="flex flex-wrap mb-2">
+              <!-- client-only to fix Mismatching childNodes vs. VNodes error  -->
               <client-only>
                 <div v-if="session.sharerNames.length" class="mr-4">
                   <h3 class="text-base font-normal opacity-60">Shared by</h3>
