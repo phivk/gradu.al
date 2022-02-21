@@ -5,16 +5,21 @@
       :description="description"
       :image="session.imageSrc"
     />
-    <main class=" mw9 mx-auto">
+    <main class="mw9 mx-auto">
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt-0 mb-2 sm:mb-4">
-          <TagPill>
-            {{session.type}}
-          </TagPill>
-          <h1 class="text-4xl md:text-5xl font-bold lh-title mt-2 mb-8">
-            {{ session.title }}
-          </h1>
           <div class="w-100 w-80-l">
+            <div class="flex justify-between my-4">
+              <TagPill>
+                {{session.type}}
+              </TagPill>
+              <a :href="session.dir" class="text-lg font-bold opacity-50 hover:opacity-100">
+                {{session.season}}
+              </a>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold lh-title my-4">
+              {{ session.title }}
+            </h1>
             <div class="video-wrapper" v-if="session.youtubeRecordingID">
               <iframe
                 width="560"
@@ -112,16 +117,13 @@
       </div>
       <div class="flex justify-end">
         <div class="w-100 w-80-l mt-0 mb-8 lg:mb-16">
-          <NuxtContent class="measure text-lg" :document="session" />
+          <NuxtContent class="max-w-prose text-lg" :document="session" />
         </div>
       </div>
     </main>
   </div>
 </template>
 <script>
-import TagPill from "~/components/TagPill.vue";
-import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
-import SocialHead from "./SocialHead.vue";
 import {
   formatDate,
   isValidDate,
@@ -134,15 +136,9 @@ import VTooltip from "v-tooltip";
 Vue.use(VTooltip);
 
 export default {
-  components: {
-    TagPill,
-    ProfileAvatarList,
-    SocialHead,
-  },
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
-    bgColor: { type: String, default: "#FFF" },
   },
   computed: {
     description() {

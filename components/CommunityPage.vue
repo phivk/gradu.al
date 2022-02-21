@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center mw9 mx-auto">
     <SocialHead :title="`${indexPage.communityName} - Here to learn`" />
     <h2 v-if="indexPage.pageHeading" class="text-3xl md:text-4xl mb-6">
       {{ indexPage.pageHeading }}
@@ -15,38 +15,65 @@
       :subLink="indexPage.subLink"
     />
     <ProcessSection :indexPage="indexPage" />
-    <SessionsSection
-      :sessions="sessions"
-      :calendarLink="indexPage.calendarLink"
+
+    <div v-for="season in seasons">
+      <SessionsSection
+        v-if="sessionsPerSeason[season].length"
+        :sessions="sessionsPerSeason[season]"
+        :calendarLink="indexPage.calendarLink"
+        :index="sessionsIndexPerSeason[season]"
+        :compact="sessionsIndexPerSeason[season].compact"
+        :pastTitle="sessionsIndexPerSeason[season].title"
+      />
+    </div>
+    <IntentionSection
+      v-if="nodes && edges && popular"
+      :nodes="nodes"
+      :edges="edges"
+      :popular="popular"
     />
-    <AmbassadorsSection v-if="ambassadors.length" :ambassadors="ambassadors" :ambassadorsIndex="ambassadorsIndex" />
-    <IntentionSection :nodes="nodes" :edges="edges" :popular="popular" />
+    <AmbassadorsSection
+      v-if="ambassadors.length"
+      :ambassadors="ambassadors"
+      :ambassadorsIndex="ambassadorsIndex"
+    />
   </div>
 </template>
 <script>
-import SocialHead from "~/components/SocialHead.vue";
-import CTASection from "~/components/CTASection.vue";
-import ProcessSection from "~/components/ProcessSection.vue";
-import SessionsSection from "~/components/SessionsSection.vue";
-import AmbassadorsSection from "~/components/AmbassadorsSection.vue";
-import IntentionSection from "~/components/IntentionSection.vue";
 export default {
-  components: {
-    SocialHead,
-    CTASection,
-    ProcessSection,
-    SessionsSection,
-    AmbassadorsSection,
-    IntentionSection,
-  },
   props: {
     indexPage: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },
+    sessionsIndexes: { type: Array, default: () => {} },
     ambassadors: { type: Array, default: () => [] },
     ambassadorsIndex: { type: Object, default: () => {} },
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
     popular: { type: Object, default: () => {} },
+  },
+  computed: {
+    sessionsPerSeason() {
+      // split sessions per season based on content sub dir
+      return this.sessions.reduce(function (prev, cur) {
+        if (!prev[cur["dir"]]) {
+          prev[cur["dir"]] = [];
+        }
+        prev[cur["dir"]].push(cur);
+        return prev;
+      }, {});
+    },
+    sessionsIndexPerSeason() {
+      // split sessionsIndexes per season based on content sub dir
+      return this.sessionsIndexes.reduce(function (prev, cur) {
+        if (!prev[cur["dir"]]) {
+          prev[cur["dir"]] = cur;
+        }
+        return prev;
+      }, {});
+    },
+    seasons() {
+      return Object.keys(this.sessionsPerSeason);
+    },
   },
 };
 </script>
