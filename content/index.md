@@ -2,8 +2,8 @@
 communityName: MozFest
 adminURL: https://mozfest.gradu.al/admin
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
-ctaHeading: What would you like to learn or share?
-ctaButtonText: Let us know!
+ctaHeading: What skills, ideas or topics would you like to explore?
+ctaButtonText: Take Part!
 subLink:
   text: join the MozFest Slack
   href: https://www.mozillafestival.org/slack/
@@ -15,7 +15,6 @@ sessionTypes:
   - workshop
   - lunch & learn
   - talk
-  - one-on-one
   - presentation
   - brainstorm
   - AMA
@@ -28,7 +27,11 @@ infoBars:
 calendarLink: https://bit.ly/MozFestSkillsharing
 ---
 
-## Hi 👋 <br /> Welcome to MozFest on Gradual!
+## 👋 Welcome to MozFest Emergent Sessions!
 
-This is a space to express things you’d like to learn and share with others in the community. Join the conversation on the
-[#skillsharing](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel!
+This is a space for new things to arise. A place to let others know what you’re most interested in.
+
+Here, you can see how you connect to your peers via skills, interests, fascinations and desires. A place filled with all of your wonderful ideas.
+
+Join the conversation on the
+[#emergent-sessions](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel!
