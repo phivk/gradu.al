@@ -7,6 +7,7 @@
       v-for="(infoBar, index) in indexPage.infoBars"
       :key="index"
       :infoBarObject="infoBar"
+      class="mx-auto"
     />
   </section>
 </template>
