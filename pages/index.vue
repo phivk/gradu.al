@@ -22,6 +22,7 @@ export default {
       });
     const sessionsIndexes = await $content("sessions", { deep: true })
       .where({ slug: { $eq: "index" } })
+      .sortBy("sortOrder", "asc")
       .fetch()
       .catch((error) => {
         console.log(error);
