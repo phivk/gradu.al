@@ -1,6 +1,6 @@
 ---
 title: Skills shared at MozFest 2021
-compact: true
+isPast: true
 sortOrder: 2
 ---
 
