@@ -9,7 +9,11 @@
       leave-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div v-show="show" class="fixed inset-0 z-50 bg-white bg-opacity-75 transition-opacity blur" aria-hidden="true"></div>
+      <div
+        v-show="show"
+        class="fixed inset-0 z-50 bg-white bg-opacity-75 transition-opacity blur"
+        aria-hidden="true"
+      ></div>
     </transition>
 
     <!-- Modal dialog -->
@@ -29,7 +33,10 @@
         aria-modal="true"
         :aria-labelledby="ariaLabel"
       >
-        <div class="bg-white overflow-auto max-w-6xl w-full max-h-full" ref="modalContent">          
+        <div
+          class="bg-white overflow-auto max-w-6xl w-full max-h-full"
+          ref="modalContent"
+        >
           <slot />
         </div>
       </div>
@@ -38,45 +45,40 @@
 </template>
 
 <script>
-// import { Fragment } from 'vue-fragment'
-
 export default {
-  name: 'Modal',
+  name: "Modal",
   props: {
     id: {
       type: String,
-      default: null
+      default: null,
     },
     ariaLabel: {
       type: String,
-      default: null
+      default: null,
     },
     show: {
       type: Boolean,
       default: false,
-      required: true
+      required: true,
     },
-  },
-  components: {
-    // Fragment,
   },
   methods: {
     clickOutside(e) {
-      if (!this.show || this.$refs.modalContent.contains(e.target)) return
-      this.$emit('handleClose')
+      if (!this.show || this.$refs.modalContent.contains(e.target)) return;
+      this.$emit("handleClose");
     },
     keyPress() {
-      if (!this.show || event.keyCode !== 27) return
-      this.$emit('handleClose')
-    }    
-  },  
+      if (!this.show || event.keyCode !== 27) return;
+      this.$emit("handleClose");
+    },
+  },
   mounted() {
-    document.addEventListener('click', this.clickOutside)    
-    document.addEventListener('keydown', this.keyPress)
+    document.addEventListener("click", this.clickOutside);
+    document.addEventListener("keydown", this.keyPress);
   },
   beforeDestroy() {
-    document.removeEventListener('click', this.clickOutside)
-    document.removeEventListener('keydown', this.keyPress)
-  }  
-}
+    document.removeEventListener("click", this.clickOutside);
+    document.removeEventListener("keydown", this.keyPress);
+  },
+};
 </script>

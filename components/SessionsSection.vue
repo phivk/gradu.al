@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="text-left">
     <div v-if="sessionsUpcoming.length" class="my-8">
-      <h2 class="text-2xl md:text-3xl mb-4">Upcoming Sessions</h2>
+      <h3 class="text-xl md:text-2xl mb-4">{{ upcomingTitle }}</h3>
       <InfoBar
         v-if="calendarLink"
         :infoBarObject="{
@@ -12,30 +12,34 @@
           },
         }"
       />
-      <SessionCardList :sessions="sessionsUpcoming" />
+      <SessionCardList :sessions="sessionsUpcoming" :compact="compact" />
     </div>
     <div v-if="sessionsPast.length" class="my-8">
-      <h2 class="text-2xl md:text-3xl mb-4">Things we've learned so far</h2>
-      <p class="text-lg">
-        Select a session below for a recording and more details.
-      </p>
-      <SessionCardList :sessions="sessionsPast" />
+      <div class="flex flex-row justify-between items-center mb-4">
+        <h3 class="text-xl md:text-2xl mt-0">{{ pastTitle }}</h3>
+        <AppLink
+          v-if="compact"
+          :to="index.dir"
+          class="underline hover:no-underline flex-shrink-0"
+        >
+          Show all <span class="hidden sm:inline">({{ sessions.length }})</span>
+        </AppLink>
+      </div>
+      <SessionCardList :sessions="sessionsPast" :compact="compact" />
     </div>
   </section>
 </template>
 <script>
-import SessionCardList from "~/components/SessionCardList.vue";
-import InfoBar from "~/components/InfoBar.vue";
 import { getSessionsUpcoming, getSessionsPast } from "~/util/session";
 
 export default {
-  components: {
-    SessionCardList,
-    InfoBar,
-  },
   props: {
+    index: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },
-    calendarLink: { type: String, default: () => "" },
+    calendarLink: { type: String, default: undefined },
+    compact: { type: Boolean, default: false },
+    upcomingTitle: { type: String, default: "Upcoming Sessions" },
+    pastTitle: { type: String, default: "Things we've learned so far" },
   },
   computed: {
     sessionsUpcoming() {

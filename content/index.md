@@ -20,8 +20,7 @@ sessionTypes:
   - brainstorm
   - AMA
 infoBars:
-  - 
-    icon: 🤔
+  - icon: 🤔
     text: Need more help?
     link:
       text: Watch a walk-through video

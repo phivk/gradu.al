@@ -25,13 +25,7 @@
   </nav>
 </template>
 <script>
-import Logo from "~/components/Logo.vue";
-import AppLink from "~/components/AppLink.vue";
 export default {
-  components: {
-    Logo,
-    AppLink,
-  },
   props: {
     backLinkText: { type: String, default: "back" },
     backLinkTarget: { type: String, default: "/" },

@@ -1,5 +1,5 @@
 <template>
-  <CircleCharacter 
+  <CircleCharacter
     :character="initial"
     :backgroundColor="backgroundColor"
     :title="profileName"
@@ -7,21 +7,15 @@
   />
 </template>
 <script>
-import CircleCharacter from "~/components/CircleCharacter.vue";
 export default {
-  components: {
-    CircleCharacter,
-  },
   props: {
     profileName: { type: String, default: "@User Name" },
     backgroundColor: { type: String, default: "#96CCFF" },
   },
   computed: {
     initial() {
-      return this.profileName
-        .replace('@', '')[0]
-        .toUpperCase();
+      return this.profileName.replace("@", "")[0].toUpperCase();
     },
-  }
+  },
 };
 </script>
