@@ -1,14 +1,14 @@
 ---
-title: Demo Upcoming
-type: workshop
-dateTime: "2032-03-14T17:00+01:00"
+title: Demo Past 4
+type: peer sharing
+dateTime: "2021-04-14T17:00+01:00"
 durationInMinutes: 60
-imageSrc: https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
+imageSrc: https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 learnerNames:
   - "@Thomas Steigenga"
   - "@Philo van Kemenade"
-sharerNames: []
-youtubeRecordingID: Z7wi8jd7aC4
+sharerNames:
+  - "@Gunnar de Jong"
 resources:
   - text: Slack Channel
     href: https://slack.com/
