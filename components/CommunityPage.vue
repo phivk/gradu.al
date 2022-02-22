@@ -21,7 +21,7 @@
         :sessions="sessionsPerSeason[season]"
         :calendarLink="indexPage.calendarLink"
         :index="sessionsIndexPerSeason[season]"
-        :compact="sessionsIndexPerSeason[season].compact"
+        :compact="sessionsIndexPerSeason[season].isPast"
         :pastTitle="sessionsIndexPerSeason[season].title"
       />
     </div>
