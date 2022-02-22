@@ -7,7 +7,7 @@ ctaButtonText: Take Part!
 subLink:
   text: join the MozFest Slack
   href: https://www.mozillafestival.org/slack/
-typeformSrc: https://form.typeform.com/to/WNeeJYiq
+typeformSrc: https://form.typeform.com/to/MFUKH7rE
 sessionTypes:
   - peer sharing
   - salon
