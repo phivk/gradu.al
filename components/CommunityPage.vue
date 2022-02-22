@@ -22,7 +22,6 @@
         :calendarLink="indexPage.calendarLink"
         :index="sessionsIndexPerSeason[season]"
         :compact="sessionsIndexPerSeason[season].isPast"
-        :pastTitle="sessionsIndexPerSeason[season].title"
       />
     </div>
     <IntentionSection

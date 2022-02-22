@@ -1,14 +1,9 @@
 <template>
   <div>
-    <h2 v-if="sessionsIndex.title" class="text-2xl md:text-3xl mb-4">
-      {{ sessionsIndex.title }}
-    </h2>
-    <NuxtContent :document="sessionsIndex" class="text-lg" />
     <SessionsSection
       v-if="sessions.length"
       :sessions="sessions"
       :index="sessionsIndex"
-      pastTitle=""
     />
   </div>
 </template>

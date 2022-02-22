@@ -1,7 +1,10 @@
 <template>
   <section class="text-left">
-    <div v-if="sessionsUpcoming.length" class="my-8">
-      <h3 class="text-xl md:text-2xl mb-4">{{ upcomingTitle }}</h3>
+    <h2 v-if="index.title" class="text-2xl md:text-3xl mb-6">
+      {{ index.title }}
+    </h2>
+    <NuxtContent :document="index" class="text-lg" />
+    <div v-if="sessionsUpcoming.length && !index.isPast" class="my-8">
       <InfoBar
         v-if="calendarLink"
         :infoBarObject="{
@@ -12,20 +15,20 @@
           },
         }"
       />
-      <SessionCardList :sessions="sessionsUpcoming" :compact="compact" />
+      <SessionCardList
+        :title="titleUpcoming"
+        :sessions="sessionsUpcoming"
+        :compact="compact"
+        :dir="index.dir"
+      />
     </div>
     <div v-if="sessionsPast.length" class="my-8">
-      <div class="flex flex-row justify-between items-center mb-4">
-        <h3 class="text-xl md:text-2xl mt-0">{{ pastTitle }}</h3>
-        <AppLink
-          v-if="compact"
-          :to="index.dir"
-          class="underline hover:no-underline flex-shrink-0"
-        >
-          Show all <span class="hidden sm:inline">({{ sessions.length }})</span>
-        </AppLink>
-      </div>
-      <SessionCardList :sessions="sessionsPast" :compact="compact" />
+      <SessionCardList
+        :title="titlePast"
+        :sessions="sessionsPast"
+        :compact="compact"
+        :dir="index.dir"
+      />
     </div>
   </section>
 </template>
@@ -38,8 +41,8 @@ export default {
     sessions: { type: Array, default: () => [] },
     calendarLink: { type: String, default: undefined },
     compact: { type: Boolean, default: false },
-    upcomingTitle: { type: String, default: "Upcoming Sessions" },
-    pastTitle: { type: String, default: "Things we've learned so far" },
+    titleUpcoming: { type: String, default: "Upcoming Sessions" },
+    titlePast: { type: String, default: "Things we've learned so far" },
   },
   computed: {
     sessionsUpcoming() {
