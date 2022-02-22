@@ -15,15 +15,13 @@
       :subLink="indexPage.subLink"
     />
     <ProcessSection :indexPage="indexPage" />
-
     <div v-for="season in seasons">
       <SessionsSection
         v-if="sessionsPerSeason[season].length"
         :sessions="sessionsPerSeason[season]"
         :calendarLink="indexPage.calendarLink"
         :index="sessionsIndexPerSeason[season]"
-        :compact="sessionsIndexPerSeason[season].compact"
-        :pastTitle="sessionsIndexPerSeason[season].title"
+        :compact="sessionsIndexPerSeason[season].isPast"
       />
     </div>
     <IntentionSection
@@ -72,7 +70,11 @@ export default {
       }, {});
     },
     seasons() {
-      return Object.keys(this.sessionsPerSeason);
+      // expects sessionsIndexes to already be ordered on sortOrder
+      return this.sessionsIndexes.reduce(function (prev, cur) {
+        prev.push(cur.dir);
+        return prev;
+      }, []);
     },
   },
 };
