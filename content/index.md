@@ -27,11 +27,11 @@ infoBars:
 calendarLink: https://bit.ly/MozFestSkillsharing
 ---
 
-## 👋 Welcome to MozFest Emergent Sessions!
+## 👋 Welcome to Emergent Sessions!
 
 This is a space for new things to arise. A place to let others know what you’re most interested in.
 
 Here, you can see how you connect to your peers via skills, interests, fascinations and desires. A place filled with all of your wonderful ideas.
 
-Join the conversation on the
-[#emergent-sessions](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel!
+Join the conversation in the
+[#emergent-sessions](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel on the [MozFest Slack](https://www.mozillafestival.org/slack/)!
