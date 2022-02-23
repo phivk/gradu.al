@@ -16,7 +16,7 @@ sections:
   templates:
   - ambassador
 - type: directory
-  path: content/2021/sessions
+  path: content/sessions/2021
   label: MozFest 2021 Sessions
   create: documents
   match: "*.md"
