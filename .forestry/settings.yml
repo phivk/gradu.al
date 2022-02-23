@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/index.md
   label: Hub Page
-  match: "**/*"
 - type: directory
   path: content/ambassadors
   label: Ambassadors
