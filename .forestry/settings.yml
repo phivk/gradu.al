@@ -2,26 +2,30 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: "/static/admin"
-webhook_url:
+webhook_url: 
 sections:
-  - type: directory
-    path: content/ambassadors
-    label: Ambassadors
-    create: documents
-    match: "*.md"
-    new_doc_ext: md
-    templates:
-      - ambassador
-  - type: directory
-    path: content/sessions
-    label: MozFest Sessions
-    create: documents
-    match: "*.md"
-    templates:
-      - session
+- type: document
+  path: content/index.md
+  label: Hub Page
+  match: "**/*"
+- type: directory
+  path: content/ambassadors
+  label: Ambassadors
+  create: documents
+  match: "*.md"
+  new_doc_ext: md
+  templates:
+  - ambassador
+- type: directory
+  path: content/2021/sessions
+  label: MozFest 2021 Sessions
+  create: documents
+  match: "*.md"
+  templates:
+  - session
 upload_dir: static/uploads
 public_path: "/uploads"
-front_matter_path: ""
+front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
