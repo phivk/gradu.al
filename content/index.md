@@ -1,6 +1,7 @@
 ---
 communityName: MozFest
 adminURL: https://mozfest.gradu.al/admin
+pageTitle: MozFest · Emergent Sessions
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
 ctaHeading: What skills, ideas or topics would you like to explore?
 ctaButtonText: Take Part!
@@ -9,24 +10,24 @@ subLink:
   href: https://www.mozillafestival.org/slack/
 typeformSrc: https://form.typeform.com/to/MFUKH7rE
 sessionTypes:
-- peer sharing
-- salon
-- conversation
-- workshop
-- lunch & learn
-- talk
-- presentation
-- brainstorm
-- AMA
+  - peer sharing
+  - salon
+  - conversation
+  - workshop
+  - lunch & learn
+  - talk
+  - presentation
+  - brainstorm
+  - AMA
 infoBars:
-- icon: "\U0001F914"
-  text: Need more help?
-  link:
-    text: Watch a walk-through video
-    href: https://www.loom.com/share/406bfe57b075452a8efadbff954191ad
-calendarLink: ''
-
+  - icon: "\U0001F914"
+    text: Need more help?
+    link:
+      text: Watch a walk-through video
+      href: https://www.loom.com/share/406bfe57b075452a8efadbff954191ad
+calendarLink: ""
 ---
+
 ## 👋 Welcome to Emergent Sessions!
 
 This is a space for new things to arise. A place to let others know what you’re most interested in.

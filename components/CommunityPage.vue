@@ -1,6 +1,10 @@
 <template>
   <div class="text-center mw9 mx-auto">
-    <SocialHead :title="`${indexPage.communityName} - Here to learn`" />
+    <SocialHead
+      :title="
+        indexPage.pageTitle || `${indexPage.communityName} · Here to learn`
+      "
+    />
     <h2 v-if="indexPage.pageHeading" class="text-3xl md:text-4xl mb-6">
       {{ indexPage.pageHeading }}
     </h2>
