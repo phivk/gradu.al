@@ -1,6 +1,7 @@
 ---
 title: Sketchnoting
 type: AMA
+featured: true
 season: "2021"
 dateTime: "2021-03-16T16:00+01:00"
 durationInMinutes: 60
