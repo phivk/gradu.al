@@ -6,6 +6,8 @@ title: How to Gradual
 
 Welcome to the <content-text :text='communityName'></content-text> Gradual instance!
 
+![MozFest Emergent Sessions Flow](uploads/emergent-sessions-flow.png "How to turn an idea into an Emergent Session")
+
 Read on for **ambassador instructions** on how to add new sessions using the CMS. Or head for the [home page](/) to see what you can learn and share.
 
 ## Sign in to the CMS
