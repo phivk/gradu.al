@@ -2,7 +2,7 @@
   <div class="text-center mw9 mx-auto">
     <SocialHead
       :title="
-        indexPage.pagetTitle || `${indexPage.communityName} · Here to learn`
+        indexPage.pageTitle || `${indexPage.communityName} · Here to learn`
       "
     />
     <h2 v-if="indexPage.pageHeading" class="text-3xl md:text-4xl mb-6">
