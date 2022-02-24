@@ -1,5 +1,6 @@
 ---
 communityName: Demo
+pagetTitle: MozFest · Emergent Sessions
 adminURL: https://demo.gradu.al/admin
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
 ctaHeading: What would you like to learn or share?
