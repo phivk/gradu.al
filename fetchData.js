@@ -53,7 +53,7 @@ class DataFetching {
     await this.sheets.spreadsheets.values.get(
       {
         spreadsheetId: this.SPREADSHEET_ID,
-        range: "A1:ZZ"
+        range: "A1:ZZ",
       },
       async (err, res) => {
         if (err) return console.log("The API returned an error: " + err);
@@ -71,14 +71,14 @@ class DataFetching {
         await fs.writeFile(
           this.EDGES_PATH,
           '{ "edges": ' + JSON.stringify(this.edges) + "}",
-          err => {
+          (err) => {
             if (err) return console.error(err);
           }
         );
         await fs.writeFile(
           this.NODES_PATH,
           '{ "nodes": ' + JSON.stringify(this.nodes) + "}",
-          err => {
+          (err) => {
             if (err) return console.error(err);
           }
         );
@@ -92,13 +92,18 @@ class DataFetching {
     let member;
 
     headers.forEach((label, idx) => {
-      if (label.includes("user name") || label.includes("@UserName") || label.includes("your name") || label === "What's your full name?") {
+      if (
+        label.includes("user name") ||
+        label.includes("@UserName") ||
+        label.includes("your name") ||
+        label === "What's your full name?"
+      ) {
         // create member node
         member = {
           _cssClass: "Member",
           _labelClass: "memberLabel",
           name: row[idx],
-          id: this.getNewId()
+          id: this.getNewId(),
         };
 
         this.nodes.push(member);
@@ -107,7 +112,7 @@ class DataFetching {
 
       if (label.includes("*like to learn*")) {
         // this is the multi-select question
-        row[idx].split(",").forEach(skill => {
+        row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
           this.createLearningEdge(member, skillNode);
@@ -116,7 +121,7 @@ class DataFetching {
 
       if (label.includes("*you could share*")) {
         // this is the multi-select question
-        row[idx].split(",").forEach(skill => {
+        row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
           this.createSharingEdge(member, skillNode);
@@ -139,7 +144,7 @@ class DataFetching {
   }
 
   getOrCreateSkill(skill) {
-    const filteredNodes = this.nodes.filter(node => node.name === skill);
+    const filteredNodes = this.nodes.filter((node) => node.name === skill);
 
     if (filteredNodes.length === 1) {
       return filteredNodes[0];
@@ -149,7 +154,7 @@ class DataFetching {
       _cssClass: "Skill",
       _labelClass: "skillLabel",
       name: skill,
-      id: this.getNewId()
+      id: this.getNewId(),
     };
 
     this.nodes.push(skillNode);
@@ -161,7 +166,7 @@ class DataFetching {
       _color: "#f1955b",
       sid: member.id,
       tid: skill.id,
-      _svgAttrs: { "stroke-width": "2", opacity: 0.5 }
+      _svgAttrs: { "stroke-width": "2", opacity: 0.5 },
     };
     this.edges.push(newEdge);
   }
@@ -171,16 +176,17 @@ class DataFetching {
       _color: "#9f78e4",
       sid: member.id,
       tid: skill.id,
-      _svgAttrs: { "stroke-width": "2", opacity: 0.5 }
+      _svgAttrs: { "stroke-width": "2", opacity: 0.5 },
     };
     this.edges.push(newEdge);
   }
 
   async generateMostPopular() {
+    const MAX_POPULAR = 10;
     console.log(`Generating most popular nodes for ${this.community.name}.`);
     try {
       const tids = this.edges
-        .map(item => item.tid)
+        .map((item) => item.tid)
         .reduce((a, c) => {
           const tids = a;
           a[c] = a[c] ? a[c] + 1 : 1;
@@ -198,13 +204,18 @@ class DataFetching {
           const y = b.numbers;
           return x < y ? 1 : x > y ? -1 : 0;
         })
-        .slice(0, 5)
-        .map(item => this.getSkillName(item.skill));
+        .slice(0, MAX_POPULAR)
+        .map((item) => {
+          return {
+            name: this.getSkillName(item.skill),
+            numbers: item.numbers,
+          };
+        });
 
       await fs.writeFileSync(
         `./content/data/popular.json`,
         '{ "skills": ' + JSON.stringify(skills) + "}",
-        err => {
+        (err) => {
           if (err) return console.error(err);
         }
       );
@@ -214,7 +225,7 @@ class DataFetching {
   }
 
   getSkillName(skill) {
-    const skillNode = this.nodes.filter(node => node.id === parseInt(skill));
+    const skillNode = this.nodes.filter((node) => node.id === parseInt(skill));
     return skillNode[0].name;
   }
 }
