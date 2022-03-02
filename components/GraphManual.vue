@@ -190,10 +190,10 @@ path.sharer {
 }
 
 .hover-opaque {
-  opacity: 50%;
+  opacity: 0.5;
   transition: opacity 0.5s;
 }
 .hover-opaque:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 </style>
