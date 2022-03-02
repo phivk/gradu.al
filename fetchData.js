@@ -182,8 +182,7 @@ class DataFetching {
   }
 
   async generateMostPopular() {
-    const MAX_POPULAR = 10;
-    console.log(`Generating most popular nodes for ${this.community.name}.`);
+    console.log(`Generating skills for ${this.community.name}.`);
     try {
       const tids = this.edges
         .map((item) => item.tid)
@@ -204,7 +203,6 @@ class DataFetching {
           const y = b.numbers;
           return x < y ? 1 : x > y ? -1 : 0;
         })
-        .slice(0, MAX_POPULAR)
         .map((item) => {
           return {
             name: this.getSkillName(item.skill),
@@ -213,7 +211,7 @@ class DataFetching {
         });
 
       await fs.writeFileSync(
-        `./content/data/popular.json`,
+        `./content/data/skills.json`,
         '{ "skills": ' + JSON.stringify(skills) + "}",
         (err) => {
           if (err) return console.error(err);
