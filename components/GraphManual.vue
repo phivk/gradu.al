@@ -29,14 +29,31 @@
     <div class="relative">
       <d3-network
         ref="net"
-        :net-nodes="nodes"
-        :net-links="edges"
+        :net-nodes="showConnected ? nodesConnected : nodes"
+        :net-links="showConnected ? edgesConnected : edges"
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 max-w-lg m-4 rounded tl hover-opaque">
-        <label class="db mb-1">Spacing</label>
-        <input class="db" type="range" min="2000" max="5000" v-model:value="force" />
+      <div class="absolute bottom-0 left-0 m-4 hover-opaque">
+        <div class="flex items-center">
+          <div class="flex items-center m-2">
+            <input
+              class=""
+              type="range"
+              min="2000"
+              max="5000"
+              v-model:value="force"
+              id="graphSpacing"
+            />
+            <label class="ml-2" for="graphSpacing">Spacing</label>
+          </div>
+          <div class="flex items-center m-4">
+            <input type="checkbox" id="checkbox" v-model="showConnected" />
+            <label for="checkbox" class="ml-2"
+              >Only show connected interests</label
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -61,8 +78,9 @@ export default {
       startX: 0,
       startY: 0,
       lastTouch: null,
-      force: 2500,
+      force: 3500,
       offsetY: 0,
+      showConnected: true,
     };
   },
   computed: {
@@ -82,6 +100,23 @@ export default {
           y: this.offsetY,
         },
       };
+    },
+    edgeCountPerSkill() {
+      return this.edges
+        .map((item) => item.tid)
+        .reduce((a, c) => {
+          const tids = a;
+          a[c] = a[c] ? a[c] + 1 : 1;
+          return tids;
+        }, {});
+    },
+    nodesConnected() {
+      return this.nodes.filter((node) => this.edgeCountPerSkill[node.id] !== 1);
+    },
+    edgesConnected() {
+      return this.edges.filter(
+        (edge) => this.edgeCountPerSkill[edge.tid] !== 1
+      );
     },
   },
   methods: {
