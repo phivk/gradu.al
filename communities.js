@@ -5,10 +5,6 @@ module.exports = [
   // },
   {
     name: "mozfest",
-    spreadsheetId: "1V0VW1_6w56V4vgLKfxx1w15MKPdOM0JtAkpvHaEXyXA"
+    spreadsheetId: "1Y1QE7pZN97QtuDCDfpGqP5c1gMeKmPKGFnSUgtEQZbk",
   },
-  {
-    name: "coee",
-    spreadsheetId: "1KGEbhYWfMMAZx23JvGRhS59v7WzjiyzORrPHNLkdqhw"
-  }
 ];
