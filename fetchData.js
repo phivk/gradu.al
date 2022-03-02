@@ -205,7 +205,12 @@ class DataFetching {
           return x < y ? 1 : x > y ? -1 : 0;
         })
         .slice(0, MAX_POPULAR)
-        .map((item) => this.getSkillName(item.skill));
+        .map((item) => {
+          return {
+            name: this.getSkillName(item.skill),
+            numbers: item.numbers,
+          };
+        });
 
       await fs.writeFileSync(
         `./content/data/popular.json`,
