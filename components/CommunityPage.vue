@@ -29,10 +29,10 @@
       />
     </div>
     <IntentionSection
-      v-if="nodes && edges && popular"
+      v-if="nodes && edges && skills"
       :nodes="nodes"
       :edges="edges"
-      :popular="popular"
+      :skills="skills"
     />
     <AmbassadorsSection
       v-if="ambassadors.length"
@@ -51,7 +51,7 @@ export default {
     ambassadorsIndex: { type: Object, default: () => {} },
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
-    popular: { type: Object, default: () => {} },
+    skills: { type: Object, default: () => {} },
   },
   computed: {
     sessionsPerSeason() {

@@ -23,8 +23,8 @@
       </template>
       <template v-slot:tab-1>
         <MostPopularSkillsSection
-          v-if="popular"
-          :skills="popular.skills"
+          v-if="skills"
+          :skills="skills.skills"
           class="text-left"
         >
           <p class="mb-4">Top skills of the moment</p>
@@ -38,7 +38,7 @@ export default {
   props: {
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
-    popular: { type: Object, default: () => {} },
+    skills: { type: Object, default: () => {} },
   },
 };
 </script>
