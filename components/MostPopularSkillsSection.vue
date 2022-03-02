@@ -9,7 +9,8 @@
       >
         <div>{{ skill.name }}</div>
         <div class="text-xs text-opacity-50">
-          {{ skill.numbers }} people interested
+          {{ skill.numbers }}
+          {{ skill.numbers > 1 ? "people" : "person" }} interested
         </div>
       </li>
       <button v-show="spillover" @click="maxSkills += step">show more</button>
