@@ -3,7 +3,7 @@ communityName: MozFest
 adminURL: https://mozfest.gradu.al/admin
 pageTitle: MozFest · Emergent Sessions
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
-ctaHeading: What skills, ideas or topics would you like to explore?
+ctaHeading: What's your jam?
 ctaButtonText: Take Part!
 subLink:
   text: join the MozFest Slack
