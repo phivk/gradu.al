@@ -11,7 +11,6 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    console.log("params", params);
     const sessions = await $content(`sessions/${params.season}`, params.slug)
       .where({ slug: { $ne: "index" } })
       .sortBy("dateTime", "asc")
