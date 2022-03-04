@@ -24,6 +24,11 @@ calendarLink: ""
 
 ## Welcome to Emergent Sessions 🌱
 
+<video controls width="100%" class="my-8">
+    <source src="uploads/emergent-sessions-mozfest-2022.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
 Sometimes you come up with a great idea for a session _during_ the festival. Here's your chance to connect with others based on a spontaneous thought, a shared interest, a creative spark, a question or whatever else that inspires you!
 
 **Submit an idea** or **high five an existing one**. When multiple people share your interest, a session can emerge. Leave your username of the [MozFest Slack](https://www.mozillafestival.org/en/slack/) and you will be contacted to turn your idea into **a session on the emergent schedule**!
