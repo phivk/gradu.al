@@ -1,6 +1,6 @@
 <template>
   <section class="mb-16 mx-auto">
-    <NuxtContent :document="indexPage" class="max-w-2xl mx-auto text-lg" />
+    <NuxtContent :document="indexPage" class="max-w-3xl mx-auto text-lg" />
     <ProcessCardList />
     <SessionFormatList :sessionTypes="indexPage.sessionTypes" />
     <InfoBar
