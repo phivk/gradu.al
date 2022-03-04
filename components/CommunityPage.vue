@@ -19,6 +19,12 @@
       :subLink="indexPage.subLink"
     />
     <ProcessSection :indexPage="indexPage" />
+    <IntentionSection
+      v-if="nodes && edges && skills"
+      :nodes="nodes"
+      :edges="edges"
+      :skills="skills"
+    />
     <div v-for="season in seasons">
       <SessionsSection
         v-if="sessionsPerSeason[season].length"
@@ -28,12 +34,6 @@
         :compact="sessionsIndexPerSeason[season].isPast"
       />
     </div>
-    <IntentionSection
-      v-if="nodes && edges && skills"
-      :nodes="nodes"
-      :edges="edges"
-      :skills="skills"
-    />
     <AmbassadorsSection
       v-if="ambassadors.length"
       :ambassadors="ambassadors"
