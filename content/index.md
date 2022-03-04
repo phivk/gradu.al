@@ -3,7 +3,7 @@ communityName: MozFest
 adminURL: https://mozfest.gradu.al/admin
 pageTitle: MozFest · Emergent Sessions
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
-ctaHeading: What's your jam?
+ctaHeading: Hi MozFest 👋 What's your jam?
 ctaButtonText: Take Part!
 subLink:
   text: join the MozFest Slack
@@ -22,11 +22,10 @@ sessionTypes:
 calendarLink: ""
 ---
 
-## 👋 Welcome to Emergent Sessions!
+## Welcome to Emergent Sessions 🌱
 
-This is a space for new things to arise. A place to let others know what you’re most interested in.
+Sometimes you come up with a great idea for a session _during_ the festival. Here's your chance to connect with others based on a spontaneous thought, a shared interest, a creative spark, a question or whatever else that inspires you!
 
-Here, you can see how you connect to your peers via skills, interests, fascinations and desires. A place filled with all of your wonderful ideas.
+**Submit an idea** or **high five an existing one**. When multiple people share your interest, a session can emerge. Leave your username of the [MozFest Slack](https://www.mozillafestival.org/en/slack/) and you will be contacted to turn your idea into **a session on the emergent schedule**!
 
-Join the conversation in the
-[#emergent-sessions](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel on the [MozFest Slack](https://www.mozillafestival.org/slack/)!
+Any questions? Join the conversation in the [#emergent-sessions channel](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) on the [MozFest Slack](https://www.mozillafestival.org/en/slack/).
