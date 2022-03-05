@@ -142,6 +142,30 @@ export default {
 		renderer.getMouseCaptor().on("mousedown", () => {
 			if (!renderer.getCustomBBox()) renderer.setCustomBBox(renderer.getBBox());
 		});
+
+		// Replicate for touch
+		renderer.getTouchCaptor().on("touchdown", () => {
+			if (!renderer.getCustomBBox()) renderer.setCustomBBox(renderer.getBBox());
+		})
+
+		renderer.getTouchCaptor().on("touchmove", () => {
+			if (!isDragging || !draggedNode) return;
+
+			// Get new position of node
+			const pos = renderer.viewportToGraph(e);
+
+			graph.setNodeAttribute(draggedNode, "x", pos.x);
+			graph.setNodeAttribute(draggedNode, "y", pos.y);
+		})
+
+		renderer.getTouchCaptor().on("touchup", () => {
+			if (draggedNode) {
+				graph.removeNodeAttribute(draggedNode, "highlighted");
+			}
+			isDragging = false;
+			draggedNode = null;
+			renderer.getCamera().enable();
+		})
 	}
 }
 </script>
