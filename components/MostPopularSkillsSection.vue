@@ -13,7 +13,12 @@
           {{ skill.numbers > 1 ? "people" : "person" }} interested
         </div>
       </li>
-      <button v-show="spillover" @click="maxSkills += step">show more</button>
+      <a
+        class="underline hover:no-underline cursor-pointer inline-block my-2"
+        v-show="spillover"
+        @click="maxSkills += step"
+        >show more</a
+      >
     </ul>
   </div>
 </template>
