@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.8.8",
     "postcss": "^8.4.6",
