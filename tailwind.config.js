@@ -74,7 +74,7 @@ module.exports = {
         "1/1": "100%",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        inter: ["Inter", "Avenir", "sans-serif"],
       },
       fontSize: {
         xs: "0.75rem",
