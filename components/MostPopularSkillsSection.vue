@@ -8,7 +8,7 @@
         class="my-2 p-2 rounded bg-white text-black text-opacity-80 font-medium tl"
       >
         <div>{{ skill.name }}</div>
-        <div class="text-xs text-opacity-50">
+        <div class="text-xs opacity-70">
           {{ skill.numbers }}
           {{ skill.numbers > 1 ? "people" : "person" }} interested
         </div>
