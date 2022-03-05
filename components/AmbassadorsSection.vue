@@ -6,6 +6,7 @@
     <div class="flex flex-wrap justify-center">
       <ProfileBio
         v-for="ambassador in ambassadors"
+        :key="ambassador.name"
         class="w-full sm:w-1/2 md:w-1/3 p-2 md:p-4"
         :profilePic="ambassador.profilePic"
         :name="ambassador.name"
