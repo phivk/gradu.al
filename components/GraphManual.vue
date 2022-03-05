@@ -60,6 +60,8 @@ export default {
 			renderer.refresh();
 		}
 
+		
+
 		// Bind graph interactions:
 		renderer.on("enterNode", ({ node }) => {
 			setHoveredNode(node);
@@ -78,13 +80,7 @@ export default {
 			if (state.hoveredNeighbors && !state.hoveredNeighbors.has(node) && state.hoveredNode !== node) {
 				res.label = "";
 				res.color = "#f6f6f6";
-			}
-
-			if (state.selectedNode === node) {
-				res.highlighted = true;
-			} else if (state.suggestions && !state.suggestions.has(node)) {
-				res.label = "";
-				res.color = "#f6f6f6";
+				res.hidden = true
 			}
 
 			return res;
@@ -102,14 +98,10 @@ export default {
 				res.hidden = true;
 			}
 
-			if (state.suggestions && (!state.suggestions.has(graph.source(edge)) || !state.suggestions.has(graph.target(edge)))) {
-				res.hidden = true;
-			}
-
 			return res;
 		});
 
-
+		console.log(renderer)
 	}
 }
 </script>
