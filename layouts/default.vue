@@ -11,6 +11,7 @@
     <div class="p-2 sm:p-4 lg:p-8">
       <nuxt />
     </div>
+    <TheFooter />
   </div>
 </template>
 <script>
