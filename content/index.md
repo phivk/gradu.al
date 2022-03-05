@@ -24,10 +24,9 @@ calendarLink: ""
 
 ## Welcome to Emergent Sessions 🌱
 
-<!-- <video controls width="100%" class="my-8">
-    <source src="uploads/emergent-sessions-mozfest-2022.mp4" type="video/mp4">
-    Sorry, your browser doesn't support embedded videos.
-</video> -->
+<div class="aspect-w-16 aspect-h-9 my-8">
+  <iframe src="https://www.youtube-nocookie.com/embed/Ps4V3qLv6S4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Sometimes you come up with a great idea for a session _during_ the festival. Here's your chance to connect with others based on a spontaneous thought, a shared interest, a creative spark, a question or whatever else that inspires you!
 
