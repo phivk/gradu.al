@@ -3,7 +3,7 @@
     <div class="max-w-3xl mx-auto text-center pb-6">
       <NuxtContent :document="ambassadorsIndex" class="text-lg" />
     </div>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap justify-center">
       <ProfileBio
         v-for="ambassador in ambassadors"
         class="w-full sm:w-1/2 md:w-1/3 p-2 md:p-4"
