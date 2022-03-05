@@ -45,7 +45,7 @@ export default {
 
 		const renderer = new Sigma(graph, container)
 
-		const state = {  };
+		const state = {};
 
 		function setHoveredNode(node) {
 			if (node) {
@@ -60,7 +60,7 @@ export default {
 			renderer.refresh();
 		}
 
-		
+
 
 		// Bind graph interactions:
 		renderer.on("enterNode", ({ node }) => {
@@ -69,6 +69,7 @@ export default {
 		renderer.on("leaveNode", () => {
 			setHoveredNode(undefined);
 		});
+
 
 		// Render nodes accordingly to the internal state:
 		// 1. If a node is selected, it is highlighted
@@ -101,7 +102,46 @@ export default {
 			return res;
 		});
 
-		console.log(renderer)
+		let draggedNode = null;
+		let isDragging = false;
+
+		// On mouse down on a node
+		//  - we enable the drag mode
+		//  - save in the dragged node in the state
+		//  - highlight the node
+		//  - disable the camera so its state is not updated
+		renderer.on("downNode", (e) => {
+			isDragging = true;
+			draggedNode = e.node;
+			graph.setNodeAttribute(draggedNode, "highlighted", true);
+			renderer.getCamera().disable();
+		});
+
+		// On mouse move, if the drag mode is enabled, we change the position of the draggedNode
+		renderer.getMouseCaptor().on("mousemovebody", (e) => {
+			if (!isDragging || !draggedNode) return;
+
+			// Get new position of node
+			const pos = renderer.viewportToGraph(e);
+
+			graph.setNodeAttribute(draggedNode, "x", pos.x);
+			graph.setNodeAttribute(draggedNode, "y", pos.y);
+		});
+
+		// On mouse up, we reset the autoscale and the dragging mode
+		renderer.getMouseCaptor().on("mouseup", () => {
+			if (draggedNode) {
+				graph.removeNodeAttribute(draggedNode, "highlighted");
+			}
+			isDragging = false;
+			draggedNode = null;
+			renderer.getCamera().enable();
+		});
+
+		// Disable the autoscale at the first down interaction
+		renderer.getMouseCaptor().on("mousedown", () => {
+			if (!renderer.getCustomBBox()) renderer.setCustomBBox(renderer.getBBox());
+		});
 	}
 }
 </script>
