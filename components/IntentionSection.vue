@@ -27,7 +27,6 @@
           :skills="skills.skills"
           class="text-left"
         >
-          <p class="mb-4">Top skills of the moment</p>
         </MostPopularSkillsSection>
       </template>
     </NavigationTabs>

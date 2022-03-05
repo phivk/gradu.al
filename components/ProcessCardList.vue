@@ -18,15 +18,15 @@ export default {
       steps: [
         {
           title: "Map",
-          text: "Let us know what you'd like to learn or share. Anything is welcome!",
+          text: "Express what you're most interested in. Anything is welcome!",
         },
         {
           title: "Match",
-          text: "See how you and your peers are connected by skills. We help you plan a session in the format you choose.",
+          text: "See how you connect to others via your curiosity.",
         },
         {
           title: "Meet",
-          text: "Host or join a session to learn with other team members based on your interests.",
+          text: "Host or join a session to exchange perspectives with like-minded people.",
         },
       ],
     };
