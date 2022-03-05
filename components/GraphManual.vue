@@ -7,17 +7,7 @@
 export default {
 	props: {
 		nodes: Array,
-		edges: Array,
-		hoveredNode: {
-			default: undefined,
-			type: Number
-		},
-		hoveredNeighbors: {
-			default() {
-				return undefined
-			},
-			type: Array
-		}
+		edges: Array
 	},
 	mounted() {
 		const { Sigma } = require("sigma")
@@ -139,7 +129,11 @@ export default {
 		});
 
 		// Disable the autoscale at the first down interaction
-		renderer.getMouseCaptor().on("mousedown", () => {
+		renderer.getMouseCaptor().on("mousedown", (e) => {
+			isDragging = true;
+			draggedNode = e.node;
+			graph.setNodeAttribute(draggedNode, "highlighted", true);
+			renderer.getCamera().disable();
 			if (!renderer.getCustomBBox()) renderer.setCustomBBox(renderer.getBBox());
 		});
 
