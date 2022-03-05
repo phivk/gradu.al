@@ -1,6 +1,7 @@
 ---
-sortOrder: 1
+sortOrder: 3
 name: Philo van Kemenade
+title: "@phivk"
 profilePic: "https://www.gradu.al/uploads/profile-philo-van-kemenade.jpg"
 bio:
   "I create tools, stories and things in between to amplify human connection with
