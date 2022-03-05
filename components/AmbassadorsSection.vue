@@ -3,19 +3,15 @@
     <div class="max-w-3xl mx-auto text-center pb-6">
       <NuxtContent :document="ambassadorsIndex" class="text-lg" />
     </div>
-    <div
-      class="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8"
-    >
-      <div
+    <div class="flex flex-wrap">
+      <ProfileBio
         v-for="ambassador in ambassadors"
-        class="sm:w-1/2 md:w-1/3 py-6 sm:py-8 sm:px-3"
-      >
-        <ProfileBio
-          :profilePic="ambassador.profilePic"
-          :name="ambassador.name"
-          :bio="ambassador.bio"
-        />
-      </div>
+        class="w-full sm:w-1/2 md:w-1/3 p-2 md:p-4"
+        :profilePic="ambassador.profilePic"
+        :name="ambassador.name"
+        :title="ambassador.title"
+        :bio="ambassador.bio"
+      />
     </div>
   </section>
 </template>
