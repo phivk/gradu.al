@@ -36,6 +36,8 @@ Sometimes you come up with a great idea for a session _during_ the festival. Her
 
 Found a match with others who share your interest?
 
-<a href="https://pretalx.com/mozfest-2022/cfp?access_code=emergent" target="\_blank" class="inline-block mb-4 text-lg rounded px-4 py-2 no-underline grow shadow-hover text-secondary border-2 border-secondary">Propose a session</a>
+<div class="inline-flex rounded-md shadow cursor-pointer">
+  <AppLink to="https://pretalx.com/mozfest-2022/cfp?access_code=emergent" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-secondary bg-white hover:bg-secondary-washed no-underline">Propose a session</AppLink>
+</div>
 
 Any questions? Join the conversation in the [#emergent-sessions channel](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) on the [MozFest Slack](https://www.mozillafestival.org/en/slack/).
