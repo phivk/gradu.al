@@ -3,8 +3,10 @@ communityName: Demo
 pageTitle: Demo · Emergent Sessions
 adminURL: https://demo.gradu.al/admin
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
-ctaHeading: What would you like to learn or share?
-ctaButtonText: Let us know!
+ctaHeading: What's your jam?
+ctaButtonSecondary:
+  text: See the schedule
+  href: https://schedule.mozillafestival.org/emergent-sessions
 subLink:
   text: join the Demo Slack
   href: https://www.mozillafestival.org/slack/

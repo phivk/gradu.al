@@ -15,7 +15,8 @@
       :logoSrc="indexPage.logoSrc"
       :communityName="indexPage.communityName"
       :ctaHeading="indexPage.ctaHeading"
-      :ctaButtonText="indexPage.ctaButtonText"
+      :ctaButtonPrimary="indexPage.ctaButtonPrimary"
+      :ctaButtonSecondary="indexPage.ctaButtonSecondary"
       :subLink="indexPage.subLink"
     />
     <ProcessSection :indexPage="indexPage" />
