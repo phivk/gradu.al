@@ -70,7 +70,7 @@
               v-if="session.icsFileSrc && !hasHappened"
               :href="session.icsFileSrc"
               target="_blank"
-              class="dib mt-4 text-secondary ws-pre-wrap"
+              class="dib mt-4 text-secondary whitespace-pre-wrap"
               >↓ .ics file</a
             >
           </div>
@@ -183,9 +183,6 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
 }
 </style>
 

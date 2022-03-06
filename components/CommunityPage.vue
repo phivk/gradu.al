@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center mw9 mx-auto">
+  <div class="text-center max-w-7xl mx-auto">
     <SocialHead
       :title="
         indexPage.pageTitle || `${indexPage.communityName} · Here to learn`
@@ -24,6 +24,7 @@
       :nodes="nodes"
       :edges="edges"
       :skills="skills"
+      class="full-width p-2 sm:p-4 lg:p-8"
     />
     <div v-for="season in seasons">
       <SessionsSection
