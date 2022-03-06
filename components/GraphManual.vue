@@ -22,6 +22,8 @@ export default {
 	mounted() {
 		const { Sigma } = require("sigma")
 		const { Graph } = require("graphology")
+		const circular = require("graphology-layout/circular")
+		const forceAtlas2 = require("graphology-layout-forceatlas2")
 		const container = this.$refs.sigmaContainer
 
 		const graph = new Graph();
@@ -42,6 +44,24 @@ export default {
 				completedEdges.push(`${edge.sid}${edge.tid}`)
 			}
 		})
+
+		const degrees = graph.nodes().map((node) => graph.degree(node));
+		const minDegree = Math.min(...degrees);
+		const maxDegree = Math.max(...degrees);
+		const minSize = 2,
+			maxSize = 15;
+		graph.forEachNode((node) => {
+			const degree = graph.degree(node);
+			graph.setNodeAttribute(
+				node,
+				"size",
+				minSize + ((degree - minDegree) / (maxDegree - minDegree)) * (maxSize - minSize),
+			);
+		});
+
+		circular.assign(graph);
+		const settings = forceAtlas2.inferSettings(graph);
+		forceAtlas2.assign(graph, { settings, iterations: 600 });
 
 		const renderer = new Sigma(graph, container)
 

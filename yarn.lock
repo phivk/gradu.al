@@ -6411,6 +6411,8 @@ __metadata:
     form-data: ^3.0.1
     googleapis: ^67.1.1
     graphology: ^0.24.1
+    graphology-layout: ^0.5.0
+    graphology-layout-forceatlas2: ^0.8.2
     lodash: ^4.17.21
     node-fetch: ^2.6.7
     nuxt: ^2.15.8
@@ -6428,7 +6430,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"graphology-utils@npm:^2.5.0":
+"graphology-layout-forceatlas2@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "graphology-layout-forceatlas2@npm:0.8.2"
+  dependencies:
+    graphology-utils: ^2.1.0
+  peerDependencies:
+    graphology-types: ">=0.19.0"
+  checksum: 21bb2c40d8edc171235a56beadc59aba7188472646ae0231a82e7dffc776d8395fb558987cf56a3dc09da2993692b77a83fcd461ee9c8af01a218c0f091112b1
+  languageName: node
+  linkType: hard
+
+"graphology-layout@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "graphology-layout@npm:0.5.0"
+  dependencies:
+    graphology-utils: ^2.3.0
+    pandemonium: ^1.5.0
+  peerDependencies:
+    graphology-types: ">=0.19.0"
+  checksum: afef561ee7f921803ff8f574849842618ab613c54b7184283c37bbbd754efa77b72623356030cc3f62a64b06d851a5d1a921df240327610083265ab1af03976d
+  languageName: node
+  linkType: hard
+
+"graphology-utils@npm:^2.1.0, graphology-utils@npm:^2.3.0, graphology-utils@npm:^2.5.0":
   version: 2.5.1
   resolution: "graphology-utils@npm:2.5.1"
   peerDependencies:
@@ -9593,6 +9618,13 @@ __metadata:
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
   checksum: 1be2bfa1f807608c7538afa15d6f25baa523c30ec870a3228a89579e474a4d992f4293859524e46d5d87fd30fa17c5edf34dbef0671251d9749820b488660b16
+  languageName: node
+  linkType: hard
+
+"pandemonium@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "pandemonium@npm:1.5.0"
+  checksum: 7b9f8ea36354eabce91e075b88c4c521c06c377b5f32db3adb02927d6ab25ebe59f1bd7286fce968ae894ea156e0f028d45c25f2ce0fb727c6583a653a137433
   languageName: node
   linkType: hard
 
