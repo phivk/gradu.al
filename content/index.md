@@ -4,7 +4,9 @@ adminURL: https://mozfest.gradu.al/admin
 pageTitle: MozFest · Emergent Sessions
 logoSrc: https://assets.mofoprod.net/static/_images/mozfest/logo.364cf5df72b2.svg
 ctaHeading: Hi MozFest 👋 What's your jam?
-ctaButtonText: Take Part!
+ctaButtonSecondary:
+  text: See the schedule
+  href: https://schedule.mozillafestival.org/emergent-sessions
 subLink:
   text: join the MozFest Slack
   href: https://www.mozillafestival.org/slack/
