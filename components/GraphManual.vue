@@ -33,9 +33,11 @@ export default {
 				x: Math.floor(Math.random() * 500),
 				y: Math.floor(Math.random() * 500),
 				size: 7,
-				label: node.name,
-				color: node._cssClass === "Skill" ? "#4ba45b" : "#184eb5"
+				label: node.name.slice(0, 25),
+				color: node._cssClass === "Skill" ? "#4ba45b" : "#184eb5",
+				fullName: node.name
 			}))
+
 
 		const completedEdges = []
 		this.edges.forEach((edge) => {
@@ -45,23 +47,15 @@ export default {
 			}
 		})
 
-		const degrees = graph.nodes().map((node) => graph.degree(node));
-		const minDegree = Math.min(...degrees);
-		const maxDegree = Math.max(...degrees);
-		const minSize = 2,
-			maxSize = 15;
-		graph.forEachNode((node) => {
-			const degree = graph.degree(node);
-			graph.setNodeAttribute(
-				node,
-				"size",
-				minSize + ((degree - minDegree) / (maxDegree - minDegree)) * (maxSize - minSize),
-			);
-		});
+		circular.assign(graph)
 
-		circular.assign(graph);
-		const settings = forceAtlas2.inferSettings(graph);
-		forceAtlas2.assign(graph, { settings, iterations: 600 });
+		forceAtlas2.assign(graph, {
+			iterations: 50,
+			settings: {
+				gravity: 10,
+				adjustSizes: false
+			}
+		});
 
 		const renderer = new Sigma(graph, container)
 
@@ -98,10 +92,15 @@ export default {
 		renderer.setSetting("nodeReducer", (node, data) => {
 			const res = { ...data };
 
+			console.log(state, node)
+
 			if (state.hoveredNeighbors && !state.hoveredNeighbors.has(node) && state.hoveredNode !== node) {
 				res.label = "";
 				res.color = "#f6f6f6";
 				res.hidden = true
+				res.label = res.fullName.substring(0, 25)
+			} else if(state.hoveredNode === node || ( state.hoveredNeighbors && [...state.hoveredNeighbors].includes(node))) {
+				res.label = res.fullName
 			}
 
 			return res;
