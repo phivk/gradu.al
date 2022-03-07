@@ -159,6 +159,21 @@ class DataFetching {
         skillNode.sharers += 1;
         this.createSharingEdge(member, skillNode);
       }
+
+      if (label === "Submitted At") {
+        const datetime = row[idx].split(" ");
+        const date = datetime[0].split("/");
+        const time = datetime[1].split(":");
+
+        member.submittedAt = new Date(
+          date[2],
+          date[0],
+          date[1],
+          time[0],
+          time[1],
+          time[2]
+        ).toISOString();
+      }
     });
     return this.nodes;
   }
