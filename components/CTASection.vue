@@ -43,7 +43,7 @@ export default {
     ctaButtonPrimary: {
       type: Object,
       required: true,
-      default: { text: "Take part", href: "/join" },
+      default: () => ({ text: "Take part", href: "/join" }),
     },
     ctaButtonSecondary: {
       type: Object,
