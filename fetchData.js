@@ -95,6 +95,21 @@ class DataFetching {
   processRow({ headers, row }) {
     let member;
 
+    const dateIndex = headers.findIndex((item) => item === "Submitted At");
+
+    const datetime = row[dateIndex].split(" ");
+    const date = datetime[0].split("/");
+    const time = datetime[1].split(":");
+
+    const rowDate = new Date(
+      date[2],
+      date[0],
+      date[1],
+      time[0],
+      time[1],
+      time[2]
+    ).toISOString();
+
     headers.forEach((label, idx) => {
       if (
         label.includes("user name") ||
@@ -119,6 +134,7 @@ class DataFetching {
             _labelClass: "memberLabel",
             name: row[idx],
             id: this.getNewId(),
+            submittedAt: rowDate,
           };
 
           this.nodes.push(member);
@@ -131,6 +147,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.learners += 1;
           this.createLearningEdge(member, skillNode);
         });
       }
@@ -140,6 +157,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.sharers += 1;
           this.createSharingEdge(member, skillNode);
         });
       }
@@ -147,12 +165,32 @@ class DataFetching {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.learners += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createLearningEdge(member, skillNode);
       }
       if (label.includes("*share*")) {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.sharers += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createSharingEdge(member, skillNode);
       }
     });
@@ -171,6 +209,8 @@ class DataFetching {
       _labelClass: "skillLabel",
       name: skill,
       id: this.getNewId(),
+      sharers: 0,
+      learners: 0,
     };
 
     this.nodes.push(skillNode);
