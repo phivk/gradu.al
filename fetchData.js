@@ -20,6 +20,10 @@ class DataFetching {
     return this.nodeId++;
   }
 
+  normaliseName(name) {
+    return name.toLowerCase().split("@").join("");
+  }
+
   async authAndGetSheets() {
     // Load the key
     const key = JSON.parse(process.env.GOOGLE_AUTH_JSON_OBJECT);
@@ -98,9 +102,16 @@ class DataFetching {
         label.includes("your name") ||
         label === "What's your full name?"
       ) {
+        const normalisedName = this.normaliseName(row[idx]);
         // check if member node already exists
-        if (this.nodes.map((item) => item.name).includes(row[idx])) {
-          member = this.nodes.filter((item) => item.name === row[idx])[0];
+        if (
+          this.nodes
+            .map((item) => normaliseName(item.name))
+            .includes(normalisedName)
+        ) {
+          member = this.nodes.filter(
+            (item) => normaliseName(item.name) === normalisedName
+          )[0];
         } else {
           // otherwise create member node
           member = {
