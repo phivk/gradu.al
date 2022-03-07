@@ -4,6 +4,11 @@
       "source": "/propose",
       "destination": "https://pretalx.com/mozfest-2022/cfp?access_code=emergent",
       "permanent": false
+    },
+    {
+      "source": "/howto",
+      "destination": "https://docs.google.com/document/d/e/2PACX-1vRvPjzTdYHv1rW0j30ei8vHS3qVWZ8vLPGi2Ggp4-VpaTJ82Btm_rpW7ioOf4szXbiz46pO3qZlGlLl/pub",
+      "permanent": false
     }
   ]
 }
