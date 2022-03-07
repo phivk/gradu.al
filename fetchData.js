@@ -131,6 +131,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.learners += 1;
           this.createLearningEdge(member, skillNode);
         });
       }
@@ -140,6 +141,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.sharers += 1;
           this.createSharingEdge(member, skillNode);
         });
       }
@@ -147,12 +149,14 @@ class DataFetching {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.learners += 1;
         this.createLearningEdge(member, skillNode);
       }
       if (label.includes("*share*")) {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.sharers += 1;
         this.createSharingEdge(member, skillNode);
       }
     });
@@ -171,6 +175,8 @@ class DataFetching {
       _labelClass: "skillLabel",
       name: skill,
       id: this.getNewId(),
+      sharers: 0,
+      learners: 0,
     };
 
     this.nodes.push(skillNode);
