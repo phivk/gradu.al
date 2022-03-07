@@ -98,15 +98,21 @@ class DataFetching {
         label.includes("your name") ||
         label === "What's your full name?"
       ) {
-        // create member node
-        member = {
-          _cssClass: "Member",
-          _labelClass: "memberLabel",
-          name: row[idx],
-          id: this.getNewId(),
-        };
+        // check if member node already exists
+        if (this.nodes.map((item) => item.name).includes(row[idx])) {
+          member = this.nodes.filter((item) => item.name === row[idx])[0];
+        } else {
+          // otherwise create member node
+          member = {
+            _cssClass: "Member",
+            _labelClass: "memberLabel",
+            name: row[idx],
+            id: this.getNewId(),
+          };
 
-        this.nodes.push(member);
+          this.nodes.push(member);
+          this.names.push({ name: row[idx], member });
+        }
         return;
       }
 
