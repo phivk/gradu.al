@@ -150,6 +150,9 @@ class DataFetching {
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
         skillNode.learners += 1;
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
         this.createLearningEdge(member, skillNode);
       }
       if (label.includes("*share*")) {
@@ -157,6 +160,9 @@ class DataFetching {
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
         skillNode.sharers += 1;
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
         this.createSharingEdge(member, skillNode);
       }
 
