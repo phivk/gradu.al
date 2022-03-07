@@ -106,11 +106,11 @@ class DataFetching {
         // check if member node already exists
         if (
           this.nodes
-            .map((item) => normaliseName(item.name))
+            .map((item) => this.normaliseName(item.name))
             .includes(normalisedName)
         ) {
           member = this.nodes.filter(
-            (item) => normaliseName(item.name) === normalisedName
+            (item) => this.normaliseName(item.name) === normalisedName
           )[0];
         } else {
           // otherwise create member node
@@ -122,7 +122,6 @@ class DataFetching {
           };
 
           this.nodes.push(member);
-          this.names.push({ name: row[idx], member });
         }
         return;
       }
