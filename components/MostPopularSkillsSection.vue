@@ -1,16 +1,26 @@
 <template>
   <div>
     <slot></slot>
-    <ul class="list lh-copy">
+    <ul class="list lh-copy max-w-2xl mx-auto">
       <li
-        v-for="skill in connectedSkillsMaxed"
+        v-for="skill in skillsMaxed"
         :key="skill.name"
         class="my-2 p-2 rounded bg-white text-black text-opacity-80 font-medium tl"
       >
         <div>{{ skill.name }}</div>
         <div class="text-xs opacity-70">
-          {{ skill.numbers }}
-          {{ skill.numbers > 1 ? "people" : "person" }} interested
+          <span class="text-blue-700">
+            {{ skill.totalConnections }}
+            {{ skill.totalConnections > 1 ? "people" : "person" }}
+          </span>
+          interested:
+          <span class="text-yellow-700">
+            {{ skill.learners }} learner{{ skill.learners == 1 ? "" : "s" }}
+          </span>
+          &amp;
+          <span class="text-purple-700">
+            {{ skill.sharers }} sharer{{ skill.sharers == 1 ? "" : "s" }}
+          </span>
         </div>
       </li>
       <a
@@ -35,14 +45,11 @@ export default {
     };
   },
   computed: {
-    connectedSkills() {
-      return this.skills.filter((skill) => skill.numbers > 1);
-    },
-    connectedSkillsMaxed() {
-      return this.connectedSkills.slice(0, this.maxSkills);
+    skillsMaxed() {
+      return this.skills.slice(0, this.maxSkills);
     },
     spillover() {
-      return Math.max(this.connectedSkills.length - this.maxSkills, 0);
+      return Math.max(this.skills.length - this.maxSkills, 0);
     },
   },
 };

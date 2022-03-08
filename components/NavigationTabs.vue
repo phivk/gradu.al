@@ -1,6 +1,6 @@
 <template>
   <div :style="{ width: width, height: height }">
-    <nav class="flex flex-row mb-2">
+    <nav class="flex flex-row mb-2 justify-center">
       <button
         class="text-gray-500 px-6 py-4 block focus:outline-none border-green-500"
         :class="{
