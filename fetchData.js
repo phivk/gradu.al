@@ -95,6 +95,21 @@ class DataFetching {
   processRow({ headers, row }) {
     let member;
 
+    const dateIndex = headers.findIndex((item) => item === "Submitted At");
+
+    const datetime = row[dateIndex].split(" ");
+    const date = datetime[0].split("/");
+    const time = datetime[1].split(":");
+
+    const rowDate = new Date(
+      date[2],
+      date[0],
+      date[1],
+      time[0],
+      time[1],
+      time[2]
+    ).toISOString();
+
     headers.forEach((label, idx) => {
       if (
         label.includes("user name") ||
@@ -119,6 +134,7 @@ class DataFetching {
             _labelClass: "memberLabel",
             name: row[idx],
             id: this.getNewId(),
+            submittedAt: rowDate,
           };
 
           this.nodes.push(member);
@@ -131,6 +147,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.learners += 1;
           this.createLearningEdge(member, skillNode);
         });
       }
@@ -140,6 +157,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.sharers += 1;
           this.createSharingEdge(member, skillNode);
         });
       }
@@ -147,12 +165,32 @@ class DataFetching {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.learners += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createLearningEdge(member, skillNode);
       }
       if (label.includes("*share*")) {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.sharers += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createSharingEdge(member, skillNode);
       }
     });
@@ -171,6 +209,8 @@ class DataFetching {
       _labelClass: "skillLabel",
       name: skill,
       id: this.getNewId(),
+      sharers: 0,
+      learners: 0,
     };
 
     this.nodes.push(skillNode);
@@ -200,31 +240,30 @@ class DataFetching {
   async generateMostPopular() {
     console.log(`Generating skills for ${this.community.name}.`);
     try {
-      const tids = this.edges
-        .map((item) => item.tid)
-        .reduce((a, c) => {
-          const tids = a;
-          a[c] = a[c] ? a[c] + 1 : 1;
-          return tids;
-        }, {});
-      const tidArray = [];
+      const allowed = [
+        "name",
+        "id",
+        "sharers",
+        "learners",
+        "submittedBy",
+        "firstSubmittedOn",
+      ];
 
-      for (const [skill, numbers] of Object.entries(tids)) {
-        tidArray.push({ skill, numbers });
-      }
-
-      const skills = tidArray
-        .sort((a, b) => {
-          const x = a.numbers;
-          const y = b.numbers;
-          return x < y ? 1 : x > y ? -1 : 0;
+      const skills = this.nodes
+        .filter((node) => node._cssClass === "Skill")
+        .map((node) => {
+          let nodeFiltered = Object.keys(node)
+            .filter((key) => allowed.includes(key))
+            .reduce((obj, key) => {
+              return {
+                ...obj,
+                [key]: node[key],
+              };
+            }, {});
+          nodeFiltered.totalConnections = node.learners + node.sharers;
+          return nodeFiltered;
         })
-        .map((item) => {
-          return {
-            name: this.getSkillName(item.skill),
-            numbers: item.numbers,
-          };
-        });
+        .sort((a, b) => b.totalConnections - a.totalConnections);
 
       await fs.writeFileSync(
         `./content/data/skills.json`,
