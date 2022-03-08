@@ -9,6 +9,7 @@
     "build": "nuxt generate",
     "start": "nuxt start",
     "fetch": "node build-script.js",
+    "fetch:dev": "nodemon --inspect-brk build-script.js",
     "generate": "yarn fetch && nuxt generate"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.8.8",
+    "nodemon": "^2.0.15",
     "postcss": "^8.4.6",
     "sass": "^1.49.7",
     "sass-loader": "^10.2.1",
