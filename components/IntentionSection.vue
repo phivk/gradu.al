@@ -22,11 +22,7 @@
         <GraphManual :nodes="nodes.nodes" :edges="edges.edges" />
       </template>
       <template v-slot:tab-1>
-        <MostPopularSkillsSection
-          v-if="skills"
-          :skills="skills.skills"
-          class="text-left"
-        >
+        <MostPopularSkillsSection v-if="skills" :skills="skills.skills">
         </MostPopularSkillsSection>
       </template>
     </NavigationTabs>
