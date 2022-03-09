@@ -86,7 +86,7 @@ class DataFetching {
             if (err) return console.error(err);
           }
         );
-        await this.generateMostPopular();
+        await this.generateSkillsList();
       }
     );
     return;
@@ -147,7 +147,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
-          skillNode.learners += 1;
+          skillNode.learnerCount += 1;
           this.createLearningEdge(member, skillNode);
         });
       }
@@ -157,7 +157,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
-          skillNode.sharers += 1;
+          skillNode.sharerCount += 1;
           this.createSharingEdge(member, skillNode);
         });
       }
@@ -165,7 +165,7 @@ class DataFetching {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
-        skillNode.learners += 1;
+        skillNode.learnerCount += 1;
 
         if (!skillNode.submittedBy) {
           skillNode.submittedBy = member.name;
@@ -181,7 +181,7 @@ class DataFetching {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
-        skillNode.sharers += 1;
+        skillNode.sharerCount += 1;
 
         if (!skillNode.submittedBy) {
           skillNode.submittedBy = member.name;
@@ -209,8 +209,8 @@ class DataFetching {
       _labelClass: "skillLabel",
       name: skill,
       id: this.getNewId(),
-      sharers: 0,
-      learners: 0,
+      sharerCount: 0,
+      learnerCount: 0,
     };
 
     this.nodes.push(skillNode);
@@ -219,6 +219,7 @@ class DataFetching {
 
   createLearningEdge(member, skill) {
     const newEdge = {
+      type: "learn",
       _color: "#f1955b",
       sid: member.id,
       tid: skill.id,
@@ -229,6 +230,7 @@ class DataFetching {
 
   createSharingEdge(member, skill) {
     const newEdge = {
+      type: "share",
       _color: "#9f78e4",
       sid: member.id,
       tid: skill.id,
@@ -237,21 +239,27 @@ class DataFetching {
     this.edges.push(newEdge);
   }
 
-  async generateMostPopular() {
+  async generateSkillsList() {
     console.log(`Generating skills for ${this.community.name}.`);
     try {
       const allowed = [
         "name",
         "id",
-        "sharers",
-        "learners",
+        "sharerCount",
+        "learnerCount",
         "submittedBy",
         "firstSubmittedOn",
+        "totalCount",
+        "learnerNames",
+        "sharerNames",
       ];
 
       const skills = this.nodes
         .filter((node) => node._cssClass === "Skill")
         .map((node) => {
+          node.totalCount = node.learnerCount + node.sharerCount;
+          node.learnerNames = this.getMembersForSkillNode(node, "learn");
+          node.sharerNames = this.getMembersForSkillNode(node, "share");
           let nodeFiltered = Object.keys(node)
             .filter((key) => allowed.includes(key))
             .reduce((obj, key) => {
@@ -260,10 +268,9 @@ class DataFetching {
                 [key]: node[key],
               };
             }, {});
-          nodeFiltered.totalConnections = node.learners + node.sharers;
           return nodeFiltered;
         })
-        .sort((a, b) => b.totalConnections - a.totalConnections);
+        .sort((a, b) => b.totalCount - a.totalCount);
 
       await fs.writeFileSync(
         `./content/data/skills.json`,
@@ -275,6 +282,14 @@ class DataFetching {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  getMembersForSkillNode(skillNode, type) {
+    return this.edges
+      .filter((edge) => edge.tid === skillNode.id && edge.type === type)
+      .map((edge) => {
+        return this.nodes.find((node) => node.id === edge.sid).name;
+      });
   }
 
   getSkillName(skill) {

@@ -8,19 +8,33 @@
         class="my-2 p-2 rounded bg-white text-black text-opacity-80 font-medium tl"
       >
         <div>{{ skill.name }}</div>
-        <div class="text-xs opacity-70">
-          <span class="text-blue-700">
-            {{ skill.totalConnections }}
-            {{ skill.totalConnections > 1 ? "people" : "person" }}
-          </span>
-          interested:
-          <span class="text-yellow-700">
-            {{ skill.learners }} learner{{ skill.learners == 1 ? "" : "s" }}
-          </span>
-          &amp;
-          <span class="text-purple-700">
-            {{ skill.sharers }} sharer{{ skill.sharers == 1 ? "" : "s" }}
-          </span>
+        <div class="flex flex-wrap">
+          <div v-if="skill.sharerNames.length" class="mr-4">
+            <span class="text-xs text-purple-700 opacity-70">
+              {{ skill.sharerCount }} sharer{{
+                skill.sharerCount == 1 ? "" : "s"
+              }}
+            </span>
+            <ProfileAvatarList
+              :profileNames="skill.sharerNames"
+              :itemClasses="['ring-4', 'ring-white']"
+              :maxDisplayLength="20"
+              class="text-xs"
+            />
+          </div>
+          <div v-if="skill.learnerNames.length">
+            <span class="text-xs text-yellow-700 opacity-70">
+              {{ skill.learnerCount }} learner{{
+                skill.learnerCount == 1 ? "" : "s"
+              }}
+            </span>
+            <ProfileAvatarList
+              :profileNames="skill.learnerNames"
+              :itemClasses="['ring-4', 'ring-white']"
+              :maxDisplayLength="20"
+              class="text-xs"
+            />
+          </div>
         </div>
       </li>
       <a
