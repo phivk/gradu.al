@@ -196,6 +196,9 @@ class DataFetching {
     let member;
 
     const normalisedName = this.normaliseName(row[nameIndex]);
+    if (!normalisedName) {
+      return;
+    }
     // check if member node already exists
     if (
       this.nodes
