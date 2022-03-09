@@ -25,6 +25,9 @@
       :nodes="nodes"
       :edges="edges"
       :skills="skills"
+      :typeformIdLearn="indexPage.typeformIdLearn"
+      :typeformIdShare="indexPage.typeformIdShare"
+      :typeformIdFull="indexPage.typeformIdFull"
       class="full-width p-2 sm:p-4 lg:p-8"
     />
     <div v-for="season in seasons">
