@@ -55,7 +55,7 @@
                     class="text-xs sm:text-sm lg:text-base"
                   />
                 </div>
-                <div v-if="session.learnerNames.length" class="">
+                <div v-if="session.learnerNames.length">
                   <h4
                     class="text-xs sm:text-sm lg:text-base mt-0 font-normal opacity-60"
                   >

@@ -108,7 +108,22 @@ class DataFetching {
   }
 
   processRow({ headers, row }) {
-    let member = this.createMemberNode({ headers, row });
+    const dateIndex = headers.findIndex((item) => item === "Submitted At");
+
+    const datetime = row[dateIndex].split(" ");
+    const date = datetime[0].split("/");
+    const time = datetime[1].split(":");
+
+    const rowDate = new Date(
+      date[2],
+      date[0],
+      date[1],
+      time[0],
+      time[1],
+      time[2]
+    ).toISOString();
+
+    let member = this.createMemberNode({ headers, row, rowDate });
 
     headers.forEach((label, idx) => {
       if (label.includes("*like to learn*") && row[idx]) {
@@ -116,6 +131,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.learnerCount += 1;
           this.createLearningEdge(member, skillNode);
         });
       }
@@ -125,6 +141,7 @@ class DataFetching {
         row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.sharerCount += 1;
           this.createSharingEdge(member, skillNode);
         });
       }
@@ -132,19 +149,39 @@ class DataFetching {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.learnerCount += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createLearningEdge(member, skillNode);
       }
       if (label.includes("*share*") && row[idx]) {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.sharerCount += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createSharingEdge(member, skillNode);
       }
     });
     return this.nodes;
   }
 
-  createMemberNode({ headers, row }) {
+  createMemberNode({ headers, row, rowDate }) {
     const nameIndex = headers.findIndex(
       (label) =>
         label.includes("user name") ||
@@ -172,6 +209,7 @@ class DataFetching {
         _labelClass: "memberLabel",
         name: row[nameIndex],
         id: this.getNewId(),
+        submittedAt: rowDate,
       };
 
       this.nodes.push(member);
@@ -191,6 +229,8 @@ class DataFetching {
       _labelClass: "skillLabel",
       name: skill,
       id: this.getNewId(),
+      sharerCount: 0,
+      learnerCount: 0,
     };
 
     this.nodes.push(skillNode);
@@ -199,6 +239,7 @@ class DataFetching {
 
   createLearningEdge(member, skill) {
     const newEdge = {
+      type: "learn",
       _color: "#f1955b",
       sid: member.id,
       tid: skill.id,
@@ -209,6 +250,7 @@ class DataFetching {
 
   createSharingEdge(member, skill) {
     const newEdge = {
+      type: "share",
       _color: "#9f78e4",
       sid: member.id,
       tid: skill.id,
@@ -217,34 +259,38 @@ class DataFetching {
     this.edges.push(newEdge);
   }
 
-  async generateMostPopular() {
+  async generateSkillsList() {
     console.log(`Generating skills for ${this.community.name}.`);
     try {
-      const tids = this.edges
-        .map((item) => item.tid)
-        .reduce((a, c) => {
-          const tids = a;
-          a[c] = a[c] ? a[c] + 1 : 1;
-          return tids;
-        }, {});
-      const tidArray = [];
+      const allowed = [
+        "name",
+        "id",
+        "sharerCount",
+        "learnerCount",
+        "submittedBy",
+        "firstSubmittedOn",
+        "totalCount",
+        "learnerNames",
+        "sharerNames",
+      ];
 
-      for (const [skill, numbers] of Object.entries(tids)) {
-        tidArray.push({ skill, numbers });
-      }
-
-      const skills = tidArray
-        .sort((a, b) => {
-          const x = a.numbers;
-          const y = b.numbers;
-          return x < y ? 1 : x > y ? -1 : 0;
+      const skills = this.nodes
+        .filter((node) => node._cssClass === "Skill")
+        .map((node) => {
+          node.totalCount = node.learnerCount + node.sharerCount;
+          node.learnerNames = this.getMembersForSkillNode(node, "learn");
+          node.sharerNames = this.getMembersForSkillNode(node, "share");
+          let nodeFiltered = Object.keys(node)
+            .filter((key) => allowed.includes(key))
+            .reduce((obj, key) => {
+              return {
+                ...obj,
+                [key]: node[key],
+              };
+            }, {});
+          return nodeFiltered;
         })
-        .map((item) => {
-          return {
-            name: this.getSkillName(item.skill),
-            numbers: item.numbers,
-          };
-        });
+        .sort((a, b) => b.totalCount - a.totalCount);
 
       await fs.writeFileSync(
         `./content/data/skills.json`,
@@ -256,6 +302,14 @@ class DataFetching {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  getMembersForSkillNode(skillNode, type) {
+    return this.edges
+      .filter((edge) => edge.tid === skillNode.id && edge.type === type)
+      .map((edge) => {
+        return this.nodes.find((node) => node.id === edge.sid).name;
+      });
   }
 
   getSkillName(skill) {

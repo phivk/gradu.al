@@ -1,16 +1,40 @@
 <template>
   <div>
     <slot></slot>
-    <ul class="list lh-copy">
+    <ul class="list lh-copy max-w-2xl mx-auto">
       <li
-        v-for="skill in connectedSkillsMaxed"
+        v-for="skill in skillsMaxed"
         :key="skill.name"
         class="my-2 p-2 rounded bg-white text-black text-opacity-80 font-medium tl"
       >
         <div>{{ skill.name }}</div>
-        <div class="text-xs opacity-70">
-          {{ skill.numbers }}
-          {{ skill.numbers > 1 ? "people" : "person" }} interested
+        <div class="flex flex-wrap">
+          <div v-if="skill.sharerNames.length" class="mr-4">
+            <span class="text-xs text-purple-700 opacity-70">
+              {{ skill.sharerCount }} sharer{{
+                skill.sharerCount == 1 ? "" : "s"
+              }}
+            </span>
+            <ProfileAvatarList
+              :profileNames="skill.sharerNames"
+              :itemClasses="['ring-4', 'ring-white']"
+              :maxDisplayLength="20"
+              class="text-xs"
+            />
+          </div>
+          <div v-if="skill.learnerNames.length">
+            <span class="text-xs text-yellow-700 opacity-70">
+              {{ skill.learnerCount }} learner{{
+                skill.learnerCount == 1 ? "" : "s"
+              }}
+            </span>
+            <ProfileAvatarList
+              :profileNames="skill.learnerNames"
+              :itemClasses="['ring-4', 'ring-white']"
+              :maxDisplayLength="20"
+              class="text-xs"
+            />
+          </div>
         </div>
       </li>
       <a
@@ -35,14 +59,11 @@ export default {
     };
   },
   computed: {
-    connectedSkills() {
-      return this.skills.filter((skill) => skill.numbers > 1);
-    },
-    connectedSkillsMaxed() {
-      return this.connectedSkills.slice(0, this.maxSkills);
+    skillsMaxed() {
+      return this.skills.slice(0, this.maxSkills);
     },
     spillover() {
-      return Math.max(this.connectedSkills.length - this.maxSkills, 0);
+      return Math.max(this.skills.length - this.maxSkills, 0);
     },
   },
 };
