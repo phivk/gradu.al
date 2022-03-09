@@ -1986,16 +1986,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/custom-forms@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@tailwindcss/custom-forms@npm:0.2.1"
+"@tailwindcss/forms@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@tailwindcss/forms@npm:0.5.0"
   dependencies:
-    lodash: ^4.17.11
-    mini-svg-data-uri: ^1.0.3
-    traverse: ^0.6.6
+    mini-svg-data-uri: ^1.2.3
   peerDependencies:
-    tailwindcss: ^1.0
-  checksum: 875906d2014a169242ee51fb21b0736d330539a23a8980e416d1ccc3f192c5a8d6d964c220e1ed9462092180739206d1538e79d684c5088f8f59035f0b552772
+    tailwindcss: ">=3.0.0 || >= 3.0.0-alpha.1"
+  checksum: 3e57584871bc41947f2a1518deaf69894b75745dee959bb2ba475c819eadec2b86f8bf6e73a051ddab627df4c8c3ad1d18239d48b3a95211be3b11a04dee0511
   languageName: node
   linkType: hard
 
@@ -6396,7 +6394,7 @@ __metadata:
     "@nuxtjs/axios": ^5.13.6
     "@nuxtjs/tailwindcss": ^4.2.1
     "@tailwindcss/aspect-ratio": ^0.4.0
-    "@tailwindcss/custom-forms": ^0.2.1
+    "@tailwindcss/forms": ^0.5.0
     aos: ^2.3.4
     autoprefixer: ^9.8.8
     cors: ^2.8.5
@@ -8150,7 +8148,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.15.0, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.3, lodash@npm:^4.17.5":
+"lodash@npm:^4.15.0, lodash@npm:^4.17.14, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.3, lodash@npm:^4.17.5":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -8726,7 +8724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mini-svg-data-uri@npm:^1.0.3":
+"mini-svg-data-uri@npm:^1.2.3":
   version: 1.4.3
   resolution: "mini-svg-data-uri@npm:1.4.3"
   bin:
@@ -12928,13 +12926,6 @@ __metadata:
   version: 0.0.3
   resolution: "tr46@npm:0.0.3"
   checksum: 726321c5eaf41b5002e17ffbd1fb7245999a073e8979085dacd47c4b4e8068ff5777142fc6726d6ca1fd2ff16921b48788b87225cbc57c72636f6efa8efbffe3
-  languageName: node
-  linkType: hard
-
-"traverse@npm:^0.6.6":
-  version: 0.6.6
-  resolution: "traverse@npm:0.6.6"
-  checksum: e2afa72f11efa9ba31ed763d2d9d2aa244612f22015d16c0ea3ba5f6ca8bf071de87f8108b721885cce06ea4a36ef4605d9228c67e431d9015ea4685cb364420
   languageName: node
   linkType: hard
 
