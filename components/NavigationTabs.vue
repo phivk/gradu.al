@@ -1,12 +1,12 @@
 <template>
   <div :style="{ width: width, height: height }">
-    <nav class="flex flex-row mb-2">
+    <nav class="flex flex-row mb-2 justify-center">
       <button
-        class="text-gray-500 px-6 py-4 block focus:outline-none border-green-500"
+        class="text-gray-500 px-6 py-4 block focus:outline-none border-primary"
         :class="{
           tabActive: tabIndex == index,
           'text-text': tabIndex == index,
-          'hover:text-green-500': tabIndex !== index,
+          'hover:text-primary': tabIndex !== index,
         }"
         v-for="(name, index) in names"
         @click="tabIndex = index"
@@ -58,6 +58,6 @@ export default {
 
 <style scoped>
 .tabActive {
-  @apply text-green-500 border-t-4 font-medium border-green-500;
+  @apply text-primary border-t-4 font-medium border-primary;
 }
 </style>
