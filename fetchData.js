@@ -21,6 +21,9 @@ class DataFetching {
   }
 
   normaliseName(name) {
+    if (!name) {
+      return;
+    }
     return name.toLowerCase().split("@").join("");
   }
 
@@ -105,39 +108,9 @@ class DataFetching {
   }
 
   processRow({ headers, row }) {
-    let member;
+    let member = this.createMemberNode({ headers, row });
 
     headers.forEach((label, idx) => {
-      if (
-        label.includes("user name") ||
-        label.includes("@UserName") ||
-        label.includes("your name") ||
-        label === "What's your full name?"
-      ) {
-        const normalisedName = this.normaliseName(row[idx]);
-        // check if member node already exists
-        if (
-          this.nodes
-            .map((item) => this.normaliseName(item.name))
-            .includes(normalisedName)
-        ) {
-          member = this.nodes.filter(
-            (item) => this.normaliseName(item.name) === normalisedName
-          )[0];
-        } else {
-          // otherwise create member node
-          member = {
-            _cssClass: "Member",
-            _labelClass: "memberLabel",
-            name: row[idx],
-            id: this.getNewId(),
-          };
-
-          this.nodes.push(member);
-        }
-        return;
-      }
-
       if (label.includes("*like to learn*") && row[idx]) {
         // this is the multi-select question
         row[idx].split(",").forEach((skill) => {
@@ -169,6 +142,41 @@ class DataFetching {
       }
     });
     return this.nodes;
+  }
+
+  createMemberNode({ headers, row }) {
+    const nameIndex = headers.findIndex(
+      (label) =>
+        label.includes("user name") ||
+        label.includes("@UserName") ||
+        label.includes("your name") ||
+        label === "What's your full name?"
+    );
+
+    let member;
+
+    const normalisedName = this.normaliseName(row[nameIndex]);
+    // check if member node already exists
+    if (
+      this.nodes
+        .map((item) => this.normaliseName(item.name))
+        .includes(normalisedName)
+    ) {
+      member = this.nodes.filter(
+        (item) => this.normaliseName(item.name) === normalisedName
+      )[0];
+    } else {
+      // otherwise create member node
+      member = {
+        _cssClass: "Member",
+        _labelClass: "memberLabel",
+        name: row[nameIndex],
+        id: this.getNewId(),
+      };
+
+      this.nodes.push(member);
+    }
+    return member;
   }
 
   getOrCreateSkill(skill) {

@@ -1,6 +1,6 @@
 module.exports = [
   {
-    name: "multi sheet test",
+    name: "demo",
     spreadsheetId: "1UXXi5J2HdulaX15xk6Ylb9qsWYkggI6mlmQorO7rSBo",
   },
   // {
