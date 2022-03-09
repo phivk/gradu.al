@@ -186,7 +186,7 @@ module.exports = {
     opacity: ["responsive", "hover", "focus", "group-hover"],
   },
   plugins: [
-    require("@tailwindcss/custom-forms"),
+    require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
   ],
 };
