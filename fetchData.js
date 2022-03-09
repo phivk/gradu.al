@@ -75,7 +75,7 @@ class DataFetching {
         }
       );
 
-      await this.generateMostPopular();
+      await this.generateSkillsList();
     } catch (error) {
       console.log(error);
     }
@@ -109,19 +109,22 @@ class DataFetching {
 
   processRow({ headers, row }) {
     const dateIndex = headers.findIndex((item) => item === "Submitted At");
+    let rowDate = undefined;
 
-    const datetime = row[dateIndex].split(" ");
-    const date = datetime[0].split("/");
-    const time = datetime[1].split(":");
+    if (dateIndex > -1 && row[dateIndex]) {
+      const datetime = row[dateIndex].split(" ");
+      const date = datetime[0].split("/");
+      const time = datetime[1].split(":");
 
-    const rowDate = new Date(
-      date[2],
-      date[0],
-      date[1],
-      time[0],
-      time[1],
-      time[2]
-    ).toISOString();
+      rowDate = new Date(
+        date[2],
+        date[0],
+        date[1],
+        time[0],
+        time[1],
+        time[2]
+      ).toISOString();
+    }
 
     let member = this.createMemberNode({ headers, row, rowDate });
 
