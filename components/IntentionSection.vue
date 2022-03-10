@@ -1,8 +1,6 @@
 <template>
   <section>
-    <h2 class="text-3xl md:text-4xl font-bold mb3">
-      Community learning intentions
-    </h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb3">Community interests</h2>
     <p class="text-lg lh-copy mb-6">
       Into one of the ideas below? Go ahead and add your name to the topics of
       your choice.

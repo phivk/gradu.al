@@ -19,7 +19,23 @@
       :ctaButtonSecondary="indexPage.ctaButtonSecondary"
       :subLink="indexPage.subLink"
     />
-    <ProcessSection :indexPage="indexPage" />
+    <IndexSection :indexPage="indexPage" />
+    <InfoBar
+      v-for="(infoBar, index) in indexPage.infoBars"
+      :key="index"
+      :infoBarObject="infoBar"
+      class="mx-auto"
+    />
+    <IntentionSection
+      v-if="nodes && edges && skills"
+      :nodes="nodes"
+      :edges="edges"
+      :skills="skills"
+      :typeformIdLearn="indexPage.typeformIdLearn"
+      :typeformIdShare="indexPage.typeformIdShare"
+      :typeformIdFull="indexPage.typeformIdFull"
+      class="full-width px-2 sm:px-4 lg:px-8"
+    />
     <div v-for="season in seasons">
       <SessionsSection
         v-if="sessionsPerSeason[season].length"
@@ -29,16 +45,6 @@
         :compact="sessionsIndexPerSeason[season].isPast"
       />
     </div>
-    <IntentionSection
-      v-if="nodes && edges && skills"
-      :nodes="nodes"
-      :edges="edges"
-      :skills="skills"
-      :typeformIdLearn="indexPage.typeformIdLearn"
-      :typeformIdShare="indexPage.typeformIdShare"
-      :typeformIdFull="indexPage.typeformIdFull"
-      class="full-width p-2 sm:p-4 lg:p-8"
-    />
     <AmbassadorsSection
       v-if="ambassadors.length"
       :ambassadors="ambassadors"

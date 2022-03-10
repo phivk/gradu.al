@@ -40,5 +40,18 @@ calendarLink: https://bit.ly/MozFestSkillsharing
   <iframe src="https://www.youtube-nocookie.com/embed/Ps4V3qLv6S4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-This is a space to express things you’d like to learn and share with others in the community. Join the conversation on the
-[#skillsharing](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) channel!
+Sometimes you come up with a great idea for a session _during_ the festival. Here's your chance to connect with others based on a spontaneous thought, a shared interest, a creative spark, a question or whatever else that inspires you!
+
+<process-card-list class="full-width"></process-card-list>
+
+**Submit an idea** or **high five an existing one**. When multiple people share your interest, a session can emerge. Leave your username of the [MozFest Slack](https://www.mozillafestival.org/en/slack/) and we'll help you turn your idea into **a session on the emergent [schedule](https://schedule.mozillafestival.org/emergent-sessions)**!
+
+<session-format-list :session-types="sessionTypes"></session-format-list>
+
+Found a match with others who share your interest?
+
+<div class="inline-flex rounded-md shadow cursor-pointer">
+  <a href="https://mozfest.gradu.al/propose" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-secondary bg-white hover:bg-secondary-washed no-underline">Propose a session</a>
+</div>
+
+Any questions? Join the conversation in the [#emergent-sessions channel](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) on the [MozFest Slack](https://www.mozillafestival.org/en/slack/).
