@@ -35,7 +35,11 @@ calendarLink: ""
 
 Sometimes you come up with a great idea for a session _during_ the festival. Here's your chance to connect with others based on a spontaneous thought, a shared interest, a creative spark, a question or whatever else that inspires you!
 
-**Submit an idea** or **high five an existing one**. When multiple people share your interest, a session can emerge. Leave your username of the [MozFest Slack](https://www.mozillafestival.org/en/slack/) and we'll help you turn your idea into **a session on the emergent schedule**!
+<process-card-list class="full-width"></process-card-list>
+
+**Submit an idea** or **high five an existing one**. When multiple people share your interest, a session can emerge. Leave your username of the [MozFest Slack](https://www.mozillafestival.org/en/slack/) and we'll help you turn your idea into **a session on the emergent [schedule](https://schedule.mozillafestival.org/emergent-sessions)**!
+
+<session-format-list :session-types="sessionTypes"></session-format-list>
 
 Found a match with others who share your interest?
 
