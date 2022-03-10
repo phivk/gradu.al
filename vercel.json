@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/propose",
-      "destination": "https://pretalx.com/mozfest-2022/cfp?access_code=emergent",
+      "destination": "https://pretalx.com/mozfest-2022/submit/?access_code=emergent",
       "permanent": false
     },
     {
