@@ -51,13 +51,13 @@
           <div class="flex items-center m-2">
             Showing
             <span class="font-bold text-green-700 mx-2">
-              {{ nodesFiltered.length }}
+              {{ skillNodesCount }}
             </span>
             topics with
             <input
               v-model.number="minConnections"
               type="number"
-              min="0"
+              min="1"
               :max="this.edgeCountMax"
               class="w-16 rounded mx-1"
             />
@@ -137,6 +137,10 @@ export default {
       } else {
         return this.nodes;
       }
+    },
+    skillNodesCount() {
+      return this.nodesFiltered.filter((node) => node._cssClass === "Skill")
+        .length;
     },
     edgesFiltered() {
       if (this.showConnected) {
