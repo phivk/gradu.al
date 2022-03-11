@@ -29,29 +29,39 @@
     <div class="relative">
       <d3-network
         ref="net"
-        :net-nodes="showConnected ? nodesConnected : nodes"
-        :net-links="showConnected ? edgesConnected : edges"
+        :net-nodes="nodesFiltered"
+        :net-links="edgesFiltered"
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 m-4 hover-opaque">
-        <div class="flex items-center">
+      <div
+        class="absolute bottom-0 left-0 px-0 md:px-4 w-full bg-white hover-opaque"
+      >
+        <div class="flex flex-wrap items-center justify-between">
           <div class="flex items-center m-2">
+            <label class="mr-2" for="graphSpacing">Spacing</label>
             <input
-              class=""
               type="range"
               min="2000"
               max="5000"
               v-model:value="force"
               id="graphSpacing"
             />
-            <label class="ml-2" for="graphSpacing">Spacing</label>
           </div>
-          <div class="flex items-center m-4">
-            <input type="checkbox" id="checkbox" v-model="showConnected" />
-            <label for="checkbox" class="ml-2"
-              >Only show connected interests</label
-            >
+          <div class="flex items-center m-2">
+            Showing
+            <span class="font-bold text-green-700 mx-2">
+              {{ nodesFiltered.length }}
+            </span>
+            topics with
+            <input
+              v-model.number="minConnections"
+              type="number"
+              min="0"
+              :max="this.edgeCountMax"
+              class="w-16 rounded mx-1"
+            />
+            or more connections
           </div>
         </div>
       </div>
@@ -81,6 +91,7 @@ export default {
       force: 3500,
       offsetY: 0,
       showConnected: true,
+      minConnections: 1,
     };
   },
   computed: {
@@ -110,13 +121,34 @@ export default {
           return tids;
         }, {});
     },
-    nodesConnected() {
-      return this.nodes.filter((node) => this.edgeCountPerSkill[node.id] !== 1);
+    edgeCountMax() {
+      const max = Math.max(...Object.values(this.edgeCountPerSkill));
+      console.log("max", max);
+      return max;
     },
-    edgesConnected() {
-      return this.edges.filter(
-        (edge) => this.edgeCountPerSkill[edge.tid] !== 1
-      );
+    nodesFiltered() {
+      if (this.showConnected) {
+        return this.nodes.filter(
+          (node) =>
+            ![...Array(this.minConnections).keys()].includes(
+              this.edgeCountPerSkill[node.id]
+            )
+        );
+      } else {
+        return this.nodes;
+      }
+    },
+    edgesFiltered() {
+      if (this.showConnected) {
+        return this.edges.filter(
+          (edge) =>
+            ![...Array(this.minConnections).keys()].includes(
+              this.edgeCountPerSkill[edge.tid]
+            )
+        );
+      } else {
+        return this.edges;
+      }
     },
   },
   methods: {
