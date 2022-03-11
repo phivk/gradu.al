@@ -34,7 +34,9 @@
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 px-0 md:px-4 hover-opaque">
+      <div
+        class="absolute bottom-0 left-0 px-0 md:px-4 w-full bg-white hover-opaque"
+      >
         <div class="flex flex-wrap items-center justify-between">
           <div class="flex items-center m-2">
             <label class="mr-2" for="graphSpacing">Spacing</label>
