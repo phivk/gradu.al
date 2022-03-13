@@ -122,13 +122,12 @@ export default {
         }, {});
     },
     edgeCountMax() {
-      const max = Math.max(...Object.values(this.edgeCountPerSkill));
-      console.log("max", max);
-      return max;
+      return Math.max(...Object.values(this.edgeCountPerSkill));
     },
     nodesFiltered() {
       if (this.showConnected) {
         return this.nodes.filter(
+          // not sure why this.edgeCountPerSkill[node.id] > this.minConnections throws an error
           (node) =>
             ![...Array(this.minConnections).keys()].includes(
               this.edgeCountPerSkill[node.id]
