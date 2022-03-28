@@ -6,14 +6,14 @@ module.exports = {
   // colors used in /tailwind.config.js
   colors: {
     primary: {
-      washed: '#EEF7F6',
-      DEFAULT: '#BEE1DC',
+      washed: "#EEF7F6",
+      DEFAULT: "#BEE1DC",
     },
     secondary: {
-      washed: '#F1EEF6',
-      DEFAULT: '#A492C5',
+      washed: "#F1EEF6",
+      DEFAULT: "#A492C5",
     },
-    background: '#fff',
-    textOnPrimary: '#000',
-  }
+    background: "#fff",
+    textOnPrimary: "#000",
+  },
 };

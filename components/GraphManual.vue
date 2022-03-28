@@ -29,14 +29,41 @@
     <div class="relative">
       <d3-network
         ref="net"
-        :net-nodes="nodes"
-        :net-links="edges"
+        :net-nodes="nodesFiltered"
+        :net-links="edgesFiltered"
         :options="options"
         :link-cb="lcb"
       />
-      <div class="absolute bottom-0 left-0 max-w-lg m-4 rounded tl hover-opaque">
-        <label class="db mb-1">Spacing</label>
-        <input class="db" type="range" min="2000" max="5000" v-model:value="force" />
+      <div
+        class="absolute bottom-0 left-0 px-0 md:px-4 w-full bg-white hover-opaque"
+      >
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="flex items-center m-2">
+            <label class="mr-2" for="graphSpacing">Spacing</label>
+            <input
+              type="range"
+              min="2000"
+              max="5000"
+              v-model:value="force"
+              id="graphSpacing"
+            />
+          </div>
+          <div class="flex items-center m-2">
+            Showing
+            <span class="font-bold text-green-700 mx-2">
+              {{ skillNodesCount }}
+            </span>
+            topics with
+            <input
+              v-model.number="minConnections"
+              type="number"
+              min="1"
+              :max="this.edgeCountMax"
+              class="w-16 rounded mx-1"
+            />
+            or more connections
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -61,8 +88,10 @@ export default {
       startX: 0,
       startY: 0,
       lastTouch: null,
-      force: 2500,
+      force: 3500,
       offsetY: 0,
+      showConnected: true,
+      minConnections: 1,
     };
   },
   computed: {
@@ -82,6 +111,47 @@ export default {
           y: this.offsetY,
         },
       };
+    },
+    edgeCountPerSkill() {
+      return this.edges
+        .map((item) => item.tid)
+        .reduce((a, c) => {
+          const tids = a;
+          a[c] = a[c] ? a[c] + 1 : 1;
+          return tids;
+        }, {});
+    },
+    edgeCountMax() {
+      return Math.max(...Object.values(this.edgeCountPerSkill));
+    },
+    nodesFiltered() {
+      if (this.showConnected) {
+        return this.nodes.filter(
+          // not sure why this.edgeCountPerSkill[node.id] > this.minConnections throws an error
+          (node) =>
+            ![...Array(this.minConnections).keys()].includes(
+              this.edgeCountPerSkill[node.id]
+            )
+        );
+      } else {
+        return this.nodes;
+      }
+    },
+    skillNodesCount() {
+      return this.nodesFiltered.filter((node) => node._cssClass === "Skill")
+        .length;
+    },
+    edgesFiltered() {
+      if (this.showConnected) {
+        return this.edges.filter(
+          (edge) =>
+            ![...Array(this.minConnections).keys()].includes(
+              this.edgeCountPerSkill[edge.tid]
+            )
+        );
+      } else {
+        return this.edges;
+      }
     },
   },
   methods: {
@@ -155,10 +225,10 @@ path.sharer {
 }
 
 .hover-opaque {
-  opacity: 50%;
+  opacity: 0.5;
   transition: opacity 0.5s;
 }
 .hover-opaque:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 </style>
