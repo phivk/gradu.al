@@ -23,7 +23,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=High five an existing topic to share"
           data-tf-medium="snippet"
-          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg rounded-md text-primary bg-white hover:bg-primary-washed"
+          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg rounded-md text-secondary bg-white hover:bg-secondary-washed"
         >
           I'd like to <span class="font-black mx-1">share</span> about...
         </button>
