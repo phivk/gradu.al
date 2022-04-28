@@ -7,6 +7,15 @@ sections:
 - type: document
   path: content/index.md
   label: Home Page
+- type: directory
+  path: content/sessions/current
+  label: Sessions
+  create: documents
+  match: "*.md"
+  exclude: index.md
+  new_doc_ext: md
+  templates:
+  - session
 - type: document
   path: content/ambassadors/index.md
   label: Ambassadors Heading
@@ -19,15 +28,6 @@ sections:
   new_doc_ext: md
   templates:
   - ambassador
-- type: directory
-  path: content/sessions/current
-  label: Sessions
-  create: documents
-  match: "*.md"
-  exclude: index.md
-  new_doc_ext: md
-  templates:
-  - session
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
