@@ -2,7 +2,7 @@
   <nav>
     <div class="p-4 ph4-m ph5-l mw9 mx-auto flex items-center">
       <NuxtLink to="/" class="flex items-center no-underline">
-        <logo :isBlack="logoIsBlack" class="w2-5" />
+        <logo :isBlack="logoIsBlack" class="w-12" />
         <span class="ml-2 text-on-primary f3 font-bold dn di-ns">gradual</span>
       </NuxtLink>
       <div class="flex-grow"></div>
@@ -25,13 +25,7 @@
   </nav>
 </template>
 <script>
-import Logo from "~/components/Logo.vue";
-import AppLink from "~/components/AppLink.vue";
 export default {
-  components: {
-    Logo,
-    AppLink,
-  },
   props: {
     backLinkText: { type: String, default: "back" },
     backLinkTarget: { type: String, default: "/" },

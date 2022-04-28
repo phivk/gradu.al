@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto p-4 bg-secondary-washed border border-secondary border-opacity-30 rounded max-w-3xl w-full flex items-center mb-4"
+    class="p-4 bg-secondary-washed border border-secondary border-opacity-30 rounded max-w-3xl w-full flex items-center mb-4"
   >
     <span class="mr-3 text-2xl">
       <span v-if="infoBarObject">

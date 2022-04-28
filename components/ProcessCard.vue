@@ -6,20 +6,17 @@
       textColor="#FFF"
       class="mb-2 mr-2 font-bold text-lg"
     />
-    <h3 class="dib font-bold text-lg">{{ title }}</h3>
+    <h3 class="dib font-bold text-lg mt-0">{{ title }}</h3>
     <div class="mid-gray">
       <slot></slot>
     </div>
   </article>
 </template>
 <script>
-import CircleCharacter from "~/components/CircleCharacter.vue";
-
 export default {
   props: {
     number: { type: String, default: "1" },
     title: { type: String, default: "Title" },
   },
-  components: { CircleCharacter },
 };
 </script>

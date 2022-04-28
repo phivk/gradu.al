@@ -2,24 +2,27 @@
   <CommunityPage
     :indexPage="indexPage"
     :sessions="sessions"
+    :sessionsIndexes="sessionsIndexes"
     :ambassadorsIndex="ambassadorsIndex"
     :ambassadors="ambassadors"
     :nodes="nodes"
     :edges="edges"
-    :popular="popular"
+    :skills="skills"
   />
 </template>
-
 <script>
-import CommunityPage from "~/components/CommunityPage.vue";
-
 export default {
-  components: {
-    CommunityPage,
-  },
   async asyncData({ $content }) {
-    const sessions = await $content("sessions")
+    const sessions = await $content("sessions", { deep: true })
+      .where({ slug: { $ne: "index" } })
       .sortBy("dateTime", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+    const sessionsIndexes = await $content("sessions", { deep: true })
+      .where({ slug: { $eq: "index" } })
+      .sortBy("sortOrder", "asc")
       .fetch()
       .catch((error) => {
         console.log(error);
@@ -32,7 +35,7 @@ export default {
       });
     const ambassadors = await $content("ambassadors")
       .where({ slug: { $ne: "index" } })
-      .sortBy("dateTime", "asc")
+      .sortBy("sortOrder", "asc")
       .fetch()
       .catch((error) => {
         console.log(error);
@@ -40,18 +43,27 @@ export default {
 
     const indexPage = await $content("index").fetch();
 
-    let nodes, edges, popular;
+    let nodes, edges, skills;
 
     try {
       nodes = await $content("data", "nodes").fetch();
       edges = await $content("data", "edges").fetch();
-      popular = await $content("data", "popular").fetch();
+      skills = await $content("data", "skills").fetch();
     } catch (error) {
       console.log(error);
       console.log("nodes and edges failed to load");
     }
 
-    return { sessions, ambassadors, ambassadorsIndex, indexPage, nodes, edges, popular };
+    return {
+      sessions,
+      sessionsIndexes,
+      ambassadors,
+      ambassadorsIndex,
+      indexPage,
+      nodes,
+      edges,
+      skills,
+    };
   },
 };
 </script>

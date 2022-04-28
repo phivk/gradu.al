@@ -20,6 +20,13 @@ class DataFetching {
     return this.nodeId++;
   }
 
+  normaliseName(name) {
+    if (!name) {
+      return;
+    }
+    return name.toLowerCase().split("@").join("");
+  }
+
   async authAndGetSheets() {
     // Load the key
     const key = JSON.parse(process.env.GOOGLE_AUTH_JSON_OBJECT);
@@ -43,103 +50,181 @@ class DataFetching {
         fs.mkdirSync(`./content/data/`);
       }
       console.log(`Gathering data for ${this.community.name}.`);
-      await this.processSheet();
+      const res = await this.sheets.spreadsheets.get({
+        spreadsheetId: this.SPREADSHEET_ID,
+        includeGridData: true,
+      });
+
+      const sheets = res.data.sheets;
+
+      await sheets.forEach((sheet) => this.processSheet(sheet));
+
+      await fs.writeFile(
+        this.EDGES_PATH,
+        '{ "edges": ' + JSON.stringify(this.edges) + "}",
+        (err) => {
+          if (err) return console.error(err);
+        }
+      );
+
+      await fs.writeFile(
+        this.NODES_PATH,
+        '{ "nodes": ' + JSON.stringify(this.nodes) + "}",
+        (err) => {
+          if (err) return console.error(err);
+        }
+      );
+
+      await this.generateSkillsList();
     } catch (error) {
       console.log(error);
     }
   }
 
-  async processSheet() {
-    await this.sheets.spreadsheets.values.get(
-      {
-        spreadsheetId: this.SPREADSHEET_ID,
-        range: "A1:ZZ"
-      },
-      async (err, res) => {
-        if (err) return console.log("The API returned an error: " + err);
-        const rows = res.data.values;
-        const headers = rows[0];
+  async processSheet(sheet) {
+    try {
+      const rows = sheet?.data[0]?.rowData?.map((data) => data.values);
 
-        console.log(
-          `Processing the spreadsheet rows for ${this.community.name}`
-        );
-        await rows.forEach(async (row, idx) => {
-          if (idx === 0) return;
-          await this.processRow({ headers, row });
-        });
-
-        await fs.writeFile(
-          this.EDGES_PATH,
-          '{ "edges": ' + JSON.stringify(this.edges) + "}",
-          err => {
-            if (err) return console.error(err);
-          }
-        );
-        await fs.writeFile(
-          this.NODES_PATH,
-          '{ "nodes": ' + JSON.stringify(this.nodes) + "}",
-          err => {
-            if (err) return console.error(err);
-          }
-        );
-        await this.generateMostPopular();
-      }
-    );
-    return;
-  }
-
-  processRow({ headers, row }) {
-    let member;
-
-    headers.forEach((label, idx) => {
-      if (label.includes("@UserName") || label.includes("your name") || label === "What's your full name?") {
-        // create member node
-        member = {
-          _cssClass: "Member",
-          _labelClass: "memberLabel",
-          name: row[idx],
-          id: this.getNewId()
-        };
-
-        this.nodes.push(member);
+      if (!rows) {
         return;
       }
 
-      if (label.includes("*like to learn*")) {
+      const headers = rows[0]
+        .filter((data) => data.formattedValue)
+        .map((data) => data.formattedValue);
+
+      console.log(
+        `Processing the spreadsheet rows for ${this.community.name} in sheet ${sheet.properties.title}`
+      );
+
+      await rows.forEach(async (row, idx) => {
+        if (idx === 0) return;
+        const preparedRow = row.map((data) => data.formattedValue);
+        await this.processRow({ headers, row: preparedRow });
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  processRow({ headers, row }) {
+    const dateIndex = headers.findIndex((item) => item === "Submitted At");
+    let rowDate = undefined;
+
+    if (dateIndex > -1 && row[dateIndex]) {
+      const datetime = row[dateIndex].split(" ");
+      const date = datetime[0].split("/");
+      const time = datetime[1].split(":");
+
+      rowDate = new Date(
+        date[2],
+        date[0],
+        date[1],
+        time[0],
+        time[1],
+        time[2]
+      ).toISOString();
+    }
+
+    let member = this.createMemberNode({ headers, row, rowDate });
+
+    headers.forEach((label, idx) => {
+      if (label.includes("*like to learn*") && row[idx]) {
         // this is the multi-select question
-        row[idx].split(",").forEach(skill => {
+        row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.learnerCount += 1;
           this.createLearningEdge(member, skillNode);
         });
       }
 
-      if (label.includes("*you could share*")) {
+      if (label.includes("*you could share*") && row[idx]) {
         // this is the multi-select question
-        row[idx].split(",").forEach(skill => {
+        row[idx].split(",").forEach((skill) => {
           if (skill.trim() === "") return;
           const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.sharerCount += 1;
           this.createSharingEdge(member, skillNode);
         });
       }
-      if (label.includes("*learn*")) {
+      if (label.includes("*learn*") && row[idx]) {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.learnerCount += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createLearningEdge(member, skillNode);
       }
-      if (label.includes("*share*")) {
+      if (label.includes("*share*") && row[idx]) {
         if (row[idx].trim() === "") return;
         // this is a string value - custom input (freeform)
         const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.sharerCount += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
         this.createSharingEdge(member, skillNode);
       }
     });
     return this.nodes;
   }
 
+  createMemberNode({ headers, row, rowDate }) {
+    const nameIndex = headers.findIndex(
+      (label) =>
+        label.includes("user name") ||
+        label.includes("@UserName") ||
+        label.includes("your name") ||
+        label === "What's your full name?"
+    );
+
+    let member;
+
+    const normalisedName = this.normaliseName(row[nameIndex]);
+    if (!normalisedName) {
+      return;
+    }
+    // check if member node already exists
+    if (
+      this.nodes
+        .map((item) => this.normaliseName(item.name))
+        .includes(normalisedName)
+    ) {
+      member = this.nodes.filter(
+        (item) => this.normaliseName(item.name) === normalisedName
+      )[0];
+    } else {
+      // otherwise create member node
+      member = {
+        _cssClass: "Member",
+        _labelClass: "memberLabel",
+        name: row[nameIndex],
+        id: this.getNewId(),
+        submittedAt: rowDate,
+      };
+
+      this.nodes.push(member);
+    }
+    return member;
+  }
+
   getOrCreateSkill(skill) {
-    const filteredNodes = this.nodes.filter(node => node.name === skill);
+    const filteredNodes = this.nodes.filter((node) => node.name === skill);
 
     if (filteredNodes.length === 1) {
       return filteredNodes[0];
@@ -149,7 +234,9 @@ class DataFetching {
       _cssClass: "Skill",
       _labelClass: "skillLabel",
       name: skill,
-      id: this.getNewId()
+      id: this.getNewId(),
+      sharerCount: 0,
+      learnerCount: 0,
     };
 
     this.nodes.push(skillNode);
@@ -158,53 +245,63 @@ class DataFetching {
 
   createLearningEdge(member, skill) {
     const newEdge = {
+      type: "learn",
       _color: "#f1955b",
       sid: member.id,
       tid: skill.id,
-      _svgAttrs: { "stroke-width": "2", opacity: 0.5 }
+      _svgAttrs: { "stroke-width": "2", opacity: 0.5 },
     };
     this.edges.push(newEdge);
   }
 
   createSharingEdge(member, skill) {
     const newEdge = {
+      type: "share",
       _color: "#9f78e4",
       sid: member.id,
       tid: skill.id,
-      _svgAttrs: { "stroke-width": "2", opacity: 0.5 }
+      _svgAttrs: { "stroke-width": "2", opacity: 0.5 },
     };
     this.edges.push(newEdge);
   }
 
-  async generateMostPopular() {
-    console.log(`Generating most popular nodes for ${this.community.name}.`);
+  async generateSkillsList() {
+    console.log(`Generating skills for ${this.community.name}.`);
     try {
-      const tids = this.edges
-        .map(item => item.tid)
-        .reduce((a, c) => {
-          const tids = a;
-          a[c] = a[c] ? a[c] + 1 : 1;
-          return tids;
-        }, {});
-      const tidArray = [];
+      const allowed = [
+        "name",
+        "id",
+        "sharerCount",
+        "learnerCount",
+        "submittedBy",
+        "firstSubmittedOn",
+        "totalCount",
+        "learnerNames",
+        "sharerNames",
+      ];
 
-      for (const [skill, numbers] of Object.entries(tids)) {
-        tidArray.push({ skill, numbers });
-      }
-
-      const skills = tidArray
-        .sort((a, b) => {
-          const x = a.numbers;
-          const y = b.numbers;
-          return x < y ? 1 : x > y ? -1 : 0;
+      const skills = this.nodes
+        .filter((node) => node._cssClass === "Skill")
+        .map((node) => {
+          node.totalCount = node.learnerCount + node.sharerCount;
+          node.learnerNames = this.getMembersForSkillNode(node, "learn");
+          node.sharerNames = this.getMembersForSkillNode(node, "share");
+          let nodeFiltered = Object.keys(node)
+            .filter((key) => allowed.includes(key))
+            .reduce((obj, key) => {
+              return {
+                ...obj,
+                [key]: node[key],
+              };
+            }, {});
+          return nodeFiltered;
         })
-        .slice(0, 5)
-        .map(item => this.getSkillName(item.skill));
+        .sort((a, b) => b.totalCount - a.totalCount);
 
       await fs.writeFileSync(
-        `./content/data/popular.json`,
+        `./content/data/skills.json`,
         '{ "skills": ' + JSON.stringify(skills) + "}",
-        err => {
+        (err) => {
           if (err) return console.error(err);
         }
       );
@@ -213,8 +310,16 @@ class DataFetching {
     }
   }
 
+  getMembersForSkillNode(skillNode, type) {
+    return this.edges
+      .filter((edge) => edge.tid === skillNode.id && edge.type === type)
+      .map((edge) => {
+        return this.nodes.find((node) => node.id === edge.sid).name;
+      });
+  }
+
   getSkillName(skill) {
-    const skillNode = this.nodes.filter(node => node.id === parseInt(skill));
+    const skillNode = this.nodes.filter((node) => node.id === parseInt(skill));
     return skillNode[0].name;
   }
 }

@@ -1,6 +1,10 @@
 <template>
-  <div class="text-center">
-    <SocialHead :title="`${indexPage.communityName} - Here to learn`" />
+  <div class="text-center max-w-7xl mx-auto">
+    <SocialHead
+      :title="
+        indexPage.pageTitle || `${indexPage.communityName} · Here to learn`
+      "
+    />
     <h2 v-if="indexPage.pageHeading" class="text-3xl md:text-4xl mb-6">
       {{ indexPage.pageHeading }}
     </h2>
@@ -11,43 +15,82 @@
       :logoSrc="indexPage.logoSrc"
       :communityName="indexPage.communityName"
       :ctaHeading="indexPage.ctaHeading"
-      :ctaButtonText="indexPage.ctaButtonText"
+      :ctaButtonPrimary="indexPage.ctaButtonPrimary"
+      :ctaButtonSecondary="indexPage.ctaButtonSecondary"
       :subLink="indexPage.subLink"
     />
-    <ProcessSection :indexPage="indexPage" />
-    <SessionsSection
-      :sessions="sessions"
-      :calendarLink="indexPage.calendarLink"
+    <IndexSection :indexPage="indexPage" />
+    <InfoBar
+      v-for="(infoBar, index) in indexPage.infoBars"
+      :key="index"
+      :infoBarObject="infoBar"
+      class="mx-auto"
     />
-    <AmbassadorsSection v-if="ambassadors.length" :ambassadors="ambassadors" :ambassadorsIndex="ambassadorsIndex" />
-    <IntentionSection :nodes="nodes" :edges="edges" :popular="popular" />
+    <IntentionSection
+      v-if="nodes && edges && skills"
+      :nodes="nodes"
+      :edges="edges"
+      :skills="skills"
+      :typeformIdLearn="indexPage.typeformIdLearn"
+      :typeformIdShare="indexPage.typeformIdShare"
+      :typeformIdFull="indexPage.typeformIdFull"
+      class="full-width px-2 sm:px-4 lg:px-8"
+    />
+    <div v-for="season in seasons">
+      <SessionsSection
+        v-if="sessionsPerSeason[season].length"
+        :sessions="sessionsPerSeason[season]"
+        :calendarLink="indexPage.calendarLink"
+        :index="sessionsIndexPerSeason[season]"
+        :compact="sessionsIndexPerSeason[season].isPast"
+      />
+    </div>
+    <AmbassadorsSection
+      v-if="ambassadors.length"
+      :ambassadors="ambassadors"
+      :ambassadorsIndex="ambassadorsIndex"
+    />
   </div>
 </template>
 <script>
-import SocialHead from "~/components/SocialHead.vue";
-import CTASection from "~/components/CTASection.vue";
-import ProcessSection from "~/components/ProcessSection.vue";
-import SessionsSection from "~/components/SessionsSection.vue";
-import AmbassadorsSection from "~/components/AmbassadorsSection.vue";
-import IntentionSection from "~/components/IntentionSection.vue";
-
 export default {
-  components: {
-    SocialHead,
-    CTASection,
-    ProcessSection,
-    SessionsSection,
-    AmbassadorsSection,
-    IntentionSection,
-  },
   props: {
     indexPage: { type: Object, default: () => {} },
     sessions: { type: Array, default: () => [] },
+    sessionsIndexes: { type: Array, default: () => {} },
     ambassadors: { type: Array, default: () => [] },
     ambassadorsIndex: { type: Object, default: () => {} },
     nodes: { type: Object, default: () => {} },
     edges: { type: Object, default: () => {} },
-    popular: { type: Object, default: () => {} },
+    skills: { type: Object, default: () => {} },
+  },
+  computed: {
+    sessionsPerSeason() {
+      // split sessions per season based on content sub dir
+      return this.sessions.reduce(function (prev, cur) {
+        if (!prev[cur["dir"]]) {
+          prev[cur["dir"]] = [];
+        }
+        prev[cur["dir"]].push(cur);
+        return prev;
+      }, {});
+    },
+    sessionsIndexPerSeason() {
+      // split sessionsIndexes per season based on content sub dir
+      return this.sessionsIndexes.reduce(function (prev, cur) {
+        if (!prev[cur["dir"]]) {
+          prev[cur["dir"]] = cur;
+        }
+        return prev;
+      }, {});
+    },
+    seasons() {
+      // expects sessionsIndexes to already be ordered on sortOrder
+      return this.sessionsIndexes.reduce(function (prev, cur) {
+        prev.push(cur.dir);
+        return prev;
+      }, []);
+    },
   },
 };
 </script>
