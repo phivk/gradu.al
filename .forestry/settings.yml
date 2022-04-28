@@ -24,6 +24,7 @@ sections:
   label: Sessions
   create: documents
   match: "*.md"
+  exclude: index.md
   new_doc_ext: md
   templates:
   - session
