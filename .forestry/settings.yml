@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/ambassadors/index.md
   label: Ambassadors Index
-  match: "**/*"
 - type: directory
   path: content/ambassadors
   label: Ambassadors
