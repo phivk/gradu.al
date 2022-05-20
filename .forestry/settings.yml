@@ -9,6 +9,7 @@ sections:
   label: Ambassadors
   create: documents
   match: "*.md"
+  exclude: index.md
   new_doc_ext: md
   templates:
   - ambassador
