@@ -43,4 +43,4 @@ panoptoRecordingID: ''
     - https://www.gitpod.io/for/opensource
     
     Other alternatives:
-    - Dev conta (https://code.visualstudio.com/docs/remote/containers-tutorial)
+    - Dev container (https://code.visualstudio.com/docs/remote/containers-tutorial)
