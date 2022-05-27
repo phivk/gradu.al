@@ -6720,6 +6720,7 @@ __metadata:
     tailwindcss: ^2.2.2
     v-tooltip: ^2.1.3
     vue-d3-network: ^0.1.28
+    vue-frag: ^1.4.0
     vue-fragment: ^1.5.2
   languageName: unknown
   linkType: soft
@@ -14172,6 +14173,15 @@ __metadata:
   dependencies:
     d3-force: ^1.0.6
   checksum: 0b6334422859e69940df593ff341c94e76962f045999db2f494db8a05d764a4208ab4a441c84b17d8f4aa7215ea34612382a29a532403411c6603cfbca24aac0
+  languageName: node
+  linkType: hard
+
+"vue-frag@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "vue-frag@npm:1.4.0"
+  peerDependencies:
+    vue: ^2.6.0
+  checksum: 602ad6570ad9f647cb03d7da523696f06a01a2a6e78ed9fb9329a6afadb21d6dee0d14aacd8e92f2556fa68c78999ced75ce37634c2a06ae69fc43f10e011f24
   languageName: node
   linkType: hard
 

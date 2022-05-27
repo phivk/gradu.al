@@ -1,101 +1,271 @@
 <template>
 	<div>
-		<article>
-			<section :class="animation">
-				<FormIntro v-if="formPosition === 0" />
-				<FormName v-if="formPosition === 1" />
-				<FormLearning v-if="formPosition === 2" />
-				<FormSharing v-if="formPosition === 3" />
-				<FormNewLearning v-if="formPosition === 4" />
-				<FormNewSharing v-if="formPosition === 5" />
-				<FormFinal v-if="formPosition === 6" />
-				<div>
-					<button v-if="formPosition === 0" @click="formPosition = 1">Start</button>
-					<button v-if="formPosition > 0" @click="previousStep">Previous</button>
+		<article class="flex relative flex-col">
+			<div class="flex-1">
+				<Transition>
+					<component :is="currentState.component" :introduction="currentState.introduction" :value="currentState.value"
+						:followup="currentState.followup" :options="currentState.options" @update="currentState.updateFunction"
+						:textarea="currentState.textarea" />
 
-					<button v-if="formPosition < 6 && formPosition > 0" @click="nextStep">
-						Next
-					</button>
-					<button v-if="formPosition === 6">
-						Enter
-					</button>
+					<div class="left">
+						<div v-if="stateIndex === 0">
+							<div>
+								<button @click="nextStep()">Start</button>
+								<span class="text-xs">press <strong>Enter</strong> ↵</span>
+								<p class="text-xs mt-2">🕒 Takes 4 minutes</p>
+							</div>
+						</div>
 
-				</div>
-			</section>
+						<button v-if="hasPreviousState" @click="previousStep">Previous</button>
+						<button v-if="hasNextState" @click="nextStep">
+							Next
+						</button>
+
+						<button v-if="!hasNextState" @click="submitForm">Submit</button>
+
+					</div>
+				</Transition>
+			</div>
+			<!-- TODO: Make this better! -->
+			<p>{{ stateIndex + 1 }} / {{ states.length }}</p>
+
 		</article>
 	</div>
 </template>
 <script>
 import FormIntro from "./FormIntro.vue";
-import FormName from "./FormName.vue"
-import FormLearning from "./FormLearning.vue"
-import FormSharing from "./FormSharing.vue"
-import FormNewLearning from "./FormNewLearning.vue"
-import FormNewSharing from "./FormNewSharing.vue"
-import FormFinal from "./FormFinal.vue"
+import FormSingleField from "./FormSingleField.vue"
+import FormMultipleSelect from "./FormMultipleSelect.vue"
+import FormMultipleInput from "./FormMultipleInput.vue"
 
 export default {
 	props: {
 		currentTopics: Array,
-		currentMembers: Array
+		currentMembers: Array,
+		mapping: Array
 	},
 	mounted: function () {
 		window.addEventListener('keyup', (e) => { this.keyboardControl(e) })
 	},
 	data: () => {
 		return {
-			formPosition: 0,
-			animation: 'animate-in',
+			stateIndex: 0,
+			submitting: false,
+			formData: {
+				username: "",
+				learnings: [],
+				sharings: [],
+				newLearnings: [],
+				newSharings: [],
+				comment: ''
+			},
+
 		}
 	},
 	computed: {
 		currentLearning: function () {
-			// TODO: Use the mapping table somehow
-			return this.currentTopics
+			// TODO: This should be all topics ... filter/popularity
+			// TODO: Combo box - seachable dropdown/list with search filter
+			// Get topics that have a value in the learning mapping 
+			const learningTopics = this.mapping.filter(item => item.learner).map(item => item.topic)
+			// Filter topics based on this
+			const topicsWithLearners = this.currentTopics.filter(item => learningTopics.includes(item.id))
+			return topicsWithLearners
 		},
 		currentSharing: function () {
-			return this.currentTopics
-		}
+			// Get topics that have a value in the sharing mapping 
+			const sharingTopics = this.mapping.filter(item => item.sharer).map(item => item.topic)
+			// Filter topics based on this
+			const topicsWithSharers = this.currentTopics.filter(item => sharingTopics.includes(item.id))
+			return topicsWithSharers
+		},
+		states() {
+			return [
+				{
+					component: FormIntro,
+					updateFunction: () => { }
+				},
+				{
+					component: FormSingleField,
+					introduction: "What's your @UserName on the MozFest Slack?",
+					followup: "Please write down your exact user name, including the @ sign.",
+					value: this.formData.username,
+					updateFunction: (value) => {
+						this.setSingleField('username', value)
+					}
+				},
+				{
+					component: FormMultipleSelect,
+					introduction: "These are some topics suggested by other Mozfest participants! Anything here you'd like to learn more about?",
+					options: this.currentLearning,
+					updateFunction: (learnings) => {
+						this.setSingleField('learnings', learnings)
+					}
+				},
+				{
+					component: FormMultipleSelect,
+					introduction: "Here are some popular topics MozFest participants would like to learn. Anything here you could share something about?",
+					options: this.currentSharing,
+					updateFunction: (sharings) => {
+						this.setSingleField('sharings', sharings)
+					}
+				},
+				{
+					component: FormMultipleInput,
+					introduction: "Are there any other things you would like to learn?",
+					followup: "Please write it in a way others will understand. For example: 'how to start a book club'.",
+					updateFunction: (value) => {
+						this.setSingleField('newLearnings', value)
+					}
+				},
+				{
+					component: FormMultipleInput,
+					introduction: "Now, are there skills you would like to share?",
+					followup: "Think stories, skills, methods, shortcuts, failures, successes or tips and tricks. Anything goes, don't be shy!",
+					updateFunction: (value) => {
+						this.setSingleField('newSharings', value)
+					}
+				},
+				{
+					component: FormSingleField,
+					introduction: `Thank you, ${this.formData.username}!`,
+					followup: "	Anything else you want to tell us before you go?",
+					value: this.formData.comment,
+					updateFunction: (value) => {
+						this.setSingleField('comment', value)
+					},
+					textarea: true
+				},
+			]
+		},
+		hasNextState() {
+			return this.stateIndex < this.states.length - 1
+		},
+		hasPreviousState() {
+			return this.stateIndex > 0
+		},
+		currentState() {
+			return this.states[this.stateIndex]
+		},
 	},
 	components: {
 		FormIntro,
-		FormName,
-		FormLearning,
-		FormSharing,
-		FormNewLearning,
-		FormNewSharing,
-		FormFinal
+		FormSingleField,
+		FormMultipleInput,
+		FormMultipleSelect
 	},
 	methods: {
 		nextStep() {
-			this.animation = 'animate-out';
-			setTimeout(() => {
-				this.animation = 'animate-in';
-				this.formPosition += 1;
-			}, 600);
+			if (this.hasNextState) {
+				this.stateIndex += 1
+			}
 		},
 		previousStep() {
-			this.animation = 'animate-out';
-			setTimeout(() => {
-				this.animation = 'animate-in';
-				this.formPosition -= 1;
-			}, 600);
+			this.stateIndex -= 1
 		},
 		keyboardControl(e) {
-			if (["Enter", "ArrowRight", "ArrowDown"].includes(e.key)) this.nextStep()
-			if (["ArrowUp", "ArrowLeft"].includes(e.key)) this.previousStep()
+			if (["Enter"].includes(e.key)) this.nextStep()
+		},
+		setSingleField(field, value) {
+			this.formData[field] = value
+		},
+		addToArray(field, value) {
+			this.formData[field].push(value)
+		},
+		async submitForm() {
+			console.log("submitting form")
+			// Show some processing interstitial
+			this.submitting = true
+			// Get or create the user
+			const { data: userData } = await this.$supabase.from("members").select("*").eq("username", this.formData.username)
+
+			let user
+			// Username doesn't exist in the database
+			if (userData.length === 0) {
+				const { data: newUserData } = await this.$supabase.from("members").insert({ username: this.formData.username })
+				user = newUserData[0]
+			} else {
+				user = userData[0]
+			}
+
+			// For each of the learnings, create a new connection
+			this.formData.learnings.forEach(async (learning) => {
+				await this.$supabase.from("members_topics").insert({
+					topic: learning.id,
+					learner: user.id
+				})
+			})
+			// For each of the sharings, create a new connection
+			this.formData.sharings.forEach(async (sharing) => {
+				await this.$supabase.from("members_topics").insert({
+					topic: sharing.id,
+					sharer: user.id
+				})
+			})
+
+			// For each of the new learnings, create a topic and a connection
+			this.formData.newLearnings.forEach(async (learning) => {
+				const { data } = await this.$supabase.from("topics").insert({
+					name: learning
+				})
+				await this.$supabase.from("members_topics").insert({
+					topic: data[0].id,
+					learner: user.id
+				})
+			})
+
+			// For each of the new sharings, create a topic and a connection
+			this.formData.newSharings.forEach(async (sharing) => {
+				const { data } = await this.$supabase.from("topics").insert({
+					name: sharing
+				})
+				await this.$supabase.from("members_topics").insert({
+					topic: data[0].id,
+					sharer: user.id
+				})
+			})
+
+			// Post the additional comments somewhere - user object?
+			await this.$supabase.from("members").upsert({
+				...user,
+				comment: this.formData.comment
+			})
+
+
+			// Show success and redirect
+			this.submiting = false
 		}
 	}
 }
 </script>
-<style>
-.animation-in {
-	transform-origin: left;
-	animation: in .6s ease-in-out;
+<style  lang="postcss">
+.v-enter-active,
+.v-leave-active {
+	transition: opacity 0.5s ease;
 }
 
-.animation-out {
-	transform-origin: bottom left;
-	animation: out .6s ease-in-out;
+.v-enter-from,
+.v-leave-to {
+	opacity: 0;
+}
+
+button {
+	@apply bg-blue-500 text-white px-3 py-2 rounded mt-4
+}
+
+.background {
+	display: inline-block;
+	z-index: -20;
+	line-height: 0;
+	opacity: 1;
+	background-color: rgb(93, 27, 84);
+	background-image: url("https://images.typeform.com/images/mbyFNGQ86pxv/background/large");
+	background-position: center top;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 </style>

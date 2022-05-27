@@ -1,0 +1,32 @@
+<template>
+	<div v-frag>
+		<p class="font-bold">{{ introduction }}</p>
+		<p class="font-light">{{ followup }}</p>
+		<input v-if="!textarea" type="text" placeholder="Type your answer here..." v-model="field" @input="update" />
+		<textarea v-if="textarea" type="text" placeholder="Type your answer here..." v-model="field" @input="update" />
+
+	</div>
+</template>
+<script>
+export default {
+	props: {
+		introduction: String,
+		followup: String,
+		value: String,
+		textarea: Boolean
+	},
+	data() {
+		return {
+			field: ''
+		}
+	},
+	mounted() {
+		this.field = this.value
+	},
+	methods: {
+		update() {
+			this.$emit("update", this.field)
+		}
+	}
+}
+</script>
