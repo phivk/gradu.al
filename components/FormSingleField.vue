@@ -2,8 +2,12 @@
 	<div v-frag>
 		<p class="font-bold">{{ introduction }}</p>
 		<p class="font-light">{{ followup }}</p>
-		<input v-if="!textarea" type="text" placeholder="Type your answer here..." v-model="field" @input="update" />
-		<textarea v-if="textarea" type="text" placeholder="Type your answer here..." v-model="field" @input="update" />
+		<input
+			class=" border-0 border-gray border-b-2  my-4 bg-transparent  focus:outline-none focus:border-black active:outline-none"
+			v-if="!textarea" type="text" placeholder="Type your answer here..." v-model="field" @input="update" />
+		<textarea
+			class=" border-0 border-gray border-b-2  my-4 bg-transparent  focus:outline-none focus:border-black active:outline-none"
+			v-if="textarea" type="text" placeholder="Type your answer here..." v-model="field" @input="update" />
 
 	</div>
 </template>
@@ -30,3 +34,5 @@ export default {
 	}
 }
 </script>
+<style lang="postcss" scoped>
+</style>

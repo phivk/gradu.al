@@ -1,28 +1,28 @@
 <template>
 	<div>
 		<article class="flex relative flex-col">
-			<div class="flex-1">
+			<div class="grid content-center w-1/2 mx-auto">
 				<Transition>
-					<component :is="currentState.component" :introduction="currentState.introduction" :value="currentState.value"
-						:followup="currentState.followup" :options="currentState.options" @update="currentState.updateFunction"
-						:textarea="currentState.textarea" />
+					<div v-frag>
+						<component :is="currentState.component" :introduction="currentState.introduction"
+							:value="currentState.value" :followup="currentState.followup" :options="currentState.options"
+							@update="currentState.updateFunction" :textarea="currentState.textarea" :key="stateIndex" />
 
-					<div class="left">
-						<div v-if="stateIndex === 0">
-							<div>
-								<button @click="nextStep()">Start</button>
-								<span class="text-xs">press <strong>Enter</strong> ↵</span>
-								<p class="text-xs mt-2">🕒 Takes 4 minutes</p>
+						<div class="left">
+							<div v-if="stateIndex === 0">
+								<div>
+									<button @click="nextStep()">Start</button>
+									<span class="text-xs">press <strong>Enter</strong> ↵</span>
+									<p class="text-xs mt-2">🕒 Takes 4 minutes</p>
+								</div>
 							</div>
+
+							<button v-if="hasPreviousState" @click="previousStep">Previous</button>
+							<button v-if="hasNextState" @click="nextStep">
+								Next
+							</button>
+							<button v-if="!hasNextState" @click="submitForm">Submit</button>
 						</div>
-
-						<button v-if="hasPreviousState" @click="previousStep">Previous</button>
-						<button v-if="hasNextState" @click="nextStep">
-							Next
-						</button>
-
-						<button v-if="!hasNextState" @click="submitForm">Submit</button>
-
 					</div>
 				</Transition>
 			</div>
@@ -49,7 +49,7 @@ export default {
 	},
 	data: () => {
 		return {
-			stateIndex: 0,
+			stateIndex: 2,
 			submitting: false,
 			formData: {
 				username: "",
@@ -98,13 +98,16 @@ export default {
 					component: FormMultipleSelect,
 					introduction: "These are some topics suggested by other Mozfest participants! Anything here you'd like to learn more about?",
 					options: this.currentLearning,
+					value: this.formData.learnings,
 					updateFunction: (learnings) => {
 						this.setSingleField('learnings', learnings)
 					}
 				},
+
 				{
 					component: FormMultipleSelect,
 					introduction: "Here are some popular topics MozFest participants would like to learn. Anything here you could share something about?",
+					value: this.formData.sharings,
 					options: this.currentSharing,
 					updateFunction: (sharings) => {
 						this.setSingleField('sharings', sharings)
@@ -114,6 +117,7 @@ export default {
 					component: FormMultipleInput,
 					introduction: "Are there any other things you would like to learn?",
 					followup: "Please write it in a way others will understand. For example: 'how to start a book club'.",
+					value: this.formData.newLearnings,
 					updateFunction: (value) => {
 						this.setSingleField('newLearnings', value)
 					}
@@ -122,6 +126,7 @@ export default {
 					component: FormMultipleInput,
 					introduction: "Now, are there skills you would like to share?",
 					followup: "Think stories, skills, methods, shortcuts, failures, successes or tips and tricks. Anything goes, don't be shy!",
+					value: this.formData.newSharings,
 					updateFunction: (value) => {
 						this.setSingleField('newSharings', value)
 					}
