@@ -1,16 +1,10 @@
 <template>
-  <CommunityPage
-    :indexPage="indexPage"
-    :sessions="sessions"
-    :sessionsIndexes="sessionsIndexes"
-    :ambassadorsIndex="ambassadorsIndex"
-    :ambassadors="ambassadors"
-    :nodes="nodes"
-    :edges="edges"
-    :skills="skills"
-  />
+  <CommunityPage :indexPage="indexPage" :sessions="sessions" :sessionsIndexes="sessionsIndexes"
+    :ambassadorsIndex="ambassadorsIndex" :ambassadors="ambassadors" :nodes="nodes" :edges="edges" :skills="skills" />
 </template>
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   async asyncData({ $content }) {
     const sessions = await $content("sessions", { deep: true })
@@ -64,6 +58,12 @@ export default {
       edges,
       skills,
     };
+  },
+  methods: {
+    ...mapActions("supabase", ['fetchData'])
+  },
+  mounted() {
+    this.fetchData()
   },
 };
 </script>
