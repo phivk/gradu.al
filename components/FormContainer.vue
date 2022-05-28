@@ -37,6 +37,7 @@ import FormIntro from "./FormIntro.vue";
 import FormSingleField from "./FormSingleField.vue"
 import FormMultipleSelect from "./FormMultipleSelect.vue"
 import FormMultipleInput from "./FormMultipleInput.vue"
+
 export default {
 	props: {
 		currentTopics: Array,
@@ -62,8 +63,6 @@ export default {
 	},
 	computed: {
 		currentLearning: function () {
-			// TODO: This should be all topics ... filter/popularity
-			// TODO: Combo box - seachable dropdown/list with search filter
 			// Get topics that have a value in the learning mapping 
 			// const learningTopics = this.mapping.filter(item => item.learner).map(item => item.topic)
 			// Filter topics based on this

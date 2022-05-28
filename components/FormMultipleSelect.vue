@@ -11,6 +11,7 @@
 	</div>
 </template>
 <script>
+// TODO: Combo box - seachable dropdown/list with search filter
 export default {
 	props: { options: Array, introduction: String, value: Array },
 	data() {
