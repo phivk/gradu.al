@@ -85,11 +85,8 @@ export default {
       }, {});
     },
     seasons() {
-      // expects sessionsIndexes to already be ordered on sortOrder
-      return this.sessionsIndexes.reduce(function (prev, cur) {
-        prev.push(cur.dir);
-        return prev;
-      }, []);
+      // return dir name for seasons that have sessions
+      return Object.keys(this.sessionsPerSeason)
     },
   },
 };
