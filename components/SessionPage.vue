@@ -35,6 +35,9 @@
             <div class="video-wrapper" v-else-if="session.panoptoRecordingID">
               <iframe :src="`https://mozilla.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=${session.panoptoRecordingID}&autoplay=false&offerviewer=false&showtitle=true&showbrand=false&captions=true&interactivity=none`" height="1080" width="1920" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
             </div>
+            <div class="video-wrapper" v-else-if="session.googleDriveRecordingID">
+              <iframe :src="`https://drive.google.com/file/d/${session.googleDriveRecordingID}/preview`" width="640" height="480" allow="autoplay"></iframe>  
+            </div>
             <img
               v-else
               class="db mb-4 sm:mb-8"
