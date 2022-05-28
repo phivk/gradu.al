@@ -80,3 +80,9 @@ fields:
   name: panoptoRecordingID
   label: Panopto Recording ID
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
+- name: googleDriveRecordingID
+  type: text
+  config:
+    required: false
+  label: Google Drive Recording ID
+  description: The ID of a Google Drive video to embed (<em>33 characters, e.g. 1t1PBm2SozuYc2tVEDdFNlyb_mp2WElBJ</em>)

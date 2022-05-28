@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/sessions/current/index.md
   label: Sessions Index
-  match: "**/*"
 - type: directory
   path: content/sessions/current
   label: Sessions
