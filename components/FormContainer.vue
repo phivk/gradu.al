@@ -26,9 +26,9 @@
 					</div>
 				</Transition>
 			</div>
-			<!-- TODO: Make this better! -->
-			<p>{{ stateIndex + 1 }} / {{ states.length }}</p>
-
+			<div class="flex flex-wrap p-4">
+				<ProgressBar :percentage="percentage" class="mx-2 mb-2 " />
+			</div>
 		</article>
 	</div>
 </template>
@@ -39,6 +39,8 @@ import FormIntro from "./FormIntro.vue";
 import FormSingleField from "./FormSingleField.vue"
 import FormMultipleSelect from "./FormMultipleSelect.vue"
 import FormMultipleInput from "./FormMultipleInput.vue"
+
+import ProgressBar from "./ProgressBar.vue";
 
 export default {
 	mounted: function () {
@@ -148,12 +150,16 @@ export default {
 		currentState() {
 			return this.states[this.stateIndex]
 		},
+		percentage() {
+			return Math.ceil(((this.stateIndex + 1) / (this.states.length)) * 100)
+		}
 	},
 	components: {
 		FormIntro,
 		FormSingleField,
 		FormMultipleInput,
-		FormMultipleSelect
+		FormMultipleSelect,
+		ProgressBar
 	},
 	methods: {
 		nextStep() {
