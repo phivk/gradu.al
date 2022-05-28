@@ -1,6 +1,6 @@
 <template>
   <CommunityPage :indexPage="indexPage" :sessions="sessions" :sessionsIndexes="sessionsIndexes"
-    :ambassadorsIndex="ambassadorsIndex" :ambassadors="ambassadors" :nodes="nodes" :edges="edges" :skills="skills" />
+    :ambassadorsIndex="ambassadorsIndex" :ambassadors="ambassadors" />
 </template>
 <script>
 import { mapActions } from 'vuex';
@@ -37,26 +37,12 @@ export default {
 
     const indexPage = await $content("index").fetch();
 
-    let nodes, edges, skills;
-
-    try {
-      nodes = await $content("data", "nodes").fetch();
-      edges = await $content("data", "edges").fetch();
-      skills = await $content("data", "skills").fetch();
-    } catch (error) {
-      console.log(error);
-      console.log("nodes and edges failed to load");
-    }
-
     return {
       sessions,
       sessionsIndexes,
       ambassadors,
       ambassadorsIndex,
       indexPage,
-      nodes,
-      edges,
-      skills,
     };
   },
   methods: {

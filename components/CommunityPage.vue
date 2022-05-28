@@ -12,8 +12,7 @@
       :subLink="indexPage.subLink" />
     <IndexSection :indexPage="indexPage" />
     <InfoBar v-for="(infoBar, index) in indexPage.infoBars" :key="index" :infoBarObject="infoBar" class="mx-auto" />
-    <IntentionSection v-if="nodes && edges && skills" :nodes="nodes" :edges="edges" :skills="skills"
-      :typeformIdLearn="indexPage.typeformIdLearn" :typeformIdShare="indexPage.typeformIdShare"
+    <IntentionSection :typeformIdLearn="indexPage.typeformIdLearn" :typeformIdShare="indexPage.typeformIdShare"
       :typeformIdFull="indexPage.typeformIdFull" class="full-width px-2 sm:px-4 lg:px-8" />
     <div v-for="season in seasons">
       <SessionsSection v-if="sessionsPerSeason[season].length" :sessions="sessionsPerSeason[season]"
@@ -32,9 +31,6 @@ export default {
     sessionsIndexes: { type: Array, default: () => { } },
     ambassadors: { type: Array, default: () => [] },
     ambassadorsIndex: { type: Object, default: () => { } },
-    nodes: { type: Object, default: () => { } },
-    edges: { type: Object, default: () => { } },
-    skills: { type: Object, default: () => { } },
   },
   computed: {
     sessionsPerSeason() {
