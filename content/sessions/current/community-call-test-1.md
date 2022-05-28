@@ -17,7 +17,8 @@ youtubeRecordingID: ''
 panoptoRecordingID: ''
 
 ---
-<iframe src="[https://drive.google.com/file/d/1t1PBm2SozuYc2tVEDdFNlyb_mp2WElBJ/preview](https://drive.google.com/file/d/1t1PBm2SozuYc2tVEDdFNlyb_mp2WElBJ/preview "Recording")" width="640" height="480" allow="autoplay"></iframe>  
+
+<iframe src="https://drive.google.com/file/d/1t1PBm2SozuYc2tVEDdFNlyb_mp2WElBJ/preview" width="640" height="480" allow="autoplay"></iframe>  
   
 On June 24, 2021 the GftW Program Team ([Ayesha,](https://community.webmonetization.org/ayeshaware) [Chris](https://community.webmonetization.org/chrislarry) & [Erika](https://community.webmonetization.org/erikad)) hosted the very first Community Call. During this first installment we shared updates, opportunities and invited 3 awardees to do project share-outs.
 
