@@ -18,10 +18,10 @@
 							</div>
 
 							<button v-if="hasPreviousState" @click="previousStep">Previous</button>
-							<button v-if="hasNextState" @click="nextStep">
+							<button v-if="hasNextState && stateIndex > 0" @click="nextStep">
 								Next
 							</button>
-							<button v-if="!hasNextState" @click="submitForm" active="!submitting">Submit</button>
+							<button v-if="!hasNextState" @click="submitForm">Submit</button>
 						</div>
 					</div>
 				</Transition>
@@ -33,17 +33,14 @@
 	</div>
 </template>
 <script>
+import { mapState } from "vuex";
+
 import FormIntro from "./FormIntro.vue";
 import FormSingleField from "./FormSingleField.vue"
 import FormMultipleSelect from "./FormMultipleSelect.vue"
 import FormMultipleInput from "./FormMultipleInput.vue"
 
 export default {
-	props: {
-		currentTopics: Array,
-		currentMembers: Array,
-		mapping: Array
-	},
 	mounted: function () {
 		window.addEventListener('keyup', (e) => { this.keyboardControl(e) })
 	},
@@ -62,19 +59,20 @@ export default {
 		}
 	},
 	computed: {
+		...mapState(['supabase']),
 		currentLearning: function () {
 			// Get topics that have a value in the learning mapping 
 			// const learningTopics = this.mapping.filter(item => item.learner).map(item => item.topic)
 			// Filter topics based on this
 			// const topicsWithLearners = this.currentTopics.filter(item => learningTopics.includes(item.id))
-			return this.currentTopics
+			return this.$store.state.supabase.topics
 		},
 		currentSharing: function () {
 			// Get topics that have a value in the sharing mapping 
 			// const sharingTopics = this.mapping.filter(item => item.sharer).map(item => item.topic)
 			// Filter topics based on this
 			// const topicsWithSharers = this.currentTopics.filter(item => sharingTopics.includes(item.id))
-			return this.currentTopics
+			return this.$store.state.supabase.topics
 		},
 		states() {
 			return [
@@ -229,6 +227,7 @@ export default {
 			})
 			// Show success and redirect
 			this.submiting = false
+			this.$nuxt.$router.push("/")
 		}
 	}
 }
