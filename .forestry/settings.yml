@@ -17,7 +17,7 @@ sections:
   templates:
   - ambassador
 - type: directory
-  path: content/sessions
+  path: content/sessions/current
   label: Sessions
   create: documents
   match: "*.md"
