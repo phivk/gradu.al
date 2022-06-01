@@ -1,9 +1,9 @@
 ---
-title: Lessons Learned from past and current gftw projects (test)
+title: Lessons Learned from past and current gftw projects
 type: peer share
 dateTime: 2022-06-03T14:00:00Z
 durationInMinutes: 60
-imageSrc: https://images.unsplash.com/photo-1616628188467-8fb29f49bbe8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+imageSrc: https://images.unsplash.com/photo-1549228581-cdbdb7430548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
 learnerNames:
 - phivk
 - Chris Lawrence
@@ -21,7 +21,7 @@ panoptoRecordingID: ''
 googleDriveRecordingID: ''
 
 ---
-Description of event
+**Description of event**
 
 Invitees are people who have learned from previous cohorts and current projects so we can share how best to implement web monetization into our projects.
 
