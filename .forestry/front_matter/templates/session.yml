@@ -87,4 +87,5 @@ fields:
   label: Google Drive Recording ID
   description: The ID of a Google Drive video to embed (<em>33 characters, e.g. 1t1PBm2SozuYc2tVEDdFNlyb_mp2WElBJ</em>)
 pages:
+- content/sessions/current/a-very-engaging-community-call-with-erica-hargreave-and-friends.md
 - content/sessions/current/lessons-learned-from-past-and-current-gftw-projects-test.md
