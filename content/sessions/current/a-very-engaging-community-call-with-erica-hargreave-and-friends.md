@@ -3,7 +3,7 @@ title: 'A very engaging Community Call with Erica Hargreave and friends '
 type: talk
 dateTime: 2021-09-22T22:00:00Z
 durationInMinutes: 60
-imageSrc: https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F264914939%2F445990306532%2F1%2Foriginal.20220411-214934?w=1024&auto=format%2Ccompress&q=75&sharp=10&rect=71%2C2%2C1358%2C496&s=3a46c5bc684dcb37ec9e4931430524e5
+imageSrc: https://community.webmonetization.org/images/Uy195BBY4K9Hxuqxdj5GVrEulIefuW29sv4nq7Xo7Vc/s:1000:420/mb:500000/ar:1/aHR0cHM6Ly9jb21t/dW5pdHkud2VibW9u/ZXRpemF0aW9uLm9y/Zy9yZW1vdGVpbWFn/ZXMvdXBsb2Fkcy9h/cnRpY2xlcy9vNHh0/M2cyYWpqZHY5M3cz/N2kxbC5wbmc
 learnerNames: []
 sharerNames:
 - Briana Stuart
