@@ -3,7 +3,7 @@ title: 'Project Skill Share with Gavin Chait '
 type: talk
 dateTime: 2022-04-25T14:00:00Z
 durationInMinutes: 60
-imageSrc: https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F257621819%2F445990306532%2F1%2Foriginal.20211112-001112?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=216%2C0%2C1000%2C500&s=c20aec34201534ce79c4f6a5f5b91e18
+imageSrc: https://community.webmonetization.org/images/SXuo1vw5z_isJ3Kdw9EBOB9wDzjHmqmk_sdGz1EQhPM/w:880/mb:500000/ar:1/aHR0cHM6Ly9jb21t/dW5pdHkud2VibW9u/ZXRpemF0aW9uLm9y/Zy9yZW1vdGVpbWFn/ZXMvdXBsb2Fkcy9h/cnRpY2xlcy9yNmxk/NGMwa281bHBuaDI2/ejk5ei5qcGc
 learnerNames: []
 sharerNames:
 - Gavin Chait
