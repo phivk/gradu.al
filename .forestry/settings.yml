@@ -12,8 +12,8 @@ sections:
   new_doc_ext: md
   templates:
   - session
-upload_dir: static/uploads/gftw
-public_path: "/uploads/gftw"
+upload_dir: static/uploads/mozfestwranglers
+public_path: "/uploads/mozfestwranglers"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
