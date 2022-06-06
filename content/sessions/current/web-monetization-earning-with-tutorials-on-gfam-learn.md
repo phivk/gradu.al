@@ -3,7 +3,7 @@ title: Web Monetization earning with tutorials on gFam Learn
 type: talk
 dateTime: 2022-06-21T14:00:00Z
 durationInMinutes: 60
-imageSrc: https://files.slack.com/files-pri/T0KKJC1N1-F03J7TES17V/cover_for_gftw_session.png
+imageSrc: https://images.ctfassets.net/lzv3liismvlo/2VXUG4YoHUkXrVCdsoRIIt/4872395f25993e56330474dde24bb539/Cover_for_GftW_session.png
 learnerNames: []
 sharerNames: []
 resources: []
