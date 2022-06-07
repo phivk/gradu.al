@@ -1,11 +1,12 @@
 ---
 title: Web Monetization earning with tutorials on gFam Learn
-type: talk
-dateTime: 2022-06-21T14:00:00Z
+type: talk with Q&A
+dateTime: 2022-06-21T14:00:00.000+00:00
 durationInMinutes: 60
 imageSrc: https://images.ctfassets.net/lzv3liismvlo/2VXUG4YoHUkXrVCdsoRIIt/4872395f25993e56330474dde24bb539/Cover_for_GftW_session.png
 learnerNames: []
-sharerNames: []
+sharerNames:
+- Adam Waring
 resources: []
 cta:
   text: ''
