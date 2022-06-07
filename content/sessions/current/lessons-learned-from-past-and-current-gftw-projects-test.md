@@ -8,7 +8,6 @@ learnerNames:
 - phivk
 - Chris Lawrence
 - Erica Hargreave
-- ''
 sharerNames:
 - Amanda
 - Alison Guzman
