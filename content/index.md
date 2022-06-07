@@ -4,13 +4,16 @@ pageTitle: GftW · Skill Sharing
 adminURL: https://gftw.gradu.al/admin
 logoSrc: https://www.gradu.al/uploads/gftw-circular.png
 ctaHeading: What would you like to learn or share?
-ctaButtonText: Take part!
+ctaButtonSecondary:
+  text: Propose a session
+  href: /propose
 subLink:
   text: join the community forum
   href: https://community.webmonetization.org/
 typeformIdFull: YBWucTJ6
 typeformIdLearn: oMI8fPRL
 typeformIdShare: XI3cygGx
+typeformIdPropose: q3Rhugjg
 sessionTypes:
   - peer sharing
   - salon
