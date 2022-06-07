@@ -5,6 +5,10 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: document
+  path: content/index.md
+  label: Index Page
+  match: "**/*"
+- type: document
   path: content/sessions/current/index.md
   label: Sessions Index
 - type: directory
