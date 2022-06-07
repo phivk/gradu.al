@@ -8,7 +8,6 @@ ctaButtonText: Take part!
 subLink:
   text: join the community forum
   href: https://community.webmonetization.org/
-typeformSrc: https://form.typeform.com/to/YBWucTJ6
 typeformIdFull: YBWucTJ6
 typeformIdLearn: oMI8fPRL
 typeformIdShare: XI3cygGx

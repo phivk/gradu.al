@@ -6,7 +6,7 @@
       height="100%"
       frameborder="0"
       allow="camera; microphone; autoplay; encrypted-media;"
-      :src="typeformSrc"
+      :src="typeformSrcComputed"
     ></iframe>
     <script
       type="text/javascript"
@@ -18,7 +18,13 @@
 export default {
   props: {
     typeformSrc: { type: String, default: "" },
+    typeformId: { type: String, default: "" },
   },
+  computed: {
+    typeformSrcComputed () {
+      return this.typeformSrc ? this.typeformSrc : `https://form.typeform.com/to/${this.typeformId}`
+    }
+  }
 };
 </script>
 <style scoped>
