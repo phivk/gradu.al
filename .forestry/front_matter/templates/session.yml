@@ -23,6 +23,8 @@ fields:
     - salon
     - game
     - other
+    - Community Call
+    - talk with Q&A
     source:
       type: simple
       section: 
@@ -42,8 +44,7 @@ fields:
     required: true
   label: imageSrc
   description: A valid URL of a web image (incl 'https://') <br>OR URL of an uploaded
-    image, copied via the <a href="https://app.forestry.io/sites/0apkf4exn2idng/#/media/"
-    title="" target="_blank">Media Manager</a>
+    image, copied via the Media Manager (see sidebar left)
 - type: list
   name: learnerNames
   label: learnerNames
