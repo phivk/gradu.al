@@ -41,8 +41,8 @@ export default {
     sessions: { type: Array, default: () => [] },
     calendarLink: { type: String, default: undefined },
     compact: { type: Boolean, default: false },
-    titleUpcoming: { type: String, default: "Upcoming Sessions" },
-    titlePast: { type: String, default: "Things we've learned so far" },
+    titleUpcoming: { type: String, default: "Upcoming" },
+    titlePast: { type: String, default: "Previously" },
   },
   computed: {
     sessionsUpcoming() {
