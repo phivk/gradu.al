@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content/index.md
   label: Community Index
-  match: "**/*"
 - type: document
   path: content/sessions/current/index.md
   label: Sessions Index
