@@ -19,7 +19,7 @@ cta:
   href: https://www.eventbrite.com/e/lessons-learned-from-past-and-current-gftw-projects-tickets-360511869707
 youtubeRecordingID: ''
 panoptoRecordingID: ''
-googleDriveRecordingID: 1JqM3jjYemReqIz2RCEL4D44kqUHFusCF
+googleDriveRecordingID: 1y3_xqj0T_JbGdJQGql_vRG17suppvwQr
 
 ---
 **Description of event**
