@@ -5,6 +5,7 @@ author: Philo van Kemenade
 description: Read about the progress we've made so far as part of the Grant for the
   Web cohort in this mid way report.
 imageSrc: "/uploads/gradual-gftw-banner.webp"
+datePublished: 2022-05-17T22:00:00Z
 
 ---
 This post was originally published on the [GftW Community Forum](https://community.webmonetization.org/phivk/gradual-skill-sharing-at-community-scale-grant-report-1-2417).
@@ -59,12 +60,3 @@ Our MozFest session [Enhancing p2p learning with p2p payments](https://community
 We are keen to put the learn & share data we have gathered so far into action in the form of community skills sharing sessions. We have identified the three most promising topics, and will be reaching out to potential facilitators soon. Watch this space!
 
 Meanwhile we are continuing our work on integrating the SupaBase database functionality  and aim to have a first version released by the time we write our final report.
-
-## What community support would benefit your project?
-
-Is there anything you'd like to learn? Perhaps something you are currently dealing with in your project? Or something you've wondered about for a while already?
-
-As members of this community, we believe we have a lot to share with each other!
-
-Please express your interests via:
-https://gftw.gradu.al/
