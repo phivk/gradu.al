@@ -14,3 +14,5 @@ fields:
 - type: file
   name: imageSrc
   label: imageSrc
+pages:
+- content/blog/gradual-skill-sharing-at-community-scale-grant-for-the-web-progress-report-1.md
