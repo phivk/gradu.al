@@ -60,8 +60,11 @@ export default {
   },
   computed: {
     dateFormatted() {
-      return isValidDate(new Date(this.blog.createdAt))
-        ? formatDate(new Date(this.blog.createdAt))
+      const blogDate = this.blog.datePublished
+        ? this.blog.datePublished
+        : this.blog.createdAt;
+      return isValidDate(new Date(blogDate))
+        ? formatDate(new Date(blogDate))
         : "";
     },
     profilePic() {
