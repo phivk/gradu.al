@@ -14,5 +14,15 @@ fields:
 - type: file
   name: imageSrc
   label: imageSrc
+- name: datePublished
+  type: datetime
+  description: ''
+  config:
+    required: false
+    date_format: DD-MM-YYYY
+    time_format: 
+    display_utc: false
+    export_format: ''
+  label: Date Published
 pages:
 - content/blog/gradual-skill-sharing-at-community-scale-grant-for-the-web-progress-report-1.md
