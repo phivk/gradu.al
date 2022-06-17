@@ -7,8 +7,6 @@ description: Read about the progress we've made so far as part of the Grant for 
 imageSrc: "/uploads/gradual-gftw-banner.webp"
 
 ---
-![GftW Gradual Instance](https://community.webmonetization.org/remoteimages/uploads/articles/lpssqp6dwna4fmk9itj1.png)
-
 This post was originally published on the [GftW Community Forum](https://community.webmonetization.org/phivk/gradual-skill-sharing-at-community-scale-grant-report-1-2417).
 
 ## Project Update
