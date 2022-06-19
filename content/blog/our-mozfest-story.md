@@ -13,7 +13,7 @@ If you've ever attended you may know that it can also be a somewhat overwhelming
 
 This year my intention was to have fun, to not plan _anything_ in advance and to just see what would emerge organically. Here’s a short look back at this year’s Mozilla Festival and the story of our special partnership.
 
-![](/uploads/40kf7lnfamctjkcvwoy4.webp)
+![](/uploads/40kf7lnfamctjkcvwoy4.webp "mozfest 2019")
 
 ## **From Skillsharing to Emergent Sessions**
 
@@ -28,19 +28,13 @@ Not just that, we also allowed for instantaneous exchanges of skills and knowled
 
 It was such a success that we went from a science fair presentation to a pilot experiment of the Gradual tool and process for the following edition, which was held virtually this time.
 
-![](/uploads/t33yqrvhazuf0il6w11u.webp)
+![](/uploads/t33yqrvhazuf0il6w11u.webp "mozfest 2021")
 
 During MozFest 2021 last year we ended up hosting[ 15 sessions](https://mozfest.gradu.al/sessions/2021) in the two weeks of the festival: from the history and philosophy of open source to wrapping your head around NFTs (before it became the global phenomena it has since become) and from deep listening for consensus building to building magical dinner experiences. The variety was amazing.
 
 The idea that a fun and promising session could so easily _emerge_ and connect people really stuck with us.
 
-So for this year's MozFest we wanted to see how we could connect people around their common curiosity. Because sometimes, you come up with a great idea for a session _during_ the festival.  
-  
-`<figure class="video_container">
-  <iframe src="`[https://www.youtube.com/watch?v=Ps4V3qLv6S4](https://www.youtube.com/watch?v=Ps4V3qLv6S4 "https://www.youtube.com/watch?v=Ps4V3qLv6S4")`" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>`
-
-[https://www.youtube.com/watch?v=Ps4V3qLv6S4](https://www.youtube.com/watch?v=Ps4V3qLv6S4 "https://www.youtube.com/watch?v=Ps4V3qLv6S4")
+So for this year's MozFest we wanted to see how we could connect people around their common curiosity. Because sometimes, you come up with a great idea for a session _during_ the festival.
 
 ## **So what did we learn?**
 
