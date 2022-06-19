@@ -3,7 +3,7 @@ title: Our MozFest story
 author: Gunnar de Jong
 description: Read up on our special collaboration with the Mozilla Festival so far,
   which had its humble beginnings at MozFest 2019.
-imageSrc: "/uploads/40kf7lnfamctjkcvwoy4.webp"
+imageSrc: ''
 datePublished: 2022-03-30T22:00:00Z
 
 ---
