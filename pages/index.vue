@@ -1,9 +1,17 @@
 <template>
-  <CommunityPage :indexPage="indexPage" :sessions="sessions" :sessionsIndexes="sessionsIndexes"
-    :ambassadorsIndex="ambassadorsIndex" :ambassadors="ambassadors" :nodes="nodes" :edges="edges" :skills="skills" />
+  <CommunityPage
+    :indexPage="indexPage"
+    :sessions="sessions"
+    :sessionsIndexes="sessionsIndexes"
+    :ambassadorsIndex="ambassadorsIndex"
+    :ambassadors="ambassadors"
+    :nodes="nodes"
+    :edges="edges"
+    :skills="skills"
+  />
 </template>
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 
 export default {
   async asyncData({ $content }) {
@@ -60,10 +68,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions("supabase", ['fetchData'])
+    ...mapActions("supabase", ["fetchData"]),
   },
   mounted() {
-    this.fetchData()
+    this.fetchData();
   },
 };
 </script>
