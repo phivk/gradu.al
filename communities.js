@@ -12,7 +12,7 @@ module.exports = [
     //   spreadsheetId: "1KGEbhYWfMMAZx23JvGRhS59v7WzjiyzORrPHNLkdqhw"
     // },
     {
-        name: "labsng",
-        spreadsheetId: "1a9Nfoa58oR1ar_8BoXeE5c3T8Tsmhm9ZIhhx7tCEvgw",
+        name: "rada",
+        spreadsheetId: "1AZar5nTsVyhR3iHIcOPCBEmhwVcwNnm6o47KSXG1Sys",
     },
 ];
