@@ -4,7 +4,7 @@
       :title="`${indexPage.communityName} - Here to learn`"
       description=""
     />
-    <TypeformEmbed :typeformSrc="indexPage.typeformSrc" />
+    <TypeformEmbed :typeformId="indexPage.typeformIdFull" />
   </div>
 </template>
 <script>
