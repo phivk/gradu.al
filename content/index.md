@@ -1,16 +1,15 @@
 ---
-communityName: lab.SNG
-logoSrc: https://hackathon.sng.sk/img/mentors/lab_sng.jpg
-adminURL: https://labsng.gradu.al/admin
+communityName: RADA
+logoSrc: https://www.rada.ac.uk/static/images/logos/logo.svg
+adminURL: https://rada.gradu.al/admin
 ctaHeading: What would you like to learn or share?
 ctaButtonText: Let us know!
 subLink:
-  text: Join the conversation on Slack
-  href: https://labsng.slack.com/
-typeformSrc: https://form.typeform.com/to/vMb8kMum
-typeformIdFull: vMb8kMum
-typeformIdLearn: ApDVlHje
-typeformIdShare: DbIyILBu
+  text: Join the conversation
+  href: https://www.rada.ac.uk/
+typeformIdFull: fTqgDl05
+typeformIdLearn: Zc3oo2lg
+typeformIdShare: YZ1pjZCV
 sessionTypes:
   - peer sharing
   - salon
@@ -22,14 +21,8 @@ sessionTypes:
   - presentation
   - brainstorm
   - AMA
-infoBars:
-  - icon: "\U0001F914"
-    text: Got a question or feedback?
-    link:
-      text: Send Philo an email :)
-      href: mailto:philo@gradu.al
 ---
 
-## Hi 👋 <br /> Welcome to lab.SNG on Gradual!
+## 👋 Welcome to RADA on Gradual!
 
-This is a space to express things you’d like to learn and share with others at SNG. Join the conversation on [Slack](https://labsng.slack.com/) to start planning the first session!
+This is a space to express things you’d like to learn and share with other RADA alumni.

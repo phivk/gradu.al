@@ -1,16 +1,16 @@
 // const colors = require('tailwindcss/colors');
 module.exports = {
   // communityName used in /layouts/default.vue
-  communityName: "lab.SNG",
+  communityName: "RADA",
   // colors used in /tailwind.config.js
   colors: {
     primary: {
-      washed: "#F5FFF5",
-      DEFAULT: "#0E8743",
+      washed: "#CDFEDE",
+      DEFAULT: "#05E04F",
     },
     secondary: {
-      washed: "#BDB1F7",
-      DEFAULT: "#240E86",
+      washed: "#D5CDFE",
+      DEFAULT: "#2A05E0",
     },
   },
 };
