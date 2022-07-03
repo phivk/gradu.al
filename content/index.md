@@ -3,7 +3,6 @@ communityName: RADA
 logoSrc: https://upload.wikimedia.org/wikipedia/commons/3/33/Rada_logo.jpg
 adminURL: https://rada.gradu.al/admin
 ctaHeading: What would you like to learn or share?
-ctaButtonText: Let us know!
 subLink:
   text: Join the conversation
   href: https://www.facebook.com/groups/307391612652063

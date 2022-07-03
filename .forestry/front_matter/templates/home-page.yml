@@ -2,55 +2,52 @@
 label: Home Page
 hide_body: false
 fields:
-- type: text
-  name: communityName
-  label: communityName
-  hidden: true
-- type: file
-  name: logoSrc
-  label: logoSrc
-- type: text
-  name: ctaHeading
-  label: ctaHeading
-- type: text
-  name: ctaButtonText
-  label: ctaButtonText
-- type: field_group
-  name: subLink
-  label: subLink
-  fields:
   - type: text
-    name: text
-    label: text
+    name: communityName
+    label: communityName
+    hidden: true
+  - type: file
+    name: logoSrc
+    label: logoSrc
   - type: text
-    name: href
-    label: href
-- type: text
-  name: typeformSrc
-  label: typeformSrc
-  hidden: true
-- type: list
-  name: sessionTypes
-  label: sessionTypes
-- type: field_group_list
-  name: infoBars
-  label: infoBars
-  fields:
-  - type: text
-    name: icon
-    label: icon
-  - type: text
-    name: text
-    label: text
+    name: ctaHeading
+    label: ctaHeading
   - type: field_group
-    name: link
-    label: link
+    name: subLink
+    label: subLink
     fields:
-    - type: text
-      name: text
-      label: text
-    - type: text
-      name: href
-      label: href
+      - type: text
+        name: text
+        label: text
+      - type: text
+        name: href
+        label: href
+  - type: text
+    name: typeformSrc
+    label: typeformSrc
+    hidden: true
+  - type: list
+    name: sessionTypes
+    label: sessionTypes
+  - type: field_group_list
+    name: infoBars
+    label: infoBars
+    fields:
+      - type: text
+        name: icon
+        label: icon
+      - type: text
+        name: text
+        label: text
+      - type: field_group
+        name: link
+        label: link
+        fields:
+          - type: text
+            name: text
+            label: text
+          - type: text
+            name: href
+            label: href
 pages:
-- content/index.md
+  - content/index.md
