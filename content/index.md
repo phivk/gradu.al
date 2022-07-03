@@ -10,6 +10,9 @@ typeformIdFull: fTqgDl05
 typeformIdLearn: Zc3oo2lg
 typeformIdShare: YZ1pjZCV
 sessionTypes:
+- class
+- studio
+- experiment
 - show
 - Rehearsal
 - peer sharing
