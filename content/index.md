@@ -23,6 +23,6 @@ sessionTypes:
   - AMA
 ---
 
-## 👋 Welcome to RADA on Gradual!
+## 👋 Welcome to RADA on Gradual
 
 This is a space to express things you’d like to learn and share with other RADA alumni.
