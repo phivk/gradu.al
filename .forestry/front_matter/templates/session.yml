@@ -82,6 +82,7 @@ fields:
   description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
 pages:
 - content/sessions/current/animal-work.md
+- content/sessions/current/character-development-workshop.md
 - content/sessions/current/games-rituals-finding-meaning-through-play.md
 - content/sessions/current/having-good-meetings-with-tomas-barry.md
 - content/sessions/current/henry-mcgrath.md
