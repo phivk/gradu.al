@@ -1,6 +1,6 @@
 ---
 communityName: RADA
-logoSrc: https://upload.wikimedia.org/wikipedia/commons/3/33/Rada_logo.jpg
+logoSrc: "/uploads/1280px-royal_academy_of_dramatic_art_-rada-_logo-svg.png"
 adminURL: https://rada.gradu.al/admin
 ctaHeading: What would you like to learn or share?
 subLink:
@@ -10,18 +10,22 @@ typeformIdFull: fTqgDl05
 typeformIdLearn: Zc3oo2lg
 typeformIdShare: YZ1pjZCV
 sessionTypes:
-  - peer sharing
-  - salon
-  - conversation
-  - workshop
-  - lunch & learn
-  - talk
-  - one-on-one
-  - presentation
-  - brainstorm
-  - AMA
----
+- show
+- Rehearsal
+- peer sharing
+- salon
+- conversation
+- workshop
+- lunch & learn
+- talk
+- one-on-one
+- presentation
+- brainstorm
+- AMA
+typeformSrc: ''
+infoBars: []
 
+---
 ## 👋 Welcome to RADA on Gradual
 
 This is a space to express things you’d like to learn and share with other RADA alumni.
