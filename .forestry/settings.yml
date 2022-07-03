@@ -19,6 +19,7 @@ sections:
 - type: document
   path: content/ambassadors/index.md
   label: Ambassadors Heading
+  read_only: true
 - type: directory
   path: content/ambassadors
   label: Ambassadors
