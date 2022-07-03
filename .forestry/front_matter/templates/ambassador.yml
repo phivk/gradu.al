@@ -30,3 +30,5 @@ fields:
     required: false
   label: Profile Picture
   description: a valid public URL (incl "https://")
+pages:
+- content/ambassadors/Kristin ambassador rada.md
