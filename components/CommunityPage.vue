@@ -86,7 +86,7 @@ export default {
     },
     seasons() {
       // return dir name for seasons that have sessions
-      return Object.keys(this.sessionsPerSeason)
+      return Object.keys(this.sessionsPerSeason);
     },
   },
 };

@@ -2,6 +2,7 @@
 module.exports = {
   // communityName used in /layouts/default.vue
   communityName: "RADA",
+  logoIsBlack: true,
   // colors used in /tailwind.config.js
   colors: {
     primary: {
@@ -12,5 +13,6 @@ module.exports = {
       washed: "#D5CDFE",
       DEFAULT: "#2A05E0",
     },
+    textOnPrimary: "#000",
   },
 };
