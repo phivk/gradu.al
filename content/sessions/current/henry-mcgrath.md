@@ -1,11 +1,12 @@
 ---
 title: Henry McGrath
 type: workshop
-dateTime: 2022-07-04T12:00:00Z
+dateTime: 2022-07-04T12:00:00.000+00:00
 durationInMinutes: 120
 imageSrc: "/uploads/1a1674_0ff8523a32ac4ecbbdc893e676d8f62f-257emv2_d_2048_1362_s_2.jpg"
 learnerNames: []
-sharerNames: []
+sharerNames:
+- Henry McGrath
 resources: []
 cta:
   text: ''
