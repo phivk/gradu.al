@@ -1,11 +1,12 @@
 ---
 title: Having Good Meetings with Tomas Barry
 type: peer share
-dateTime: 2022-07-04T14:15:00Z
+dateTime: 2022-07-04T14:15:00.000+00:00
 durationInMinutes: 75
 imageSrc: "/uploads/thomas_barry_new_700x875_6b7iwk-btjch.jpg"
 learnerNames: []
-sharerNames: []
+sharerNames:
+- Tomas Barry
 resources: []
 cta:
   text: ''
