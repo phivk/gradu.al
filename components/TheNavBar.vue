@@ -16,7 +16,7 @@
       <div v-if="showBackLink">
         <AppLink
           :to="backLinkTarget"
-          class="no-underline f4 fw4 text-white br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
+          class="no-underline f4 fw4 text-on-primary br-pill ph3 pv2 bg-animate hover-bg-white-20 cursor-pointer"
         >
           ← {{ backLinkText }}
         </AppLink>
