@@ -7,6 +7,10 @@ sections:
 - type: document
   path: content/index.md
   label: Home Page
+- type: document
+  path: content/sessions/current/index.md
+  label: Sesions Index
+  match: "**/*"
 - type: directory
   path: content/sessions/current
   label: Sessions
@@ -18,7 +22,7 @@ sections:
   - session
 - type: document
   path: content/ambassadors/index.md
-  label: Ambassadors Heading
+  label: Ambassadors Index
 - type: directory
   path: content/ambassadors
   label: Ambassadors
