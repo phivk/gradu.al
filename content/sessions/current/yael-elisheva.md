@@ -1,11 +1,12 @@
 ---
 title: Yael Elisheva
 type: workshop
-dateTime: 2022-07-05T09:15:00Z
+dateTime: 2022-07-05T09:15:00.000+00:00
 durationInMinutes: 105
 imageSrc: "/uploads/yaya_headshot_700x875_pkbij5ij4aec.jpg"
 learnerNames: []
-sharerNames: []
+sharerNames:
+- Yael Elisheva
 resources: []
 cta:
   text: ''
