@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  middleware: ["password-protect"],
   data() {
     return {
       bgColor: "#f4f4f4",

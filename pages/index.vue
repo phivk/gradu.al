@@ -12,6 +12,7 @@
 </template>
 <script>
 export default {
+  middleware: ["password-protect"],
   async asyncData({ $content }) {
     const sessions = await $content("sessions", { deep: true })
       .where({ slug: { $ne: "index" } })

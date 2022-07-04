@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  middleware: ["password-protect"],
   async asyncData({ $content, params }) {
     const sessions = await $content(`sessions/${params.season}`, params.slug)
       .where({ slug: { $ne: "index" } })

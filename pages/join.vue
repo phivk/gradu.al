@@ -9,6 +9,7 @@
 </template>
 <script>
 export default {
+  middleware: ["password-protect"],
   async asyncData({ $content }) {
     const indexPage = await $content("index").fetch();
     return { indexPage };
