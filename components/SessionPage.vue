@@ -69,7 +69,7 @@
               <a
               v-if="!hasHappened && calendarEvent"
               :href="calendarLocation"
-              target="_blank"
+              :download="calendarFilename"
               class="dib mt3 color-accent">
                 ↓ .ics file
               </a>
@@ -145,9 +145,12 @@ import {
   hasHappened,
   formatTime,
   getTimezone,
+  calculateICSDuration,
+  formatICSDate,
 } from "~/util/date";
 import Vue from "vue";
 import VTooltip from "v-tooltip";
+import { v4 as uuidv4 } from "uuid";
 Vue.use(VTooltip);
 
 export default {
@@ -200,8 +203,30 @@ export default {
       }
     },
     calendarLocation() {
-      const community = this.session.path.split("/")[1];
-      return `/${community}/${this.session.filename}.ics`;
+      const calendarString = `BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:gradual/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:${uuidv4()}
+SUMMARY:${this.session.title}
+DTSTAMP:${formatICSDate(new Date())}
+DTSTART:${formatICSDate(new Date(this.sessionDate))}
+DESCRIPTION:${this.session.title}
+LOCATION:On Zoom - find link on the on Slack
+DURATION:${calculateICSDuration(this.session.durationInMinutes)}
+END:VEVENT
+END:VCALENDAR
+`;
+      console.log(calendarString);
+      return `data:text/plain;charset=utf-8,${encodeURIComponent(
+        calendarString
+      )}`;
+    },
+    calendarFilename() {
+      return `${this.session.title.toLowerCase().replaceAll(" ", "_")}.ics`;
     },
     googleCalendarLink() {
       const formatString = (string) =>

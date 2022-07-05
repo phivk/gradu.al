@@ -40,3 +40,31 @@ export const isValidDate = (date) => {
     return false;
   }
 };
+
+export const calculateICSDuration = timeInMinutes => {
+  const minutes = timeInMinutes % 60;
+  const hours = (timeInMinutes - minutes) / 60;
+
+  return `PT${hours}H${minutes}M`;
+};
+
+export const formatICSDate = date => {
+  const pre =
+    date.getFullYear().toString() +
+    (date.getMonth() + 1 < 10
+      ? "0" + (date.getMonth() + 1).toString()
+      : (date.getMonth() + 1).toString()) +
+    (date.getDate() + 1 < 10
+      ? "0" + date.getDate().toString()
+      : date.getDate().toString());
+  console.log(date);
+  const post =
+    (date.getHours() - 1).toString() +
+    date
+      .getMinutes()
+      .toString()
+      .padStart(2, "0") +
+    "00";
+
+  return `${pre}T${post}`;
+};
