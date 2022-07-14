@@ -9,8 +9,8 @@ sharerNames:
 - Adam Waring
 resources: []
 cta:
-  text: Register Here
-  href: https://www.eventbrite.com/e/web-monetization-earning-with-tutorials-on-gfam-learn-tickets-360525961857
+  text: Go to gFam Learn
+  href: https://gfam.live/learn
 youtubeRecordingID: KK57a1YTUqI
 panoptoRecordingID: ''
 googleDriveRecordingID: ''
