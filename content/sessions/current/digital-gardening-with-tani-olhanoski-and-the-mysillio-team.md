@@ -1,5 +1,5 @@
 ---
-title: Digital Gardening with Tani Olhanoski and the Mysillio team
+title: Digital Gardening with Tani Olhanoski and the Mysilio team
 type: peer share
 dateTime: 2022-08-12T17:00:00Z
 durationInMinutes: 60
