@@ -13,8 +13,8 @@ sharerNames:
 - Gunnar de Jong
 resources: []
 cta:
-  text: ''
-  href: ''
+  text: 'Register Here:'
+  href: https://www.eventbrite.com/e/ways-to-web-monetize-your-work-examples-from-the-gftw-community-tickets-392424982687
 youtubeRecordingID: ''
 panoptoRecordingID: ''
 googleDriveRecordingID: ''
