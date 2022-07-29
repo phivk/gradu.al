@@ -7,11 +7,29 @@ fields:
   label: title
   config:
     required: true
-- type: text
-  name: type
-  label: type
+- name: type
+  type: select
+  default: ''
   config:
-    required: true
+    required: false
+    options:
+    - peer share
+    - workshop
+    - lunch & learn
+    - talk
+    - one-on-one
+    - brainstorm
+    - AMA
+    - salon
+    - game
+    - other
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: type
+  description: the format of the session
 - type: datetime
   name: dateTime
   label: dateTime
@@ -23,6 +41,9 @@ fields:
   config:
     required: true
   label: imageSrc
+  description: A valid URL of a web image (incl 'https://') <br>OR URL of an uploaded
+    image, copied via the <a href="https://app.forestry.io/sites/0apkf4exn2idng/#/media/"
+    title="" target="_blank">Media Manager</a>
 - type: list
   name: learnerNames
   label: learnerNames
@@ -49,5 +70,15 @@ fields:
   - type: text
     name: href
     label: href
+- type: text
+  name: youtubeRecordingID
+  label: YouTube Recording ID
+  description: The ID of a YouTube video to embed (<em>11 characters, e.g. JjTeZoAmejs,
+    </em><a href="https://gist.github.com/jakebellacera/d81bbf12b99448188f183141e6696817"
+    title="" target="_blank"><em>more help here</em></a>)
+- type: text
+  name: panoptoRecordingID
+  label: Panopto Recording ID
+  description: The ID of a Panopto video to embed (<em>36 characters, e.g. </em>b0d41af7-f08a-4705-a3c8-ad27011a27df)
 pages:
-- content/mozfest/sessions/test-session.md
+- content/mozfestwranglers/sessions/test.md

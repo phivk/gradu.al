@@ -1,187 +1,327 @@
-const fs = require('fs');
-const { google } = require('googleapis');
+const fs = require("fs");
+const { google } = require("googleapis");
 
-// This will be handled with Github secrets in production.
 if (!process.env.GOOGLE_AUTH_JSON_OBJECT) {
-  require('dotenv').config();
+  require("dotenv").config();
 }
 
-const communities = require("./communities")
+class DataFetching {
+  constructor({ community }) {
+    this.NODES_PATH = `./content/data/nodes.json`;
+    this.EDGES_PATH = `./content/data/edges.json`;
+    this.SPREADSHEET_ID = community.spreadsheetId;
+    this.community = community;
+    this.nodes = [];
+    this.edges = [];
+    this.nodeId = 1;
+  }
 
-// let NODES_PATH, EDGES_PATH, SPREADSHEET_ID;
+  getNewId() {
+    return this.nodeId++;
+  }
 
-let nodes = []
-let edges = []
+  normaliseName(name) {
+    if (!name) {
+      return;
+    }
+    return name.toLowerCase().split("@").join("");
+  }
 
-let nodeId = 1
+  async authAndGetSheets() {
+    // Load the key
+    const key = JSON.parse(process.env.GOOGLE_AUTH_JSON_OBJECT);
 
-function getNewId() {
-  return nodeId++
-}
+    // Auth using the key
+    const auth = await google.auth.fromJSON(key);
 
+    // Add read / write spreadsheets scope to our auth client
+    auth.scopes = ["https://www.googleapis.com/auth/spreadsheets"];
 
-async function authAndGetSheets() {
-  // Load the key
-  const key = JSON.parse(process.env.GOOGLE_AUTH_JSON_OBJECT);
+    // Create an instance of sheets to a scoped variable
+    const sheets = await google.sheets({ version: "v4", auth });
+    console.log("Authed with google and instantiated google sheets");
+    return sheets;
+  }
 
-  // Auth using the key
-  const auth = await google.auth.fromJSON(key);
-
-  // Add read / write spreadsheets scope to our auth client
-  auth.scopes = ["https://www.googleapis.com/auth/spreadsheets"];
-
-  // Create an instance of sheets to a scoped variable
-  const sheets = await google.sheets({ version: "v4", auth });
-  console.log("Authed with google and instantiated google sheets");
-  return sheets
-}
-
-async function run() {
-  try {
-    const sheets = await authAndGetSheets();
-    await communities.forEach(async (community) => {
-      // Set up the variables
-      const NODES_PATH = `./content/${community.name}/data/nodes.json`;
-      const EDGES_PATH = `./content/${community.name}/data/edges.json`;
-      const SPREADSHEET_ID = community.spreadsheetId;
-
-      // Ensure the target directory exists.
-      if (!fs.existsSync(`./content/${community.name}/data/`)) {
-        fs.mkdirSync(`./content/${community.name}/data/`);
+  async run() {
+    try {
+      this.sheets = await this.authAndGetSheets();
+      if (!fs.existsSync(`./content/data/`)) {
+        fs.mkdirSync(`./content/data/`);
       }
-      console.log(`Gathering data for ${community.name}.`)
+      console.log(`Gathering data for ${this.community.name}.`);
+      const res = await this.sheets.spreadsheets.get({
+        spreadsheetId: this.SPREADSHEET_ID,
+        includeGridData: true,
+      });
 
-      await processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH)
-    })
-    console.log("All done.")
-  } catch (error) {
-    console.log(error)
+      const sheets = res.data.sheets;
+
+      await sheets.forEach((sheet) => this.processSheet(sheet));
+
+      await fs.writeFile(
+        this.EDGES_PATH,
+        '{ "edges": ' + JSON.stringify(this.edges) + "}",
+        (err) => {
+          if (err) return console.error(err);
+        }
+      );
+
+      await fs.writeFile(
+        this.NODES_PATH,
+        '{ "nodes": ' + JSON.stringify(this.nodes) + "}",
+        (err) => {
+          if (err) return console.error(err);
+        }
+      );
+
+      await this.generateSkillsList();
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
 
-run()
+  async processSheet(sheet) {
+    try {
+      const rows = sheet?.data[0]?.rowData?.map((data) => data.values);
 
-/**
- * Get header row
- * @param {sheets} sheets
- */
-async function processSheet(sheets, SPREADSHEET_ID, NODES_PATH, EDGES_PATH) {
+      if (!rows) {
+        return;
+      }
 
-  return await sheets.spreadsheets.values.get({
-    spreadsheetId: SPREADSHEET_ID,
-    range: 'A1:ZZ',
-  }, async (err, res) => {
-    if (err) return console.log('The API returned an error: ' + err);
-    const rows = res.data.values;
-    const headers = rows[0];
+      const headers = rows[0]
+        .filter((data) => data.formattedValue)
+        .map((data) => data.formattedValue);
 
-    await rows.forEach(async (row, idx) => {
-      if (idx === 0) return;
-      await processRow({ headers, row })
-    })
+      console.log(
+        `Processing the spreadsheet rows for ${this.community.name} in sheet ${sheet.properties.title}`
+      );
 
-
-    fs.writeFile(EDGES_PATH, '{ "edges": ' + JSON.stringify(edges) + "}", (err) => {
-      if (err) return console.error(err);
-    })
-    fs.writeFile(NODES_PATH, '{ "nodes": ' + JSON.stringify(nodes) + "}", (err) => {
-      if (err) return console.error(err);
-    })
+      await rows.forEach(async (row, idx) => {
+        if (idx === 0) return;
+        const preparedRow = row.map((data) => data.formattedValue);
+        await this.processRow({ headers, row: preparedRow });
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
-  );
-}
 
+  processRow({ headers, row }) {
+    const dateIndex = headers.findIndex((item) => item === "Submitted At");
+    let rowDate = undefined;
 
+    if (dateIndex > -1 && row[dateIndex]) {
+      const datetime = row[dateIndex].split(" ");
+      const date = datetime[0].split("/");
+      const time = datetime[1].split(":");
 
-function processRow({ headers, row }) {
-  let member
-  headers.forEach((label, idx) => {
-    if (label.includes("@UserName")) {
-      // create member node
+      rowDate = new Date(
+        date[2],
+        date[0],
+        date[1],
+        time[0],
+        time[1],
+        time[2]
+      ).toISOString();
+    }
+
+    let member = this.createMemberNode({ headers, row, rowDate });
+
+    headers.forEach((label, idx) => {
+      if (label.includes("*like to learn*") && row[idx]) {
+        // this is the multi-select question
+        row[idx].split(",").forEach((skill) => {
+          if (skill.trim() === "") return;
+          const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.learnerCount += 1;
+          this.createLearningEdge(member, skillNode);
+        });
+      }
+
+      if (label.includes("*you could share*") && row[idx]) {
+        // this is the multi-select question
+        row[idx].split(",").forEach((skill) => {
+          if (skill.trim() === "") return;
+          const skillNode = this.getOrCreateSkill(skill.trim());
+          skillNode.sharerCount += 1;
+          this.createSharingEdge(member, skillNode);
+        });
+      }
+      if (label.includes("*learn*") && row[idx]) {
+        if (row[idx].trim() === "") return;
+        // this is a string value - custom input (freeform)
+        const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.learnerCount += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
+        this.createLearningEdge(member, skillNode);
+      }
+      if (label.includes("*share*") && row[idx]) {
+        if (row[idx].trim() === "") return;
+        // this is a string value - custom input (freeform)
+        const skillNode = this.getOrCreateSkill(row[idx].trim());
+        skillNode.sharerCount += 1;
+
+        if (!skillNode.submittedBy) {
+          skillNode.submittedBy = member.name;
+        }
+
+        if (!skillNode.firstSubmittedOn) {
+          skillNode.firstSubmittedOn = rowDate;
+        }
+
+        this.createSharingEdge(member, skillNode);
+      }
+    });
+    return this.nodes;
+  }
+
+  createMemberNode({ headers, row, rowDate }) {
+    const nameIndex = headers.findIndex(
+      (label) =>
+        label.includes("user name") ||
+        label.includes("@UserName") ||
+        label.includes("your name") ||
+        label === "What's your full name?"
+    );
+
+    let member;
+
+    const normalisedName = this.normaliseName(row[nameIndex]);
+    if (!normalisedName) {
+      return;
+    }
+    // check if member node already exists
+    if (
+      this.nodes
+        .map((item) => this.normaliseName(item.name))
+        .includes(normalisedName)
+    ) {
+      member = this.nodes.filter(
+        (item) => this.normaliseName(item.name) === normalisedName
+      )[0];
+    } else {
+      // otherwise create member node
       member = {
-        "_cssClass": "Member",
-        "_labelClass": "memberLabel",
-        "name": row[idx],
-        id: getNewId()
-      }
+        _cssClass: "Member",
+        _labelClass: "memberLabel",
+        name: row[nameIndex],
+        id: this.getNewId(),
+        submittedAt: rowDate,
+      };
 
-      nodes.push(member)
-      return
+      this.nodes.push(member);
     }
-
-    if (label.includes("*like to learn*")) {
-      // this is the multi-select question
-      row[idx].split(",").forEach(skill => {
-        if (skill.trim() === "") return
-        const skillNode = getOrCreateSkill(skill.trim())
-        createLearningEdge(member, skillNode)
-      })
-    }
-
-    if (label.includes("*you could share*")) {
-      // this is the multi-select question
-      row[idx].split(",").forEach(skill => {
-        if (skill.trim() === "") return
-        const skillNode = getOrCreateSkill(skill.trim())
-        createSharingEdge(member, skillNode)
-      })
-    }
-    if (label.includes("*learn*")) {
-      if (row[idx].trim() === "") return
-      // this is a string value - custom input (freeform)
-      const skillNode = getOrCreateSkill(row[idx].trim())
-      createLearningEdge(member, skillNode)
-    }
-    if (label.includes("*share*")) {
-      if (row[idx].trim() === "") return
-      // this is a string value - custom input (freeform)
-      const skillNode = getOrCreateSkill(row[idx].trim())
-      createSharingEdge(member, skillNode)
-    }
-
-
-  })
-  return
-}
-
-function getOrCreateSkill(skill) {
-  const filteredNodes = nodes.filter(node => node.name === skill)
-
-  if (filteredNodes.length === 1) {
-    return filteredNodes[0]
+    return member;
   }
 
-  const skillNode = {
-    "_cssClass": "Skill",
-    "_labelClass": "skillLabel",
-    "name": skill,
-    "id": getNewId()
+  getOrCreateSkill(skill) {
+    const filteredNodes = this.nodes.filter((node) => node.name === skill);
+
+    if (filteredNodes.length === 1) {
+      return filteredNodes[0];
+    }
+
+    const skillNode = {
+      _cssClass: "Skill",
+      _labelClass: "skillLabel",
+      name: skill,
+      id: this.getNewId(),
+      sharerCount: 0,
+      learnerCount: 0,
+    };
+
+    this.nodes.push(skillNode);
+    return skillNode;
   }
 
-  nodes.push(skillNode)
-  return skillNode
-}
-
-function createLearningEdge(member, skill) {
-  const newEdge = {
-    "_color": "#f1955b",
-    "sid": member.id,
-    "tid": skill.id,
-    "_svgAttrs": { "stroke-width": "2", "opacity": 0.5 }
+  createLearningEdge(member, skill) {
+    const newEdge = {
+      type: "learn",
+      _color: "#f1955b",
+      sid: member.id,
+      tid: skill.id,
+      _svgAttrs: { "stroke-width": "2", opacity: 0.5 },
+    };
+    this.edges.push(newEdge);
   }
-  edges.push(newEdge)
-}
 
-function createSharingEdge(member, skill) {
-  const newEdge = {
-    "_color": "#9f78e4",
-    "sid": member.id,
-    "tid": skill.id,
-    "_svgAttrs": { "stroke-width": "2", "opacity": 0.5 }
+  createSharingEdge(member, skill) {
+    const newEdge = {
+      type: "share",
+      _color: "#9f78e4",
+      sid: member.id,
+      tid: skill.id,
+      _svgAttrs: { "stroke-width": "2", opacity: 0.5 },
+    };
+    this.edges.push(newEdge);
   }
-  edges.push(newEdge)
+
+  async generateSkillsList() {
+    console.log(`Generating skills for ${this.community.name}.`);
+    try {
+      const allowed = [
+        "name",
+        "id",
+        "sharerCount",
+        "learnerCount",
+        "submittedBy",
+        "firstSubmittedOn",
+        "totalCount",
+        "learnerNames",
+        "sharerNames",
+      ];
+
+      const skills = this.nodes
+        .filter((node) => node._cssClass === "Skill")
+        .map((node) => {
+          node.totalCount = node.learnerCount + node.sharerCount;
+          node.learnerNames = this.getMembersForSkillNode(node, "learn");
+          node.sharerNames = this.getMembersForSkillNode(node, "share");
+          let nodeFiltered = Object.keys(node)
+            .filter((key) => allowed.includes(key))
+            .reduce((obj, key) => {
+              return {
+                ...obj,
+                [key]: node[key],
+              };
+            }, {});
+          return nodeFiltered;
+        })
+        .sort((a, b) => b.totalCount - a.totalCount);
+
+      await fs.writeFileSync(
+        `./content/data/skills.json`,
+        '{ "skills": ' + JSON.stringify(skills) + "}",
+        (err) => {
+          if (err) return console.error(err);
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  getMembersForSkillNode(skillNode, type) {
+    return this.edges
+      .filter((edge) => edge.tid === skillNode.id && edge.type === type)
+      .map((edge) => {
+        return this.nodes.find((node) => node.id === edge.sid).name;
+      });
+  }
+
+  getSkillName(skill) {
+    const skillNode = this.nodes.filter((node) => node.id === parseInt(skill));
+    return skillNode[0].name;
+  }
 }
 
-function getNodeId(item, nodes) {
-  return nodes.filter(node => node.name === item)[0].id
-}
+module.exports = { DataFetching };

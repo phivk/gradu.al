@@ -1,22 +1,27 @@
 <template>
-  <ul class="flex list pa0 flex-wrap pv1">
-    <li v-for="profileName in profileNames">
-      <ProfileAvatar
-        :profileName="profileName"
-        :borderColor="borderColor"
-        :backgroundColor="backgroundColor"
-      />
+  <ul class="flex list p-0 flex-wrap items-center">
+    <li v-for="profileName in profileNamesMaxed" :key="profileName">
+      <ProfileAvatar :profileName="profileName" :class="itemClasses" />
+    </li>
+    <li v-if="spillover > 0" class="ml-1 text-blue-400">
+      <span>+{{ spillover }}</span>
     </li>
   </ul>
 </template>
 <script>
-import ProfileAvatar from "~/components/ProfileAvatar.vue";
 export default {
   props: {
     profileNames: { type: Array, default: () => [] },
-    borderColor: { type: String, default: "transparent" },
-    backgroundColor: { type: String, default: "#96CCFF" },
+    itemClasses: { type: Array, default: () => [] },
+    maxDisplayLength: { type: Number, default: 6 },
   },
-  components: { ProfileAvatar },
+  computed: {
+    profileNamesMaxed() {
+      return this.profileNames.slice(0, this.maxDisplayLength);
+    },
+    spillover() {
+      return this.profileNames.length - this.maxDisplayLength;
+    },
+  },
 };
 </script>

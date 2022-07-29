@@ -1,68 +1,76 @@
 <template>
-  <div class="bg-color-bg">
-    <social-head
+  <div>
+    <SocialHead
       :title="session.title"
-      :description="session.description"
+      :description="description"
       :image="session.imageSrc"
     />
-    <main class="pa3 pa4-m pa5-l mw9 center">
+    <main class="mw9 mx-auto">
       <div class="flex justify-end">
-        <div class="w-100 w-80-l mt0 mb2 mb3-ns">
-          <TagPill class="-ml-2" :borderColour="bgColor">{{
-            session.type
-          }}</TagPill>
-          <h1 class="text-4xl md:text-5xl font-bold lh-title mt2 mb4">
-            {{ session.title }}
-          </h1>
+        <div class="w-100 w-80-l mt-0 mb-2 sm:mb-4">
           <div class="w-100 w-80-l">
-            <div class="video-wrapper" v-if="youtubeRecordingResource">
+            <div class="flex justify-between my-4">
+              <TagPill>
+                {{session.type}}
+              </TagPill>
+              <a :href="session.dir" class="text-lg font-bold opacity-50 hover:opacity-100">
+                {{session.season}}
+              </a>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold lh-title my-4">
+              {{ session.title }}
+            </h1>
+            <div class="video-wrapper" v-if="session.youtubeRecordingID">
               <iframe
                 width="560"
                 height="315"
                 :src="
-                  `https://www.youtube-nocookie.com/embed/${youtubeRecordingID}`
+                  `https://www.youtube-nocookie.com/embed/${session.youtubeRecordingID}`
                 "
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="video-wrapper" v-else-if="session.panoptoRecordingID">
+              <iframe :src="`https://mozilla.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=${session.panoptoRecordingID}&autoplay=false&offerviewer=false&showtitle=true&showbrand=false&captions=true&interactivity=none`" height="1080" width="1920" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+            </div>
             <img
               v-else
-              class="db mb3 mb4-ns"
+              class="db mb-4 sm:mb-8"
               :src="session.imageSrc"
               :alt="session.title"
             />
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap mb3">
-        <div class="w-100 w-20-l pr3 mb3 f4">
+      <div class="flex flex-wrap mb-4">
+        <div class="w-100 w-20-l pr-4 mb-4 text-lg">
           <div>
-            <p class="font-bold mb3">
+            <p class="font-bold mb-4">
               {{ dateFormatted }}
             </p>
-            <p class=" mb3 lh-copy">
-              <span class="mr1">{{ timeFormatted }}</span>
+            <p class=" mb-4 lh-copy">
+              <span class="mr-1">{{ timeFormatted }}</span>
               <span
-                class="mr1"
+                class="mr-1"
                 v-tooltip="{ content: timezone, trigger: 'hover click focus' }"
                 >🌐</span
               >
               <span>{{ session.durationInMinutes }}&nbsp;min</span>
             </p>
             <a
-              v-if="session.cta"
+              v-if="session.cta && session.cta.text !==''"
               :href="session.cta.href"
               target="_blank"
-              class="font-bold f4 link br3 pa2 tc dib mr3 white bg-color-accent"
+              class="font-bold text-lg link rounded p-2 text-center dib mr-4 text-on-primary bg-secondary"
               >{{ session.cta.text }}</a
             >
             <a
               v-if="session.icsFileSrc && !hasHappened"
               :href="session.icsFileSrc"
               target="_blank"
-              class="dib mt3 color-accent ws-pre-wrap"
+              class="dib mt-4 text-secondary whitespace-pre-wrap"
               >↓ .ics file</a
             >
 
@@ -88,36 +96,36 @@
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
           <div
-            v-if="session.sharerNames"
-            class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
+            v-if="session.sharerNames.length"
+            class="mb-2 flex-shrink-0 pr-4 sm:pr-8 lg:pr-16"
           >
             <p>
               Shared by
               <ProfileAvatarList
                 :profileNames="session.sharerNames"
-                :borderColor="bgColor"
+                :itemClasses="['ring-4', 'ring-background']"
               />
             </p>
           </div>
           <div
-            v-if="session.learnerNames"
-            class="mb2 flex-shrink-0 pr3 pr4-m pr5-l"
+            v-if="session.learnerNames.length"
+            class="mb-2 flex-shrink-0 pr-4 sm:pr-8 lg:pr-16"
           >
             <p>
               <span>{{ hasHappened ? "Learned by" : "Like to learn" }}</span>
               <ProfileAvatarList
                 :profileNames="session.learnerNames"
-                :borderColor="bgColor"
+                :itemClasses="['ring-4', 'ring-background']"
               />
             </p>
           </div>
-          <div v-if="session.resources" class="mb2 pr3">
+          <div v-if="session.resources.length" class="mb-2 pr-4">
             <p>
               Resources
-              <ul class="list pa0 mt1">
-                <li class="di" v-for="(resource, index) in session.resources">
+              <ul class="list p-0 mt-1">
+                <li class="di" :key="index" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
-                  <a class="underline hover:no-underline color-accent" :href="resource.href" target="_blank">{{
+                  <a class="underline hover:no-underline text-text" :href="resource.href" target="_blank">{{
                     resource.text
                   }}</a>
                 </li>
@@ -127,17 +135,14 @@
         </div>
       </div>
       <div class="flex justify-end">
-        <div class="w-100 w-80-l mt0 mb4 mb5-ns">
-          <nuxt-content class="measure f4" :document="session" />
+        <div class="w-100 w-80-l mt-0 mb-8 lg:mb-16">
+          <NuxtContent class="max-w-prose text-lg" :document="session" />
         </div>
       </div>
     </main>
   </div>
 </template>
 <script>
-import TagPill from "~/components/TagPill.vue";
-import ProfileAvatarList from "~/components/ProfileAvatarList.vue";
-import SocialHead from "./SocialHead.vue";
 import dayjs from "dayjs";
 import {
   formatDate,
@@ -154,11 +159,6 @@ import { v4 as uuidv4 } from "uuid";
 Vue.use(VTooltip);
 
 export default {
-  components: {
-    TagPill,
-    ProfileAvatarList,
-    SocialHead,
-  },
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
@@ -166,6 +166,11 @@ export default {
     calendarEvent: { type: Boolean, default: false },
   },
   computed: {
+    description() {
+      return this.session.description
+        ? this.session.description
+        : this.session.title;
+    },
     sessionDate() {
       return this.session.dateTime
         ? new Date(this.session.dateTime)
@@ -269,9 +274,6 @@ END:VCALENDAR
   left: 0;
   width: 100%;
   height: 100%;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
 }
 </style>
 

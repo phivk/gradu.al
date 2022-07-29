@@ -1,7 +1,7 @@
 <template>
-  <section class="mb5">
-    <h2 class="text-3xl md:text-4xl font-bold mb3">Community learning intentions</h2>
-    <div class="mb3 f4 center lh-copy">
+  <section class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Community learning intentions</h2>
+    <div class="mb-4 text-lg mx-auto lh-copy">
       <p>
         Here's an interactive map of skills that {{ memberTitlePlural }} would
         like to <span class="b orange">↗︎learn</span> or

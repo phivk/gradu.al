@@ -1,11 +1,11 @@
 <template>
-  <div class="graph-container mb4" 
+  <div class="graph-container mb-8" 
     @click="graphClicked = true"
     @mouseleave="graphClicked = false"
   >
     <iframe
       :class="{clicked: graphClicked}"
-      class="br3"
+      class="rounded"
       :src="graphCommonsSrc"
       frameborder="0"
       style="overflow:hidden;border:1px solid #DDDDDD;width:1px;min-width:100%;height:600px;min-height:600px;"

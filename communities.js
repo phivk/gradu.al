@@ -1,11 +1,10 @@
 module.exports = [
   // {
-  //   "name": "demo",
-  //   "spreadsheetId": "16eV2VLLy1s0JYgL5PWXmw6yxGTVcHt1bnct2cSflx8A"
+  //   name: "demo",
+  //   spreadsheetId: "1UXXi5J2HdulaX15xk6Ylb9qsWYkggI6mlmQorO7rSBo",
   // },
   {
     name: "mozfest",
-    spreadsheetId: "1V0VW1_6w56V4vgLKfxx1w15MKPdOM0JtAkpvHaEXyXA",
-    defaultLocation: "On Zoom - find link on the #skillsharing channel on Slack"
-  }
+    spreadsheetId: "1Y1QE7pZN97QtuDCDfpGqP5c1gMeKmPKGFnSUgtEQZbk",
+  },
 ];

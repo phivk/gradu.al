@@ -1,14 +1,10 @@
 <template>
-  <span 
-    class="circle shadow-outline cursor-default f5"
-    :style="styleObject"
-  >{{initial}}</span>
+  <span class="circle cursor-default" :style="styleObject">{{ initial }}</span>
 </template>
 <script>
 export default {
   props: {
     character: { type: String, default: "1" },
-    borderColor: { type: String, default: "transparent" },
     backgroundColor: { type: String, default: "#96CCFF" },
     textColor: { type: String, default: "#00449e" },
   },
@@ -19,12 +15,11 @@ export default {
     },
     styleObject() {
       return {
-        'box-shadow': '0 0 0 0.3rem ' + this.borderColor,
-        'background-color': this.backgroundColor,
-        'color': this.textColor,
-      } 
+        "background-color": this.backgroundColor,
+        color: this.textColor,
+      };
     },
-  }
+  },
 };
 </script>
 <style scoped>
@@ -36,12 +31,7 @@ export default {
   text-align: center;
   border-radius: 50%;
 }
-.shadow-outline {
-  box-shadow: 0 0 0 0.5rem yellow;
-  background-color: 
-}
 .cursor-default {
   cursor: default;
 }
-
 </style>

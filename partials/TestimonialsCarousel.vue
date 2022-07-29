@@ -34,7 +34,7 @@
                   <blockquote class="text-xl font-medium mb-4">{{item.quote}}</blockquote>
                   <cite class="block font-bold text-lg not-italic mb-1">{{item.name}}</cite>
                   <div class="text-gray-600">
-                    <span>{{item.role}}</span> <a class="text-blue-600 hover:underline" :href="item.link">{{item.team}}</a>
+                    <span>{{item.role}}</span> <span class="text-blue-600">{{item.team}}</span>
                   </div>
                 </div>
               </template>
@@ -80,7 +80,14 @@ export default {
           name: 'Omar Shehata',
           role: 'Graphics Engineer',
           team: 'Philadelphia, PA',
-          link: 'https://omarshehata.me/'
+        },
+        {
+          imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01B0S0F40G-61ca5cf21cde-512',
+          quote:
+            "“ Coming across Gradual was instrumental for my personal development. It directly influenced our communal engagement and I loved how open, inquisitive and assertive we all became because of it. Facilitating a session with someone I didn’t know before made me feel truly connected. I never felt like I could ask 'stupid questions'… we were all there to learn together. “",
+          name: 'Michelle Ferrell',
+          role: 'Activism & Tech Community Wrangler',
+          team: 'Mozilla Festival',
         },
         {
           imgSrc: 'https://ca.slack-edge.com/T170JCUN6-U01P03UKEMV-e1acfddef565-512',
@@ -89,16 +96,14 @@ export default {
           name: 'Maria Bridge',
           role: 'Stanford MBA',
           team: 'Non-profit COO',
-          link: 'https://mariabridge.medium.com/'
         },   
         {
-          imgSrc: 'https://media-exp1.licdn.com/dms/image/C5603AQEYMkCJmUi-og/profile-displayphoto-shrink_400_400/0/1582063798281?e=1623888000&v=beta&t=oBbmCYNDe5Bs9yiV4HNiKqQ8aGbs7-f9I061VTEOjkE',
+          imgSrc: 'https://pbs.twimg.com/profile_images/1376345918601977861/Z0hen1QF_400x400.jpg',
           quote:
             "“ It was mind blowing to learn how much knowledge our community had internally. Gradual made these skills visible and easier to share. “",
           name: 'Pim Schachtschabel',
           role: 'Human Experience Architect',
           team: 'Architecting Curiosity',
-          link: 'https://www.architectingcuriosity.com'
         },
         {
           imgSrc: 'https://pbs.twimg.com/profile_images/2062740783/Snapshot_20110909_5_400x400.JPG',
@@ -107,7 +112,6 @@ export default {
           name: 'Tom Salmon',
           role: 'Phd researcher in education',
           team: 'Cape Peninsula University of Technology',
-          link: 'https://www.linkedin.com/in/tomsalmon12345/'
         }
       ]
     }

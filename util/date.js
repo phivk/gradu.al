@@ -6,7 +6,7 @@ export const formatDate = (date) => {
 export const formatTime = (date) => {
   // return time local to browser's timezone
   const locales = []; // [] to use browser's default locale for format
-  const options = { hour: '2-digit', minute: '2-digit' };
+  const options = { hour: "2-digit", minute: "2-digit" };
   return date.toLocaleTimeString(locales, options);
 };
 
@@ -15,14 +15,10 @@ export const getTimezone = () => {
   return Intl.DateTimeFormat().resolvedOptions().timeZone;
 };
 
+/* expects valid date object */
 export const hasHappened = (date) => {
   let now = new Date();
   return date < now;
-};
-
-export const hasNotHappened = (date) => {
-  let now = new Date();
-  return date > now;
 };
 
 export const isValidDate = (date) => {
@@ -41,14 +37,14 @@ export const isValidDate = (date) => {
   }
 };
 
-export const calculateICSDuration = timeInMinutes => {
+export const calculateICSDuration = (timeInMinutes) => {
   const minutes = timeInMinutes % 60;
   const hours = (timeInMinutes - minutes) / 60;
 
   return `PT${hours}H${minutes}M`;
 };
 
-export const formatICSDate = date => {
+export const formatICSDate = (date) => {
   const pre =
     date.getFullYear().toString() +
     (date.getMonth() + 1 < 10
@@ -57,14 +53,14 @@ export const formatICSDate = date => {
     (date.getDate() + 1 < 10
       ? "0" + date.getDate().toString()
       : date.getDate().toString());
-  console.log(date);
   const post =
     (date.getHours() - 1).toString() +
-    date
-      .getMinutes()
-      .toString()
-      .padStart(2, "0") +
+    date.getMinutes().toString().padStart(2, "0") +
     "00";
 
   return `${pre}T${post}`;
+};
+
+export const isValidDateString = (dateString) => {
+  return dateString == null ? false : isValidDate(new Date(dateString));
 };

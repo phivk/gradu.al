@@ -1,66 +1,69 @@
 <template>
-  <div class="flex flex-col min-h-screen overflow-hidden">
-
-    <!-- Site header -->
-    <Header />
-
-    <!-- Page content -->
-    <main class="flex-grow">
-
-      <!-- Page sections -->
-      <HeroHome />
-      <FeaturesProcess />
-      <UseCases />
-      <TestimonialsCarousel />
-      <Cta />
-
-    </main>
-
-    <!-- Site footer -->
-    <Footer />
-
-  </div>
+  <CommunityPage
+    :indexPage="indexPage"
+    :sessions="sessions"
+    :sessionsIndexes="sessionsIndexes"
+    :ambassadorsIndex="ambassadorsIndex"
+    :ambassadors="ambassadors"
+    :nodes="nodes"
+    :edges="edges"
+    :skills="skills"
+  />
 </template>
-
 <script>
-import AOS from 'aos'
-import Sticky from 'sticky-js'
-import Header from './../partials/Header.vue'
-import HeroHome from './../partials/HeroHome.vue'
-import FeaturesProcess from './../partials/FeaturesProcess.vue'
-import TestimonialsCarousel from './../partials/TestimonialsCarousel.vue'
-import FeaturesBlocks from './../partials/FeaturesBlocks.vue'
-import UseCases from './../partials/UseCases.vue'
-import Cta from './../partials/Cta.vue'
-import Footer from './../partials/Footer.vue'
-
 export default {
-  components: {
-    Header,
-    HeroHome,
-    FeaturesProcess,
-    TestimonialsCarousel,
-    FeaturesBlocks,
-    UseCases,
-    Cta,
-    Footer,
-  },
-  mounted() {
-    AOS.init({
-      once: true,
-      disable: 'phone',
-      duration: 700,
-      easing: 'ease-out-cubic',
-    })
-    // eslint-disable-next-line no-unused-vars
-    const sticky = new Sticky('[data-sticky]');    
-    // Route change
-    if (this.$router) {
-      this.$watch('$route', () => {
-        // eslint-disable-next-line no-unused-vars
-        const sticky = new Sticky('[data-sticky]'); 
+  async asyncData({ $content }) {
+    const sessions = await $content("sessions", { deep: true })
+      .where({ slug: { $ne: "index" } })
+      .sortBy("dateTime", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
       });
-    }    
-  }
-}
+    const sessionsIndexes = await $content("sessions", { deep: true })
+      .where({ slug: { $eq: "index" } })
+      .sortBy("sortOrder", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const ambassadorsIndex = await $content("ambassadors/index")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+    const ambassadors = await $content("ambassadors")
+      .where({ slug: { $ne: "index" } })
+      .sortBy("sortOrder", "asc")
+      .fetch()
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const indexPage = await $content("index").fetch();
+
+    let nodes, edges, skills;
+
+    try {
+      nodes = await $content("data", "nodes").fetch();
+      edges = await $content("data", "edges").fetch();
+      skills = await $content("data", "skills").fetch();
+    } catch (error) {
+      console.log(error);
+      console.log("nodes and edges failed to load");
+    }
+
+    return {
+      sessions,
+      sessionsIndexes,
+      ambassadors,
+      ambassadorsIndex,
+      indexPage,
+      nodes,
+      edges,
+      skills,
+    };
+  },
+};
 </script>
