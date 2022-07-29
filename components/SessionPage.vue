@@ -66,24 +66,22 @@
               class="font-bold text-lg link rounded p-2 text-center dib mr-4 text-on-primary bg-secondary"
               >{{ session.cta.text }}</a
             >
-              <a
+            <a
               v-if="!hasHappened && calendarEvent"
               :href="calendarLocation"
               :download="calendarFilename"
               class="dib mt3 color-accent">
                 ↓ .ics file
-              </a>
-
-                <a
-                 v-if="!hasHappened && calendarEvent"
-                :href="googleCalendarLink"
-                target="_blank"
-                class="dib mt3 color-accent"
-                >
-                  Add to Google Calendar
-                </a>
-
-
+            </a>
+            <br/>
+            <a
+                v-if="!hasHappened && calendarEvent"
+              :href="googleCalendarLink"
+              target="_blank"
+              class="dib mt3 color-accent"
+            >
+              Add to Google Calendar
+            </a>
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
