@@ -182,7 +182,7 @@ export default {
       return getTimezone();
     },
     hasHappened() {
-      return hasHappened(this.session.date);
+      return hasHappened(this.sessionDate);
     },
     youtubeRecordingResource() {
       if (this.session.resources) {
