@@ -66,14 +66,6 @@
               class="font-bold text-lg link rounded p-2 text-center dib mr-4 text-on-primary bg-secondary"
               >{{ session.cta.text }}</a
             >
-            <a
-              v-if="session.icsFileSrc && !hasHappened"
-              :href="session.icsFileSrc"
-              target="_blank"
-              class="dib mt-4 text-secondary whitespace-pre-wrap"
-              >↓ .ics file</a
-            >
-
               <a
               v-if="!hasHappened && calendarEvent"
               :href="calendarLocation"
@@ -163,7 +155,7 @@ export default {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
     bgColor: { type: String, default: "#FFF" },
-    calendarEvent: { type: Boolean, default: false },
+    calendarEvent: { type: Boolean, default: true },
   },
   computed: {
     description() {
@@ -225,7 +217,6 @@ DURATION:${calculateICSDuration(this.session.durationInMinutes)}
 END:VEVENT
 END:VCALENDAR
 `;
-      console.log(calendarString);
       return `data:text/plain;charset=utf-8,${encodeURIComponent(
         calendarString
       )}`;
