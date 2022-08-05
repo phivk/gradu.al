@@ -198,23 +198,7 @@ export default {
       }
     },
     calendarLocation() {
-      const calendarString = `BEGIN:VCALENDAR
-VERSION:2.0
-CALSCALE:GREGORIAN
-PRODID:gradual/ics
-METHOD:PUBLISH
-X-PUBLISHED-TTL:PT1H
-BEGIN:VEVENT
-UID:${uuidv4()}
-SUMMARY:${this.session.title}
-DTSTAMP:${formatICSDate(new Date())}
-DTSTART:${formatICSDate(new Date(this.sessionDate))}
-DESCRIPTION:${this.session.title}
-LOCATION:On Zoom - find link on the on Slack
-DURATION:${calculateICSDuration(this.session.durationInMinutes)}
-END:VEVENT
-END:VCALENDAR
-`;
+      const calendarString = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nPRODID:gradual/ics\r\nMETHOD:PUBLISH\r\nX-PUBLISHED-TTL:PT1H\r\nBEGIN:VEVENT\r\nUID:${uuidv4()}\r\nSUMMARY:${this.session.title}\r\nDTSTAMP:${formatICSDate(new Date())}\r\nDTSTART:${formatICSDate(new Date(this.sessionDate))}\r\nDESCRIPTION:${this.session.title}\r\nLOCATION:See community space or registration\r\nDURATION:${calculateICSDuration(this.session.durationInMinutes)}\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`;
       return `data:text/plain;charset=utf-8,${encodeURIComponent(
         calendarString
       )}`;
