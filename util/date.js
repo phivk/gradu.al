@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
 
 export const formatDate = (date) => {
   const options = { day: "numeric", month: "short", year: "numeric" };
@@ -47,30 +49,14 @@ export const calculateICSDuration = (timeInMinutes) => {
   return `PT${hours}H${minutes}M`;
 };
 
-export const formatICSDate = (date) => {
-  const pre =
-    date.getFullYear().toString() +
-    (date.getMonth() + 1 < 10
-      ? "0" + (date.getMonth() + 1).toString()
-      : (date.getMonth() + 1).toString()) +
-    (date.getDate() + 1 < 10
-      ? "0" + date.getDate().toString()
-      : date.getDate().toString());
-  const post =
-    (date.getHours() - 1).toString() +
-    date.getMinutes().toString().padStart(2, "0") +
-    "00" +
-    "Z";
-
-  return `${pre}T${post}`;
-};
-
-export const getICSString = (date, title, durationInMinutes) => {
-  return `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nPRODID:gradual/ics\r\nMETHOD:PUBLISH\r\nX-PUBLISHED-TTL:PT1H\r\nBEGIN:VEVENT\r\nUID:${uuidv4()}\r\nSUMMARY:${title}\r\nDTSTAMP:${formatICSDate(
-    new Date()
-  )}\r\nDTSTART:${formatICSDate(
-    new Date(date)
-  )}\r\nDESCRIPTION:${title}\r\nLOCATION:See community space or registration\r\nDURATION:${calculateICSDuration(
+export const getICSString = (dateTime, title, durationInMinutes) => {
+  return `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nPRODID:gradual/ics\r\nMETHOD:PUBLISH\r\nX-PUBLISHED-TTL:PT1H\r\nBEGIN:VEVENT\r\nUID:${uuidv4()}\r\nSUMMARY:${title}\r\nDTSTAMP:${dayjs
+    .utc()
+    .format("YYYYMMDDTHHmmss[Z]")}\r\nDTSTART:${dayjs
+    .utc(dateTime)
+    .format(
+      "YYYYMMDDTHHmmss[Z]"
+    )}\r\nDESCRIPTION:${title}\r\nLOCATION:See community space or registration\r\nDURATION:${calculateICSDuration(
     durationInMinutes
   )}\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`;
 };
