@@ -1,3 +1,6 @@
+import { v4 as uuidv4 } from "uuid";
+import dayjs from "dayjs";
+
 export const formatDate = (date) => {
   const options = { day: "numeric", month: "short", year: "numeric" };
   return date.toLocaleDateString("en-GB", options);
@@ -60,6 +63,46 @@ export const formatICSDate = (date) => {
     "Z";
 
   return `${pre}T${post}`;
+};
+
+export const getICSString = (date, title, durationInMinutes) => {
+  return `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nPRODID:gradual/ics\r\nMETHOD:PUBLISH\r\nX-PUBLISHED-TTL:PT1H\r\nBEGIN:VEVENT\r\nUID:${uuidv4()}\r\nSUMMARY:${title}\r\nDTSTAMP:${formatICSDate(
+    new Date()
+  )}\r\nDTSTART:${formatICSDate(
+    new Date(date)
+  )}\r\nDESCRIPTION:${title}\r\nLOCATION:See community space or registration\r\nDURATION:${calculateICSDuration(
+    durationInMinutes
+  )}\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`;
+};
+
+export const getGoogleCalendarURL = (
+  title,
+  description,
+  dateTime,
+  durationInMinutes
+) => {
+  const formatString = (string) =>
+    encodeURIComponent(string).replace(/%20/g, "+");
+  let url = "http://www.google.com/calendar/render?action=TEMPLATE";
+  const start = dayjs(dateTime).format("YYYYMMDDTHHmmssZ");
+  const end = dayjs(dateTime)
+    .add(durationInMinutes, "minutes")
+    .format("YYYYMMDDTHHmmssZ");
+  const parameters = {
+    text: formatString(title),
+    location: formatString(
+      "Zoom - check #skillsharing channel on Slack for details."
+    ),
+    details: formatString(description || ""),
+    dates: formatString(`${start}/${end}`),
+  };
+
+  for (const key in parameters) {
+    if (parameters.hasOwnProperty(key) && parameters[key]) {
+      url += `&${key}=${parameters[key]}`;
+    }
+  }
+  return url;
 };
 
 export const isValidDateString = (dateString) => {

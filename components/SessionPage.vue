@@ -133,15 +133,14 @@
   </div>
 </template>
 <script>
-import dayjs from "dayjs";
 import {
   formatDate,
   isValidDate,
   hasHappened,
   formatTime,
   getTimezone,
-  calculateICSDuration,
-  formatICSDate,
+  getICSString,
+  getGoogleCalendarURL,
 } from "~/util/date";
 import Vue from "vue";
 import VTooltip from "v-tooltip";
@@ -198,38 +197,21 @@ export default {
       }
     },
     calendarLocation() {
-      const calendarString = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nCALSCALE:GREGORIAN\r\nPRODID:gradual/ics\r\nMETHOD:PUBLISH\r\nX-PUBLISHED-TTL:PT1H\r\nBEGIN:VEVENT\r\nUID:${uuidv4()}\r\nSUMMARY:${this.session.title}\r\nDTSTAMP:${formatICSDate(new Date())}\r\nDTSTART:${formatICSDate(new Date(this.sessionDate))}\r\nDESCRIPTION:${this.session.title}\r\nLOCATION:See community space or registration\r\nDURATION:${calculateICSDuration(this.session.durationInMinutes)}\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`;
+      const ICSString = getICSString(this.sessionDate, this.session.title, this.session.durationInMinutes)
       return `data:text/plain;charset=utf-8,${encodeURIComponent(
-        calendarString
+        ICSString
       )}`;
     },
     calendarFilename() {
       return `${this.session.title.toLowerCase().replaceAll(" ", "_")}.ics`;
     },
     googleCalendarLink() {
-      const formatString = (string) =>
-        encodeURIComponent(string).replace(/%20/g, "+");
-      let url = "http://www.google.com/calendar/render?action=TEMPLATE";
-      const start = dayjs(this.session.dateTime).format("YYYYMMDDTHHmmssZ");
-      const end = dayjs(this.session.dateTime)
-        .add(this.session.durationInMinutes, "minutes")
-        .format("YYYYMMDDTHHmmssZ");
-      const parameters = {
-        text: formatString(this.session.title),
-        location: formatString(
-          "Zoom - check #skillsharing channel on Slack for details."
-        ),
-        details: formatString(this.session.description || ""),
-        dates: formatString(`${start}/${end}`),
-      };
-
-      for (const key in parameters) {
-        if (parameters.hasOwnProperty(key) && parameters[key]) {
-          url += `&${key}=${parameters[key]}`;
-        }
-      }
-
-      return url;
+      return getGoogleCalendarURL(
+        this.session.title, 
+        this.session.description, 
+        this.session.dateTime, 
+        this.session.durationInMinutes
+      );
     },
   },
 };
