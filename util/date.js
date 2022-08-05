@@ -56,7 +56,8 @@ export const formatICSDate = (date) => {
   const post =
     (date.getHours() - 1).toString() +
     date.getMinutes().toString().padStart(2, "0") +
-    "00";
+    "00" +
+    "Z";
 
   return `${pre}T${post}`;
 };
