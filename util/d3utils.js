@@ -79,8 +79,7 @@ export function createNodesEdgesForVueD3Network(
     const topicToUpdate = nodes[indexToReplace];
     topicToUpdate.learnerCount = detail.count;
     topicToUpdate.learnerNames = detail.names;
-    nodes.splice(indexToReplace, 1);
-    nodes.push(topicToUpdate);
+    nodes[indexToReplace] = topicToUpdate;
   }
 
   // Adds the totals for sharerNames and sharerCounts.
@@ -89,8 +88,7 @@ export function createNodesEdgesForVueD3Network(
     const topicToUpdate = nodes[indexToReplace];
     topicToUpdate.sharerCount = detail.count;
     topicToUpdate.sharerNames = detail.names;
-    nodes.splice(indexToReplace, 1);
-    nodes.push(topicToUpdate);
+    nodes[indexToReplace] = topicToUpdate;
   }
 
   return { edges, nodes };
