@@ -1,32 +1,15 @@
 <template>
   <div class="w-full h-screen bg-black p-8">
     <div
-      class="
-        bg-white
-        text-black
-        rounded-lg
-        p-8
-        flex
-        justify-center
-        flex-wrap
-        sm:flex-nowrap
-        w-full
-        md:w-4/6
-        lg:w-3/6
-        max-w-2xl
-        mx-auto
-        relative
-        top-1/2
-        transform -translate-y-1/2
-      "
+      class="bg-white text-black rounded-lg p-8 flex justify-center flex-wrap sm:flex-nowrap w-full md:w-4/6 lg:w-3/6 max-w-2xl mx-auto relative top-1/2 transform -translate-y-1/2"
     >
       <div v-if="isAuthorised" class="mb-4 sm:mb-0 sm:pr-4 w-full">
-        <h2 class="font-bold text-xl">
+        <h2 class="font-bold text-xl mt-0">
           Looks like you're already logged in.
         </h2>
       </div>
       <div v-else class="mb-4 sm:mb-0 sm:pr-4 w-full">
-        <h2 class="font-bold text-xl">
+        <h2 class="font-bold text-xl mt-0">
           Knock knock. <br />
           Please enter the community password.
         </h2>
@@ -37,18 +20,7 @@
       >
         <a
           href="."
-          class="
-            bg-black
-            focus:outline-none
-            text-white
-            font-bold
-            py-2
-            px-4
-            rounded
-            cursor-pointer
-            mr-4
-            sm:mb-4
-          "
+          class="bg-black focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer mr-4 sm:mb-4"
         >
           To protected area
         </a>
@@ -65,32 +37,10 @@
               type="password"
               name="_pw"
               placeholder="Password"
-              class="
-                bg-gray-200
-                appearance-none
-                border-2 border-gray-200
-                rounded
-                w-full
-                py-2
-                px-4
-                text-gray-700
-                leading-tight
-                focus:outline-none
-                focus:bg-white
-                focus:border-green-500
-                mb-4
-              "
+              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500 mb-4"
             />
             <button
-              class="
-                bg-black
-                focus:outline-none
-                text-white
-                font-bold
-                py-2
-                px-4
-                rounded
-              "
+              class="bg-black focus:outline-none text-white font-bold py-2 px-4 rounded"
               type="submit"
             >
               Log in
@@ -105,7 +55,7 @@
 <script>
 export default {
   layout: "fullscreen",
-  data: function() {
+  data: function () {
     return {
       methodLoginValue: "",
       isAuthorised: false,

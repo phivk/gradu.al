@@ -10,7 +10,6 @@ ctaButtonSecondary:
 subLink:
   text: join the Demo Slack
   href: https://www.mozillafestival.org/slack/
-typeformSrc: https://form.typeform.com/to/MFUKH7rE
 typeformIdFull: MFUKH7rE
 typeformIdLearn: AeC9eCEO
 typeformIdShare: Eowu0e9u
