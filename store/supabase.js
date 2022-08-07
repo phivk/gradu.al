@@ -19,7 +19,7 @@ export const actions = {
     const { data: members, error: memberError } = await this.$supabase
       .from(`${COMMUNITY_NAME}_members`)
       .select("*");
-    const { data: mapping, error: mappingError } = await this.$supabase
+    const { data: members_topics, error: mappingError } = await this.$supabase
       .from(`${COMMUNITY_NAME}_members_topics`)
       .select("*");
 
@@ -34,7 +34,7 @@ export const actions = {
       const { edges, nodes } = createNodesEdgesForVueD3Network(
         members,
         topics,
-        mapping
+        members_topics
       );
       commit("setEdges", edges);
       commit("setNodes", nodes);
