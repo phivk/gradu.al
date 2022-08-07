@@ -13,6 +13,7 @@
               @update="currentState.updateFunction"
               :textarea="currentState.textarea"
               :key="stateIndex"
+              @nextStep="nextStep()"
             />
 
             <div class="left">
@@ -54,11 +55,6 @@ import ProgressBar from "./ProgressBar.vue";
 const COMMUNITY_NAME = process.env.COMMUNITY_NAME;
 
 export default {
-  mounted: function () {
-    window.addEventListener("keyup", (e) => {
-      this.keyboardControl(e);
-    });
-  },
   data: () => {
     return {
       stateIndex: 0,
@@ -182,10 +178,6 @@ export default {
     },
     previousStep() {
       this.stateIndex -= 1;
-    },
-    add() {},
-    keyboardControl(e) {
-      if (["Enter"].includes(e.key)) this.add() || this.nextStep();
     },
     setSingleField(field, value) {
       this.formData[field] = value;
