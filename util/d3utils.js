@@ -1,6 +1,12 @@
-export function createNodesEdgesForVueD3Network(members, topics, mappings) {
+export function createNodesEdgesForVueD3Network(
+  members,
+  topics,
+  members_topics
+) {
   let nodes = [];
   let memberNames = {};
+
+  // Add a node for each member
   for (const member of members) {
     nodes.push({
       _cssClass: "Member",
@@ -12,6 +18,7 @@ export function createNodesEdgesForVueD3Network(members, topics, mappings) {
     memberNames[member.id] = member.username;
   }
 
+  // Add a node for each topic
   for (const topic of topics) {
     nodes.push({
       _cssClass: "Skill",
@@ -26,7 +33,11 @@ export function createNodesEdgesForVueD3Network(members, topics, mappings) {
   const edges = [];
   const counter = { learners: {}, sharers: {} };
 
-  for (const topic of mappings.filter((item) => item.learner)) {
+  // Iterate over only those rows of members_topics that have a learner.
+  // Create an edge joining these.
+  // We have to add the names later but don't have them yet. We'll update separately
+  // below.
+  for (const topic of members_topics.filter((item) => item.learner)) {
     edges.push({
       type: "learn",
       _color: "#f1955b",
@@ -43,7 +54,9 @@ export function createNodesEdgesForVueD3Network(members, topics, mappings) {
     );
   }
 
-  for (const share of mappings.filter((item) => item.sharer)) {
+  // Iterate over only those rows of members_topics that have a sharer.
+  // Create an edge joining these.
+  for (const share of members_topics.filter((item) => item.sharer)) {
     edges.push({
       type: "share",
       _color: "#9f78e4",
@@ -60,6 +73,7 @@ export function createNodesEdgesForVueD3Network(members, topics, mappings) {
     );
   }
 
+  // Adds the totals for learnerNames and learnerCounts.
   for (const [topic, detail] of Object.entries(counter.learners)) {
     const indexToReplace = nodes.findIndex((el) => el.id === topic);
     const topicToUpdate = nodes[indexToReplace];
@@ -69,6 +83,7 @@ export function createNodesEdgesForVueD3Network(members, topics, mappings) {
     nodes.push(topicToUpdate);
   }
 
+  // Adds the totals for sharerNames and sharerCounts.
   for (const [topic, detail] of Object.entries(counter.sharers)) {
     const indexToReplace = nodes.findIndex((el) => el.id === topic);
     const topicToUpdate = nodes[indexToReplace];
