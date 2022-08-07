@@ -6,17 +6,19 @@ export const state = () => ({
   nodes: [],
 });
 
+const COMMUNITY_NAME = process.env.COMMUNITY_NAME;
+
 export const actions = {
   async fetchData({ commit }) {
     // hit supabase to get topics, members and mappings
     const { data: topics, error: topicError } = await this.$supabase
-      .from("topics")
+      .from(`${COMMUNITY_NAME}_topics`)
       .select("*");
     const { data: members, error: memberError } = await this.$supabase
-      .from("members")
+      .from(`${COMMUNITY_NAME}_members`)
       .select("*");
     const { data: mapping, error: mappingError } = await this.$supabase
-      .from("members_topics")
+      .from(`${COMMUNITY_NAME}_members_topics`)
       .select("*");
 
     if (!topicError) {
