@@ -12,20 +12,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=High five an existing topic to learn"
           data-tf-medium="snippet"
-          class="
-            inline-flex
-            items-center
-            justify-center
-            px-5
-            py-3
-            border border-transparent
-            text-base
-            md:text-lg
-            rounded-md
-            text-white
-            bg-secondary
-            hover:opacity-80
-          "
+          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg rounded-md text-white bg-secondary hover:opacity-80"
         >
           I'd like to <span class="font-black mx-1">learn</span> about...
         </button>
@@ -36,20 +23,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=High five an existing topic to share"
           data-tf-medium="snippet"
-          class="
-            inline-flex
-            items-center
-            justify-center
-            px-5
-            py-3
-            border border-transparent
-            text-base
-            md:text-lg
-            rounded-md
-            text-secondary
-            bg-white
-            hover:bg-secondary-washed
-          "
+          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg rounded-md text-secondary bg-white hover:bg-secondary-washed"
         >
           I'd like to <span class="font-black mx-1">share</span> about...
         </button>
@@ -63,21 +37,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=What you are most interested in?"
           data-tf-medium="snippet"
-          class="
-            inline-flex
-            items-center
-            justify-center
-            px-5
-            py-3
-            border border-transparent
-            text-base
-            md:text-lg
-            font-medium
-            rounded-md
-            text-white
-            bg-secondary
-            hover:opacity-80
-          "
+          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-secondary hover:opacity-80"
         >
           Let's do this
         </button>
@@ -109,9 +69,13 @@ export default {
   },
   computed: {
     nodes() {
+      // turn Vuex reactive objects into plain JS objects,
+      // by cloning each object (item) in the array
       return [...this.$store.state.supabase.nodes].map((item) => ({ ...item }));
     },
     edges() {
+      // turn Vuex reactive objects into plain JS objects,
+      // by cloning each object (item) in the array
       return [...this.$store.state.supabase.edges].map((item) => ({ ...item }));
     },
     skills() {
