@@ -53,6 +53,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     indexPage: { type: Object, default: () => {} },
@@ -88,6 +89,7 @@ export default {
       // return dir name for seasons that have sessions
       return Object.keys(this.sessionsPerSeason)
     },
+    ...mapState(["supabase"]),
   },
 };
 </script>

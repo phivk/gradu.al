@@ -11,6 +11,8 @@
   />
 </template>
 <script>
+import { mapActions } from "vuex";
+
 export default {
   async asyncData({ $content }) {
     const sessions = await $content("sessions", { deep: true })
@@ -64,6 +66,12 @@ export default {
       edges,
       skills,
     };
+  },
+  methods: {
+    ...mapActions("supabase", ["fetchData"]),
+  },
+  mounted() {
+    this.fetchData();
   },
 };
 </script>
