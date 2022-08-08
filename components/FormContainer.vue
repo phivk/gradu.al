@@ -140,7 +140,7 @@ export default {
         {
           component: FormSingleField,
           introduction: `Thank you, ${this.formData.username}!`,
-          followup: "	Anything else you want to tell us before you go?",
+          followup: " Anything else you want to tell us before you go?",
           value: this.formData.comment,
           updateFunction: (value) => {
             this.setSingleField("comment", value);
@@ -253,7 +253,7 @@ export default {
   },
 };
 </script>
-<style  lang="postcss">
+<style lang="postcss" scoped>
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
