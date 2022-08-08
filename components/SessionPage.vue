@@ -67,12 +67,21 @@
               >{{ session.cta.text }}</a
             >
             <a
-              v-if="session.icsFileSrc && !hasHappened"
-              :href="session.icsFileSrc"
+              v-if="!hasHappened && calendarEvent"
+              :href="calendarLocation"
+              :download="calendarFilename"
+              class="dib mt3 color-accent">
+                ↓ .ics file
+            </a>
+            <br/>
+            <a
+                v-if="!hasHappened && calendarEvent"
+              :href="googleCalendarLink"
               target="_blank"
-              class="dib mt-4 text-secondary whitespace-pre-wrap"
-              >↓ .ics file</a
+              class="dib mt3 color-accent"
             >
+              Add to Google Calendar
+            </a>
           </div>
         </div>
         <div class="w-100 w-80-l flex flex-wrap flex-nowrap-ns f5 ">
@@ -104,7 +113,7 @@
             <p>
               Resources
               <ul class="list p-0 mt-1">
-                <li class="di" v-for="(resource, index) in session.resources">
+                <li class="di" :key="index" v-for="(resource, index) in session.resources">
                   <span v-if="index !== 0">, </span>
                   <a class="underline hover:no-underline text-text" :href="resource.href" target="_blank">{{
                     resource.text
@@ -130,21 +139,26 @@ import {
   hasHappened,
   formatTime,
   getTimezone,
+  getICSString,
+  getGoogleCalendarURL,
 } from "~/util/date";
 import Vue from "vue";
 import VTooltip from "v-tooltip";
+import { v4 as uuidv4 } from "uuid";
 Vue.use(VTooltip);
 
 export default {
   props: {
     session: { type: Object, default: () => {} },
     members: { type: Object, default: () => {} },
+    bgColor: { type: String, default: "#FFF" },
+    calendarEvent: { type: Boolean, default: true },
   },
   computed: {
     description() {
       return this.session.description
         ? this.session.description
-        : this.session.title
+        : this.session.title;
     },
     sessionDate() {
       return this.session.dateTime
@@ -165,7 +179,39 @@ export default {
       return getTimezone();
     },
     hasHappened() {
-      return hasHappened(this.session.date);
+      return hasHappened(this.sessionDate);
+    },
+    youtubeRecordingResource() {
+      if (this.session.resources) {
+        return this.session.resources.find((r) => r.href.includes("youtu"));
+      } else {
+        return undefined;
+      }
+    },
+    youtubeRecordingID() {
+      if (this.youtubeRecordingResource) {
+        let parts = this.youtubeRecordingResource.href.split(/[/=]/);
+        return parts[parts.length - 1];
+      } else {
+        return undefined;
+      }
+    },
+    calendarLocation() {
+      const ICSString = getICSString(this.sessionDate, this.session.title, this.session.durationInMinutes)
+      return `data:text/plain;charset=utf-8,${encodeURIComponent(
+        ICSString
+      )}`;
+    },
+    calendarFilename() {
+      return `${this.session.title.toLowerCase().replaceAll(" ", "_")}.ics`;
+    },
+    googleCalendarLink() {
+      return getGoogleCalendarURL(
+        this.session.title, 
+        this.session.description, 
+        this.session.dateTime, 
+        this.session.durationInMinutes
+      );
     },
   },
 };
