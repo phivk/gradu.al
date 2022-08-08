@@ -57,9 +57,6 @@ export default {
     sessionsIndexes: { type: Array, default: () => {} },
     ambassadors: { type: Array, default: () => [] },
     ambassadorsIndex: { type: Object, default: () => {} },
-    nodes: { type: Object, default: () => {} },
-    edges: { type: Object, default: () => {} },
-    skills: { type: Object, default: () => {} },
   },
   computed: {
     sessionsPerSeason() {
