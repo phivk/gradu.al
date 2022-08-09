@@ -186,6 +186,7 @@ export default {
       this.formData[field].push(value);
     },
     async submitForm() {
+      const now = new Date();
       // Potentially show some processing interstitial
       this.submitting = true;
       // Get or create the user
@@ -198,7 +199,7 @@ export default {
       if (userData.length === 0) {
         const { data: newUserData } = await this.$supabase
           .from(`${COMMUNITY_NAME}_members`)
-          .insert({ username: this.formData.username });
+          .insert({ username: this.formData.username, created_at: now });
         user = newUserData[0];
       } else {
         user = userData[0];
@@ -208,6 +209,7 @@ export default {
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: learning.id,
           learner: user.id,
+          created_at: now,
         });
       });
       // For each of the sharings, create a new connection
@@ -215,6 +217,7 @@ export default {
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: sharing.id,
           sharer: user.id,
+          created_at: now,
         });
       });
       // For each of the new learnings, create a topic and a connection
@@ -223,10 +226,12 @@ export default {
           .from(`${COMMUNITY_NAME}_topics`)
           .insert({
             name: learning,
+            created_at: now,
           });
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: data[0].id,
           learner: user.id,
+          created_at: now,
         });
       });
       // For each of the new sharings, create a topic and a connection
@@ -235,10 +240,12 @@ export default {
           .from(`${COMMUNITY_NAME}_topics`)
           .insert({
             name: sharing,
+            created_at: now,
           });
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: data[0].id,
           sharer: user.id,
+          created_at: now,
         });
       });
       // Post the additional comments somewhere - user object?
