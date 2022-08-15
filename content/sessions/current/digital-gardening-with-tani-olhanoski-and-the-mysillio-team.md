@@ -4,7 +4,11 @@ type: peer share
 dateTime: 2022-08-12T17:00:00Z
 durationInMinutes: 60
 imageSrc: https://mysilio.com/img/about/sky.jpg
-learnerNames: []
+learnerNames:
+- Ian Davis
+- Philo van Kemenade
+- Gunnar de Jong
+- Datejie Cheko Green
 sharerNames:
 - Tani Olhanoski
 resources:
