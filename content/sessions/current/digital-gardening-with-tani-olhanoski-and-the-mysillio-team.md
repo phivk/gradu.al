@@ -9,8 +9,8 @@ sharerNames:
 - Tani Olhanoski
 resources: []
 cta:
-  text: 'Register Here:'
-  href: https://www.eventbrite.com/e/digital-gardening-with-tani-olhanoski-and-the-mysillio-team-tickets-392417369917
+  text: See Slides here
+  href: https://docs.google.com/presentation/d/1vlpQ1wh9SyYTSDQ_9lKvZsw9rE9Q3AjuYAGGl_f0RhA/edit#slide=id.g143f177aef7_0_116
 youtubeRecordingID: ''
 panoptoRecordingID: ''
 googleDriveRecordingID: ''
