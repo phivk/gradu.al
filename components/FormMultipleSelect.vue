@@ -77,10 +77,7 @@ export default {
 }
 
 .selected {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 0px 2px inset;
-  color: rgb(255, 255, 255);
-  animation: 0.25s ease 0s 2 normal none running jBPXGM;
+  @apply font-bold;
+  box-shadow: rgba(119, 119, 119, 0.6) 0px 0px 0px 3px inset;
 }
 </style>
