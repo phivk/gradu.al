@@ -21,7 +21,7 @@
                 <div>
                   <button @click="nextStep()">Start</button>
                   <span class="text-xs">press <strong>Enter</strong> ↵</span>
-                  <p class="text-xs mt-2">🕒 Takes 4 minutes</p>
+                  <p class="text-xs mt-2">🕒 Takes 3 minutes</p>
                 </div>
               </div>
 
@@ -82,9 +82,9 @@ export default {
         {
           component: FormIntro,
           introduction:
-            "Hi! 👋 This is an invitation to connect to other MozFest participants via skills, interests and fascinations.",
+            "Hi! 👋 This is an invitation to connect to others in the community via skills, interests and fascinations.",
           followup:
-            "Your input will be used to connect you with other participants on Slack and will be shown on the MozFest Gradual page.",
+            "Your input will be used to connect you with other participants and will be shown on the main page.",
           updateFunction: () => {},
         },
         {
