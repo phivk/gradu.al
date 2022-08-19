@@ -159,7 +159,7 @@ export default {
       return this.states[this.stateIndex];
     },
     percentage() {
-      return Math.ceil(((this.stateIndex + 1) / this.states.length) * 100);
+      return Math.ceil((this.stateIndex / (this.states.length - 1)) * 100);
     },
   },
   components: {
