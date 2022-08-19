@@ -1,6 +1,9 @@
 <template>
   <div>
     <article class="flex relative flex-col">
+      <div class="flex flex-wrap p-4">
+        <ProgressBar :percentage="percentage" class="mx-2 mb-2" />
+      </div>
       <div class="grid content-center w-1/2 mx-auto">
         <Transition>
           <div v-frag>
@@ -35,9 +38,6 @@
             </div>
           </div>
         </Transition>
-      </div>
-      <div class="flex flex-wrap p-4">
-        <ProgressBar :percentage="percentage" class="mx-2 mb-2" />
       </div>
     </article>
   </div>
