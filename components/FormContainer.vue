@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="center-absolute w-full max-w-3xl">
     <article class="flex relative flex-col">
-      <div class="flex flex-wrap p-4">
-        <ProgressBar :percentage="percentage" class="mx-2 mb-2" />
+      <div class="flex flex-wrap py-8">
+        <ProgressBar :percentage="percentage" />
       </div>
       <div class="grid content-center w-full max-w-3xl mx-auto">
         <Transition>
@@ -273,6 +273,12 @@ export default {
 };
 </script>
 <style lang="postcss" scoped>
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
