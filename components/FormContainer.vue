@@ -1,5 +1,5 @@
 <template>
-  <div class="center-absolute w-full max-w-3xl">
+  <div class="center-absolute w-full max-w-3xl p-2">
     <article class="flex relative flex-col">
       <div class="flex flex-wrap py-8">
         <ProgressBar :percentage="percentage" />

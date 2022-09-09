@@ -2,7 +2,7 @@
   <div v-frag>
     <FormHeader :introduction="introduction" :followup="followup" />
     <textarea
-      class="border-0 border-gray border-b-2 my-4 bg-transparent focus:outline-none focus:border-black active:outline-none text-3xl"
+      class="w-full leading-normal border-0 border-gray border-b-2 my-4 bg-transparent focus:outline-none focus:border-black active:outline-none text-lg sm:text-xl md:text-2xl"
       v-if="textarea"
       type="text"
       placeholder="Type your answer here..."
@@ -10,7 +10,7 @@
       @input="update"
     />
     <input
-      class="border-0 border-gray border-b-2 my-4 bg-transparent focus:outline-none focus:border-black active:outline-none text-3xl"
+      class="w-full leading-normal border-0 border-gray border-b-2 my-4 bg-transparent focus:outline-none focus:border-black active:outline-none text-lg sm:text-xl md:text-2xl"
       v-else
       type="text"
       placeholder="Type your answer here..."

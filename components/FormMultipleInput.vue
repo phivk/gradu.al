@@ -3,7 +3,7 @@
     <FormHeader :introduction="introduction" :followup="followup" />
     <div class="flex items-center">
       <input
-        class="border-0 border-gray border-b-2 my-4 mr-4 bg-transparent w-75 focus:outline-none focus:border-black active:outline-none text-3xl"
+        class="border-0 border-gray border-b-2 my-4 mr-4 bg-transparent w-75 focus:outline-none focus:border-black active:outline-none text-lg sm:text-xl md:text-2xl"
         v-model="newValue"
         :placeholder="answers.length > 0 ? 'Add another' : 'Add a topic'"
       />
