@@ -8,18 +8,12 @@
     </h1>
     <div class="flex justify-center my-6">
       <div v-if="ctaButtonPrimary" class="inline-flex rounded-md shadow">
-        <AppLink
-          :to="ctaButtonPrimary.href"
-          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-secondary hover:opacity-80"
-        >
+        <AppLink :to="ctaButtonPrimary.href" class="button-secondary">
           {{ ctaButtonPrimary.text }}
         </AppLink>
       </div>
       <div v-if="ctaButtonSecondary" class="ml-3 inline-flex rounded-md shadow">
-        <AppLink
-          :to="ctaButtonSecondary.href"
-          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-secondary bg-white hover:bg-secondary-washed"
-        >
+        <AppLink :to="ctaButtonSecondary.href" class="button-secondary-inverse">
           {{ ctaButtonSecondary.text }}
         </AppLink>
       </div>

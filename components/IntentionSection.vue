@@ -12,7 +12,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=High five an existing topic to learn"
           data-tf-medium="snippet"
-          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg rounded-md text-white bg-secondary hover:opacity-80"
+          class="button-secondary"
         >
           I'd like to <span class="font-black mx-1">learn</span> about...
         </button>
@@ -23,7 +23,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=High five an existing topic to share"
           data-tf-medium="snippet"
-          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg rounded-md text-secondary bg-white hover:bg-secondary-washed"
+          class="button-secondary-inverse"
         >
           I'd like to <span class="font-black mx-1">share</span> about...
         </button>
@@ -37,7 +37,7 @@
           data-tf-size="80"
           data-tf-iframe-props="title=What you are most interested in?"
           data-tf-medium="snippet"
-          class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-secondary hover:opacity-80"
+          class="button-secondary"
         >
           Let's do this
         </button>
