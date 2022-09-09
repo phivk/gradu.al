@@ -4,7 +4,7 @@
       <div class="flex flex-wrap p-4">
         <ProgressBar :percentage="percentage" class="mx-2 mb-2" />
       </div>
-      <div class="grid content-center w-1/2 mx-auto">
+      <div class="grid content-center w-full max-w-3xl mx-auto">
         <Transition>
           <div v-frag>
             <component
@@ -19,22 +19,38 @@
               @nextStep="nextStep()"
             />
 
-            <div class="left">
+            <div class="left mt-8">
               <div v-if="stateIndex === 0">
-                <div>
-                  <button @click="nextStep()">Start</button>
+                <div class="text-center">
+                  <button class="button-secondary" @click="nextStep()">
+                    Start
+                  </button>
                   <span class="text-xs">press <strong>Enter</strong> ↵</span>
                   <p class="text-xs mt-2">🕒 Takes 3 minutes</p>
                 </div>
               </div>
 
-              <button v-if="hasPreviousState" @click="previousStep">
+              <button
+                class="button-secondary-inverse"
+                v-if="hasPreviousState"
+                @click="previousStep"
+              >
                 Previous
               </button>
-              <button v-if="hasNextState && stateIndex > 0" @click="nextStep">
+              <button
+                class="button-secondary"
+                v-if="hasNextState && stateIndex > 0"
+                @click="nextStep"
+              >
                 Next
               </button>
-              <button v-if="!hasNextState" @click="submitForm">Submit</button>
+              <button
+                class="button-primary"
+                v-if="!hasNextState"
+                @click="submitForm"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </Transition>
@@ -82,14 +98,15 @@ export default {
         {
           component: FormIntro,
           introduction:
-            "Hi! 👋 This is an invitation to connect to others in the community via skills, interests and fascinations.",
+            "<strong>Hi! 👋 This is an invitation to connect with others in the community via skills, interests and fascinations.</strong>",
           followup:
             "Your input will be used to connect you with other participants and will be shown on the main page.",
           updateFunction: () => {},
         },
         {
           component: FormSingleField,
-          introduction: "What's your @UserName on the MozFest Slack?",
+          introduction:
+            "What's your <strong>@UserName</strong> on the community Slack?",
           followup:
             "Please write down your exact user name, including the @ sign.",
           value: this.formData.username,
@@ -119,7 +136,8 @@ export default {
         },
         {
           component: FormMultipleInput,
-          introduction: "Are there any other things you would like to learn?",
+          introduction:
+            "Are there any other things you would like to <strong>learn</strong>?",
           followup:
             "Please write it in a way others will understand. For example: 'how to start a book club'.",
           value: this.formData.newLearnings,
@@ -129,7 +147,8 @@ export default {
         },
         {
           component: FormMultipleInput,
-          introduction: "Now, are there skills you would like to share?",
+          introduction:
+            "Now, are there skills you would like to <strong>share</strong>?",
           followup:
             "Think stories, skills, methods, shortcuts, failures, successes or tips and tricks. Anything goes, don't be shy!",
           value: this.formData.newSharings,
@@ -186,7 +205,6 @@ export default {
       this.formData[field].push(value);
     },
     async submitForm() {
-      const now = new Date();
       // Potentially show some processing interstitial
       this.submitting = true;
       // Get or create the user
@@ -199,7 +217,7 @@ export default {
       if (userData.length === 0) {
         const { data: newUserData } = await this.$supabase
           .from(`${COMMUNITY_NAME}_members`)
-          .insert({ username: this.formData.username, created_at: now });
+          .insert({ username: this.formData.username });
         user = newUserData[0];
       } else {
         user = userData[0];
@@ -209,7 +227,6 @@ export default {
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: learning.id,
           learner: user.id,
-          created_at: now,
         });
       });
       // For each of the sharings, create a new connection
@@ -217,7 +234,6 @@ export default {
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: sharing.id,
           sharer: user.id,
-          created_at: now,
         });
       });
       // For each of the new learnings, create a topic and a connection
@@ -226,12 +242,10 @@ export default {
           .from(`${COMMUNITY_NAME}_topics`)
           .insert({
             name: learning,
-            created_at: now,
           });
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: data[0].id,
           learner: user.id,
-          created_at: now,
         });
       });
       // For each of the new sharings, create a topic and a connection
@@ -240,12 +254,10 @@ export default {
           .from(`${COMMUNITY_NAME}_topics`)
           .insert({
             name: sharing,
-            created_at: now,
           });
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: data[0].id,
           sharer: user.id,
-          created_at: now,
         });
       });
       // Post the additional comments somewhere - user object?
@@ -269,10 +281,6 @@ export default {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-}
-
-button {
-  @apply bg-blue-500 text-white px-3 py-2 rounded mt-4;
 }
 
 .background {

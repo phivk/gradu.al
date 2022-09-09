@@ -1,11 +1,8 @@
 <template>
   <div v-frag>
-    <p class="font-bold">
-      {{ introduction }}
-    </p>
-    <p class="font-light">
-      {{ followup }}
-    </p>
+    <div class="text-center">
+      <FormHeader :introduction="introduction" :followup="followup" />
+    </div>
   </div>
 </template>
 

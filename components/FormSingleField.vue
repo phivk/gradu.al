@@ -1,30 +1,17 @@
 <template>
   <div v-frag>
-    <p class="font-bold">{{ introduction }}</p>
-    <p class="font-light">{{ followup }}</p>
-    <input
-      class="
-        border-0 border-gray border-b-2
-        my-4
-        bg-transparent
-        focus:outline-none focus:border-black
-        active:outline-none
-      "
-      v-if="!textarea"
+    <FormHeader :introduction="introduction" :followup="followup" />
+    <textarea
+      class="border-0 border-gray border-b-2 my-4 bg-transparent focus:outline-none focus:border-black active:outline-none text-3xl"
+      v-if="textarea"
       type="text"
       placeholder="Type your answer here..."
       v-model="field"
       @input="update"
     />
-    <textarea
-      class="
-        border-0 border-gray border-b-2
-        my-4
-        bg-transparent
-        focus:outline-none focus:border-black
-        active:outline-none
-      "
-      v-if="textarea"
+    <input
+      class="border-0 border-gray border-b-2 my-4 bg-transparent focus:outline-none focus:border-black active:outline-none text-3xl"
+      v-else
       type="text"
       placeholder="Type your answer here..."
       v-model="field"

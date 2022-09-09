@@ -1,6 +1,6 @@
 <template>
   <div v-frag>
-    <p v-html="introduction"></p>
+    <FormHeader :introduction="introduction" />
     <ul class="block">
       <li
         v-for="option in options"

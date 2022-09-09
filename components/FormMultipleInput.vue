@@ -1,33 +1,25 @@
 <template>
   <div v-frag>
-    <p class="font-bold">{{ introduction }}</p>
-    <p class="font-light">{{ followup }}</p>
-    <div class="flex">
+    <FormHeader :introduction="introduction" :followup="followup" />
+    <div class="flex items-center">
       <input
-        class="
-          border-0 border-gray border-b-2
-          my-4
-          bg-transparent
-          w-75
-          focus:outline-none focus:border-black
-          active:outline-none
-        "
+        class="border-0 border-gray border-b-2 my-4 mr-4 bg-transparent w-75 focus:outline-none focus:border-black active:outline-none text-3xl"
         v-model="newValue"
-        :placeholder="
-          answers.length > 0 ? 'Add another' : 'Add something you want to learn'
-        "
+        :placeholder="answers.length > 0 ? 'Add another' : 'Add a topic'"
       />
-      <button
-        class="bg-blue-500 text-white px-2 py-1 rounded mt-4 ml-3"
-        @click="addValue()"
-      >
+      <button class="button-primary text-lg h-fit" @click="addValue()">
         Add
       </button>
     </div>
     <div v-if="answers.length > 0">
       <p>You've added:</p>
       <ul>
-        <li class="list-disc my-2" v-for="answer in answers">{{ answer }}</li>
+        <li
+          class="my-2 p-2 rounded bg-white text-black text-opacity-80 font-medium tl shadow"
+          v-for="answer in answers"
+        >
+          {{ answer }}
+        </li>
       </ul>
     </div>
   </div>
