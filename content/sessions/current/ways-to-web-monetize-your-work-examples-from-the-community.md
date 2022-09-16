@@ -17,7 +17,7 @@ resources:
 cta:
   text: 'Register Here:'
   href: https://www.eventbrite.com/e/ways-to-web-monetize-your-work-examples-from-the-gftw-community-tickets-392424982687
-youtubeRecordingID: ''
+youtubeRecordingID: 'sKNzMs6twwk'
 panoptoRecordingID: ''
 googleDriveRecordingID: ''
 
