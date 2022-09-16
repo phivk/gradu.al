@@ -11,7 +11,9 @@ learnerNames:
 sharerNames:
 - Philo van Kemenade
 - Gunnar de Jong
-resources: []
+resources:
+- text: Shared Notes
+  href: https://docs.google.com/document/d/1337G60szqDzj7a81lUWXc0no5jhdiGNJJ8vkcRVynBc/edit#
 cta:
   text: 'Register Here:'
   href: https://www.eventbrite.com/e/ways-to-web-monetize-your-work-examples-from-the-gftw-community-tickets-392424982687
