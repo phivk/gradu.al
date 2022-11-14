@@ -1,5 +1,5 @@
 <template>
-  <div class="center-absolute w-full max-w-3xl p-2">
+  <div class="w-full max-w-3xl mx-auto p-2">
     <article class="flex relative flex-col">
       <div class="flex flex-wrap py-8">
         <ProgressBar :percentage="percentage" />
@@ -273,12 +273,6 @@ export default {
 };
 </script>
 <style lang="postcss" scoped>
-.center-absolute {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
