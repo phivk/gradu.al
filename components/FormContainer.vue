@@ -9,6 +9,7 @@
           <div v-frag>
             <component
               :is="currentState.component"
+              :required="currentState.required"
               :introduction="currentState.introduction"
               :value="currentState.value"
               :followup="currentState.followup"
@@ -38,7 +39,9 @@
                 Previous
               </button>
               <button
+                :disabled="nextStepDisabled"
                 class="button-secondary"
+                :class="{ 'opacity-50': nextStepDisabled }"
                 v-if="hasNextState && stateIndex > 0"
                 @click="nextStep"
               >
@@ -105,6 +108,7 @@ export default {
         },
         {
           component: FormSingleField,
+          required: true,
           introduction:
             "What's your <strong>@UserName</strong> on the community Slack?",
           followup:
@@ -180,13 +184,9 @@ export default {
     percentage() {
       return Math.ceil((this.stateIndex / (this.states.length - 1)) * 100);
     },
-  },
-  components: {
-    FormIntro,
-    FormSingleField,
-    FormMultipleInput,
-    FormMultipleSelect,
-    ProgressBar,
+    nextStepDisabled() {
+      return this.currentState.required && !this.currentState.value;
+    },
   },
   methods: {
     nextStep() {

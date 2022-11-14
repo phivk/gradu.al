@@ -15,7 +15,15 @@
 <script>
 // TODO: Combo box - seachable dropdown/list with search filter
 export default {
-  props: { options: Array, introduction: String, value: Array },
+  props: {
+    options: Array,
+    introduction: String,
+    value: Array,
+    required: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       selections: [],

@@ -6,12 +6,8 @@
 <script>
 import { mapActions } from "vuex";
 
-import FormContainer from "../components/FormContainer.vue";
 export default {
 	name: "App",
-	components: {
-		FormContainer,
-	},
 	data: () => {
 		return {
 			currentTopics: [],

@@ -26,6 +26,10 @@ export default {
     followup: String,
     value: String,
     textarea: Boolean,
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
