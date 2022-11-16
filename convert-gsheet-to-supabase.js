@@ -55,12 +55,13 @@ members_topics = edges.map((edge) => {
   let learner = edge.type === "learn" ? edge.sid : null;
   let topic = edge.tid;
   let sharer = edge.type === "share" ? edge.sid : null;
+  let created_at = members.find((member) => member.id === edge.sid).created_at;
   return {
     id: m_t_id,
-    created_at: null,
-    learner: learner,
-    topic: topic,
-    sharer: sharer,
+    created_at,
+    learner,
+    topic,
+    sharer,
   };
 });
 writeCSV(
