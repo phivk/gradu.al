@@ -121,7 +121,7 @@ export default {
         {
           component: FormMultipleSelect,
           introduction:
-            "These are some topics suggested by other Mozfest participants! <br/> Anything here <strong>you'd like to learn</strong> more about?",
+            "These are some topics suggested by others! <br/> Anything here <strong>you'd like to learn</strong> more about?",
           options: this.currentLearning,
           value: this.formData.learnings,
           updateFunction: (learnings) => {
@@ -131,7 +131,7 @@ export default {
         {
           component: FormMultipleSelect,
           introduction:
-            "Here are some popular topics MozFest participants would like to learn.  <br/>Anything here <strong>you could share</strong> something about?",
+            "Here are some popular topics others would like to learn.  <br/>Anything here <strong>you could share</strong> something about?",
           value: this.formData.sharings,
           options: this.currentSharing,
           updateFunction: (sharings) => {
