@@ -23,6 +23,7 @@
     "@supabase/supabase-js": "^1.35.3",
     "aos": "^2.3.4",
     "cors": "^2.8.5",
+    "csv-stringify": "^6.2.1",
     "dayjs": "^1.10.4",
     "dotenv": "^8.6.0",
     "form-data": "^3.0.1",

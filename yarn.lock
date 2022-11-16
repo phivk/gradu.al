@@ -5090,6 +5090,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csv-stringify@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "csv-stringify@npm:6.2.1"
+  checksum: 14a7531d01fea60f416007b64bdf0162cae6e50cbb63e1e6d5e3cf6b3ff97d120224e14d4292aed4009f64cea8c683f83dd87cb413ec4b97734da1e9f2328900
+  languageName: node
+  linkType: hard
+
 "csvtojson@npm:^2.0.10":
   version: 2.0.10
   resolution: "csvtojson@npm:2.0.10"
@@ -6699,6 +6706,7 @@ __metadata:
     aos: ^2.3.4
     autoprefixer: ^9.8.8
     cors: ^2.8.5
+    csv-stringify: ^6.2.1
     dayjs: ^1.10.4
     dotenv: ^8.6.0
     form-data: ^3.0.1
