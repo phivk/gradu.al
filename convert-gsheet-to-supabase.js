@@ -2,6 +2,10 @@ let nodes = require("./content/data/nodes.json").nodes;
 let edges = require("./content/data/edges.json").edges;
 let skills = require("./content/data/skills.json").skills;
 
+let file_path_members = "./content/data/table_members.csv";
+let file_path_topics = "./content/data/table_topics.csv";
+let file_path_members_topics = "./content/data/table_members_topics.csv";
+
 var fs = require("fs");
 const { stringify } = require("csv-stringify");
 
@@ -10,7 +14,7 @@ function writeCSV(arrayOfRows, columns, filePath) {
   const stringifier = stringify({ header: true, columns: columns });
   arrayOfRows.map((m) => stringifier.write(m));
   stringifier.pipe(writableStream);
-  console.log("Finished writing data to", filePath);
+  console.log("Written data to", filePath);
 }
 
 /* Members */
@@ -29,7 +33,7 @@ var members = nodes
 writeCSV(
   members,
   ["id", "created_at", "username", "email", "comment"],
-  "./content/data/table_members.csv"
+  file_path_members
 );
 
 /* Topics */
@@ -42,11 +46,7 @@ var topics = nodes
       name: n.name,
     };
   });
-writeCSV(
-  topics,
-  ["id", "created_at", "name"],
-  "./content/data/table_topics.csv"
-);
+writeCSV(topics, ["id", "created_at", "name"], file_path_topics);
 
 /* Members-Topics */
 var m_t_id = 0;
@@ -67,5 +67,5 @@ members_topics = edges.map((edge) => {
 writeCSV(
   members_topics,
   ["id", "created_at", "learner", "topic", "sharer"],
-  "./content/data/table_members_topics.csv"
+  file_path_members_topics
 );
