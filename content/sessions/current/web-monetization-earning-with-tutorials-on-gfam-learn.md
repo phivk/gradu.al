@@ -14,6 +14,7 @@ cta:
 youtubeRecordingID: KK57a1YTUqI
 panoptoRecordingID: ''
 googleDriveRecordingID: ''
+paymentPointer: "$ilp.uphold.com/miaxP4JGF9Xy"
 
 ---
 gFam.live aims to introduce new storytellers into the web monetization community with its social media posts, and now new functionality called gFam Learn will attempt to enable teachers to earn directly from students via web monetization and/or tips.
