@@ -99,8 +99,9 @@ export default {
     },
     hasRecording() {
       return (
-        (this.session.youtubeRecordingID || this.session.panoptoRecordingID) !==
-        undefined
+        !!this.session.youtubeRecordingID ||
+        !!this.session.panoptoRecordingID ||
+        !!this.session.googleDriveRecordingID
       );
     },
   },

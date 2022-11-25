@@ -1,6 +1,6 @@
-# gradual-landing
+# gradual
 
-> Imagine what your peers are good at... and then learning it, gradually. Together.
+> Here to learn
 
 ## Build Setup
 
