@@ -87,6 +87,13 @@ fields:
     required: false
   label: Google Drive Recording ID
   description: The ID of a Google Drive video to embed (<em>33 characters, e.g. 1t1PBm2SozuYc2tVEDdFNlyb_mp2WElBJ</em>)
+- name: paymentPointer
+  type: text
+  config:
+    required: false
+  label: Payment Pointer
+  description: 'A valid payment pointer, see for more info: <a href="https://webmonetization.org/docs/"
+    title="https://webmonetization.org/docs/" target="_blank">https://webmonetization.org/docs/</a>'
 pages:
 - content/sessions/current/11-30-youth-collaborative-community-call.md
 - content/sessions/current/a-very-engaging-community-call-with-erica-hargreave-and-friends.md
