@@ -1,7 +1,7 @@
 ---
 title: " Free Music Archive Community Call "
 type: peer share
-dateTime: 2022-04-17T22:00:00Z
+dateTime: 2022-04-17T22:00:00.000+00:00
 durationInMinutes: 60
 imageSrc: https://images.unsplash.com/photo-1494534530712-caf882821d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
 learnerNames: []
@@ -15,6 +15,7 @@ cta:
 youtubeRecordingID: ''
 panoptoRecordingID: ''
 googleDriveRecordingID: 1X3uk5YyJyRUZ3BdOJ7soVGXG23Txqucm
+paymentPointer: "$ilp.gatehub.net/484357631"
 
 ---
 [Hessel van Oorschot](https://community.webmonetization.org/hessel) and [Meghan Laclé](https://community.webmonetization.org/meghan) of \[Free Music [Archive.](https://community.webmonetization.org/freemusicarchive) hosted Tuesday’s Community Call. 
