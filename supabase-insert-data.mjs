@@ -108,4 +108,43 @@ async function run() {
   }
 }
 
+// make ids sequential
+function reindex_members(members, members_topics) {
+  let seqId = 1;
+  members.forEach((member) => {
+    let memberId = member.id;
+    member.id = seqId;
+    members_topics
+      .filter((mt) => {
+        return mt.learner === memberId || mt.sharer === memberId;
+      })
+      .map((mt) => {
+        if (mt.learner) {
+          mt.learner = seqId;
+        } else if (mt.sharer) {
+          mt.sharer = seqId;
+        }
+      });
+    seqId++;
+  });
+}
+
+function reindex_topics(topics, members_topics) {
+  let seqId = 1;
+  topics.forEach((topic) => {
+    let topicId = topic.id;
+    topic.id = seqId;
+    members_topics
+      .filter((mt) => {
+        return mt.topic === topicId;
+      })
+      .map((mt) => {
+        mt.topic = seqId;
+      });
+    seqId++;
+  });
+}
+
+reindex_members(members, members_topics);
+reindex_topics(topics, members_topics);
 run();
