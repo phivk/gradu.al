@@ -1,10 +1,6 @@
 import { readFile } from "fs/promises";
 import { createClient } from "@supabase/supabase-js";
 
-// let file_path_members = "./content/data/supabase_members.json";
-// let file_path_topics = "./content/data/supabase_topics.json";
-// let file_path_members_topics = "./content/data/supabase_members_topics.json";
-
 import members from "./content/data/supabase_members.json" assert { type: "json" };
 import members_topics from "./content/data/supabase_members_topics.json" assert { type: "json" };
 import topics from "./content/data/supabase_topics.json" assert { type: "json" };
@@ -108,43 +104,4 @@ async function run() {
   }
 }
 
-// make ids sequential
-function reindex_members(members, members_topics) {
-  let seqId = 1;
-  members.forEach((member) => {
-    let memberId = member.id;
-    member.id = seqId;
-    members_topics
-      .filter((mt) => {
-        return mt.learner === memberId || mt.sharer === memberId;
-      })
-      .map((mt) => {
-        if (mt.learner) {
-          mt.learner = seqId;
-        } else if (mt.sharer) {
-          mt.sharer = seqId;
-        }
-      });
-    seqId++;
-  });
-}
-
-function reindex_topics(topics, members_topics) {
-  let seqId = 1;
-  topics.forEach((topic) => {
-    let topicId = topic.id;
-    topic.id = seqId;
-    members_topics
-      .filter((mt) => {
-        return mt.topic === topicId;
-      })
-      .map((mt) => {
-        mt.topic = seqId;
-      });
-    seqId++;
-  });
-}
-
-reindex_members(members, members_topics);
-reindex_topics(topics, members_topics);
 run();
