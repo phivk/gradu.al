@@ -154,6 +154,15 @@ export default {
     bgColor: { type: String, default: "#FFF" },
     calendarEvent: { type: Boolean, default: true },
   },
+  head() {
+    if (this.paymentPointer) {
+      return {
+        meta: [
+          { name: "monetization", content: this.paymentPointer },
+        ]
+      }
+    }
+  },
   computed: {
     description() {
       return this.session.description
@@ -212,6 +221,9 @@ export default {
         this.session.dateTime, 
         this.session.durationInMinutes
       );
+    },
+    paymentPointer() {
+      return this.session.paymentPointer || process.env.DEFAULT_PAYMENT_POINTER || null
     },
   },
 };
