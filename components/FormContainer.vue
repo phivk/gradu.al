@@ -215,34 +215,52 @@ export default {
       let user;
       // Username doesn't exist in the database
       if (userData.length === 0) {
-        const { data: newUserData } = await this.$supabase
+        console.log("userData.length === 0");
+        console.log("this.formData.username", this.formData.username);
+        const { data: newUserData, error } = await this.$supabase
           .from(`${COMMUNITY_NAME}_members`)
           .insert({ username: this.formData.username });
+        console.log(newUserData, error);
         user = newUserData[0];
       } else {
         user = userData[0];
       }
       // For each of the learnings, create a new connection
+      // primary key as identity doesn't work properly for migrated data,
+      // so calc and set nextID explicitly
+      const { data: maxID } = await this.$supabase
+        .from(`${COMMUNITY_NAME}_members_topics`)
+        .select("id")
+        .order("id", { ascending: false })
+        .limit(1)
+        .single();
+      let nextID = maxID.id;
+
       this.formData.learnings.forEach(async (learning) => {
+        nextID++;
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: learning.id,
           learner: user.id,
+          id: nextID,
         });
       });
       // For each of the sharings, create a new connection
       this.formData.sharings.forEach(async (sharing) => {
+        nextID++;
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: sharing.id,
           sharer: user.id,
+          id: nextID,
         });
       });
       // For each of the new learnings, create a topic and a connection
       this.formData.newLearnings.forEach(async (learning) => {
-        const { data } = await this.$supabase
+        const { data, error } = await this.$supabase
           .from(`${COMMUNITY_NAME}_topics`)
           .insert({
             name: learning,
           });
+        console.log("error", error);
         await this.$supabase.from(`${COMMUNITY_NAME}_members_topics`).insert({
           topic: data[0].id,
           learner: user.id,
