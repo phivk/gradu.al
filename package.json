@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "fetch": "node build-script.js",
     "fetch:dev": "nodemon --inspect-brk build-script.js",
-    "generate": "yarn fetch && nuxt generate"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
