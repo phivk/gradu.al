@@ -68,10 +68,7 @@ import FormIntro from "./FormIntro.vue";
 import FormSingleField from "./FormSingleField.vue";
 import FormMultipleSelect from "./FormMultipleSelect.vue";
 import FormMultipleInput from "./FormMultipleInput.vue";
-
 import ProgressBar from "./ProgressBar.vue";
-
-const COMMUNITY_NAME = process.env.COMMUNITY_NAME;
 
 export default {
   data: () => {
@@ -205,6 +202,8 @@ export default {
       this.formData[field].push(value);
     },
     async submitForm() {
+      const COMMUNITY_NAME = this.$config.communityName;
+
       // Potentially show some processing interstitial
       this.submitting = true;
       // Get or create the user

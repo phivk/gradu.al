@@ -2001,16 +2001,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/dotenv@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@nuxtjs/dotenv@npm:1.4.1"
-  dependencies:
-    consola: ^2.10.1
-    dotenv: ^8.1.0
-  checksum: 890b9fdf70473bb4085a1c6f1bd4ca272e4b9e7abec6253f233d5f717d4f23ecde8f6b85290d540427aaef0ffb0a38662f223c903b47656a599f4a0d317934f7
-  languageName: node
-  linkType: hard
-
 "@nuxtjs/proxy@npm:^2.1.0":
   version: 2.1.0
   resolution: "@nuxtjs/proxy@npm:2.1.0"
@@ -4534,7 +4524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consola@npm:^2.10.0, consola@npm:^2.10.1, consola@npm:^2.15.0, consola@npm:^2.15.3, consola@npm:^2.6.0, consola@npm:^2.9.0":
+"consola@npm:^2.10.0, consola@npm:^2.15.0, consola@npm:^2.15.3, consola@npm:^2.6.0, consola@npm:^2.9.0":
   version: 2.15.3
   resolution: "consola@npm:2.15.3"
   checksum: 8ef7a09b703ec67ac5c389a372a33b6dc97eda6c9876443a60d76a3076eea0259e7f67a4e54fd5a52f97df73690822d090cf8b7e102b5761348afef7c6d03e28
@@ -5534,7 +5524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^8.1.0, dotenv@npm:^8.6.0":
+"dotenv@npm:^8.6.0":
   version: 8.6.0
   resolution: "dotenv@npm:8.6.0"
   checksum: 38e902c80b0666ab59e9310a3d24ed237029a7ce34d976796349765ac96b8d769f6df19090f1f471b77a25ca391971efde8a1ea63bb83111bd8bec8e5cc9b2cd
@@ -6698,7 +6688,6 @@ __metadata:
     "@nuxt/content": ^1.15.1
     "@nuxtjs/auth-next": 5.0.0-1611574754.9020f2a
     "@nuxtjs/axios": ^5.13.6
-    "@nuxtjs/dotenv": ^1.4.1
     "@nuxtjs/tailwindcss": ^4.2.1
     "@supabase/supabase-js": ^1.35.3
     "@tailwindcss/aspect-ratio": ^0.4.0

@@ -8,10 +8,10 @@ export const state = () => ({
   nodes: [],
 });
 
-const COMMUNITY_NAME = process.env.COMMUNITY_NAME;
-
 export const actions = {
   async fetchData({ commit }) {
+    const COMMUNITY_NAME = this.app.$config.communityName;
+
     // hit supabase to get topics, members and mappings
     const { data: topics, error: topicError } = await this.$supabase
       .from(`${COMMUNITY_NAME}_topics`)
