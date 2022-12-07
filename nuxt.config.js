@@ -35,6 +35,14 @@ export default {
     ],
   },
   /*
+   ** Runtime Config https://nuxtjs.org/tutorials/moving-from-nuxtjs-dotenv-to-runtime-config/
+   */
+  publicRuntimeConfig: {
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseKey: process.env.SUPABASE_KEY,
+    communityName: process.env.COMMUNITY_NAME,
+  },
+  /*
    ** Customize the progress-bar color
    */
   loading: { color: "#fff" },
@@ -61,7 +69,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/dotenv"],
+  buildModules: ["@nuxtjs/tailwindcss"],
   /*
    ** Nuxt.js modules
    */
