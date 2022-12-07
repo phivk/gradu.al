@@ -27,10 +27,6 @@
       class="mx-auto"
     />
     <IntentionSection
-      v-if="nodes && edges && skills"
-      :nodes="nodes"
-      :edges="edges"
-      :skills="skills"
       :typeformIdLearn="indexPage.typeformIdLearn"
       :typeformIdShare="indexPage.typeformIdShare"
       :typeformIdFull="indexPage.typeformIdFull"
@@ -53,6 +49,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     indexPage: { type: Object, default: () => {} },
@@ -60,9 +57,6 @@ export default {
     sessionsIndexes: { type: Array, default: () => {} },
     ambassadors: { type: Array, default: () => [] },
     ambassadorsIndex: { type: Object, default: () => {} },
-    nodes: { type: Object, default: () => {} },
-    edges: { type: Object, default: () => {} },
-    skills: { type: Object, default: () => {} },
   },
   computed: {
     sessionsPerSeason() {
@@ -86,8 +80,9 @@ export default {
     },
     seasons() {
       // return dir name for seasons that have sessions
-      return Object.keys(this.sessionsPerSeason)
+      return Object.keys(this.sessionsPerSeason);
     },
+    ...mapState(["supabase"]),
   },
 };
 </script>

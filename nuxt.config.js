@@ -11,18 +11,18 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: process.env.npm_package_description || "",
       },
       {
         hid: "twitter:description",
         name: "twitter:description",
-        content: process.env.npm_package_description || ""
+        content: process.env.npm_package_description || "",
       },
       {
         hid: "og:description",
         name: "og:description",
-        content: process.env.npm_package_description || ""
-      }
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
@@ -30,9 +30,9 @@ export default {
         src: "//gc.zgo.at/count.js",
         "data-goatcounter": "https://gradual.goatcounter.com/count",
         async: true,
-        body: true
-      }
-    ]
+        body: true,
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -44,7 +44,7 @@ export default {
   css: [
     // 'tachyons/css/tachyons.css',
     "@/assets/css/main.scss",
-    "@fortawesome/fontawesome-svg-core/styles.css"
+    "@fortawesome/fontawesome-svg-core/styles.css",
   ],
   /*
    ** Plugins to load before mounting the App
@@ -52,6 +52,7 @@ export default {
   plugins: [
     "~/plugins/fontawesome.js",
     "~/plugins/global.js",
+    "~/plugins/supabase.client.js",
   ],
   /*
    * https://nuxtjs.org/docs/configuration-glossary/configuration-components
@@ -60,7 +61,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/dotenv"],
   /*
    ** Nuxt.js modules
    */
@@ -68,7 +69,7 @@ export default {
     "@nuxt/content",
     "@nuxtjs/axios",
     "@nuxtjs/auth-next",
-    "nuxt-password-protect"
+    "nuxt-password-protect",
   ],
   auth: {
     strategies: {
@@ -76,16 +77,16 @@ export default {
         scheme: "oauth2",
         endpoints: {
           authorization: "https://slack.com/oauth/v2/authorize",
-          token: "/api/slack-token"
+          token: "/api/slack-token",
         },
         token: {
           property: "authed_user.access_token",
           type: "Bearer",
-          maxAge: 1800
+          maxAge: 1800,
         },
         refreshToken: {
           property: "refresh_token",
-          maxAge: 60 * 60 * 24 * 30
+          maxAge: 60 * 60 * 24 * 30,
         },
         scope: [],
         responseType: "code",
@@ -98,15 +99,15 @@ export default {
         state: "UNIQUE_AND_NON_GUESSABLE",
         codeChallengeMethod: "",
         responseMode: "",
-        acrValues: ""
-      }
-    }
+        acrValues: "",
+      },
+    },
   },
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.scss",
     tailwindcss: {
-      jit: true
-    }
+      jit: true,
+    },
   },
   /*
    ** https://content.nuxtjs.org/configuration
@@ -121,7 +122,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
   },
   passwordProtect: {
     enabled: true,
@@ -132,8 +133,8 @@ export default {
     cookieName: "_password",
     cookie: {
       prefix: "",
-      expires: 5
+      expires: 5,
     },
-    ignoredPaths: ["/public-page"]
-  }
+    ignoredPaths: ["/public-page"],
+  },
 };

@@ -50,7 +50,7 @@ Sometimes you come up with a great idea for a session _during_ the festival. Her
 Found a match with others who share your interest?
 
 <div class="inline-flex rounded-md shadow cursor-pointer">
-  <a href="https://mozfest.gradu.al/propose" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-secondary bg-white hover:bg-secondary-washed no-underline">Propose a session</a>
+  <a href="https://mozfest.gradu.al/propose" target="_blank" class="button-secondary-inverse">Propose a session!</a>
 </div>
 
 Any questions? Join the conversation in the [#emergent-sessions channel](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0) on the [MozFest Slack](https://www.mozillafestival.org/en/slack/).

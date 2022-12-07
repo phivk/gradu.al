@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback");
 
 @tailwind base;
 @tailwind components;
 
 // Additional styles
-@import 'additional-styles/utility-patterns.scss';
-@import 'additional-styles/range-slider.scss';
-@import 'additional-styles/toggle-switch.scss';
-@import 'additional-styles/theme.scss';
+@import "additional-styles/utility-patterns.scss";
+@import "additional-styles/range-slider.scss";
+@import "additional-styles/toggle-switch.scss";
+@import "additional-styles/theme.scss";
 
 @tailwind utilities;
 
@@ -25,7 +25,7 @@
 
 // AOS styles
 $aos-distance: 10px;
-@import 'node_modules/aos/src/sass/aos.scss';
+@import "node_modules/aos/src/sass/aos.scss";
 
 @layer base {
   h1 {
@@ -57,11 +57,23 @@ $aos-distance: 10px;
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-    a {
-      @apply underline hover:no-underline
+    a:not(.button-primary):not(.button-primary-inverse):not(.button-secondary):not(.button-secondary-inverse) {
+      @apply underline hover:no-underline;
     }
     img {
       margin: auto;
     }
+  }
+  .button-primary {
+    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-primary hover:opacity-80 no-underline;
+  }
+  .button-primary-inverse {
+    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-primary bg-white hover:bg-primary-washed no-underline;
+  }
+  .button-secondary {
+    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-secondary hover:opacity-80 no-underline;
+  }
+  .button-secondary-inverse {
+    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-secondary bg-white hover:bg-secondary-washed no-underline;
   }
 }

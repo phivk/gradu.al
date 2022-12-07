@@ -2,51 +2,22 @@
   <div>
     <svg class="h0">
       <defs>
-        <marker
-          id="m-end"
-          markerWidth="10"
-          markerHeight="10"
-          refX="9"
-          refY="3"
-          orient="auto"
-          markerUnits="strokeWidth"
-        >
+        <marker id="m-end" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
           <path d="M0,0 L0,6 L9,3 z"></path>
         </marker>
-        <marker
-          id="m-start"
-          markerWidth="6"
-          markerHeight="6"
-          refX="-4"
-          refY="3"
-          orient="auto"
-          markerUnits="strokeWidth"
-        >
+        <marker id="m-start" markerWidth="6" markerHeight="6" refX="-4" refY="3" orient="auto"
+          markerUnits="strokeWidth">
           <rect width="3" height="6"></rect>
         </marker>
       </defs>
     </svg>
     <div class="relative">
-      <d3-network
-        ref="net"
-        :net-nodes="nodesFiltered"
-        :net-links="edgesFiltered"
-        :options="options"
-        :link-cb="lcb"
-      />
-      <div
-        class="absolute bottom-0 left-0 px-0 md:px-4 w-full bg-white hover-opaque"
-      >
+      <d3-network ref="net" :net-nodes="nodesFiltered" :net-links="edgesFiltered" :options="options" :link-cb="lcb" />
+      <div class="absolute bottom-0 left-0 px-0 md:px-4 w-full bg-white hover-opaque">
         <div class="flex flex-wrap items-center justify-between">
           <div class="flex items-center m-2">
             <label class="mr-2" for="graphSpacing">Spacing</label>
-            <input
-              type="range"
-              min="2000"
-              max="5000"
-              v-model:value="force"
-              id="graphSpacing"
-            />
+            <input type="range" min="2000" max="5000" v-model:value="force" id="graphSpacing" />
           </div>
           <div class="flex items-center m-2">
             Showing
@@ -54,13 +25,8 @@
               {{ skillNodesCount }}
             </span>
             topics with
-            <input
-              v-model.number="minConnections"
-              type="number"
-              min="1"
-              :max="this.edgeCountMax"
-              class="w-16 rounded mx-1"
-            />
+            <input v-model.number="minConnections" type="number" min="1" :max="this.edgeCountMax"
+              class="w-16 rounded mx-1" />
             or more connections
           </div>
         </div>
@@ -68,7 +34,8 @@
     </div>
   </div>
 </template>
-<style src="vue-d3-network/dist/vue-d3-network.css"></style>
+<style src="vue-d3-network/dist/vue-d3-network.css">
+</style>
 <script>
 import D3Network from "vue-d3-network";
 export default {
@@ -228,6 +195,7 @@ path.sharer {
   opacity: 0.5;
   transition: opacity 0.5s;
 }
+
 .hover-opaque:hover {
   opacity: 1;
 }
