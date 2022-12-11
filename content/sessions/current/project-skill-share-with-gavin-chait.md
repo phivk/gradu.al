@@ -1,7 +1,7 @@
 ---
 title: 'Project Skill Share with Gavin Chait '
 type: talk
-dateTime: 2022-04-25T14:00:00Z
+dateTime: 2022-04-25T14:00:00.000+00:00
 durationInMinutes: 60
 imageSrc: https://community.webmonetization.org/images/SXuo1vw5z_isJ3Kdw9EBOB9wDzjHmqmk_sdGz1EQhPM/w:880/mb:500000/ar:1/aHR0cHM6Ly9jb21t/dW5pdHkud2VibW9u/ZXRpemF0aW9uLm9y/Zy9yZW1vdGVpbWFn/ZXMvdXBsb2Fkcy9h/cnRpY2xlcy9yNmxk/NGMwa281bHBuaDI2/ejk5ei5qcGc
 learnerNames: []
@@ -14,6 +14,7 @@ cta:
 youtubeRecordingID: ''
 panoptoRecordingID: ''
 googleDriveRecordingID: 1b-YaREQYiVYveDv5PGdkYA6Kw-hLmfoQ
+paymentPointer: "$ilp.uphold.com/mFJ72eZXHEfh"
 
 ---
 ## About this event
