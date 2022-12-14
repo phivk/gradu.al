@@ -24,9 +24,9 @@ This year’s MozFest provided a first opportunity to [meet many members of the 
 
 We have learned that the community’s strongest motivations to come together and exchange are based around:
 
-* showcasing work and gaining new traction for your project
-* incentivization to boost open, fair, and inclusive standards and innovation related to web monetization
-* networking and or partnering with other cohort members
+* - showcasing work and gaining new traction for your project
+* - incentivization to boost open, fair, and inclusive standards and innovation related to web monetization
+* - networking and or partnering with other cohort members
 
 Our approach to learn from the behavior of members of this community has informed us about how to best serve the community and adjust our product design accordingly. We have been able to streamline user input by adding an important extension to the Gradual tooling in the form of a flexible database and authentication solution called Supabase.
 
@@ -38,21 +38,21 @@ Central to our goals as part of the GftW cohort, was to provide the community wi
 
 Based on community input from community members, the Gradual tooling has been extended in several ways (see the Key Activities section for details):
 
-* Streamlining of data input and storage, leveraging SupaBase
-* Web Monetization of individual session pages
-* UI Improvements to the way topics and skills are made visible
-* Ability to easily embed video recordings via Google Drive
+* - Streamlining of data input and storage, leveraging SupaBase
+* - Web Monetization of individual session pages
+* - UI Improvements to the way topics and skills are made visible
+* - Ability to easily embed video recordings via Google Drive
 
 While writing our original proposal we decided to also include in our timeline two types of engagement metrics: Number of sessions & community members reached. These were mostly meant to give our team ambitious goals to aim for during the cohort.
 
 **_Number of sessions_**: Our original milestone of achieving 12 sessions within the 6 months has changed to 6 sessions:
 
-1. [Session on Decentralized learning at Mozfest](https://gftw.gradu.al/sessions/current/gradual-session-on-decentralized-learning-at-mozfest)
-2. [Gftw - gradual community call](https://gftw.gradu.al/sessions/current/gradual-community-call)
-3. [Lessons Learned from past and current gftw projects](https://gftw.gradu.al/sessions/current/lessons-learned-from-past-and-current-gftw-projects-test)
-4. [Web Monetization earning with tutorials on gFam Learn](https://gftw.gradu.al/sessions/current/web-monetization-earning-with-tutorials-on-gfam-learn)
-5. [Community Call around Digital Gardening](https://gftw.gradu.al/sessions/current/digital-gardening-with-tani-olhanoski-and-the-mysillio-team)
-6. [Ways to web monetize your work: examples from the community](https://gftw.gradu.al/sessions/current/ways-to-web-monetize-your-work-examples-from-the-community)
+1. 1. [Session on Decentralized learning at Mozfest](https://gftw.gradu.al/sessions/current/gradual-session-on-decentralized-learning-at-mozfest)
+2. 2. [Gftw - gradual community call](https://gftw.gradu.al/sessions/current/gradual-community-call)
+3. 3. [Lessons Learned from past and current gftw projects](https://gftw.gradu.al/sessions/current/lessons-learned-from-past-and-current-gftw-projects-test)
+4. 4. [Web Monetization earning with tutorials on gFam Learn](https://gftw.gradu.al/sessions/current/web-monetization-earning-with-tutorials-on-gfam-learn)
+5. 5. [Community Call around Digital Gardening](https://gftw.gradu.al/sessions/current/digital-gardening-with-tani-olhanoski-and-the-mysillio-team)
+6. 6. [Ways to web monetize your work: examples from the community](https://gftw.gradu.al/sessions/current/ways-to-web-monetize-your-work-examples-from-the-community)
 
 And this does not even include some of the other community calls that have been hosted by and for the community - you can watch the recordings back on the dedicated session pages!
 
@@ -98,9 +98,9 @@ By implementing the option of adding a custom payment pointer on individual Grad
 
 Technically, adding payment pointer support has been relatively straightforward. We’ve added logic to our session pages that renders a web monetization meta tag depending on three possible scenarios:
 
-1. A custom Payment Pointer is provided for the respective session page: render the web monetization meta tag with this custom payment pointer.
-2. A default Payment Pointer is provided for the community instance: render the web monetization meta tag with this default payment pointer,
-3. No Payment Pointer is provided: don’t render the web monetization meta tag.
+1. 1. A custom Payment Pointer is provided for the respective session page: render the web monetization meta tag with this custom payment pointer.
+2. 2. A default Payment Pointer is provided for the community instance: render the web monetization meta tag with this default payment pointer,
+3. 3. No Payment Pointer is provided: don’t render the web monetization meta tag.
 
 Payment Pointers can be easily added to session pages via the Gradual CMS.
 
@@ -108,9 +108,9 @@ Payment Pointers can be easily added to session pages via the Gradual CMS.
 
 Since launch we've released several new features to the [GftW Gradual instance](https://gftw.gradu.al/), including:
 
-* an improved list view of learning intentions, with search functionality and learners & sharers visualized
-* a way to filter the graph view of learning intentions by amount of connections
-* a more direct way to add a new skill or high-five an existing one
+* * an improved list view of learning intentions, with search functionality and learners & sharers visualized
+* * a way to filter the graph view of learning intentions by amount of connections
+* * a more direct way to add a new skill or high-five an existing one
 
 ![](https://community.interledger.org/remoteimages/uploads/articles/r2gd3h1y0pgle1xmo340.png)
 
