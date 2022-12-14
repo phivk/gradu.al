@@ -10,6 +10,8 @@ datePublished: 2022-12-13T23:00:00Z
 ---
 # Gradual skill sharing at community scale — Grant Report #2
 
+This post was originally published on the [GftW Community Forum](https://community.interledger.org/gradual/gradual-skill-sharing-at-community-scale-grant-report-2-1b28).
+
 ## Project Update
 
 Hello everyone!
@@ -23,8 +25,6 @@ This year’s MozFest provided a first opportunity to [meet many members of the 
 We have learned that the community’s strongest motivations to come together and exchange are based around:
 
 * showcasing work and gaining new traction for your project
-
-
 * incentivization to boost open, fair, and inclusive standards and innovation related to web monetization
 * networking and or partnering with other cohort members
 
