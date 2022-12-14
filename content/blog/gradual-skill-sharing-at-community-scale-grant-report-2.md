@@ -23,6 +23,8 @@ This year’s MozFest provided a first opportunity to [meet many members of the 
 We have learned that the community’s strongest motivations to come together and exchange are based around:
 
 * showcasing work and gaining new traction for your project
+
+
 * incentivization to boost open, fair, and inclusive standards and innovation related to web monetization
 * networking and or partnering with other cohort members
 
