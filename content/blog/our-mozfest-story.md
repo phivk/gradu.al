@@ -9,6 +9,8 @@ datePublished: 2022-03-30T22:00:00Z
 ---
 MozFest - amongst many other things - is a fantastic place to find your people and start building momentum around your passions and your projects. It's a place just filled to the brim with the wildest innovations, inspiring ideas, stirring movements and wonderful people all convening around a single mission: a **better, healthier internet**.
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Ps4V3qLv6S4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 If you've ever attended you may know that it can also be a somewhat overwhelming place. Much like the internet itself there is, well, a lot going on. And sometimes you may lose yourself a bit in all the excitement... 😅 I know I've definitely been there.
 
 This year my intention was to have fun, to not plan _anything_ in advance and to just see what would emerge organically. Here’s a short look back at this year’s Mozilla Festival and the story of our special partnership.
