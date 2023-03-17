@@ -68,8 +68,12 @@ export default {
         : "";
     },
     profilePic() {
-      const fn = profilePics[this.blog.author];
-      return require(`@/assets/${fn}`);
+      if (this.blog.author) {
+        const fn = profilePics[this.blog.author];
+        return require(`@/assets/${fn}`);
+      } else {
+        return "";
+      }
     },
   },
 };
