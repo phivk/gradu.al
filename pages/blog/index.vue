@@ -27,7 +27,9 @@ export default {
     Footer,
   },
   async asyncData({ $content }) {
-    const blogs = await $content("blog").fetch();
+    const blogs = await $content("blog")
+      .sortBy("datePublished", "desc")
+      .fetch();
     return { blogs };
   },
 };
