@@ -10,7 +10,7 @@ datePublished:
 ---
 We are excited to partner with Mozilla again to host the Emergent Encounters Experience at [MozFest 2023](https://www.mozillafestival.org/). Building on the momentum and insights from the Emergent Sessions track we ran at MozFest 2022, we are bringing together MozFest participants through emergent encounters, based on shared interests that are gradually discovered throughout the festival.
 
-<iframe width="560" height="315" src="[https://www.youtube-nocookie.com/embed/oV2RKDXLtPY](https://www.youtube-nocookie.com/embed/oV2RKDXLtPY "https://www.youtube-nocookie.com/embed/oV2RKDXLtPY")" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oV2RKDXLtPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 The internet is much like a garden: a living, breathing ecosystem that's constantly in flux. And just like a garden, we have to take care of the internet. We have to nurture it, protect it, and preserve it for future generations. This is where the MozFest participants come in!
 
