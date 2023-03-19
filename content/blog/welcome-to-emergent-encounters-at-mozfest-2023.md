@@ -14,17 +14,11 @@ We are excited to partner with Mozilla again to host the Emergent Encounters Exp
 
 The internet is much like a garden: a living, breathing ecosystem that's constantly in flux. And just like a garden, we have to take care of the internet. We have to nurture it, protect it, and preserve it for future generations. This is where the MozFest participants come in!
 
-We are inviting people to gather around the themes of Movement Building, Transparency, Data Stewardship and Bias. Each day Monday through Thursday has two themed **Happy Hours** 🌱 on Spactial Chat, where people can gather, meet and share ideas in different forms. You can find them on the schedule here:
+We are inviting people to gather around the themes of Movement Building, Transparency, Data Stewardship and Bias. Each day Monday through Thursday has two themed **Happy Hours** 🌱 on Spatial Chat, where people can gather, meet and share ideas in different forms. You can find them on the official Mozilla Festival schedule [here](https://schedule.mozillafestival.org/schedule?query=Happy%20Hour).
 
+We will gather the most nutritious input into what we call 'the greenhouse' for a **Greenhouse Harvesting Party** 🎉 [on Friday](https://schedule.mozillafestival.org/session/L38773-1) to take stock at what we've learned over the week and look forward to the road ahead.
 
-https://schedule.mozillafestival.org/schedule?query=Happy%20Hour
-
-We will gather the most nutritious input into the greenhouse for a **Greenhouse Harvesting Party** 🎉 on Friday to take stock at what we've learned over the week and look forward to the road ahead:
-
-
-https://schedule.mozillafestival.org/session/L38773-1
-
-If you haven't got your pay-what-you-can MozFest ticket yet, go ahead and get one now:
+If you haven't gotten your pay-what-you-can MozFest ticket yet, go ahead and get one now:
 
 [http://mzl.la/tickets](http://mzl.la/tickets "http://mzl.la/tickets")
 
