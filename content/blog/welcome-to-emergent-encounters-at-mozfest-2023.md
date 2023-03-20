@@ -31,7 +31,7 @@ Meet at the [Emergent Encounters Gardens](https://app.spatial.chat/s/mozilla-fes
 📅 Friday: Greenhouse Harvesting Party   
 [https://schedule.mozillafestival.org/session/L38773-1](https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS "https://app.spatial.chat/s/mozilla-festival?room=https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS")  
   
-💬 Join the channel on the MozFest Slack!  
+💬 Join the channel on the [MozFest Slack](https://www.mozillafestival.org/en/slack/ "MozFest Slack")!  
 [#emergent-encounters](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0 "Emergent Encounters Slack Channel")
 
 ## See you there!
