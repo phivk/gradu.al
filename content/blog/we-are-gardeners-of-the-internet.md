@@ -4,7 +4,7 @@ author: Gunnar de Jong
 description: Mozilla Festival 2023 may have come to an end but other things are just
   beginning. Find out how we went from a simple experiment to an international activist
   garden fighting for internet health together.
-imageSrc: "/uploads/screenshot-2023-03-24-at-16-23-57.png"
+imageSrc: "/uploads/screenshot-2023-03-24-at-15-25-39.png"
 datePublished: 2023-04-06T22:00:00Z
 
 ---
@@ -16,9 +16,7 @@ It is no surprise then that the beginnings of Gradual go hand-in-hand with our j
 
 With MozFest 2023 having come to an end it wraps up our 3rd official collaboration with Mozilla as partners. This year, we wanted to do things [slightly differently](https://www.gradu.al/blog/welcome-to-emergent-encounters-at-mozfest-2023). In this blog I'll briefly lay out how the process to design and host a virtual garden gained traction within the community to fight for internet health together.
 
-<iframe src="[https://player.vimeo.com/video/811383613?h=06555d4a1a&title=0&byline=0&portrait=0](https://player.vimeo.com/video/811383613?h=06555d4a1a&title=0&byline=0&portrait=0 "MozFest 2023")" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
-<p><a href="[https://vimeo.com/811383613](https://vimeo.com/811383613 "https://vimeo.com/811383613")">MozFest 2023</a> from <a href="[https://vimeo.com/user145218750](https://vimeo.com/user145218750 "https://vimeo.com/user145218750")">Mozilla Foundation</a> on <a href="[https://vimeo.com](https://vimeo.com "https://vimeo.com")">Vimeo</a>.</p>
+<iframe width="560" height="315" src="[https://www.youtube.com/embed/U4KIr5lccRA?controls=0](https://www.youtube.com/embed/U4KIr5lccRA?controls=0 "https://www.youtube.com/embed/U4KIr5lccRA?controls=0")" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## From Garden to Greenhouse
 
