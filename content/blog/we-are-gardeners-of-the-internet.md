@@ -20,9 +20,9 @@ With MozFest 2023 having come to an end it wraps up our 3rd official collaborati
 
 ## From Garden to Greenhouse
 
-While the event can be overwhelming at times, it provides an excellent platform for diverse perspectives as it fosters relationships between its attendees. Sessions are hosted, games are played, music is performed... let's just say that lots is happening all at once. Because MozFest has been a virtual event since 2021 it's easy to miss the type of moments of spontaneity that come with IRL events. 
+While the event can be overwhelming at times, it provides an excellent platform for diverse perspectives as it fosters relationships between its attendees. Sessions are hosted, games are played, music is performed... let's just say that lots is happening all at once. Because MozFest has been a virtual event since 2021 it's easy to miss the type of moments of spontaneity that come with IRL events.
 
-Last year's Emergent Sessions track at MozFest was a testament to the value of building connections around shared curiosity. Our tool and process connected attendees around common interests and resulted in unique pairings of people exchanging contact details for further engagement. 
+Last year's Emergent Sessions track at MozFest was a testament to the value of building connections around shared curiosity. Our tool and process connected attendees around common interests and resulted in unique pairings of people exchanging contact details for further engagement.
 
 This year, the Emergent Encounters track built on this idea, making use of a tool called Spatial Chat to create a virtual garden where participants could come together and explore issues on the four themes of the festival together. Collectively, we discussed how we should address Bias, navigate Data Stewardship, build Transparency and incite Movement Building in our own lives to make for a better internet together.
 
@@ -32,6 +32,6 @@ From the very beginning we asked participants to become gardeners and 'plant see
 
 This way, our garden grew more rich by the day by virtue of people's individual and collective contributions. A bulletin board emerged where **people planted their ideas and notes for spontaneous gatherings, connections and resources**, mini-adventures ensued during some the happy hours by exploring the nooks and crannies of the well designed garden (thanks to Bas from the Mozilla org team!), and slowly it became clear that the garden was used as a relaxing space where people could gather to continue conversations or cool down after their more intensive Zoom sessions.
 
-At the end of each day, we harvested some of the main insights to plant 
+At the end of each day, we harvested some of the main insights from the two facilitated sessions (or, 'happy hours') during the day and planted them in another virtual room which was designed as a Greenhouse. The limitations of designing something 
 
 ## Planting seeds to plant your seat
