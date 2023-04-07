@@ -38,12 +38,12 @@ At the end of each day, we harvested some of the main insights from the two faci
 
 Throughout the week, we've experienced among other things:
 
-* facilitated discussions in large and small groups
-* games and exercises that both validated and tested our own opinions, perspectives and viewpoints
-* explorations through the gardens alongside narrow paths
-* engaged in a few side-quests here and there
-* encountered some mysterious mushrooms
-* cleaned some astray internet cables and vats of toxic oil spill-over with baking soda to the tunes of Edward Sharpe & The Magnetic Zeros
+* **facilitated discussions** in large and small groups
+* **games and exercises** that both validated and tested our own opinions, perspectives and viewpoints
+* **explorations** through the gardens alongside narrow paths
+* engaged in a few **side-quests** here and there
+* **encountered** some mysterious mushrooms and friendly faces
+* **cleaned** some astray internet cables and vats of toxic oil spill-over with baking soda while dancing to the tunes of Edward Sharpe & The Magnetic Zeros
 
 On the last day of the festival we hosted a party for people to come together in the Greenhouse in which they could witness that the seeds that were collectively planted had grown into a Tree of Insights (I'm not going to trademark that phrase, I just felt like it deserved capitalization). The visual metaphor of using tree imagery here seemed quite poignant: we grow a tree together which fills up with its own fruits. When those fruits fall to the ground (insights are taken home) they can be soiled and nurtured to grow into new trees (when participants share and grow movements outside of the festival) so **collectively we are planting an international forest of internet activist trees**. How cool is that?
 
@@ -55,7 +55,7 @@ As if fate would have it one of the first contributions in the gardens came from
 
 It became apparent rather quickly that we had to do something with this. At the final party in the Greenhouse Philipp presented not only the idea for this initiative but also the actual chair he had painted during the week of the festival by showing it on camera as he held it in, yes, a forest in Germany. He had designed a few virtual chairs as well which we used in the greenhouse to have our facilitated break-out conversations to reflect on the week we've shared together.
 
-Again, the beauty of this analogy did not go lost on me. The efficacy of using a visual that describes the seats we sit on behind our desktops, at our schools, offices and homes as we spend our days working, reading and writing is hard to ignore. Much of our lives nowadays is spent online, our virtual avatars roaming freely throughout the web - yet our physical bodies remain static as they serve as vessels of our true intent. The seats that carry us as we navigate the endless possibilities of the web hold true power, they ground us by providing a solid base in our efforts to connect, learn and socialize. I didn't quite see it coming but what started out as a simple pun that planting seeds grew not into flowers but into seats turned into something much deeper, and I'll continue to reflect on as we look forward to taking on new projects.
+Again, the beauty of this analogy did not go lost on me. The efficacy of using a visual that describes the seats we sit on behind our desktops, at our schools, offices and homes as we spend our days working, reading and writing is hard to ignore. Much of our lives nowadays is spent online, our virtual avatars roaming freely throughout the web - yet our physical bodies remain static as they serve as vessels of our true intent. **The seats that carry us as we navigate the endless possibilities of the web hold true power, they ground us by providing a solid base in our efforts to connect, learn and socialize**. I didn't quite see it coming but what started out as a simple pun that planting seeds grew not into flowers but into seats turned into something much deeper, and I'll continue to reflect on as we look forward to taking on new projects.
 
 I hope you realize the power you hold in that seat of yours as well.
 
