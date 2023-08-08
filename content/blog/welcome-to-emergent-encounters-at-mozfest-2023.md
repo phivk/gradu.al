@@ -1,13 +1,14 @@
 ---
 title: Welcome to Emergent Encounters at MozFest 2023
 author: Philo van Kemenade
-description: We are excited to partner with Mozilla again to host the Emergent Encounters
+description:
+  We are excited to partner with Mozilla again to host the Emergent Encounters
   Experience at MozFest 2023. Read more about the space we are holding for virtual
   water cooler moments and spontaneous meetings.
 imageSrc: "/uploads/emergent-encounters-garden-2023-03-17-small.jpg"
-datePublished: 
-
+datePublished: 2023-03-01T12:00:00Z
 ---
+
 We are excited to partner with Mozilla again to host the Emergent Encounters Experience at [MozFest 2023](https://www.mozillafestival.org/). Building on the momentum and insights from the Emergent Sessions track we ran at MozFest 2022, we are bringing together MozFest participants through emergent encounters, based on shared interests that are gradually discovered throughout the festival.
 
 ## Welcome to the Gardens of MozFest
@@ -23,14 +24,14 @@ We will gather the most nutritious input into what we call 'the greenhouse' for 
 ## TL;DR
 
 🌱 Having a conversation you’d like to continue beyond Zoom or Slack?  
-Meet at the [Emergent Encounters Gardens](https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS "Emergent Encounters Gardens") on SpatialChat!  
-  
-📅 Monday - Thursday: two themed happy hours per day   
+Meet at the [Emergent Encounters Gardens](https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS "Emergent Encounters Gardens") on SpatialChat!
+
+📅 Monday - Thursday: two themed happy hours per day  
 [https://schedule.mozillafestival.org/schedule?query=Happy%20Hour](https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS "https://app.spatial.chat/s/mozilla-festival?room=https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS")
 
-📅 Friday: Greenhouse Harvesting Party   
-[https://schedule.mozillafestival.org/session/L38773-1](https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS "https://app.spatial.chat/s/mozilla-festival?room=https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS")  
-  
+📅 Friday: Greenhouse Harvesting Party  
+[https://schedule.mozillafestival.org/session/L38773-1](https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS "https://app.spatial.chat/s/mozilla-festival?room=https://app.spatial.chat/s/mozilla-festival?room=Ca7k9GslLeodM2D1CKAS")
+
 💬 Join the channel on the [MozFest Slack](https://www.mozillafestival.org/en/slack/ "MozFest Slack")!  
 [#emergent-encounters](https://app.slack.com/client/T170JCUN6/C01PXSJ9AH0 "Emergent Encounters Slack Channel")
 
