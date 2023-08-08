@@ -1,13 +1,14 @@
 ---
 title: We are gardeners of the internet
 author: Gunnar de Jong
-description: Mozilla Festival 2023 may have come to an end but other things are just
+description:
+  Mozilla Festival 2023 may have come to an end but other things are just
   beginning. Find out how we went from a simple experiment to an international activist
   garden fighting for internet health together.
-imageSrc: "/uploads/screenshot-2023-04-07-at-23-49-09.png"
+imageSrc: "/uploads/screenshot-2023-04-07-at-23-49-09.jpg"
 datePublished: 2023-04-06T22:00:00Z
-
 ---
+
 ## To change is to adapt
 
 There's a lot of momentum around Artificial Intelligence and its implementations at the moment and I'm not even remotely going to pretend that I feel confident in fully understanding the impact this will have on our functioning societies. Some of the hype may be entirely overblown, some of it may demand your attention but it seems clear to me that as with any revolutionary emerging technology it's going to take time to adapt the way we live, work and learn. Considering the exponential growth of technology we're currently experiencing, ample time to adjust and adapt may become a luxury we can't continue to take for granted.
@@ -30,7 +31,7 @@ This year, the Emergent Encounters track built on this idea, making use of a too
 
 From the very beginning we asked participants to become gardeners and 'plant seeds' at the gardens. **This bit of role-playing was effective in that it conveyed a very simple concept: if not us, then who?** It requires an active stance from everybody in order for change to be effective, and you can never anticipate what simple seed can blossom into something quite large and beautiful.
 
-![](/uploads/screenshot-2023-03-24-at-15-25-39.png)
+![](/uploads/screenshot-2023-03-24-at-15-25-39.jpg)
 
 This way, our garden grew more rich by the day by virtue of people's individual and collective contributions. A bulletin board emerged where **people planted their ideas and notes for spontaneous gatherings, connections and resources**, mini-adventures ensued during some the happy hours by exploring the nooks and crannies of the well designed garden (thanks to Bas from the Mozilla org team!), and slowly it became clear that the garden was used as a relaxing space where people could gather to continue conversations or cool down after their more intensive Zoom sessions.
 
@@ -38,16 +39,16 @@ At the end of each day, we harvested some of the main insights from the two faci
 
 Throughout the week, we've experienced among other things:
 
-* **facilitated discussions** in large and small groups
-* **games and exercises** that both validated and tested our own opinions, perspectives and viewpoints
-* **explorations** through the gardens alongside narrow paths
-* engaged in a few **side-quests** here and there
-* **encountered** some mysterious mushrooms and friendly faces
-* **cleaned** some astray internet cables and vats of toxic oil spill-over with baking soda while dancing to the tunes of Edward Sharpe & The Magnetic Zeros
+- **facilitated discussions** in large and small groups
+- **games and exercises** that both validated and tested our own opinions, perspectives and viewpoints
+- **explorations** through the gardens alongside narrow paths
+- engaged in a few **side-quests** here and there
+- **encountered** some mysterious mushrooms and friendly faces
+- **cleaned** some astray internet cables and vats of toxic oil spill-over with baking soda while dancing to the tunes of Edward Sharpe & The Magnetic Zeros
 
 On the last day of the festival we hosted a party for people to come together in the Greenhouse in which they could witness that the seeds that were collectively planted had grown into a Tree of Insights (I'm not going to trademark that phrase, I just felt like it deserved capitalization). The visual metaphor of using tree imagery here seemed quite poignant: we grow a tree together which fills up with its own fruits. When those fruits fall to the ground (insights are taken home) they can be soiled and nurtured to grow into new trees (when participants share and grow movements outside of the festival) so **collectively we are planting an international forest of internet activist trees**. How cool is that?
 
-![](/uploads/screenshot-2023-03-24-at-16-23-57.png)
+![](/uploads/screenshot-2023-03-24-at-16-23-57.jpg)
 
 ## Planting seeds to plant your seat
 
